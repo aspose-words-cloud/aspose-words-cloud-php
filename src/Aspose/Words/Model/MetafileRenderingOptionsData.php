@@ -173,7 +173,39 @@ class MetafileRenderingOptionsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const EMF_PLUS_DUAL_RENDERING_MODE_EMF_PLUS_WITH_FALLBACK = 'EmfPlusWithFallback';
+    const EMF_PLUS_DUAL_RENDERING_MODE_EMF_PLUS = 'EmfPlus';
+    const EMF_PLUS_DUAL_RENDERING_MODE_EMF = 'Emf';
+    const RENDERING_MODE_VECTOR_WITH_FALLBACK = 'VectorWithFallback';
+    const RENDERING_MODE_VECTOR = 'Vector';
+    const RENDERING_MODE_BITMAP = 'Bitmap';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEmfPlusDualRenderingModeAllowableValues()
+    {
+        return [
+            self::EMF_PLUS_DUAL_RENDERING_MODE_EMF_PLUS_WITH_FALLBACK,
+            self::EMF_PLUS_DUAL_RENDERING_MODE_EMF_PLUS,
+            self::EMF_PLUS_DUAL_RENDERING_MODE_EMF
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRenderingModeAllowableValues()
+    {
+        return [
+            self::RENDERING_MODE_VECTOR_WITH_FALLBACK,
+            self::RENDERING_MODE_VECTOR,
+            self::RENDERING_MODE_BITMAP
+        ];
+    }
 
     /*
      * Associative array for storing property values
@@ -206,6 +238,23 @@ class MetafileRenderingOptionsData implements ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getEmfPlusDualRenderingModeAllowableValues();
+        if (!in_array($this->container['emf_plus_dual_rendering_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'emf_plus_dual_rendering_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getRenderingModeAllowableValues();
+        if (!in_array($this->container['rendering_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'rendering_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -217,6 +266,17 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     public function valid()
     {
+        $allowedValues = $this->getEmfPlusDualRenderingModeAllowableValues();
+        if (!in_array($this->container['emf_plus_dual_rendering_mode'], $allowedValues)) {
+            return false;
+        }
+
+        $allowedValues = $this->getRenderingModeAllowableValues();
+        if (!in_array($this->container['rendering_mode'], $allowedValues)) {
+            return false;
+        }
+
+
         return true;
     }
 
@@ -239,6 +299,10 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     public function setEmfPlusDualRenderingMode($emf_plus_dual_rendering_mode)
     {
+        $allowedValues = $this->getEmfPlusDualRenderingModeAllowableValues();
+        if ((!is_numeric($emf_plus_dual_rendering_mode) && !in_array($emf_plus_dual_rendering_mode, $allowedValues)) || (is_numeric($emf_plus_dual_rendering_mode) && !in_array($allowedValues[$emf_plus_dual_rendering_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'emf_plus_dual_rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['emf_plus_dual_rendering_mode'] = $emf_plus_dual_rendering_mode;
         return $this;
     }
@@ -287,6 +351,10 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     public function setRenderingMode($rendering_mode)
     {
+        $allowedValues = $this->getRenderingModeAllowableValues();
+        if ((!is_numeric($rendering_mode) && !in_array($rendering_mode, $allowedValues)) || (is_numeric($rendering_mode) && !in_array($allowedValues[$rendering_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['rendering_mode'] = $rendering_mode;
         return $this;
     }

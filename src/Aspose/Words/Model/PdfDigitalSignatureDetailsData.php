@@ -173,7 +173,29 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const HASH_ALGORITHM_SHA1 = 'Sha1';
+    const HASH_ALGORITHM_SHA256 = 'Sha256';
+    const HASH_ALGORITHM_SHA384 = 'Sha384';
+    const HASH_ALGORITHM_SHA512 = 'Sha512';
+    const HASH_ALGORITHM_MD5 = 'Md5';
+    const HASH_ALGORITHM_RIPE_M_D160 = 'RipeMD160';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getHashAlgorithmAllowableValues()
+    {
+        return [
+            self::HASH_ALGORITHM_SHA1,
+            self::HASH_ALGORITHM_SHA256,
+            self::HASH_ALGORITHM_SHA384,
+            self::HASH_ALGORITHM_SHA512,
+            self::HASH_ALGORITHM_MD5,
+            self::HASH_ALGORITHM_RIPE_M_D160
+        ];
+    }
 
     /*
      * Associative array for storing property values
@@ -206,6 +228,15 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getHashAlgorithmAllowableValues();
+        if (!in_array($this->container['hash_algorithm'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'hash_algorithm', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -217,6 +248,12 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      */
     public function valid()
     {
+        $allowedValues = $this->getHashAlgorithmAllowableValues();
+        if (!in_array($this->container['hash_algorithm'], $allowedValues)) {
+            return false;
+        }
+
+
         return true;
     }
 
@@ -263,6 +300,10 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      */
     public function setHashAlgorithm($hash_algorithm)
     {
+        $allowedValues = $this->getHashAlgorithmAllowableValues();
+        if ((!is_numeric($hash_algorithm) && !in_array($hash_algorithm, $allowedValues)) || (is_numeric($hash_algorithm) && !in_array($allowedValues[$hash_algorithm], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'hash_algorithm', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['hash_algorithm'] = $hash_algorithm;
         return $this;
     }

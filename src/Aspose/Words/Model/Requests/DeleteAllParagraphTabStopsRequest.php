@@ -37,7 +37,7 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
 use Aspose\Words\Model\Response\DeleteAllParagraphTabStopsResponse;
-use phpseclib3\Crypt\RSA;
+use Aspose\Words\Encryptor;
 
 /*
  * Request model for deleteAllParagraphTabStops operation.
@@ -382,8 +382,7 @@ class DeleteAllParagraphTabStopsRequest extends BaseApiRequest
         if (property_exists($this, 'password') && $this->password != null)
         {
             unset($queryParams['password']);
-            $pub = RSA::loadPublicKey($config->getRsaKey());
-            $queryParams['encryptedPassword'] = base64_encode($pub->withPadding(RSA::ENCRYPTION_PKCS1)->encrypt($this->password));
+            $queryParams['encryptedPassword'] = $config->getEncryptor()->encrypt($this->password);
         }
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
@@ -465,8 +464,8 @@ class DeleteAllParagraphTabStopsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TabStopsResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($responseContent, '\Aspose\Words\Model\TabStopsResponse', []);
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TabStopsResponse', $response->getHeaders());
     }
 }

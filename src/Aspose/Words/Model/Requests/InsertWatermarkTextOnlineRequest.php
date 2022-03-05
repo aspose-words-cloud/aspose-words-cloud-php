@@ -37,7 +37,7 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
 use Aspose\Words\Model\Response\InsertWatermarkTextOnlineResponse;
-use phpseclib3\Crypt\RSA;
+use Aspose\Words\Encryptor;
 
 /*
  * Request model for insertWatermarkTextOnline operation.
@@ -331,8 +331,7 @@ class InsertWatermarkTextOnlineRequest extends BaseApiRequest
         if (property_exists($this, 'password') && $this->password != null)
         {
             unset($queryParams['password']);
-            $pub = RSA::loadPublicKey($config->getRsaKey());
-            $queryParams['encryptedPassword'] = base64_encode($pub->withPadding(RSA::ENCRYPTION_PKCS1)->encrypt($this->password));
+            $queryParams['encryptedPassword'] = $config->getEncryptor()->encrypt($this->password);
         }
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
@@ -432,11 +431,11 @@ class InsertWatermarkTextOnlineRequest extends BaseApiRequest
         return 'InsertWatermarkTextOnlineResponse';
     }
 
-    public function deserializeResponse($responseContent)
+    public function deserializeResponse($response)
     {
-        $multipart = ObjectSerializer::parseMultipart($responseContent);
+        $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());
         return new InsertWatermarkTextOnlineResponse(
-          ObjectSerializer::deserialize(json_decode($multipart[0]['body']), '\Aspose\Words\Model\DocumentResponse', []),
-          ObjectSerializer::deserialize($multipart[1]['body'], '\SplFileObject', []));
+          ObjectSerializer::deserialize(json_decode(ObjectSerializer::findPartByName($multipart, 'Model')['body']), '\Aspose\Words\Model\DocumentResponse', ObjectSerializer::findPartByName($multipart, 'Model')['headers']),
+          ObjectSerializer::deserialize(ObjectSerializer::findPartByName($multipart, 'Document')['body'], 'FILES_COLLECTION', ObjectSerializer::findPartByName($multipart, 'Document')['headers']));
     }
 }

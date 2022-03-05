@@ -52,9 +52,8 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'encryption_algorithm' => 'string',
         'owner_password' => 'string',
-        'permissions' => 'string',
+        'permissions' => 'string[]',
         'user_password' => 'string'
     ];
 
@@ -64,7 +63,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'encryption_algorithm' => 'null',
         'owner_password' => 'null',
         'permissions' => 'null',
         'user_password' => 'null'
@@ -97,7 +95,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'encryption_algorithm' => 'EncryptionAlgorithm',
         'owner_password' => 'OwnerPassword',
         'permissions' => 'Permissions',
         'user_password' => 'UserPassword'
@@ -109,7 +106,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'encryption_algorithm' => 'setEncryptionAlgorithm',
         'owner_password' => 'setOwnerPassword',
         'permissions' => 'setPermissions',
         'user_password' => 'setUserPassword'
@@ -121,7 +117,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'encryption_algorithm' => 'getEncryptionAlgorithm',
         'owner_password' => 'getOwnerPassword',
         'permissions' => 'getPermissions',
         'user_password' => 'getUserPassword'
@@ -185,7 +180,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['encryption_algorithm'] = isset($data['encryption_algorithm']) ? $data['encryption_algorithm'] : null;
         $this->container['owner_password'] = isset($data['owner_password']) ? $data['owner_password'] : null;
         $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
         $this->container['user_password'] = isset($data['user_password']) ? $data['user_password'] : null;
@@ -215,30 +209,6 @@ class PdfEncryptionDetailsData implements ArrayAccess
     }
 
     /*
-     * Gets encryption_algorithm
-     *
-     * @return string
-     */
-    public function getEncryptionAlgorithm()
-    {
-        return $this->container['encryption_algorithm'];
-    }
-
-    /*
-     * Sets encryption_algorithm
-     *
-     * @param string $encryption_algorithm Gets or sets the encryption algorithm to use.
-     *
-     * @return $this
-     */
-    public function setEncryptionAlgorithm($encryption_algorithm)
-    {
-        $this->container['encryption_algorithm'] = $encryption_algorithm;
-        return $this;
-    }
-
-
-    /*
      * Gets owner_password
      *
      * @return string
@@ -265,7 +235,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Gets permissions
      *
-     * @return string
+     * @return string[]
      */
     public function getPermissions()
     {
@@ -275,12 +245,16 @@ class PdfEncryptionDetailsData implements ArrayAccess
     /*
      * Sets permissions
      *
-     * @param string $permissions Gets or sets the operations that are allowed to a user on the encrypted PDF document.
+     * @param string[] $permissions Gets or sets the operations that are allowed to a user on the encrypted PDF document.
      *
      * @return $this
      */
     public function setPermissions($permissions)
     {
+        $allowedValues = $this->getPermissionsAllowableValues();
+        if (!is_null($permissions) && array_diff($permissions, $allowedValues)) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'permissions', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['permissions'] = $permissions;
         return $this;
     }

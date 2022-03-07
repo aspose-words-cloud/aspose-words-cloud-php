@@ -19,6 +19,7 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 - Parameters contained sensitive data should be passed in encrypted form. Names of the parameters have 'encrypted' prefix.
 - Added Encrypt method to encrypt data on the API public key. Use it to prepare values for parameters required encrypted data.
 - GetPublicKey method is not billable.
+- Changed type of enumerations for members of SaveOptionsData and other inherited classes from string to enum.
 
 
 ## Enhancements in Version 22.2

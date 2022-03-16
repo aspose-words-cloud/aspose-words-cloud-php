@@ -120,6 +120,6 @@ class AppendDocumentTests extends BaseTestContext
         $result = $this->words->appendDocumentOnline($request);
         Assert::assertTrue($result !== NULL);
 
-        $name = $result->document->getPathName();
+        $name = array_keys($result->document)[0];
     }
 }

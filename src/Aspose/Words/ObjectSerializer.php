@@ -109,7 +109,7 @@ class ObjectSerializer
     public static function parseFilesCollection($data, $headers)
     {
         $result = [];
-        $contentType = $headers['Content-Type'];
+        $contentType = array_key_exists('Content-Type', $headers) ? $headers['Content-Type'] : NULL;
         if ($contentType !== NULL && is_array($contentType)) {
             $contentType = $contentType[0];
         }

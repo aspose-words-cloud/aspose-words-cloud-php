@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{ApplyStyleToDocumentElementOnlineRequest, ApplyStyleToDocumentElementRequest, CopyStyleOnlineRequest, CopyStyleRequest, GetStyleFromDocumentElementOnlineRequest, GetStyleFromDocumentElementRequest, GetStyleOnlineRequest, GetStyleRequest, GetStylesOnlineRequest, GetStylesRequest, InsertStyleOnlineRequest, InsertStyleRequest, UpdateStyleOnlineRequest, UpdateStyleRequest};
+use Aspose\Words\Model\Requests\{ApplyStyleToDocumentElementOnlineRequest, ApplyStyleToDocumentElementRequest, CopyStyleOnlineRequest, CopyStyleRequest, CopyStylesFromTemplateRequest, GetStyleFromDocumentElementOnlineRequest, GetStyleFromDocumentElementRequest, GetStyleOnlineRequest, GetStyleRequest, GetStylesOnlineRequest, GetStylesRequest, InsertStyleOnlineRequest, InsertStyleRequest, UpdateStyleOnlineRequest, UpdateStyleRequest};
 use Aspose\Words\Model\{StyleApply, StyleCopy, StyleInsert, StyleUpdate};
 use PHPUnit\Framework\Assert;
 
@@ -437,5 +437,42 @@ class StylesTests extends BaseTestContext
 
         $result = $this->words->applyStyleToDocumentElementOnline($request);
         Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for copying styles from a template.
+     */
+    public function testCopyStylesFromTemplate()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Styles";
+        $localFile = "DocumentElements/Styles/GetStyles.docx";
+        $remoteFileName = "TestCopyStylesFromTemplate.docx";
+        $templateFolder = "DocumentElements/Styles";
+        $templateName = "StyleTemplate.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $templateFolder . "/" . $templateName,
+            $remoteDataFolder . "/" . $templateName
+        );
+
+        $request = new CopyStylesFromTemplateRequest(
+            $remoteFileName,
+            $templateName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->copyStylesFromTemplate($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 }

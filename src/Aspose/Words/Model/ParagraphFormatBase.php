@@ -286,6 +286,7 @@ class ParagraphFormatBase extends LinkElement
     const ALIGNMENT_ARABIC_HIGH_KASHIDA = 'ArabicHighKashida';
     const ALIGNMENT_ARABIC_LOW_KASHIDA = 'ArabicLowKashida';
     const ALIGNMENT_THAI_DISTRIBUTED = 'ThaiDistributed';
+    const ALIGNMENT_MATH_ELEMENT_CENTER_AS_GROUP = 'MathElementCenterAsGroup';
     const DROP_CAP_POSITION_NONE = 'None';
     const DROP_CAP_POSITION_NORMAL = 'Normal';
     const DROP_CAP_POSITION_MARGIN = 'Margin';
@@ -697,7 +698,8 @@ class ParagraphFormatBase extends LinkElement
             self::ALIGNMENT_ARABIC_MEDIUM_KASHIDA,
             self::ALIGNMENT_ARABIC_HIGH_KASHIDA,
             self::ALIGNMENT_ARABIC_LOW_KASHIDA,
-            self::ALIGNMENT_THAI_DISTRIBUTED
+            self::ALIGNMENT_THAI_DISTRIBUTED,
+            self::ALIGNMENT_MATH_ELEMENT_CENTER_AS_GROUP
         ];
     }
     /*

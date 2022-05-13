@@ -173,11 +173,9 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const HASH_ALGORITHM_SHA1 = 'Sha1';
     const HASH_ALGORITHM_SHA256 = 'Sha256';
     const HASH_ALGORITHM_SHA384 = 'Sha384';
     const HASH_ALGORITHM_SHA512 = 'Sha512';
-    const HASH_ALGORITHM_MD5 = 'Md5';
     const HASH_ALGORITHM_RIPE_M_D160 = 'RipeMD160';
 
     /*
@@ -188,11 +186,9 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     public function getHashAlgorithmAllowableValues()
     {
         return [
-            self::HASH_ALGORITHM_SHA1,
             self::HASH_ALGORITHM_SHA256,
             self::HASH_ALGORITHM_SHA384,
             self::HASH_ALGORITHM_SHA512,
-            self::HASH_ALGORITHM_MD5,
             self::HASH_ALGORITHM_RIPE_M_D160
         ];
     }

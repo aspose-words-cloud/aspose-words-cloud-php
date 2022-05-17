@@ -197,10 +197,18 @@ class SectionTests extends BaseTestContext
      */
     public function testLinkHeaderFootersToPrevious()
     {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Section";
+        $remoteFileName = "TestLinkHeaderFootersToPrevious.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . "DocumentElements/Sections/Source.docx",
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
         $request = new LinkHeaderFootersToPreviousRequest(
-            "DocumentElements/Sections/Source.docx",
+            $remoteFileName,
             1,
-            NULL,
+            $remoteDataFolder,
             NULL,
             NULL,
             NULL,

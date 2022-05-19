@@ -37733,6 +37733,133 @@ class WordsApi implements Encryptor
     }
 
     /*
+     * Operation linkHeaderFootersToPrevious
+     *
+     * Links headers / footers of the section to the previous one.
+     *
+     * @param Requests\linkHeaderFootersToPreviousRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function linkHeaderFootersToPrevious(Requests\linkHeaderFootersToPreviousRequest $request)
+    {
+        try {
+    $this->linkHeaderFootersToPreviousWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+    $this->linkHeaderFootersToPreviousWithHttpInfo($request);
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation linkHeaderFootersToPreviousWithHttpInfo
+     *
+     * Links headers / footers of the section to the previous one.
+     *
+     * @param Requests\linkHeaderFootersToPreviousRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function linkHeaderFootersToPreviousWithHttpInfo(Requests\linkHeaderFootersToPreviousRequest $request)
+    {
+        $returnType = 'void';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation linkHeaderFootersToPreviousAsync
+     *
+     * Links headers / footers of the section to the previous one.
+     *
+     * @param Requests\linkHeaderFootersToPreviousRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function linkHeaderFootersToPreviousAsync(Requests\linkHeaderFootersToPreviousRequest $request) 
+    {
+        return $this->linkHeaderFootersToPreviousAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation linkHeaderFootersToPreviousAsyncWithHttpInfo
+     *
+     * Links headers / footers of the section to the previous one.
+     *
+     * @param Requests\linkHeaderFootersToPreviousRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function linkHeaderFootersToPreviousAsyncWithHttpInfo(Requests\linkHeaderFootersToPreviousRequest $request) 
+    {
+        $returnType = 'void';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
      * Operation loadWebDocument
      *
      * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.

@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest};
+use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest, LinkHeaderFootersToPreviousRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -190,5 +190,35 @@ class SectionTests extends BaseTestContext
 
         $result = $this->words->deleteSectionOnline($request);
         Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for linking headers and footers to previous section.
+     */
+    public function testLinkHeaderFootersToPrevious()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Section";
+        $remoteFileName = "TestLinkHeaderFootersToPrevious.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . "DocumentElements/Sections/Source.docx",
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new LinkHeaderFootersToPreviousRequest(
+            $remoteFileName,
+            1,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        Assert::assertNull($this->words->linkHeaderFootersToPrevious($request));
     }
 }

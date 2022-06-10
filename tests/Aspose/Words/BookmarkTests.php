@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{GetBookmarkByNameOnlineRequest, GetBookmarkByNameRequest, GetBookmarksOnlineRequest, GetBookmarksRequest, UpdateBookmarkOnlineRequest, UpdateBookmarkRequest};
-use Aspose\Words\Model\{BookmarkData};
+use Aspose\Words\Model\Requests\{DeleteBookmarkOnlineRequest, DeleteBookmarkRequest, DeleteBookmarksOnlineRequest, DeleteBookmarksRequest, GetBookmarkByNameOnlineRequest, GetBookmarkByNameRequest, GetBookmarksOnlineRequest, GetBookmarksRequest, InsertBookmarkOnlineRequest, InsertBookmarkRequest, UpdateBookmarkOnlineRequest, UpdateBookmarkRequest};
+use Aspose\Words\Model\{BookmarkData, BookmarkInsert, DocumentPosition, NodeLink};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -199,6 +199,202 @@ class BookmarkTests extends BaseTestContext
         );
 
         $result = $this->words->updateBookmarkOnline($request);
+        Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for deleting bookmark by specified name.
+     */
+    public function testDeleteBookmark()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
+        $localFile = "Common/test_multi_pages.docx";
+        $bookmarkName = "aspose";
+        $remoteFileName = "TestDeleteBookmark.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new DeleteBookmarkRequest(
+            $remoteFileName,
+            $bookmarkName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        Assert::assertNull($this->words->deleteBookmark($request));
+    }
+
+    /*
+     * Test for deleting bookmark by specified name online.
+     */
+    public function testDeleteBookmarkOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+        $bookmarkName = "aspose";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new DeleteBookmarkOnlineRequest(
+            $requestDocument,
+            $bookmarkName,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteBookmarkOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for deleting all bookmarks from document.
+     */
+    public function testDeleteBookmarks()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestDeleteBookmarks.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new DeleteBookmarksRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        Assert::assertNull($this->words->deleteBookmarks($request));
+    }
+
+    /*
+     * Test for deleting all bookmarks from document online.
+     */
+    public function testDeleteBookmarksOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new DeleteBookmarksOnlineRequest(
+            $requestDocument,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteBookmarksOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for inserting new bookmark.
+     */
+    public function testInsertBookmark()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Bookmarks";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestInsertBookmark.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $requestBookmarkStartRangeNode = new NodeLink(array(
+            "node_id" => "0.0.0.0",
+        ));
+        $requestBookmarkStartRange = new DocumentPosition(array(
+            "node" => $requestBookmarkStartRangeNode,
+        ));
+        $requestBookmarkEndRangeNode = new NodeLink(array(
+            "node_id" => "0.0.0.0",
+        ));
+        $requestBookmarkEndRange = new DocumentPosition(array(
+            "node" => $requestBookmarkEndRangeNode,
+        ));
+        $requestBookmark = new BookmarkInsert(array(
+            "start_range" => $requestBookmarkStartRange,
+            "end_range" => $requestBookmarkEndRange,
+            "name" => "new_bookmark",
+            "text" => "Some text",
+        ));
+        $request = new InsertBookmarkRequest(
+            $remoteFileName,
+            $requestBookmark,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertBookmark($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for inserting new bookmark online.
+     */
+    public function testInsertBookmarkOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestBookmarkStartRangeNode = new NodeLink(array(
+            "node_id" => "0.0.0.0",
+        ));
+        $requestBookmarkStartRange = new DocumentPosition(array(
+            "node" => $requestBookmarkStartRangeNode,
+        ));
+        $requestBookmarkEndRangeNode = new NodeLink(array(
+            "node_id" => "0.0.0.0",
+        ));
+        $requestBookmarkEndRange = new DocumentPosition(array(
+            "node" => $requestBookmarkEndRangeNode,
+        ));
+        $requestBookmark = new BookmarkInsert(array(
+            "start_range" => $requestBookmarkStartRange,
+            "end_range" => $requestBookmarkEndRange,
+            "name" => "new_bookmark",
+            "text" => "Some text",
+        ));
+        $request = new InsertBookmarkOnlineRequest(
+            $requestDocument,
+            $requestBookmark,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertBookmarkOnline($request);
         Assert::assertTrue($result !== NULL);
     }
 }

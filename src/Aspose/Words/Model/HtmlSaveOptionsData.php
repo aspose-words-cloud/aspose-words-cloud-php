@@ -71,8 +71,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_page_setup' => 'bool',
         'export_relative_font_size' => 'bool',
         'export_roundtrip_information' => 'bool',
-        'export_shapes_as_svg' => 'bool',
-        'export_text_box_as_svg' => 'bool',
         'export_text_input_form_field_as_text' => 'bool',
         'export_toc_page_numbers' => 'bool',
         'export_xhtml_transitional' => 'bool',
@@ -119,8 +117,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_page_setup' => 'null',
         'export_relative_font_size' => 'null',
         'export_roundtrip_information' => 'null',
-        'export_shapes_as_svg' => 'null',
-        'export_text_box_as_svg' => 'null',
         'export_text_input_form_field_as_text' => 'null',
         'export_toc_page_numbers' => 'null',
         'export_xhtml_transitional' => 'null',
@@ -188,8 +184,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_page_setup' => 'ExportPageSetup',
         'export_relative_font_size' => 'ExportRelativeFontSize',
         'export_roundtrip_information' => 'ExportRoundtripInformation',
-        'export_shapes_as_svg' => 'ExportShapesAsSvg',
-        'export_text_box_as_svg' => 'ExportTextBoxAsSvg',
         'export_text_input_form_field_as_text' => 'ExportTextInputFormFieldAsText',
         'export_toc_page_numbers' => 'ExportTocPageNumbers',
         'export_xhtml_transitional' => 'ExportXhtmlTransitional',
@@ -236,8 +230,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_page_setup' => 'setExportPageSetup',
         'export_relative_font_size' => 'setExportRelativeFontSize',
         'export_roundtrip_information' => 'setExportRoundtripInformation',
-        'export_shapes_as_svg' => 'setExportShapesAsSvg',
-        'export_text_box_as_svg' => 'setExportTextBoxAsSvg',
         'export_text_input_form_field_as_text' => 'setExportTextInputFormFieldAsText',
         'export_toc_page_numbers' => 'setExportTocPageNumbers',
         'export_xhtml_transitional' => 'setExportXhtmlTransitional',
@@ -284,8 +276,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'export_page_setup' => 'getExportPageSetup',
         'export_relative_font_size' => 'getExportRelativeFontSize',
         'export_roundtrip_information' => 'getExportRoundtripInformation',
-        'export_shapes_as_svg' => 'getExportShapesAsSvg',
-        'export_text_box_as_svg' => 'getExportTextBoxAsSvg',
         'export_text_input_form_field_as_text' => 'getExportTextInputFormFieldAsText',
         'export_toc_page_numbers' => 'getExportTocPageNumbers',
         'export_xhtml_transitional' => 'getExportXhtmlTransitional',
@@ -510,8 +500,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['export_page_setup'] = isset($data['export_page_setup']) ? $data['export_page_setup'] : null;
         $this->container['export_relative_font_size'] = isset($data['export_relative_font_size']) ? $data['export_relative_font_size'] : null;
         $this->container['export_roundtrip_information'] = isset($data['export_roundtrip_information']) ? $data['export_roundtrip_information'] : null;
-        $this->container['export_shapes_as_svg'] = isset($data['export_shapes_as_svg']) ? $data['export_shapes_as_svg'] : null;
-        $this->container['export_text_box_as_svg'] = isset($data['export_text_box_as_svg']) ? $data['export_text_box_as_svg'] : null;
         $this->container['export_text_input_form_field_as_text'] = isset($data['export_text_input_form_field_as_text']) ? $data['export_text_input_form_field_as_text'] : null;
         $this->container['export_toc_page_numbers'] = isset($data['export_toc_page_numbers']) ? $data['export_toc_page_numbers'] : null;
         $this->container['export_xhtml_transitional'] = isset($data['export_xhtml_transitional']) ? $data['export_xhtml_transitional'] : null;
@@ -1157,54 +1145,6 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setExportRoundtripInformation($export_roundtrip_information)
     {
         $this->container['export_roundtrip_information'] = $export_roundtrip_information;
-        return $this;
-    }
-
-
-    /*
-     * Gets export_shapes_as_svg
-     *
-     * @return bool
-     */
-    public function getExportShapesAsSvg()
-    {
-        return $this->container['export_shapes_as_svg'];
-    }
-
-    /*
-     * Sets export_shapes_as_svg
-     *
-     * @param bool $export_shapes_as_svg Gets or sets the flag, that controls whether Aspose.Words.Drawing.Shape nodes are converted to SVG images when saving to HTML, MHTML or EPUB. Default value is false.
-     *
-     * @return $this
-     */
-    public function setExportShapesAsSvg($export_shapes_as_svg)
-    {
-        $this->container['export_shapes_as_svg'] = $export_shapes_as_svg;
-        return $this;
-    }
-
-
-    /*
-     * Gets export_text_box_as_svg
-     *
-     * @return bool
-     */
-    public function getExportTextBoxAsSvg()
-    {
-        return $this->container['export_text_box_as_svg'];
-    }
-
-    /*
-     * Sets export_text_box_as_svg
-     *
-     * @param bool $export_text_box_as_svg Gets or sets the flag, that controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. The default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.
-     *
-     * @return $this
-     */
-    public function setExportTextBoxAsSvg($export_text_box_as_svg)
-    {
-        $this->container['export_text_box_as_svg'] = $export_text_box_as_svg;
         return $this;
     }
 

@@ -13,6 +13,19 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 22.6
+
+- Added 'DeleteBookmark' and 'DeleteBookmarkOnline' API methods for delete bookmarks by name from the document.
+- Added 'DeleteBookmarks' and 'DeleteBookmarksOnline' API methods for delete all bookmarks from the document.
+- Added 'InsertBookmark' and 'InsertBookmarkOnline' API methods for create new bookmarks in the document.
+- Support all save formats for 'CreateDocument' operation.
+
+
+## Enhancements in Version 22.5
+
+- Internal API fixes and improvments.
+
+
 ## Enhancements in Version 22.4
 
 - Added ExportShapesAsSvg to HtmlSaveOption.

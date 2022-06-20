@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DocumentEntryList.php">
+ * <copyright company="Aspose" file="BaseEntryList.php">
  *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,14 +27,15 @@
  */
 
 namespace Aspose\Words\Model;
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * DocumentEntryList
+ * BaseEntryList
  *
- * @description Represents a list of documents which will be appended to the original resource document.
+ * @description Represents a list of entries which will be appended to the original resource entry.
  */
-class DocumentEntryList extends BaseEntryList
+abstract class BaseEntryList implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +44,7 @@ class DocumentEntryList extends BaseEntryList
      *
      * @var string
      */
-    protected static $swaggerModelName = "DocumentEntryList";
+    protected static $swaggerModelName = "BaseEntryList";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,8 +52,6 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'bool',
-        'document_entries' => '\Aspose\Words\Model\DocumentEntry[]'
     ];
 
     /*
@@ -61,8 +60,6 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'null',
-        'document_entries' => 'null'
     ];
 
     /*
@@ -72,7 +69,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -82,7 +79,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -92,8 +89,6 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $attributeMap = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'DocumentEntries'
     ];
 
     /*
@@ -102,8 +97,6 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $setters = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'setApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'setDocumentEntries'
     ];
 
     /*
@@ -112,8 +105,6 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $getters = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'getApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'getDocumentEntries'
     ];
 
     /*
@@ -124,7 +115,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -134,7 +125,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -144,7 +135,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -160,6 +151,13 @@ class DocumentEntryList extends BaseEntryList
 
 
     /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -167,9 +165,6 @@ class DocumentEntryList extends BaseEntryList
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = isset($data['apply_base_document_headers_and_footers_to_appending_documents']) ? $data['apply_base_document_headers_and_footers_to_appending_documents'] : null;
-        $this->container['document_entries'] = isset($data['document_entries']) ? $data['document_entries'] : null;
     }
 
     /*
@@ -179,7 +174,8 @@ class DocumentEntryList extends BaseEntryList
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
+
         return $invalidProperties;
     }
 
@@ -191,58 +187,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
-
         return true;
-    }
-
-    /*
-     * Gets apply_base_document_headers_and_footers_to_appending_documents
-     *
-     * @return bool
-     */
-    public function getApplyBaseDocumentHeadersAndFootersToAppendingDocuments()
-    {
-        return $this->container['apply_base_document_headers_and_footers_to_appending_documents'];
-    }
-
-    /*
-     * Sets apply_base_document_headers_and_footers_to_appending_documents
-     *
-     * @param bool $apply_base_document_headers_and_footers_to_appending_documents Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
-     *
-     * @return $this
-     */
-    public function setApplyBaseDocumentHeadersAndFootersToAppendingDocuments($apply_base_document_headers_and_footers_to_appending_documents)
-    {
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = $apply_base_document_headers_and_footers_to_appending_documents;
-        return $this;
-    }
-
-
-    /*
-     * Gets document_entries
-     *
-     * @return \Aspose\Words\Model\DocumentEntry[]
-     */
-    public function getDocumentEntries()
-    {
-        return $this->container['document_entries'];
-    }
-
-    /*
-     * Sets document_entries
-     *
-     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets the list of documents.
-     *
-     * @return $this
-     */
-    public function setDocumentEntries($document_entries)
-    {
-        $this->container['document_entries'] = $document_entries;
-        return $this;
     }
 
 

@@ -50,7 +50,7 @@ class AppendDocumentOnlineRequest extends BaseApiRequest
     public $document;
 
     /*
-     * <see cref="DocumentEntryList"/> with a list of documents to append.
+     * <see cref="BaseEntryList"/> with a list of entries to append.
      */
     public $document_list;
 
@@ -88,7 +88,7 @@ class AppendDocumentOnlineRequest extends BaseApiRequest
      * Initializes a new instance of the AppendDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document Original document.
-     * @param \Aspose\Words\Model\DocumentEntryList $document_list <see cref="DocumentEntryList"/> with a list of documents to append.
+     * @param \Aspose\Words\Model\BaseEntryList $document_list <see cref="BaseEntryList"/> with a list of entries to append.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -126,7 +126,7 @@ class AppendDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * <see cref="DocumentEntryList"/> with a list of documents to append.
+     * <see cref="BaseEntryList"/> with a list of entries to append.
      */
     public function get_document_list()
     {
@@ -134,7 +134,7 @@ class AppendDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * <see cref="DocumentEntryList"/> with a list of documents to append.
+     * <see cref="BaseEntryList"/> with a list of entries to append.
      */
     public function set_document_list($value)
     {

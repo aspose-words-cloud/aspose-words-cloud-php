@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DocumentEntryList.php">
+ * <copyright company="Aspose" file="ImageEntryList.php">
  *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -30,11 +30,11 @@ namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * DocumentEntryList
+ * ImageEntryList
  *
- * @description Represents a list of documents which will be appended to the original resource document.
+ * @description Represents a list of images which will be appended to the original resource document or image.
  */
-class DocumentEntryList extends BaseEntryList
+class ImageEntryList extends BaseEntryList
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +43,7 @@ class DocumentEntryList extends BaseEntryList
      *
      * @var string
      */
-    protected static $swaggerModelName = "DocumentEntryList";
+    protected static $swaggerModelName = "ImageEntryList";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,8 +51,8 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'bool',
-        'document_entries' => '\Aspose\Words\Model\DocumentEntry[]'
+        'append_each_image_on_new_page' => 'bool',
+        'image_entries' => '\Aspose\Words\Model\ImageEntry[]'
     ];
 
     /*
@@ -61,8 +61,8 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'null',
-        'document_entries' => 'null'
+        'append_each_image_on_new_page' => 'null',
+        'image_entries' => 'null'
     ];
 
     /*
@@ -92,8 +92,8 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $attributeMap = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'DocumentEntries'
+        'append_each_image_on_new_page' => 'AppendEachImageOnNewPage',
+        'image_entries' => 'ImageEntries'
     ];
 
     /*
@@ -102,8 +102,8 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $setters = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'setApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'setDocumentEntries'
+        'append_each_image_on_new_page' => 'setAppendEachImageOnNewPage',
+        'image_entries' => 'setImageEntries'
     ];
 
     /*
@@ -112,8 +112,8 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $getters = [
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'getApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'getDocumentEntries'
+        'append_each_image_on_new_page' => 'getAppendEachImageOnNewPage',
+        'image_entries' => 'getImageEntries'
     ];
 
     /*
@@ -168,8 +168,8 @@ class DocumentEntryList extends BaseEntryList
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = isset($data['apply_base_document_headers_and_footers_to_appending_documents']) ? $data['apply_base_document_headers_and_footers_to_appending_documents'] : null;
-        $this->container['document_entries'] = isset($data['document_entries']) ? $data['document_entries'] : null;
+        $this->container['append_each_image_on_new_page'] = isset($data['append_each_image_on_new_page']) ? $data['append_each_image_on_new_page'] : null;
+        $this->container['image_entries'] = isset($data['image_entries']) ? $data['image_entries'] : null;
     }
 
     /*
@@ -199,49 +199,49 @@ class DocumentEntryList extends BaseEntryList
     }
 
     /*
-     * Gets apply_base_document_headers_and_footers_to_appending_documents
+     * Gets append_each_image_on_new_page
      *
      * @return bool
      */
-    public function getApplyBaseDocumentHeadersAndFootersToAppendingDocuments()
+    public function getAppendEachImageOnNewPage()
     {
-        return $this->container['apply_base_document_headers_and_footers_to_appending_documents'];
+        return $this->container['append_each_image_on_new_page'];
     }
 
     /*
-     * Sets apply_base_document_headers_and_footers_to_appending_documents
+     * Sets append_each_image_on_new_page
      *
-     * @param bool $apply_base_document_headers_and_footers_to_appending_documents Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
+     * @param bool $append_each_image_on_new_page Gets or sets a value indicating whether each image should be added to a new page in the document.
      *
      * @return $this
      */
-    public function setApplyBaseDocumentHeadersAndFootersToAppendingDocuments($apply_base_document_headers_and_footers_to_appending_documents)
+    public function setAppendEachImageOnNewPage($append_each_image_on_new_page)
     {
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = $apply_base_document_headers_and_footers_to_appending_documents;
+        $this->container['append_each_image_on_new_page'] = $append_each_image_on_new_page;
         return $this;
     }
 
 
     /*
-     * Gets document_entries
+     * Gets image_entries
      *
-     * @return \Aspose\Words\Model\DocumentEntry[]
+     * @return \Aspose\Words\Model\ImageEntry[]
      */
-    public function getDocumentEntries()
+    public function getImageEntries()
     {
-        return $this->container['document_entries'];
+        return $this->container['image_entries'];
     }
 
     /*
-     * Sets document_entries
+     * Sets image_entries
      *
-     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets the list of documents.
+     * @param \Aspose\Words\Model\ImageEntry[] $image_entries Gets or sets the list of images.
      *
      * @return $this
      */
-    public function setDocumentEntries($document_entries)
+    public function setImageEntries($image_entries)
     {
-        $this->container['document_entries'] = $document_entries;
+        $this->container['image_entries'] = $image_entries;
         return $this;
     }
 

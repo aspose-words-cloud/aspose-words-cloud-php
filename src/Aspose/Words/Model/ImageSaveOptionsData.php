@@ -637,7 +637,7 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
      *
      * @return boolean
      */
-    public function offsetExists(mixed $offset)
+    public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
@@ -649,7 +649,7 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
      *
      * @return mixed
      */
-    public function offsetGet(mixed $offset)
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -662,7 +662,7 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
      *
      * @return void
      */
-    public function offsetSet(mixed $offset, $value)
+    public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -678,7 +678,7 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
      *
      * @return void
      */
-    public function offsetUnset(mixed $offset)
+    public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }

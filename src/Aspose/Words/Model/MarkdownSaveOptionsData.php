@@ -261,7 +261,7 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset)
     {
         return isset($this->container[$offset]);
     }
@@ -273,7 +273,7 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -286,7 +286,7 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, $value)
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -302,7 +302,7 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset)
     {
         unset($this->container[$offset]);
     }

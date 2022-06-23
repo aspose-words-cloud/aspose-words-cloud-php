@@ -320,7 +320,7 @@ class JsonDataLoadOptions implements ArrayAccess
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset)
     {
         return isset($this->container[$offset]);
     }
@@ -332,7 +332,7 @@ class JsonDataLoadOptions implements ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -345,7 +345,7 @@ class JsonDataLoadOptions implements ArrayAccess
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, $value)
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -361,7 +361,7 @@ class JsonDataLoadOptions implements ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset)
     {
         unset($this->container[$offset]);
     }

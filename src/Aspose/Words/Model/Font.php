@@ -2282,7 +2282,7 @@ class Font extends LinkElement
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset)
     {
         return isset($this->container[$offset]);
     }
@@ -2294,7 +2294,7 @@ class Font extends LinkElement
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -2307,7 +2307,7 @@ class Font extends LinkElement
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, $value)
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -2323,7 +2323,7 @@ class Font extends LinkElement
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset)
     {
         unset($this->container[$offset]);
     }

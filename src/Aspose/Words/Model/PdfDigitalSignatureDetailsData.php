@@ -384,7 +384,8 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      *
      * @return boolean
      */
-    public function offsetExists(mixed $offset)
+	#[\ReturnTypeWillChange]
+    public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
@@ -396,7 +397,8 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet(mixed $offset)
+	#[\ReturnTypeWillChange]
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -409,7 +411,8 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      *
      * @return void
      */
-    public function offsetSet(mixed $offset, $value)
+	#[\ReturnTypeWillChange]
+    public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -425,7 +428,8 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset(mixed $offset)
+	#[\ReturnTypeWillChange]
+    public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }

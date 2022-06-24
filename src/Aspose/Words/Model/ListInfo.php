@@ -403,6 +403,7 @@ class ListInfo extends LinkElement
      *
      * @return boolean
      */
+	#[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -415,6 +416,7 @@ class ListInfo extends LinkElement
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -428,6 +430,7 @@ class ListInfo extends LinkElement
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -444,6 +447,7 @@ class ListInfo extends LinkElement
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

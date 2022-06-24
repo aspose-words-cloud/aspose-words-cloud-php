@@ -350,6 +350,7 @@ abstract class FootnoteBase implements ArrayAccess
      *
      * @return boolean
      */
+	#[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -362,6 +363,7 @@ abstract class FootnoteBase implements ArrayAccess
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -375,6 +377,7 @@ abstract class FootnoteBase implements ArrayAccess
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -391,6 +394,7 @@ abstract class FootnoteBase implements ArrayAccess
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

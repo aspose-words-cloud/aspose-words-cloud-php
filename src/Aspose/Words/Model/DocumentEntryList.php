@@ -27,7 +27,6 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
@@ -35,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a list of documents which will be appended to the original resource document.
  */
-class DocumentEntryList implements ArrayAccess
+class DocumentEntryList extends BaseEntryList
 {
     const DISCRIMINATOR = null;
 
@@ -73,7 +72,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -83,7 +82,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -125,7 +124,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -135,7 +134,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -145,7 +144,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -161,13 +160,6 @@ class DocumentEntryList implements ArrayAccess
 
 
     /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-
-    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -175,6 +167,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
         $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = isset($data['apply_base_document_headers_and_footers_to_appending_documents']) ? $data['apply_base_document_headers_and_footers_to_appending_documents'] : null;
         $this->container['document_entries'] = isset($data['document_entries']) ? $data['document_entries'] : null;
     }
@@ -186,8 +179,7 @@ class DocumentEntryList implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
+        $invalidProperties = parent::listInvalidProperties();
         return $invalidProperties;
     }
 
@@ -199,6 +191,10 @@ class DocumentEntryList implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
+
         return true;
     }
 
@@ -257,6 +253,7 @@ class DocumentEntryList implements ArrayAccess
      *
      * @return boolean
      */
+	#[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -269,6 +266,7 @@ class DocumentEntryList implements ArrayAccess
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -282,6 +280,7 @@ class DocumentEntryList implements ArrayAccess
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -298,6 +297,7 @@ class DocumentEntryList implements ArrayAccess
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -772,6 +772,7 @@ class ListLevel extends LinkElement
      *
      * @return boolean
      */
+	#[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -784,6 +785,7 @@ class ListLevel extends LinkElement
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -797,6 +799,7 @@ class ListLevel extends LinkElement
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -813,6 +816,7 @@ class ListLevel extends LinkElement
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ReportBuildOptions.php">
+ * <copyright company="Aspose" file="CompressDocumentOnlineResponse.php">
  *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,39 +26,55 @@
  * --------------------------------------------------------------------------------
  */
 
-namespace Aspose\Words\Model;
-use \Aspose\Words\ObjectSerializer;
-
+namespace Aspose\Words\Model\Response;
 /*
- * ReportBuildOptions
- *
- * @description Specifies options controlling behavior of ReportingEngine while building a report.
+ * Response model for compressDocumentOnline operation.
  */
-class ReportBuildOptions
+class CompressDocumentOnlineResponse
 {
-    /*
-     * Possible values of this enum
-     */
-    const NONE = 'None';
-    const ALLOW_MISSING_MEMBERS = 'AllowMissingMembers';
-    const REMOVE_EMPTY_PARAGRAPHS = 'RemoveEmptyParagraphs';
-    const INLINE_ERROR_MESSAGES = 'InlineErrorMessages';
-    const USE_LEGACY_HEADER_FOOTER_VISITING = 'UseLegacyHeaderFooterVisiting';
-    const RESPECT_JPEG_EXIF_ORIENTATION = 'RespectJpegExifOrientation';
+    public $model;
+    public $document;
 
     /*
-     * Gets allowable values of the enum
-     * @return string[]
+     * Initializes a new instance of the CompressDocumentOnlineResponse class.
+     *
      */
-    public static function getAllowableEnumValues()
+    public function __construct($model, $document)
     {
-        return [
-            self::NONE,
-            self::ALLOW_MISSING_MEMBERS,
-            self::REMOVE_EMPTY_PARAGRAPHS,
-            self::INLINE_ERROR_MESSAGES,
-            self::USE_LEGACY_HEADER_FOOTER_VISITING,
-            self::RESPECT_JPEG_EXIF_ORIENTATION
-        ];
+        $this->model = $model;
+        $this->document = $document;
+    }
+
+    /*
+     * The response model.
+     */
+    public function getmodel()
+    {
+        return $this->model;
+    }
+
+    /*
+     * The response model.
+     */
+    public function setmodel($value)
+    {
+        $this->model = $value;
+        return $this;
+    }
+    /*
+     * The document after modification.
+     */
+    public function getdocument()
+    {
+        return $this->document;
+    }
+
+    /*
+     * The document after modification.
+     */
+    public function setdocument($value)
+    {
+        $this->document = $value;
+        return $this;
     }
 }

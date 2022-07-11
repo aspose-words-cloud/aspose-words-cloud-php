@@ -2256,6 +2256,333 @@ class WordsApi implements Encryptor
     }
 
     /*
+     * Operation compressDocument
+     *
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
+     *
+     * @param Requests\compressDocumentRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\CompressResponse
+     */
+    public function compressDocument(Requests\compressDocumentRequest $request)
+    {
+        try {
+            list($response) = $this->compressDocumentWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->compressDocumentWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation compressDocumentWithHttpInfo
+     *
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
+     *
+     * @param Requests\compressDocumentRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\CompressResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function compressDocumentWithHttpInfo(Requests\compressDocumentRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\CompressResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\CompressResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation compressDocumentAsync
+     *
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
+     *
+     * @param Requests\compressDocumentRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function compressDocumentAsync(Requests\compressDocumentRequest $request) 
+    {
+        return $this->compressDocumentAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation compressDocumentAsyncWithHttpInfo
+     *
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
+     *
+     * @param Requests\compressDocumentRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function compressDocumentAsyncWithHttpInfo(Requests\compressDocumentRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\CompressResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation compressDocumentOnline
+     *
+     * Compress and resize images inside the document.
+     *
+     * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return CompressDocumentOnlineResponse
+     */
+    public function compressDocumentOnline(Requests\compressDocumentOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->compressDocumentOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->compressDocumentOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation compressDocumentOnlineWithHttpInfo
+     *
+     * Compress and resize images inside the document.
+     *
+     * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of CompressDocumentOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function compressDocumentOnlineWithHttpInfo(Requests\compressDocumentOnlineRequest $request)
+    {
+        $returnType = 'CompressDocumentOnlineResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $resp = $request->deserializeResponse($response);
+            return [
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'CompressDocumentOnlineResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation compressDocumentOnlineAsync
+     *
+     * Compress and resize images inside the document.
+     *
+     * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function compressDocumentOnlineAsync(Requests\compressDocumentOnlineRequest $request) 
+    {
+        return $this->compressDocumentOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation compressDocumentOnlineAsyncWithHttpInfo
+     *
+     * Compress and resize images inside the document.
+     *
+     * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function compressDocumentOnlineAsyncWithHttpInfo(Requests\compressDocumentOnlineRequest $request) 
+    {
+        $returnType = 'CompressDocumentOnlineResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
      * Operation convertDocument
      *
      * Converts a document on a local drive to the specified format.

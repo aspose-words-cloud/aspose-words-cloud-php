@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{AppendDocumentOnlineRequest, AppendDocumentRequest};
+use Aspose\Words\Model\Requests\{AppendDocumentOnlineRequest, AppendDocumentRequest, UploadFileRequest};
 use Aspose\Words\Model\{DocumentEntry, DocumentEntryList};
 use PHPUnit\Framework\Assert;
 

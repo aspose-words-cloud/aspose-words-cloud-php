@@ -63,19 +63,19 @@ class AppendDocumentTests extends BaseTestContext
 
 
         $uploadRequest = new UploadFileRequest($localFile,$remoteDataFolder."/".$remoteFileName,null);
-        $wordsApi->uploadFile($uploadRequest);
+        $this->words->uploadFile($uploadRequest);
         $uploadRequest1 = new UploadFileRequest($localFile1,$remoteDataFolder."/".$remoteFileName1,null);
-        $wordsApi->uploadFile($uploadRequest1);
+        $this->words->uploadFile($uploadRequest1);
         $uploadRequest2 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName2,null);
-        $wordsApi->uploadFile($uploadRequest2);
+        $this->words->uploadFile($uploadRequest2);
         $uploadRequest3 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName3,null);
-        $wordsApi->uploadFile($uploadRequest3);
+        $this->words->uploadFile($uploadRequest3);
         $uploadRequest4 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName4,null);
-        $wordsApi->uploadFile($uploadRequest4);
+        $this->words->uploadFile($uploadRequest4);
         $uploadRequest5 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName5,null);
-        $wordsApi->uploadFile($uploadRequest5);
+        $this->words->uploadFile($uploadRequest5);
         $uploadRequest6 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName6,null);
-        $wordsApi->uploadFile($uploadRequest6);
+        $this->words->uploadFile($uploadRequest6);
 
         $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName1,
@@ -122,7 +122,7 @@ class AppendDocumentTests extends BaseTestContext
             NULL
         );
 
-        $result = $wordsApi->appendDocument($request);
+        $result = $this->words->appendDocument($request);
     }
 
     /*

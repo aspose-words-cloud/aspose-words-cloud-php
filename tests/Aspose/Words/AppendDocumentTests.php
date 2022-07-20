@@ -62,42 +62,42 @@ class AppendDocumentTests extends BaseTestContext
         $outputFileName = "TestAppendDocument.docx";
 
 
-        $uploadRequest = new Aspose\Words\Model\Requests\UploadFileRequest($localFile,$remoteDataFolder."/".$remoteFileName,null);
+        $uploadRequest = new UploadFileRequest($localFile,$remoteDataFolder."/".$remoteFileName,null);
         $wordsApi->uploadFile($uploadRequest);
-        $uploadRequest1 = new Aspose\Words\Model\Requests\UploadFileRequest($localFile1,$remoteDataFolder."/".$remoteFileName1,null);
+        $uploadRequest1 = new UploadFileRequest($localFile1,$remoteDataFolder."/".$remoteFileName1,null);
         $wordsApi->uploadFile($uploadRequest1);
-        $uploadRequest2 = new Aspose\Words\Model\Requests\UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName2,null);
+        $uploadRequest2 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName2,null);
         $wordsApi->uploadFile($uploadRequest2);
-        $uploadRequest3 = new Aspose\Words\Model\Requests\UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName3,null);
+        $uploadRequest3 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName3,null);
         $wordsApi->uploadFile($uploadRequest3);
-        $uploadRequest4 = new Aspose\Words\Model\Requests\UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName4,null);
+        $uploadRequest4 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName4,null);
         $wordsApi->uploadFile($uploadRequest4);
-        $uploadRequest5 = new Aspose\Words\Model\Requests\UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName5,null);
+        $uploadRequest5 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName5,null);
         $wordsApi->uploadFile($uploadRequest5);
-        $uploadRequest6 = new Aspose\Words\Model\Requests\UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName6,null);
+        $uploadRequest6 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName6,null);
         $wordsApi->uploadFile($uploadRequest6);
 
-        $requestDocumentListDocumentEntries0 = new Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName1,
             "import_format_mode" => "KeepSourceFormatting",
         ));
-        $requestDocumentListDocumentEntries1 = new Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries1 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName2,
             "import_format_mode" => "KeepSourceFormatting",
         ));
-        $requestDocumentListDocumentEntries2 = new Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries2 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName3,
             "import_format_mode" => "KeepSourceFormatting",
         ));
-        $requestDocumentListDocumentEntries3 = new Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries3 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName4,
             "import_format_mode" => "KeepSourceFormatting",
         ));
-        $requestDocumentListDocumentEntries4 = new Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries4 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName5,
             "import_format_mode" => "KeepSourceFormatting",
         ));
-        $requestDocumentListDocumentEntries5 = new Aspose\Words\Model\DocumentEntry(array(
+        $requestDocumentListDocumentEntries5 = new DocumentEntry(array(
             "href" => $remoteDataFolder . "/" . $remoteFileName6,
             "import_format_mode" => "KeepSourceFormatting",
         ));
@@ -106,10 +106,10 @@ class AppendDocumentTests extends BaseTestContext
         $requestDocumentListDocumentEntries = [
             $requestDocumentListDocumentEntries0,$requestDocumentListDocumentEntries1,$requestDocumentListDocumentEntries2,$requestDocumentListDocumentEntries3,$requestDocumentListDocumentEntries4,$requestDocumentListDocumentEntries5,
         ];
-        $requestDocumentList = new Aspose\Words\Model\DocumentEntryList(array(
+        $requestDocumentList = new DocumentEntryList(array(
             "document_entries" => $requestDocumentListDocumentEntries,
         ));
-        $request = new Aspose\Words\Model\Requests\AppendDocumentRequest(
+        $request = new AppendDocumentRequest(
             $remoteFileName,
             $requestDocumentList,
             $remoteDataFolder,

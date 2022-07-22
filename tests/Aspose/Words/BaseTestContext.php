@@ -54,6 +54,7 @@ class BaseTestContext extends TestCase
          */
 
         $this->words = new WordsApi($creds["ClientId"], $creds["ClientSecret"], $creds["BaseUrl"]);
+        $this->words->getConfig()->setDebug(true);
     }
 
     public function getConfig() {

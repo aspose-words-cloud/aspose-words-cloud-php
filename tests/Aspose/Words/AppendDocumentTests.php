@@ -68,13 +68,13 @@ class AppendDocumentTests extends BaseTestContext
         $this->words->uploadFile($uploadRequest1);
         $uploadRequest2 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName2,null);
         $this->words->uploadFile($uploadRequest2);
-        $uploadRequest3 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName3,null);
+        $uploadRequest3 = new UploadFileRequest($localFile3,$remoteDataFolder."/".$remoteFileName3,null);
         $this->words->uploadFile($uploadRequest3);
-        $uploadRequest4 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName4,null);
+        $uploadRequest4 = new UploadFileRequest($localFile4,$remoteDataFolder."/".$remoteFileName4,null);
         $this->words->uploadFile($uploadRequest4);
-        $uploadRequest5 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName5,null);
+        $uploadRequest5 = new UploadFileRequest($localFile5,$remoteDataFolder."/".$remoteFileName5,null);
         $this->words->uploadFile($uploadRequest5);
-        $uploadRequest6 = new UploadFileRequest($localFile2,$remoteDataFolder."/".$remoteFileName6,null);
+        $uploadRequest6 = new UploadFileRequest($localFile6,$remoteDataFolder."/".$remoteFileName6,null);
         $this->words->uploadFile($uploadRequest6);
 
         $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
@@ -123,6 +123,8 @@ class AppendDocumentTests extends BaseTestContext
         );
 
         $result = $this->words->appendDocument($request);
+
+        Assert::assertTrue($result !== NULL);
     }
 
     /*

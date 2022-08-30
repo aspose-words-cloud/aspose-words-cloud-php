@@ -289,15 +289,6 @@ class ConvertDocumentRequest extends BaseApiRequest
         $headerParams = [];
         $httpBody = "";
         $filename = null;
-        // path params
-        if ($this->out_path !== null) {
-            $localName = lcfirst('OutPath');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->out_path), $resourcePath);
-        }
-        else {
-            $localName = lcfirst('OutPath');
-            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
-        }
 
         // remove empty path parameters
         $resourcePath = str_replace("//", "/", $resourcePath);
@@ -305,6 +296,16 @@ class ConvertDocumentRequest extends BaseApiRequest
         if ($this->format !== null) {
             $localName = lcfirst('Format');
             $localValue = is_bool($this->format) ? ($this->format ? 'true' : 'false') : $this->format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->out_path !== null) {
+            $localName = lcfirst('OutPath');
+            $localValue = is_bool($this->out_path) ? ($this->out_path ? 'true' : 'false') : $this->out_path;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

@@ -70,6 +70,21 @@ class ConvertDocumentRequest extends BaseApiRequest
     public $storage;
 
     /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public $load_encoding;
+
+    /*
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+     */
+    public $password;
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public $encrypted_password;
+
+    /*
      * Folder in filestorage with custom fonts.
      */
     public $fonts_location;
@@ -82,15 +97,21 @@ class ConvertDocumentRequest extends BaseApiRequest
      * @param string $out_path The path to the output document on a local storage.
      * @param string $file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
      * @param string $storage Original document storage.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+     * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $out_path = null, $file_name_field_value = null, $storage = null, $fonts_location = null)
+    public function __construct($document, $format, $out_path = null, $file_name_field_value = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $fonts_location = null)
     {
         $this->document = $document;
         $this->format = $format;
         $this->out_path = $out_path;
         $this->file_name_field_value = $file_name_field_value;
         $this->storage = $storage;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
         $this->fonts_location = $fonts_location;
     }
 
@@ -180,6 +201,57 @@ class ConvertDocumentRequest extends BaseApiRequest
     }
 
     /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function get_load_encoding()
+    {
+        return $this->load_encoding;
+    }
+
+    /*
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     */
+    public function set_load_encoding($value)
+    {
+        $this->load_encoding = $value;
+        return $this;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+     */
+    public function get_password()
+    {
+        return $this->password;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+     */
+    public function set_password($value)
+    {
+        $this->password = $value;
+        return $this;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public function get_encrypted_password()
+    {
+        return $this->encrypted_password;
+    }
+
+    /*
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     */
+    public function set_encrypted_password($value)
+    {
+        $this->encrypted_password = $value;
+        return $this;
+    }
+
+    /*
      * Folder in filestorage with custom fonts.
      */
     public function get_fonts_location()
@@ -254,6 +326,36 @@ class ConvertDocumentRequest extends BaseApiRequest
         if ($this->storage !== null) {
             $localName = lcfirst('Storage');
             $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($this->load_encoding) ? ($this->load_encoding ? 'true' : 'false') : $this->load_encoding;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

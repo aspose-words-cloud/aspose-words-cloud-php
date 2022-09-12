@@ -304,6 +304,23 @@ class DocumentEntryList extends BaseEntryList
     }
 
     /*
+     * Collect all FileReference variables to list
+     */
+    public function collectFilesContent($resultFilesContent)
+    {
+        $resultFilesContent = parent::collectFilesContent($resultFilesContent);
+        if ($this->getDocumentEntries() != null)
+        {
+            foreach ($this->getDocumentEntries() as &$element)
+            {
+                $resultFilesContent = $element->collectFilesContent($resultFilesContent);
+            }
+        }
+
+        return $resultFilesContent;
+    }
+
+    /*
      * Gets the string presentation of the object
      *
      * @return string

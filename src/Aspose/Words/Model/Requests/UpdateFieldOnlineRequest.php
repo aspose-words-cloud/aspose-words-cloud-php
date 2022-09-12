@@ -312,6 +312,7 @@ class UpdateFieldOnlineRequest extends BaseApiRequest
 
         $resourcePath = '/words/online/put/{nodePath}/fields/{index}';
         $formParams = [];
+        $filesContent = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
@@ -406,17 +407,24 @@ class UpdateFieldOnlineRequest extends BaseApiRequest
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
         // form params
         if ($this->document !== null) {
-            $multipart = true; 
             $filename = ObjectSerializer::toFormValue($this->document);
             $handle = fopen($filename, "rb");
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
-            $formParams['document'] = ['content' => $contents, 'mime' => 'application/octet-stream'];
+            array_push($formParams, ['name' => 'Document', 'content' => $contents, 'mime' => 'application/octet-stream']);
         }
         // form params
         if ($this->field !== null) {
-            $multipart = true; 
-            $formParams['field'] = ['content' => ObjectSerializer::toFormValue($this->field), 'mime' => 'application/json'];
+            array_push($formParams, ['name' => 'Field', 'content' => ObjectSerializer::toFormValue($this->field), 'mime' => 'application/json']);
+        }
+
+        foreach ($filesContent as $fileContent)
+        {
+            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+            $filesContent_handle = fopen($filesContent_filename, "rb");
+            $filesContent_fsize = filesize($filesContent_filename);
+            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
         }
 
         // body params
@@ -429,18 +437,18 @@ class UpdateFieldOnlineRequest extends BaseApiRequest
         // for model (json/xml)
         if (isset($_tempBody)) {
             $headerParams['Content-Type'] = $_tempBody['mime'];
-            if (gettype($_tempBody['content']) === 'string') {
-                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
-            } else {
+            if ($_tempBody['mime'] == 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            } else {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
             }
         } elseif (count($formParams) > 1) {
             $multipartContents = [];
-            foreach ($formParams as $formParamName => $formParamValue) {
+            foreach ($formParams as $formParam) {
                 $multipartContents[] = [
-                    'name' => $formParamName,
-                    'contents' => $formParamValue['content'],
-                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                    'name' => $formParam['name'],
+                    'contents' => $formParam['content'],
+                    'headers' => ['Content-Type' => $formParam['mime']]
                 ];
             }
             // for HTTP post (form)

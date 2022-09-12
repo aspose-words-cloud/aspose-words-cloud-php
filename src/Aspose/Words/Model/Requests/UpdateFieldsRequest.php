@@ -234,6 +234,7 @@ class UpdateFieldsRequest extends BaseApiRequest
 
         $resourcePath = '/words/{name}/updateFields';
         $formParams = [];
+        $filesContent = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
@@ -318,24 +319,37 @@ class UpdateFieldsRequest extends BaseApiRequest
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
 
+        foreach ($filesContent as $fileContent)
+        {
+            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+            $filesContent_handle = fopen($filesContent_filename, "rb");
+            $filesContent_fsize = filesize($filesContent_filename);
+            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+        }
+
         // body params
         $_tempBody = null;
+        if (count($formParams) == 1) {
+            $_tempBody = array_shift($formParams);
+        }
+
         $headerParams = [];
         // for model (json/xml)
         if (isset($_tempBody)) {
             $headerParams['Content-Type'] = $_tempBody['mime'];
-            if (gettype($_tempBody['content']) === 'string') {
-                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
-            } else {
+            if ($_tempBody['mime'] == 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody['content']));
+            } else {
+                $httpBody = ObjectSerializer::sanitizeForSerialization($_tempBody['content']);
             }
         } elseif (count($formParams) > 1) {
             $multipartContents = [];
-            foreach ($formParams as $formParamName => $formParamValue) {
+            foreach ($formParams as $formParam) {
                 $multipartContents[] = [
-                    'name' => $formParamName,
-                    'contents' => $formParamValue['content'],
-                    'headers' => ['Content-Type' => $formParamValue['mime']]
+                    'name' => $formParam['name'],
+                    'contents' => $formParam['content'],
+                    'headers' => ['Content-Type' => $formParam['mime']]
                 ];
             }
             // for HTTP post (form)

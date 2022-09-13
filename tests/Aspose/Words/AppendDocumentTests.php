@@ -52,7 +52,7 @@ class AppendDocumentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestDocumentListDocumentEntries0FileReference = FileReference.fromRemoteFilePath($remoteDataFolder . "/" . $remoteFileName);
+        $requestDocumentListDocumentEntries0FileReference = FileReference::fromRemoteFilePath($remoteDataFolder . "/" . $remoteFileName);
         $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
             "file_reference" => $requestDocumentListDocumentEntries0FileReference,
             "import_format_mode" => "KeepSourceFormatting",
@@ -91,7 +91,7 @@ class AppendDocumentTests extends BaseTestContext
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestDocumentListDocumentEntries0FileReferenceStream = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestDocumentListDocumentEntries0FileReference = FileReference.fromLocalFileContent($requestDocumentListDocumentEntries0FileReferenceStream);
+        $requestDocumentListDocumentEntries0FileReference = FileReference::fromLocalFileContent($requestDocumentListDocumentEntries0FileReferenceStream);
         $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
             "file_reference" => $requestDocumentListDocumentEntries0FileReference,
             "import_format_mode" => "KeepSourceFormatting",

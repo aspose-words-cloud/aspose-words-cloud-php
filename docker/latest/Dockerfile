@@ -1,3 +1,3 @@
-FROM php:7.4
+FROM php:latest
 RUN apt-get update
 RUN apt install zip unzip 

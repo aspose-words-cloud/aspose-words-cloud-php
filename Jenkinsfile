@@ -43,7 +43,8 @@ def runtests(dockerImageVersion)
                             sh "rm -rf src"
                             sh "mv composer-test.json composer.json"
                         }
-                        sh "php composer.phar install --no-interaction"
+						sh "export COMPOSER_PROCESS_TIMEOUT=2000"
+                        sh "composer install --no-interaction"
                         sh "mkdir testReports"
                         try {
                             sh "php -dmemory_limit=1G ./vendor/bin/phpcs --report=checkstyle --report-file=testReports/codeStyleErrors ./src ./features/bootstrap || exit 0"
@@ -53,8 +54,7 @@ def runtests(dockerImageVersion)
                 
                     stage('tests'){   
                         try {
-                            sh "php composer.phar install --no-interaction"
-                            sh "php composer.phar dump-autoload -o"
+                            sh "composer dump-autoload -o"
                             sh "php vendor/bin/phpunit -c phpunit.xml"
                         } finally {
                             junit 'testReports/logfile.xml'

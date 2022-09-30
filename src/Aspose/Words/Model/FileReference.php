@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TableCellInsertDto.php">
+ * <copyright company="Aspose" file="FileReference.php">
  *   Copyright (c) 2022 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -25,17 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------
  */
-
 namespace Aspose\Words\Model;
 use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * TableCellInsertDto
- *
- * @description DTO container with a table cell.
+ * File Content
  */
-class TableCellInsertDto implements ArrayAccess
+class FileReference implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +41,7 @@ class TableCellInsertDto implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "TableCellInsertDto";
+    protected static $swaggerModelName = "FileReference";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,7 +49,8 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'insert_after' => 'int'
+        'source' => 'string',
+        'reference' => 'string'
     ];
 
     /*
@@ -61,7 +59,8 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'insert_after' => 'null'
+        'source' => 'null',
+        'reference' => 'null'
     ];
 
     /*
@@ -91,7 +90,8 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'insert_after' => 'InsertAfter'
+        'source' => 'Source',
+        'reference' => 'Reference'
     ];
 
     /*
@@ -100,7 +100,6 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'insert_after' => 'setInsertAfter'
     ];
 
     /*
@@ -109,7 +108,8 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'insert_after' => 'getInsertAfter'
+        'source' => 'getSource',
+        'reference' => 'getReference'
     ];
 
     /*
@@ -153,8 +153,6 @@ class TableCellInsertDto implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-
-
     /*
      * Associative array for storing property values
      *
@@ -163,14 +161,26 @@ class TableCellInsertDto implements ArrayAccess
     protected $container = [];
 
     /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * Content data parameter
      */
-    public function __construct(array $data = null)
+    protected $content;
+
+    /*
+     * Constructor
+     */
+    private function __construct($source, $reference, $content)
     {
-        $this->container['insert_after'] = isset($data['insert_after']) ? $data['insert_after'] : null;
+        $this->container['source'] = $source;
+        $this->container['reference'] = $reference;
+        $this->content = $content;
+    }
+
+    public static function fromRemoteFilePath( $remoteFilePath ) {
+        return new self('Storage', $remoteFilePath, null);
+    }
+
+    public static function fromLocalFileContent( $localFileContent ) {
+        return new self('Request', ObjectSerializer::guidv4(), $localFileContent);
     }
 
     /*
@@ -197,28 +207,32 @@ class TableCellInsertDto implements ArrayAccess
     }
 
     /*
-     * Gets insert_after
+     * Gets source type
      *
-     * @return int
+     * @return string
      */
-    public function getInsertAfter()
+    public function getSource()
     {
-        return $this->container['insert_after'];
+        return $this->container['source'];
     }
 
     /*
-     * Sets insert_after
+     * Gets file reference
      *
-     * @param int $insert_after Gets or sets the 0-based index, the table cell will be inserted after.
-     *
-     * @return $this
+     * @return string
      */
-    public function setInsertAfter($insert_after)
+    public function getReference()
     {
-        $this->container['insert_after'] = $insert_after;
-        return $this;
+        return $this->container['reference'];
     }
 
+    /*
+     * Gets content
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
 
     /*
      * Returns true if offset exists. False otherwise.
@@ -227,7 +241,7 @@ class TableCellInsertDto implements ArrayAccess
      *
      * @return boolean
      */
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -240,7 +254,7 @@ class TableCellInsertDto implements ArrayAccess
      *
      * @return mixed
      */
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -254,7 +268,7 @@ class TableCellInsertDto implements ArrayAccess
      *
      * @return void
      */
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -271,7 +285,7 @@ class TableCellInsertDto implements ArrayAccess
      *
      * @return void
      */
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -282,6 +296,10 @@ class TableCellInsertDto implements ArrayAccess
      */
     public function collectFilesContent($resultFilesContent)
     {
+        if ($this->getSource() == 'Request') {
+            array_push($resultFilesContent, $this);
+        }
+
         return $resultFilesContent;
     }
 
@@ -302,4 +320,3 @@ class TableCellInsertDto implements ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-

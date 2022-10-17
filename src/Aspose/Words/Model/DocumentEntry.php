@@ -27,7 +27,6 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
@@ -35,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Represents a document which will be appended to the original resource document.
  */
-class DocumentEntry implements ArrayAccess
+class DocumentEntry extends BaseEntry
 {
     const DISCRIMINATOR = null;
 
@@ -53,7 +52,6 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'encrypted_password' => 'string',
-        'href' => 'string',
         'import_format_mode' => 'string'
     ];
 
@@ -64,7 +62,6 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'encrypted_password' => 'null',
-        'href' => 'null',
         'import_format_mode' => 'null'
     ];
 
@@ -75,7 +72,7 @@ class DocumentEntry implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -85,7 +82,7 @@ class DocumentEntry implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -96,7 +93,6 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $attributeMap = [
         'encrypted_password' => 'EncryptedPassword',
-        'href' => 'Href',
         'import_format_mode' => 'ImportFormatMode'
     ];
 
@@ -107,7 +103,6 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $setters = [
         'encrypted_password' => 'setEncryptedPassword',
-        'href' => 'setHref',
         'import_format_mode' => 'setImportFormatMode'
     ];
 
@@ -118,7 +113,6 @@ class DocumentEntry implements ArrayAccess
      */
     protected static $getters = [
         'encrypted_password' => 'getEncryptedPassword',
-        'href' => 'getHref',
         'import_format_mode' => 'getImportFormatMode'
     ];
 
@@ -130,7 +124,7 @@ class DocumentEntry implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -140,7 +134,7 @@ class DocumentEntry implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -150,7 +144,7 @@ class DocumentEntry implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -166,13 +160,6 @@ class DocumentEntry implements ArrayAccess
 
 
     /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-
-    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -180,8 +167,8 @@ class DocumentEntry implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
         $this->container['encrypted_password'] = isset($data['encrypted_password']) ? $data['encrypted_password'] : null;
-        $this->container['href'] = isset($data['href']) ? $data['href'] : null;
         $this->container['import_format_mode'] = isset($data['import_format_mode']) ? $data['import_format_mode'] : null;
     }
 
@@ -192,8 +179,7 @@ class DocumentEntry implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
+        $invalidProperties = parent::listInvalidProperties();
         return $invalidProperties;
     }
 
@@ -205,6 +191,10 @@ class DocumentEntry implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
+
         return true;
     }
 
@@ -228,30 +218,6 @@ class DocumentEntry implements ArrayAccess
     public function setEncryptedPassword($encrypted_password)
     {
         $this->container['encrypted_password'] = $encrypted_password;
-        return $this;
-    }
-
-
-    /*
-     * Gets href
-     *
-     * @return string
-     */
-    public function getHref()
-    {
-        return $this->container['href'];
-    }
-
-    /*
-     * Sets href
-     *
-     * @param string $href Gets or sets the path to document to append at the server.
-     *
-     * @return $this
-     */
-    public function setHref($href)
-    {
-        $this->container['href'] = $href;
         return $this;
     }
 
@@ -335,6 +301,15 @@ class DocumentEntry implements ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /*
+     * Collect all FileReference variables to list
+     */
+    public function collectFilesContent($resultFilesContent)
+    {
+        $resultFilesContent = parent::collectFilesContent($resultFilesContent);
+        return $resultFilesContent;
     }
 
     /*

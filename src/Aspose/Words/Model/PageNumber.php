@@ -55,6 +55,7 @@ class PageNumber implements ArrayAccess
         'alignment' => 'string',
         'format' => 'string',
         'is_top' => 'bool',
+        'page_starting_number' => 'int',
         'set_page_number_on_first_page' => 'bool'
     ];
 
@@ -67,6 +68,7 @@ class PageNumber implements ArrayAccess
         'alignment' => 'null',
         'format' => 'null',
         'is_top' => 'null',
+        'page_starting_number' => 'null',
         'set_page_number_on_first_page' => 'null'
     ];
 
@@ -100,6 +102,7 @@ class PageNumber implements ArrayAccess
         'alignment' => 'Alignment',
         'format' => 'Format',
         'is_top' => 'IsTop',
+        'page_starting_number' => 'PageStartingNumber',
         'set_page_number_on_first_page' => 'SetPageNumberOnFirstPage'
     ];
 
@@ -112,6 +115,7 @@ class PageNumber implements ArrayAccess
         'alignment' => 'setAlignment',
         'format' => 'setFormat',
         'is_top' => 'setIsTop',
+        'page_starting_number' => 'setPageStartingNumber',
         'set_page_number_on_first_page' => 'setSetPageNumberOnFirstPage'
     ];
 
@@ -124,6 +128,7 @@ class PageNumber implements ArrayAccess
         'alignment' => 'getAlignment',
         'format' => 'getFormat',
         'is_top' => 'getIsTop',
+        'page_starting_number' => 'getPageStartingNumber',
         'set_page_number_on_first_page' => 'getSetPageNumberOnFirstPage'
     ];
 
@@ -188,6 +193,7 @@ class PageNumber implements ArrayAccess
         $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
         $this->container['format'] = isset($data['format']) ? $data['format'] : null;
         $this->container['is_top'] = isset($data['is_top']) ? $data['is_top'] : null;
+        $this->container['page_starting_number'] = isset($data['page_starting_number']) ? $data['page_starting_number'] : null;
         $this->container['set_page_number_on_first_page'] = isset($data['set_page_number_on_first_page']) ? $data['set_page_number_on_first_page'] : null;
     }
 
@@ -287,6 +293,30 @@ class PageNumber implements ArrayAccess
 
 
     /*
+     * Gets page_starting_number
+     *
+     * @return int
+     */
+    public function getPageStartingNumber()
+    {
+        return $this->container['page_starting_number'];
+    }
+
+    /*
+     * Sets page_starting_number
+     *
+     * @param int $page_starting_number Gets or sets the starting page number of the document.
+     *
+     * @return $this
+     */
+    public function setPageStartingNumber($page_starting_number)
+    {
+        $this->container['page_starting_number'] = $page_starting_number;
+        return $this;
+    }
+
+
+    /*
      * Gets set_page_number_on_first_page
      *
      * @return bool
@@ -365,6 +395,14 @@ class PageNumber implements ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /*
+     * Collect all FileReference variables to list
+     */
+    public function collectFilesContent($resultFilesContent)
+    {
+        return $resultFilesContent;
     }
 
     /*

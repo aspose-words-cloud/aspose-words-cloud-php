@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{AppendDocumentOnlineRequest, AppendDocumentRequest};
-use Aspose\Words\Model\{DocumentEntry, DocumentEntryList};
+use Aspose\Words\Model\{DocumentEntry, DocumentEntryList, FileReference};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -52,8 +52,9 @@ class AppendDocumentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
+        $requestDocumentListDocumentEntries0FileReference = FileReference::fromRemoteFilePath($remoteDataFolder . "/" . $remoteFileName);
         $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
-            "href" => $remoteDataFolder . "/" . $remoteFileName,
+            "file_reference" => $requestDocumentListDocumentEntries0FileReference,
             "import_format_mode" => "KeepSourceFormatting",
         ));
         $requestDocumentListDocumentEntries = [
@@ -86,18 +87,13 @@ class AppendDocumentTests extends BaseTestContext
      */
     public function testAppendDocumentOnline()
     {
-        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/AppendDocument";
         $localFile = "Common/test_multi_pages.docx";
-        $remoteFileName = "TestAppendDocument.docx";
-
-        $this->uploadFile(
-            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
-            $remoteDataFolder . "/" . $remoteFileName
-        );
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestDocumentListDocumentEntries0FileReferenceStream = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestDocumentListDocumentEntries0FileReference = FileReference::fromLocalFileContent($requestDocumentListDocumentEntries0FileReferenceStream);
         $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
-            "href" => $remoteDataFolder . "/" . $remoteFileName,
+            "file_reference" => $requestDocumentListDocumentEntries0FileReference,
             "import_format_mode" => "KeepSourceFormatting",
         ));
         $requestDocumentListDocumentEntries = [

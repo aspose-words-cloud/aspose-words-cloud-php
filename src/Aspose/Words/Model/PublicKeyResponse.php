@@ -304,6 +304,14 @@ class PublicKeyResponse extends WordsResponse
     }
 
     /*
+     * Collect all FileReference variables to list
+     */
+    public function collectFilesContent($resultFilesContent)
+    {
+        return $resultFilesContent;
+    }
+
+    /*
      * Gets the string presentation of the object
      *
      * @return string

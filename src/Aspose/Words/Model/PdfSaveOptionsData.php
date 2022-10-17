@@ -51,6 +51,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'cache_header_footer_shapes' => 'bool',
         'compliance' => 'string',
         'create_note_hyperlinks' => 'bool',
         'custom_properties_export' => 'string',
@@ -84,6 +85,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'cache_header_footer_shapes' => 'null',
         'compliance' => 'null',
         'create_note_hyperlinks' => 'null',
         'custom_properties_export' => 'null',
@@ -138,6 +140,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'cache_header_footer_shapes' => 'CacheHeaderFooterShapes',
         'compliance' => 'Compliance',
         'create_note_hyperlinks' => 'CreateNoteHyperlinks',
         'custom_properties_export' => 'CustomPropertiesExport',
@@ -171,6 +174,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'cache_header_footer_shapes' => 'setCacheHeaderFooterShapes',
         'compliance' => 'setCompliance',
         'create_note_hyperlinks' => 'setCreateNoteHyperlinks',
         'custom_properties_export' => 'setCustomPropertiesExport',
@@ -204,6 +208,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'cache_header_footer_shapes' => 'getCacheHeaderFooterShapes',
         'compliance' => 'getCompliance',
         'create_note_hyperlinks' => 'getCreateNoteHyperlinks',
         'custom_properties_export' => 'getCustomPropertiesExport',
@@ -429,6 +434,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['cache_header_footer_shapes'] = isset($data['cache_header_footer_shapes']) ? $data['cache_header_footer_shapes'] : null;
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
         $this->container['create_note_hyperlinks'] = isset($data['create_note_hyperlinks']) ? $data['create_note_hyperlinks'] : null;
         $this->container['custom_properties_export'] = isset($data['custom_properties_export']) ? $data['custom_properties_export'] : null;
@@ -588,6 +594,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
 
         return true;
     }
+
+    /*
+     * Gets cache_header_footer_shapes
+     *
+     * @return bool
+     */
+    public function getCacheHeaderFooterShapes()
+    {
+        return $this->container['cache_header_footer_shapes'];
+    }
+
+    /*
+     * Sets cache_header_footer_shapes
+     *
+     * @param bool $cache_header_footer_shapes Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.
+     *
+     * @return $this
+     */
+    public function setCacheHeaderFooterShapes($cache_header_footer_shapes)
+    {
+        $this->container['cache_header_footer_shapes'] = $cache_header_footer_shapes;
+        return $this;
+    }
+
 
     /*
      * Gets compliance
@@ -1276,6 +1306,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /*
+     * Collect all FileReference variables to list
+     */
+    public function collectFilesContent($resultFilesContent)
+    {
+        return $resultFilesContent;
     }
 
     /*

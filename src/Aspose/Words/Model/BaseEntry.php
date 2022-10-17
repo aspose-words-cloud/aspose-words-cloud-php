@@ -33,9 +33,9 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BaseEntry
  *
- * @description Represents a entry which will be appended to the original resource document.
+ * @description Represents a base class for document which will be appended to the original resource document.
  */
-class BaseEntry implements ArrayAccess
+abstract class BaseEntry implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class BaseEntry implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'href' => 'string'
+        'file_reference' => '\Aspose\Words\Model\FileReference'
     ];
 
     /*
@@ -61,7 +61,7 @@ class BaseEntry implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'href' => 'null'
+        'file_reference' => 'null'
     ];
 
     /*
@@ -91,7 +91,7 @@ class BaseEntry implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'href' => 'Href'
+        'file_reference' => 'FileReference'
     ];
 
     /*
@@ -100,7 +100,7 @@ class BaseEntry implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'href' => 'setHref'
+        'file_reference' => 'setFileReference'
     ];
 
     /*
@@ -109,7 +109,7 @@ class BaseEntry implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'href' => 'getHref'
+        'file_reference' => 'getFileReference'
     ];
 
     /*
@@ -170,7 +170,7 @@ class BaseEntry implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['href'] = isset($data['href']) ? $data['href'] : null;
+        $this->container['file_reference'] = isset($data['file_reference']) ? $data['file_reference'] : null;
     }
 
     /*
@@ -197,25 +197,25 @@ class BaseEntry implements ArrayAccess
     }
 
     /*
-     * Gets href
+     * Gets file_reference
      *
-     * @return string
+     * @return \Aspose\Words\Model\FileReference
      */
-    public function getHref()
+    public function getFileReference()
     {
-        return $this->container['href'];
+        return $this->container['file_reference'];
     }
 
     /*
-     * Sets href
+     * Sets file_reference
      *
-     * @param string $href Gets or sets the path to entry to append at the server.
+     * @param \Aspose\Words\Model\FileReference $file_reference Gets or sets the file reference.
      *
      * @return $this
      */
-    public function setHref($href)
+    public function setFileReference($file_reference)
     {
-        $this->container['href'] = $href;
+        $this->container['file_reference'] = $file_reference;
         return $this;
     }
 
@@ -275,6 +275,19 @@ class BaseEntry implements ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /*
+     * Collect all FileReference variables to list
+     */
+    public function collectFilesContent($resultFilesContent)
+    {
+        if ($this->getFileReference() != null)
+        {
+            $resultFilesContent = $this->getFileReference()->collectFilesContent($resultFilesContent);
+        }
+
+        return $resultFilesContent;
     }
 
     /*

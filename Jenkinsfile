@@ -43,6 +43,7 @@ def runtests(dockerImageVersion)
                             sh "rm -rf src"
                             sh "mv composer-test.json composer.json"
 							sh "php fix_php_ini.php"
+							sh "composer diagnose"
                         }
                         sh "composer install --no-interaction --no-cache -v"
                         sh "mkdir testReports"

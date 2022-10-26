@@ -42,8 +42,9 @@ def runtests(dockerImageVersion)
                         if (params.packageTesting) {
                             sh "rm -rf src"
                             sh "mv composer-test.json composer.json"
+							sh "php fix_php_ini.php"
                         }
-                        sh "COMPOSER_PROCESS_TIMEOUT=2000 composer install --no-interaction --no-cache -v"
+                        sh "composer install --no-interaction --no-cache -v"
                         sh "mkdir testReports"
                         try {
                             sh "php -dmemory_limit=1G ./vendor/bin/phpcs --report=checkstyle --report-file=testReports/codeStyleErrors ./src ./features/bootstrap || exit 0"

@@ -33,9 +33,6 @@
 		"behat/behat": "3.10.0",
 		"friendsofphp/php-cs-fixer": "3.0.*"
     },
-	"config": {
-		"process-timeout": 0
-	},
 	"autoload": {
         "psr-4": {
             "Aspose\\Words\\Tests\\": "tests/Aspose/Words"

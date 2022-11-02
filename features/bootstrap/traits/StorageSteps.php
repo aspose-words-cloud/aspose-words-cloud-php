@@ -90,6 +90,8 @@ trait StorageSteps
         }
 
         $deleteRequest = new \Aspose\Words\Model\Requests\DeleteFileRequest($remotePath);
-        $this->context->get_api()->deleteFile($deleteRequest);
+        try {
+            $this->context->get_api()->deleteFile($deleteRequest);
+        } catch (Exception $e) { }
     }
 }

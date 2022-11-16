@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CsvDataLoadOptions
  *
- * @description Represents options for parsing CSV data.
+ * @description Represents options for parsing CSV data. To learn more, visit the LINQ Reporting Engine documentation article.
  */
 class CsvDataLoadOptions implements ArrayAccess
 {

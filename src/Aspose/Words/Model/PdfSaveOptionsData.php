@@ -51,13 +51,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'cache_header_footer_shapes' => 'bool',
+        'cache_background_graphics' => 'bool',
         'compliance' => 'string',
         'create_note_hyperlinks' => 'bool',
         'custom_properties_export' => 'string',
         'digital_signature_details' => '\Aspose\Words\Model\PdfDigitalSignatureDetailsData',
         'display_doc_title' => 'bool',
         'downsample_options' => '\Aspose\Words\Model\DownsampleOptionsData',
+        'embed_attachments' => 'bool',
         'embed_full_fonts' => 'bool',
         'encryption_details' => '\Aspose\Words\Model\PdfEncryptionDetailsData',
         'export_document_structure' => 'bool',
@@ -85,13 +86,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'cache_header_footer_shapes' => 'null',
+        'cache_background_graphics' => 'null',
         'compliance' => 'null',
         'create_note_hyperlinks' => 'null',
         'custom_properties_export' => 'null',
         'digital_signature_details' => 'null',
         'display_doc_title' => 'null',
         'downsample_options' => 'null',
+        'embed_attachments' => 'null',
         'embed_full_fonts' => 'null',
         'encryption_details' => 'null',
         'export_document_structure' => 'null',
@@ -140,13 +142,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'cache_header_footer_shapes' => 'CacheHeaderFooterShapes',
+        'cache_background_graphics' => 'CacheBackgroundGraphics',
         'compliance' => 'Compliance',
         'create_note_hyperlinks' => 'CreateNoteHyperlinks',
         'custom_properties_export' => 'CustomPropertiesExport',
         'digital_signature_details' => 'DigitalSignatureDetails',
         'display_doc_title' => 'DisplayDocTitle',
         'downsample_options' => 'DownsampleOptions',
+        'embed_attachments' => 'EmbedAttachments',
         'embed_full_fonts' => 'EmbedFullFonts',
         'encryption_details' => 'EncryptionDetails',
         'export_document_structure' => 'ExportDocumentStructure',
@@ -174,13 +177,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'cache_header_footer_shapes' => 'setCacheHeaderFooterShapes',
+        'cache_background_graphics' => 'setCacheBackgroundGraphics',
         'compliance' => 'setCompliance',
         'create_note_hyperlinks' => 'setCreateNoteHyperlinks',
         'custom_properties_export' => 'setCustomPropertiesExport',
         'digital_signature_details' => 'setDigitalSignatureDetails',
         'display_doc_title' => 'setDisplayDocTitle',
         'downsample_options' => 'setDownsampleOptions',
+        'embed_attachments' => 'setEmbedAttachments',
         'embed_full_fonts' => 'setEmbedFullFonts',
         'encryption_details' => 'setEncryptionDetails',
         'export_document_structure' => 'setExportDocumentStructure',
@@ -208,13 +212,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'cache_header_footer_shapes' => 'getCacheHeaderFooterShapes',
+        'cache_background_graphics' => 'getCacheBackgroundGraphics',
         'compliance' => 'getCompliance',
         'create_note_hyperlinks' => 'getCreateNoteHyperlinks',
         'custom_properties_export' => 'getCustomPropertiesExport',
         'digital_signature_details' => 'getDigitalSignatureDetails',
         'display_doc_title' => 'getDisplayDocTitle',
         'downsample_options' => 'getDownsampleOptions',
+        'embed_attachments' => 'getEmbedAttachments',
         'embed_full_fonts' => 'getEmbedFullFonts',
         'encryption_details' => 'getEncryptionDetails',
         'export_document_structure' => 'getExportDocumentStructure',
@@ -434,13 +439,14 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['cache_header_footer_shapes'] = isset($data['cache_header_footer_shapes']) ? $data['cache_header_footer_shapes'] : null;
+        $this->container['cache_background_graphics'] = isset($data['cache_background_graphics']) ? $data['cache_background_graphics'] : null;
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
         $this->container['create_note_hyperlinks'] = isset($data['create_note_hyperlinks']) ? $data['create_note_hyperlinks'] : null;
         $this->container['custom_properties_export'] = isset($data['custom_properties_export']) ? $data['custom_properties_export'] : null;
         $this->container['digital_signature_details'] = isset($data['digital_signature_details']) ? $data['digital_signature_details'] : null;
         $this->container['display_doc_title'] = isset($data['display_doc_title']) ? $data['display_doc_title'] : null;
         $this->container['downsample_options'] = isset($data['downsample_options']) ? $data['downsample_options'] : null;
+        $this->container['embed_attachments'] = isset($data['embed_attachments']) ? $data['embed_attachments'] : null;
         $this->container['embed_full_fonts'] = isset($data['embed_full_fonts']) ? $data['embed_full_fonts'] : null;
         $this->container['encryption_details'] = isset($data['encryption_details']) ? $data['encryption_details'] : null;
         $this->container['export_document_structure'] = isset($data['export_document_structure']) ? $data['export_document_structure'] : null;
@@ -596,25 +602,25 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Gets cache_header_footer_shapes
+     * Gets cache_background_graphics
      *
      * @return bool
      */
-    public function getCacheHeaderFooterShapes()
+    public function getCacheBackgroundGraphics()
     {
-        return $this->container['cache_header_footer_shapes'];
+        return $this->container['cache_background_graphics'];
     }
 
     /*
-     * Sets cache_header_footer_shapes
+     * Sets cache_background_graphics
      *
-     * @param bool $cache_header_footer_shapes Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.
+     * @param bool $cache_background_graphics Gets or sets a value determining whether or not to cache graphics placed in document's background.
      *
      * @return $this
      */
-    public function setCacheHeaderFooterShapes($cache_header_footer_shapes)
+    public function setCacheBackgroundGraphics($cache_background_graphics)
     {
-        $this->container['cache_header_footer_shapes'] = $cache_header_footer_shapes;
+        $this->container['cache_background_graphics'] = $cache_background_graphics;
         return $this;
     }
 
@@ -767,6 +773,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setDownsampleOptions($downsample_options)
     {
         $this->container['downsample_options'] = $downsample_options;
+        return $this;
+    }
+
+
+    /*
+     * Gets embed_attachments
+     *
+     * @return bool
+     */
+    public function getEmbedAttachments()
+    {
+        return $this->container['embed_attachments'];
+    }
+
+    /*
+     * Sets embed_attachments
+     *
+     * @param bool $embed_attachments Gets or sets a value determining whether or not to embed attachments to the PDF document.
+     *
+     * @return $this
+     */
+    public function setEmbedAttachments($embed_attachments)
+    {
+        $this->container['embed_attachments'] = $embed_attachments;
         return $this;
     }
 

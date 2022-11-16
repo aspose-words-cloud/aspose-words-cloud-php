@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * XmlDataLoadOptions
  *
- * @description Represents options for XML data loading.
+ * @description Represents options for XML data loading. To learn more, visit the LINQ Reporting Engine documentation article.
  */
 class XmlDataLoadOptions implements ArrayAccess
 {

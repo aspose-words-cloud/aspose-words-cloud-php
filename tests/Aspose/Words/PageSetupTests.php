@@ -177,7 +177,7 @@ class PageSetupTests extends BaseTestContext
         $request = new RenderPageRequest(
             $remoteFileName,
             1,
-            "bmp",
+            "jpg",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -201,7 +201,7 @@ class PageSetupTests extends BaseTestContext
         $request = new RenderPageOnlineRequest(
             $requestDocument,
             1,
-            "bmp",
+            "jpg",
             NULL,
             NULL,
             NULL,

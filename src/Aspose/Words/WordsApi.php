@@ -11660,6 +11660,303 @@ class WordsApi implements Encryptor
     }
 
     /*
+     * Operation deleteStructuredDocumentTag
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteStructuredDocumentTag(Requests\deleteStructuredDocumentTagRequest $request)
+    {
+        try {
+    $this->deleteStructuredDocumentTagWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+    $this->deleteStructuredDocumentTagWithHttpInfo($request);
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation deleteStructuredDocumentTagWithHttpInfo
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function deleteStructuredDocumentTagWithHttpInfo(Requests\deleteStructuredDocumentTagRequest $request)
+    {
+        $returnType = 'void';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation deleteStructuredDocumentTagAsync
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteStructuredDocumentTagAsync(Requests\deleteStructuredDocumentTagRequest $request) 
+    {
+        return $this->deleteStructuredDocumentTagAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation deleteStructuredDocumentTagAsyncWithHttpInfo
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function deleteStructuredDocumentTagAsyncWithHttpInfo(Requests\deleteStructuredDocumentTagRequest $request) 
+    {
+        $returnType = 'void';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation deleteStructuredDocumentTagOnline
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return FILES_COLLECTION
+     */
+    public function deleteStructuredDocumentTagOnline(Requests\deleteStructuredDocumentTagOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->deleteStructuredDocumentTagOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->deleteStructuredDocumentTagOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation deleteStructuredDocumentTagOnlineWithHttpInfo
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of FILES_COLLECTION, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function deleteStructuredDocumentTagOnlineWithHttpInfo(Requests\deleteStructuredDocumentTagOnlineRequest $request)
+    {
+        $returnType = 'FILES_COLLECTION';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'FILES_COLLECTION', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation deleteStructuredDocumentTagOnlineAsync
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteStructuredDocumentTagOnlineAsync(Requests\deleteStructuredDocumentTagOnlineRequest $request) 
+    {
+        return $this->deleteStructuredDocumentTagOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation deleteStructuredDocumentTagOnlineAsyncWithHttpInfo
+     *
+     * Removes a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\deleteStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function deleteStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\deleteStructuredDocumentTagOnlineRequest $request) 
+    {
+        $returnType = 'FILES_COLLECTION';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
      * Operation deleteTable
      *
      * Removes a table from the document node.
@@ -29368,6 +29665,686 @@ class WordsApi implements Encryptor
     }
 
     /*
+     * Operation getStructuredDocumentTag
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StructuredDocumentTagResponse
+     */
+    public function getStructuredDocumentTag(Requests\getStructuredDocumentTagRequest $request)
+    {
+        try {
+            list($response) = $this->getStructuredDocumentTagWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->getStructuredDocumentTagWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation getStructuredDocumentTagWithHttpInfo
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StructuredDocumentTagResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function getStructuredDocumentTagWithHttpInfo(Requests\getStructuredDocumentTagRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StructuredDocumentTagResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getStructuredDocumentTagAsync
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStructuredDocumentTagAsync(Requests\getStructuredDocumentTagRequest $request) 
+    {
+        return $this->getStructuredDocumentTagAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getStructuredDocumentTagAsyncWithHttpInfo
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function getStructuredDocumentTagAsyncWithHttpInfo(Requests\getStructuredDocumentTagRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation getStructuredDocumentTagOnline
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StructuredDocumentTagResponse
+     */
+    public function getStructuredDocumentTagOnline(Requests\getStructuredDocumentTagOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->getStructuredDocumentTagOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->getStructuredDocumentTagOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation getStructuredDocumentTagOnlineWithHttpInfo
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StructuredDocumentTagResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function getStructuredDocumentTagOnlineWithHttpInfo(Requests\getStructuredDocumentTagOnlineRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StructuredDocumentTagResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getStructuredDocumentTagOnlineAsync
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStructuredDocumentTagOnlineAsync(Requests\getStructuredDocumentTagOnlineRequest $request) 
+    {
+        return $this->getStructuredDocumentTagOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getStructuredDocumentTagOnlineAsyncWithHttpInfo
+     *
+     * Reads a StructuredDocumentTag (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function getStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\getStructuredDocumentTagOnlineRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation getStructuredDocumentTags
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StructuredDocumentTagsResponse
+     */
+    public function getStructuredDocumentTags(Requests\getStructuredDocumentTagsRequest $request)
+    {
+        try {
+            list($response) = $this->getStructuredDocumentTagsWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->getStructuredDocumentTagsWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation getStructuredDocumentTagsWithHttpInfo
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StructuredDocumentTagsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function getStructuredDocumentTagsWithHttpInfo(Requests\getStructuredDocumentTagsRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagsResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StructuredDocumentTagsResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getStructuredDocumentTagsAsync
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStructuredDocumentTagsAsync(Requests\getStructuredDocumentTagsRequest $request) 
+    {
+        return $this->getStructuredDocumentTagsAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getStructuredDocumentTagsAsyncWithHttpInfo
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function getStructuredDocumentTagsAsyncWithHttpInfo(Requests\getStructuredDocumentTagsRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagsResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation getStructuredDocumentTagsOnline
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StructuredDocumentTagsResponse
+     */
+    public function getStructuredDocumentTagsOnline(Requests\getStructuredDocumentTagsOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->getStructuredDocumentTagsOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->getStructuredDocumentTagsOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation getStructuredDocumentTagsOnlineWithHttpInfo
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StructuredDocumentTagsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function getStructuredDocumentTagsOnlineWithHttpInfo(Requests\getStructuredDocumentTagsOnlineRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagsResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StructuredDocumentTagsResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getStructuredDocumentTagsOnlineAsync
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStructuredDocumentTagsOnlineAsync(Requests\getStructuredDocumentTagsOnlineRequest $request) 
+    {
+        return $this->getStructuredDocumentTagsOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getStructuredDocumentTagsOnlineAsyncWithHttpInfo
+     *
+     * Reads StructuredDocumentTags (SDT) from the document node.
+     *
+     * @param Requests\getStructuredDocumentTagsOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function getStructuredDocumentTagsOnlineAsyncWithHttpInfo(Requests\getStructuredDocumentTagsOnlineRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagsResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
      * Operation getStyle
      *
      * Reads a style from the document.
@@ -36976,6 +37953,333 @@ class WordsApi implements Encryptor
     private function insertRunOnlineAsyncWithHttpInfo(Requests\insertRunOnlineRequest $request) 
     {
         $returnType = 'InsertRunOnlineResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation insertStructuredDocumentTag
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StructuredDocumentTagResponse
+     */
+    public function insertStructuredDocumentTag(Requests\insertStructuredDocumentTagRequest $request)
+    {
+        try {
+            list($response) = $this->insertStructuredDocumentTagWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->insertStructuredDocumentTagWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation insertStructuredDocumentTagWithHttpInfo
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StructuredDocumentTagResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function insertStructuredDocumentTagWithHttpInfo(Requests\insertStructuredDocumentTagRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StructuredDocumentTagResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation insertStructuredDocumentTagAsync
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function insertStructuredDocumentTagAsync(Requests\insertStructuredDocumentTagRequest $request) 
+    {
+        return $this->insertStructuredDocumentTagAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation insertStructuredDocumentTagAsyncWithHttpInfo
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function insertStructuredDocumentTagAsyncWithHttpInfo(Requests\insertStructuredDocumentTagRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation insertStructuredDocumentTagOnline
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return InsertStructuredDocumentTagOnlineResponse
+     */
+    public function insertStructuredDocumentTagOnline(Requests\insertStructuredDocumentTagOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->insertStructuredDocumentTagOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->insertStructuredDocumentTagOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation insertStructuredDocumentTagOnlineWithHttpInfo
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of InsertStructuredDocumentTagOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function insertStructuredDocumentTagOnlineWithHttpInfo(Requests\insertStructuredDocumentTagOnlineRequest $request)
+    {
+        $returnType = 'InsertStructuredDocumentTagOnlineResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $resp = $request->deserializeResponse($response);
+            return [
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'InsertStructuredDocumentTagOnlineResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation insertStructuredDocumentTagOnlineAsync
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function insertStructuredDocumentTagOnlineAsync(Requests\insertStructuredDocumentTagOnlineRequest $request) 
+    {
+        return $this->insertStructuredDocumentTagOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation insertStructuredDocumentTagOnlineAsyncWithHttpInfo
+     *
+     * Inserts a new StructuredDocumentTag (SDT) to the document node.
+     *
+     * @param Requests\insertStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function insertStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\insertStructuredDocumentTagOnlineRequest $request) 
+    {
+        $returnType = 'InsertStructuredDocumentTagOnlineResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client
@@ -50455,6 +51759,333 @@ class WordsApi implements Encryptor
     private function updateSectionPageSetupOnlineAsyncWithHttpInfo(Requests\updateSectionPageSetupOnlineRequest $request) 
     {
         $returnType = 'UpdateSectionPageSetupOnlineResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation updateStructuredDocumentTag
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\Model\StructuredDocumentTagResponse
+     */
+    public function updateStructuredDocumentTag(Requests\updateStructuredDocumentTagRequest $request)
+    {
+        try {
+            list($response) = $this->updateStructuredDocumentTagWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->updateStructuredDocumentTagWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation updateStructuredDocumentTagWithHttpInfo
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\Model\StructuredDocumentTagResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function updateStructuredDocumentTagWithHttpInfo(Requests\updateStructuredDocumentTagRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\StructuredDocumentTagResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation updateStructuredDocumentTagAsync
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateStructuredDocumentTagAsync(Requests\updateStructuredDocumentTagRequest $request) 
+    {
+        return $this->updateStructuredDocumentTagAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation updateStructuredDocumentTagAsyncWithHttpInfo
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function updateStructuredDocumentTagAsyncWithHttpInfo(Requests\updateStructuredDocumentTagRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation updateStructuredDocumentTagOnline
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return UpdateStructuredDocumentTagOnlineResponse
+     */
+    public function updateStructuredDocumentTagOnline(Requests\updateStructuredDocumentTagOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->updateStructuredDocumentTagOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->updateStructuredDocumentTagOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation updateStructuredDocumentTagOnlineWithHttpInfo
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of UpdateStructuredDocumentTagOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function updateStructuredDocumentTagOnlineWithHttpInfo(Requests\updateStructuredDocumentTagOnlineRequest $request)
+    {
+        $returnType = 'UpdateStructuredDocumentTagOnlineResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $resp = $request->deserializeResponse($response);
+            return [
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'UpdateStructuredDocumentTagOnlineResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation updateStructuredDocumentTagOnlineAsync
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateStructuredDocumentTagOnlineAsync(Requests\updateStructuredDocumentTagOnlineRequest $request) 
+    {
+        return $this->updateStructuredDocumentTagOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation updateStructuredDocumentTagOnlineAsyncWithHttpInfo
+     *
+     * Updates a StructuredDocumentTag (SDT) in the document node.
+     *
+     * @param Requests\updateStructuredDocumentTagOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function updateStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\updateStructuredDocumentTagOnlineRequest $request) 
+    {
+        $returnType = 'UpdateStructuredDocumentTagOnlineResponse';
         $request = $request->createRequest($this->config);
 
         return $this->client

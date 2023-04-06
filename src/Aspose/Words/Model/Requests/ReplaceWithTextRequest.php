@@ -50,7 +50,7 @@ class ReplaceWithTextRequest extends BaseApiRequest
     public $name;
 
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier examples: id0.0.0, page0.
      */
     public $range_start_identifier;
 
@@ -60,7 +60,7 @@ class ReplaceWithTextRequest extends BaseApiRequest
     public $range_text;
 
     /*
-     * The range end identifier.
+     * The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      */
     public $range_end_identifier;
 
@@ -98,9 +98,9 @@ class ReplaceWithTextRequest extends BaseApiRequest
      * Initializes a new instance of the ReplaceWithTextRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param string $range_start_identifier The range start identifier.
+     * @param string $range_start_identifier The range start identifier. Identifier examples: id0.0.0, page0.
      * @param \Aspose\Words\Model\ReplaceRange $range_text Model with text for replacement.
-     * @param string $range_end_identifier The range end identifier.
+     * @param string $range_end_identifier The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -140,7 +140,7 @@ class ReplaceWithTextRequest extends BaseApiRequest
     }
 
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier examples: id0.0.0, page0.
      */
     public function get_range_start_identifier()
     {
@@ -148,7 +148,7 @@ class ReplaceWithTextRequest extends BaseApiRequest
     }
 
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier examples: id0.0.0, page0.
      */
     public function set_range_start_identifier($value)
     {
@@ -174,7 +174,7 @@ class ReplaceWithTextRequest extends BaseApiRequest
     }
 
     /*
-     * The range end identifier.
+     * The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      */
     public function get_range_end_identifier()
     {
@@ -182,7 +182,7 @@ class ReplaceWithTextRequest extends BaseApiRequest
     }
 
     /*
-     * The range end identifier.
+     * The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      */
     public function set_range_end_identifier($value)
     {

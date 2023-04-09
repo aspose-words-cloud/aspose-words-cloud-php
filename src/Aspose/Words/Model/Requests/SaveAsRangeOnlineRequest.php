@@ -50,7 +50,7 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
     public $document;
 
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier examples: id0.0.0, page0.
      */
     public $range_start_identifier;
 
@@ -60,7 +60,7 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
     public $document_parameters;
 
     /*
-     * The range end identifier.
+     * The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      */
     public $range_end_identifier;
 
@@ -83,9 +83,9 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
      * Initializes a new instance of the SaveAsRangeOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param string $range_start_identifier The range start identifier.
+     * @param string $range_start_identifier The range start identifier. Identifier examples: id0.0.0, page0.
      * @param \Aspose\Words\Model\RangeDocument $document_parameters Parameters of a new document.
-     * @param string $range_end_identifier The range end identifier.
+     * @param string $range_end_identifier The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -119,7 +119,7 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier examples: id0.0.0, page0.
      */
     public function get_range_start_identifier()
     {
@@ -127,7 +127,7 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The range start identifier.
+     * The range start identifier. Identifier examples: id0.0.0, page0.
      */
     public function set_range_start_identifier($value)
     {
@@ -153,7 +153,7 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The range end identifier.
+     * The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      */
     public function get_range_end_identifier()
     {
@@ -161,7 +161,7 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The range end identifier.
+     * The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
      */
     public function set_range_end_identifier($value)
     {

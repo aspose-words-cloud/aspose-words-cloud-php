@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{DeleteCommentOnlineRequest, DeleteCommentRequest, DeleteCommentsOnlineRequest, DeleteCommentsRequest, GetCommentOnlineRequest, GetCommentRequest, GetCommentsOnlineRequest, GetCommentsRequest, InsertCommentOnlineRequest, InsertCommentRequest, UpdateCommentOnlineRequest, UpdateCommentRequest};
-use Aspose\Words\Model\{CommentInsert, CommentUpdate, DocumentPosition, NodeLink};
+use Aspose\Words\Model\{CommentInsert, CommentUpdate, NewDocumentPosition};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -152,18 +152,12 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCommentRangeStartNode = new NodeLink(array(
+        $requestCommentRangeStart = new NewDocumentPosition(array(
             "node_id" => "0.3.0.3",
-        ));
-        $requestCommentRangeStart = new DocumentPosition(array(
-            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new NodeLink(array(
+        $requestCommentRangeEnd = new NewDocumentPosition(array(
             "node_id" => "0.3.0.3",
-        ));
-        $requestCommentRangeEnd = new DocumentPosition(array(
-            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
         $requestComment = new CommentInsert(array(
@@ -203,18 +197,12 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCommentRangeStartNode = new NodeLink(array(
+        $requestCommentRangeStart = new NewDocumentPosition(array(
             "node_id" => "0.3.0.3",
-        ));
-        $requestCommentRangeStart = new DocumentPosition(array(
-            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new NodeLink(array(
+        $requestCommentRangeEnd = new NewDocumentPosition(array(
             "node_id" => "0.3.0.3",
-        ));
-        $requestCommentRangeEnd = new DocumentPosition(array(
-            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
         $requestComment = new CommentInsert(array(
@@ -253,18 +241,12 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCommentRangeStartNode = new NodeLink(array(
+        $requestCommentRangeStart = new NewDocumentPosition(array(
             "node_id" => "0.3.0",
-        ));
-        $requestCommentRangeStart = new DocumentPosition(array(
-            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new NodeLink(array(
+        $requestCommentRangeEnd = new NewDocumentPosition(array(
             "node_id" => "0.3.0",
-        ));
-        $requestCommentRangeEnd = new DocumentPosition(array(
-            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
         $requestComment = new CommentUpdate(array(
@@ -305,18 +287,12 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCommentRangeStartNode = new NodeLink(array(
+        $requestCommentRangeStart = new NewDocumentPosition(array(
             "node_id" => "0.3.0",
-        ));
-        $requestCommentRangeStart = new DocumentPosition(array(
-            "node" => $requestCommentRangeStartNode,
             "offset" => 0,
         ));
-        $requestCommentRangeEndNode = new NodeLink(array(
+        $requestCommentRangeEnd = new NewDocumentPosition(array(
             "node_id" => "0.3.0",
-        ));
-        $requestCommentRangeEnd = new DocumentPosition(array(
-            "node" => $requestCommentRangeEndNode,
             "offset" => 0,
         ));
         $requestComment = new CommentUpdate(array(

@@ -54,7 +54,7 @@ class DrawingObjectInsert implements ArrayAccess
     protected static $swaggerTypes = [
         'height' => 'double',
         'left' => 'double',
-        'position' => '\Aspose\Words\Model\DocumentPosition',
+        'position' => '\Aspose\Words\Model\NewDocumentPosition',
         'relative_horizontal_position' => 'string',
         'relative_vertical_position' => 'string',
         'top' => 'double',
@@ -410,7 +410,7 @@ class DrawingObjectInsert implements ArrayAccess
     /*
      * Gets position
      *
-     * @return \Aspose\Words\Model\DocumentPosition
+     * @return \Aspose\Words\Model\NewDocumentPosition
      */
     public function getPosition()
     {
@@ -420,7 +420,7 @@ class DrawingObjectInsert implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\DocumentPosition $position Gets or sets the position, before which the DrawingObject will be inserted.
+     * @param \Aspose\Words\Model\NewDocumentPosition $position Gets or sets the position, before which the DrawingObject will be inserted.
      *
      * @return $this
      */

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TableInsert.php">
+ * <copyright company="Aspose" file="NewDocumentPosition.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -31,11 +31,11 @@ use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * TableInsert
+ * NewDocumentPosition
  *
- * @description DTO container with a table element.
+ * @description DTO container with a new position in the document tree.
  */
-class TableInsert implements ArrayAccess
+class NewDocumentPosition implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +44,7 @@ class TableInsert implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "TableInsert";
+    protected static $swaggerModelName = "NewDocumentPosition";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,9 +52,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'columns_count' => 'int',
-        'position' => '\Aspose\Words\Model\NewDocumentPosition',
-        'rows_count' => 'int'
+        'node_id' => 'string',
+        'offset' => 'int'
     ];
 
     /*
@@ -63,9 +62,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'columns_count' => 'null',
-        'position' => 'null',
-        'rows_count' => 'null'
+        'node_id' => 'null',
+        'offset' => 'null'
     ];
 
     /*
@@ -95,9 +93,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'columns_count' => 'ColumnsCount',
-        'position' => 'Position',
-        'rows_count' => 'RowsCount'
+        'node_id' => 'NodeId',
+        'offset' => 'Offset'
     ];
 
     /*
@@ -106,9 +103,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'columns_count' => 'setColumnsCount',
-        'position' => 'setPosition',
-        'rows_count' => 'setRowsCount'
+        'node_id' => 'setNodeId',
+        'offset' => 'setOffset'
     ];
 
     /*
@@ -117,9 +113,8 @@ class TableInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'columns_count' => 'getColumnsCount',
-        'position' => 'getPosition',
-        'rows_count' => 'getRowsCount'
+        'node_id' => 'getNodeId',
+        'offset' => 'getOffset'
     ];
 
     /*
@@ -180,9 +175,8 @@ class TableInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
-        $this->container['rows_count'] = isset($data['rows_count']) ? $data['rows_count'] : null;
+        $this->container['node_id'] = isset($data['node_id']) ? $data['node_id'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
     }
 
     /*
@@ -209,73 +203,49 @@ class TableInsert implements ArrayAccess
     }
 
     /*
-     * Gets columns_count
+     * Gets node_id
      *
-     * @return int
+     * @return string
      */
-    public function getColumnsCount()
+    public function getNodeId()
     {
-        return $this->container['columns_count'];
+        return $this->container['node_id'];
     }
 
     /*
-     * Sets columns_count
+     * Sets node_id
      *
-     * @param int $columns_count Gets or sets the number of columns. The default value is 2.
+     * @param string $node_id Gets or sets the node id.
      *
      * @return $this
      */
-    public function setColumnsCount($columns_count)
+    public function setNodeId($node_id)
     {
-        $this->container['columns_count'] = $columns_count;
+        $this->container['node_id'] = $node_id;
         return $this;
     }
 
 
     /*
-     * Gets position
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getPosition()
-    {
-        return $this->container['position'];
-    }
-
-    /*
-     * Sets position
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $position Gets or sets the position to insert the table. The table will be inserted before the specified position.
-     *
-     * @return $this
-     */
-    public function setPosition($position)
-    {
-        $this->container['position'] = $position;
-        return $this;
-    }
-
-
-    /*
-     * Gets rows_count
+     * Gets offset
      *
      * @return int
      */
-    public function getRowsCount()
+    public function getOffset()
     {
-        return $this->container['rows_count'];
+        return $this->container['offset'];
     }
 
     /*
-     * Sets rows_count
+     * Sets offset
      *
-     * @param int $rows_count Gets or sets the number of rows. The default value is 2.
+     * @param int $offset Gets or sets the offset in the node.
      *
      * @return $this
      */
-    public function setRowsCount($rows_count)
+    public function setOffset($offset)
     {
-        $this->container['rows_count'] = $rows_count;
+        $this->container['offset'] = $offset;
         return $this;
     }
 

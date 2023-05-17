@@ -51,8 +51,8 @@ class BookmarkInsert extends BookmarkData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'end_range' => '\Aspose\Words\Model\DocumentPosition',
-        'start_range' => '\Aspose\Words\Model\DocumentPosition'
+        'end_range' => '\Aspose\Words\Model\NewDocumentPosition',
+        'start_range' => '\Aspose\Words\Model\NewDocumentPosition'
     ];
 
     /*
@@ -201,7 +201,7 @@ class BookmarkInsert extends BookmarkData
     /*
      * Gets end_range
      *
-     * @return \Aspose\Words\Model\DocumentPosition
+     * @return \Aspose\Words\Model\NewDocumentPosition
      */
     public function getEndRange()
     {
@@ -211,7 +211,7 @@ class BookmarkInsert extends BookmarkData
     /*
      * Sets end_range
      *
-     * @param \Aspose\Words\Model\DocumentPosition $end_range Gets or sets the link to end bookmark node.
+     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
      *
      * @return $this
      */
@@ -225,7 +225,7 @@ class BookmarkInsert extends BookmarkData
     /*
      * Gets start_range
      *
-     * @return \Aspose\Words\Model\DocumentPosition
+     * @return \Aspose\Words\Model\NewDocumentPosition
      */
     public function getStartRange()
     {
@@ -235,7 +235,7 @@ class BookmarkInsert extends BookmarkData
     /*
      * Sets start_range
      *
-     * @param \Aspose\Words\Model\DocumentPosition $start_range Gets or sets the link to start bookmark node.
+     * @param \Aspose\Words\Model\NewDocumentPosition $start_range Gets or sets the link to start bookmark node.
      *
      * @return $this
      */

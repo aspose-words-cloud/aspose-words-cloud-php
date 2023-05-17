@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{DeleteBookmarkOnlineRequest, DeleteBookmarkRequest, DeleteBookmarksOnlineRequest, DeleteBookmarksRequest, GetBookmarkByNameOnlineRequest, GetBookmarkByNameRequest, GetBookmarksOnlineRequest, GetBookmarksRequest, InsertBookmarkOnlineRequest, InsertBookmarkRequest, UpdateBookmarkOnlineRequest, UpdateBookmarkRequest};
-use Aspose\Words\Model\{BookmarkData, BookmarkInsert, DocumentPosition, NodeLink};
+use Aspose\Words\Model\{BookmarkData, BookmarkInsert, NewDocumentPosition};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -322,17 +322,13 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestBookmarkStartRangeNode = new NodeLink(array(
+        $requestBookmarkStartRange = new NewDocumentPosition(array(
             "node_id" => "0.0.0.0",
+            "offset" => 0,
         ));
-        $requestBookmarkStartRange = new DocumentPosition(array(
-            "node" => $requestBookmarkStartRangeNode,
-        ));
-        $requestBookmarkEndRangeNode = new NodeLink(array(
+        $requestBookmarkEndRange = new NewDocumentPosition(array(
             "node_id" => "0.0.0.0",
-        ));
-        $requestBookmarkEndRange = new DocumentPosition(array(
-            "node" => $requestBookmarkEndRangeNode,
+            "offset" => 0,
         ));
         $requestBookmark = new BookmarkInsert(array(
             "start_range" => $requestBookmarkStartRange,
@@ -365,17 +361,13 @@ class BookmarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestBookmarkStartRangeNode = new NodeLink(array(
+        $requestBookmarkStartRange = new NewDocumentPosition(array(
             "node_id" => "0.0.0.0",
+            "offset" => 0,
         ));
-        $requestBookmarkStartRange = new DocumentPosition(array(
-            "node" => $requestBookmarkStartRangeNode,
-        ));
-        $requestBookmarkEndRangeNode = new NodeLink(array(
+        $requestBookmarkEndRange = new NewDocumentPosition(array(
             "node_id" => "0.0.0.0",
-        ));
-        $requestBookmarkEndRange = new DocumentPosition(array(
-            "node" => $requestBookmarkEndRangeNode,
+            "offset" => 0,
         ));
         $requestBookmark = new BookmarkInsert(array(
             "start_range" => $requestBookmarkStartRange,

@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest, LinkHeaderFootersToPreviousRequest};
+use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest, InsertSectionOnlineRequest, InsertSectionRequest, LinkHeaderFootersToPreviousRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -189,6 +189,59 @@ class SectionTests extends BaseTestContext
         );
 
         $result = $this->words->deleteSectionOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for insertion a section.
+     */
+    public function testInsertSection()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Section";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestInsertSection.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new InsertSectionRequest(
+            $remoteFileName,
+            0,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        Assert::assertNull($this->words->insertSection($request));
+    }
+
+    /*
+     * Test for insertion a section online.
+     */
+    public function testInsertSectionOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new InsertSectionOnlineRequest(
+            $requestDocument,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertSectionOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 

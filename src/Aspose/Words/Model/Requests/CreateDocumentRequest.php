@@ -66,7 +66,7 @@ class CreateDocumentRequest extends BaseApiRequest
      * @param string $folder The path to the document folder.
      * @param string $storage Original document storage.
      */
-    public function __construct($file_name = null, $folder = null, $storage = null)
+    public function __construct($file_name, $folder = null, $storage = null)
     {
         $this->file_name = $file_name;
         $this->folder = $folder;
@@ -132,6 +132,9 @@ class CreateDocumentRequest extends BaseApiRequest
      */
     public function createRequestData($config)
     {
+        if ($this->file_name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling createDocument');
+        }
 
         $resourcePath = '/words/create';
         $formParams = [];

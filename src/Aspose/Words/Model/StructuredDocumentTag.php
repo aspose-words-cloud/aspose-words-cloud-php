@@ -51,29 +51,29 @@ class StructuredDocumentTag extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'appearance' => 'string',
-        'building_block_category' => 'string',
-        'building_block_gallery' => 'string',
-        'calendar_type' => 'string',
+        'list_items' => '\Aspose\Words\Model\StructuredDocumentTagListItem[]',
         'checked' => 'bool',
-        'color' => 'string',
-        'date_display_format' => 'string',
+        'appearance' => 'string',
         'date_display_locale' => 'int',
-        'date_storage_format' => 'string',
+        'date_display_format' => 'string',
         'full_date' => '\DateTime',
-        'id' => 'int',
-        'is_showing_placeholder_text' => 'bool',
+        'title' => 'string',
+        'date_storage_format' => 'string',
+        'building_block_gallery' => 'string',
+        'building_block_category' => 'string',
+        'multiline' => 'bool',
+        'color' => 'string',
+        'style_name' => 'string',
+        'calendar_type' => 'string',
         'is_temporary' => 'bool',
         'level' => 'string',
-        'list_items' => '\Aspose\Words\Model\StructuredDocumentTagListItem[]',
+        'sdt_type' => 'string',
+        'placeholder_name' => 'string',
         'lock_content_control' => 'bool',
         'lock_contents' => 'bool',
-        'multiline' => 'bool',
-        'placeholder_name' => 'string',
-        'sdt_type' => 'string',
-        'style_name' => 'string',
+        'is_showing_placeholder_text' => 'bool',
         'tag' => 'string',
-        'title' => 'string',
+        'id' => 'int',
         'word_open_xml' => 'string'
     ];
 
@@ -83,29 +83,29 @@ class StructuredDocumentTag extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'appearance' => 'null',
-        'building_block_category' => 'null',
-        'building_block_gallery' => 'null',
-        'calendar_type' => 'null',
+        'list_items' => 'null',
         'checked' => 'null',
-        'color' => 'null',
-        'date_display_format' => 'null',
+        'appearance' => 'null',
         'date_display_locale' => 'null',
-        'date_storage_format' => 'null',
+        'date_display_format' => 'null',
         'full_date' => 'null',
-        'id' => 'null',
-        'is_showing_placeholder_text' => 'null',
+        'title' => 'null',
+        'date_storage_format' => 'null',
+        'building_block_gallery' => 'null',
+        'building_block_category' => 'null',
+        'multiline' => 'null',
+        'color' => 'null',
+        'style_name' => 'null',
+        'calendar_type' => 'null',
         'is_temporary' => 'null',
         'level' => 'null',
-        'list_items' => 'null',
+        'sdt_type' => 'null',
+        'placeholder_name' => 'null',
         'lock_content_control' => 'null',
         'lock_contents' => 'null',
-        'multiline' => 'null',
-        'placeholder_name' => 'null',
-        'sdt_type' => 'null',
-        'style_name' => 'null',
+        'is_showing_placeholder_text' => 'null',
         'tag' => 'null',
-        'title' => 'null',
+        'id' => 'null',
         'word_open_xml' => 'null'
     ];
 
@@ -136,29 +136,29 @@ class StructuredDocumentTag extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'appearance' => 'Appearance',
-        'building_block_category' => 'BuildingBlockCategory',
-        'building_block_gallery' => 'BuildingBlockGallery',
-        'calendar_type' => 'CalendarType',
+        'list_items' => 'ListItems',
         'checked' => 'Checked',
-        'color' => 'Color',
-        'date_display_format' => 'DateDisplayFormat',
+        'appearance' => 'Appearance',
         'date_display_locale' => 'DateDisplayLocale',
-        'date_storage_format' => 'DateStorageFormat',
+        'date_display_format' => 'DateDisplayFormat',
         'full_date' => 'FullDate',
-        'id' => 'Id',
-        'is_showing_placeholder_text' => 'IsShowingPlaceholderText',
+        'title' => 'Title',
+        'date_storage_format' => 'DateStorageFormat',
+        'building_block_gallery' => 'BuildingBlockGallery',
+        'building_block_category' => 'BuildingBlockCategory',
+        'multiline' => 'Multiline',
+        'color' => 'Color',
+        'style_name' => 'StyleName',
+        'calendar_type' => 'CalendarType',
         'is_temporary' => 'IsTemporary',
         'level' => 'Level',
-        'list_items' => 'ListItems',
+        'sdt_type' => 'SdtType',
+        'placeholder_name' => 'PlaceholderName',
         'lock_content_control' => 'LockContentControl',
         'lock_contents' => 'LockContents',
-        'multiline' => 'Multiline',
-        'placeholder_name' => 'PlaceholderName',
-        'sdt_type' => 'SdtType',
-        'style_name' => 'StyleName',
+        'is_showing_placeholder_text' => 'IsShowingPlaceholderText',
         'tag' => 'Tag',
-        'title' => 'Title',
+        'id' => 'Id',
         'word_open_xml' => 'WordOpenXML'
     ];
 
@@ -168,29 +168,29 @@ class StructuredDocumentTag extends NodeLink
      * @var string[]
      */
     protected static $setters = [
-        'appearance' => 'setAppearance',
-        'building_block_category' => 'setBuildingBlockCategory',
-        'building_block_gallery' => 'setBuildingBlockGallery',
-        'calendar_type' => 'setCalendarType',
+        'list_items' => 'setListItems',
         'checked' => 'setChecked',
-        'color' => 'setColor',
-        'date_display_format' => 'setDateDisplayFormat',
+        'appearance' => 'setAppearance',
         'date_display_locale' => 'setDateDisplayLocale',
-        'date_storage_format' => 'setDateStorageFormat',
+        'date_display_format' => 'setDateDisplayFormat',
         'full_date' => 'setFullDate',
-        'id' => 'setId',
-        'is_showing_placeholder_text' => 'setIsShowingPlaceholderText',
+        'title' => 'setTitle',
+        'date_storage_format' => 'setDateStorageFormat',
+        'building_block_gallery' => 'setBuildingBlockGallery',
+        'building_block_category' => 'setBuildingBlockCategory',
+        'multiline' => 'setMultiline',
+        'color' => 'setColor',
+        'style_name' => 'setStyleName',
+        'calendar_type' => 'setCalendarType',
         'is_temporary' => 'setIsTemporary',
         'level' => 'setLevel',
-        'list_items' => 'setListItems',
+        'sdt_type' => 'setSdtType',
+        'placeholder_name' => 'setPlaceholderName',
         'lock_content_control' => 'setLockContentControl',
         'lock_contents' => 'setLockContents',
-        'multiline' => 'setMultiline',
-        'placeholder_name' => 'setPlaceholderName',
-        'sdt_type' => 'setSdtType',
-        'style_name' => 'setStyleName',
+        'is_showing_placeholder_text' => 'setIsShowingPlaceholderText',
         'tag' => 'setTag',
-        'title' => 'setTitle',
+        'id' => 'setId',
         'word_open_xml' => 'setWordOpenXML'
     ];
 
@@ -200,29 +200,29 @@ class StructuredDocumentTag extends NodeLink
      * @var string[]
      */
     protected static $getters = [
-        'appearance' => 'getAppearance',
-        'building_block_category' => 'getBuildingBlockCategory',
-        'building_block_gallery' => 'getBuildingBlockGallery',
-        'calendar_type' => 'getCalendarType',
+        'list_items' => 'getListItems',
         'checked' => 'getChecked',
-        'color' => 'getColor',
-        'date_display_format' => 'getDateDisplayFormat',
+        'appearance' => 'getAppearance',
         'date_display_locale' => 'getDateDisplayLocale',
-        'date_storage_format' => 'getDateStorageFormat',
+        'date_display_format' => 'getDateDisplayFormat',
         'full_date' => 'getFullDate',
-        'id' => 'getId',
-        'is_showing_placeholder_text' => 'getIsShowingPlaceholderText',
+        'title' => 'getTitle',
+        'date_storage_format' => 'getDateStorageFormat',
+        'building_block_gallery' => 'getBuildingBlockGallery',
+        'building_block_category' => 'getBuildingBlockCategory',
+        'multiline' => 'getMultiline',
+        'color' => 'getColor',
+        'style_name' => 'getStyleName',
+        'calendar_type' => 'getCalendarType',
         'is_temporary' => 'getIsTemporary',
         'level' => 'getLevel',
-        'list_items' => 'getListItems',
+        'sdt_type' => 'getSdtType',
+        'placeholder_name' => 'getPlaceholderName',
         'lock_content_control' => 'getLockContentControl',
         'lock_contents' => 'getLockContents',
-        'multiline' => 'getMultiline',
-        'placeholder_name' => 'getPlaceholderName',
-        'sdt_type' => 'getSdtType',
-        'style_name' => 'getStyleName',
+        'is_showing_placeholder_text' => 'getIsShowingPlaceholderText',
         'tag' => 'getTag',
-        'title' => 'getTitle',
+        'id' => 'getId',
         'word_open_xml' => 'getWordOpenXML'
     ];
 
@@ -271,6 +271,10 @@ class StructuredDocumentTag extends NodeLink
     const APPEARANCE_BOUNDING_BOX = 'BoundingBox';
     const APPEARANCE_TAGS = 'Tags';
     const APPEARANCE_HIDDEN = 'Hidden';
+    const DATE_STORAGE_FORMAT_DATE = 'Date';
+    const DATE_STORAGE_FORMAT_DATE_TIME = 'DateTime';
+    const DATE_STORAGE_FORMAT_DEFAULT = 'Default';
+    const DATE_STORAGE_FORMAT_TEXT = 'Text';
     const CALENDAR_TYPE_DEFAULT = 'Default';
     const CALENDAR_TYPE_GREGORIAN = 'Gregorian';
     const CALENDAR_TYPE_GREGORIAN_ARABIC = 'GregorianArabic';
@@ -286,10 +290,6 @@ class StructuredDocumentTag extends NodeLink
     const CALENDAR_TYPE_SAKA = 'Saka';
     const CALENDAR_TYPE_TAIWAN = 'Taiwan';
     const CALENDAR_TYPE_THAI = 'Thai';
-    const DATE_STORAGE_FORMAT_DATE = 'Date';
-    const DATE_STORAGE_FORMAT_DATE_TIME = 'DateTime';
-    const DATE_STORAGE_FORMAT_DEFAULT = 'Default';
-    const DATE_STORAGE_FORMAT_TEXT = 'Text';
     const LEVEL_UNKNOWN = 'Unknown';
     const LEVEL_INLINE = 'Inline';
     const LEVEL_BLOCK = 'Block';
@@ -332,6 +332,20 @@ class StructuredDocumentTag extends NodeLink
      *
      * @return string[]
      */
+    public function getDateStorageFormatAllowableValues()
+    {
+        return [
+            self::DATE_STORAGE_FORMAT_DATE,
+            self::DATE_STORAGE_FORMAT_DATE_TIME,
+            self::DATE_STORAGE_FORMAT_DEFAULT,
+            self::DATE_STORAGE_FORMAT_TEXT
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getCalendarTypeAllowableValues()
     {
         return [
@@ -350,20 +364,6 @@ class StructuredDocumentTag extends NodeLink
             self::CALENDAR_TYPE_SAKA,
             self::CALENDAR_TYPE_TAIWAN,
             self::CALENDAR_TYPE_THAI
-        ];
-    }
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getDateStorageFormatAllowableValues()
-    {
-        return [
-            self::DATE_STORAGE_FORMAT_DATE,
-            self::DATE_STORAGE_FORMAT_DATE_TIME,
-            self::DATE_STORAGE_FORMAT_DEFAULT,
-            self::DATE_STORAGE_FORMAT_TEXT
         ];
     }
     /*
@@ -418,29 +418,29 @@ class StructuredDocumentTag extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['appearance'] = isset($data['appearance']) ? $data['appearance'] : null;
-        $this->container['building_block_category'] = isset($data['building_block_category']) ? $data['building_block_category'] : null;
-        $this->container['building_block_gallery'] = isset($data['building_block_gallery']) ? $data['building_block_gallery'] : null;
-        $this->container['calendar_type'] = isset($data['calendar_type']) ? $data['calendar_type'] : null;
+        $this->container['list_items'] = isset($data['list_items']) ? $data['list_items'] : null;
         $this->container['checked'] = isset($data['checked']) ? $data['checked'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['date_display_format'] = isset($data['date_display_format']) ? $data['date_display_format'] : null;
+        $this->container['appearance'] = isset($data['appearance']) ? $data['appearance'] : null;
         $this->container['date_display_locale'] = isset($data['date_display_locale']) ? $data['date_display_locale'] : null;
-        $this->container['date_storage_format'] = isset($data['date_storage_format']) ? $data['date_storage_format'] : null;
+        $this->container['date_display_format'] = isset($data['date_display_format']) ? $data['date_display_format'] : null;
         $this->container['full_date'] = isset($data['full_date']) ? $data['full_date'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['is_showing_placeholder_text'] = isset($data['is_showing_placeholder_text']) ? $data['is_showing_placeholder_text'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['date_storage_format'] = isset($data['date_storage_format']) ? $data['date_storage_format'] : null;
+        $this->container['building_block_gallery'] = isset($data['building_block_gallery']) ? $data['building_block_gallery'] : null;
+        $this->container['building_block_category'] = isset($data['building_block_category']) ? $data['building_block_category'] : null;
+        $this->container['multiline'] = isset($data['multiline']) ? $data['multiline'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['style_name'] = isset($data['style_name']) ? $data['style_name'] : null;
+        $this->container['calendar_type'] = isset($data['calendar_type']) ? $data['calendar_type'] : null;
         $this->container['is_temporary'] = isset($data['is_temporary']) ? $data['is_temporary'] : null;
         $this->container['level'] = isset($data['level']) ? $data['level'] : null;
-        $this->container['list_items'] = isset($data['list_items']) ? $data['list_items'] : null;
+        $this->container['sdt_type'] = isset($data['sdt_type']) ? $data['sdt_type'] : null;
+        $this->container['placeholder_name'] = isset($data['placeholder_name']) ? $data['placeholder_name'] : null;
         $this->container['lock_content_control'] = isset($data['lock_content_control']) ? $data['lock_content_control'] : null;
         $this->container['lock_contents'] = isset($data['lock_contents']) ? $data['lock_contents'] : null;
-        $this->container['multiline'] = isset($data['multiline']) ? $data['multiline'] : null;
-        $this->container['placeholder_name'] = isset($data['placeholder_name']) ? $data['placeholder_name'] : null;
-        $this->container['sdt_type'] = isset($data['sdt_type']) ? $data['sdt_type'] : null;
-        $this->container['style_name'] = isset($data['style_name']) ? $data['style_name'] : null;
+        $this->container['is_showing_placeholder_text'] = isset($data['is_showing_placeholder_text']) ? $data['is_showing_placeholder_text'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['word_open_xml'] = isset($data['word_open_xml']) ? $data['word_open_xml'] : null;
     }
 
@@ -460,18 +460,18 @@ class StructuredDocumentTag extends NodeLink
             );
         }
 
-        $allowedValues = $this->getCalendarTypeAllowableValues();
-        if (!in_array($this->container['calendar_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'calendar_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getDateStorageFormatAllowableValues();
         if (!in_array($this->container['date_storage_format'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'date_storage_format', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getCalendarTypeAllowableValues();
+        if (!in_array($this->container['calendar_type'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'calendar_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -513,13 +513,13 @@ class StructuredDocumentTag extends NodeLink
             return false;
         }
 
-        $allowedValues = $this->getCalendarTypeAllowableValues();
-        if (!in_array($this->container['calendar_type'], $allowedValues)) {
+        $allowedValues = $this->getDateStorageFormatAllowableValues();
+        if (!in_array($this->container['date_storage_format'], $allowedValues)) {
             return false;
         }
 
-        $allowedValues = $this->getDateStorageFormatAllowableValues();
-        if (!in_array($this->container['date_storage_format'], $allowedValues)) {
+        $allowedValues = $this->getCalendarTypeAllowableValues();
+        if (!in_array($this->container['calendar_type'], $allowedValues)) {
             return false;
         }
 
@@ -536,6 +536,54 @@ class StructuredDocumentTag extends NodeLink
 
         return true;
     }
+
+    /*
+     * Gets list_items
+     *
+     * @return \Aspose\Words\Model\StructuredDocumentTagListItem[]
+     */
+    public function getListItems()
+    {
+        return $this->container['list_items'];
+    }
+
+    /*
+     * Sets list_items
+     *
+     * @param \Aspose\Words\Model\StructuredDocumentTagListItem[] $list_items Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
+     *
+     * @return $this
+     */
+    public function setListItems($list_items)
+    {
+        $this->container['list_items'] = $list_items;
+        return $this;
+    }
+
+
+    /*
+     * Gets checked
+     *
+     * @return bool
+     */
+    public function getChecked()
+    {
+        return $this->container['checked'];
+    }
+
+    /*
+     * Sets checked
+     *
+     * @param bool $checked Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property.
+     *
+     * @return $this
+     */
+    public function setChecked($checked)
+    {
+        $this->container['checked'] = $checked;
+        return $this;
+    }
+
 
     /*
      * Gets appearance
@@ -566,125 +614,25 @@ class StructuredDocumentTag extends NodeLink
 
 
     /*
-     * Gets building_block_category
+     * Gets date_display_locale
      *
-     * @return string
+     * @return int
      */
-    public function getBuildingBlockCategory()
+    public function getDateDisplayLocale()
     {
-        return $this->container['building_block_category'];
+        return $this->container['date_display_locale'];
     }
 
     /*
-     * Sets building_block_category
+     * Sets date_display_locale
      *
-     * @param string $building_block_category Gets or sets category of building block for this SDT node. Can not be null.
+     * @param int $date_display_locale Gets or sets the language format for the date displayed in this SDT.
      *
      * @return $this
      */
-    public function setBuildingBlockCategory($building_block_category)
+    public function setDateDisplayLocale($date_display_locale)
     {
-        $this->container['building_block_category'] = $building_block_category;
-        return $this;
-    }
-
-
-    /*
-     * Gets building_block_gallery
-     *
-     * @return string
-     */
-    public function getBuildingBlockGallery()
-    {
-        return $this->container['building_block_gallery'];
-    }
-
-    /*
-     * Sets building_block_gallery
-     *
-     * @param string $building_block_gallery Gets or sets type of building block for this SDT. Can not be null.
-     *
-     * @return $this
-     */
-    public function setBuildingBlockGallery($building_block_gallery)
-    {
-        $this->container['building_block_gallery'] = $building_block_gallery;
-        return $this;
-    }
-
-
-    /*
-     * Gets calendar_type
-     *
-     * @return string
-     */
-    public function getCalendarType()
-    {
-        return $this->container['calendar_type'];
-    }
-
-    /*
-     * Sets calendar_type
-     *
-     * @param string $calendar_type Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
-     *
-     * @return $this
-     */
-    public function setCalendarType($calendar_type)
-    {
-        $allowedValues = $this->getCalendarTypeAllowableValues();
-        if ((!is_numeric($calendar_type) && !in_array($calendar_type, $allowedValues)) || (is_numeric($calendar_type) && !in_array($allowedValues[$calendar_type], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'calendar_type', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-        $this->container['calendar_type'] = $calendar_type;
-        return $this;
-    }
-
-
-    /*
-     * Gets checked
-     *
-     * @return bool
-     */
-    public function getChecked()
-    {
-        return $this->container['checked'];
-    }
-
-    /*
-     * Sets checked
-     *
-     * @param bool $checked Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property.
-     *
-     * @return $this
-     */
-    public function setChecked($checked)
-    {
-        $this->container['checked'] = $checked;
-        return $this;
-    }
-
-
-    /*
-     * Gets color
-     *
-     * @return string
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /*
-     * Sets color
-     *
-     * @param string $color Gets or sets the color of the structured document tag.
-     *
-     * @return $this
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
+        $this->container['date_display_locale'] = $date_display_locale;
         return $this;
     }
 
@@ -714,25 +662,49 @@ class StructuredDocumentTag extends NodeLink
 
 
     /*
-     * Gets date_display_locale
+     * Gets full_date
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getDateDisplayLocale()
+    public function getFullDate()
     {
-        return $this->container['date_display_locale'];
+        return $this->container['full_date'];
     }
 
     /*
-     * Sets date_display_locale
+     * Sets full_date
      *
-     * @param int $date_display_locale Gets or sets the language format for the date displayed in this SDT.
+     * @param \DateTime $full_date Gets or sets the full date and time last entered into this SDT.
      *
      * @return $this
      */
-    public function setDateDisplayLocale($date_display_locale)
+    public function setFullDate($full_date)
     {
-        $this->container['date_display_locale'] = $date_display_locale;
+        $this->container['full_date'] = $full_date;
+        return $this;
+    }
+
+
+    /*
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /*
+     * Sets title
+     *
+     * @param string $title Gets or sets the friendly name associated with this SDT. Can not be null.
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
         return $this;
     }
 
@@ -766,73 +738,149 @@ class StructuredDocumentTag extends NodeLink
 
 
     /*
-     * Gets full_date
+     * Gets building_block_gallery
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getFullDate()
+    public function getBuildingBlockGallery()
     {
-        return $this->container['full_date'];
+        return $this->container['building_block_gallery'];
     }
 
     /*
-     * Sets full_date
+     * Sets building_block_gallery
      *
-     * @param \DateTime $full_date Gets or sets the full date and time last entered into this SDT.
+     * @param string $building_block_gallery Gets or sets type of building block for this SDT. Can not be null.
      *
      * @return $this
      */
-    public function setFullDate($full_date)
+    public function setBuildingBlockGallery($building_block_gallery)
     {
-        $this->container['full_date'] = $full_date;
+        $this->container['building_block_gallery'] = $building_block_gallery;
         return $this;
     }
 
 
     /*
-     * Gets id
+     * Gets building_block_category
      *
-     * @return int
+     * @return string
      */
-    public function getId()
+    public function getBuildingBlockCategory()
     {
-        return $this->container['id'];
+        return $this->container['building_block_category'];
     }
 
     /*
-     * Sets id
+     * Sets building_block_category
      *
-     * @param int $id Gets or sets a unique read-only persistent numerical Id for this SDT.
+     * @param string $building_block_category Gets or sets category of building block for this SDT node. Can not be null.
      *
      * @return $this
      */
-    public function setId($id)
+    public function setBuildingBlockCategory($building_block_category)
     {
-        $this->container['id'] = $id;
+        $this->container['building_block_category'] = $building_block_category;
         return $this;
     }
 
 
     /*
-     * Gets is_showing_placeholder_text
+     * Gets multiline
      *
      * @return bool
      */
-    public function getIsShowingPlaceholderText()
+    public function getMultiline()
     {
-        return $this->container['is_showing_placeholder_text'];
+        return $this->container['multiline'];
     }
 
     /*
-     * Sets is_showing_placeholder_text
+     * Sets multiline
      *
-     * @param bool $is_showing_placeholder_text Gets or sets a value indicating whether the content of this SDT shall be interpreted to contain placeholder text (as opposed to regular text contents within the SDT). If set to true, this state shall be resumed (showing placeholder text) upon opening his document.
+     * @param bool $multiline Gets or sets a value indicating whether this SDT allows multiple lines of text.
      *
      * @return $this
      */
-    public function setIsShowingPlaceholderText($is_showing_placeholder_text)
+    public function setMultiline($multiline)
     {
-        $this->container['is_showing_placeholder_text'] = $is_showing_placeholder_text;
+        $this->container['multiline'] = $multiline;
+        return $this;
+    }
+
+
+    /*
+     * Gets color
+     *
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /*
+     * Sets color
+     *
+     * @param string $color Gets or sets the color of the structured document tag.
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
+        return $this;
+    }
+
+
+    /*
+     * Gets style_name
+     *
+     * @return string
+     */
+    public function getStyleName()
+    {
+        return $this->container['style_name'];
+    }
+
+    /*
+     * Sets style_name
+     *
+     * @param string $style_name Gets or sets the name of the style applied to the structured document tag.
+     *
+     * @return $this
+     */
+    public function setStyleName($style_name)
+    {
+        $this->container['style_name'] = $style_name;
+        return $this;
+    }
+
+
+    /*
+     * Gets calendar_type
+     *
+     * @return string
+     */
+    public function getCalendarType()
+    {
+        return $this->container['calendar_type'];
+    }
+
+    /*
+     * Sets calendar_type
+     *
+     * @param string $calendar_type Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
+     *
+     * @return $this
+     */
+    public function setCalendarType($calendar_type)
+    {
+        $allowedValues = $this->getCalendarTypeAllowableValues();
+        if ((!is_numeric($calendar_type) && !in_array($calendar_type, $allowedValues)) || (is_numeric($calendar_type) && !in_array($allowedValues[$calendar_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'calendar_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['calendar_type'] = $calendar_type;
         return $this;
     }
 
@@ -890,25 +938,53 @@ class StructuredDocumentTag extends NodeLink
 
 
     /*
-     * Gets list_items
+     * Gets sdt_type
      *
-     * @return \Aspose\Words\Model\StructuredDocumentTagListItem[]
+     * @return string
      */
-    public function getListItems()
+    public function getSdtType()
     {
-        return $this->container['list_items'];
+        return $this->container['sdt_type'];
     }
 
     /*
-     * Sets list_items
+     * Sets sdt_type
      *
-     * @param \Aspose\Words\Model\StructuredDocumentTagListItem[] $list_items Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
+     * @param string $sdt_type Gets or sets type of this Structured document tag.
      *
      * @return $this
      */
-    public function setListItems($list_items)
+    public function setSdtType($sdt_type)
     {
-        $this->container['list_items'] = $list_items;
+        $allowedValues = $this->getSdtTypeAllowableValues();
+        if ((!is_numeric($sdt_type) && !in_array($sdt_type, $allowedValues)) || (is_numeric($sdt_type) && !in_array($allowedValues[$sdt_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'sdt_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['sdt_type'] = $sdt_type;
+        return $this;
+    }
+
+
+    /*
+     * Gets placeholder_name
+     *
+     * @return string
+     */
+    public function getPlaceholderName()
+    {
+        return $this->container['placeholder_name'];
+    }
+
+    /*
+     * Sets placeholder_name
+     *
+     * @param string $placeholder_name Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text. Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
+     *
+     * @return $this
+     */
+    public function setPlaceholderName($placeholder_name)
+    {
+        $this->container['placeholder_name'] = $placeholder_name;
         return $this;
     }
 
@@ -962,101 +1038,25 @@ class StructuredDocumentTag extends NodeLink
 
 
     /*
-     * Gets multiline
+     * Gets is_showing_placeholder_text
      *
      * @return bool
      */
-    public function getMultiline()
+    public function getIsShowingPlaceholderText()
     {
-        return $this->container['multiline'];
+        return $this->container['is_showing_placeholder_text'];
     }
 
     /*
-     * Sets multiline
+     * Sets is_showing_placeholder_text
      *
-     * @param bool $multiline Gets or sets a value indicating whether this SDT allows multiple lines of text.
+     * @param bool $is_showing_placeholder_text Gets or sets a value indicating whether the content of this SDT shall be interpreted to contain placeholder text (as opposed to regular text contents within the SDT). If set to true, this state shall be resumed (showing placeholder text) upon opening his document.
      *
      * @return $this
      */
-    public function setMultiline($multiline)
+    public function setIsShowingPlaceholderText($is_showing_placeholder_text)
     {
-        $this->container['multiline'] = $multiline;
-        return $this;
-    }
-
-
-    /*
-     * Gets placeholder_name
-     *
-     * @return string
-     */
-    public function getPlaceholderName()
-    {
-        return $this->container['placeholder_name'];
-    }
-
-    /*
-     * Sets placeholder_name
-     *
-     * @param string $placeholder_name Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text. Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
-     *
-     * @return $this
-     */
-    public function setPlaceholderName($placeholder_name)
-    {
-        $this->container['placeholder_name'] = $placeholder_name;
-        return $this;
-    }
-
-
-    /*
-     * Gets sdt_type
-     *
-     * @return string
-     */
-    public function getSdtType()
-    {
-        return $this->container['sdt_type'];
-    }
-
-    /*
-     * Sets sdt_type
-     *
-     * @param string $sdt_type Gets or sets type of this Structured document tag.
-     *
-     * @return $this
-     */
-    public function setSdtType($sdt_type)
-    {
-        $allowedValues = $this->getSdtTypeAllowableValues();
-        if ((!is_numeric($sdt_type) && !in_array($sdt_type, $allowedValues)) || (is_numeric($sdt_type) && !in_array($allowedValues[$sdt_type], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'sdt_type', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-        $this->container['sdt_type'] = $sdt_type;
-        return $this;
-    }
-
-
-    /*
-     * Gets style_name
-     *
-     * @return string
-     */
-    public function getStyleName()
-    {
-        return $this->container['style_name'];
-    }
-
-    /*
-     * Sets style_name
-     *
-     * @param string $style_name Gets or sets the name of the style applied to the structured document tag.
-     *
-     * @return $this
-     */
-    public function setStyleName($style_name)
-    {
-        $this->container['style_name'] = $style_name;
+        $this->container['is_showing_placeholder_text'] = $is_showing_placeholder_text;
         return $this;
     }
 
@@ -1086,25 +1086,25 @@ class StructuredDocumentTag extends NodeLink
 
 
     /*
-     * Gets title
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getTitle()
+    public function getId()
     {
-        return $this->container['title'];
+        return $this->container['id'];
     }
 
     /*
-     * Sets title
+     * Sets id
      *
-     * @param string $title Gets or sets the friendly name associated with this SDT. Can not be null.
+     * @param int $id Gets or sets a unique read-only persistent numerical Id for this SDT.
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setId($id)
     {
-        $this->container['title'] = $title;
+        $this->container['id'] = $id;
         return $this;
     }
 

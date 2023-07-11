@@ -181,8 +181,8 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
         $this->container['max_characters_per_line'] = isset($data['max_characters_per_line']) ? $data['max_characters_per_line'] : null;
         $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
-        $this->container['save_format'] = "txt";
         $this->container['simplify_list_labels'] = isset($data['simplify_list_labels']) ? $data['simplify_list_labels'] : null;
+        $this->container['save_format'] = "txt";
     }
 
     /*

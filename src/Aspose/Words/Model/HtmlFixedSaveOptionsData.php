@@ -270,9 +270,9 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
         $this->container['save_font_face_css_separately'] = isset($data['save_font_face_css_separately']) ? $data['save_font_face_css_separately'] : null;
-        $this->container['save_format'] = "htmlfixed";
         $this->container['show_page_border'] = isset($data['show_page_border']) ? $data['show_page_border'] : null;
         $this->container['use_target_machine_fonts'] = isset($data['use_target_machine_fonts']) ? $data['use_target_machine_fonts'] : null;
+        $this->container['save_format'] = "htmlfixed";
     }
 
     /*

@@ -59,13 +59,13 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'string',
         'file_name' => 'string',
         'iml_rendering_mode' => 'string',
-        'save_format' => 'string',
         'update_created_time_property' => 'bool',
         'update_fields' => 'bool',
         'update_last_printed_property' => 'bool',
         'update_last_saved_time_property' => 'bool',
         'update_sdt_content' => 'bool',
-        'zip_output' => 'bool'
+        'zip_output' => 'bool',
+        'save_format' => 'string'
     ];
 
     /*
@@ -81,13 +81,13 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'null',
         'file_name' => 'null',
         'iml_rendering_mode' => 'null',
-        'save_format' => 'null',
         'update_created_time_property' => 'null',
         'update_fields' => 'null',
         'update_last_printed_property' => 'null',
         'update_last_saved_time_property' => 'null',
         'update_sdt_content' => 'null',
-        'zip_output' => 'null'
+        'zip_output' => 'null',
+        'save_format' => 'null'
     ];
 
     /*
@@ -124,13 +124,13 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'DmlRenderingMode',
         'file_name' => 'FileName',
         'iml_rendering_mode' => 'ImlRenderingMode',
-        'save_format' => 'SaveFormat',
         'update_created_time_property' => 'UpdateCreatedTimeProperty',
         'update_fields' => 'UpdateFields',
         'update_last_printed_property' => 'UpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'UpdateLastSavedTimeProperty',
         'update_sdt_content' => 'UpdateSdtContent',
-        'zip_output' => 'ZipOutput'
+        'zip_output' => 'ZipOutput',
+        'save_format' => 'SaveFormat'
     ];
 
     /*
@@ -146,13 +146,13 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'setDmlRenderingMode',
         'file_name' => 'setFileName',
         'iml_rendering_mode' => 'setImlRenderingMode',
-        'save_format' => 'setSaveFormat',
         'update_created_time_property' => 'setUpdateCreatedTimeProperty',
         'update_fields' => 'setUpdateFields',
         'update_last_printed_property' => 'setUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'setUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'setUpdateSdtContent',
-        'zip_output' => 'setZipOutput'
+        'zip_output' => 'setZipOutput',
+        'save_format' => 'setSaveFormat'
     ];
 
     /*
@@ -168,13 +168,13 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'getDmlRenderingMode',
         'file_name' => 'getFileName',
         'iml_rendering_mode' => 'getImlRenderingMode',
-        'save_format' => 'getSaveFormat',
         'update_created_time_property' => 'getUpdateCreatedTimeProperty',
         'update_fields' => 'getUpdateFields',
         'update_last_printed_property' => 'getUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'getUpdateLastSavedTimeProperty',
         'update_sdt_content' => 'getUpdateSdtContent',
-        'zip_output' => 'getZipOutput'
+        'zip_output' => 'getZipOutput',
+        'save_format' => 'getSaveFormat'
     ];
 
     /*
@@ -300,13 +300,13 @@ abstract class SaveOptionsData implements ArrayAccess
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['iml_rendering_mode'] = isset($data['iml_rendering_mode']) ? $data['iml_rendering_mode'] : null;
-        $this->container['save_format'] = null;
         $this->container['update_created_time_property'] = isset($data['update_created_time_property']) ? $data['update_created_time_property'] : null;
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
         $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
         $this->container['update_last_saved_time_property'] = isset($data['update_last_saved_time_property']) ? $data['update_last_saved_time_property'] : null;
         $this->container['update_sdt_content'] = isset($data['update_sdt_content']) ? $data['update_sdt_content'] : null;
         $this->container['zip_output'] = isset($data['zip_output']) ? $data['zip_output'] : null;
+        $this->container['save_format'] = null;
     }
 
     /*
@@ -571,18 +571,6 @@ abstract class SaveOptionsData implements ArrayAccess
 
 
     /*
-     * Gets save_format
-     *
-     * @return string
-     */
-    public function getSaveFormat()
-    {
-        return $this->container['save_format'];
-    }
-
-
-
-    /*
      * Gets update_created_time_property
      *
      * @return bool
@@ -724,6 +712,18 @@ abstract class SaveOptionsData implements ArrayAccess
         $this->container['zip_output'] = $zip_output;
         return $this;
     }
+
+
+    /*
+     * Gets save_format
+     *
+     * @return string
+     */
+    public function getSaveFormat()
+    {
+        return $this->container['save_format'];
+    }
+
 
 
     /*

@@ -461,12 +461,12 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['page_mode'] = isset($data['page_mode']) ? $data['page_mode'] : null;
         $this->container['preblend_images'] = isset($data['preblend_images']) ? $data['preblend_images'] : null;
         $this->container['preserve_form_fields'] = isset($data['preserve_form_fields']) ? $data['preserve_form_fields'] : null;
-        $this->container['save_format'] = "pdf";
         $this->container['text_compression'] = isset($data['text_compression']) ? $data['text_compression'] : null;
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
         $this->container['use_core_fonts'] = isset($data['use_core_fonts']) ? $data['use_core_fonts'] : null;
         $this->container['zoom_behavior'] = isset($data['zoom_behavior']) ? $data['zoom_behavior'] : null;
         $this->container['zoom_factor'] = isset($data['zoom_factor']) ? $data['zoom_factor'] : null;
+        $this->container['save_format'] = "pdf";
     }
 
     /*

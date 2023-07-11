@@ -157,7 +157,23 @@ class DocumentEntry extends BaseEntry
         return self::$swaggerModelName;
     }
 
+    const IMPORT_FORMAT_MODE_USE_DESTINATION_STYLES = 'UseDestinationStyles';
+    const IMPORT_FORMAT_MODE_KEEP_SOURCE_FORMATTING = 'KeepSourceFormatting';
+    const IMPORT_FORMAT_MODE_KEEP_DIFFERENT_STYLES = 'KeepDifferentStyles';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getImportFormatModeAllowableValues()
+    {
+        return [
+            self::IMPORT_FORMAT_MODE_USE_DESTINATION_STYLES,
+            self::IMPORT_FORMAT_MODE_KEEP_SOURCE_FORMATTING,
+            self::IMPORT_FORMAT_MODE_KEEP_DIFFERENT_STYLES
+        ];
+    }
 
     /*
      * Constructor
@@ -180,6 +196,15 @@ class DocumentEntry extends BaseEntry
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
+        $allowedValues = $this->getImportFormatModeAllowableValues();
+        if (!in_array($this->container['import_format_mode'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'import_format_mode', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+
         return $invalidProperties;
     }
 
@@ -194,6 +219,12 @@ class DocumentEntry extends BaseEntry
         if (!parent::valid()) {
             return false;
         }
+
+        $allowedValues = $this->getImportFormatModeAllowableValues();
+        if (!in_array($this->container['import_format_mode'], $allowedValues)) {
+            return false;
+        }
+
 
         return true;
     }
@@ -241,6 +272,10 @@ class DocumentEntry extends BaseEntry
      */
     public function setImportFormatMode($import_format_mode)
     {
+        $allowedValues = $this->getImportFormatModeAllowableValues();
+        if ((!is_numeric($import_format_mode) && !in_array($import_format_mode, $allowedValues)) || (is_numeric($import_format_mode) && !in_array($allowedValues[$import_format_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'import_format_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['import_format_mode'] = $import_format_mode;
         return $this;
     }

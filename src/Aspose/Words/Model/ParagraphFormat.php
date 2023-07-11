@@ -51,8 +51,8 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_heading' => 'bool',
-        'is_list_item' => 'bool'
+        'is_list_item' => 'bool',
+        'is_heading' => 'bool'
     ];
 
     /*
@@ -61,8 +61,8 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_heading' => 'null',
-        'is_list_item' => 'null'
+        'is_list_item' => 'null',
+        'is_heading' => 'null'
     ];
 
     /*
@@ -92,8 +92,8 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_heading' => 'IsHeading',
-        'is_list_item' => 'IsListItem'
+        'is_list_item' => 'IsListItem',
+        'is_heading' => 'IsHeading'
     ];
 
     /*
@@ -102,8 +102,8 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $setters = [
-        'is_heading' => 'setIsHeading',
-        'is_list_item' => 'setIsListItem'
+        'is_list_item' => 'setIsListItem',
+        'is_heading' => 'setIsHeading'
     ];
 
     /*
@@ -112,8 +112,8 @@ class ParagraphFormat extends ParagraphFormatBase
      * @var string[]
      */
     protected static $getters = [
-        'is_heading' => 'getIsHeading',
-        'is_list_item' => 'getIsListItem'
+        'is_list_item' => 'getIsListItem',
+        'is_heading' => 'getIsHeading'
     ];
 
     /*
@@ -168,8 +168,8 @@ class ParagraphFormat extends ParagraphFormatBase
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['is_heading'] = isset($data['is_heading']) ? $data['is_heading'] : null;
         $this->container['is_list_item'] = isset($data['is_list_item']) ? $data['is_list_item'] : null;
+        $this->container['is_heading'] = isset($data['is_heading']) ? $data['is_heading'] : null;
     }
 
     /*
@@ -199,30 +199,6 @@ class ParagraphFormat extends ParagraphFormatBase
     }
 
     /*
-     * Gets is_heading
-     *
-     * @return bool
-     */
-    public function getIsHeading()
-    {
-        return $this->container['is_heading'];
-    }
-
-    /*
-     * Sets is_heading
-     *
-     * @param bool $is_heading Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.
-     *
-     * @return $this
-     */
-    public function setIsHeading($is_heading)
-    {
-        $this->container['is_heading'] = $is_heading;
-        return $this;
-    }
-
-
-    /*
      * Gets is_list_item
      *
      * @return bool
@@ -242,6 +218,30 @@ class ParagraphFormat extends ParagraphFormatBase
     public function setIsListItem($is_list_item)
     {
         $this->container['is_list_item'] = $is_list_item;
+        return $this;
+    }
+
+
+    /*
+     * Gets is_heading
+     *
+     * @return bool
+     */
+    public function getIsHeading()
+    {
+        return $this->container['is_heading'];
+    }
+
+    /*
+     * Sets is_heading
+     *
+     * @param bool $is_heading Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.
+     *
+     * @return $this
+     */
+    public function setIsHeading($is_heading)
+    {
+        $this->container['is_heading'] = $is_heading;
         return $this;
     }
 

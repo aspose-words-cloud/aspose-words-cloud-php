@@ -180,9 +180,9 @@ class DocSaveOptionsData extends SaveOptionsData
         parent::__construct($data);
         $this->container['always_compress_metafiles'] = isset($data['always_compress_metafiles']) ? $data['always_compress_metafiles'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['save_format'] = "doc";
         $this->container['save_picture_bullet'] = isset($data['save_picture_bullet']) ? $data['save_picture_bullet'] : null;
         $this->container['save_routing_slip'] = isset($data['save_routing_slip']) ? $data['save_routing_slip'] : null;
+        $this->container['save_format'] = "doc";
     }
 
     /*

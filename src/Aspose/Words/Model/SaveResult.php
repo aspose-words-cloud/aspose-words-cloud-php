@@ -52,9 +52,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'additional_items' => '\Aspose\Words\Model\FileLink[]',
         'dest_document' => '\Aspose\Words\Model\FileLink',
-        'source_document' => '\Aspose\Words\Model\FileLink'
+        'source_document' => '\Aspose\Words\Model\FileLink',
+        'additional_items' => '\Aspose\Words\Model\FileLink[]'
     ];
 
     /*
@@ -63,9 +63,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'additional_items' => 'null',
         'dest_document' => 'null',
-        'source_document' => 'null'
+        'source_document' => 'null',
+        'additional_items' => 'null'
     ];
 
     /*
@@ -95,9 +95,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'additional_items' => 'AdditionalItems',
         'dest_document' => 'DestDocument',
-        'source_document' => 'SourceDocument'
+        'source_document' => 'SourceDocument',
+        'additional_items' => 'AdditionalItems'
     ];
 
     /*
@@ -106,9 +106,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'additional_items' => 'setAdditionalItems',
         'dest_document' => 'setDestDocument',
-        'source_document' => 'setSourceDocument'
+        'source_document' => 'setSourceDocument',
+        'additional_items' => 'setAdditionalItems'
     ];
 
     /*
@@ -117,9 +117,9 @@ class SaveResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'additional_items' => 'getAdditionalItems',
         'dest_document' => 'getDestDocument',
-        'source_document' => 'getSourceDocument'
+        'source_document' => 'getSourceDocument',
+        'additional_items' => 'getAdditionalItems'
     ];
 
     /*
@@ -180,9 +180,9 @@ class SaveResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['additional_items'] = isset($data['additional_items']) ? $data['additional_items'] : null;
         $this->container['dest_document'] = isset($data['dest_document']) ? $data['dest_document'] : null;
         $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
+        $this->container['additional_items'] = isset($data['additional_items']) ? $data['additional_items'] : null;
     }
 
     /*
@@ -207,30 +207,6 @@ class SaveResult implements ArrayAccess
     {
         return true;
     }
-
-    /*
-     * Gets additional_items
-     *
-     * @return \Aspose\Words\Model\FileLink[]
-     */
-    public function getAdditionalItems()
-    {
-        return $this->container['additional_items'];
-    }
-
-    /*
-     * Sets additional_items
-     *
-     * @param \Aspose\Words\Model\FileLink[] $additional_items Gets or sets the list of links to additional items (css, images etc).
-     *
-     * @return $this
-     */
-    public function setAdditionalItems($additional_items)
-    {
-        $this->container['additional_items'] = $additional_items;
-        return $this;
-    }
-
 
     /*
      * Gets dest_document
@@ -276,6 +252,30 @@ class SaveResult implements ArrayAccess
     public function setSourceDocument($source_document)
     {
         $this->container['source_document'] = $source_document;
+        return $this;
+    }
+
+
+    /*
+     * Gets additional_items
+     *
+     * @return \Aspose\Words\Model\FileLink[]
+     */
+    public function getAdditionalItems()
+    {
+        return $this->container['additional_items'];
+    }
+
+    /*
+     * Sets additional_items
+     *
+     * @param \Aspose\Words\Model\FileLink[] $additional_items Gets or sets the list of links to additional items (css, images etc).
+     *
+     * @return $this
+     */
+    public function setAdditionalItems($additional_items)
+    {
+        $this->container['additional_items'] = $additional_items;
         return $this;
     }
 

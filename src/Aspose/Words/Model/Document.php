@@ -52,11 +52,11 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'links' => '\Aspose\Words\Model\Link[]',
         'document_properties' => '\Aspose\Words\Model\DocumentProperties',
         'file_name' => 'string',
         'is_encrypted' => 'bool',
         'is_signed' => 'bool',
-        'links' => '\Aspose\Words\Model\Link[]',
         'source_format' => 'string'
     ];
 
@@ -66,11 +66,11 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'links' => 'null',
         'document_properties' => 'null',
         'file_name' => 'null',
         'is_encrypted' => 'null',
         'is_signed' => 'null',
-        'links' => 'null',
         'source_format' => 'null'
     ];
 
@@ -101,11 +101,11 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'links' => 'Links',
         'document_properties' => 'DocumentProperties',
         'file_name' => 'FileName',
         'is_encrypted' => 'IsEncrypted',
         'is_signed' => 'IsSigned',
-        'links' => 'Links',
         'source_format' => 'SourceFormat'
     ];
 
@@ -115,11 +115,11 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'links' => 'setLinks',
         'document_properties' => 'setDocumentProperties',
         'file_name' => 'setFileName',
         'is_encrypted' => 'setIsEncrypted',
         'is_signed' => 'setIsSigned',
-        'links' => 'setLinks',
         'source_format' => 'setSourceFormat'
     ];
 
@@ -129,11 +129,11 @@ class Document implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'links' => 'getLinks',
         'document_properties' => 'getDocumentProperties',
         'file_name' => 'getFileName',
         'is_encrypted' => 'getIsEncrypted',
         'is_signed' => 'getIsSigned',
-        'links' => 'getLinks',
         'source_format' => 'getSourceFormat'
     ];
 
@@ -247,11 +247,11 @@ class Document implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['document_properties'] = isset($data['document_properties']) ? $data['document_properties'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['is_encrypted'] = isset($data['is_encrypted']) ? $data['is_encrypted'] : null;
         $this->container['is_signed'] = isset($data['is_signed']) ? $data['is_signed'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['source_format'] = isset($data['source_format']) ? $data['source_format'] : null;
     }
 
@@ -292,6 +292,30 @@ class Document implements ArrayAccess
 
         return true;
     }
+
+    /*
+     * Gets links
+     *
+     * @return \Aspose\Words\Model\Link[]
+     */
+    public function getLinks()
+    {
+        return $this->container['links'];
+    }
+
+    /*
+     * Sets links
+     *
+     * @param \Aspose\Words\Model\Link[] $links Gets or sets the list of links that originate from this document.
+     *
+     * @return $this
+     */
+    public function setLinks($links)
+    {
+        $this->container['links'] = $links;
+        return $this;
+    }
+
 
     /*
      * Gets document_properties
@@ -385,30 +409,6 @@ class Document implements ArrayAccess
     public function setIsSigned($is_signed)
     {
         $this->container['is_signed'] = $is_signed;
-        return $this;
-    }
-
-
-    /*
-     * Gets links
-     *
-     * @return \Aspose\Words\Model\Link[]
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /*
-     * Sets links
-     *
-     * @param \Aspose\Words\Model\Link[] $links Gets or sets the list of links that originate from this document.
-     *
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
         return $this;
     }
 

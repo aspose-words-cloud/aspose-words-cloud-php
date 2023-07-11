@@ -53,9 +53,9 @@ class PageStatData implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'footnotes_stat_data' => '\Aspose\Words\Model\FootnotesStatData',
-        'page_number' => 'int',
         'paragraph_count' => 'int',
-        'word_count' => 'int'
+        'word_count' => 'int',
+        'page_number' => 'int'
     ];
 
     /*
@@ -65,9 +65,9 @@ class PageStatData implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'footnotes_stat_data' => 'null',
-        'page_number' => 'null',
         'paragraph_count' => 'null',
-        'word_count' => 'null'
+        'word_count' => 'null',
+        'page_number' => 'null'
     ];
 
     /*
@@ -98,9 +98,9 @@ class PageStatData implements ArrayAccess
      */
     protected static $attributeMap = [
         'footnotes_stat_data' => 'FootnotesStatData',
-        'page_number' => 'PageNumber',
         'paragraph_count' => 'ParagraphCount',
-        'word_count' => 'WordCount'
+        'word_count' => 'WordCount',
+        'page_number' => 'PageNumber'
     ];
 
     /*
@@ -110,9 +110,9 @@ class PageStatData implements ArrayAccess
      */
     protected static $setters = [
         'footnotes_stat_data' => 'setFootnotesStatData',
-        'page_number' => 'setPageNumber',
         'paragraph_count' => 'setParagraphCount',
-        'word_count' => 'setWordCount'
+        'word_count' => 'setWordCount',
+        'page_number' => 'setPageNumber'
     ];
 
     /*
@@ -122,9 +122,9 @@ class PageStatData implements ArrayAccess
      */
     protected static $getters = [
         'footnotes_stat_data' => 'getFootnotesStatData',
-        'page_number' => 'getPageNumber',
         'paragraph_count' => 'getParagraphCount',
-        'word_count' => 'getWordCount'
+        'word_count' => 'getWordCount',
+        'page_number' => 'getPageNumber'
     ];
 
     /*
@@ -186,9 +186,9 @@ class PageStatData implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['footnotes_stat_data'] = isset($data['footnotes_stat_data']) ? $data['footnotes_stat_data'] : null;
-        $this->container['page_number'] = isset($data['page_number']) ? $data['page_number'] : null;
         $this->container['paragraph_count'] = isset($data['paragraph_count']) ? $data['paragraph_count'] : null;
         $this->container['word_count'] = isset($data['word_count']) ? $data['word_count'] : null;
+        $this->container['page_number'] = isset($data['page_number']) ? $data['page_number'] : null;
     }
 
     /*
@@ -239,30 +239,6 @@ class PageStatData implements ArrayAccess
 
 
     /*
-     * Gets page_number
-     *
-     * @return int
-     */
-    public function getPageNumber()
-    {
-        return $this->container['page_number'];
-    }
-
-    /*
-     * Sets page_number
-     *
-     * @param int $page_number Gets or sets the page number.
-     *
-     * @return $this
-     */
-    public function setPageNumber($page_number)
-    {
-        $this->container['page_number'] = $page_number;
-        return $this;
-    }
-
-
-    /*
      * Gets paragraph_count
      *
      * @return int
@@ -306,6 +282,30 @@ class PageStatData implements ArrayAccess
     public function setWordCount($word_count)
     {
         $this->container['word_count'] = $word_count;
+        return $this;
+    }
+
+
+    /*
+     * Gets page_number
+     *
+     * @return int
+     */
+    public function getPageNumber()
+    {
+        return $this->container['page_number'];
+    }
+
+    /*
+     * Sets page_number
+     *
+     * @param int $page_number Gets or sets the page number.
+     *
+     * @return $this
+     */
+    public function setPageNumber($page_number)
+    {
+        $this->container['page_number'] = $page_number;
         return $this;
     }
 

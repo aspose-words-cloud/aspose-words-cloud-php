@@ -52,8 +52,8 @@ class LoadWebDocumentData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'loading_document_url' => 'string',
-        'save_options' => '\Aspose\Words\Model\SaveOptionsData'
+        'save_options' => '\Aspose\Words\Model\SaveOptionsData',
+        'loading_document_url' => 'string'
     ];
 
     /*
@@ -62,8 +62,8 @@ class LoadWebDocumentData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'loading_document_url' => 'null',
-        'save_options' => 'null'
+        'save_options' => 'null',
+        'loading_document_url' => 'null'
     ];
 
     /*
@@ -93,8 +93,8 @@ class LoadWebDocumentData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'loading_document_url' => 'LoadingDocumentUrl',
-        'save_options' => 'SaveOptions'
+        'save_options' => 'SaveOptions',
+        'loading_document_url' => 'LoadingDocumentUrl'
     ];
 
     /*
@@ -103,8 +103,8 @@ class LoadWebDocumentData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'loading_document_url' => 'setLoadingDocumentUrl',
-        'save_options' => 'setSaveOptions'
+        'save_options' => 'setSaveOptions',
+        'loading_document_url' => 'setLoadingDocumentUrl'
     ];
 
     /*
@@ -113,8 +113,8 @@ class LoadWebDocumentData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'loading_document_url' => 'getLoadingDocumentUrl',
-        'save_options' => 'getSaveOptions'
+        'save_options' => 'getSaveOptions',
+        'loading_document_url' => 'getLoadingDocumentUrl'
     ];
 
     /*
@@ -175,8 +175,8 @@ class LoadWebDocumentData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['loading_document_url'] = isset($data['loading_document_url']) ? $data['loading_document_url'] : null;
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
+        $this->container['loading_document_url'] = isset($data['loading_document_url']) ? $data['loading_document_url'] : null;
     }
 
     /*
@@ -203,30 +203,6 @@ class LoadWebDocumentData implements ArrayAccess
     }
 
     /*
-     * Gets loading_document_url
-     *
-     * @return string
-     */
-    public function getLoadingDocumentUrl()
-    {
-        return $this->container['loading_document_url'];
-    }
-
-    /*
-     * Sets loading_document_url
-     *
-     * @param string $loading_document_url Gets or sets the web document URL.
-     *
-     * @return $this
-     */
-    public function setLoadingDocumentUrl($loading_document_url)
-    {
-        $this->container['loading_document_url'] = $loading_document_url;
-        return $this;
-    }
-
-
-    /*
      * Gets save_options
      *
      * @return \Aspose\Words\Model\SaveOptionsData
@@ -246,6 +222,30 @@ class LoadWebDocumentData implements ArrayAccess
     public function setSaveOptions($save_options)
     {
         $this->container['save_options'] = $save_options;
+        return $this;
+    }
+
+
+    /*
+     * Gets loading_document_url
+     *
+     * @return string
+     */
+    public function getLoadingDocumentUrl()
+    {
+        return $this->container['loading_document_url'];
+    }
+
+    /*
+     * Sets loading_document_url
+     *
+     * @param string $loading_document_url Gets or sets the web document URL.
+     *
+     * @return $this
+     */
+    public function setLoadingDocumentUrl($loading_document_url)
+    {
+        $this->container['loading_document_url'] = $loading_document_url;
         return $this;
     }
 

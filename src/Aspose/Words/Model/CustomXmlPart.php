@@ -51,8 +51,8 @@ class CustomXmlPart extends CustomXmlPartLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'data' => 'string',
-        'id' => 'string'
+        'id' => 'string',
+        'data' => 'string'
     ];
 
     /*
@@ -61,8 +61,8 @@ class CustomXmlPart extends CustomXmlPartLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'data' => 'null',
-        'id' => 'null'
+        'id' => 'null',
+        'data' => 'null'
     ];
 
     /*
@@ -92,8 +92,8 @@ class CustomXmlPart extends CustomXmlPartLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'Data',
-        'id' => 'Id'
+        'id' => 'Id',
+        'data' => 'Data'
     ];
 
     /*
@@ -102,8 +102,8 @@ class CustomXmlPart extends CustomXmlPartLink
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'id' => 'setId'
+        'id' => 'setId',
+        'data' => 'setData'
     ];
 
     /*
@@ -112,8 +112,8 @@ class CustomXmlPart extends CustomXmlPartLink
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'id' => 'getId'
+        'id' => 'getId',
+        'data' => 'getData'
     ];
 
     /*
@@ -168,8 +168,8 @@ class CustomXmlPart extends CustomXmlPartLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /*
@@ -199,30 +199,6 @@ class CustomXmlPart extends CustomXmlPartLink
     }
 
     /*
-     * Gets data
-     *
-     * @return string
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /*
-     * Sets data
-     *
-     * @param string $data Gets or sets the custom xml part data.
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-        return $this;
-    }
-
-
-    /*
      * Gets id
      *
      * @return string
@@ -242,6 +218,30 @@ class CustomXmlPart extends CustomXmlPartLink
     public function setId($id)
     {
         $this->container['id'] = $id;
+        return $this;
+    }
+
+
+    /*
+     * Gets data
+     *
+     * @return string
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /*
+     * Sets data
+     *
+     * @param string $data Gets or sets the custom xml part data.
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
         return $this;
     }
 

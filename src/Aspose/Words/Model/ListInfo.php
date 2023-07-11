@@ -51,13 +51,13 @@ class ListInfo extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_list_style_definition' => 'bool',
-        'is_list_style_reference' => 'bool',
+        'list_id' => 'int',
         'is_multi_level' => 'bool',
         'is_restart_at_each_section' => 'bool',
-        'list_id' => 'int',
-        'list_levels' => '\Aspose\Words\Model\ListLevels',
-        'style' => '\Aspose\Words\Model\Style'
+        'is_list_style_definition' => 'bool',
+        'is_list_style_reference' => 'bool',
+        'style' => '\Aspose\Words\Model\Style',
+        'list_levels' => '\Aspose\Words\Model\ListLevels'
     ];
 
     /*
@@ -66,13 +66,13 @@ class ListInfo extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_list_style_definition' => 'null',
-        'is_list_style_reference' => 'null',
+        'list_id' => 'null',
         'is_multi_level' => 'null',
         'is_restart_at_each_section' => 'null',
-        'list_id' => 'null',
-        'list_levels' => 'null',
-        'style' => 'null'
+        'is_list_style_definition' => 'null',
+        'is_list_style_reference' => 'null',
+        'style' => 'null',
+        'list_levels' => 'null'
     ];
 
     /*
@@ -102,13 +102,13 @@ class ListInfo extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_list_style_definition' => 'IsListStyleDefinition',
-        'is_list_style_reference' => 'IsListStyleReference',
+        'list_id' => 'ListId',
         'is_multi_level' => 'IsMultiLevel',
         'is_restart_at_each_section' => 'IsRestartAtEachSection',
-        'list_id' => 'ListId',
-        'list_levels' => 'ListLevels',
-        'style' => 'Style'
+        'is_list_style_definition' => 'IsListStyleDefinition',
+        'is_list_style_reference' => 'IsListStyleReference',
+        'style' => 'Style',
+        'list_levels' => 'ListLevels'
     ];
 
     /*
@@ -117,13 +117,13 @@ class ListInfo extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'is_list_style_definition' => 'setIsListStyleDefinition',
-        'is_list_style_reference' => 'setIsListStyleReference',
+        'list_id' => 'setListId',
         'is_multi_level' => 'setIsMultiLevel',
         'is_restart_at_each_section' => 'setIsRestartAtEachSection',
-        'list_id' => 'setListId',
-        'list_levels' => 'setListLevels',
-        'style' => 'setStyle'
+        'is_list_style_definition' => 'setIsListStyleDefinition',
+        'is_list_style_reference' => 'setIsListStyleReference',
+        'style' => 'setStyle',
+        'list_levels' => 'setListLevels'
     ];
 
     /*
@@ -132,13 +132,13 @@ class ListInfo extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'is_list_style_definition' => 'getIsListStyleDefinition',
-        'is_list_style_reference' => 'getIsListStyleReference',
+        'list_id' => 'getListId',
         'is_multi_level' => 'getIsMultiLevel',
         'is_restart_at_each_section' => 'getIsRestartAtEachSection',
-        'list_id' => 'getListId',
-        'list_levels' => 'getListLevels',
-        'style' => 'getStyle'
+        'is_list_style_definition' => 'getIsListStyleDefinition',
+        'is_list_style_reference' => 'getIsListStyleReference',
+        'style' => 'getStyle',
+        'list_levels' => 'getListLevels'
     ];
 
     /*
@@ -193,13 +193,13 @@ class ListInfo extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['is_list_style_definition'] = isset($data['is_list_style_definition']) ? $data['is_list_style_definition'] : null;
-        $this->container['is_list_style_reference'] = isset($data['is_list_style_reference']) ? $data['is_list_style_reference'] : null;
+        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
         $this->container['is_multi_level'] = isset($data['is_multi_level']) ? $data['is_multi_level'] : null;
         $this->container['is_restart_at_each_section'] = isset($data['is_restart_at_each_section']) ? $data['is_restart_at_each_section'] : null;
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
-        $this->container['list_levels'] = isset($data['list_levels']) ? $data['list_levels'] : null;
+        $this->container['is_list_style_definition'] = isset($data['is_list_style_definition']) ? $data['is_list_style_definition'] : null;
+        $this->container['is_list_style_reference'] = isset($data['is_list_style_reference']) ? $data['is_list_style_reference'] : null;
         $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['list_levels'] = isset($data['list_levels']) ? $data['list_levels'] : null;
     }
 
     /*
@@ -229,49 +229,25 @@ class ListInfo extends LinkElement
     }
 
     /*
-     * Gets is_list_style_definition
+     * Gets list_id
      *
-     * @return bool
+     * @return int
      */
-    public function getIsListStyleDefinition()
+    public function getListId()
     {
-        return $this->container['is_list_style_definition'];
+        return $this->container['list_id'];
     }
 
     /*
-     * Sets is_list_style_definition
+     * Sets list_id
      *
-     * @param bool $is_list_style_definition Gets or sets a value indicating whether this list is a definition of a list style.
+     * @param int $list_id Gets or sets the unique identifier of the list.
      *
      * @return $this
      */
-    public function setIsListStyleDefinition($is_list_style_definition)
+    public function setListId($list_id)
     {
-        $this->container['is_list_style_definition'] = $is_list_style_definition;
-        return $this;
-    }
-
-
-    /*
-     * Gets is_list_style_reference
-     *
-     * @return bool
-     */
-    public function getIsListStyleReference()
-    {
-        return $this->container['is_list_style_reference'];
-    }
-
-    /*
-     * Sets is_list_style_reference
-     *
-     * @param bool $is_list_style_reference Gets or sets a value indicating whether this list is a reference to a list style.
-     *
-     * @return $this
-     */
-    public function setIsListStyleReference($is_list_style_reference)
-    {
-        $this->container['is_list_style_reference'] = $is_list_style_reference;
+        $this->container['list_id'] = $list_id;
         return $this;
     }
 
@@ -325,49 +301,49 @@ class ListInfo extends LinkElement
 
 
     /*
-     * Gets list_id
+     * Gets is_list_style_definition
      *
-     * @return int
+     * @return bool
      */
-    public function getListId()
+    public function getIsListStyleDefinition()
     {
-        return $this->container['list_id'];
+        return $this->container['is_list_style_definition'];
     }
 
     /*
-     * Sets list_id
+     * Sets is_list_style_definition
      *
-     * @param int $list_id Gets or sets the unique identifier of the list.
+     * @param bool $is_list_style_definition Gets or sets a value indicating whether this list is a definition of a list style.
      *
      * @return $this
      */
-    public function setListId($list_id)
+    public function setIsListStyleDefinition($is_list_style_definition)
     {
-        $this->container['list_id'] = $list_id;
+        $this->container['is_list_style_definition'] = $is_list_style_definition;
         return $this;
     }
 
 
     /*
-     * Gets list_levels
+     * Gets is_list_style_reference
      *
-     * @return \Aspose\Words\Model\ListLevels
+     * @return bool
      */
-    public function getListLevels()
+    public function getIsListStyleReference()
     {
-        return $this->container['list_levels'];
+        return $this->container['is_list_style_reference'];
     }
 
     /*
-     * Sets list_levels
+     * Sets is_list_style_reference
      *
-     * @param \Aspose\Words\Model\ListLevels $list_levels Gets or sets the collection of list levels for this list.
+     * @param bool $is_list_style_reference Gets or sets a value indicating whether this list is a reference to a list style.
      *
      * @return $this
      */
-    public function setListLevels($list_levels)
+    public function setIsListStyleReference($is_list_style_reference)
     {
-        $this->container['list_levels'] = $list_levels;
+        $this->container['is_list_style_reference'] = $is_list_style_reference;
         return $this;
     }
 
@@ -392,6 +368,30 @@ class ListInfo extends LinkElement
     public function setStyle($style)
     {
         $this->container['style'] = $style;
+        return $this;
+    }
+
+
+    /*
+     * Gets list_levels
+     *
+     * @return \Aspose\Words\Model\ListLevels
+     */
+    public function getListLevels()
+    {
+        return $this->container['list_levels'];
+    }
+
+    /*
+     * Sets list_levels
+     *
+     * @param \Aspose\Words\Model\ListLevels $list_levels Gets or sets the collection of list levels for this list.
+     *
+     * @return $this
+     */
+    public function setListLevels($list_levels)
+    {
+        $this->container['list_levels'] = $list_levels;
         return $this;
     }
 

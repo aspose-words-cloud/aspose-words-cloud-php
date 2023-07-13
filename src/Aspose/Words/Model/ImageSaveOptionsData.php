@@ -60,9 +60,9 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'resolution' => 'double',
         'scale' => 'double',
         'use_anti_aliasing' => 'bool',
-        'use_gdi_emf_renderer' => 'bool',
         'use_high_quality_rendering' => 'bool',
-        'vertical_resolution' => 'double'
+        'vertical_resolution' => 'double',
+        'use_gdi_emf_renderer' => 'bool'
     ];
 
     /*
@@ -80,9 +80,9 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'resolution' => 'null',
         'scale' => 'null',
         'use_anti_aliasing' => 'null',
-        'use_gdi_emf_renderer' => 'null',
         'use_high_quality_rendering' => 'null',
-        'vertical_resolution' => 'null'
+        'vertical_resolution' => 'null',
+        'use_gdi_emf_renderer' => 'null'
     ];
 
     /*
@@ -121,9 +121,9 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'resolution' => 'Resolution',
         'scale' => 'Scale',
         'use_anti_aliasing' => 'UseAntiAliasing',
-        'use_gdi_emf_renderer' => 'UseGdiEmfRenderer',
         'use_high_quality_rendering' => 'UseHighQualityRendering',
-        'vertical_resolution' => 'VerticalResolution'
+        'vertical_resolution' => 'VerticalResolution',
+        'use_gdi_emf_renderer' => 'UseGdiEmfRenderer'
     ];
 
     /*
@@ -141,9 +141,9 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'resolution' => 'setResolution',
         'scale' => 'setScale',
         'use_anti_aliasing' => 'setUseAntiAliasing',
-        'use_gdi_emf_renderer' => 'setUseGdiEmfRenderer',
         'use_high_quality_rendering' => 'setUseHighQualityRendering',
-        'vertical_resolution' => 'setVerticalResolution'
+        'vertical_resolution' => 'setVerticalResolution',
+        'use_gdi_emf_renderer' => 'setUseGdiEmfRenderer'
     ];
 
     /*
@@ -161,9 +161,9 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'resolution' => 'getResolution',
         'scale' => 'getScale',
         'use_anti_aliasing' => 'getUseAntiAliasing',
-        'use_gdi_emf_renderer' => 'getUseGdiEmfRenderer',
         'use_high_quality_rendering' => 'getUseHighQualityRendering',
-        'vertical_resolution' => 'getVerticalResolution'
+        'vertical_resolution' => 'getVerticalResolution',
+        'use_gdi_emf_renderer' => 'getUseGdiEmfRenderer'
     ];
 
     /*
@@ -275,9 +275,9 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['resolution'] = isset($data['resolution']) ? $data['resolution'] : null;
         $this->container['scale'] = isset($data['scale']) ? $data['scale'] : null;
         $this->container['use_anti_aliasing'] = isset($data['use_anti_aliasing']) ? $data['use_anti_aliasing'] : null;
-        $this->container['use_gdi_emf_renderer'] = isset($data['use_gdi_emf_renderer']) ? $data['use_gdi_emf_renderer'] : null;
         $this->container['use_high_quality_rendering'] = isset($data['use_high_quality_rendering']) ? $data['use_high_quality_rendering'] : null;
         $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
+        $this->container['use_gdi_emf_renderer'] = isset($data['use_gdi_emf_renderer']) ? $data['use_gdi_emf_renderer'] : null;
     }
 
     /*
@@ -559,30 +559,6 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
 
 
     /*
-     * Gets use_gdi_emf_renderer
-     *
-     * @return bool
-     */
-    public function getUseGdiEmfRenderer()
-    {
-        return $this->container['use_gdi_emf_renderer'];
-    }
-
-    /*
-     * Sets use_gdi_emf_renderer
-     *
-     * @param bool $use_gdi_emf_renderer Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
-     *
-     * @return $this
-     */
-    public function setUseGdiEmfRenderer($use_gdi_emf_renderer)
-    {
-        $this->container['use_gdi_emf_renderer'] = $use_gdi_emf_renderer;
-        return $this;
-    }
-
-
-    /*
      * Gets use_high_quality_rendering
      *
      * @return bool
@@ -626,6 +602,30 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setVerticalResolution($vertical_resolution)
     {
         $this->container['vertical_resolution'] = $vertical_resolution;
+        return $this;
+    }
+
+
+    /*
+     * Gets use_gdi_emf_renderer
+     *
+     * @return bool
+     */
+    public function getUseGdiEmfRenderer()
+    {
+        return $this->container['use_gdi_emf_renderer'];
+    }
+
+    /*
+     * Sets use_gdi_emf_renderer
+     *
+     * @param bool $use_gdi_emf_renderer Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+     *
+     * @return $this
+     */
+    public function setUseGdiEmfRenderer($use_gdi_emf_renderer)
+    {
+        $this->container['use_gdi_emf_renderer'] = $use_gdi_emf_renderer;
         return $this;
     }
 

@@ -67,7 +67,6 @@ class ParagraphFormatBase extends LinkElement
         'outline_level' => 'string',
         'page_break_before' => 'bool',
         'right_indent' => 'double',
-        'shading' => '\Aspose\Words\Model\Shading',
         'space_after' => 'double',
         'space_after_auto' => 'bool',
         'space_before' => 'double',
@@ -76,7 +75,8 @@ class ParagraphFormatBase extends LinkElement
         'style_name' => 'string',
         'suppress_auto_hyphens' => 'bool',
         'suppress_line_numbers' => 'bool',
-        'widow_control' => 'bool'
+        'widow_control' => 'bool',
+        'shading' => '\Aspose\Words\Model\Shading'
     ];
 
     /*
@@ -101,7 +101,6 @@ class ParagraphFormatBase extends LinkElement
         'outline_level' => 'null',
         'page_break_before' => 'null',
         'right_indent' => 'null',
-        'shading' => 'null',
         'space_after' => 'null',
         'space_after_auto' => 'null',
         'space_before' => 'null',
@@ -110,7 +109,8 @@ class ParagraphFormatBase extends LinkElement
         'style_name' => 'null',
         'suppress_auto_hyphens' => 'null',
         'suppress_line_numbers' => 'null',
-        'widow_control' => 'null'
+        'widow_control' => 'null',
+        'shading' => 'null'
     ];
 
     /*
@@ -156,7 +156,6 @@ class ParagraphFormatBase extends LinkElement
         'outline_level' => 'OutlineLevel',
         'page_break_before' => 'PageBreakBefore',
         'right_indent' => 'RightIndent',
-        'shading' => 'Shading',
         'space_after' => 'SpaceAfter',
         'space_after_auto' => 'SpaceAfterAuto',
         'space_before' => 'SpaceBefore',
@@ -165,7 +164,8 @@ class ParagraphFormatBase extends LinkElement
         'style_name' => 'StyleName',
         'suppress_auto_hyphens' => 'SuppressAutoHyphens',
         'suppress_line_numbers' => 'SuppressLineNumbers',
-        'widow_control' => 'WidowControl'
+        'widow_control' => 'WidowControl',
+        'shading' => 'Shading'
     ];
 
     /*
@@ -190,7 +190,6 @@ class ParagraphFormatBase extends LinkElement
         'outline_level' => 'setOutlineLevel',
         'page_break_before' => 'setPageBreakBefore',
         'right_indent' => 'setRightIndent',
-        'shading' => 'setShading',
         'space_after' => 'setSpaceAfter',
         'space_after_auto' => 'setSpaceAfterAuto',
         'space_before' => 'setSpaceBefore',
@@ -199,7 +198,8 @@ class ParagraphFormatBase extends LinkElement
         'style_name' => 'setStyleName',
         'suppress_auto_hyphens' => 'setSuppressAutoHyphens',
         'suppress_line_numbers' => 'setSuppressLineNumbers',
-        'widow_control' => 'setWidowControl'
+        'widow_control' => 'setWidowControl',
+        'shading' => 'setShading'
     ];
 
     /*
@@ -224,7 +224,6 @@ class ParagraphFormatBase extends LinkElement
         'outline_level' => 'getOutlineLevel',
         'page_break_before' => 'getPageBreakBefore',
         'right_indent' => 'getRightIndent',
-        'shading' => 'getShading',
         'space_after' => 'getSpaceAfter',
         'space_after_auto' => 'getSpaceAfterAuto',
         'space_before' => 'getSpaceBefore',
@@ -233,7 +232,8 @@ class ParagraphFormatBase extends LinkElement
         'style_name' => 'getStyleName',
         'suppress_auto_hyphens' => 'getSuppressAutoHyphens',
         'suppress_line_numbers' => 'getSuppressLineNumbers',
-        'widow_control' => 'getWidowControl'
+        'widow_control' => 'getWidowControl',
+        'shading' => 'getShading'
     ];
 
     /*
@@ -1162,7 +1162,6 @@ class ParagraphFormatBase extends LinkElement
         $this->container['outline_level'] = isset($data['outline_level']) ? $data['outline_level'] : null;
         $this->container['page_break_before'] = isset($data['page_break_before']) ? $data['page_break_before'] : null;
         $this->container['right_indent'] = isset($data['right_indent']) ? $data['right_indent'] : null;
-        $this->container['shading'] = isset($data['shading']) ? $data['shading'] : null;
         $this->container['space_after'] = isset($data['space_after']) ? $data['space_after'] : null;
         $this->container['space_after_auto'] = isset($data['space_after_auto']) ? $data['space_after_auto'] : null;
         $this->container['space_before'] = isset($data['space_before']) ? $data['space_before'] : null;
@@ -1172,6 +1171,7 @@ class ParagraphFormatBase extends LinkElement
         $this->container['suppress_auto_hyphens'] = isset($data['suppress_auto_hyphens']) ? $data['suppress_auto_hyphens'] : null;
         $this->container['suppress_line_numbers'] = isset($data['suppress_line_numbers']) ? $data['suppress_line_numbers'] : null;
         $this->container['widow_control'] = isset($data['widow_control']) ? $data['widow_control'] : null;
+        $this->container['shading'] = isset($data['shading']) ? $data['shading'] : null;
     }
 
     /*
@@ -1668,30 +1668,6 @@ class ParagraphFormatBase extends LinkElement
 
 
     /*
-     * Gets shading
-     *
-     * @return \Aspose\Words\Model\Shading
-     */
-    public function getShading()
-    {
-        return $this->container['shading'];
-    }
-
-    /*
-     * Sets shading
-     *
-     * @param \Aspose\Words\Model\Shading $shading Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
-     *
-     * @return $this
-     */
-    public function setShading($shading)
-    {
-        $this->container['shading'] = $shading;
-        return $this;
-    }
-
-
-    /*
      * Gets space_after
      *
      * @return double
@@ -1907,6 +1883,30 @@ class ParagraphFormatBase extends LinkElement
     public function setWidowControl($widow_control)
     {
         $this->container['widow_control'] = $widow_control;
+        return $this;
+    }
+
+
+    /*
+     * Gets shading
+     *
+     * @return \Aspose\Words\Model\Shading
+     */
+    public function getShading()
+    {
+        return $this->container['shading'];
+    }
+
+    /*
+     * Sets shading
+     *
+     * @param \Aspose\Words\Model\Shading $shading Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
+     *
+     * @return $this
+     */
+    public function setShading($shading)
+    {
+        $this->container['shading'] = $shading;
         return $this;
     }
 

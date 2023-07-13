@@ -516,9 +516,9 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['resolve_font_names'] = isset($data['resolve_font_names']) ? $data['resolve_font_names'] : null;
         $this->container['resource_folder'] = isset($data['resource_folder']) ? $data['resource_folder'] : null;
         $this->container['resource_folder_alias'] = isset($data['resource_folder_alias']) ? $data['resource_folder_alias'] : null;
-        $this->container['save_format'] = "html";
         $this->container['scale_image_to_shape_size'] = isset($data['scale_image_to_shape_size']) ? $data['scale_image_to_shape_size'] : null;
         $this->container['table_width_output_mode'] = isset($data['table_width_output_mode']) ? $data['table_width_output_mode'] : null;
+        $this->container['save_format'] = "html";
     }
 
     /*

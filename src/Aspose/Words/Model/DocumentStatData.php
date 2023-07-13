@@ -54,9 +54,9 @@ class DocumentStatData implements ArrayAccess
     protected static $swaggerTypes = [
         'footnotes_stat_data' => '\Aspose\Words\Model\FootnotesStatData',
         'page_count' => 'int',
-        'page_stat_data' => '\Aspose\Words\Model\PageStatData[]',
         'paragraph_count' => 'int',
-        'word_count' => 'int'
+        'word_count' => 'int',
+        'page_stat_data' => '\Aspose\Words\Model\PageStatData[]'
     ];
 
     /*
@@ -67,9 +67,9 @@ class DocumentStatData implements ArrayAccess
     protected static $swaggerFormats = [
         'footnotes_stat_data' => 'null',
         'page_count' => 'null',
-        'page_stat_data' => 'null',
         'paragraph_count' => 'null',
-        'word_count' => 'null'
+        'word_count' => 'null',
+        'page_stat_data' => 'null'
     ];
 
     /*
@@ -101,9 +101,9 @@ class DocumentStatData implements ArrayAccess
     protected static $attributeMap = [
         'footnotes_stat_data' => 'FootnotesStatData',
         'page_count' => 'PageCount',
-        'page_stat_data' => 'PageStatData',
         'paragraph_count' => 'ParagraphCount',
-        'word_count' => 'WordCount'
+        'word_count' => 'WordCount',
+        'page_stat_data' => 'PageStatData'
     ];
 
     /*
@@ -114,9 +114,9 @@ class DocumentStatData implements ArrayAccess
     protected static $setters = [
         'footnotes_stat_data' => 'setFootnotesStatData',
         'page_count' => 'setPageCount',
-        'page_stat_data' => 'setPageStatData',
         'paragraph_count' => 'setParagraphCount',
-        'word_count' => 'setWordCount'
+        'word_count' => 'setWordCount',
+        'page_stat_data' => 'setPageStatData'
     ];
 
     /*
@@ -127,9 +127,9 @@ class DocumentStatData implements ArrayAccess
     protected static $getters = [
         'footnotes_stat_data' => 'getFootnotesStatData',
         'page_count' => 'getPageCount',
-        'page_stat_data' => 'getPageStatData',
         'paragraph_count' => 'getParagraphCount',
-        'word_count' => 'getWordCount'
+        'word_count' => 'getWordCount',
+        'page_stat_data' => 'getPageStatData'
     ];
 
     /*
@@ -192,9 +192,9 @@ class DocumentStatData implements ArrayAccess
     {
         $this->container['footnotes_stat_data'] = isset($data['footnotes_stat_data']) ? $data['footnotes_stat_data'] : null;
         $this->container['page_count'] = isset($data['page_count']) ? $data['page_count'] : null;
-        $this->container['page_stat_data'] = isset($data['page_stat_data']) ? $data['page_stat_data'] : null;
         $this->container['paragraph_count'] = isset($data['paragraph_count']) ? $data['paragraph_count'] : null;
         $this->container['word_count'] = isset($data['word_count']) ? $data['word_count'] : null;
+        $this->container['page_stat_data'] = isset($data['page_stat_data']) ? $data['page_stat_data'] : null;
     }
 
     /*
@@ -269,30 +269,6 @@ class DocumentStatData implements ArrayAccess
 
 
     /*
-     * Gets page_stat_data
-     *
-     * @return \Aspose\Words\Model\PageStatData[]
-     */
-    public function getPageStatData()
-    {
-        return $this->container['page_stat_data'];
-    }
-
-    /*
-     * Sets page_stat_data
-     *
-     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets the detailed statistics on all pages.
-     *
-     * @return $this
-     */
-    public function setPageStatData($page_stat_data)
-    {
-        $this->container['page_stat_data'] = $page_stat_data;
-        return $this;
-    }
-
-
-    /*
      * Gets paragraph_count
      *
      * @return int
@@ -336,6 +312,30 @@ class DocumentStatData implements ArrayAccess
     public function setWordCount($word_count)
     {
         $this->container['word_count'] = $word_count;
+        return $this;
+    }
+
+
+    /*
+     * Gets page_stat_data
+     *
+     * @return \Aspose\Words\Model\PageStatData[]
+     */
+    public function getPageStatData()
+    {
+        return $this->container['page_stat_data'];
+    }
+
+    /*
+     * Sets page_stat_data
+     *
+     * @param \Aspose\Words\Model\PageStatData[] $page_stat_data Gets or sets the detailed statistics on all pages.
+     *
+     * @return $this
+     */
+    public function setPageStatData($page_stat_data)
+    {
+        $this->container['page_stat_data'] = $page_stat_data;
         return $this;
     }
 

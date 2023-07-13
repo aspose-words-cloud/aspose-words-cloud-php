@@ -51,8 +51,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'row_format' => '\Aspose\Words\Model\TableRowFormat',
-        'table_cell_list' => '\Aspose\Words\Model\TableCell[]'
+        'table_cell_list' => '\Aspose\Words\Model\TableCell[]',
+        'row_format' => '\Aspose\Words\Model\TableRowFormat'
     ];
 
     /*
@@ -61,8 +61,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'row_format' => 'null',
-        'table_cell_list' => 'null'
+        'table_cell_list' => 'null',
+        'row_format' => 'null'
     ];
 
     /*
@@ -92,8 +92,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'row_format' => 'RowFormat',
-        'table_cell_list' => 'TableCellList'
+        'table_cell_list' => 'TableCellList',
+        'row_format' => 'RowFormat'
     ];
 
     /*
@@ -102,8 +102,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $setters = [
-        'row_format' => 'setRowFormat',
-        'table_cell_list' => 'setTableCellList'
+        'table_cell_list' => 'setTableCellList',
+        'row_format' => 'setRowFormat'
     ];
 
     /*
@@ -112,8 +112,8 @@ class TableRow extends NodeLink
      * @var string[]
      */
     protected static $getters = [
-        'row_format' => 'getRowFormat',
-        'table_cell_list' => 'getTableCellList'
+        'table_cell_list' => 'getTableCellList',
+        'row_format' => 'getRowFormat'
     ];
 
     /*
@@ -168,8 +168,8 @@ class TableRow extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['row_format'] = isset($data['row_format']) ? $data['row_format'] : null;
         $this->container['table_cell_list'] = isset($data['table_cell_list']) ? $data['table_cell_list'] : null;
+        $this->container['row_format'] = isset($data['row_format']) ? $data['row_format'] : null;
     }
 
     /*
@@ -199,30 +199,6 @@ class TableRow extends NodeLink
     }
 
     /*
-     * Gets row_format
-     *
-     * @return \Aspose\Words\Model\TableRowFormat
-     */
-    public function getRowFormat()
-    {
-        return $this->container['row_format'];
-    }
-
-    /*
-     * Sets row_format
-     *
-     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets the formatting properties of a row.
-     *
-     * @return $this
-     */
-    public function setRowFormat($row_format)
-    {
-        $this->container['row_format'] = $row_format;
-        return $this;
-    }
-
-
-    /*
      * Gets table_cell_list
      *
      * @return \Aspose\Words\Model\TableCell[]
@@ -242,6 +218,30 @@ class TableRow extends NodeLink
     public function setTableCellList($table_cell_list)
     {
         $this->container['table_cell_list'] = $table_cell_list;
+        return $this;
+    }
+
+
+    /*
+     * Gets row_format
+     *
+     * @return \Aspose\Words\Model\TableRowFormat
+     */
+    public function getRowFormat()
+    {
+        return $this->container['row_format'];
+    }
+
+    /*
+     * Sets row_format
+     *
+     * @param \Aspose\Words\Model\TableRowFormat $row_format Gets or sets the formatting properties of a row.
+     *
+     * @return $this
+     */
+    public function setRowFormat($row_format)
+    {
+        $this->container['row_format'] = $row_format;
         return $this;
     }
 

@@ -52,8 +52,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'range_end' => '\Aspose\Words\Model\DocumentPosition',
-        'range_start' => '\Aspose\Words\Model\DocumentPosition'
+        'range_start' => '\Aspose\Words\Model\DocumentPosition',
+        'range_end' => '\Aspose\Words\Model\DocumentPosition'
     ];
 
     /*
@@ -62,8 +62,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'range_end' => 'null',
-        'range_start' => 'null'
+        'range_start' => 'null',
+        'range_end' => 'null'
     ];
 
     /*
@@ -93,8 +93,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'range_end' => 'RangeEnd',
-        'range_start' => 'RangeStart'
+        'range_start' => 'RangeStart',
+        'range_end' => 'RangeEnd'
     ];
 
     /*
@@ -103,8 +103,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'range_end' => 'setRangeEnd',
-        'range_start' => 'setRangeStart'
+        'range_start' => 'setRangeStart',
+        'range_end' => 'setRangeEnd'
     ];
 
     /*
@@ -113,8 +113,8 @@ class SearchResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'range_end' => 'getRangeEnd',
-        'range_start' => 'getRangeStart'
+        'range_start' => 'getRangeStart',
+        'range_end' => 'getRangeEnd'
     ];
 
     /*
@@ -175,8 +175,8 @@ class SearchResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
         $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
+        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
     }
 
     /*
@@ -203,30 +203,6 @@ class SearchResult implements ArrayAccess
     }
 
     /*
-     * Gets range_end
-     *
-     * @return \Aspose\Words\Model\DocumentPosition
-     */
-    public function getRangeEnd()
-    {
-        return $this->container['range_end'];
-    }
-
-    /*
-     * Sets range_end
-     *
-     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets the link to result range end node.
-     *
-     * @return $this
-     */
-    public function setRangeEnd($range_end)
-    {
-        $this->container['range_end'] = $range_end;
-        return $this;
-    }
-
-
-    /*
      * Gets range_start
      *
      * @return \Aspose\Words\Model\DocumentPosition
@@ -246,6 +222,30 @@ class SearchResult implements ArrayAccess
     public function setRangeStart($range_start)
     {
         $this->container['range_start'] = $range_start;
+        return $this;
+    }
+
+
+    /*
+     * Gets range_end
+     *
+     * @return \Aspose\Words\Model\DocumentPosition
+     */
+    public function getRangeEnd()
+    {
+        return $this->container['range_end'];
+    }
+
+    /*
+     * Sets range_end
+     *
+     * @param \Aspose\Words\Model\DocumentPosition $range_end Gets or sets the link to result range end node.
+     *
+     * @return $this
+     */
+    public function setRangeEnd($range_end)
+    {
+        $this->container['range_end'] = $range_end;
         return $this;
     }
 

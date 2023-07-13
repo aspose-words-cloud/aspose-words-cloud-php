@@ -52,9 +52,9 @@ class Section extends LinkElement
      */
     protected static $swaggerTypes = [
         'child_nodes' => '\Aspose\Words\Model\NodeLink[]',
-        'header_footers' => '\Aspose\Words\Model\LinkElement',
-        'page_setup' => '\Aspose\Words\Model\LinkElement',
         'paragraphs' => '\Aspose\Words\Model\LinkElement',
+        'page_setup' => '\Aspose\Words\Model\LinkElement',
+        'header_footers' => '\Aspose\Words\Model\LinkElement',
         'tables' => '\Aspose\Words\Model\LinkElement'
     ];
 
@@ -65,9 +65,9 @@ class Section extends LinkElement
      */
     protected static $swaggerFormats = [
         'child_nodes' => 'null',
-        'header_footers' => 'null',
-        'page_setup' => 'null',
         'paragraphs' => 'null',
+        'page_setup' => 'null',
+        'header_footers' => 'null',
         'tables' => 'null'
     ];
 
@@ -99,9 +99,9 @@ class Section extends LinkElement
      */
     protected static $attributeMap = [
         'child_nodes' => 'ChildNodes',
-        'header_footers' => 'HeaderFooters',
-        'page_setup' => 'PageSetup',
         'paragraphs' => 'Paragraphs',
+        'page_setup' => 'PageSetup',
+        'header_footers' => 'HeaderFooters',
         'tables' => 'Tables'
     ];
 
@@ -112,9 +112,9 @@ class Section extends LinkElement
      */
     protected static $setters = [
         'child_nodes' => 'setChildNodes',
-        'header_footers' => 'setHeaderFooters',
-        'page_setup' => 'setPageSetup',
         'paragraphs' => 'setParagraphs',
+        'page_setup' => 'setPageSetup',
+        'header_footers' => 'setHeaderFooters',
         'tables' => 'setTables'
     ];
 
@@ -125,9 +125,9 @@ class Section extends LinkElement
      */
     protected static $getters = [
         'child_nodes' => 'getChildNodes',
-        'header_footers' => 'getHeaderFooters',
-        'page_setup' => 'getPageSetup',
         'paragraphs' => 'getParagraphs',
+        'page_setup' => 'getPageSetup',
+        'header_footers' => 'getHeaderFooters',
         'tables' => 'getTables'
     ];
 
@@ -184,9 +184,9 @@ class Section extends LinkElement
     {
         parent::__construct($data);
         $this->container['child_nodes'] = isset($data['child_nodes']) ? $data['child_nodes'] : null;
-        $this->container['header_footers'] = isset($data['header_footers']) ? $data['header_footers'] : null;
-        $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
         $this->container['paragraphs'] = isset($data['paragraphs']) ? $data['paragraphs'] : null;
+        $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
+        $this->container['header_footers'] = isset($data['header_footers']) ? $data['header_footers'] : null;
         $this->container['tables'] = isset($data['tables']) ? $data['tables'] : null;
     }
 
@@ -241,25 +241,25 @@ class Section extends LinkElement
 
 
     /*
-     * Gets header_footers
+     * Gets paragraphs
      *
      * @return \Aspose\Words\Model\LinkElement
      */
-    public function getHeaderFooters()
+    public function getParagraphs()
     {
-        return $this->container['header_footers'];
+        return $this->container['paragraphs'];
     }
 
     /*
-     * Sets header_footers
+     * Sets paragraphs
      *
-     * @param \Aspose\Words\Model\LinkElement $header_footers Gets or sets the link to HeaderFooters resource.
+     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets the link to Paragraphs resource.
      *
      * @return $this
      */
-    public function setHeaderFooters($header_footers)
+    public function setParagraphs($paragraphs)
     {
-        $this->container['header_footers'] = $header_footers;
+        $this->container['paragraphs'] = $paragraphs;
         return $this;
     }
 
@@ -289,25 +289,25 @@ class Section extends LinkElement
 
 
     /*
-     * Gets paragraphs
+     * Gets header_footers
      *
      * @return \Aspose\Words\Model\LinkElement
      */
-    public function getParagraphs()
+    public function getHeaderFooters()
     {
-        return $this->container['paragraphs'];
+        return $this->container['header_footers'];
     }
 
     /*
-     * Sets paragraphs
+     * Sets header_footers
      *
-     * @param \Aspose\Words\Model\LinkElement $paragraphs Gets or sets the link to Paragraphs resource.
+     * @param \Aspose\Words\Model\LinkElement $header_footers Gets or sets the link to HeaderFooters resource.
      *
      * @return $this
      */
-    public function setParagraphs($paragraphs)
+    public function setHeaderFooters($header_footers)
     {
-        $this->container['paragraphs'] = $paragraphs;
+        $this->container['header_footers'] = $header_footers;
         return $this;
     }
 

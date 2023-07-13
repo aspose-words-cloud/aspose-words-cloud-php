@@ -54140,7 +54140,7 @@ class WordsApi implements Encryptor
      */
     private function _requestToken() 
     {
-        $requestUrl = $this->config->getHost() . "connect/token";
+        $requestUrl = $this->config->getHost() . "v4.0/words/connect/token";
         $params = array(
             "grant_type"=>'client_credentials',
             "client_id" => $this->config->getClientId(),

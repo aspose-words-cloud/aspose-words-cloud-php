@@ -51,17 +51,17 @@ class Style extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'aliases' => 'string[]',
-        'base_style_name' => 'string',
-        'built_in' => 'bool',
         'font' => '\Aspose\Words\Model\Font',
-        'is_heading' => 'bool',
+        'built_in' => 'bool',
+        'next_paragraph_style_name' => 'string',
+        'base_style_name' => 'string',
         'is_quick_style' => 'bool',
         'linked_style_name' => 'string',
-        'name' => 'string',
-        'next_paragraph_style_name' => 'string',
+        'type' => 'string',
+        'is_heading' => 'bool',
+        'aliases' => 'string[]',
         'style_identifier' => 'string',
-        'type' => 'string'
+        'name' => 'string'
     ];
 
     /*
@@ -70,17 +70,17 @@ class Style extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'aliases' => 'null',
-        'base_style_name' => 'null',
-        'built_in' => 'null',
         'font' => 'null',
-        'is_heading' => 'null',
+        'built_in' => 'null',
+        'next_paragraph_style_name' => 'null',
+        'base_style_name' => 'null',
         'is_quick_style' => 'null',
         'linked_style_name' => 'null',
-        'name' => 'null',
-        'next_paragraph_style_name' => 'null',
+        'type' => 'null',
+        'is_heading' => 'null',
+        'aliases' => 'null',
         'style_identifier' => 'null',
-        'type' => 'null'
+        'name' => 'null'
     ];
 
     /*
@@ -110,17 +110,17 @@ class Style extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'aliases' => 'Aliases',
-        'base_style_name' => 'BaseStyleName',
-        'built_in' => 'BuiltIn',
         'font' => 'Font',
-        'is_heading' => 'IsHeading',
+        'built_in' => 'BuiltIn',
+        'next_paragraph_style_name' => 'NextParagraphStyleName',
+        'base_style_name' => 'BaseStyleName',
         'is_quick_style' => 'IsQuickStyle',
         'linked_style_name' => 'LinkedStyleName',
-        'name' => 'Name',
-        'next_paragraph_style_name' => 'NextParagraphStyleName',
+        'type' => 'Type',
+        'is_heading' => 'IsHeading',
+        'aliases' => 'Aliases',
         'style_identifier' => 'StyleIdentifier',
-        'type' => 'Type'
+        'name' => 'Name'
     ];
 
     /*
@@ -129,17 +129,17 @@ class Style extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'aliases' => 'setAliases',
-        'base_style_name' => 'setBaseStyleName',
-        'built_in' => 'setBuiltIn',
         'font' => 'setFont',
-        'is_heading' => 'setIsHeading',
+        'built_in' => 'setBuiltIn',
+        'next_paragraph_style_name' => 'setNextParagraphStyleName',
+        'base_style_name' => 'setBaseStyleName',
         'is_quick_style' => 'setIsQuickStyle',
         'linked_style_name' => 'setLinkedStyleName',
-        'name' => 'setName',
-        'next_paragraph_style_name' => 'setNextParagraphStyleName',
+        'type' => 'setType',
+        'is_heading' => 'setIsHeading',
+        'aliases' => 'setAliases',
         'style_identifier' => 'setStyleIdentifier',
-        'type' => 'setType'
+        'name' => 'setName'
     ];
 
     /*
@@ -148,17 +148,17 @@ class Style extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'aliases' => 'getAliases',
-        'base_style_name' => 'getBaseStyleName',
-        'built_in' => 'getBuiltIn',
         'font' => 'getFont',
-        'is_heading' => 'getIsHeading',
+        'built_in' => 'getBuiltIn',
+        'next_paragraph_style_name' => 'getNextParagraphStyleName',
+        'base_style_name' => 'getBaseStyleName',
         'is_quick_style' => 'getIsQuickStyle',
         'linked_style_name' => 'getLinkedStyleName',
-        'name' => 'getName',
-        'next_paragraph_style_name' => 'getNextParagraphStyleName',
+        'type' => 'getType',
+        'is_heading' => 'getIsHeading',
+        'aliases' => 'getAliases',
         'style_identifier' => 'getStyleIdentifier',
-        'type' => 'getType'
+        'name' => 'getName'
     ];
 
     /*
@@ -202,6 +202,10 @@ class Style extends LinkElement
         return self::$swaggerModelName;
     }
 
+    const TYPE_PARAGRAPH = 'Paragraph';
+    const TYPE_CHARACTER = 'Character';
+    const TYPE_TABLE = 'Table';
+    const TYPE_LIST = 'List';
     const STYLE_IDENTIFIER_NORMAL = 'Normal';
     const STYLE_IDENTIFIER_HEADING1 = 'Heading1';
     const STYLE_IDENTIFIER_HEADING2 = 'Heading2';
@@ -580,11 +584,21 @@ class Style extends LinkElement
     const STYLE_IDENTIFIER_UNRESOLVED_MENTION = 'UnresolvedMention';
     const STYLE_IDENTIFIER_USER = 'User';
     const STYLE_IDENTIFIER_NIL = 'Nil';
-    const TYPE_PARAGRAPH = 'Paragraph';
-    const TYPE_CHARACTER = 'Character';
-    const TYPE_TABLE = 'Table';
-    const TYPE_LIST = 'List';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_PARAGRAPH,
+            self::TYPE_CHARACTER,
+            self::TYPE_TABLE,
+            self::TYPE_LIST
+        ];
+    }
     /*
      * Gets allowable values of the enum
      *
@@ -973,20 +987,6 @@ class Style extends LinkElement
             self::STYLE_IDENTIFIER_NIL
         ];
     }
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_PARAGRAPH,
-            self::TYPE_CHARACTER,
-            self::TYPE_TABLE,
-            self::TYPE_LIST
-        ];
-    }
 
     /*
      * Constructor
@@ -997,17 +997,17 @@ class Style extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['aliases'] = isset($data['aliases']) ? $data['aliases'] : null;
-        $this->container['base_style_name'] = isset($data['base_style_name']) ? $data['base_style_name'] : null;
-        $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
         $this->container['font'] = isset($data['font']) ? $data['font'] : null;
-        $this->container['is_heading'] = isset($data['is_heading']) ? $data['is_heading'] : null;
+        $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
+        $this->container['next_paragraph_style_name'] = isset($data['next_paragraph_style_name']) ? $data['next_paragraph_style_name'] : null;
+        $this->container['base_style_name'] = isset($data['base_style_name']) ? $data['base_style_name'] : null;
         $this->container['is_quick_style'] = isset($data['is_quick_style']) ? $data['is_quick_style'] : null;
         $this->container['linked_style_name'] = isset($data['linked_style_name']) ? $data['linked_style_name'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['next_paragraph_style_name'] = isset($data['next_paragraph_style_name']) ? $data['next_paragraph_style_name'] : null;
-        $this->container['style_identifier'] = isset($data['style_identifier']) ? $data['style_identifier'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['is_heading'] = isset($data['is_heading']) ? $data['is_heading'] : null;
+        $this->container['aliases'] = isset($data['aliases']) ? $data['aliases'] : null;
+        $this->container['style_identifier'] = isset($data['style_identifier']) ? $data['style_identifier'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /*
@@ -1018,18 +1018,18 @@ class Style extends LinkElement
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'style_identifier', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getStyleIdentifierAllowableValues();
+        if (!in_array($this->container['style_identifier'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'style_identifier', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -1050,13 +1050,13 @@ class Style extends LinkElement
             return false;
         }
 
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($this->container['type'], $allowedValues)) {
             return false;
         }
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
+        $allowedValues = $this->getStyleIdentifierAllowableValues();
+        if (!in_array($this->container['style_identifier'], $allowedValues)) {
             return false;
         }
 
@@ -1065,49 +1065,25 @@ class Style extends LinkElement
     }
 
     /*
-     * Gets aliases
+     * Gets font
      *
-     * @return string[]
+     * @return \Aspose\Words\Model\Font
      */
-    public function getAliases()
+    public function getFont()
     {
-        return $this->container['aliases'];
+        return $this->container['font'];
     }
 
     /*
-     * Sets aliases
+     * Sets font
      *
-     * @param string[] $aliases Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.
+     * @param \Aspose\Words\Model\Font $font Gets or sets the character formatting of the style.
      *
      * @return $this
      */
-    public function setAliases($aliases)
+    public function setFont($font)
     {
-        $this->container['aliases'] = $aliases;
-        return $this;
-    }
-
-
-    /*
-     * Gets base_style_name
-     *
-     * @return string
-     */
-    public function getBaseStyleName()
-    {
-        return $this->container['base_style_name'];
-    }
-
-    /*
-     * Sets base_style_name
-     *
-     * @param string $base_style_name Gets or sets the name of the style this style is based on.
-     *
-     * @return $this
-     */
-    public function setBaseStyleName($base_style_name)
-    {
-        $this->container['base_style_name'] = $base_style_name;
+        $this->container['font'] = $font;
         return $this;
     }
 
@@ -1137,49 +1113,49 @@ class Style extends LinkElement
 
 
     /*
-     * Gets font
+     * Gets next_paragraph_style_name
      *
-     * @return \Aspose\Words\Model\Font
+     * @return string
      */
-    public function getFont()
+    public function getNextParagraphStyleName()
     {
-        return $this->container['font'];
+        return $this->container['next_paragraph_style_name'];
     }
 
     /*
-     * Sets font
+     * Sets next_paragraph_style_name
      *
-     * @param \Aspose\Words\Model\Font $font Gets or sets the character formatting of the style.
+     * @param string $next_paragraph_style_name Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
      *
      * @return $this
      */
-    public function setFont($font)
+    public function setNextParagraphStyleName($next_paragraph_style_name)
     {
-        $this->container['font'] = $font;
+        $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
         return $this;
     }
 
 
     /*
-     * Gets is_heading
+     * Gets base_style_name
      *
-     * @return bool
+     * @return string
      */
-    public function getIsHeading()
+    public function getBaseStyleName()
     {
-        return $this->container['is_heading'];
+        return $this->container['base_style_name'];
     }
 
     /*
-     * Sets is_heading
+     * Sets base_style_name
      *
-     * @param bool $is_heading Gets or sets a value indicating whether the style is one of the built-in Heading styles.
+     * @param string $base_style_name Gets or sets the name of the style this style is based on.
      *
      * @return $this
      */
-    public function setIsHeading($is_heading)
+    public function setBaseStyleName($base_style_name)
     {
-        $this->container['is_heading'] = $is_heading;
+        $this->container['base_style_name'] = $base_style_name;
         return $this;
     }
 
@@ -1233,49 +1209,77 @@ class Style extends LinkElement
 
 
     /*
-     * Gets name
+     * Gets type
      *
      * @return string
      */
-    public function getName()
+    public function getType()
     {
-        return $this->container['name'];
+        return $this->container['type'];
     }
 
     /*
-     * Sets name
+     * Sets type
      *
-     * @param string $name Gets or sets the name of the style.
+     * @param string $type Gets or sets the style type (paragraph or character).
      *
      * @return $this
      */
-    public function setName($name)
+    public function setType($type)
     {
-        $this->container['name'] = $name;
+        $allowedValues = $this->getTypeAllowableValues();
+        if ((!is_numeric($type) && !in_array($type, $allowedValues)) || (is_numeric($type) && !in_array($allowedValues[$type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['type'] = $type;
         return $this;
     }
 
 
     /*
-     * Gets next_paragraph_style_name
+     * Gets is_heading
      *
-     * @return string
+     * @return bool
      */
-    public function getNextParagraphStyleName()
+    public function getIsHeading()
     {
-        return $this->container['next_paragraph_style_name'];
+        return $this->container['is_heading'];
     }
 
     /*
-     * Sets next_paragraph_style_name
+     * Sets is_heading
      *
-     * @param string $next_paragraph_style_name Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+     * @param bool $is_heading Gets or sets a value indicating whether the style is one of the built-in Heading styles.
      *
      * @return $this
      */
-    public function setNextParagraphStyleName($next_paragraph_style_name)
+    public function setIsHeading($is_heading)
     {
-        $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
+        $this->container['is_heading'] = $is_heading;
+        return $this;
+    }
+
+
+    /*
+     * Gets aliases
+     *
+     * @return string[]
+     */
+    public function getAliases()
+    {
+        return $this->container['aliases'];
+    }
+
+    /*
+     * Sets aliases
+     *
+     * @param string[] $aliases Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.
+     *
+     * @return $this
+     */
+    public function setAliases($aliases)
+    {
+        $this->container['aliases'] = $aliases;
         return $this;
     }
 
@@ -1309,29 +1313,25 @@ class Style extends LinkElement
 
 
     /*
-     * Gets type
+     * Gets name
      *
      * @return string
      */
-    public function getType()
+    public function getName()
     {
-        return $this->container['type'];
+        return $this->container['name'];
     }
 
     /*
-     * Sets type
+     * Sets name
      *
-     * @param string $type Gets or sets the style type (paragraph or character).
+     * @param string $name Gets or sets the name of the style.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setName($name)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if ((!is_numeric($type) && !in_array($type, $allowedValues)) || (is_numeric($type) && !in_array($allowedValues[$type], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'type', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-        $this->container['type'] = $type;
+        $this->container['name'] = $name;
         return $this;
     }
 

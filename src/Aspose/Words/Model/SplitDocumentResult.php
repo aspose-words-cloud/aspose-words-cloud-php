@@ -52,9 +52,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'pages' => '\Aspose\Words\Model\FileLink[]',
         'source_document' => '\Aspose\Words\Model\FileLink',
-        'zipped_pages' => '\Aspose\Words\Model\FileLink'
+        'zipped_pages' => '\Aspose\Words\Model\FileLink',
+        'pages' => '\Aspose\Words\Model\FileLink[]'
     ];
 
     /*
@@ -63,9 +63,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'pages' => 'null',
         'source_document' => 'null',
-        'zipped_pages' => 'null'
+        'zipped_pages' => 'null',
+        'pages' => 'null'
     ];
 
     /*
@@ -95,9 +95,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'pages' => 'Pages',
         'source_document' => 'SourceDocument',
-        'zipped_pages' => 'ZippedPages'
+        'zipped_pages' => 'ZippedPages',
+        'pages' => 'Pages'
     ];
 
     /*
@@ -106,9 +106,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'pages' => 'setPages',
         'source_document' => 'setSourceDocument',
-        'zipped_pages' => 'setZippedPages'
+        'zipped_pages' => 'setZippedPages',
+        'pages' => 'setPages'
     ];
 
     /*
@@ -117,9 +117,9 @@ class SplitDocumentResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'pages' => 'getPages',
         'source_document' => 'getSourceDocument',
-        'zipped_pages' => 'getZippedPages'
+        'zipped_pages' => 'getZippedPages',
+        'pages' => 'getPages'
     ];
 
     /*
@@ -180,9 +180,9 @@ class SplitDocumentResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['pages'] = isset($data['pages']) ? $data['pages'] : null;
         $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
         $this->container['zipped_pages'] = isset($data['zipped_pages']) ? $data['zipped_pages'] : null;
+        $this->container['pages'] = isset($data['pages']) ? $data['pages'] : null;
     }
 
     /*
@@ -207,30 +207,6 @@ class SplitDocumentResult implements ArrayAccess
     {
         return true;
     }
-
-    /*
-     * Gets pages
-     *
-     * @return \Aspose\Words\Model\FileLink[]
-     */
-    public function getPages()
-    {
-        return $this->container['pages'];
-    }
-
-    /*
-     * Sets pages
-     *
-     * @param \Aspose\Words\Model\FileLink[] $pages Gets or sets the list of pages.
-     *
-     * @return $this
-     */
-    public function setPages($pages)
-    {
-        $this->container['pages'] = $pages;
-        return $this;
-    }
-
 
     /*
      * Gets source_document
@@ -276,6 +252,30 @@ class SplitDocumentResult implements ArrayAccess
     public function setZippedPages($zipped_pages)
     {
         $this->container['zipped_pages'] = $zipped_pages;
+        return $this;
+    }
+
+
+    /*
+     * Gets pages
+     *
+     * @return \Aspose\Words\Model\FileLink[]
+     */
+    public function getPages()
+    {
+        return $this->container['pages'];
+    }
+
+    /*
+     * Sets pages
+     *
+     * @param \Aspose\Words\Model\FileLink[] $pages Gets or sets the list of pages.
+     *
+     * @return $this
+     */
+    public function setPages($pages)
+    {
+        $this->container['pages'] = $pages;
         return $this;
     }
 

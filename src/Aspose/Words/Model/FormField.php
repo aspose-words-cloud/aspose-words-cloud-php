@@ -51,15 +51,15 @@ class FormField extends NodeLink
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'calculate_on_exit' => 'bool',
-        'enabled' => 'bool',
-        'entry_macro' => 'string',
-        'exit_macro' => 'string',
-        'help_text' => 'string',
         'name' => 'string',
-        'own_help' => 'bool',
+        'enabled' => 'bool',
+        'status_text' => 'string',
         'own_status' => 'bool',
-        'status_text' => 'string'
+        'help_text' => 'string',
+        'own_help' => 'bool',
+        'calculate_on_exit' => 'bool',
+        'entry_macro' => 'string',
+        'exit_macro' => 'string'
     ];
 
     /*
@@ -68,15 +68,15 @@ class FormField extends NodeLink
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'calculate_on_exit' => 'null',
-        'enabled' => 'null',
-        'entry_macro' => 'null',
-        'exit_macro' => 'null',
-        'help_text' => 'null',
         'name' => 'null',
-        'own_help' => 'null',
+        'enabled' => 'null',
+        'status_text' => 'null',
         'own_status' => 'null',
-        'status_text' => 'null'
+        'help_text' => 'null',
+        'own_help' => 'null',
+        'calculate_on_exit' => 'null',
+        'entry_macro' => 'null',
+        'exit_macro' => 'null'
     ];
 
     /*
@@ -106,15 +106,15 @@ class FormField extends NodeLink
      * @var string[]
      */
     protected static $attributeMap = [
-        'calculate_on_exit' => 'CalculateOnExit',
-        'enabled' => 'Enabled',
-        'entry_macro' => 'EntryMacro',
-        'exit_macro' => 'ExitMacro',
-        'help_text' => 'HelpText',
         'name' => 'Name',
-        'own_help' => 'OwnHelp',
+        'enabled' => 'Enabled',
+        'status_text' => 'StatusText',
         'own_status' => 'OwnStatus',
-        'status_text' => 'StatusText'
+        'help_text' => 'HelpText',
+        'own_help' => 'OwnHelp',
+        'calculate_on_exit' => 'CalculateOnExit',
+        'entry_macro' => 'EntryMacro',
+        'exit_macro' => 'ExitMacro'
     ];
 
     /*
@@ -123,15 +123,15 @@ class FormField extends NodeLink
      * @var string[]
      */
     protected static $setters = [
-        'calculate_on_exit' => 'setCalculateOnExit',
-        'enabled' => 'setEnabled',
-        'entry_macro' => 'setEntryMacro',
-        'exit_macro' => 'setExitMacro',
-        'help_text' => 'setHelpText',
         'name' => 'setName',
-        'own_help' => 'setOwnHelp',
+        'enabled' => 'setEnabled',
+        'status_text' => 'setStatusText',
         'own_status' => 'setOwnStatus',
-        'status_text' => 'setStatusText'
+        'help_text' => 'setHelpText',
+        'own_help' => 'setOwnHelp',
+        'calculate_on_exit' => 'setCalculateOnExit',
+        'entry_macro' => 'setEntryMacro',
+        'exit_macro' => 'setExitMacro'
     ];
 
     /*
@@ -140,15 +140,15 @@ class FormField extends NodeLink
      * @var string[]
      */
     protected static $getters = [
-        'calculate_on_exit' => 'getCalculateOnExit',
-        'enabled' => 'getEnabled',
-        'entry_macro' => 'getEntryMacro',
-        'exit_macro' => 'getExitMacro',
-        'help_text' => 'getHelpText',
         'name' => 'getName',
-        'own_help' => 'getOwnHelp',
+        'enabled' => 'getEnabled',
+        'status_text' => 'getStatusText',
         'own_status' => 'getOwnStatus',
-        'status_text' => 'getStatusText'
+        'help_text' => 'getHelpText',
+        'own_help' => 'getOwnHelp',
+        'calculate_on_exit' => 'getCalculateOnExit',
+        'entry_macro' => 'getEntryMacro',
+        'exit_macro' => 'getExitMacro'
     ];
 
     /*
@@ -203,15 +203,15 @@ class FormField extends NodeLink
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['calculate_on_exit'] = isset($data['calculate_on_exit']) ? $data['calculate_on_exit'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
+        $this->container['status_text'] = isset($data['status_text']) ? $data['status_text'] : null;
+        $this->container['own_status'] = isset($data['own_status']) ? $data['own_status'] : null;
+        $this->container['help_text'] = isset($data['help_text']) ? $data['help_text'] : null;
+        $this->container['own_help'] = isset($data['own_help']) ? $data['own_help'] : null;
+        $this->container['calculate_on_exit'] = isset($data['calculate_on_exit']) ? $data['calculate_on_exit'] : null;
         $this->container['entry_macro'] = isset($data['entry_macro']) ? $data['entry_macro'] : null;
         $this->container['exit_macro'] = isset($data['exit_macro']) ? $data['exit_macro'] : null;
-        $this->container['help_text'] = isset($data['help_text']) ? $data['help_text'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['own_help'] = isset($data['own_help']) ? $data['own_help'] : null;
-        $this->container['own_status'] = isset($data['own_status']) ? $data['own_status'] : null;
-        $this->container['status_text'] = isset($data['status_text']) ? $data['status_text'] : null;
     }
 
     /*
@@ -241,25 +241,25 @@ class FormField extends NodeLink
     }
 
     /*
-     * Gets calculate_on_exit
+     * Gets name
      *
-     * @return bool
+     * @return string
      */
-    public function getCalculateOnExit()
+    public function getName()
     {
-        return $this->container['calculate_on_exit'];
+        return $this->container['name'];
     }
 
     /*
-     * Sets calculate_on_exit
+     * Sets name
      *
-     * @param bool $calculate_on_exit Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
+     * @param string $name Gets or sets the form field name.
      *
      * @return $this
      */
-    public function setCalculateOnExit($calculate_on_exit)
+    public function setName($name)
     {
-        $this->container['calculate_on_exit'] = $calculate_on_exit;
+        $this->container['name'] = $name;
         return $this;
     }
 
@@ -284,6 +284,126 @@ class FormField extends NodeLink
     public function setEnabled($enabled)
     {
         $this->container['enabled'] = $enabled;
+        return $this;
+    }
+
+
+    /*
+     * Gets status_text
+     *
+     * @return string
+     */
+    public function getStatusText()
+    {
+        return $this->container['status_text'];
+    }
+
+    /*
+     * Sets status_text
+     *
+     * @param string $status_text Gets or sets text, displayed in the status bar when a form field has the focus.
+     *
+     * @return $this
+     */
+    public function setStatusText($status_text)
+    {
+        $this->container['status_text'] = $status_text;
+        return $this;
+    }
+
+
+    /*
+     * Gets own_status
+     *
+     * @return bool
+     */
+    public function getOwnStatus()
+    {
+        return $this->container['own_status'];
+    }
+
+    /*
+     * Sets own_status
+     *
+     * @param bool $own_status Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
+     *
+     * @return $this
+     */
+    public function setOwnStatus($own_status)
+    {
+        $this->container['own_status'] = $own_status;
+        return $this;
+    }
+
+
+    /*
+     * Gets help_text
+     *
+     * @return string
+     */
+    public function getHelpText()
+    {
+        return $this->container['help_text'];
+    }
+
+    /*
+     * Sets help_text
+     *
+     * @param string $help_text Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
+     *
+     * @return $this
+     */
+    public function setHelpText($help_text)
+    {
+        $this->container['help_text'] = $help_text;
+        return $this;
+    }
+
+
+    /*
+     * Gets own_help
+     *
+     * @return bool
+     */
+    public function getOwnHelp()
+    {
+        return $this->container['own_help'];
+    }
+
+    /*
+     * Sets own_help
+     *
+     * @param bool $own_help Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+     *
+     * @return $this
+     */
+    public function setOwnHelp($own_help)
+    {
+        $this->container['own_help'] = $own_help;
+        return $this;
+    }
+
+
+    /*
+     * Gets calculate_on_exit
+     *
+     * @return bool
+     */
+    public function getCalculateOnExit()
+    {
+        return $this->container['calculate_on_exit'];
+    }
+
+    /*
+     * Sets calculate_on_exit
+     *
+     * @param bool $calculate_on_exit Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
+     *
+     * @return $this
+     */
+    public function setCalculateOnExit($calculate_on_exit)
+    {
+        $this->container['calculate_on_exit'] = $calculate_on_exit;
         return $this;
     }
 
@@ -332,126 +452,6 @@ class FormField extends NodeLink
     public function setExitMacro($exit_macro)
     {
         $this->container['exit_macro'] = $exit_macro;
-        return $this;
-    }
-
-
-    /*
-     * Gets help_text
-     *
-     * @return string
-     */
-    public function getHelpText()
-    {
-        return $this->container['help_text'];
-    }
-
-    /*
-     * Sets help_text
-     *
-     * @param string $help_text Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
-     *
-     * @return $this
-     */
-    public function setHelpText($help_text)
-    {
-        $this->container['help_text'] = $help_text;
-        return $this;
-    }
-
-
-    /*
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /*
-     * Sets name
-     *
-     * @param string $name Gets or sets the form field name.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-        return $this;
-    }
-
-
-    /*
-     * Gets own_help
-     *
-     * @return bool
-     */
-    public function getOwnHelp()
-    {
-        return $this->container['own_help'];
-    }
-
-    /*
-     * Sets own_help
-     *
-     * @param bool $own_help Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
-     *
-     * @return $this
-     */
-    public function setOwnHelp($own_help)
-    {
-        $this->container['own_help'] = $own_help;
-        return $this;
-    }
-
-
-    /*
-     * Gets own_status
-     *
-     * @return bool
-     */
-    public function getOwnStatus()
-    {
-        return $this->container['own_status'];
-    }
-
-    /*
-     * Sets own_status
-     *
-     * @param bool $own_status Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
-     *
-     * @return $this
-     */
-    public function setOwnStatus($own_status)
-    {
-        $this->container['own_status'] = $own_status;
-        return $this;
-    }
-
-
-    /*
-     * Gets status_text
-     *
-     * @return string
-     */
-    public function getStatusText()
-    {
-        return $this->container['status_text'];
-    }
-
-    /*
-     * Sets status_text
-     *
-     * @param string $status_text Gets or sets text, displayed in the status bar when a form field has the focus.
-     *
-     * @return $this
-     */
-    public function setStatusText($status_text)
-    {
-        $this->container['status_text'] = $status_text;
         return $this;
     }
 

@@ -181,8 +181,8 @@ class RtfSaveOptionsData extends SaveOptionsData
         $this->container['export_compact_size'] = isset($data['export_compact_size']) ? $data['export_compact_size'] : null;
         $this->container['export_images_for_old_readers'] = isset($data['export_images_for_old_readers']) ? $data['export_images_for_old_readers'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
-        $this->container['save_format'] = "rtf";
         $this->container['save_images_as_wmf'] = isset($data['save_images_as_wmf']) ? $data['save_images_as_wmf'] : null;
+        $this->container['save_format'] = "rtf";
     }
 
     /*

@@ -51,9 +51,9 @@ class ListFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_list_item' => 'bool',
+        'list_level_number' => 'int',
         'list_id' => 'int',
-        'list_level_number' => 'int'
+        'is_list_item' => 'bool'
     ];
 
     /*
@@ -62,9 +62,9 @@ class ListFormat extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_list_item' => 'null',
+        'list_level_number' => 'null',
         'list_id' => 'null',
-        'list_level_number' => 'null'
+        'is_list_item' => 'null'
     ];
 
     /*
@@ -94,9 +94,9 @@ class ListFormat extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_list_item' => 'IsListItem',
+        'list_level_number' => 'ListLevelNumber',
         'list_id' => 'ListId',
-        'list_level_number' => 'ListLevelNumber'
+        'is_list_item' => 'IsListItem'
     ];
 
     /*
@@ -105,9 +105,9 @@ class ListFormat extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'is_list_item' => 'setIsListItem',
+        'list_level_number' => 'setListLevelNumber',
         'list_id' => 'setListId',
-        'list_level_number' => 'setListLevelNumber'
+        'is_list_item' => 'setIsListItem'
     ];
 
     /*
@@ -116,9 +116,9 @@ class ListFormat extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'is_list_item' => 'getIsListItem',
+        'list_level_number' => 'getListLevelNumber',
         'list_id' => 'getListId',
-        'list_level_number' => 'getListLevelNumber'
+        'is_list_item' => 'getIsListItem'
     ];
 
     /*
@@ -173,9 +173,9 @@ class ListFormat extends LinkElement
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['is_list_item'] = isset($data['is_list_item']) ? $data['is_list_item'] : null;
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
         $this->container['list_level_number'] = isset($data['list_level_number']) ? $data['list_level_number'] : null;
+        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
+        $this->container['is_list_item'] = isset($data['is_list_item']) ? $data['is_list_item'] : null;
     }
 
     /*
@@ -205,25 +205,25 @@ class ListFormat extends LinkElement
     }
 
     /*
-     * Gets is_list_item
+     * Gets list_level_number
      *
-     * @return bool
+     * @return int
      */
-    public function getIsListItem()
+    public function getListLevelNumber()
     {
-        return $this->container['is_list_item'];
+        return $this->container['list_level_number'];
     }
 
     /*
-     * Sets is_list_item
+     * Sets list_level_number
      *
-     * @param bool $is_list_item Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
+     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph.
      *
      * @return $this
      */
-    public function setIsListItem($is_list_item)
+    public function setListLevelNumber($list_level_number)
     {
-        $this->container['is_list_item'] = $is_list_item;
+        $this->container['list_level_number'] = $list_level_number;
         return $this;
     }
 
@@ -253,25 +253,25 @@ class ListFormat extends LinkElement
 
 
     /*
-     * Gets list_level_number
+     * Gets is_list_item
      *
-     * @return int
+     * @return bool
      */
-    public function getListLevelNumber()
+    public function getIsListItem()
     {
-        return $this->container['list_level_number'];
+        return $this->container['is_list_item'];
     }
 
     /*
-     * Sets list_level_number
+     * Sets is_list_item
      *
-     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph.
+     * @param bool $is_list_item Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
      *
      * @return $this
      */
-    public function setListLevelNumber($list_level_number)
+    public function setIsListItem($is_list_item)
     {
-        $this->container['list_level_number'] = $list_level_number;
+        $this->container['is_list_item'] = $is_list_item;
         return $this;
     }
 

@@ -52,11 +52,11 @@ abstract class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'range_start' => '\Aspose\Words\Model\NewDocumentPosition',
+        'range_end' => '\Aspose\Words\Model\NewDocumentPosition',
         'author' => 'string',
         'date_time' => '\DateTime',
         'initial' => 'string',
-        'range_end' => '\Aspose\Words\Model\NewDocumentPosition',
-        'range_start' => '\Aspose\Words\Model\NewDocumentPosition',
         'text' => 'string'
     ];
 
@@ -66,11 +66,11 @@ abstract class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'range_start' => 'null',
+        'range_end' => 'null',
         'author' => 'null',
         'date_time' => 'null',
         'initial' => 'null',
-        'range_end' => 'null',
-        'range_start' => 'null',
         'text' => 'null'
     ];
 
@@ -101,11 +101,11 @@ abstract class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'range_start' => 'RangeStart',
+        'range_end' => 'RangeEnd',
         'author' => 'Author',
         'date_time' => 'DateTime',
         'initial' => 'Initial',
-        'range_end' => 'RangeEnd',
-        'range_start' => 'RangeStart',
         'text' => 'Text'
     ];
 
@@ -115,11 +115,11 @@ abstract class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'range_start' => 'setRangeStart',
+        'range_end' => 'setRangeEnd',
         'author' => 'setAuthor',
         'date_time' => 'setDateTime',
         'initial' => 'setInitial',
-        'range_end' => 'setRangeEnd',
-        'range_start' => 'setRangeStart',
         'text' => 'setText'
     ];
 
@@ -129,11 +129,11 @@ abstract class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'range_start' => 'getRangeStart',
+        'range_end' => 'getRangeEnd',
         'author' => 'getAuthor',
         'date_time' => 'getDateTime',
         'initial' => 'getInitial',
-        'range_end' => 'getRangeEnd',
-        'range_start' => 'getRangeStart',
         'text' => 'getText'
     ];
 
@@ -195,11 +195,11 @@ abstract class CommentBase implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
+        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
         $this->container['author'] = isset($data['author']) ? $data['author'] : null;
         $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
         $this->container['initial'] = isset($data['initial']) ? $data['initial'] : null;
-        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
-        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
 
@@ -225,6 +225,54 @@ abstract class CommentBase implements ArrayAccess
     {
         return true;
     }
+
+    /*
+     * Gets range_start
+     *
+     * @return \Aspose\Words\Model\NewDocumentPosition
+     */
+    public function getRangeStart()
+    {
+        return $this->container['range_start'];
+    }
+
+    /*
+     * Sets range_start
+     *
+     * @param \Aspose\Words\Model\NewDocumentPosition $range_start Gets or sets the link to comment range start node.
+     *
+     * @return $this
+     */
+    public function setRangeStart($range_start)
+    {
+        $this->container['range_start'] = $range_start;
+        return $this;
+    }
+
+
+    /*
+     * Gets range_end
+     *
+     * @return \Aspose\Words\Model\NewDocumentPosition
+     */
+    public function getRangeEnd()
+    {
+        return $this->container['range_end'];
+    }
+
+    /*
+     * Sets range_end
+     *
+     * @param \Aspose\Words\Model\NewDocumentPosition $range_end Gets or sets the link to comment range end node.
+     *
+     * @return $this
+     */
+    public function setRangeEnd($range_end)
+    {
+        $this->container['range_end'] = $range_end;
+        return $this;
+    }
+
 
     /*
      * Gets author
@@ -294,54 +342,6 @@ abstract class CommentBase implements ArrayAccess
     public function setInitial($initial)
     {
         $this->container['initial'] = $initial;
-        return $this;
-    }
-
-
-    /*
-     * Gets range_end
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getRangeEnd()
-    {
-        return $this->container['range_end'];
-    }
-
-    /*
-     * Sets range_end
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $range_end Gets or sets the link to comment range end node.
-     *
-     * @return $this
-     */
-    public function setRangeEnd($range_end)
-    {
-        $this->container['range_end'] = $range_end;
-        return $this;
-    }
-
-
-    /*
-     * Gets range_start
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getRangeStart()
-    {
-        return $this->container['range_start'];
-    }
-
-    /*
-     * Sets range_start
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $range_start Gets or sets the link to comment range start node.
-     *
-     * @return $this
-     */
-    public function setRangeStart($range_start)
-    {
-        $this->container['range_start'] = $range_start;
         return $this;
     }
 

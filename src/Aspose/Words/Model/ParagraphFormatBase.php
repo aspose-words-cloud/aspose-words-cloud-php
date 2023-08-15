@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Paragraph format element base class.
  */
-class ParagraphFormatBase extends LinkElement
+abstract class ParagraphFormatBase extends LinkElement
 {
     const DISCRIMINATOR = null;
 

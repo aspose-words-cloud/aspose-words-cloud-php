@@ -51,7 +51,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'epub_navigation_map_level' => 'int'
+        'navigation_map_level' => 'int'
     ];
 
     /*
@@ -60,7 +60,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'epub_navigation_map_level' => 'null'
+        'navigation_map_level' => 'null'
     ];
 
     /*
@@ -90,7 +90,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'epub_navigation_map_level' => 'EpubNavigationMapLevel'
+        'navigation_map_level' => 'NavigationMapLevel'
     ];
 
     /*
@@ -99,7 +99,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'epub_navigation_map_level' => 'setEpubNavigationMapLevel'
+        'navigation_map_level' => 'setNavigationMapLevel'
     ];
 
     /*
@@ -108,7 +108,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'epub_navigation_map_level' => 'getEpubNavigationMapLevel'
+        'navigation_map_level' => 'getNavigationMapLevel'
     ];
 
     /*
@@ -163,7 +163,7 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['epub_navigation_map_level'] = isset($data['epub_navigation_map_level']) ? $data['epub_navigation_map_level'] : null;
+        $this->container['navigation_map_level'] = isset($data['navigation_map_level']) ? $data['navigation_map_level'] : null;
         $this->container['save_format'] = "epub";
     }
 
@@ -194,25 +194,25 @@ class EpubSaveOptionsData extends HtmlSaveOptionsData
     }
 
     /*
-     * Gets epub_navigation_map_level
+     * Gets navigation_map_level
      *
      * @return int
      */
-    public function getEpubNavigationMapLevel()
+    public function getNavigationMapLevel()
     {
-        return $this->container['epub_navigation_map_level'];
+        return $this->container['navigation_map_level'];
     }
 
     /*
-     * Sets epub_navigation_map_level
+     * Sets navigation_map_level
      *
-     * @param int $epub_navigation_map_level Gets or sets the maximum level of headings populated to the navigation map when exporting.
+     * @param int $navigation_map_level Gets or sets the maximum level of headings populated to the navigation map when exporting.
      *
      * @return $this
      */
-    public function setEpubNavigationMapLevel($epub_navigation_map_level)
+    public function setNavigationMapLevel($navigation_map_level)
     {
-        $this->container['epub_navigation_map_level'] = $epub_navigation_map_level;
+        $this->container['navigation_map_level'] = $navigation_map_level;
         return $this;
     }
 

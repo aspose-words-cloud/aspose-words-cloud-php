@@ -547,11 +547,14 @@ class ObjectSerializer
             return $data;
         } else {
             // If a discriminator is defined and points to a valid subclass, use it.
-            $discriminator = $class::DISCRIMINATOR;
-            if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\Aspose\Words\Model\\' . $data->{$discriminator};
+            $discriminator = '$type';
+            if (isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
+                $subclass = '\Aspose\Words\Model\\' . substr($data->{$discriminator}, 0, -3);
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
+                }
+                else {
+                    throw new ApiException("Failed to cast $subclass to $class.", 400, null, null);
                 }
             }
             $instance = new $class();

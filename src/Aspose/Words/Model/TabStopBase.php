@@ -35,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Base class for paragraph format tab stop DTO.
  */
-class TabStopBase implements ArrayAccess
+abstract class TabStopBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 

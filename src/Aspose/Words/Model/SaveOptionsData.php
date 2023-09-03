@@ -63,7 +63,6 @@ abstract class SaveOptionsData implements ArrayAccess
         'update_fields' => 'bool',
         'update_last_printed_property' => 'bool',
         'update_last_saved_time_property' => 'bool',
-        'update_sdt_content' => 'bool',
         'zip_output' => 'bool',
         'save_format' => 'string'
     ];
@@ -85,7 +84,6 @@ abstract class SaveOptionsData implements ArrayAccess
         'update_fields' => 'null',
         'update_last_printed_property' => 'null',
         'update_last_saved_time_property' => 'null',
-        'update_sdt_content' => 'null',
         'zip_output' => 'null',
         'save_format' => 'null'
     ];
@@ -128,7 +126,6 @@ abstract class SaveOptionsData implements ArrayAccess
         'update_fields' => 'UpdateFields',
         'update_last_printed_property' => 'UpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'UpdateLastSavedTimeProperty',
-        'update_sdt_content' => 'UpdateSdtContent',
         'zip_output' => 'ZipOutput',
         'save_format' => 'SaveFormat'
     ];
@@ -150,7 +147,6 @@ abstract class SaveOptionsData implements ArrayAccess
         'update_fields' => 'setUpdateFields',
         'update_last_printed_property' => 'setUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'setUpdateLastSavedTimeProperty',
-        'update_sdt_content' => 'setUpdateSdtContent',
         'zip_output' => 'setZipOutput',
         'save_format' => 'setSaveFormat'
     ];
@@ -172,7 +168,6 @@ abstract class SaveOptionsData implements ArrayAccess
         'update_fields' => 'getUpdateFields',
         'update_last_printed_property' => 'getUpdateLastPrintedProperty',
         'update_last_saved_time_property' => 'getUpdateLastSavedTimeProperty',
-        'update_sdt_content' => 'getUpdateSdtContent',
         'zip_output' => 'getZipOutput',
         'save_format' => 'getSaveFormat'
     ];
@@ -304,7 +299,6 @@ abstract class SaveOptionsData implements ArrayAccess
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
         $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
         $this->container['update_last_saved_time_property'] = isset($data['update_last_saved_time_property']) ? $data['update_last_saved_time_property'] : null;
-        $this->container['update_sdt_content'] = isset($data['update_sdt_content']) ? $data['update_sdt_content'] : null;
         $this->container['zip_output'] = isset($data['zip_output']) ? $data['zip_output'] : null;
         $this->container['save_format'] = null;
     }
@@ -662,30 +656,6 @@ abstract class SaveOptionsData implements ArrayAccess
     public function setUpdateLastSavedTimeProperty($update_last_saved_time_property)
     {
         $this->container['update_last_saved_time_property'] = $update_last_saved_time_property;
-        return $this;
-    }
-
-
-    /*
-     * Gets update_sdt_content
-     *
-     * @return bool
-     */
-    public function getUpdateSdtContent()
-    {
-        return $this->container['update_sdt_content'];
-    }
-
-    /*
-     * Sets update_sdt_content
-     *
-     * @param bool $update_sdt_content Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
-     *
-     * @return $this
-     */
-    public function setUpdateSdtContent($update_sdt_content)
-    {
-        $this->container['update_sdt_content'] = $update_sdt_content;
         return $this;
     }
 

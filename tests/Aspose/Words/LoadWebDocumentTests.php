@@ -47,7 +47,6 @@ class LoadWebDocumentTests extends BaseTestContext
             "file_name" => "google.doc",
             "dml_effects_rendering_mode" => "None",
             "dml_rendering_mode" => "DrawingML",
-            "update_sdt_content" => false,
             "zip_output" => false,
         ));
         $requestData = new LoadWebDocumentData(array(

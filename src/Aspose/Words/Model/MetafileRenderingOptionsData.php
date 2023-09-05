@@ -54,8 +54,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
     protected static $swaggerTypes = [
         'emf_plus_dual_rendering_mode' => 'string',
         'emulate_raster_operations' => 'bool',
+        'emulate_rendering_to_size_on_page' => 'bool',
         'rendering_mode' => 'string',
-        'scale_wmf_fonts_to_metafile_size' => 'bool',
         'use_emf_embedded_to_wmf' => 'bool'
     ];
 
@@ -67,8 +67,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
     protected static $swaggerFormats = [
         'emf_plus_dual_rendering_mode' => 'null',
         'emulate_raster_operations' => 'null',
+        'emulate_rendering_to_size_on_page' => 'null',
         'rendering_mode' => 'null',
-        'scale_wmf_fonts_to_metafile_size' => 'null',
         'use_emf_embedded_to_wmf' => 'null'
     ];
 
@@ -101,8 +101,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
     protected static $attributeMap = [
         'emf_plus_dual_rendering_mode' => 'EmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'EmulateRasterOperations',
+        'emulate_rendering_to_size_on_page' => 'EmulateRenderingToSizeOnPage',
         'rendering_mode' => 'RenderingMode',
-        'scale_wmf_fonts_to_metafile_size' => 'ScaleWmfFontsToMetafileSize',
         'use_emf_embedded_to_wmf' => 'UseEmfEmbeddedToWmf'
     ];
 
@@ -114,8 +114,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
     protected static $setters = [
         'emf_plus_dual_rendering_mode' => 'setEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'setEmulateRasterOperations',
+        'emulate_rendering_to_size_on_page' => 'setEmulateRenderingToSizeOnPage',
         'rendering_mode' => 'setRenderingMode',
-        'scale_wmf_fonts_to_metafile_size' => 'setScaleWmfFontsToMetafileSize',
         'use_emf_embedded_to_wmf' => 'setUseEmfEmbeddedToWmf'
     ];
 
@@ -127,8 +127,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
     protected static $getters = [
         'emf_plus_dual_rendering_mode' => 'getEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'getEmulateRasterOperations',
+        'emulate_rendering_to_size_on_page' => 'getEmulateRenderingToSizeOnPage',
         'rendering_mode' => 'getRenderingMode',
-        'scale_wmf_fonts_to_metafile_size' => 'getScaleWmfFontsToMetafileSize',
         'use_emf_embedded_to_wmf' => 'getUseEmfEmbeddedToWmf'
     ];
 
@@ -224,8 +224,8 @@ class MetafileRenderingOptionsData implements ArrayAccess
     {
         $this->container['emf_plus_dual_rendering_mode'] = isset($data['emf_plus_dual_rendering_mode']) ? $data['emf_plus_dual_rendering_mode'] : null;
         $this->container['emulate_raster_operations'] = isset($data['emulate_raster_operations']) ? $data['emulate_raster_operations'] : null;
+        $this->container['emulate_rendering_to_size_on_page'] = isset($data['emulate_rendering_to_size_on_page']) ? $data['emulate_rendering_to_size_on_page'] : null;
         $this->container['rendering_mode'] = isset($data['rendering_mode']) ? $data['rendering_mode'] : null;
-        $this->container['scale_wmf_fonts_to_metafile_size'] = isset($data['scale_wmf_fonts_to_metafile_size']) ? $data['scale_wmf_fonts_to_metafile_size'] : null;
         $this->container['use_emf_embedded_to_wmf'] = isset($data['use_emf_embedded_to_wmf']) ? $data['use_emf_embedded_to_wmf'] : null;
     }
 
@@ -333,6 +333,30 @@ class MetafileRenderingOptionsData implements ArrayAccess
 
 
     /*
+     * Gets emulate_rendering_to_size_on_page
+     *
+     * @return bool
+     */
+    public function getEmulateRenderingToSizeOnPage()
+    {
+        return $this->container['emulate_rendering_to_size_on_page'];
+    }
+
+    /*
+     * Sets emulate_rendering_to_size_on_page
+     *
+     * @param bool $emulate_rendering_to_size_on_page Gets or sets a value determining whether metafile rendering emulates the display of the metafile according to the size on page or the display of the metafile in its default size.
+     *
+     * @return $this
+     */
+    public function setEmulateRenderingToSizeOnPage($emulate_rendering_to_size_on_page)
+    {
+        $this->container['emulate_rendering_to_size_on_page'] = $emulate_rendering_to_size_on_page;
+        return $this;
+    }
+
+
+    /*
      * Gets rendering_mode
      *
      * @return string
@@ -356,30 +380,6 @@ class MetafileRenderingOptionsData implements ArrayAccess
             throw new \InvalidArgumentException(sprintf("Invalid value for 'rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['rendering_mode'] = $rendering_mode;
-        return $this;
-    }
-
-
-    /*
-     * Gets scale_wmf_fonts_to_metafile_size
-     *
-     * @return bool
-     */
-    public function getScaleWmfFontsToMetafileSize()
-    {
-        return $this->container['scale_wmf_fonts_to_metafile_size'];
-    }
-
-    /*
-     * Sets scale_wmf_fonts_to_metafile_size
-     *
-     * @param bool $scale_wmf_fonts_to_metafile_size Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page. The default value is true.
-     *
-     * @return $this
-     */
-    public function setScaleWmfFontsToMetafileSize($scale_wmf_fonts_to_metafile_size)
-    {
-        $this->container['scale_wmf_fonts_to_metafile_size'] = $scale_wmf_fonts_to_metafile_size;
         return $this;
     }
 

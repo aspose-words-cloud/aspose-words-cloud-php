@@ -62,6 +62,8 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'use_anti_aliasing' => 'bool',
         'use_high_quality_rendering' => 'bool',
         'vertical_resolution' => 'double',
+        'image_height' => 'int',
+        'image_width' => 'int',
         'use_gdi_emf_renderer' => 'bool'
     ];
 
@@ -82,6 +84,8 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'use_anti_aliasing' => 'null',
         'use_high_quality_rendering' => 'null',
         'vertical_resolution' => 'null',
+        'image_height' => 'null',
+        'image_width' => 'null',
         'use_gdi_emf_renderer' => 'null'
     ];
 
@@ -123,6 +127,8 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'use_anti_aliasing' => 'UseAntiAliasing',
         'use_high_quality_rendering' => 'UseHighQualityRendering',
         'vertical_resolution' => 'VerticalResolution',
+        'image_height' => 'ImageHeight',
+        'image_width' => 'ImageWidth',
         'use_gdi_emf_renderer' => 'UseGdiEmfRenderer'
     ];
 
@@ -143,6 +149,8 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'use_anti_aliasing' => 'setUseAntiAliasing',
         'use_high_quality_rendering' => 'setUseHighQualityRendering',
         'vertical_resolution' => 'setVerticalResolution',
+        'image_height' => 'setImageHeight',
+        'image_width' => 'setImageWidth',
         'use_gdi_emf_renderer' => 'setUseGdiEmfRenderer'
     ];
 
@@ -163,6 +171,8 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         'use_anti_aliasing' => 'getUseAntiAliasing',
         'use_high_quality_rendering' => 'getUseHighQualityRendering',
         'vertical_resolution' => 'getVerticalResolution',
+        'image_height' => 'getImageHeight',
+        'image_width' => 'getImageWidth',
         'use_gdi_emf_renderer' => 'getUseGdiEmfRenderer'
     ];
 
@@ -277,6 +287,8 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_anti_aliasing'] = isset($data['use_anti_aliasing']) ? $data['use_anti_aliasing'] : null;
         $this->container['use_high_quality_rendering'] = isset($data['use_high_quality_rendering']) ? $data['use_high_quality_rendering'] : null;
         $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
+        $this->container['image_height'] = isset($data['image_height']) ? $data['image_height'] : null;
+        $this->container['image_width'] = isset($data['image_width']) ? $data['image_width'] : null;
         $this->container['use_gdi_emf_renderer'] = isset($data['use_gdi_emf_renderer']) ? $data['use_gdi_emf_renderer'] : null;
     }
 
@@ -602,6 +614,54 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
     public function setVerticalResolution($vertical_resolution)
     {
         $this->container['vertical_resolution'] = $vertical_resolution;
+        return $this;
+    }
+
+
+    /*
+     * Gets image_height
+     *
+     * @return int
+     */
+    public function getImageHeight()
+    {
+        return $this->container['image_height'];
+    }
+
+    /*
+     * Sets image_height
+     *
+     * @param int $image_height Gets or sets the height of a generated image in pixels.
+     *
+     * @return $this
+     */
+    public function setImageHeight($image_height)
+    {
+        $this->container['image_height'] = $image_height;
+        return $this;
+    }
+
+
+    /*
+     * Gets image_width
+     *
+     * @return int
+     */
+    public function getImageWidth()
+    {
+        return $this->container['image_width'];
+    }
+
+    /*
+     * Sets image_width
+     *
+     * @param int $image_width Gets or sets the width of a generated image in pixels.
+     *
+     * @return $this
+     */
+    public function setImageWidth($image_width)
+    {
+        $this->container['image_width'] = $image_width;
         return $this;
     }
 

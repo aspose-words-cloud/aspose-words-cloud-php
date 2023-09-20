@@ -221,23 +221,23 @@ class Configuration
     /*
      * Sets ClientSecret
      *
-     * @param string $ClientSecret
+     * @param string $clientSecret
      *
      * @return $this
      */
     public function setClientSecret($clientSecret)
     {
-        $this->ClientSecret = $clientSecret;
+        $this->clientSecret = $clientSecret;
         return $this;
     }
 
     /*
-     * Gets ClientSecret
-     * @return $ClientSecret
+     * Gets clientSecret
+     * @return $clientSecret
      */
     public function getClientSecret()
     {
-        return $this->ClientSecret;
+        return $this->clientSecret;
     }
 
     /*

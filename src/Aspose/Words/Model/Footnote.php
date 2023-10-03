@@ -310,7 +310,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets reference_mark
      *
-     * @param string $reference_mark Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
+     * @param string $reference_mark Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used. RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class Footnote extends FootnoteLink
     /*
      * Sets text
      *
-     * @param string $text Gets or sets text of the footnote.
+     * @param string $text Gets or sets text of the footnote. This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.
      *
      * @return $this
      */

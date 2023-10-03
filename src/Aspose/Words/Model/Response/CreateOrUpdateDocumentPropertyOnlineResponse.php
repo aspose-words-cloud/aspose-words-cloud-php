@@ -46,7 +46,8 @@ class CreateOrUpdateDocumentPropertyOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a document property.
+     * This response should be returned by the service when handling: GET documentProperties/{propertyName}.
      */
     public function getmodel()
     {
@@ -54,7 +55,8 @@ class CreateOrUpdateDocumentPropertyOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a document property.
+     * This response should be returned by the service when handling: GET documentProperties/{propertyName}.
      */
     public function setmodel($value)
     {

@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * PageSetup
  *
- * @description Represents the page setup properties of a section.
+ * @description Represents the page setup properties of a section. PageSetup object contains all the page setup attributes of a section (left margin, bottom margin, paper size, and so on) as properties.
  */
 class PageSetup extends LinkElement
 {
@@ -757,7 +757,7 @@ class PageSetup extends LinkElement
     /*
      * Sets bidi
      *
-     * @param bool $bidi Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.
+     * @param bool $bidi Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text. When true, the columns in this section are laid out from right to left.
      *
      * @return $this
      */
@@ -1053,7 +1053,7 @@ class PageSetup extends LinkElement
     /*
      * Sets line_number_distance_from_text
      *
-     * @param double $line_number_distance_from_text Gets or sets the distance between the right edge of line numbers and the left edge of the document.
+     * @param double $line_number_distance_from_text Gets or sets the distance between the right edge of line numbers and the left edge of the document. Set this property to zero for automatic distance between the line numbers and text of the document.
      *
      * @return $this
      */
@@ -1129,7 +1129,7 @@ class PageSetup extends LinkElement
     /*
      * Sets orientation
      *
-     * @param string $orientation Gets or sets the orientation of the page.
+     * @param string $orientation Gets or sets the orientation of the page. Changing Orientation swaps PageWidth and PageHeight.
      *
      * @return $this
      */
@@ -1233,7 +1233,7 @@ class PageSetup extends LinkElement
     /*
      * Sets page_starting_number
      *
-     * @param int $page_starting_number Gets or sets the starting page number of the section.
+     * @param int $page_starting_number Gets or sets the starting page number of the section. The RestartPageNumbering property, if set to false, will override the PageStartingNumber property so that page numbering can continue from the previous section.
      *
      * @return $this
      */
@@ -1281,7 +1281,7 @@ class PageSetup extends LinkElement
     /*
      * Sets paper_size
      *
-     * @param string $paper_size Gets or sets the paper size.
+     * @param string $paper_size Gets or sets the paper size. Setting this property updates PageWidth and PageHeight values. Setting this value to Custom does not change existing values.
      *
      * @return $this
      */
@@ -1309,7 +1309,7 @@ class PageSetup extends LinkElement
     /*
      * Sets restart_page_numbering
      *
-     * @param bool $restart_page_numbering Gets or sets a value indicating whether page numbering restarts at the beginning of the section.
+     * @param bool $restart_page_numbering Gets or sets a value indicating whether page numbering restarts at the beginning of the section. If set to false, the RestartPageNumbering property will override the PageStartingNumber property so that page numbering can continue from the previous section.
      *
      * @return $this
      */

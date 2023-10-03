@@ -1356,7 +1356,7 @@ abstract class ParagraphFormatBase extends LinkElement
     /*
      * Sets bidi
      *
-     * @param bool $bidi Gets or sets a value indicating whether this is a right-to-left paragraph.
+     * @param bool $bidi Gets or sets a value indicating whether this is a right-to-left paragraph. When true, the runs and other inline objects in this paragraph are laid out right to left.
      *
      * @return $this
      */
@@ -1504,7 +1504,7 @@ abstract class ParagraphFormatBase extends LinkElement
     /*
      * Sets line_spacing
      *
-     * @param double $line_spacing Gets or sets the line spacing (in points) for the paragraph.
+     * @param double $line_spacing Gets or sets the line spacing (in points) for the paragraph. When LineSpacingRule property is set to AtLeast, the line spacing can be greater than or equal to, but never less than the specified LineSpacing value.When LineSpacingRule property is set to Exactly, the line spacing never changes from the specified LineSpacing value, even if a larger font is used within the paragraph.
      *
      * @return $this
      */
@@ -1580,7 +1580,7 @@ abstract class ParagraphFormatBase extends LinkElement
     /*
      * Sets no_space_between_paragraphs_of_same_style
      *
-     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
+     * @param bool $no_space_between_paragraphs_of_same_style Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style. This setting only takes affect when applied to a paragraph style. If applied to a paragraph directly, it has no effect.
      *
      * @return $this
      */
@@ -1680,7 +1680,7 @@ abstract class ParagraphFormatBase extends LinkElement
     /*
      * Sets space_after
      *
-     * @param double $space_after Gets or sets the amount of spacing (in points) after the paragraph.
+     * @param double $space_after Gets or sets the amount of spacing (in points) after the paragraph. Has no effect when SpaceAfterAuto is true.
      *
      * @return $this
      */
@@ -1704,7 +1704,7 @@ abstract class ParagraphFormatBase extends LinkElement
     /*
      * Sets space_after_auto
      *
-     * @param bool $space_after_auto Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.
+     * @param bool $space_after_auto Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically. When set to true, overrides the effect of SpaceAfter.
      *
      * @return $this
      */
@@ -1728,7 +1728,7 @@ abstract class ParagraphFormatBase extends LinkElement
     /*
      * Sets space_before
      *
-     * @param double $space_before Gets or sets the amount of spacing (in points) before the paragraph.
+     * @param double $space_before Gets or sets the amount of spacing (in points) before the paragraph. Has no effect when SpaceBeforeAuto is true.
      *
      * @return $this
      */
@@ -1752,7 +1752,7 @@ abstract class ParagraphFormatBase extends LinkElement
     /*
      * Sets space_before_auto
      *
-     * @param bool $space_before_auto Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.
+     * @param bool $space_before_auto Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically. When set to true, overrides the effect of SpaceBefore.
      *
      * @return $this
      */

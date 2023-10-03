@@ -33,7 +33,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CsvDataLoadOptions
  *
- * @description Represents options for parsing CSV data. To learn more, visit the LINQ Reporting Engine documentation article.
+ * @description Represents options for parsing CSV data. To learn more, visit the LINQ Reporting Engine documentation article. An instance of this class can be passed into constructors of CsvDataSource.
  */
 class CsvDataLoadOptions implements ArrayAccess
 {
@@ -227,7 +227,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets comment_char
      *
-     * @param string $comment_char Gets or sets the character that is used to comment lines of CSV data.
+     * @param string $comment_char Gets or sets the character that is used to comment lines of CSV data. The default value is '#' (number sign).
      *
      * @return $this
      */
@@ -251,7 +251,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets delimiter
      *
-     * @param string $delimiter Gets or sets the character to be used as a column delimiter.
+     * @param string $delimiter Gets or sets the character to be used as a column delimiter. The default value is ',' (comma).
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets has_headers
      *
-     * @param bool $has_headers Gets or sets a value indicating whether the first record of CSV data contains column names.
+     * @param bool $has_headers Gets or sets a value indicating whether the first record of CSV data contains column names. The default value is false.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class CsvDataLoadOptions implements ArrayAccess
     /*
      * Sets quote_char
      *
-     * @param string $quote_char Gets or sets the character that is used to quote field values.
+     * @param string $quote_char Gets or sets the character that is used to quote field values. The default value is '"' (quotation mark).Double the character to place it into quoted text.
      *
      * @return $this
      */

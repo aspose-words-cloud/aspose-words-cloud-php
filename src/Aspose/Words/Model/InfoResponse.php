@@ -217,7 +217,7 @@ class InfoResponse extends WordsResponse
     /*
      * Sets additional_info
      *
-     * @param \Aspose\Words\Model\InfoAdditionalItem[] $additional_info Gets or sets additional info.
+     * @param \Aspose\Words\Model\InfoAdditionalItem[] $additional_info Gets or sets AdditionalInfo.
      *
      * @return $this
      */
@@ -241,7 +241,7 @@ class InfoResponse extends WordsResponse
     /*
      * Sets name
      *
-     * @param string $name Gets or sets application name.
+     * @param string $name Gets or sets Name.
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ class InfoResponse extends WordsResponse
     /*
      * Sets version
      *
-     * @param string $version Gets or sets version.
+     * @param string $version Gets or sets Version.
      *
      * @return $this
      */

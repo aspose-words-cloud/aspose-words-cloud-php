@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * FootnoteResponse
  *
- * @description The REST response with a footnote.
+ * @description The REST response with a footnote. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/footnote/0" REST API requests.
  */
 class FootnoteResponse extends WordsResponse
 {

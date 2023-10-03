@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * Border
  *
- * @description Represents a border of an object.
+ * @description Represents a border of an object. Borders can be applied to various document elements including paragraph, run of text inside a paragraph or a table cell.
  */
 class Border extends LinkElement
 {
@@ -407,7 +407,7 @@ class Border extends LinkElement
     /*
      * Sets distance_from_text
      *
-     * @param double $distance_from_text Gets or sets the distance of the border from text or from the page edge in points.
+     * @param double $distance_from_text Gets or sets the distance of the border from text or from the page edge in points. Has no effect and will be automatically reset to zero for borders of table cells.
      *
      * @return $this
      */
@@ -431,7 +431,7 @@ class Border extends LinkElement
     /*
      * Sets line_style
      *
-     * @param string $line_style Gets or sets the border style.
+     * @param string $line_style Gets or sets the border style. If you set line style to none, then line width is automatically changed to zero.
      *
      * @return $this
      */
@@ -459,7 +459,7 @@ class Border extends LinkElement
     /*
      * Sets line_width
      *
-     * @param double $line_width Gets or sets the border width in points.
+     * @param double $line_width Gets or sets the border width in points. If you set line width greater than zero when line style is none, the line style is automatically changed to single line.
      *
      * @return $this
      */
@@ -483,7 +483,7 @@ class Border extends LinkElement
     /*
      * Sets shadow
      *
-     * @param bool $shadow Gets or sets a value indicating whether the border has a shadow.
+     * @param bool $shadow Gets or sets a value indicating whether the border has a shadow. In Microsoft Word, for a border to have a shadow, the borders on all four sides (left, top, right and bottom) should be of the same type, width, color and all should have the Shadow property set to true.
      *
      * @return $this
      */

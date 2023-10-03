@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphResponse
  *
- * @description The REST response with a paragraph.
+ * @description The REST response with a paragraph. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}" REST API requests.
  */
 class ParagraphResponse extends WordsResponse
 {

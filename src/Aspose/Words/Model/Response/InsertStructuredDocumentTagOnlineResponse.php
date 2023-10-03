@@ -46,7 +46,7 @@ class InsertStructuredDocumentTagOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a StructuredDocumentTag.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class InsertStructuredDocumentTagOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a StructuredDocumentTag.
      */
     public function setmodel($value)
     {

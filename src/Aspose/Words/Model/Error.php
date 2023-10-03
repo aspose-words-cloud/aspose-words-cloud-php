@@ -227,7 +227,7 @@ class Error implements ArrayAccess
     /*
      * Sets code
      *
-     * @param string $code Code.
+     * @param string $code Gets or sets Code.
      *
      * @return $this
      */
@@ -251,7 +251,7 @@ class Error implements ArrayAccess
     /*
      * Sets description
      *
-     * @param string $description Description.
+     * @param string $description Gets or sets Description.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class Error implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\Words\Model\ErrorDetails $inner_error Inner Error.
+     * @param \Aspose\Words\Model\ErrorDetails $inner_error Gets or sets InnerError.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class Error implements ArrayAccess
     /*
      * Sets message
      *
-     * @param string $message Message.
+     * @param string $message Gets or sets Message.
      *
      * @return $this
      */

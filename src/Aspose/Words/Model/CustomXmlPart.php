@@ -211,7 +211,7 @@ class CustomXmlPart extends CustomXmlPartLink
     /*
      * Sets id
      *
-     * @param string $id Gets or sets the custom xml part id.
+     * @param string $id Gets or sets the custom xml part id. Cannot be null.
      *
      * @return $this
      */
@@ -235,7 +235,7 @@ class CustomXmlPart extends CustomXmlPartLink
     /*
      * Sets data
      *
-     * @param string $data Gets or sets the custom xml part data.
+     * @param string $data Gets or sets the custom xml part data. Cannot be null.Default is empty string.
      *
      * @return $this
      */

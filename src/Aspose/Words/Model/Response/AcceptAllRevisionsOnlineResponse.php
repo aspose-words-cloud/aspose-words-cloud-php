@@ -46,7 +46,7 @@ class AcceptAllRevisionsOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class AcceptAllRevisionsOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
      */
     public function setmodel($value)
     {

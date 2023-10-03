@@ -211,7 +211,7 @@ class ImageEntryList extends BaseEntryList
     /*
      * Sets append_each_image_on_new_page
      *
-     * @param bool $append_each_image_on_new_page Gets or sets a value indicating whether each image should be added to a new page in the document.
+     * @param bool $append_each_image_on_new_page Gets or sets a value indicating whether each image should be added to a new page in the document. This value only has an effect when adding images to a document that supports pagination.
      *
      * @return $this
      */

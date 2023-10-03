@@ -51,8 +51,8 @@ class BookmarkInsert extends BookmarkData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'end_range' => '\Aspose\Words\Model\NewDocumentPosition',
-        'start_range' => '\Aspose\Words\Model\NewDocumentPosition'
+        'start_range' => '\Aspose\Words\Model\NewDocumentPosition',
+        'end_range' => '\Aspose\Words\Model\NewDocumentPosition'
     ];
 
     /*
@@ -61,8 +61,8 @@ class BookmarkInsert extends BookmarkData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'end_range' => 'null',
-        'start_range' => 'null'
+        'start_range' => 'null',
+        'end_range' => 'null'
     ];
 
     /*
@@ -92,8 +92,8 @@ class BookmarkInsert extends BookmarkData
      * @var string[]
      */
     protected static $attributeMap = [
-        'end_range' => 'EndRange',
-        'start_range' => 'StartRange'
+        'start_range' => 'StartRange',
+        'end_range' => 'EndRange'
     ];
 
     /*
@@ -102,8 +102,8 @@ class BookmarkInsert extends BookmarkData
      * @var string[]
      */
     protected static $setters = [
-        'end_range' => 'setEndRange',
-        'start_range' => 'setStartRange'
+        'start_range' => 'setStartRange',
+        'end_range' => 'setEndRange'
     ];
 
     /*
@@ -112,8 +112,8 @@ class BookmarkInsert extends BookmarkData
      * @var string[]
      */
     protected static $getters = [
-        'end_range' => 'getEndRange',
-        'start_range' => 'getStartRange'
+        'start_range' => 'getStartRange',
+        'end_range' => 'getEndRange'
     ];
 
     /*
@@ -168,8 +168,8 @@ class BookmarkInsert extends BookmarkData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['end_range'] = isset($data['end_range']) ? $data['end_range'] : null;
         $this->container['start_range'] = isset($data['start_range']) ? $data['start_range'] : null;
+        $this->container['end_range'] = isset($data['end_range']) ? $data['end_range'] : null;
     }
 
     /*
@@ -199,30 +199,6 @@ class BookmarkInsert extends BookmarkData
     }
 
     /*
-     * Gets end_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getEndRange()
-    {
-        return $this->container['end_range'];
-    }
-
-    /*
-     * Sets end_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
-     *
-     * @return $this
-     */
-    public function setEndRange($end_range)
-    {
-        $this->container['end_range'] = $end_range;
-        return $this;
-    }
-
-
-    /*
      * Gets start_range
      *
      * @return \Aspose\Words\Model\NewDocumentPosition
@@ -242,6 +218,30 @@ class BookmarkInsert extends BookmarkData
     public function setStartRange($start_range)
     {
         $this->container['start_range'] = $start_range;
+        return $this;
+    }
+
+
+    /*
+     * Gets end_range
+     *
+     * @return \Aspose\Words\Model\NewDocumentPosition
+     */
+    public function getEndRange()
+    {
+        return $this->container['end_range'];
+    }
+
+    /*
+     * Sets end_range
+     *
+     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
+     *
+     * @return $this
+     */
+    public function setEndRange($end_range)
+    {
+        $this->container['end_range'] = $end_range;
         return $this;
     }
 

@@ -46,7 +46,8 @@ class InsertTableCellOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a table cell.
+     * This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}" REST API requests.
      */
     public function getmodel()
     {
@@ -54,7 +55,8 @@ class InsertTableCellOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a table cell.
+     * This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}" REST API requests.
      */
     public function setmodel($value)
     {

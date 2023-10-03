@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * BorderResponse
  *
- * @description The REST response with a border.
+ * @description The REST response with a border. This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.
  */
 class BorderResponse extends WordsResponse
 {

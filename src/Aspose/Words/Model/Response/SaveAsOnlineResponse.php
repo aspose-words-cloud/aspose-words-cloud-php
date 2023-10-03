@@ -46,7 +46,7 @@ class SaveAsOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a save result.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class SaveAsOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a save result.
      */
     public function setmodel($value)
     {

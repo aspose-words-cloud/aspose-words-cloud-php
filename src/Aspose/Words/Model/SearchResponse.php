@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * SearchResponse
  *
- * @description The REST response with a regular expression pattern and a collection of search results.
+ * @description The REST response with a regular expression pattern and a collection of search results. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/search" REST API requests.
  */
 class SearchResponse extends WordsResponse
 {

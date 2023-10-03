@@ -46,7 +46,7 @@ class ReplaceWithTextOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a document description.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class ReplaceWithTextOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a document description.
      */
     public function setmodel($value)
     {

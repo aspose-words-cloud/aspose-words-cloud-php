@@ -46,7 +46,7 @@ class ReplaceTextOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a number of occurrences of the captured text in the document.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class ReplaceTextOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a number of occurrences of the captured text in the document.
      */
     public function setmodel($value)
     {

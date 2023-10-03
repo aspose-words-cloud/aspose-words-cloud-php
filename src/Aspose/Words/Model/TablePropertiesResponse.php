@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TablePropertiesResponse
  *
- * @description The REST response with a table.
+ * @description The REST response with a table. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/properties" REST API requests.
  */
 class TablePropertiesResponse extends WordsResponse
 {

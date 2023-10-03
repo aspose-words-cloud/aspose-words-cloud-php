@@ -52,8 +52,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'list_id' => 'int',
-        'list_level_number' => 'int'
+        'list_level_number' => 'int',
+        'list_id' => 'int'
     ];
 
     /*
@@ -62,8 +62,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'list_id' => 'null',
-        'list_level_number' => 'null'
+        'list_level_number' => 'null',
+        'list_id' => 'null'
     ];
 
     /*
@@ -93,8 +93,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'list_id' => 'ListId',
-        'list_level_number' => 'ListLevelNumber'
+        'list_level_number' => 'ListLevelNumber',
+        'list_id' => 'ListId'
     ];
 
     /*
@@ -103,8 +103,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'list_id' => 'setListId',
-        'list_level_number' => 'setListLevelNumber'
+        'list_level_number' => 'setListLevelNumber',
+        'list_id' => 'setListId'
     ];
 
     /*
@@ -113,8 +113,8 @@ class ListFormatUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'list_id' => 'getListId',
-        'list_level_number' => 'getListLevelNumber'
+        'list_level_number' => 'getListLevelNumber',
+        'list_id' => 'getListId'
     ];
 
     /*
@@ -175,8 +175,8 @@ class ListFormatUpdate implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
         $this->container['list_level_number'] = isset($data['list_level_number']) ? $data['list_level_number'] : null;
+        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
     }
 
     /*
@@ -203,30 +203,6 @@ class ListFormatUpdate implements ArrayAccess
     }
 
     /*
-     * Gets list_id
-     *
-     * @return int
-     */
-    public function getListId()
-    {
-        return $this->container['list_id'];
-    }
-
-    /*
-     * Sets list_id
-     *
-     * @param int $list_id Gets or sets the list id of this paragraph.
-     *
-     * @return $this
-     */
-    public function setListId($list_id)
-    {
-        $this->container['list_id'] = $list_id;
-        return $this;
-    }
-
-
-    /*
      * Gets list_level_number
      *
      * @return int
@@ -239,13 +215,37 @@ class ListFormatUpdate implements ArrayAccess
     /*
      * Sets list_level_number
      *
-     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph.
+     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph. In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.
      *
      * @return $this
      */
     public function setListLevelNumber($list_level_number)
     {
         $this->container['list_level_number'] = $list_level_number;
+        return $this;
+    }
+
+
+    /*
+     * Gets list_id
+     *
+     * @return int
+     */
+    public function getListId()
+    {
+        return $this->container['list_id'];
+    }
+
+    /*
+     * Sets list_id
+     *
+     * @param int $list_id Gets or sets the list id of this paragraph. The list that is being assigned to this property must belong to the current document. The list that is being assigned to this property must not be a list style definition.
+     *
+     * @return $this
+     */
+    public function setListId($list_id)
+    {
+        $this->container['list_id'] = $list_id;
         return $this;
     }
 

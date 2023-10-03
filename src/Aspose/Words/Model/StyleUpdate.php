@@ -52,10 +52,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'next_paragraph_style_name' => 'string',
         'base_style_name' => 'string',
         'is_quick_style' => 'bool',
-        'name' => 'string',
-        'next_paragraph_style_name' => 'string'
+        'name' => 'string'
     ];
 
     /*
@@ -64,10 +64,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'next_paragraph_style_name' => 'null',
         'base_style_name' => 'null',
         'is_quick_style' => 'null',
-        'name' => 'null',
-        'next_paragraph_style_name' => 'null'
+        'name' => 'null'
     ];
 
     /*
@@ -97,10 +97,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'next_paragraph_style_name' => 'NextParagraphStyleName',
         'base_style_name' => 'BaseStyleName',
         'is_quick_style' => 'IsQuickStyle',
-        'name' => 'Name',
-        'next_paragraph_style_name' => 'NextParagraphStyleName'
+        'name' => 'Name'
     ];
 
     /*
@@ -109,10 +109,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'next_paragraph_style_name' => 'setNextParagraphStyleName',
         'base_style_name' => 'setBaseStyleName',
         'is_quick_style' => 'setIsQuickStyle',
-        'name' => 'setName',
-        'next_paragraph_style_name' => 'setNextParagraphStyleName'
+        'name' => 'setName'
     ];
 
     /*
@@ -121,10 +121,10 @@ class StyleUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'next_paragraph_style_name' => 'getNextParagraphStyleName',
         'base_style_name' => 'getBaseStyleName',
         'is_quick_style' => 'getIsQuickStyle',
-        'name' => 'getName',
-        'next_paragraph_style_name' => 'getNextParagraphStyleName'
+        'name' => 'getName'
     ];
 
     /*
@@ -185,10 +185,10 @@ class StyleUpdate implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['next_paragraph_style_name'] = isset($data['next_paragraph_style_name']) ? $data['next_paragraph_style_name'] : null;
         $this->container['base_style_name'] = isset($data['base_style_name']) ? $data['base_style_name'] : null;
         $this->container['is_quick_style'] = isset($data['is_quick_style']) ? $data['is_quick_style'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['next_paragraph_style_name'] = isset($data['next_paragraph_style_name']) ? $data['next_paragraph_style_name'] : null;
     }
 
     /*
@@ -215,6 +215,30 @@ class StyleUpdate implements ArrayAccess
     }
 
     /*
+     * Gets next_paragraph_style_name
+     *
+     * @return string
+     */
+    public function getNextParagraphStyleName()
+    {
+        return $this->container['next_paragraph_style_name'];
+    }
+
+    /*
+     * Sets next_paragraph_style_name
+     *
+     * @param string $next_paragraph_style_name Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style. This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.
+     *
+     * @return $this
+     */
+    public function setNextParagraphStyleName($next_paragraph_style_name)
+    {
+        $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
+        return $this;
+    }
+
+
+    /*
      * Gets base_style_name
      *
      * @return string
@@ -227,7 +251,7 @@ class StyleUpdate implements ArrayAccess
     /*
      * Sets base_style_name
      *
-     * @param string $base_style_name Gets or sets the name of the style this style is based on.
+     * @param string $base_style_name Gets or sets the name of the style this style is based on. This will be an empty string if the style is not based on any other style and it can be set to an empty string.
      *
      * @return $this
      */
@@ -275,37 +299,13 @@ class StyleUpdate implements ArrayAccess
     /*
      * Sets name
      *
-     * @param string $name Gets or sets the name of the style.
+     * @param string $name Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.
      *
      * @return $this
      */
     public function setName($name)
     {
         $this->container['name'] = $name;
-        return $this;
-    }
-
-
-    /*
-     * Gets next_paragraph_style_name
-     *
-     * @return string
-     */
-    public function getNextParagraphStyleName()
-    {
-        return $this->container['next_paragraph_style_name'];
-    }
-
-    /*
-     * Sets next_paragraph_style_name
-     *
-     * @param string $next_paragraph_style_name Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
-     *
-     * @return $this
-     */
-    public function setNextParagraphStyleName($next_paragraph_style_name)
-    {
-        $this->container['next_paragraph_style_name'] = $next_paragraph_style_name;
         return $this;
     }
 

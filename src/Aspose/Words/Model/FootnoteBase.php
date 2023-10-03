@@ -52,8 +52,8 @@ abstract class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'footnote_type' => 'string',
         'position' => '\Aspose\Words\Model\NewDocumentPosition',
+        'footnote_type' => 'string',
         'reference_mark' => 'string',
         'text' => 'string'
     ];
@@ -64,8 +64,8 @@ abstract class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'footnote_type' => 'null',
         'position' => 'null',
+        'footnote_type' => 'null',
         'reference_mark' => 'null',
         'text' => 'null'
     ];
@@ -97,8 +97,8 @@ abstract class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'footnote_type' => 'FootnoteType',
         'position' => 'Position',
+        'footnote_type' => 'FootnoteType',
         'reference_mark' => 'ReferenceMark',
         'text' => 'Text'
     ];
@@ -109,8 +109,8 @@ abstract class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'footnote_type' => 'setFootnoteType',
         'position' => 'setPosition',
+        'footnote_type' => 'setFootnoteType',
         'reference_mark' => 'setReferenceMark',
         'text' => 'setText'
     ];
@@ -121,8 +121,8 @@ abstract class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'footnote_type' => 'getFootnoteType',
         'position' => 'getPosition',
+        'footnote_type' => 'getFootnoteType',
         'reference_mark' => 'getReferenceMark',
         'text' => 'getText'
     ];
@@ -199,8 +199,8 @@ abstract class FootnoteBase implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['footnote_type'] = isset($data['footnote_type']) ? $data['footnote_type'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['footnote_type'] = isset($data['footnote_type']) ? $data['footnote_type'] : null;
         $this->container['reference_mark'] = isset($data['reference_mark']) ? $data['reference_mark'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
@@ -244,6 +244,30 @@ abstract class FootnoteBase implements ArrayAccess
     }
 
     /*
+     * Gets position
+     *
+     * @return \Aspose\Words\Model\NewDocumentPosition
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param \Aspose\Words\Model\NewDocumentPosition $position Gets or sets the link to comment range start node.
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
+        return $this;
+    }
+
+
+    /*
      * Gets footnote_type
      *
      * @return string
@@ -272,30 +296,6 @@ abstract class FootnoteBase implements ArrayAccess
 
 
     /*
-     * Gets position
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getPosition()
-    {
-        return $this->container['position'];
-    }
-
-    /*
-     * Sets position
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $position Gets or sets the link to comment range start node.
-     *
-     * @return $this
-     */
-    public function setPosition($position)
-    {
-        $this->container['position'] = $position;
-        return $this;
-    }
-
-
-    /*
      * Gets reference_mark
      *
      * @return string
@@ -308,7 +308,7 @@ abstract class FootnoteBase implements ArrayAccess
     /*
      * Sets reference_mark
      *
-     * @param string $reference_mark Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
+     * @param string $reference_mark Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used. RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.
      *
      * @return $this
      */
@@ -332,7 +332,7 @@ abstract class FootnoteBase implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Gets or sets text of the footnote.
+     * @param string $text Gets or sets text of the footnote. This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.
      *
      * @return $this
      */

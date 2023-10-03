@@ -394,7 +394,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets display_type
      *
-     * @param string $display_type Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.
+     * @param string $display_type Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line. Display format type has effect for top level Office Math only.Returned display format type is always Inline for nested Office Math.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class OfficeMathObject extends OfficeMathLink
     /*
      * Sets justification
      *
-     * @param string $justification Gets or sets the justification of the OfficeMath object.
+     * @param string $justification Gets or sets the justification of the OfficeMath object. Justification cannot be set to the Office Math with display format type Inline.Inline justification cannot be set to the Office Math with display format type Display.Corresponding DisplayType has to be set before setting Office Math justification.
      *
      * @return $this
      */

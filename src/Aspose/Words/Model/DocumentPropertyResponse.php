@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * DocumentPropertyResponse
  *
- * @description The REST response with a document property.
+ * @description The REST response with a document property. This response should be returned by the service when handling: GET documentProperties/{propertyName}.
  */
 class DocumentPropertyResponse extends WordsResponse
 {

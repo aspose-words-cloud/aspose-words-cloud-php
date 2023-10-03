@@ -215,7 +215,7 @@ class StructuredDocumentTagListItem implements ArrayAccess
     /*
      * Sets display_text
      *
-     * @param string $display_text Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item.
+     * @param string $display_text Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item. Cannot be null and cannot be an empty string.
      *
      * @return $this
      */
@@ -239,7 +239,7 @@ class StructuredDocumentTagListItem implements ArrayAccess
     /*
      * Sets value
      *
-     * @param string $value Gets or sets the value of this list item.
+     * @param string $value Gets or sets the value of this list item. Cannot be null and cannot be an empty string.
      *
      * @return $this
      */

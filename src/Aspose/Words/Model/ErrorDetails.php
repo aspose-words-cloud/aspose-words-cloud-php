@@ -215,7 +215,7 @@ class ErrorDetails implements ArrayAccess
     /*
      * Sets error_date_time
      *
-     * @param \DateTime $error_date_time Error datetime.
+     * @param \DateTime $error_date_time Gets or sets ErrorDateTime.
      *
      * @return $this
      */
@@ -239,7 +239,7 @@ class ErrorDetails implements ArrayAccess
     /*
      * Sets request_id
      *
-     * @param string $request_id The request id.
+     * @param string $request_id Gets or sets RequestId.
      *
      * @return $this
      */

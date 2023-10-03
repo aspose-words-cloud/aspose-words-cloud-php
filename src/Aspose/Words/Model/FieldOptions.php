@@ -52,7 +52,6 @@ class FieldOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'built_in_templates_paths' => 'string[]',
         'current_user' => '\Aspose\Words\Model\UserInformation',
         'custom_toc_style_separator' => 'string',
         'default_document_author' => 'string',
@@ -64,7 +63,8 @@ class FieldOptions implements ArrayAccess
         'legacy_number_format' => 'bool',
         'pre_process_culture_name' => 'string',
         'template_name' => 'string',
-        'use_invariant_culture_number_format' => 'bool'
+        'use_invariant_culture_number_format' => 'bool',
+        'built_in_templates_paths' => 'string[]'
     ];
 
     /*
@@ -73,7 +73,6 @@ class FieldOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'built_in_templates_paths' => 'null',
         'current_user' => 'null',
         'custom_toc_style_separator' => 'null',
         'default_document_author' => 'null',
@@ -85,7 +84,8 @@ class FieldOptions implements ArrayAccess
         'legacy_number_format' => 'null',
         'pre_process_culture_name' => 'null',
         'template_name' => 'null',
-        'use_invariant_culture_number_format' => 'null'
+        'use_invariant_culture_number_format' => 'null',
+        'built_in_templates_paths' => 'null'
     ];
 
     /*
@@ -115,7 +115,6 @@ class FieldOptions implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'built_in_templates_paths' => 'BuiltInTemplatesPaths',
         'current_user' => 'CurrentUser',
         'custom_toc_style_separator' => 'CustomTocStyleSeparator',
         'default_document_author' => 'DefaultDocumentAuthor',
@@ -127,7 +126,8 @@ class FieldOptions implements ArrayAccess
         'legacy_number_format' => 'LegacyNumberFormat',
         'pre_process_culture_name' => 'PreProcessCultureName',
         'template_name' => 'TemplateName',
-        'use_invariant_culture_number_format' => 'UseInvariantCultureNumberFormat'
+        'use_invariant_culture_number_format' => 'UseInvariantCultureNumberFormat',
+        'built_in_templates_paths' => 'BuiltInTemplatesPaths'
     ];
 
     /*
@@ -136,7 +136,6 @@ class FieldOptions implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'built_in_templates_paths' => 'setBuiltInTemplatesPaths',
         'current_user' => 'setCurrentUser',
         'custom_toc_style_separator' => 'setCustomTocStyleSeparator',
         'default_document_author' => 'setDefaultDocumentAuthor',
@@ -148,7 +147,8 @@ class FieldOptions implements ArrayAccess
         'legacy_number_format' => 'setLegacyNumberFormat',
         'pre_process_culture_name' => 'setPreProcessCultureName',
         'template_name' => 'setTemplateName',
-        'use_invariant_culture_number_format' => 'setUseInvariantCultureNumberFormat'
+        'use_invariant_culture_number_format' => 'setUseInvariantCultureNumberFormat',
+        'built_in_templates_paths' => 'setBuiltInTemplatesPaths'
     ];
 
     /*
@@ -157,7 +157,6 @@ class FieldOptions implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'built_in_templates_paths' => 'getBuiltInTemplatesPaths',
         'current_user' => 'getCurrentUser',
         'custom_toc_style_separator' => 'getCustomTocStyleSeparator',
         'default_document_author' => 'getDefaultDocumentAuthor',
@@ -169,7 +168,8 @@ class FieldOptions implements ArrayAccess
         'legacy_number_format' => 'getLegacyNumberFormat',
         'pre_process_culture_name' => 'getPreProcessCultureName',
         'template_name' => 'getTemplateName',
-        'use_invariant_culture_number_format' => 'getUseInvariantCultureNumberFormat'
+        'use_invariant_culture_number_format' => 'getUseInvariantCultureNumberFormat',
+        'built_in_templates_paths' => 'getBuiltInTemplatesPaths'
     ];
 
     /*
@@ -268,7 +268,6 @@ class FieldOptions implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['built_in_templates_paths'] = isset($data['built_in_templates_paths']) ? $data['built_in_templates_paths'] : null;
         $this->container['current_user'] = isset($data['current_user']) ? $data['current_user'] : null;
         $this->container['custom_toc_style_separator'] = isset($data['custom_toc_style_separator']) ? $data['custom_toc_style_separator'] : null;
         $this->container['default_document_author'] = isset($data['default_document_author']) ? $data['default_document_author'] : null;
@@ -281,6 +280,7 @@ class FieldOptions implements ArrayAccess
         $this->container['pre_process_culture_name'] = isset($data['pre_process_culture_name']) ? $data['pre_process_culture_name'] : null;
         $this->container['template_name'] = isset($data['template_name']) ? $data['template_name'] : null;
         $this->container['use_invariant_culture_number_format'] = isset($data['use_invariant_culture_number_format']) ? $data['use_invariant_culture_number_format'] : null;
+        $this->container['built_in_templates_paths'] = isset($data['built_in_templates_paths']) ? $data['built_in_templates_paths'] : null;
     }
 
     /*
@@ -333,30 +333,6 @@ class FieldOptions implements ArrayAccess
 
         return true;
     }
-
-    /*
-     * Gets built_in_templates_paths
-     *
-     * @return string[]
-     */
-    public function getBuiltInTemplatesPaths()
-    {
-        return $this->container['built_in_templates_paths'];
-    }
-
-    /*
-     * Sets built_in_templates_paths
-     *
-     * @param string[] $built_in_templates_paths Gets or sets BuiltIn Templates Paths.
-     *
-     * @return $this
-     */
-    public function setBuiltInTemplatesPaths($built_in_templates_paths)
-    {
-        $this->container['built_in_templates_paths'] = $built_in_templates_paths;
-        return $this;
-    }
-
 
     /*
      * Gets current_user
@@ -650,6 +626,30 @@ class FieldOptions implements ArrayAccess
     public function setUseInvariantCultureNumberFormat($use_invariant_culture_number_format)
     {
         $this->container['use_invariant_culture_number_format'] = $use_invariant_culture_number_format;
+        return $this;
+    }
+
+
+    /*
+     * Gets built_in_templates_paths
+     *
+     * @return string[]
+     */
+    public function getBuiltInTemplatesPaths()
+    {
+        return $this->container['built_in_templates_paths'];
+    }
+
+    /*
+     * Sets built_in_templates_paths
+     *
+     * @param string[] $built_in_templates_paths Gets or sets BuiltIn Templates Paths.
+     *
+     * @return $this
+     */
+    public function setBuiltInTemplatesPaths($built_in_templates_paths)
+    {
+        $this->container['built_in_templates_paths'] = $built_in_templates_paths;
         return $this;
     }
 

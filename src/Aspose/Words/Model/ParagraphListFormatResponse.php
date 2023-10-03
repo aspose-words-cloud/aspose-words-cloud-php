@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * ParagraphListFormatResponse
  *
- * @description The REST response with a list format for a paragraph.
+ * @description The REST response with a list format for a paragraph. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/listFormat" REST API requests.
  */
 class ParagraphListFormatResponse extends WordsResponse
 {

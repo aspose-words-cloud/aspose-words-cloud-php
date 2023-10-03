@@ -46,7 +46,8 @@ class InsertBookmarkOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a bookmark.
+     * This response should be returned by the service when handling: GET bookmarks/{bookmarkName}.
      */
     public function getmodel()
     {
@@ -54,7 +55,8 @@ class InsertBookmarkOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a bookmark.
+     * This response should be returned by the service when handling: GET bookmarks/{bookmarkName}.
      */
     public function setmodel($value)
     {

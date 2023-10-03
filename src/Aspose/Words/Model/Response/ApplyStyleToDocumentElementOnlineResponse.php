@@ -46,7 +46,7 @@ class ApplyStyleToDocumentElementOnlineResponse
     }
 
     /*
-     * The response model.
+     * The base class for all responses.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class ApplyStyleToDocumentElementOnlineResponse
     }
 
     /*
-     * The response model.
+     * The base class for all responses.
      */
     public function setmodel($value)
     {

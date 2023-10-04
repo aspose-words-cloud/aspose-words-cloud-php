@@ -393,7 +393,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets allow_embedding_post_script_fonts
      *
-     * @param bool $allow_embedding_post_script_fonts Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+     * @param bool $allow_embedding_post_script_fonts Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.
      *
      * @return $this
      */
@@ -441,7 +441,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml3_d_effects_rendering_mode
      *
-     * @param string $dml3_d_effects_rendering_mode Gets or sets the value determining how 3D effects are rendered.
+     * @param string $dml3_d_effects_rendering_mode Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
      *
      * @return $this
      */
@@ -469,7 +469,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml_effects_rendering_mode
      *
-     * @param string $dml_effects_rendering_mode Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
+     * @param string $dml_effects_rendering_mode Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets dml_rendering_mode
      *
-     * @param string $dml_rendering_mode Gets or sets the option that controls how DrawingML shapes are rendered.
+     * @param string $dml_rendering_mode Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.
      *
      * @return $this
      */
@@ -549,7 +549,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets iml_rendering_mode
      *
-     * @param string $iml_rendering_mode Gets or sets the value determining how ink (InkML) objects are rendered.
+     * @param string $iml_rendering_mode Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
      *
      * @return $this
      */
@@ -649,7 +649,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_last_saved_time_property
      *
-     * @param bool $update_last_saved_time_property Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+     * @param bool $update_last_saved_time_property Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.
      *
      * @return $this
      */
@@ -673,7 +673,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets zip_output
      *
-     * @param bool $zip_output Gets or sets a value indicating whether to zip output or not. The default value is false.
+     * @param bool $zip_output Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.
      *
      * @return $this
      */

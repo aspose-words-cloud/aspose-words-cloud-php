@@ -305,7 +305,7 @@ class OdtSaveOptionsData extends SaveOptionsData
     /*
      * Sets password
      *
-     * @param string $password Gets or sets the password to encrypt document.
+     * @param string $password Gets or sets the password to encrypt document. In order to save document without encryption this property should be null or empty string.
      *
      * @return $this
      */

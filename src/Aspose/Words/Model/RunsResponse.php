@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * RunsResponse
  *
- * @description The REST response with a collection of Run elements.
+ * @description The REST response with a collection of Run elements. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/{paragraphPath}/runs" REST API requests.
  */
 class RunsResponse extends WordsResponse
 {

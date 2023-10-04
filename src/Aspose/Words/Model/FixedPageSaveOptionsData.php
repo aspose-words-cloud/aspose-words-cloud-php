@@ -303,7 +303,7 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
     /*
      * Sets color_mode
      *
-     * @param string $color_mode Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.
+     * @param string $color_mode Gets or sets the value determining how colors are rendered. { Normal | Grayscale}. The default value is Normal. This property is used when the document is exported to fixed page formats.
      *
      * @return $this
      */

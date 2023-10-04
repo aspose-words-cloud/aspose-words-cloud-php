@@ -53,7 +53,9 @@ class XmlColor implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'alpha' => 'int',
-        'web' => 'string'
+        'web' => 'string',
+        'xml_alpha' => 'int',
+        'xml_alpha_specified' => 'bool'
     ];
 
     /*
@@ -63,7 +65,9 @@ class XmlColor implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'alpha' => 'null',
-        'web' => 'null'
+        'web' => 'null',
+        'xml_alpha' => 'null',
+        'xml_alpha_specified' => 'null'
     ];
 
     /*
@@ -94,7 +98,9 @@ class XmlColor implements ArrayAccess
      */
     protected static $attributeMap = [
         'alpha' => 'Alpha',
-        'web' => 'Web'
+        'web' => 'Web',
+        'xml_alpha' => 'XmlAlpha',
+        'xml_alpha_specified' => 'XmlAlphaSpecified'
     ];
 
     /*
@@ -104,7 +110,9 @@ class XmlColor implements ArrayAccess
      */
     protected static $setters = [
         'alpha' => 'setAlpha',
-        'web' => 'setWeb'
+        'web' => 'setWeb',
+        'xml_alpha' => 'setXmlAlpha',
+        'xml_alpha_specified' => 'setXmlAlphaSpecified'
     ];
 
     /*
@@ -114,7 +122,9 @@ class XmlColor implements ArrayAccess
      */
     protected static $getters = [
         'alpha' => 'getAlpha',
-        'web' => 'getWeb'
+        'web' => 'getWeb',
+        'xml_alpha' => 'getXmlAlpha',
+        'xml_alpha_specified' => 'getXmlAlphaSpecified'
     ];
 
     /*
@@ -177,6 +187,8 @@ class XmlColor implements ArrayAccess
     {
         $this->container['alpha'] = isset($data['alpha']) ? $data['alpha'] : null;
         $this->container['web'] = isset($data['web']) ? $data['web'] : null;
+        $this->container['xml_alpha'] = isset($data['xml_alpha']) ? $data['xml_alpha'] : null;
+        $this->container['xml_alpha_specified'] = null;
     }
 
     /*
@@ -248,6 +260,42 @@ class XmlColor implements ArrayAccess
         $this->container['web'] = $web;
         return $this;
     }
+
+
+    /*
+     * Gets xml_alpha
+     *
+     * @return int
+     */
+    public function getXmlAlpha()
+    {
+        return $this->container['xml_alpha'];
+    }
+
+    /*
+     * Sets xml_alpha
+     *
+     * @param int $xml_alpha Gets or sets the Alpha wrapper for serialization.
+     *
+     * @return $this
+     */
+    public function setXmlAlpha($xml_alpha)
+    {
+        $this->container['xml_alpha'] = $xml_alpha;
+        return $this;
+    }
+
+
+    /*
+     * Gets xml_alpha_specified
+     *
+     * @return bool
+     */
+    public function getXmlAlphaSpecified()
+    {
+        return $this->container['xml_alpha_specified'];
+    }
+
 
 
     /*

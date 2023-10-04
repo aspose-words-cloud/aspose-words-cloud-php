@@ -52,8 +52,8 @@ abstract class FieldBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'field_code' => 'string',
-        'locale_id' => 'string'
+        'locale_id' => 'string',
+        'field_code' => 'string'
     ];
 
     /*
@@ -62,8 +62,8 @@ abstract class FieldBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'field_code' => 'null',
-        'locale_id' => 'null'
+        'locale_id' => 'null',
+        'field_code' => 'null'
     ];
 
     /*
@@ -93,8 +93,8 @@ abstract class FieldBase implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_code' => 'FieldCode',
-        'locale_id' => 'LocaleId'
+        'locale_id' => 'LocaleId',
+        'field_code' => 'FieldCode'
     ];
 
     /*
@@ -103,8 +103,8 @@ abstract class FieldBase implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'field_code' => 'setFieldCode',
-        'locale_id' => 'setLocaleId'
+        'locale_id' => 'setLocaleId',
+        'field_code' => 'setFieldCode'
     ];
 
     /*
@@ -113,8 +113,8 @@ abstract class FieldBase implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'field_code' => 'getFieldCode',
-        'locale_id' => 'getLocaleId'
+        'locale_id' => 'getLocaleId',
+        'field_code' => 'getFieldCode'
     ];
 
     /*
@@ -175,8 +175,8 @@ abstract class FieldBase implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['field_code'] = isset($data['field_code']) ? $data['field_code'] : null;
         $this->container['locale_id'] = isset($data['locale_id']) ? $data['locale_id'] : null;
+        $this->container['field_code'] = isset($data['field_code']) ? $data['field_code'] : null;
     }
 
     /*
@@ -203,30 +203,6 @@ abstract class FieldBase implements ArrayAccess
     }
 
     /*
-     * Gets field_code
-     *
-     * @return string
-     */
-    public function getFieldCode()
-    {
-        return $this->container['field_code'];
-    }
-
-    /*
-     * Sets field_code
-     *
-     * @param string $field_code Gets or sets the field code.
-     *
-     * @return $this
-     */
-    public function setFieldCode($field_code)
-    {
-        $this->container['field_code'] = $field_code;
-        return $this;
-    }
-
-
-    /*
      * Gets locale_id
      *
      * @return string
@@ -246,6 +222,30 @@ abstract class FieldBase implements ArrayAccess
     public function setLocaleId($locale_id)
     {
         $this->container['locale_id'] = $locale_id;
+        return $this;
+    }
+
+
+    /*
+     * Gets field_code
+     *
+     * @return string
+     */
+    public function getFieldCode()
+    {
+        return $this->container['field_code'];
+    }
+
+    /*
+     * Sets field_code
+     *
+     * @param string $field_code Gets or sets the field code.
+     *
+     * @return $this
+     */
+    public function setFieldCode($field_code)
+    {
+        $this->container['field_code'] = $field_code;
         return $this;
     }
 

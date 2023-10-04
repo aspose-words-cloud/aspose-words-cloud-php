@@ -221,7 +221,7 @@ class DownsampleOptionsData implements ArrayAccess
     /*
      * Sets downsample_images
      *
-     * @param bool $downsample_images Gets or sets a value indicating whether images should be downsampled.
+     * @param bool $downsample_images Gets or sets a value indicating whether images should be downsampled. The default value is true.
      *
      * @return $this
      */
@@ -245,7 +245,7 @@ class DownsampleOptionsData implements ArrayAccess
     /*
      * Sets resolution
      *
-     * @param int $resolution Gets or sets the resolution in pixels per inch which the images should be downsampled to.
+     * @param int $resolution Gets or sets the resolution in pixels per inch which the images should be downsampled to. The default value is 220 ppi.
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class DownsampleOptionsData implements ArrayAccess
     /*
      * Sets resolution_threshold
      *
-     * @param int $resolution_threshold Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled.
+     * @param int $resolution_threshold Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled. The default value is 0.
      *
      * @return $this
      */

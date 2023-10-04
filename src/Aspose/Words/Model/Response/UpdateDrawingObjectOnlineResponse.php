@@ -46,7 +46,7 @@ class UpdateDrawingObjectOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a DrawingObject.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class UpdateDrawingObjectOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a DrawingObject.
      */
     public function setmodel($value)
     {

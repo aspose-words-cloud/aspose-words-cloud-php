@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * CustomXmlPartsResponse
  *
- * @description The REST response with a collection of custom xml parts.
+ * @description The REST response with a collection of custom xml parts. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/customXmlParts" REST API requests.
  */
 class CustomXmlPartsResponse extends WordsResponse
 {

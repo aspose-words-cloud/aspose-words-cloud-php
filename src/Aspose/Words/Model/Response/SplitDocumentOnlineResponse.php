@@ -46,7 +46,8 @@ class SplitDocumentOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a result of document splitting.
+     * This response should be returned by the service when handling: POST /{name}/split.
      */
     public function getmodel()
     {
@@ -54,7 +55,8 @@ class SplitDocumentOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a result of document splitting.
+     * This response should be returned by the service when handling: POST /{name}/split.
      */
     public function setmodel($value)
     {

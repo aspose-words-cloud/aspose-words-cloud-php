@@ -614,7 +614,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets cache_background_graphics
      *
-     * @param bool $cache_background_graphics Gets or sets a value determining whether or not to cache graphics placed in document's background.
+     * @param bool $cache_background_graphics Gets or sets a value determining whether or not to cache graphics placed in document's background. Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.
      *
      * @return $this
      */
@@ -742,7 +742,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets display_doc_title
      *
-     * @param bool $display_doc_title Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+     * @param bool $display_doc_title Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary. If false, the title bar should instead display the name of the PDF file containing the document. The default value is false.
      *
      * @return $this
      */
@@ -790,7 +790,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets embed_attachments
      *
-     * @param bool $embed_attachments Gets or sets a value determining whether or not to embed attachments to the PDF document.
+     * @param bool $embed_attachments Gets or sets a value determining whether or not to embed attachments to the PDF document. Default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.
      *
      * @return $this
      */
@@ -886,7 +886,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_language_to_span_tag
      *
-     * @param bool $export_language_to_span_tag Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.
+     * @param bool $export_language_to_span_tag Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. Default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.
      *
      * @return $this
      */
@@ -966,7 +966,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets image_color_space_export_mode
      *
-     * @param string $image_color_space_export_mode Gets or sets the option that controls how the color space will be selected for the images in PDF document.
+     * @param string $image_color_space_export_mode Gets or sets the option that controls how the color space will be selected for the images in PDF document. The default value is "Auto". If "SimpleCmyk" value is specified, ImageCompression option is ignored and Flate compression is used for all images in the document.
      *
      * @return $this
      */
@@ -1018,7 +1018,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets interpolate_images
      *
-     * @param bool $interpolate_images Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.
+     * @param bool $interpolate_images Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead. When the resolution of a source image is significantly lower than that of the output device, each source sample covers many device pixels. As a result, images can appear jaggy or blocky. These visual artifacts can be reduced by applying an image interpolation algorithm during rendering. Instead of painting all pixels covered by a source sample with the same color, image interpolation attempts to produce a smooth transition between adjacent sample values. A conforming Reader may choose to not implement this feature of PDF, or may use any specific implementation of interpolation that it wishes. The default value is false.
      *
      * @return $this
      */
@@ -1118,7 +1118,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets preblend_images
      *
-     * @param bool $preblend_images Gets or sets a value indicating whether to preblend transparent images with black background color.
+     * @param bool $preblend_images Gets or sets a value indicating whether to preblend transparent images with black background color. Preblending images may improve PDF document visual appearance in Adobe Reader and remove anti-aliasing artifacts.In order to properly display preblended images, PDF viewer application must support /Matte entry in soft-mask image dictionary. Also preblending images may decrease PDF rendering performance.The default value is false.
      *
      * @return $this
      */

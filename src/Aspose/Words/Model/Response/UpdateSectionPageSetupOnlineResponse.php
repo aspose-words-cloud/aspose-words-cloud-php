@@ -46,7 +46,8 @@ class UpdateSectionPageSetupOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a page setup of a section.
+     * This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup" REST API requests.
      */
     public function getmodel()
     {
@@ -54,7 +55,8 @@ class UpdateSectionPageSetupOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a page setup of a section.
+     * This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup" REST API requests.
      */
     public function setmodel($value)
     {

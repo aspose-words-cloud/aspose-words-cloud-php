@@ -46,7 +46,7 @@ class ProtectDocumentOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with data on document's protection.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class ProtectDocumentOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with data on document's protection.
      */
     public function setmodel($value)
     {

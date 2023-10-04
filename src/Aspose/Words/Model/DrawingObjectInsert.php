@@ -52,13 +52,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'height' => 'double',
-        'left' => 'double',
         'position' => '\Aspose\Words\Model\NewDocumentPosition',
         'relative_horizontal_position' => 'string',
+        'left' => 'double',
         'relative_vertical_position' => 'string',
         'top' => 'double',
         'width' => 'double',
+        'height' => 'double',
         'wrap_type' => 'string'
     ];
 
@@ -68,13 +68,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'height' => 'null',
-        'left' => 'null',
         'position' => 'null',
         'relative_horizontal_position' => 'null',
+        'left' => 'null',
         'relative_vertical_position' => 'null',
         'top' => 'null',
         'width' => 'null',
+        'height' => 'null',
         'wrap_type' => 'null'
     ];
 
@@ -105,13 +105,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'height' => 'Height',
-        'left' => 'Left',
         'position' => 'Position',
         'relative_horizontal_position' => 'RelativeHorizontalPosition',
+        'left' => 'Left',
         'relative_vertical_position' => 'RelativeVerticalPosition',
         'top' => 'Top',
         'width' => 'Width',
+        'height' => 'Height',
         'wrap_type' => 'WrapType'
     ];
 
@@ -121,13 +121,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'height' => 'setHeight',
-        'left' => 'setLeft',
         'position' => 'setPosition',
         'relative_horizontal_position' => 'setRelativeHorizontalPosition',
+        'left' => 'setLeft',
         'relative_vertical_position' => 'setRelativeVerticalPosition',
         'top' => 'setTop',
         'width' => 'setWidth',
+        'height' => 'setHeight',
         'wrap_type' => 'setWrapType'
     ];
 
@@ -137,13 +137,13 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'height' => 'getHeight',
-        'left' => 'getLeft',
         'position' => 'getPosition',
         'relative_horizontal_position' => 'getRelativeHorizontalPosition',
+        'left' => 'getLeft',
         'relative_vertical_position' => 'getRelativeVerticalPosition',
         'top' => 'getTop',
         'width' => 'getWidth',
+        'height' => 'getHeight',
         'wrap_type' => 'getWrapType'
     ];
 
@@ -285,13 +285,13 @@ class DrawingObjectInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
         $this->container['relative_horizontal_position'] = isset($data['relative_horizontal_position']) ? $data['relative_horizontal_position'] : null;
+        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
         $this->container['relative_vertical_position'] = isset($data['relative_vertical_position']) ? $data['relative_vertical_position'] : null;
         $this->container['top'] = isset($data['top']) ? $data['top'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['wrap_type'] = isset($data['wrap_type']) ? $data['wrap_type'] : null;
     }
 
@@ -360,54 +360,6 @@ class DrawingObjectInsert implements ArrayAccess
     }
 
     /*
-     * Gets height
-     *
-     * @return double
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /*
-     * Sets height
-     *
-     * @param double $height Gets or sets the height of the DrawingObject in points.
-     *
-     * @return $this
-     */
-    public function setHeight($height)
-    {
-        $this->container['height'] = $height;
-        return $this;
-    }
-
-
-    /*
-     * Gets left
-     *
-     * @return double
-     */
-    public function getLeft()
-    {
-        return $this->container['left'];
-    }
-
-    /*
-     * Sets left
-     *
-     * @param double $left Gets or sets the distance in points from the origin to the left side of the image.
-     *
-     * @return $this
-     */
-    public function setLeft($left)
-    {
-        $this->container['left'] = $left;
-        return $this;
-    }
-
-
-    /*
      * Gets position
      *
      * @return \Aspose\Words\Model\NewDocumentPosition
@@ -455,6 +407,30 @@ class DrawingObjectInsert implements ArrayAccess
             throw new \InvalidArgumentException(sprintf("Invalid value for 'relative_horizontal_position', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['relative_horizontal_position'] = $relative_horizontal_position;
+        return $this;
+    }
+
+
+    /*
+     * Gets left
+     *
+     * @return double
+     */
+    public function getLeft()
+    {
+        return $this->container['left'];
+    }
+
+    /*
+     * Sets left
+     *
+     * @param double $left Gets or sets the distance in points from the origin to the left side of the image.
+     *
+     * @return $this
+     */
+    public function setLeft($left)
+    {
+        $this->container['left'] = $left;
         return $this;
     }
 
@@ -531,6 +507,30 @@ class DrawingObjectInsert implements ArrayAccess
     public function setWidth($width)
     {
         $this->container['width'] = $width;
+        return $this;
+    }
+
+
+    /*
+     * Gets height
+     *
+     * @return double
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /*
+     * Sets height
+     *
+     * @param double $height Gets or sets the height of the DrawingObject in points.
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->container['height'] = $height;
         return $this;
     }
 

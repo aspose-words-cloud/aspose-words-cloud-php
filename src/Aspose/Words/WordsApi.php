@@ -45585,6 +45585,7 @@ class WordsApi implements Encryptor
      * Operation saveAsTiff
      *
      * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * @deprecated This operation will be removed in the future.
      *
      * @param Requests\saveAsTiffRequest $request is a request object for operation
      *
@@ -45755,6 +45756,7 @@ class WordsApi implements Encryptor
      * Operation saveAsTiffOnline
      *
      * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * @deprecated This operation will be removed in the future.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TableCellInsertDto.php">
+ * <copyright company="Aspose" file="EpsSaveOptionsData.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,15 +27,14 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * TableCellInsertDto
+ * EpsSaveOptionsData
  *
- * @description DTO container with a table cell.
+ * @description Container class for eps save options.
  */
-class TableCellInsertDto implements ArrayAccess
+class EpsSaveOptionsData extends ImageSaveOptionsData
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +43,7 @@ class TableCellInsertDto implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "TableCellInsertDto";
+    protected static $swaggerModelName = "EpsSaveOptionsData";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,7 +51,6 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'insert_after' => 'int'
     ];
 
     /*
@@ -61,7 +59,6 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'insert_after' => 'null'
     ];
 
     /*
@@ -71,7 +68,7 @@ class TableCellInsertDto implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -81,7 +78,7 @@ class TableCellInsertDto implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -91,7 +88,6 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'insert_after' => 'InsertAfter'
     ];
 
     /*
@@ -100,7 +96,6 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'insert_after' => 'setInsertAfter'
     ];
 
     /*
@@ -109,7 +104,6 @@ class TableCellInsertDto implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'insert_after' => 'getInsertAfter'
     ];
 
     /*
@@ -120,7 +114,7 @@ class TableCellInsertDto implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -130,7 +124,7 @@ class TableCellInsertDto implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -140,7 +134,7 @@ class TableCellInsertDto implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -156,13 +150,6 @@ class TableCellInsertDto implements ArrayAccess
 
 
     /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-
-    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,7 +157,8 @@ class TableCellInsertDto implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['insert_after'] = isset($data['insert_after']) ? $data['insert_after'] : null;
+        parent::__construct($data);
+        $this->container['save_format'] = "eps";
     }
 
     /*
@@ -180,8 +168,7 @@ class TableCellInsertDto implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
+        $invalidProperties = parent::listInvalidProperties();
         return $invalidProperties;
     }
 
@@ -193,30 +180,11 @@ class TableCellInsertDto implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
+
         return true;
-    }
-
-    /*
-     * Gets insert_after
-     *
-     * @return int
-     */
-    public function getInsertAfter()
-    {
-        return $this->container['insert_after'];
-    }
-
-    /*
-     * Sets insert_after
-     *
-     * @param int $insert_after Gets or sets the 0-based index, the table cell will be inserted after.
-     *
-     * @return $this
-     */
-    public function setInsertAfter($insert_after)
-    {
-        $this->container['insert_after'] = $insert_after;
-        return $this;
     }
 
 

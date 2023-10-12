@@ -289,7 +289,7 @@ class Comment extends CommentLink
     /*
      * Sets author
      *
-     * @param string $author Gets or sets the author name for a comment.
+     * @param string $author Gets or sets the author name for a comment. Cannot be null.Default is empty string.
      *
      * @return $this
      */
@@ -313,7 +313,7 @@ class Comment extends CommentLink
     /*
      * Sets initial
      *
-     * @param string $initial Gets or sets the initials of the user associated with a specific comment.
+     * @param string $initial Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.
      *
      * @return $this
      */
@@ -361,7 +361,7 @@ class Comment extends CommentLink
     /*
      * Sets text
      *
-     * @param string $text Gets or sets text of the comment.
+     * @param string $text Gets or sets text of the comment. This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
      *
      * @return $this
      */

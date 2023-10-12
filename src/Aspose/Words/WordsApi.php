@@ -2258,6 +2258,7 @@ class WordsApi implements Encryptor
     /*
      * Operation compressDocument
      *
+     * Compress and resize images inside the document.
      * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentRequest $request is a request object for operation
@@ -2286,6 +2287,7 @@ class WordsApi implements Encryptor
     /*
      * Operation compressDocumentWithHttpInfo
      *
+     * Compress and resize images inside the document.
      * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentRequest $request is a request object for operation
@@ -2353,6 +2355,7 @@ class WordsApi implements Encryptor
     /*
      * Operation compressDocumentAsync
      *
+     * Compress and resize images inside the document.
      * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentRequest $request is a request object for operation
@@ -2373,6 +2376,7 @@ class WordsApi implements Encryptor
     /*
      * Operation compressDocumentAsyncWithHttpInfo
      *
+     * Compress and resize images inside the document.
      * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentRequest $request is a request object for operation
@@ -2429,6 +2433,7 @@ class WordsApi implements Encryptor
      * Operation compressDocumentOnline
      *
      * Compress and resize images inside the document.
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
      *
@@ -2457,6 +2462,7 @@ class WordsApi implements Encryptor
      * Operation compressDocumentOnlineWithHttpInfo
      *
      * Compress and resize images inside the document.
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
      *
@@ -2511,6 +2517,7 @@ class WordsApi implements Encryptor
      * Operation compressDocumentOnlineAsync
      *
      * Compress and resize images inside the document.
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
      *
@@ -2531,6 +2538,7 @@ class WordsApi implements Encryptor
      * Operation compressDocumentOnlineAsyncWithHttpInfo
      *
      * Compress and resize images inside the document.
+     * The default settings allows to reduce the size of the document without any visible degradation of images quality.
      *
      * @param Requests\compressDocumentOnlineRequest $request is a request object for operation
      *
@@ -3506,6 +3514,7 @@ class WordsApi implements Encryptor
     /*
      * Operation createDocument
      *
+     * Creates a new document in cloud storage in the format, determined by the file extension.
      * Supported all save format extensions.
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -3534,6 +3543,7 @@ class WordsApi implements Encryptor
     /*
      * Operation createDocumentWithHttpInfo
      *
+     * Creates a new document in cloud storage in the format, determined by the file extension.
      * Supported all save format extensions.
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -3601,6 +3611,7 @@ class WordsApi implements Encryptor
     /*
      * Operation createDocumentAsync
      *
+     * Creates a new document in cloud storage in the format, determined by the file extension.
      * Supported all save format extensions.
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -3621,6 +3632,7 @@ class WordsApi implements Encryptor
     /*
      * Operation createDocumentAsyncWithHttpInfo
      *
+     * Creates a new document in cloud storage in the format, determined by the file extension.
      * Supported all save format extensions.
      *
      * @param Requests\createDocumentRequest $request is a request object for operation
@@ -5051,6 +5063,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBorder
      *
+     * Removes a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
@@ -5079,6 +5092,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBorderWithHttpInfo
      *
+     * Removes a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
@@ -5146,6 +5160,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBorderAsync
      *
+     * Removes a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
@@ -5166,6 +5181,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBorderAsyncWithHttpInfo
      *
+     * Removes a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderRequest $request is a request object for operation
@@ -5222,6 +5238,7 @@ class WordsApi implements Encryptor
      * Operation deleteBorderOnline
      *
      * Removes a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderOnlineRequest $request is a request object for operation
      *
@@ -5250,6 +5267,7 @@ class WordsApi implements Encryptor
      * Operation deleteBorderOnlineWithHttpInfo
      *
      * Removes a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderOnlineRequest $request is a request object for operation
      *
@@ -5304,6 +5322,7 @@ class WordsApi implements Encryptor
      * Operation deleteBorderOnlineAsync
      *
      * Removes a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderOnlineRequest $request is a request object for operation
      *
@@ -5324,6 +5343,7 @@ class WordsApi implements Encryptor
      * Operation deleteBorderOnlineAsyncWithHttpInfo
      *
      * Removes a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBorderOnlineRequest $request is a request object for operation
      *
@@ -5378,6 +5398,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBorders
      *
+     * Removes borders from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
@@ -5406,6 +5427,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBordersWithHttpInfo
      *
+     * Removes borders from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
@@ -5473,6 +5495,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBordersAsync
      *
+     * Removes borders from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
@@ -5493,6 +5516,7 @@ class WordsApi implements Encryptor
     /*
      * Operation deleteBordersAsyncWithHttpInfo
      *
+     * Removes borders from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersRequest $request is a request object for operation
@@ -5549,6 +5573,7 @@ class WordsApi implements Encryptor
      * Operation deleteBordersOnline
      *
      * Removes borders from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersOnlineRequest $request is a request object for operation
      *
@@ -5577,6 +5602,7 @@ class WordsApi implements Encryptor
      * Operation deleteBordersOnlineWithHttpInfo
      *
      * Removes borders from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersOnlineRequest $request is a request object for operation
      *
@@ -5631,6 +5657,7 @@ class WordsApi implements Encryptor
      * Operation deleteBordersOnlineAsync
      *
      * Removes borders from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersOnlineRequest $request is a request object for operation
      *
@@ -5651,6 +5678,7 @@ class WordsApi implements Encryptor
      * Operation deleteBordersOnlineAsyncWithHttpInfo
      *
      * Removes borders from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\deleteBordersOnlineRequest $request is a request object for operation
      *
@@ -14537,6 +14565,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getBorder
      *
+     * Reads a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
@@ -14565,6 +14594,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getBorderWithHttpInfo
      *
+     * Reads a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
@@ -14632,6 +14662,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getBorderAsync
      *
+     * Reads a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
@@ -14652,6 +14683,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getBorderAsyncWithHttpInfo
      *
+     * Reads a border from the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderRequest $request is a request object for operation
@@ -14708,6 +14740,7 @@ class WordsApi implements Encryptor
      * Operation getBorderOnline
      *
      * Reads a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderOnlineRequest $request is a request object for operation
      *
@@ -14736,6 +14769,7 @@ class WordsApi implements Encryptor
      * Operation getBorderOnlineWithHttpInfo
      *
      * Reads a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderOnlineRequest $request is a request object for operation
      *
@@ -14803,6 +14837,7 @@ class WordsApi implements Encryptor
      * Operation getBorderOnlineAsync
      *
      * Reads a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderOnlineRequest $request is a request object for operation
      *
@@ -14823,6 +14858,7 @@ class WordsApi implements Encryptor
      * Operation getBorderOnlineAsyncWithHttpInfo
      *
      * Reads a border from the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\getBorderOnlineRequest $request is a request object for operation
      *
@@ -45064,7 +45100,7 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsOnline
      *
-     * Converts a document to the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -45092,7 +45128,7 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsOnlineWithHttpInfo
      *
-     * Converts a document to the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -45146,7 +45182,7 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsOnlineAsync
      *
-     * Converts a document to the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -45166,7 +45202,7 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsOnlineAsyncWithHttpInfo
      *
-     * Converts a document to the specified format.
+     * Converts a document in cloud storage to the specified format.
      *
      * @param Requests\saveAsOnlineRequest $request is a request object for operation
      *
@@ -45549,6 +45585,7 @@ class WordsApi implements Encryptor
      * Operation saveAsTiff
      *
      * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * @deprecated This operation will be removed in the future.
      *
      * @param Requests\saveAsTiffRequest $request is a request object for operation
      *
@@ -45718,7 +45755,8 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsTiffOnline
      *
-     * Converts a document to TIFF format using detailed conversion settings.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
+     * @deprecated This operation will be removed in the future.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *
@@ -45746,7 +45784,7 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsTiffOnlineWithHttpInfo
      *
-     * Converts a document to TIFF format using detailed conversion settings.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *
@@ -45800,7 +45838,7 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsTiffOnlineAsync
      *
-     * Converts a document to TIFF format using detailed conversion settings.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *
@@ -45820,7 +45858,7 @@ class WordsApi implements Encryptor
     /*
      * Operation saveAsTiffOnlineAsyncWithHttpInfo
      *
-     * Converts a document to TIFF format using detailed conversion settings.
+     * Converts a document in cloud storage to TIFF format using detailed conversion settings.
      *
      * @param Requests\saveAsTiffOnlineRequest $request is a request object for operation
      *
@@ -47196,6 +47234,7 @@ class WordsApi implements Encryptor
     /*
      * Operation updateBorder
      *
+     * Updates a border in the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
@@ -47224,6 +47263,7 @@ class WordsApi implements Encryptor
     /*
      * Operation updateBorderWithHttpInfo
      *
+     * Updates a border in the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
@@ -47291,6 +47331,7 @@ class WordsApi implements Encryptor
     /*
      * Operation updateBorderAsync
      *
+     * Updates a border in the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
@@ -47311,6 +47352,7 @@ class WordsApi implements Encryptor
     /*
      * Operation updateBorderAsyncWithHttpInfo
      *
+     * Updates a border in the document node.
      * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderRequest $request is a request object for operation
@@ -47367,6 +47409,7 @@ class WordsApi implements Encryptor
      * Operation updateBorderOnline
      *
      * Updates a border in the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderOnlineRequest $request is a request object for operation
      *
@@ -47395,6 +47438,7 @@ class WordsApi implements Encryptor
      * Operation updateBorderOnlineWithHttpInfo
      *
      * Updates a border in the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderOnlineRequest $request is a request object for operation
      *
@@ -47449,6 +47493,7 @@ class WordsApi implements Encryptor
      * Operation updateBorderOnlineAsync
      *
      * Updates a border in the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderOnlineRequest $request is a request object for operation
      *
@@ -47469,6 +47514,7 @@ class WordsApi implements Encryptor
      * Operation updateBorderOnlineAsyncWithHttpInfo
      *
      * Updates a border in the document node.
+     * The 'nodePath' parameter should refer to a paragraph, a cell or a row.
      *
      * @param Requests\updateBorderOnlineRequest $request is a request object for operation
      *

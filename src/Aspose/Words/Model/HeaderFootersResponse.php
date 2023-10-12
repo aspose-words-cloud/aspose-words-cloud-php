@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * HeaderFootersResponse
  *
- * @description The REST response with a collection of HeaderFooter elements.
+ * @description The REST response with a collection of HeaderFooter elements. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters" REST API requests.
  */
 class HeaderFootersResponse extends WordsResponse
 {

@@ -55,8 +55,8 @@ abstract class CommentBase implements ArrayAccess
         'range_start' => '\Aspose\Words\Model\NewDocumentPosition',
         'range_end' => '\Aspose\Words\Model\NewDocumentPosition',
         'author' => 'string',
-        'date_time' => '\DateTime',
         'initial' => 'string',
+        'date_time' => '\DateTime',
         'text' => 'string'
     ];
 
@@ -69,8 +69,8 @@ abstract class CommentBase implements ArrayAccess
         'range_start' => 'null',
         'range_end' => 'null',
         'author' => 'null',
-        'date_time' => 'null',
         'initial' => 'null',
+        'date_time' => 'null',
         'text' => 'null'
     ];
 
@@ -104,8 +104,8 @@ abstract class CommentBase implements ArrayAccess
         'range_start' => 'RangeStart',
         'range_end' => 'RangeEnd',
         'author' => 'Author',
-        'date_time' => 'DateTime',
         'initial' => 'Initial',
+        'date_time' => 'DateTime',
         'text' => 'Text'
     ];
 
@@ -118,8 +118,8 @@ abstract class CommentBase implements ArrayAccess
         'range_start' => 'setRangeStart',
         'range_end' => 'setRangeEnd',
         'author' => 'setAuthor',
-        'date_time' => 'setDateTime',
         'initial' => 'setInitial',
+        'date_time' => 'setDateTime',
         'text' => 'setText'
     ];
 
@@ -132,8 +132,8 @@ abstract class CommentBase implements ArrayAccess
         'range_start' => 'getRangeStart',
         'range_end' => 'getRangeEnd',
         'author' => 'getAuthor',
-        'date_time' => 'getDateTime',
         'initial' => 'getInitial',
+        'date_time' => 'getDateTime',
         'text' => 'getText'
     ];
 
@@ -198,8 +198,8 @@ abstract class CommentBase implements ArrayAccess
         $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : null;
         $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : null;
         $this->container['author'] = isset($data['author']) ? $data['author'] : null;
-        $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
         $this->container['initial'] = isset($data['initial']) ? $data['initial'] : null;
+        $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
 
@@ -287,37 +287,13 @@ abstract class CommentBase implements ArrayAccess
     /*
      * Sets author
      *
-     * @param string $author Gets or sets the author name for a comment.
+     * @param string $author Gets or sets the author name for a comment. Cannot be null.Default is empty string.
      *
      * @return $this
      */
     public function setAuthor($author)
     {
         $this->container['author'] = $author;
-        return $this;
-    }
-
-
-    /*
-     * Gets date_time
-     *
-     * @return \DateTime
-     */
-    public function getDateTime()
-    {
-        return $this->container['date_time'];
-    }
-
-    /*
-     * Sets date_time
-     *
-     * @param \DateTime $date_time Gets or sets the date and time that the comment was made.
-     *
-     * @return $this
-     */
-    public function setDateTime($date_time)
-    {
-        $this->container['date_time'] = $date_time;
         return $this;
     }
 
@@ -335,13 +311,37 @@ abstract class CommentBase implements ArrayAccess
     /*
      * Sets initial
      *
-     * @param string $initial Gets or sets the initials of the user associated with a specific comment.
+     * @param string $initial Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.
      *
      * @return $this
      */
     public function setInitial($initial)
     {
         $this->container['initial'] = $initial;
+        return $this;
+    }
+
+
+    /*
+     * Gets date_time
+     *
+     * @return \DateTime
+     */
+    public function getDateTime()
+    {
+        return $this->container['date_time'];
+    }
+
+    /*
+     * Sets date_time
+     *
+     * @param \DateTime $date_time Gets or sets the date and time that the comment was made. Default is MinValue03.01.0001.
+     *
+     * @return $this
+     */
+    public function setDateTime($date_time)
+    {
+        $this->container['date_time'] = $date_time;
         return $this;
     }
 
@@ -359,7 +359,7 @@ abstract class CommentBase implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Gets or sets text of the comment.
+     * @param string $text Gets or sets text of the comment. This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
      *
      * @return $this
      */

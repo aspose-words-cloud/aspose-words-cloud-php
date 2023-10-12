@@ -46,7 +46,7 @@ class CompressDocumentOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response of compressed document.
      */
     public function getmodel()
     {
@@ -54,7 +54,7 @@ class CompressDocumentOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response of compressed document.
      */
     public function setmodel($value)
     {

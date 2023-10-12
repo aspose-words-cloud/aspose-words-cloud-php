@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * TableRowFormatResponse
  *
- * @description The REST response with the formatting properties of a table row.
+ * @description The REST response with the formatting properties of a table row. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/rows/{1}/rowformat" REST API requests.
  */
 class TableRowFormatResponse extends WordsResponse
 {

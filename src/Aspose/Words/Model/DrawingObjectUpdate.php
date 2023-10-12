@@ -52,12 +52,12 @@ class DrawingObjectUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'height' => 'double',
-        'left' => 'double',
         'relative_horizontal_position' => 'string',
+        'left' => 'double',
         'relative_vertical_position' => 'string',
         'top' => 'double',
         'width' => 'double',
+        'height' => 'double',
         'wrap_type' => 'string'
     ];
 
@@ -67,12 +67,12 @@ class DrawingObjectUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'height' => 'null',
-        'left' => 'null',
         'relative_horizontal_position' => 'null',
+        'left' => 'null',
         'relative_vertical_position' => 'null',
         'top' => 'null',
         'width' => 'null',
+        'height' => 'null',
         'wrap_type' => 'null'
     ];
 
@@ -103,12 +103,12 @@ class DrawingObjectUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'height' => 'Height',
-        'left' => 'Left',
         'relative_horizontal_position' => 'RelativeHorizontalPosition',
+        'left' => 'Left',
         'relative_vertical_position' => 'RelativeVerticalPosition',
         'top' => 'Top',
         'width' => 'Width',
+        'height' => 'Height',
         'wrap_type' => 'WrapType'
     ];
 
@@ -118,12 +118,12 @@ class DrawingObjectUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'height' => 'setHeight',
-        'left' => 'setLeft',
         'relative_horizontal_position' => 'setRelativeHorizontalPosition',
+        'left' => 'setLeft',
         'relative_vertical_position' => 'setRelativeVerticalPosition',
         'top' => 'setTop',
         'width' => 'setWidth',
+        'height' => 'setHeight',
         'wrap_type' => 'setWrapType'
     ];
 
@@ -133,12 +133,12 @@ class DrawingObjectUpdate implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'height' => 'getHeight',
-        'left' => 'getLeft',
         'relative_horizontal_position' => 'getRelativeHorizontalPosition',
+        'left' => 'getLeft',
         'relative_vertical_position' => 'getRelativeVerticalPosition',
         'top' => 'getTop',
         'width' => 'getWidth',
+        'height' => 'getHeight',
         'wrap_type' => 'getWrapType'
     ];
 
@@ -280,12 +280,12 @@ class DrawingObjectUpdate implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
         $this->container['relative_horizontal_position'] = isset($data['relative_horizontal_position']) ? $data['relative_horizontal_position'] : null;
+        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
         $this->container['relative_vertical_position'] = isset($data['relative_vertical_position']) ? $data['relative_vertical_position'] : null;
         $this->container['top'] = isset($data['top']) ? $data['top'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['wrap_type'] = isset($data['wrap_type']) ? $data['wrap_type'] : null;
     }
 
@@ -354,25 +354,29 @@ class DrawingObjectUpdate implements ArrayAccess
     }
 
     /*
-     * Gets height
+     * Gets relative_horizontal_position
      *
-     * @return double
+     * @return string
      */
-    public function getHeight()
+    public function getRelativeHorizontalPosition()
     {
-        return $this->container['height'];
+        return $this->container['relative_horizontal_position'];
     }
 
     /*
-     * Sets height
+     * Sets relative_horizontal_position
      *
-     * @param double $height Gets or sets the height of the DrawingObject in points.
+     * @param string $relative_horizontal_position Gets or sets the relative horizontal position, from which the distance to the image is measured.
      *
      * @return $this
      */
-    public function setHeight($height)
+    public function setRelativeHorizontalPosition($relative_horizontal_position)
     {
-        $this->container['height'] = $height;
+        $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
+        if ((!is_numeric($relative_horizontal_position) && !in_array($relative_horizontal_position, $allowedValues)) || (is_numeric($relative_horizontal_position) && !in_array($allowedValues[$relative_horizontal_position], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'relative_horizontal_position', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['relative_horizontal_position'] = $relative_horizontal_position;
         return $this;
     }
 
@@ -397,34 +401,6 @@ class DrawingObjectUpdate implements ArrayAccess
     public function setLeft($left)
     {
         $this->container['left'] = $left;
-        return $this;
-    }
-
-
-    /*
-     * Gets relative_horizontal_position
-     *
-     * @return string
-     */
-    public function getRelativeHorizontalPosition()
-    {
-        return $this->container['relative_horizontal_position'];
-    }
-
-    /*
-     * Sets relative_horizontal_position
-     *
-     * @param string $relative_horizontal_position Gets or sets the relative horizontal position, from which the distance to the image is measured.
-     *
-     * @return $this
-     */
-    public function setRelativeHorizontalPosition($relative_horizontal_position)
-    {
-        $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
-        if ((!is_numeric($relative_horizontal_position) && !in_array($relative_horizontal_position, $allowedValues)) || (is_numeric($relative_horizontal_position) && !in_array($allowedValues[$relative_horizontal_position], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'relative_horizontal_position', must be one of '%s'", implode("', '", $allowedValues)));
-        }
-        $this->container['relative_horizontal_position'] = $relative_horizontal_position;
         return $this;
     }
 
@@ -501,6 +477,30 @@ class DrawingObjectUpdate implements ArrayAccess
     public function setWidth($width)
     {
         $this->container['width'] = $width;
+        return $this;
+    }
+
+
+    /*
+     * Gets height
+     *
+     * @return double
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /*
+     * Sets height
+     *
+     * @param double $height Gets or sets the height of the DrawingObject in points.
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->container['height'] = $height;
         return $this;
     }
 

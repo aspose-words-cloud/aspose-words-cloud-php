@@ -32,7 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 /*
  * StructuredDocumentTagsResponse
  *
- * @description The REST response with a collection of StructuredDocumentTags.
+ * @description The REST response with a collection of StructuredDocumentTags. This response should be returned by the service when handling: GET /structuredDocumentTags.
  */
 class StructuredDocumentTagsResponse extends WordsResponse
 {

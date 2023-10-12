@@ -46,7 +46,8 @@ class DeleteBorderOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a border.
+     * This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.
      */
     public function getmodel()
     {
@@ -54,7 +55,8 @@ class DeleteBorderOnlineResponse
     }
 
     /*
-     * The response model.
+     * The REST response with a border.
+     * This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.
      */
     public function setmodel($value)
     {

@@ -217,7 +217,7 @@ class ListFormat extends LinkElement
     /*
      * Sets list_level_number
      *
-     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph.
+     * @param int $list_level_number Gets or sets the list level number (0 to 8) for the paragraph. In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.
      *
      * @return $this
      */
@@ -241,7 +241,7 @@ class ListFormat extends LinkElement
     /*
      * Sets list_id
      *
-     * @param int $list_id Gets or sets the list id of this paragraph.
+     * @param int $list_id Gets or sets the list id of this paragraph. The list that is being assigned to this property must belong to the current document.The list that is being assigned to this property must not be a list style definition.
      *
      * @return $this
      */

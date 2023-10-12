@@ -108,7 +108,7 @@ class InsertWatermarkImageOnlineRequest extends BaseApiRequest
      * @param double $rotation_angle The rotation angle of the watermark.
      * @param string $image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
-    public function __construct($document, $image_file, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
+    public function __construct($document, $image_file = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
     {
         $this->document = $document;
         $this->image_file = $image_file;
@@ -302,9 +302,6 @@ class InsertWatermarkImageOnlineRequest extends BaseApiRequest
     {
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertWatermarkImageOnline');
-        }
-        if ($this->image_file === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $image_file when calling insertWatermarkImageOnline');
         }
 
         $resourcePath = '/words/online/post/watermarks/images';

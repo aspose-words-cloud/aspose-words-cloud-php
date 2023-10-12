@@ -1163,7 +1163,7 @@ class TableProperties extends LinkElement
     /*
      * Sets alignment
      *
-     * @param string $alignment Gets or sets the option that controls how an inline table is aligned in the document.
+     * @param string $alignment Gets or sets the option that controls how an inline table is aligned in the document. The default value is Left.
      *
      * @return $this
      */
@@ -1191,7 +1191,7 @@ class TableProperties extends LinkElement
     /*
      * Sets allow_auto_fit
      *
-     * @param bool $allow_auto_fit Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
+     * @param bool $allow_auto_fit Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents. The default value is true.
      *
      * @return $this
      */
@@ -1215,7 +1215,7 @@ class TableProperties extends LinkElement
     /*
      * Sets bidi
      *
-     * @param bool $bidi Gets or sets a value indicating whether this is a right-to-left table.
+     * @param bool $bidi Gets or sets a value indicating whether this is a right-to-left table. When true, the cells in this row are laid out right to left.The default value is false.
      *
      * @return $this
      */

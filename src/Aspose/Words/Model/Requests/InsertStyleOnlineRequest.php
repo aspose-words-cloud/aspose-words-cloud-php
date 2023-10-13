@@ -255,9 +255,13 @@ class InsertStyleOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertStyleOnline');
         }
+
         if ($this->style_insert === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_insert when calling insertStyleOnline');
         }
+
+        $this->style_insert->validate();
+
 
         $resourcePath = '/words/online/post/styles/insert';
         $formParams = [];

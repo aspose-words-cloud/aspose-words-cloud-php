@@ -327,9 +327,13 @@ class InsertFootnoteRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertFootnote');
         }
+
         if ($this->footnote_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling insertFootnote');
         }
+
+        $this->footnote_dto->validate();
+
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes';
         $formParams = [];

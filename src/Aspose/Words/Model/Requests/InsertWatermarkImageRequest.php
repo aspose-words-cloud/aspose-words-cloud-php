@@ -352,6 +352,7 @@ class InsertWatermarkImageRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertWatermarkImage');
         }
 
+
         $resourcePath = '/words/{name}/watermarks/images';
         $formParams = [];
         $filesContent = [];

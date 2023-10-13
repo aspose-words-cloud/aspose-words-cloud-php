@@ -207,9 +207,11 @@ class GetStructuredDocumentTagOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getStructuredDocumentTagOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getStructuredDocumentTagOnline');
         }
+
 
         $resourcePath = '/words/online/get/{nodePath}/sdt/{index}';
         $formParams = [];

@@ -351,15 +351,21 @@ class UpdateRunFontRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateRunFont');
         }
+
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling updateRunFont');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunFont');
         }
+
         if ($this->font_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $font_dto when calling updateRunFont');
         }
+
+        $this->font_dto->validate();
+
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
         $formParams = [];

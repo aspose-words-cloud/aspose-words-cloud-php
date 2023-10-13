@@ -160,6 +160,7 @@ class GetCustomXmlPartsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getCustomXmlPartsOnline');
         }
 
+
         $resourcePath = '/words/online/get/customXmlParts';
         $formParams = [];
         $filesContent = [];

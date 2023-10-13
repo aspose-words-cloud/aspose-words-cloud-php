@@ -279,12 +279,15 @@ class GetHeaderFooterOfSectionRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getHeaderFooterOfSection');
         }
+
         if ($this->header_footer_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooterOfSection');
         }
+
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getHeaderFooterOfSection');
         }
+
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}';
         $formParams = [];

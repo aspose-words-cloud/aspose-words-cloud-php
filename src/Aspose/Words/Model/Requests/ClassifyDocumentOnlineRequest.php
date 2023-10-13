@@ -208,6 +208,7 @@ class ClassifyDocumentOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling classifyDocumentOnline');
         }
 
+
         $resourcePath = '/words/online/get/classify';
         $formParams = [];
         $filesContent = [];

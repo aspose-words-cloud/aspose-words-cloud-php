@@ -351,12 +351,17 @@ class UpdateFootnoteRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateFootnote');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFootnote');
         }
+
         if ($this->footnote_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling updateFootnote');
         }
+
+        $this->footnote_dto->validate();
+
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
         $formParams = [];

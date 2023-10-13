@@ -255,12 +255,17 @@ class InsertOrUpdateParagraphTabStopOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertOrUpdateParagraphTabStopOnline');
         }
+
         if ($this->tab_stop_insert_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tab_stop_insert_dto when calling insertOrUpdateParagraphTabStopOnline');
         }
+
+        $this->tab_stop_insert_dto->validate();
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling insertOrUpdateParagraphTabStopOnline');
         }
+
 
         $resourcePath = '/words/online/post/{nodePath}/paragraphs/{index}/tabstops';
         $formParams = [];

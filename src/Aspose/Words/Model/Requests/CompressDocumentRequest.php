@@ -255,9 +255,13 @@ class CompressDocumentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling compressDocument');
         }
+
         if ($this->compress_options === null) {
             throw new \InvalidArgumentException('Missing the required parameter $compress_options when calling compressDocument');
         }
+
+        $this->compress_options->validate();
+
 
         $resourcePath = '/words/{name}/compress';
         $formParams = [];

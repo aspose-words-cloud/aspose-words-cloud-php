@@ -231,9 +231,11 @@ class GetCommentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getComment');
         }
+
         if ($this->comment_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling getComment');
         }
+
 
         $resourcePath = '/words/{name}/comments/{commentIndex}';
         $formParams = [];

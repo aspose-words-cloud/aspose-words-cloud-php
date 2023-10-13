@@ -231,9 +231,11 @@ class GetBookmarkByNameRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getBookmarkByName');
         }
+
         if ($this->bookmark_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling getBookmarkByName');
         }
+
 
         $resourcePath = '/words/{name}/bookmarks/{bookmarkName}';
         $formParams = [];

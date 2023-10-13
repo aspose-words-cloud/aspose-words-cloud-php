@@ -615,9 +615,13 @@ class SaveAsTiffOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling saveAsTiffOnline');
         }
+
         if ($this->save_options === null) {
             throw new \InvalidArgumentException('Missing the required parameter $save_options when calling saveAsTiffOnline');
         }
+
+        $this->save_options->validate();
+
 
         $resourcePath = '/words/online/put/saveAs/tiff';
         $formParams = [];

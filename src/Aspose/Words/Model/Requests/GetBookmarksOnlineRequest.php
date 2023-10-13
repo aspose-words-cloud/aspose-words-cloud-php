@@ -160,6 +160,7 @@ class GetBookmarksOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getBookmarksOnline');
         }
 
+
         $resourcePath = '/words/online/get/bookmarks';
         $formParams = [];
         $filesContent = [];

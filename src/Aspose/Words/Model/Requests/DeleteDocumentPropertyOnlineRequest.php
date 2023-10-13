@@ -255,9 +255,11 @@ class DeleteDocumentPropertyOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteDocumentPropertyOnline');
         }
+
         if ($this->property_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling deleteDocumentPropertyOnline');
         }
+
 
         $resourcePath = '/words/online/delete/documentProperties/{propertyName}';
         $formParams = [];

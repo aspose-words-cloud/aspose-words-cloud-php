@@ -303,12 +303,17 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertDrawingObjectOnline');
         }
+
         if ($this->drawing_object === null) {
             throw new \InvalidArgumentException('Missing the required parameter $drawing_object when calling insertDrawingObjectOnline');
         }
+
+        $this->drawing_object->validate();
+
         if ($this->image_file === null) {
             throw new \InvalidArgumentException('Missing the required parameter $image_file when calling insertDrawingObjectOnline');
         }
+
 
         $resourcePath = '/words/online/post/{nodePath}/drawingObjects';
         $formParams = [];

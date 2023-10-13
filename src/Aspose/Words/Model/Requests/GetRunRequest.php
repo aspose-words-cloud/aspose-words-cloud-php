@@ -255,12 +255,15 @@ class GetRunRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getRun');
         }
+
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getRun');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getRun');
         }
+
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
         $formParams = [];

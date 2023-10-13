@@ -208,6 +208,7 @@ class GetBookmarksRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getBookmarks');
         }
 
+
         $resourcePath = '/words/{name}/bookmarks';
         $formParams = [];
         $filesContent = [];

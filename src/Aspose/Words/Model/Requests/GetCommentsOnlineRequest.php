@@ -160,6 +160,7 @@ class GetCommentsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getCommentsOnline');
         }
 
+
         $resourcePath = '/words/online/get/comments';
         $formParams = [];
         $filesContent = [];

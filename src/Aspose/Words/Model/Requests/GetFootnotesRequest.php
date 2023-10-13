@@ -232,6 +232,7 @@ class GetFootnotesRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFootnotes');
         }
 
+
         $resourcePath = '/words/{name}/{nodePath}/footnotes';
         $formParams = [];
         $filesContent = [];

@@ -208,6 +208,7 @@ class GetCommentsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getComments');
         }
 
+
         $resourcePath = '/words/{name}/comments';
         $formParams = [];
         $filesContent = [];

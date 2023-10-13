@@ -303,9 +303,13 @@ class CopyStyleRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling copyStyle');
         }
+
         if ($this->style_copy === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_copy when calling copyStyle');
         }
+
+        $this->style_copy->validate();
+
 
         $resourcePath = '/words/{name}/styles/copy';
         $formParams = [];

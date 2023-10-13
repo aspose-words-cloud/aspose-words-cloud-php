@@ -279,12 +279,17 @@ class UpdateListOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateListOnline');
         }
+
         if ($this->list_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_id when calling updateListOnline');
         }
+
         if ($this->list_update === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_update when calling updateListOnline');
         }
+
+        $this->list_update->validate();
+
 
         $resourcePath = '/words/online/put/lists/{listId}';
         $formParams = [];

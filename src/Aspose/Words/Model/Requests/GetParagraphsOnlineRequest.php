@@ -184,6 +184,7 @@ class GetParagraphsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getParagraphsOnline');
         }
 
+
         $resourcePath = '/words/online/get/{nodePath}/paragraphs';
         $formParams = [];
         $filesContent = [];

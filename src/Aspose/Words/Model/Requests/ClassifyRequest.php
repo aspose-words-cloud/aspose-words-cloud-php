@@ -112,6 +112,7 @@ class ClassifyRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $text when calling classify');
         }
 
+
         $resourcePath = '/words/classify';
         $formParams = [];
         $filesContent = [];

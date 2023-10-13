@@ -136,6 +136,7 @@ class CreateDocumentRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $file_name when calling createDocument');
         }
 
+
         $resourcePath = '/words/create';
         $formParams = [];
         $filesContent = [];

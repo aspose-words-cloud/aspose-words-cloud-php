@@ -255,9 +255,11 @@ class InsertSectionOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertSectionOnline');
         }
+
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling insertSectionOnline');
         }
+
 
         $resourcePath = '/words/online/post/sections/{sectionIndex}';
         $formParams = [];

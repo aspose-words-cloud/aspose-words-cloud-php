@@ -327,9 +327,11 @@ class DeleteFieldRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteField');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteField');
         }
+
 
         $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
         $formParams = [];

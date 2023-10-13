@@ -351,15 +351,21 @@ class UpdateRunRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateRun');
         }
+
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling updateRun');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRun');
         }
+
         if ($this->run === null) {
             throw new \InvalidArgumentException('Missing the required parameter $run when calling updateRun');
         }
+
+        $this->run->validate();
+
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}';
         $formParams = [];

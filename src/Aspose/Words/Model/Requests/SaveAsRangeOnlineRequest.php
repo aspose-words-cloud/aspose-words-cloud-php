@@ -231,12 +231,17 @@ class SaveAsRangeOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling saveAsRangeOnline');
         }
+
         if ($this->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling saveAsRangeOnline');
         }
+
         if ($this->document_parameters === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document_parameters when calling saveAsRangeOnline');
         }
+
+        $this->document_parameters->validate();
+
 
         $resourcePath = '/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs';
         $formParams = [];

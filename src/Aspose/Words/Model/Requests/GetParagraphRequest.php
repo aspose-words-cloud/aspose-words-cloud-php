@@ -255,9 +255,11 @@ class GetParagraphRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getParagraph');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraph');
         }
+
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}';
         $formParams = [];

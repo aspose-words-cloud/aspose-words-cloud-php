@@ -183,9 +183,11 @@ class GetSectionPageSetupOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getSectionPageSetupOnline');
         }
+
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getSectionPageSetupOnline');
         }
+
 
         $resourcePath = '/words/online/get/sections/{sectionIndex}/pageSetup';
         $formParams = [];

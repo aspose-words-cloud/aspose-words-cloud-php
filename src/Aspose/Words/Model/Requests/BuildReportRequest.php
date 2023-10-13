@@ -279,12 +279,17 @@ class BuildReportRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling buildReport');
         }
+
         if ($this->data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $data when calling buildReport');
         }
+
         if ($this->report_engine_settings === null) {
             throw new \InvalidArgumentException('Missing the required parameter $report_engine_settings when calling buildReport');
         }
+
+        $this->report_engine_settings->validate();
+
 
         $resourcePath = '/words/{name}/buildReport';
         $formParams = [];

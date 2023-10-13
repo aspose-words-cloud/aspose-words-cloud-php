@@ -327,12 +327,17 @@ class InsertTableCellRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableCell');
         }
+
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling insertTableCell');
         }
+
         if ($this->cell === null) {
             throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCell');
         }
+
+        $this->cell->validate();
+
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells';
         $formParams = [];

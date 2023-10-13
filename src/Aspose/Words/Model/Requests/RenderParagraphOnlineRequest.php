@@ -279,12 +279,15 @@ class RenderParagraphOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling renderParagraphOnline');
         }
+
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderParagraphOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderParagraphOnline');
         }
+
 
         $resourcePath = '/words/online/get/{nodePath}/paragraphs/{index}/render';
         $formParams = [];

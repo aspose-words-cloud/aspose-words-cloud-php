@@ -327,12 +327,15 @@ class DeleteTableRowRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteTableRow');
         }
+
         if ($this->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling deleteTableRow');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableRow');
         }
+
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}';
         $formParams = [];

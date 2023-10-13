@@ -183,9 +183,11 @@ class GetDocumentHyperlinkByIndexOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentHyperlinkByIndexOnline');
         }
+
         if ($this->hyperlink_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $hyperlink_index when calling getDocumentHyperlinkByIndexOnline');
         }
+
 
         $resourcePath = '/words/online/get/hyperlinks/{hyperlinkIndex}';
         $formParams = [];

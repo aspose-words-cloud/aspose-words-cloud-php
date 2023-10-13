@@ -160,6 +160,7 @@ class GetStylesOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getStylesOnline');
         }
 
+
         $resourcePath = '/words/online/get/styles';
         $formParams = [];
         $filesContent = [];

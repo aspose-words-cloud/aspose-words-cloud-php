@@ -304,41 +304,15 @@ class Shading implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getTextureAllowableValues();
-        if (!in_array($this->container['texture'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'texture', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getTextureAllowableValues();
-        if (!in_array($this->container['texture'], $allowedValues)) {
-            return false;
+        $allowedValuesTexture = $this->getTextureAllowableValues();
+        if (!in_array($this->container['texture'], $allowedValuesTexture)) {
+            throw new \InvalidArgumentException('Property Texture in Shading has invalid format.');
         }
 
-
-        return true;
     }
 
     /*

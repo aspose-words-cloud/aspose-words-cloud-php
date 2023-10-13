@@ -376,6 +376,7 @@ class ExecuteMailMergeRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling executeMailMerge');
         }
 
+
         $resourcePath = '/words/{name}/MailMerge';
         $formParams = [];
         $filesContent = [];

@@ -183,9 +183,11 @@ class GetListOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getListOnline');
         }
+
         if ($this->list_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_id when calling getListOnline');
         }
+
 
         $resourcePath = '/words/online/get/lists/{listId}';
         $formParams = [];

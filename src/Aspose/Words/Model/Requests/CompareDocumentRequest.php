@@ -279,9 +279,13 @@ class CompareDocumentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling compareDocument');
         }
+
         if ($this->compare_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $compare_data when calling compareDocument');
         }
+
+        $this->compare_data->validate();
+
 
         $resourcePath = '/words/{name}/compareDocument';
         $formParams = [];

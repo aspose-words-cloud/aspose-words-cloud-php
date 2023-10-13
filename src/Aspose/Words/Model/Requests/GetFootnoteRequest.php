@@ -255,9 +255,11 @@ class GetFootnoteRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFootnote');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFootnote');
         }
+
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
         $formParams = [];

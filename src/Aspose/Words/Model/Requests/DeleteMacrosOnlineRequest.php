@@ -232,6 +232,7 @@ class DeleteMacrosOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteMacrosOnline');
         }
 
+
         $resourcePath = '/words/online/delete/macros';
         $formParams = [];
         $filesContent = [];

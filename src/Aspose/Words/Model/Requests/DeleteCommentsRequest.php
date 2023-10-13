@@ -280,6 +280,7 @@ class DeleteCommentsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteComments');
         }
 
+
         $resourcePath = '/words/{name}/comments';
         $formParams = [];
         $filesContent = [];

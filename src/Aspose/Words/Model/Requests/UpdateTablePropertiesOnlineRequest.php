@@ -303,12 +303,17 @@ class UpdateTablePropertiesOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateTablePropertiesOnline');
         }
+
         if ($this->properties === null) {
             throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTablePropertiesOnline');
         }
+
+        $this->properties->validate();
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTablePropertiesOnline');
         }
+
 
         $resourcePath = '/words/online/put/{nodePath}/tables/{index}/properties';
         $formParams = [];

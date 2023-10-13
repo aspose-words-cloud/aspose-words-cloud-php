@@ -327,12 +327,15 @@ class InsertHeaderFooterRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertHeaderFooter');
         }
+
         if ($this->section_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling insertHeaderFooter');
         }
+
         if ($this->header_footer_type === null) {
             throw new \InvalidArgumentException('Missing the required parameter $header_footer_type when calling insertHeaderFooter');
         }
+
 
         $resourcePath = '/words/{name}/{sectionPath}/headersfooters';
         $formParams = [];

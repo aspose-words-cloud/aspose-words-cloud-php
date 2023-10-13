@@ -207,9 +207,11 @@ class GetTablePropertiesOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getTablePropertiesOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTablePropertiesOnline');
         }
+
 
         $resourcePath = '/words/online/get/{nodePath}/tables/{index}/properties';
         $formParams = [];

@@ -303,9 +303,13 @@ class ReplaceTextRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling replaceText');
         }
+
         if ($this->replace_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $replace_text when calling replaceText');
         }
+
+        $this->replace_text->validate();
+
 
         $resourcePath = '/words/{name}/replaceText';
         $formParams = [];

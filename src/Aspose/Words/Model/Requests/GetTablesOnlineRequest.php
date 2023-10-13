@@ -184,6 +184,7 @@ class GetTablesOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getTablesOnline');
         }
 
+
         $resourcePath = '/words/online/get/{nodePath}/tables';
         $formParams = [];
         $filesContent = [];

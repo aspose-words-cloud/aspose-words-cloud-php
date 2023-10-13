@@ -255,12 +255,15 @@ class DeleteParagraphTabStopOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteParagraphTabStopOnline');
         }
+
         if ($this->position === null) {
             throw new \InvalidArgumentException('Missing the required parameter $position when calling deleteParagraphTabStopOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraphTabStopOnline');
         }
+
 
         $resourcePath = '/words/online/delete/{nodePath}/paragraphs/{index}/tabstop';
         $formParams = [];

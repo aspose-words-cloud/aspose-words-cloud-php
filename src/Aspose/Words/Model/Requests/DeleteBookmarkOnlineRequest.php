@@ -255,9 +255,11 @@ class DeleteBookmarkOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteBookmarkOnline');
         }
+
         if ($this->bookmark_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling deleteBookmarkOnline');
         }
+
 
         $resourcePath = '/words/online/delete/bookmarks/{bookmarkName}';
         $formParams = [];

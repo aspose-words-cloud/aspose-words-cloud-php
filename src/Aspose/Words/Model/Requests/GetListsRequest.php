@@ -208,6 +208,7 @@ class GetListsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getLists');
         }
 
+
         $resourcePath = '/words/{name}/lists';
         $formParams = [];
         $filesContent = [];

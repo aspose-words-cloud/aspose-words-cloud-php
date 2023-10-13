@@ -279,12 +279,15 @@ class InsertHeaderFooterOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertHeaderFooterOnline');
         }
+
         if ($this->section_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling insertHeaderFooterOnline');
         }
+
         if ($this->header_footer_type === null) {
             throw new \InvalidArgumentException('Missing the required parameter $header_footer_type when calling insertHeaderFooterOnline');
         }
+
 
         $resourcePath = '/words/online/put/{sectionPath}/headersfooters';
         $formParams = [];

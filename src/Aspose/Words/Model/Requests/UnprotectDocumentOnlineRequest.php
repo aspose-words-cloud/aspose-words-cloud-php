@@ -207,9 +207,13 @@ class UnprotectDocumentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling unprotectDocumentOnline');
         }
+
         if ($this->protection_request === null) {
             throw new \InvalidArgumentException('Missing the required parameter $protection_request when calling unprotectDocumentOnline');
         }
+
+        $this->protection_request->validate();
+
 
         $resourcePath = '/words/online/delete/protection';
         $formParams = [];

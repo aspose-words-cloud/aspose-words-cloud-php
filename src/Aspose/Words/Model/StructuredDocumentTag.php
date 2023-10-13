@@ -445,96 +445,37 @@ class StructuredDocumentTag extends NodeLink
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getAppearanceAllowableValues();
-        if (!in_array($this->container['appearance'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'appearance', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getDateStorageFormatAllowableValues();
-        if (!in_array($this->container['date_storage_format'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'date_storage_format', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getCalendarTypeAllowableValues();
-        if (!in_array($this->container['calendar_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'calendar_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getLevelAllowableValues();
-        if (!in_array($this->container['level'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'level', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getSdtTypeAllowableValues();
-        if (!in_array($this->container['sdt_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'sdt_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        $allowedValuesAppearance = $this->getAppearanceAllowableValues();
+        if (!in_array($this->container['appearance'], $allowedValuesAppearance)) {
+            throw new \InvalidArgumentException('Property Appearance in StructuredDocumentTag has invalid format.');
         }
 
-        $allowedValues = $this->getAppearanceAllowableValues();
-        if (!in_array($this->container['appearance'], $allowedValues)) {
-            return false;
+        $allowedValuesDateStorageFormat = $this->getDateStorageFormatAllowableValues();
+        if (!in_array($this->container['date_storage_format'], $allowedValuesDateStorageFormat)) {
+            throw new \InvalidArgumentException('Property DateStorageFormat in StructuredDocumentTag has invalid format.');
         }
 
-        $allowedValues = $this->getDateStorageFormatAllowableValues();
-        if (!in_array($this->container['date_storage_format'], $allowedValues)) {
-            return false;
+        $allowedValuesCalendarType = $this->getCalendarTypeAllowableValues();
+        if (!in_array($this->container['calendar_type'], $allowedValuesCalendarType)) {
+            throw new \InvalidArgumentException('Property CalendarType in StructuredDocumentTag has invalid format.');
         }
 
-        $allowedValues = $this->getCalendarTypeAllowableValues();
-        if (!in_array($this->container['calendar_type'], $allowedValues)) {
-            return false;
+        $allowedValuesLevel = $this->getLevelAllowableValues();
+        if (!in_array($this->container['level'], $allowedValuesLevel)) {
+            throw new \InvalidArgumentException('Property Level in StructuredDocumentTag has invalid format.');
         }
 
-        $allowedValues = $this->getLevelAllowableValues();
-        if (!in_array($this->container['level'], $allowedValues)) {
-            return false;
+        $allowedValuesSdtType = $this->getSdtTypeAllowableValues();
+        if (!in_array($this->container['sdt_type'], $allowedValuesSdtType)) {
+            throw new \InvalidArgumentException('Property SdtType in StructuredDocumentTag has invalid format.');
         }
 
-        $allowedValues = $this->getSdtTypeAllowableValues();
-        if (!in_array($this->container['sdt_type'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

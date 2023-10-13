@@ -184,6 +184,7 @@ class GetOfficeMathObjectsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getOfficeMathObjectsOnline');
         }
 
+
         $resourcePath = '/words/online/get/{nodePath}/OfficeMathObjects';
         $formParams = [];
         $filesContent = [];

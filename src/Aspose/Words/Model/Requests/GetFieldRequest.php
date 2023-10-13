@@ -255,9 +255,11 @@ class GetFieldRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getField');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getField');
         }
+
 
         $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
         $formParams = [];

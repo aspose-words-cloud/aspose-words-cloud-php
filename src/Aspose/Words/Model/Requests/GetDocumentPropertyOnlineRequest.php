@@ -183,9 +183,11 @@ class GetDocumentPropertyOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentPropertyOnline');
         }
+
         if ($this->property_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling getDocumentPropertyOnline');
         }
+
 
         $resourcePath = '/words/online/get/documentProperties/{propertyName}';
         $formParams = [];

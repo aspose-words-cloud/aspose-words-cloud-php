@@ -184,6 +184,7 @@ class AcceptAllRevisionsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling acceptAllRevisionsOnline');
         }
 
+
         $resourcePath = '/words/online/put/revisions/acceptAll';
         $formParams = [];
         $filesContent = [];

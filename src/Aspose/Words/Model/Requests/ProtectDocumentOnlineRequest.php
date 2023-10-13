@@ -207,9 +207,13 @@ class ProtectDocumentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling protectDocumentOnline');
         }
+
         if ($this->protection_request === null) {
             throw new \InvalidArgumentException('Missing the required parameter $protection_request when calling protectDocumentOnline');
         }
+
+        $this->protection_request->validate();
+
 
         $resourcePath = '/words/online/put/protection';
         $formParams = [];

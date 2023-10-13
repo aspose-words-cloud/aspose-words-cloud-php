@@ -232,6 +232,7 @@ class DeleteWatermarkOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteWatermarkOnline');
         }
 
+
         $resourcePath = '/words/online/post/watermarks/deleteLast';
         $formParams = [];
         $filesContent = [];

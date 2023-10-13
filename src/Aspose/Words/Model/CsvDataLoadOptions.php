@@ -192,26 +192,26 @@ class CsvDataLoadOptions implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        return true;
+        if (!isset($this->container['comment_char'])) {
+            throw new \InvalidArgumentException('Property CommentChar in CsvDataLoadOptions is required.');
+        }
+
+        if (!isset($this->container['delimiter'])) {
+            throw new \InvalidArgumentException('Property Delimiter in CsvDataLoadOptions is required.');
+        }
+
+        if (!isset($this->container['has_headers'])) {
+            throw new \InvalidArgumentException('Property HasHeaders in CsvDataLoadOptions is required.');
+        }
+
+        if (!isset($this->container['quote_char'])) {
+            throw new \InvalidArgumentException('Property QuoteChar in CsvDataLoadOptions is required.');
+        }
+
     }
 
     /*

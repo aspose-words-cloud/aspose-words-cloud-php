@@ -183,9 +183,11 @@ class GetSectionOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getSectionOnline');
         }
+
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getSectionOnline');
         }
+
 
         $resourcePath = '/words/online/get/sections/{sectionIndex}';
         $formParams = [];

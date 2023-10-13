@@ -255,12 +255,15 @@ class GetTableCellFormatRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableCellFormat');
         }
+
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling getTableCellFormat');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCellFormat');
         }
+
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}/cellformat';
         $formParams = [];

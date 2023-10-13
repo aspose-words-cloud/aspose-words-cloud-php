@@ -231,9 +231,11 @@ class GetListRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getList');
         }
+
         if ($this->list_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_id when calling getList');
         }
+
 
         $resourcePath = '/words/{name}/lists/{listId}';
         $formParams = [];

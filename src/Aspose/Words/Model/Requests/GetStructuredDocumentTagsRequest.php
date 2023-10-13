@@ -232,6 +232,7 @@ class GetStructuredDocumentTagsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getStructuredDocumentTags');
         }
 
+
         $resourcePath = '/words/{name}/{nodePath}/sdt';
         $formParams = [];
         $filesContent = [];

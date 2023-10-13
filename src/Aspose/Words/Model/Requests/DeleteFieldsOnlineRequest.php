@@ -256,6 +256,7 @@ class DeleteFieldsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteFieldsOnline');
         }
 
+
         $resourcePath = '/words/online/delete/{nodePath}/fields';
         $formParams = [];
         $filesContent = [];

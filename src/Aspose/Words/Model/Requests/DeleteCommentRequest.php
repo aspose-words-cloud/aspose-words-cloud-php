@@ -303,9 +303,11 @@ class DeleteCommentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteComment');
         }
+
         if ($this->comment_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling deleteComment');
         }
+
 
         $resourcePath = '/words/{name}/comments/{commentIndex}';
         $formParams = [];

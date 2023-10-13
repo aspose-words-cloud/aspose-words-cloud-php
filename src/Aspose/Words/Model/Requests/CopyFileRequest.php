@@ -183,9 +183,11 @@ class CopyFileRequest extends BaseApiRequest
         if ($this->dest_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $dest_path when calling copyFile');
         }
+
         if ($this->src_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $src_path when calling copyFile');
         }
+
 
         $resourcePath = '/words/storage/file/copy/{srcPath}';
         $formParams = [];

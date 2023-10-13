@@ -327,12 +327,17 @@ class UpdateCommentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateComment');
         }
+
         if ($this->comment_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling updateComment');
         }
+
         if ($this->comment === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment when calling updateComment');
         }
+
+        $this->comment->validate();
+
 
         $resourcePath = '/words/{name}/comments/{commentIndex}';
         $formParams = [];

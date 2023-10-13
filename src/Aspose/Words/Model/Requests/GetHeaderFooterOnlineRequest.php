@@ -207,9 +207,11 @@ class GetHeaderFooterOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getHeaderFooterOnline');
         }
+
         if ($this->header_footer_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $header_footer_index when calling getHeaderFooterOnline');
         }
+
 
         $resourcePath = '/words/online/get/headersfooters/{headerFooterIndex}';
         $formParams = [];

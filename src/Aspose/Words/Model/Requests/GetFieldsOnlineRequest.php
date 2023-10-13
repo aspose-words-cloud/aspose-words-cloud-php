@@ -184,6 +184,7 @@ class GetFieldsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getFieldsOnline');
         }
 
+
         $resourcePath = '/words/online/get/{nodePath}/fields';
         $formParams = [];
         $filesContent = [];

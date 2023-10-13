@@ -289,57 +289,22 @@ class Border extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getBorderTypeAllowableValues();
-        if (!in_array($this->container['border_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'border_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getLineStyleAllowableValues();
-        if (!in_array($this->container['line_style'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'line_style', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        $allowedValuesBorderType = $this->getBorderTypeAllowableValues();
+        if (!in_array($this->container['border_type'], $allowedValuesBorderType)) {
+            throw new \InvalidArgumentException('Property BorderType in Border has invalid format.');
         }
 
-        $allowedValues = $this->getBorderTypeAllowableValues();
-        if (!in_array($this->container['border_type'], $allowedValues)) {
-            return false;
+        $allowedValuesLineStyle = $this->getLineStyleAllowableValues();
+        if (!in_array($this->container['line_style'], $allowedValuesLineStyle)) {
+            throw new \InvalidArgumentException('Property LineStyle in Border has invalid format.');
         }
 
-        $allowedValues = $this->getLineStyleAllowableValues();
-        if (!in_array($this->container['line_style'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

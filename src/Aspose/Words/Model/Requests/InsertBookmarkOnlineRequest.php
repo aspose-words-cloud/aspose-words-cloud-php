@@ -255,9 +255,13 @@ class InsertBookmarkOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertBookmarkOnline');
         }
+
         if ($this->bookmark === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark when calling insertBookmarkOnline');
         }
+
+        $this->bookmark->validate();
+
 
         $resourcePath = '/words/online/post/bookmarks';
         $formParams = [];

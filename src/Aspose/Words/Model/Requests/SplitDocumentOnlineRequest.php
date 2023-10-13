@@ -303,9 +303,11 @@ class SplitDocumentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling splitDocumentOnline');
         }
+
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling splitDocumentOnline');
         }
+
 
         $resourcePath = '/words/online/put/split';
         $formParams = [];

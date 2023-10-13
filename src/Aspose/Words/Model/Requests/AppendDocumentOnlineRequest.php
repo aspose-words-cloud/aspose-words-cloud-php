@@ -255,9 +255,13 @@ class AppendDocumentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling appendDocumentOnline');
         }
+
         if ($this->document_list === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document_list when calling appendDocumentOnline');
         }
+
+        $this->document_list->validate();
+
 
         $resourcePath = '/words/online/put/appendDocument';
         $formParams = [];

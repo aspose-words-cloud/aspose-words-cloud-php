@@ -351,9 +351,11 @@ class SplitDocumentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling splitDocument');
         }
+
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling splitDocument');
         }
+
 
         $resourcePath = '/words/{name}/split';
         $formParams = [];

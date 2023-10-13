@@ -327,12 +327,17 @@ class UpdateStyleRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateStyle');
         }
+
         if ($this->style_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_name when calling updateStyle');
         }
+
         if ($this->style_update === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_update when calling updateStyle');
         }
+
+        $this->style_update->validate();
+
 
         $resourcePath = '/words/{name}/styles/{styleName}/update';
         $formParams = [];

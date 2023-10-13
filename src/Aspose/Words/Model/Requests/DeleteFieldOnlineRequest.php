@@ -279,9 +279,11 @@ class DeleteFieldOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteFieldOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFieldOnline');
         }
+
 
         $resourcePath = '/words/online/delete/{nodePath}/fields/{index}';
         $formParams = [];

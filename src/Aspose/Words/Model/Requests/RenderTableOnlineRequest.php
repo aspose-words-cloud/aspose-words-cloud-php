@@ -279,12 +279,15 @@ class RenderTableOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling renderTableOnline');
         }
+
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderTableOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderTableOnline');
         }
+
 
         $resourcePath = '/words/online/get/{nodePath}/tables/{index}/render';
         $formParams = [];

@@ -207,9 +207,11 @@ class GetFieldOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getFieldOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getFieldOnline');
         }
+
 
         $resourcePath = '/words/online/get/{nodePath}/fields/{index}';
         $formParams = [];

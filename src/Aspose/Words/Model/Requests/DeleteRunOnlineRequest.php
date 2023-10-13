@@ -279,12 +279,15 @@ class DeleteRunOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteRunOnline');
         }
+
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling deleteRunOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteRunOnline');
         }
+
 
         $resourcePath = '/words/online/delete/{paragraphPath}/runs/{index}';
         $formParams = [];

@@ -303,12 +303,17 @@ class UpdateFieldOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateFieldOnline');
         }
+
         if ($this->field === null) {
             throw new \InvalidArgumentException('Missing the required parameter $field when calling updateFieldOnline');
         }
+
+        $this->field->validate();
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFieldOnline');
         }
+
 
         $resourcePath = '/words/online/put/{nodePath}/fields/{index}';
         $formParams = [];

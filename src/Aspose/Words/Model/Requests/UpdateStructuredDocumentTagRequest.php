@@ -351,12 +351,17 @@ class UpdateStructuredDocumentTagRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateStructuredDocumentTag');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateStructuredDocumentTag');
         }
+
         if ($this->structured_document_tag === null) {
             throw new \InvalidArgumentException('Missing the required parameter $structured_document_tag when calling updateStructuredDocumentTag');
         }
+
+        $this->structured_document_tag->validate();
+
 
         $resourcePath = '/words/{name}/{nodePath}/sdt/{index}';
         $formParams = [];

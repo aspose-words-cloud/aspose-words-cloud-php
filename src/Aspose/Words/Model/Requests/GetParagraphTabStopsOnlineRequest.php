@@ -207,9 +207,11 @@ class GetParagraphTabStopsOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getParagraphTabStopsOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphTabStopsOnline');
         }
+
 
         $resourcePath = '/words/online/get/{nodePath}/paragraphs/{index}/tabstops';
         $formParams = [];

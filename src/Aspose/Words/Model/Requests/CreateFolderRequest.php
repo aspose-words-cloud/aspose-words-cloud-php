@@ -112,6 +112,7 @@ class CreateFolderRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $path when calling createFolder');
         }
 
+
         $resourcePath = '/words/storage/folder/{path}';
         $formParams = [];
         $filesContent = [];

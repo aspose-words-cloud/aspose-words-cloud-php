@@ -255,9 +255,11 @@ class GetTableRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTable');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTable');
         }
+
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}';
         $formParams = [];

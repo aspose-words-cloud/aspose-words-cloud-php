@@ -279,9 +279,11 @@ class DeleteDrawingObjectOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteDrawingObjectOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteDrawingObjectOnline');
         }
+
 
         $resourcePath = '/words/online/delete/{nodePath}/drawingObjects/{index}';
         $formParams = [];

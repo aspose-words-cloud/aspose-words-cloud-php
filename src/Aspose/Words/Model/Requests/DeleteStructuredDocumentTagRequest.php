@@ -327,9 +327,11 @@ class DeleteStructuredDocumentTagRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteStructuredDocumentTag');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteStructuredDocumentTag');
         }
+
 
         $resourcePath = '/words/{name}/{nodePath}/sdt/{index}';
         $formParams = [];

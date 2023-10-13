@@ -303,15 +303,21 @@ class UpdateTableRowFormatOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateTableRowFormatOnline');
         }
+
         if ($this->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling updateTableRowFormatOnline');
         }
+
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableRowFormatOnline');
         }
+
+        $this->format->validate();
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableRowFormatOnline');
         }
+
 
         $resourcePath = '/words/online/put/{tablePath}/rows/{index}/rowformat';
         $formParams = [];

@@ -351,12 +351,17 @@ class UpdateFieldRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateField');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateField');
         }
+
         if ($this->field === null) {
             throw new \InvalidArgumentException('Missing the required parameter $field when calling updateField');
         }
+
+        $this->field->validate();
+
 
         $resourcePath = '/words/{name}/{nodePath}/fields/{index}';
         $formParams = [];

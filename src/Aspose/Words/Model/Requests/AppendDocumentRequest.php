@@ -303,9 +303,13 @@ class AppendDocumentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling appendDocument');
         }
+
         if ($this->document_list === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document_list when calling appendDocument');
         }
+
+        $this->document_list->validate();
+
 
         $resourcePath = '/words/{name}/appendDocument';
         $formParams = [];

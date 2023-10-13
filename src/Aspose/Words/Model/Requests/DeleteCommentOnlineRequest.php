@@ -255,9 +255,11 @@ class DeleteCommentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteCommentOnline');
         }
+
         if ($this->comment_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling deleteCommentOnline');
         }
+
 
         $resourcePath = '/words/online/delete/comments/{commentIndex}';
         $formParams = [];

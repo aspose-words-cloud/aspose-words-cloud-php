@@ -303,9 +303,11 @@ class InsertSectionRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertSection');
         }
+
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling insertSection');
         }
+
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}';
         $formParams = [];

@@ -255,9 +255,13 @@ class InsertCustomXmlPartOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertCustomXmlPartOnline');
         }
+
         if ($this->custom_xml_part === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part when calling insertCustomXmlPartOnline');
         }
+
+        $this->custom_xml_part->validate();
+
 
         $resourcePath = '/words/online/post/customXmlParts';
         $formParams = [];

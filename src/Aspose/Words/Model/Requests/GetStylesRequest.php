@@ -208,6 +208,7 @@ class GetStylesRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getStyles');
         }
 
+
         $resourcePath = '/words/{name}/styles';
         $formParams = [];
         $filesContent = [];

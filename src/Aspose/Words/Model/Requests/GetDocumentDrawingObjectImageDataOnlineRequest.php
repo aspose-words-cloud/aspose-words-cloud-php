@@ -207,9 +207,11 @@ class GetDocumentDrawingObjectImageDataOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentDrawingObjectImageDataOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectImageDataOnline');
         }
+
 
         $resourcePath = '/words/online/get/{nodePath}/drawingObjects/{index}/imageData';
         $formParams = [];

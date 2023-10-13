@@ -279,12 +279,15 @@ class DeleteHeaderFooterOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteHeaderFooterOnline');
         }
+
         if ($this->section_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_path when calling deleteHeaderFooterOnline');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteHeaderFooterOnline');
         }
+
 
         $resourcePath = '/words/online/delete/{sectionPath}/headersfooters/{index}';
         $formParams = [];

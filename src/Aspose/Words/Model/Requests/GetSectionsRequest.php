@@ -208,6 +208,7 @@ class GetSectionsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getSections');
         }
 
+
         $resourcePath = '/words/{name}/sections';
         $formParams = [];
         $filesContent = [];

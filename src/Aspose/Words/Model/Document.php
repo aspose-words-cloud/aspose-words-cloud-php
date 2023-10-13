@@ -256,41 +256,26 @@ class Document implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getSourceFormatAllowableValues();
-        if (!in_array($this->container['source_format'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'source_format', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getSourceFormatAllowableValues();
-        if (!in_array($this->container['source_format'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['is_encrypted'])) {
+            throw new \InvalidArgumentException('Property IsEncrypted in Document is required.');
         }
 
+        if (!isset($this->container['is_signed'])) {
+            throw new \InvalidArgumentException('Property IsSigned in Document is required.');
+        }
 
-        return true;
+        $allowedValuesSourceFormat = $this->getSourceFormatAllowableValues();
+        if (!in_array($this->container['source_format'], $allowedValuesSourceFormat)) {
+            throw new \InvalidArgumentException('Property SourceFormat in Document has invalid format.');
+        }
+        if (!isset($this->container['source_format'])) {
+            throw new \InvalidArgumentException('Property SourceFormat in Document is required.');
+        }
+
     }
 
     /*

@@ -279,9 +279,11 @@ class ConvertDocumentRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling convertDocument');
         }
+
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling convertDocument');
         }
+
 
         $resourcePath = '/words/convert';
         $formParams = [];

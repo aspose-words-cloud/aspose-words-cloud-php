@@ -303,9 +303,11 @@ class CopyStylesFromTemplateRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling copyStylesFromTemplate');
         }
+
         if ($this->template_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $template_name when calling copyStylesFromTemplate');
         }
+
 
         $resourcePath = '/words/{name}/styles/copy_from';
         $formParams = [];

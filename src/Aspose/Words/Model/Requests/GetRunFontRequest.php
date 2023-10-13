@@ -255,12 +255,15 @@ class GetRunFontRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getRunFont');
         }
+
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getRunFont');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getRunFont');
         }
+
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
         $formParams = [];

@@ -255,9 +255,13 @@ class ReplaceTextOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling replaceTextOnline');
         }
+
         if ($this->replace_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $replace_text when calling replaceTextOnline');
         }
+
+        $this->replace_text->validate();
+
 
         $resourcePath = '/words/online/put/replaceText';
         $formParams = [];

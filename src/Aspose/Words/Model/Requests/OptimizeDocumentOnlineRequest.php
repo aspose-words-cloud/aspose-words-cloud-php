@@ -255,9 +255,13 @@ class OptimizeDocumentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling optimizeDocumentOnline');
         }
+
         if ($this->options === null) {
             throw new \InvalidArgumentException('Missing the required parameter $options when calling optimizeDocumentOnline');
         }
+
+        $this->options->validate();
+
 
         $resourcePath = '/words/online/put/compatibility/optimize';
         $formParams = [];

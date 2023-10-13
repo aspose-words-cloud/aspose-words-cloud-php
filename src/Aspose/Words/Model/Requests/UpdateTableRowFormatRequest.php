@@ -351,15 +351,21 @@ class UpdateTableRowFormatRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableRowFormat');
         }
+
         if ($this->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling updateTableRowFormat');
         }
+
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableRowFormat');
         }
+
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableRowFormat');
         }
+
+        $this->format->validate();
+
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}/rowformat';
         $formParams = [];

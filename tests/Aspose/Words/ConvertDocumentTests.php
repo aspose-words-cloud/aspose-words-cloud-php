@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{ConvertDocumentRequest, SaveAsOnlineRequest, SaveAsRequest};
-use Aspose\Words\Model\{DocxSaveOptionsData, HtmlSaveOptionsData, PdfSaveOptionsData};
+use Aspose\Words\Model\Requests\{ConvertDocumentRequest, SaveAsOnlineRequest, SaveAsRequest, SaveAsTiffOnlineRequest, SaveAsTiffRequest};
+use Aspose\Words\Model\{DocxSaveOptionsData, HtmlSaveOptionsData, PdfSaveOptionsData, TiffSaveOptionsData};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -155,6 +155,98 @@ class ConvertDocumentTests extends BaseTestContext
         Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getSaveResult());
         Assert::assertNotNull($result->getSaveResult()->getDestDocument());
+    }
+
+    /*
+     * Test for converting document to one of the available formats.
+     */
+    public function testSaveAsTiff()
+    {
+        $remoteFolder = self::$baseRemoteFolderPath . "/DocumentActions/ConvertDocument";
+        $localName = "test_multi_pages.docx";
+        $remoteName = "TestSaveAsTiff.pdf";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . "Common/" . $localName,
+            $remoteFolder . "/" . $remoteName
+        );
+
+        $requestSaveOptions = new TiffSaveOptionsData(array(
+            "file_name" => self::$baseTestOutPath . "/abc.tiff",
+        ));
+        $request = new SaveAsTiffRequest(
+            $remoteName,
+            $requestSaveOptions,
+            $remoteFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->saveAsTiff($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSaveResult());
+        Assert::assertNotNull($result->getSaveResult()->getDestDocument());
+    }
+
+    /*
+     * Test for converting document to one of the available formats.
+     */
+    public function testSaveAsTiffOnline()
+    {
+        $localName = "test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/" . $localName;
+        $requestSaveOptions = new TiffSaveOptionsData(array(
+            "file_name" => self::$baseTestOutPath . "/abc.tiff",
+        ));
+        $request = new SaveAsTiffOnlineRequest(
+            $requestDocument,
+            $requestSaveOptions,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->saveAsTiffOnline($request);
+        Assert::assertTrue($result !== NULL);
     }
 
     /*

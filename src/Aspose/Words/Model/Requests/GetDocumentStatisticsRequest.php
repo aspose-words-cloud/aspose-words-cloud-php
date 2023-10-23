@@ -280,7 +280,6 @@ class GetDocumentStatisticsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentStatistics');
         }
 
-
         $resourcePath = '/words/{name}/statistics';
         $formParams = [];
         $filesContent = [];

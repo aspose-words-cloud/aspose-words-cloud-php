@@ -303,12 +303,12 @@ class InsertWatermarkTextRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertWatermarkText');
         }
-
         if ($this->watermark_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $watermark_text when calling insertWatermarkText');
         }
-
-        $this->watermark_text->validate();
+        if ($this->watermark_text !== null) {
+            $this->watermark_text->validate();
+        }
 
 
         $resourcePath = '/words/{name}/watermarks/texts';

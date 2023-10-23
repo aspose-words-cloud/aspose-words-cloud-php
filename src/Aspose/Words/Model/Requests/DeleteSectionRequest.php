@@ -303,11 +303,9 @@ class DeleteSectionRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteSection');
         }
-
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling deleteSection');
         }
-
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}';
         $formParams = [];

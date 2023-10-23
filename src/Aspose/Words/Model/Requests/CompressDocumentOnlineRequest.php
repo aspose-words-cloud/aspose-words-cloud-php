@@ -207,12 +207,12 @@ class CompressDocumentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling compressDocumentOnline');
         }
-
         if ($this->compress_options === null) {
             throw new \InvalidArgumentException('Missing the required parameter $compress_options when calling compressDocumentOnline');
         }
-
-        $this->compress_options->validate();
+        if ($this->compress_options !== null) {
+            $this->compress_options->validate();
+        }
 
 
         $resourcePath = '/words/online/put/compress';

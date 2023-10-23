@@ -185,6 +185,39 @@ class AvailableFontsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['additional_fonts'])) {
+            foreach ($this->getAdditionalFonts() as &$elementAdditionalFonts)
+            {
+                if ($elementAdditionalFonts != null)
+                {
+                    $elementAdditionalFonts->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['custom_fonts'])) {
+            foreach ($this->getCustomFonts() as &$elementCustomFonts)
+            {
+                if ($elementCustomFonts != null)
+                {
+                    $elementCustomFonts->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['system_fonts'])) {
+            foreach ($this->getSystemFonts() as &$elementSystemFonts)
+            {
+                if ($elementSystemFonts != null)
+                {
+                    $elementSystemFonts->validate();
+                }
+            }
+        }
+
     }
 
     /*

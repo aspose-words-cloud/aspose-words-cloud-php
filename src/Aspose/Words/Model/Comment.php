@@ -209,6 +209,21 @@ class Comment extends CommentLink
     {
         parent::validate();
 
+
+        if (isset($this->container['range_start'])) {
+            $this->getRangeStart()->validate();
+        }
+
+
+        if (isset($this->container['range_end'])) {
+            $this->getRangeEnd()->validate();
+        }
+
+
+        if (isset($this->container['content'])) {
+            $this->getContent()->validate();
+        }
+
     }
 
     /*

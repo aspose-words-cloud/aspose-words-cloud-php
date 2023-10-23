@@ -303,19 +303,17 @@ class UpdateListLevelOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateListLevelOnline');
         }
-
         if ($this->list_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_id when calling updateListLevelOnline');
         }
-
         if ($this->list_update === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_update when calling updateListLevelOnline');
         }
-
-        $this->list_update->validate();
-
         if ($this->list_level === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_level when calling updateListLevelOnline');
+        }
+        if ($this->list_update !== null) {
+            $this->list_update->validate();
         }
 
 

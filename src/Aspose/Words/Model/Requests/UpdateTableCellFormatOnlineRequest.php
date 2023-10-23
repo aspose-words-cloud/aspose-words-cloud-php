@@ -303,19 +303,17 @@ class UpdateTableCellFormatOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateTableCellFormatOnline');
         }
-
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling updateTableCellFormatOnline');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableCellFormatOnline');
         }
-
-        $this->format->validate();
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableCellFormatOnline');
+        }
+        if ($this->format !== null) {
+            $this->format->validate();
         }
 
 

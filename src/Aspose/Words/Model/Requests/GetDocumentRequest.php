@@ -208,7 +208,6 @@ class GetDocumentRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document_name when calling getDocument');
         }
 
-
         $resourcePath = '/words/{documentName}';
         $formParams = [];
         $filesContent = [];

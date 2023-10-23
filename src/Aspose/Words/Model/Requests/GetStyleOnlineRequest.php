@@ -183,11 +183,9 @@ class GetStyleOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getStyleOnline');
         }
-
         if ($this->style_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_name when calling getStyleOnline');
         }
-
 
         $resourcePath = '/words/online/get/styles/{styleName}';
         $formParams = [];

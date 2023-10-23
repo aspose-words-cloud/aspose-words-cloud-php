@@ -173,6 +173,11 @@ class TablePropertiesResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['properties'])) {
+            $this->getProperties()->validate();
+        }
+
     }
 
     /*

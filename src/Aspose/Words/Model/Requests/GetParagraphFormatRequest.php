@@ -255,11 +255,9 @@ class GetParagraphFormatRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getParagraphFormat');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphFormat');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/format';
         $formParams = [];

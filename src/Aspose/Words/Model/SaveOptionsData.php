@@ -308,6 +308,11 @@ abstract class SaveOptionsData implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['custom_time_zone_info_data'])) {
+            $this->getCustomTimeZoneInfoData()->validate();
+        }
+
         $allowedValuesDml3DEffectsRenderingMode = $this->getDml3DEffectsRenderingModeAllowableValues();
         if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValuesDml3DEffectsRenderingMode)) {
             throw new \InvalidArgumentException('Property Dml3DEffectsRenderingMode in SaveOptionsData has invalid format.');

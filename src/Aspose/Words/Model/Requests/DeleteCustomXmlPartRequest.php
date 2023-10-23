@@ -303,11 +303,9 @@ class DeleteCustomXmlPartRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteCustomXmlPart');
         }
-
         if ($this->custom_xml_part_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part_index when calling deleteCustomXmlPart');
         }
-
 
         $resourcePath = '/words/{name}/customXmlParts/{customXmlPartIndex}';
         $formParams = [];

@@ -179,6 +179,16 @@ class ProtectionDataResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['document_link'])) {
+            $this->getDocumentLink()->validate();
+        }
+
+
+        if (isset($this->container['protection_data'])) {
+            $this->getProtectionData()->validate();
+        }
+
     }
 
     /*

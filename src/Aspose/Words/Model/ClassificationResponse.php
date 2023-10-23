@@ -189,6 +189,17 @@ class ClassificationResponse extends WordsResponse
             throw new \InvalidArgumentException('Property BestClassProbability in ClassificationResponse is required.');
         }
 
+
+        if (isset($this->container['best_results'])) {
+            foreach ($this->getBestResults() as &$elementBestResults)
+            {
+                if ($elementBestResults != null)
+                {
+                    $elementBestResults->validate();
+                }
+            }
+        }
+
     }
 
     /*

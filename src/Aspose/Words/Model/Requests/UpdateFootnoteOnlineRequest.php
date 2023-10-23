@@ -303,15 +303,14 @@ class UpdateFootnoteOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateFootnoteOnline');
         }
-
         if ($this->footnote_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling updateFootnoteOnline');
         }
-
-        $this->footnote_dto->validate();
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFootnoteOnline');
+        }
+        if ($this->footnote_dto !== null) {
+            $this->footnote_dto->validate();
         }
 
 

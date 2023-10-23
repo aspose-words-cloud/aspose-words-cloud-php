@@ -280,7 +280,6 @@ class DeleteMacrosRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteMacros');
         }
 
-
         $resourcePath = '/words/{name}/macros';
         $formParams = [];
         $filesContent = [];

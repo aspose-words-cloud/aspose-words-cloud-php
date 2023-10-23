@@ -208,6 +208,17 @@ class OutlineOptionsData implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['bookmarks_outline_levels'])) {
+            foreach ($this->getBookmarksOutlineLevels() as &$elementBookmarksOutlineLevels)
+            {
+                if ($elementBookmarksOutlineLevels != null)
+                {
+                    $elementBookmarksOutlineLevels->validate();
+                }
+            }
+        }
+
     }
 
     /*

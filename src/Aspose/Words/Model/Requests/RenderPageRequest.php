@@ -279,15 +279,12 @@ class RenderPageRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling renderPage');
         }
-
         if ($this->page_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $page_index when calling renderPage');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderPage');
         }
-
 
         $resourcePath = '/words/{name}/pages/{pageIndex}/render';
         $formParams = [];

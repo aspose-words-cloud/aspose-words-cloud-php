@@ -255,11 +255,9 @@ class GetParagraphListFormatRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getParagraphListFormat');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphListFormat');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/listFormat';
         $formParams = [];

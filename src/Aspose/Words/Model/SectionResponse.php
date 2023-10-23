@@ -173,6 +173,11 @@ class SectionResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['section'])) {
+            $this->getSection()->validate();
+        }
+
     }
 
     /*

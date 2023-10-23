@@ -192,6 +192,11 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::validate();
 
+
+        if (isset($this->container['outline_options'])) {
+            $this->getOutlineOptions()->validate();
+        }
+
     }
 
     /*

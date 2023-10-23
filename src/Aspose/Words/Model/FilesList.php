@@ -178,6 +178,17 @@ class FilesList implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['value'])) {
+            foreach ($this->getValue() as &$elementValue)
+            {
+                if ($elementValue != null)
+                {
+                    $elementValue->validate();
+                }
+            }
+        }
+
     }
 
     /*

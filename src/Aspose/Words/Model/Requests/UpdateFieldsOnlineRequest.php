@@ -184,7 +184,6 @@ class UpdateFieldsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateFieldsOnline');
         }
 
-
         $resourcePath = '/words/online/put/updateFields';
         $formParams = [];
         $filesContent = [];

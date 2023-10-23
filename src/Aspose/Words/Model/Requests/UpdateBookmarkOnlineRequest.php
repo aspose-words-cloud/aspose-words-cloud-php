@@ -279,16 +279,15 @@ class UpdateBookmarkOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateBookmarkOnline');
         }
-
         if ($this->bookmark_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_name when calling updateBookmarkOnline');
         }
-
         if ($this->bookmark_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_data when calling updateBookmarkOnline');
         }
-
-        $this->bookmark_data->validate();
+        if ($this->bookmark_data !== null) {
+            $this->bookmark_data->validate();
+        }
 
 
         $resourcePath = '/words/online/put/bookmarks/{bookmarkName}';

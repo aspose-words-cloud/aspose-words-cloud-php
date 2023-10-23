@@ -183,11 +183,9 @@ class GetCustomXmlPartOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getCustomXmlPartOnline');
         }
-
         if ($this->custom_xml_part_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part_index when calling getCustomXmlPartOnline');
         }
-
 
         $resourcePath = '/words/online/get/customXmlParts/{customXmlPartIndex}';
         $formParams = [];

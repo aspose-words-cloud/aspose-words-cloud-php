@@ -232,7 +232,6 @@ class GetTablesRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTables');
         }
 
-
         $resourcePath = '/words/{name}/{nodePath}/tables';
         $formParams = [];
         $filesContent = [];

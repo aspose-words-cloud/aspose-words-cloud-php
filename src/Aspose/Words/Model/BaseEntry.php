@@ -182,7 +182,9 @@ abstract class BaseEntry implements ArrayAccess
             throw new \InvalidArgumentException('Property FileReference in BaseEntry is required.');
         }
 
-        $this->getFileReference()->validate();
+        if (isset($this->container['file_reference'])) {
+            $this->getFileReference()->validate();
+        }
 
     }
 

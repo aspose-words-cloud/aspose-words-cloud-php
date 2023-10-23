@@ -173,6 +173,17 @@ class HeaderFooterLinkCollection extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['list'])) {
+            foreach ($this->getList() as &$elementList)
+            {
+                if ($elementList != null)
+                {
+                    $elementList->validate();
+                }
+            }
+        }
+
     }
 
     /*

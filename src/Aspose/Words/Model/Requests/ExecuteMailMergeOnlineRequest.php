@@ -207,9 +207,11 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
         if ($this->template === null) {
             throw new \InvalidArgumentException('Missing the required parameter $template when calling executeMailMergeOnline');
         }
-
         if ($this->data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $data when calling executeMailMergeOnline');
+        }
+        if ($this->options !== null) {
+            $this->options->validate();
         }
 
 

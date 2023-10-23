@@ -279,11 +279,9 @@ class DeleteBorderOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteBorderOnline');
         }
-
         if ($this->border_type === null) {
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling deleteBorderOnline');
         }
-
 
         $resourcePath = '/words/online/delete/{nodePath}/borders/{borderType}';
         $formParams = [];

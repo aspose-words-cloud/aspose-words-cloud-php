@@ -255,11 +255,9 @@ class DeleteCustomXmlPartOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteCustomXmlPartOnline');
         }
-
         if ($this->custom_xml_part_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part_index when calling deleteCustomXmlPartOnline');
         }
-
 
         $resourcePath = '/words/online/delete/customXmlParts/{customXmlPartIndex}';
         $formParams = [];

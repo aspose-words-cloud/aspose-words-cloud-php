@@ -173,6 +173,17 @@ class StylesResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['styles'])) {
+            foreach ($this->getStyles() as &$elementStyles)
+            {
+                if ($elementStyles != null)
+                {
+                    $elementStyles->validate();
+                }
+            }
+        }
+
     }
 
     /*

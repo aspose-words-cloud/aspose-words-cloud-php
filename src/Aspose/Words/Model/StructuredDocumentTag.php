@@ -451,6 +451,17 @@ class StructuredDocumentTag extends NodeLink
     {
         parent::validate();
 
+
+        if (isset($this->container['list_items'])) {
+            foreach ($this->getListItems() as &$elementListItems)
+            {
+                if ($elementListItems != null)
+                {
+                    $elementListItems->validate();
+                }
+            }
+        }
+
         $allowedValuesAppearance = $this->getAppearanceAllowableValues();
         if (!in_array($this->container['appearance'], $allowedValuesAppearance)) {
             throw new \InvalidArgumentException('Property Appearance in StructuredDocumentTag has invalid format.');

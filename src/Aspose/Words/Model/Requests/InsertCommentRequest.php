@@ -303,12 +303,12 @@ class InsertCommentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertComment');
         }
-
         if ($this->comment === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment when calling insertComment');
         }
-
-        $this->comment->validate();
+        if ($this->comment !== null) {
+            $this->comment->validate();
+        }
 
 
         $resourcePath = '/words/{name}/comments';

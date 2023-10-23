@@ -207,11 +207,9 @@ class GetRangeTextOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getRangeTextOnline');
         }
-
         if ($this->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling getRangeTextOnline');
         }
-
 
         $resourcePath = '/words/online/get/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];

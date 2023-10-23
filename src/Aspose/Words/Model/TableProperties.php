@@ -1082,6 +1082,11 @@ class TableProperties extends LinkElement
             throw new \InvalidArgumentException('Property Alignment in TableProperties has invalid format.');
         }
 
+
+        if (isset($this->container['preferred_width'])) {
+            $this->getPreferredWidth()->validate();
+        }
+
         $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
         if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
             throw new \InvalidArgumentException('Property StyleIdentifier in TableProperties has invalid format.');

@@ -255,12 +255,12 @@ class CopyStyleOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling copyStyleOnline');
         }
-
         if ($this->style_copy === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_copy when calling copyStyleOnline');
         }
-
-        $this->style_copy->validate();
+        if ($this->style_copy !== null) {
+            $this->style_copy->validate();
+        }
 
 
         $resourcePath = '/words/online/post/styles/copy';

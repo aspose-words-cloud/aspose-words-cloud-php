@@ -327,11 +327,9 @@ class DeleteOfficeMathObjectRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteOfficeMathObject');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteOfficeMathObject');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects/{index}';
         $formParams = [];

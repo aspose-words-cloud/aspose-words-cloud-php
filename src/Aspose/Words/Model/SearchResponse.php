@@ -179,6 +179,11 @@ class SearchResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['search_results'])) {
+            $this->getSearchResults()->validate();
+        }
+
     }
 
     /*

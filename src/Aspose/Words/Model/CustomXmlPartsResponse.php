@@ -173,6 +173,11 @@ class CustomXmlPartsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['custom_xml_parts'])) {
+            $this->getCustomXmlParts()->validate();
+        }
+
     }
 
     /*

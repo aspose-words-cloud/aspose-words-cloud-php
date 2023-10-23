@@ -486,6 +486,21 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             throw new \InvalidArgumentException('Property CustomPropertiesExport in PdfSaveOptionsData has invalid format.');
         }
 
+
+        if (isset($this->container['digital_signature_details'])) {
+            $this->getDigitalSignatureDetails()->validate();
+        }
+
+
+        if (isset($this->container['downsample_options'])) {
+            $this->getDownsampleOptions()->validate();
+        }
+
+
+        if (isset($this->container['encryption_details'])) {
+            $this->getEncryptionDetails()->validate();
+        }
+
         $allowedValuesFontEmbeddingMode = $this->getFontEmbeddingModeAllowableValues();
         if (!in_array($this->container['font_embedding_mode'], $allowedValuesFontEmbeddingMode)) {
             throw new \InvalidArgumentException('Property FontEmbeddingMode in PdfSaveOptionsData has invalid format.');
@@ -499,6 +514,11 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $allowedValuesImageColorSpaceExportMode = $this->getImageColorSpaceExportModeAllowableValues();
         if (!in_array($this->container['image_color_space_export_mode'], $allowedValuesImageColorSpaceExportMode)) {
             throw new \InvalidArgumentException('Property ImageColorSpaceExportMode in PdfSaveOptionsData has invalid format.');
+        }
+
+
+        if (isset($this->container['outline_options'])) {
+            $this->getOutlineOptions()->validate();
         }
 
         $allowedValuesPageMode = $this->getPageModeAllowableValues();

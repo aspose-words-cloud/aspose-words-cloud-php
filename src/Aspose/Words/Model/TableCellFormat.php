@@ -319,6 +319,11 @@ class TableCellFormat extends LinkElement
             throw new \InvalidArgumentException('Property Orientation in TableCellFormat has invalid format.');
         }
 
+
+        if (isset($this->container['preferred_width'])) {
+            $this->getPreferredWidth()->validate();
+        }
+
         $allowedValuesVerticalAlignment = $this->getVerticalAlignmentAllowableValues();
         if (!in_array($this->container['vertical_alignment'], $allowedValuesVerticalAlignment)) {
             throw new \InvalidArgumentException('Property VerticalAlignment in TableCellFormat has invalid format.');

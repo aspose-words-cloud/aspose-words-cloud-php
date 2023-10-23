@@ -194,6 +194,11 @@ class TableInsert implements ArrayAccess
             throw new \InvalidArgumentException('Property ColumnsCount in TableInsert is required.');
         }
 
+
+        if (isset($this->container['position'])) {
+            $this->getPosition()->validate();
+        }
+
         if (!isset($this->container['rows_count'])) {
             throw new \InvalidArgumentException('Property RowsCount in TableInsert is required.');
         }

@@ -179,6 +179,16 @@ class StatDataResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['document_link'])) {
+            $this->getDocumentLink()->validate();
+        }
+
+
+        if (isset($this->container['stat_data'])) {
+            $this->getStatData()->validate();
+        }
+
     }
 
     /*

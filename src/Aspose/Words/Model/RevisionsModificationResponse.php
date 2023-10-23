@@ -173,6 +173,11 @@ class RevisionsModificationResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['result'])) {
+            $this->getResult()->validate();
+        }
+
     }
 
     /*

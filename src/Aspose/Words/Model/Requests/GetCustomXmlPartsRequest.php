@@ -208,7 +208,6 @@ class GetCustomXmlPartsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getCustomXmlParts');
         }
 
-
         $resourcePath = '/words/{name}/customXmlParts';
         $formParams = [];
         $filesContent = [];

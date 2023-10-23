@@ -184,6 +184,16 @@ class SearchResult implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['range_start'])) {
+            $this->getRangeStart()->validate();
+        }
+
+
+        if (isset($this->container['range_end'])) {
+            $this->getRangeEnd()->validate();
+        }
+
     }
 
     /*

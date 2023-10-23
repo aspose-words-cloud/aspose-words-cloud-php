@@ -1243,6 +1243,21 @@ class Font extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['border'])) {
+            $this->getBorder()->validate();
+        }
+
+
+        if (isset($this->container['color'])) {
+            $this->getColor()->validate();
+        }
+
+
+        if (isset($this->container['highlight_color'])) {
+            $this->getHighlightColor()->validate();
+        }
+
         $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
         if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
             throw new \InvalidArgumentException('Property StyleIdentifier in Font has invalid format.');
@@ -1256,6 +1271,11 @@ class Font extends LinkElement
         $allowedValuesUnderline = $this->getUnderlineAllowableValues();
         if (!in_array($this->container['underline'], $allowedValuesUnderline)) {
             throw new \InvalidArgumentException('Property Underline in Font has invalid format.');
+        }
+
+
+        if (isset($this->container['underline_color'])) {
+            $this->getUnderlineColor()->validate();
         }
 
     }

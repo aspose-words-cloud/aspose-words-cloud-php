@@ -351,12 +351,12 @@ class InsertFormFieldRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertFormField');
         }
-
         if ($this->form_field === null) {
             throw new \InvalidArgumentException('Missing the required parameter $form_field when calling insertFormField');
         }
-
-        $this->form_field->validate();
+        if ($this->form_field !== null) {
+            $this->form_field->validate();
+        }
 
 
         $resourcePath = '/words/{name}/{nodePath}/formfields';

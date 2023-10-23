@@ -173,6 +173,11 @@ class FontResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['font'])) {
+            $this->getFont()->validate();
+        }
+
     }
 
     /*

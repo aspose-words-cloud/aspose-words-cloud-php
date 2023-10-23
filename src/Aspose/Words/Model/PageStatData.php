@@ -196,6 +196,11 @@ class PageStatData implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['footnotes_stat_data'])) {
+            $this->getFootnotesStatData()->validate();
+        }
+
         if (!isset($this->container['paragraph_count'])) {
             throw new \InvalidArgumentException('Property ParagraphCount in PageStatData is required.');
         }

@@ -159,11 +159,9 @@ class MoveFolderRequest extends BaseApiRequest
         if ($this->dest_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $dest_path when calling moveFolder');
         }
-
         if ($this->src_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $src_path when calling moveFolder');
         }
-
 
         $resourcePath = '/words/storage/folder/move/{srcPath}';
         $formParams = [];

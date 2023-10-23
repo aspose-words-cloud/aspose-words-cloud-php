@@ -232,7 +232,6 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentStatisticsOnline');
         }
 
-
         $resourcePath = '/words/online/get/statistics';
         $formParams = [];
         $filesContent = [];

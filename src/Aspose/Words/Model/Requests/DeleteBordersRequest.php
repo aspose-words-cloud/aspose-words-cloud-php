@@ -304,7 +304,6 @@ class DeleteBordersRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteBorders');
         }
 
-
         $resourcePath = '/words/{name}/{nodePath}/borders';
         $formParams = [];
         $filesContent = [];

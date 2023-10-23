@@ -173,6 +173,11 @@ class SaveResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['save_result'])) {
+            $this->getSaveResult()->validate();
+        }
+
     }
 
     /*

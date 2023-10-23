@@ -173,6 +173,17 @@ class TableCell extends NodeLink
     {
         parent::validate();
 
+
+        if (isset($this->container['child_nodes'])) {
+            foreach ($this->getChildNodes() as &$elementChildNodes)
+            {
+                if ($elementChildNodes != null)
+                {
+                    $elementChildNodes->validate();
+                }
+            }
+        }
+
     }
 
     /*

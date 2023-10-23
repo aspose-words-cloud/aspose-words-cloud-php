@@ -231,11 +231,9 @@ class GetSectionPageSetupRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getSectionPageSetup');
         }
-
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getSectionPageSetup');
         }
-
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}/pageSetup';
         $formParams = [];

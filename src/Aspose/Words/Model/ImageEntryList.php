@@ -179,6 +179,17 @@ class ImageEntryList extends BaseEntryList
     {
         parent::validate();
 
+
+        if (isset($this->container['image_entries'])) {
+            foreach ($this->getImageEntries() as &$elementImageEntries)
+            {
+                if ($elementImageEntries != null)
+                {
+                    $elementImageEntries->validate();
+                }
+            }
+        }
+
     }
 
     /*

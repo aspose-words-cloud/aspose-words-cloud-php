@@ -184,6 +184,11 @@ class LoadWebDocumentData implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['save_options'])) {
+            $this->getSaveOptions()->validate();
+        }
+
         if (!isset($this->container['loading_document_url'])) {
             throw new \InvalidArgumentException('Property LoadingDocumentUrl in LoadWebDocumentData is required.');
         }

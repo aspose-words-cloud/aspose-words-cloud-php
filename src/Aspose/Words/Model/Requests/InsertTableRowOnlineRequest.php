@@ -279,16 +279,15 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertTableRowOnline');
         }
-
         if ($this->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling insertTableRowOnline');
         }
-
         if ($this->row === null) {
             throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRowOnline');
         }
-
-        $this->row->validate();
+        if ($this->row !== null) {
+            $this->row->validate();
+        }
 
 
         $resourcePath = '/words/online/post/{tablePath}/rows';

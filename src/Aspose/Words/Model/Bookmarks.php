@@ -173,6 +173,17 @@ class Bookmarks extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['bookmark_list'])) {
+            foreach ($this->getBookmarkList() as &$elementBookmarkList)
+            {
+                if ($elementBookmarkList != null)
+                {
+                    $elementBookmarkList->validate();
+                }
+            }
+        }
+
     }
 
     /*

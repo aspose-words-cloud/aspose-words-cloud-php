@@ -183,11 +183,13 @@ class DocumentEntryList extends BaseEntryList
             throw new \InvalidArgumentException('Property DocumentEntries in DocumentEntryList is required.');
         }
 
-        foreach ($this->getDocumentEntries() as &$elementDocumentEntries)
-        {
-            if ($elementDocumentEntries != null)
+        if (isset($this->container['document_entries'])) {
+            foreach ($this->getDocumentEntries() as &$elementDocumentEntries)
             {
-                $elementDocumentEntries->validate();
+                if ($elementDocumentEntries != null)
+                {
+                    $elementDocumentEntries->validate();
+                }
             }
         }
 

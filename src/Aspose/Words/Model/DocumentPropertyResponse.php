@@ -173,6 +173,11 @@ class DocumentPropertyResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['document_property'])) {
+            $this->getDocumentProperty()->validate();
+        }
+
     }
 
     /*

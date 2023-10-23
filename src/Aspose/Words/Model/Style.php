@@ -1017,6 +1017,11 @@ class Style extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['font'])) {
+            $this->getFont()->validate();
+        }
+
         if (!isset($this->container['built_in'])) {
             throw new \InvalidArgumentException('Property BuiltIn in Style is required.');
         }

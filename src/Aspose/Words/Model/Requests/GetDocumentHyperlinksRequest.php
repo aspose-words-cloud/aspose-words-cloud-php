@@ -208,7 +208,6 @@ class GetDocumentHyperlinksRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentHyperlinks');
         }
 
-
         $resourcePath = '/words/{name}/hyperlinks';
         $formParams = [];
         $filesContent = [];

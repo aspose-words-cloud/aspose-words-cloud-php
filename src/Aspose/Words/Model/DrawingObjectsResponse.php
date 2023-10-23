@@ -173,6 +173,11 @@ class DrawingObjectsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['drawing_objects'])) {
+            $this->getDrawingObjects()->validate();
+        }
+
     }
 
     /*

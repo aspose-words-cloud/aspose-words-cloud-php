@@ -160,7 +160,6 @@ class GetDocumentHyperlinksOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getDocumentHyperlinksOnline');
         }
 
-
         $resourcePath = '/words/online/get/hyperlinks';
         $formParams = [];
         $filesContent = [];

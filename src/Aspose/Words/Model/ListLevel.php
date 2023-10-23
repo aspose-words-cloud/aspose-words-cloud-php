@@ -441,6 +441,11 @@ class ListLevel extends LinkElement
             throw new \InvalidArgumentException('Property TrailingCharacter in ListLevel is required.');
         }
 
+
+        if (isset($this->container['font'])) {
+            $this->getFont()->validate();
+        }
+
         if (!isset($this->container['tab_position'])) {
             throw new \InvalidArgumentException('Property TabPosition in ListLevel is required.');
         }
@@ -451,6 +456,11 @@ class ListLevel extends LinkElement
 
         if (!isset($this->container['text_position'])) {
             throw new \InvalidArgumentException('Property TextPosition in ListLevel is required.');
+        }
+
+
+        if (isset($this->container['linked_style'])) {
+            $this->getLinkedStyle()->validate();
         }
 
     }

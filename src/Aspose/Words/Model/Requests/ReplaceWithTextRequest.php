@@ -303,16 +303,15 @@ class ReplaceWithTextRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling replaceWithText');
         }
-
         if ($this->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling replaceWithText');
         }
-
         if ($this->range_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_text when calling replaceWithText');
         }
-
-        $this->range_text->validate();
+        if ($this->range_text !== null) {
+            $this->range_text->validate();
+        }
 
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';

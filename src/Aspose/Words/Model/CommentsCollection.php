@@ -173,6 +173,17 @@ class CommentsCollection extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['comment_list'])) {
+            foreach ($this->getCommentList() as &$elementCommentList)
+            {
+                if ($elementCommentList != null)
+                {
+                    $elementCommentList->validate();
+                }
+            }
+        }
+
     }
 
     /*

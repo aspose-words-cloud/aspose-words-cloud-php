@@ -179,6 +179,16 @@ class BookmarkInsert extends BookmarkData
     {
         parent::validate();
 
+
+        if (isset($this->container['start_range'])) {
+            $this->getStartRange()->validate();
+        }
+
+
+        if (isset($this->container['end_range'])) {
+            $this->getEndRange()->validate();
+        }
+
     }
 
     /*

@@ -178,6 +178,11 @@ class LinkElement implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['link'])) {
+            $this->getLink()->validate();
+        }
+
     }
 
     /*

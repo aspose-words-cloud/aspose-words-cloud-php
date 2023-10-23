@@ -197,6 +197,37 @@ class Section extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['child_nodes'])) {
+            foreach ($this->getChildNodes() as &$elementChildNodes)
+            {
+                if ($elementChildNodes != null)
+                {
+                    $elementChildNodes->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['paragraphs'])) {
+            $this->getParagraphs()->validate();
+        }
+
+
+        if (isset($this->container['page_setup'])) {
+            $this->getPageSetup()->validate();
+        }
+
+
+        if (isset($this->container['header_footers'])) {
+            $this->getHeaderFooters()->validate();
+        }
+
+
+        if (isset($this->container['tables'])) {
+            $this->getTables()->validate();
+        }
+
     }
 
     /*

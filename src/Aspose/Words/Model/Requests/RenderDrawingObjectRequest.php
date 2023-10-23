@@ -327,15 +327,12 @@ class RenderDrawingObjectRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling renderDrawingObject');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderDrawingObject');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderDrawingObject');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/render';
         $formParams = [];

@@ -231,11 +231,9 @@ class GetSectionRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getSection');
         }
-
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling getSection');
         }
-
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}';
         $formParams = [];

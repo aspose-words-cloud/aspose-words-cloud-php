@@ -229,6 +229,16 @@ class ListInfo extends LinkElement
             throw new \InvalidArgumentException('Property IsListStyleReference in ListInfo is required.');
         }
 
+
+        if (isset($this->container['style'])) {
+            $this->getStyle()->validate();
+        }
+
+
+        if (isset($this->container['list_levels'])) {
+            $this->getListLevels()->validate();
+        }
+
     }
 
     /*

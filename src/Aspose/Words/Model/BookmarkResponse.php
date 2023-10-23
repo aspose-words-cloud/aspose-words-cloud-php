@@ -173,6 +173,11 @@ class BookmarkResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['bookmark'])) {
+            $this->getBookmark()->validate();
+        }
+
     }
 
     /*

@@ -206,6 +206,11 @@ class CompareData implements ArrayAccess
             throw new \InvalidArgumentException('Property Author in CompareData is required.');
         }
 
+
+        if (isset($this->container['compare_options'])) {
+            $this->getCompareOptions()->validate();
+        }
+
         if (!isset($this->container['comparing_with_document'])) {
             throw new \InvalidArgumentException('Property ComparingWithDocument in CompareData is required.');
         }

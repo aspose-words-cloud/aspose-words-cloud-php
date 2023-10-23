@@ -231,11 +231,9 @@ class GetDocumentPropertyRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentProperty');
         }
-
         if ($this->property_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling getDocumentProperty');
         }
-
 
         $resourcePath = '/words/{name}/documentProperties/{propertyName}';
         $formParams = [];

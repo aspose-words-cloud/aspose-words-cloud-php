@@ -55,6 +55,9 @@ class TextTests extends BaseTestContext
         $requestReplaceText = new ReplaceTextParameters(array(
             "old_value" => "Testing",
             "new_value" => "Aspose testing",
+            "is_match_case" => true,
+            "is_match_whole_word" => false,
+            "is_old_value_regex" => false,
         ));
         $request = new ReplaceTextRequest(
             $remoteFileName,
@@ -85,6 +88,9 @@ class TextTests extends BaseTestContext
         $requestReplaceText = new ReplaceTextParameters(array(
             "old_value" => "aspose",
             "new_value" => "aspose new",
+            "is_match_case" => true,
+            "is_match_whole_word" => false,
+            "is_old_value_regex" => false,
         ));
         $request = new ReplaceTextOnlineRequest(
             $requestDocument,

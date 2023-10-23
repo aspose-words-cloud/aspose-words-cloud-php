@@ -208,6 +208,16 @@ abstract class CommentBase implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['range_start'])) {
+            $this->getRangeStart()->validate();
+        }
+
+
+        if (isset($this->container['range_end'])) {
+            $this->getRangeEnd()->validate();
+        }
+
         if (!isset($this->container['author'])) {
             throw new \InvalidArgumentException('Property Author in CommentBase is required.');
         }

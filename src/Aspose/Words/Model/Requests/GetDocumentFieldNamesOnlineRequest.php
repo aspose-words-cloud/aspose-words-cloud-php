@@ -184,7 +184,6 @@ class GetDocumentFieldNamesOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $template when calling getDocumentFieldNamesOnline');
         }
 
-
         $resourcePath = '/words/online/get/mailMerge/FieldNames';
         $formParams = [];
         $filesContent = [];

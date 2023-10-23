@@ -231,11 +231,9 @@ class SearchRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling search');
         }
-
         if ($this->pattern === null) {
             throw new \InvalidArgumentException('Missing the required parameter $pattern when calling search');
         }
-
 
         $resourcePath = '/words/{name}/search';
         $formParams = [];

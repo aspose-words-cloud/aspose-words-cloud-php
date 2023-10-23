@@ -303,12 +303,12 @@ class InsertFieldOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertFieldOnline');
         }
-
         if ($this->field === null) {
             throw new \InvalidArgumentException('Missing the required parameter $field when calling insertFieldOnline');
         }
-
-        $this->field->validate();
+        if ($this->field !== null) {
+            $this->field->validate();
+        }
 
 
         $resourcePath = '/words/online/post/{nodePath}/fields';

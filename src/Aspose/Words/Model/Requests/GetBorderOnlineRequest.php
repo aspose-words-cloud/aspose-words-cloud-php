@@ -207,11 +207,9 @@ class GetBorderOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getBorderOnline');
         }
-
         if ($this->border_type === null) {
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling getBorderOnline');
         }
-
 
         $resourcePath = '/words/online/get/{nodePath}/borders/{borderType}';
         $formParams = [];

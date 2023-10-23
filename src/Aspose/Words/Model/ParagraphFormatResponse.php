@@ -173,6 +173,11 @@ class ParagraphFormatResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['paragraph_format'])) {
+            $this->getParagraphFormat()->validate();
+        }
+
     }
 
     /*

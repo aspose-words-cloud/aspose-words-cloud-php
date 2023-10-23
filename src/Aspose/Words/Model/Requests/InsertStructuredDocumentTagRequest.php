@@ -327,12 +327,12 @@ class InsertStructuredDocumentTagRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertStructuredDocumentTag');
         }
-
         if ($this->structured_document_tag === null) {
             throw new \InvalidArgumentException('Missing the required parameter $structured_document_tag when calling insertStructuredDocumentTag');
         }
-
-        $this->structured_document_tag->validate();
+        if ($this->structured_document_tag !== null) {
+            $this->structured_document_tag->validate();
+        }
 
 
         $resourcePath = '/words/{name}/{nodePath}/sdt';

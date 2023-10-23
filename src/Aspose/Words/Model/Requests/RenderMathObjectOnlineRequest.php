@@ -279,15 +279,12 @@ class RenderMathObjectOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling renderMathObjectOnline');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderMathObjectOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderMathObjectOnline');
         }
-
 
         $resourcePath = '/words/online/get/{nodePath}/OfficeMathObjects/{index}/render';
         $formParams = [];

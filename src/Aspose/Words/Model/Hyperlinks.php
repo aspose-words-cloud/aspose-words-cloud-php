@@ -173,6 +173,17 @@ class Hyperlinks extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['hyperlink_list'])) {
+            foreach ($this->getHyperlinkList() as &$elementHyperlinkList)
+            {
+                if ($elementHyperlinkList != null)
+                {
+                    $elementHyperlinkList->validate();
+                }
+            }
+        }
+
     }
 
     /*

@@ -184,6 +184,17 @@ class FilesUploadResult implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['errors'])) {
+            foreach ($this->getErrors() as &$elementErrors)
+            {
+                if ($elementErrors != null)
+                {
+                    $elementErrors->validate();
+                }
+            }
+        }
+
     }
 
     /*

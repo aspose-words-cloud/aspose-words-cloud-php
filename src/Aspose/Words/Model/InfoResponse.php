@@ -185,6 +185,17 @@ class InfoResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['additional_info'])) {
+            foreach ($this->getAdditionalInfo() as &$elementAdditionalInfo)
+            {
+                if ($elementAdditionalInfo != null)
+                {
+                    $elementAdditionalInfo->validate();
+                }
+            }
+        }
+
     }
 
     /*

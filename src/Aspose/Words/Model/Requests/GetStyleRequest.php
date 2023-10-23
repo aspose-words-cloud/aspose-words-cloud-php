@@ -231,11 +231,9 @@ class GetStyleRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getStyle');
         }
-
         if ($this->style_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_name when calling getStyle');
         }
-
 
         $resourcePath = '/words/{name}/styles/{styleName}';
         $formParams = [];

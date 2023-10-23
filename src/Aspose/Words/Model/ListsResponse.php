@@ -173,6 +173,11 @@ class ListsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['lists'])) {
+            $this->getLists()->validate();
+        }
+
     }
 
     /*

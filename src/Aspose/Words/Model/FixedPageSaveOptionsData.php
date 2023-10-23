@@ -248,6 +248,11 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
             throw new \InvalidArgumentException('Property ColorMode in FixedPageSaveOptionsData has invalid format.');
         }
 
+
+        if (isset($this->container['metafile_rendering_options'])) {
+            $this->getMetafileRenderingOptions()->validate();
+        }
+
         $allowedValuesNumeralFormat = $this->getNumeralFormatAllowableValues();
         if (!in_array($this->container['numeral_format'], $allowedValuesNumeralFormat)) {
             throw new \InvalidArgumentException('Property NumeralFormat in FixedPageSaveOptionsData has invalid format.');

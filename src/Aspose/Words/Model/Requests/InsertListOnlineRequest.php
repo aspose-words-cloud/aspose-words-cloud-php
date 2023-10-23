@@ -255,12 +255,12 @@ class InsertListOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertListOnline');
         }
-
         if ($this->list_insert === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_insert when calling insertListOnline');
         }
-
-        $this->list_insert->validate();
+        if ($this->list_insert !== null) {
+            $this->list_insert->validate();
+        }
 
 
         $resourcePath = '/words/online/post/lists';

@@ -173,6 +173,11 @@ class ParagraphResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['paragraph'])) {
+            $this->getParagraph()->validate();
+        }
+
     }
 
     /*

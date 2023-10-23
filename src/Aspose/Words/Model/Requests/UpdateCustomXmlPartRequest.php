@@ -327,16 +327,15 @@ class UpdateCustomXmlPartRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateCustomXmlPart');
         }
-
         if ($this->custom_xml_part_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part_index when calling updateCustomXmlPart');
         }
-
         if ($this->custom_xml_part === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part when calling updateCustomXmlPart');
         }
-
-        $this->custom_xml_part->validate();
+        if ($this->custom_xml_part !== null) {
+            $this->custom_xml_part->validate();
+        }
 
 
         $resourcePath = '/words/{name}/customXmlParts/{customXmlPartIndex}';

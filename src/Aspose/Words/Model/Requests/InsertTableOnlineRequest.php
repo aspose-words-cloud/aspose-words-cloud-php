@@ -279,12 +279,12 @@ class InsertTableOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertTableOnline');
         }
-
         if ($this->table === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table when calling insertTableOnline');
         }
-
-        $this->table->validate();
+        if ($this->table !== null) {
+            $this->table->validate();
+        }
 
 
         $resourcePath = '/words/online/post/{nodePath}/tables';

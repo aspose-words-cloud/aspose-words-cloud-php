@@ -141,11 +141,9 @@ class UploadFileRequest extends BaseApiRequest
         if ($this->file_content === null) {
             throw new \InvalidArgumentException('Missing the required parameter $file_content when calling uploadFile');
         }
-
         if ($this->path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $path when calling uploadFile');
         }
-
 
         $resourcePath = '/words/storage/file/{path}';
         $formParams = [];

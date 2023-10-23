@@ -231,15 +231,12 @@ class RenderPageOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling renderPageOnline');
         }
-
         if ($this->page_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $page_index when calling renderPageOnline');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderPageOnline');
         }
-
 
         $resourcePath = '/words/online/get/pages/{pageIndex}/render';
         $formParams = [];

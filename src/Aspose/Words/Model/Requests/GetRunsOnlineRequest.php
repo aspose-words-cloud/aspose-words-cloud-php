@@ -183,11 +183,9 @@ class GetRunsOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getRunsOnline');
         }
-
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getRunsOnline');
         }
-
 
         $resourcePath = '/words/online/get/{paragraphPath}/runs';
         $formParams = [];

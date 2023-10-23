@@ -303,15 +303,14 @@ class UpdateStructuredDocumentTagOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateStructuredDocumentTagOnline');
         }
-
         if ($this->structured_document_tag === null) {
             throw new \InvalidArgumentException('Missing the required parameter $structured_document_tag when calling updateStructuredDocumentTagOnline');
         }
-
-        $this->structured_document_tag->validate();
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateStructuredDocumentTagOnline');
+        }
+        if ($this->structured_document_tag !== null) {
+            $this->structured_document_tag->validate();
         }
 
 

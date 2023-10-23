@@ -279,11 +279,9 @@ class DeleteParagraphOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteParagraphOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteParagraphOnline');
         }
-
 
         $resourcePath = '/words/online/delete/{nodePath}/paragraphs/{index}';
         $formParams = [];

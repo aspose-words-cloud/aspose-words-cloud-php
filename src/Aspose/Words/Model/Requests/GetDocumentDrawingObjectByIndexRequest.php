@@ -255,11 +255,9 @@ class GetDocumentDrawingObjectByIndexRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentDrawingObjectByIndex');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectByIndex');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
         $formParams = [];

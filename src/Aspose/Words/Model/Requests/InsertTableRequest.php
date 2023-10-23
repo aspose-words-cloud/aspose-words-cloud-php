@@ -327,12 +327,12 @@ class InsertTableRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTable');
         }
-
         if ($this->table === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table when calling insertTable');
         }
-
-        $this->table->validate();
+        if ($this->table !== null) {
+            $this->table->validate();
+        }
 
 
         $resourcePath = '/words/{name}/{nodePath}/tables';

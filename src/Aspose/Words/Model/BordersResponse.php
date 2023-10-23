@@ -173,6 +173,11 @@ class BordersResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['borders'])) {
+            $this->getBorders()->validate();
+        }
+
     }
 
     /*

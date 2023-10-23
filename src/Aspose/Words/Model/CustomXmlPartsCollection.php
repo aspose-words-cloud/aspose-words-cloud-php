@@ -173,6 +173,17 @@ class CustomXmlPartsCollection extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['custom_xml_parts_list'])) {
+            foreach ($this->getCustomXmlPartsList() as &$elementCustomXmlPartsList)
+            {
+                if ($elementCustomXmlPartsList != null)
+                {
+                    $elementCustomXmlPartsList->validate();
+                }
+            }
+        }
+
     }
 
     /*

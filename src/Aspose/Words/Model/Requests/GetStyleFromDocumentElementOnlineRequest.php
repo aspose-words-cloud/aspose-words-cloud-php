@@ -183,11 +183,9 @@ class GetStyleFromDocumentElementOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getStyleFromDocumentElementOnline');
         }
-
         if ($this->styled_node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $styled_node_path when calling getStyleFromDocumentElementOnline');
         }
-
 
         $resourcePath = '/words/online/get/{styledNodePath}/style';
         $formParams = [];

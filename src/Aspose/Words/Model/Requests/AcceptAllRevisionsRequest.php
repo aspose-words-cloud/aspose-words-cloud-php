@@ -232,7 +232,6 @@ class AcceptAllRevisionsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling acceptAllRevisions');
         }
 
-
         $resourcePath = '/words/{name}/revisions/acceptAll';
         $formParams = [];
         $filesContent = [];

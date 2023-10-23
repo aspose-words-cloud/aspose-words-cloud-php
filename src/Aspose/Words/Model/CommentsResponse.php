@@ -173,6 +173,11 @@ class CommentsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['comments'])) {
+            $this->getComments()->validate();
+        }
+
     }
 
     /*

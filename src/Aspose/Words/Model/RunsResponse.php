@@ -173,6 +173,11 @@ class RunsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['runs'])) {
+            $this->getRuns()->validate();
+        }
+
     }
 
     /*

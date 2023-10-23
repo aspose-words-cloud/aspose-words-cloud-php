@@ -207,12 +207,12 @@ class SaveAsOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling saveAsOnline');
         }
-
         if ($this->save_options_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $save_options_data when calling saveAsOnline');
         }
-
-        $this->save_options_data->validate();
+        if ($this->save_options_data !== null) {
+            $this->save_options_data->validate();
+        }
 
 
         $resourcePath = '/words/online/put/saveAs';

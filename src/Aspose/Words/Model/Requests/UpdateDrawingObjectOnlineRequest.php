@@ -327,19 +327,17 @@ class UpdateDrawingObjectOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateDrawingObjectOnline');
         }
-
         if ($this->drawing_object === null) {
             throw new \InvalidArgumentException('Missing the required parameter $drawing_object when calling updateDrawingObjectOnline');
         }
-
-        $this->drawing_object->validate();
-
         if ($this->image_file === null) {
             throw new \InvalidArgumentException('Missing the required parameter $image_file when calling updateDrawingObjectOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateDrawingObjectOnline');
+        }
+        if ($this->drawing_object !== null) {
+            $this->drawing_object->validate();
         }
 
 

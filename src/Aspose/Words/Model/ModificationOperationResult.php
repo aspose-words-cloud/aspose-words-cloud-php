@@ -184,6 +184,16 @@ class ModificationOperationResult implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['dest'])) {
+            $this->getDest()->validate();
+        }
+
+
+        if (isset($this->container['source'])) {
+            $this->getSource()->validate();
+        }
+
     }
 
     /*

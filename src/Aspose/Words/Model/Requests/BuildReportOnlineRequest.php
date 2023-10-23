@@ -159,16 +159,15 @@ class BuildReportOnlineRequest extends BaseApiRequest
         if ($this->template === null) {
             throw new \InvalidArgumentException('Missing the required parameter $template when calling buildReportOnline');
         }
-
         if ($this->data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $data when calling buildReportOnline');
         }
-
         if ($this->report_engine_settings === null) {
             throw new \InvalidArgumentException('Missing the required parameter $report_engine_settings when calling buildReportOnline');
         }
-
-        $this->report_engine_settings->validate();
+        if ($this->report_engine_settings !== null) {
+            $this->report_engine_settings->validate();
+        }
 
 
         $resourcePath = '/words/buildReport';

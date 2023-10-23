@@ -307,6 +307,27 @@ class DrawingObject extends DrawingObjectLink
     {
         parent::validate();
 
+
+        if (isset($this->container['render_links'])) {
+            foreach ($this->getRenderLinks() as &$elementRenderLinks)
+            {
+                if ($elementRenderLinks != null)
+                {
+                    $elementRenderLinks->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['ole_data_link'])) {
+            $this->getOleDataLink()->validate();
+        }
+
+
+        if (isset($this->container['image_data_link'])) {
+            $this->getImageDataLink()->validate();
+        }
+
         $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
         if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
             throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObject has invalid format.');

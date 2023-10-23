@@ -231,11 +231,9 @@ class GetDocumentHyperlinkByIndexRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentHyperlinkByIndex');
         }
-
         if ($this->hyperlink_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $hyperlink_index when calling getDocumentHyperlinkByIndex');
         }
-
 
         $resourcePath = '/words/{name}/hyperlinks/{hyperlinkIndex}';
         $formParams = [];

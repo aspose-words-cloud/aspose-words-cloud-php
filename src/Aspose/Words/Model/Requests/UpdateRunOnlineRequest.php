@@ -303,19 +303,17 @@ class UpdateRunOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateRunOnline');
         }
-
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling updateRunOnline');
         }
-
         if ($this->run === null) {
             throw new \InvalidArgumentException('Missing the required parameter $run when calling updateRunOnline');
         }
-
-        $this->run->validate();
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunOnline');
+        }
+        if ($this->run !== null) {
+            $this->run->validate();
         }
 
 

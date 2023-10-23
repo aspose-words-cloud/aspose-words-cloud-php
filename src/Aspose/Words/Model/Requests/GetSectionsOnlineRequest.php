@@ -160,7 +160,6 @@ class GetSectionsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getSectionsOnline');
         }
 
-
         $resourcePath = '/words/online/get/sections';
         $formParams = [];
         $filesContent = [];

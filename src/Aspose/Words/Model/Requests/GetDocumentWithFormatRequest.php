@@ -279,11 +279,9 @@ class GetDocumentWithFormatRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentWithFormat');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling getDocumentWithFormat');
         }
-
 
         $resourcePath = '/words/{name}';
         $formParams = [];

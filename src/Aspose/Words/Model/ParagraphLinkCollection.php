@@ -173,6 +173,17 @@ class ParagraphLinkCollection extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['paragraph_link_list'])) {
+            foreach ($this->getParagraphLinkList() as &$elementParagraphLinkList)
+            {
+                if ($elementParagraphLinkList != null)
+                {
+                    $elementParagraphLinkList->validate();
+                }
+            }
+        }
+
     }
 
     /*

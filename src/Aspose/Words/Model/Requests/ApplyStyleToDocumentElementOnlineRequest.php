@@ -279,16 +279,15 @@ class ApplyStyleToDocumentElementOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling applyStyleToDocumentElementOnline');
         }
-
         if ($this->styled_node_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $styled_node_path when calling applyStyleToDocumentElementOnline');
         }
-
         if ($this->style_apply === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_apply when calling applyStyleToDocumentElementOnline');
         }
-
-        $this->style_apply->validate();
+        if ($this->style_apply !== null) {
+            $this->style_apply->validate();
+        }
 
 
         $resourcePath = '/words/online/put/{styledNodePath}/style';

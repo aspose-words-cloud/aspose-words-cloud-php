@@ -207,11 +207,9 @@ class GetParagraphListFormatOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getParagraphListFormatOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getParagraphListFormatOnline');
         }
-
 
         $resourcePath = '/words/online/get/{nodePath}/paragraphs/{index}/listFormat';
         $formParams = [];

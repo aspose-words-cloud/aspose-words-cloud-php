@@ -232,7 +232,6 @@ class GetFormFieldsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getFormFields');
         }
 
-
         $resourcePath = '/words/{name}/{nodePath}/formfields';
         $formParams = [];
         $filesContent = [];

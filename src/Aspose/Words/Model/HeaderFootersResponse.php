@@ -173,6 +173,11 @@ class HeaderFootersResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['header_footers'])) {
+            $this->getHeaderFooters()->validate();
+        }
+
     }
 
     /*

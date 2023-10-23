@@ -208,7 +208,6 @@ class GetDocumentProtectionRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentProtection');
         }
 
-
         $resourcePath = '/words/{name}/protection';
         $formParams = [];
         $filesContent = [];

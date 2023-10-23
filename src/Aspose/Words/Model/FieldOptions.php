@@ -288,6 +288,11 @@ class FieldOptions implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['current_user'])) {
+            $this->getCurrentUser()->validate();
+        }
+
         $allowedValuesFieldIndexFormat = $this->getFieldIndexFormatAllowableValues();
         if (!in_array($this->container['field_index_format'], $allowedValuesFieldIndexFormat)) {
             throw new \InvalidArgumentException('Property FieldIndexFormat in FieldOptions has invalid format.');

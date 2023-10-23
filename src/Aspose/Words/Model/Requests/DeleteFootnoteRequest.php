@@ -327,11 +327,9 @@ class DeleteFootnoteRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteFootnote');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteFootnote');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/footnotes/{index}';
         $formParams = [];

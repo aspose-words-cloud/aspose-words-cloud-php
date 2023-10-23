@@ -173,6 +173,11 @@ class WordsApiErrorResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['error'])) {
+            $this->getError()->validate();
+        }
+
     }
 
     /*

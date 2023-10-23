@@ -173,6 +173,11 @@ class SectionPageSetupResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['page_setup'])) {
+            $this->getPageSetup()->validate();
+        }
+
     }
 
     /*

@@ -173,6 +173,17 @@ class SearchResultsCollection extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['results_list'])) {
+            foreach ($this->getResultsList() as &$elementResultsList)
+            {
+                if ($elementResultsList != null)
+                {
+                    $elementResultsList->validate();
+                }
+            }
+        }
+
     }
 
     /*

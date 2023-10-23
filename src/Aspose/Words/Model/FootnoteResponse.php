@@ -173,6 +173,11 @@ class FootnoteResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['footnote'])) {
+            $this->getFootnote()->validate();
+        }
+
     }
 
     /*

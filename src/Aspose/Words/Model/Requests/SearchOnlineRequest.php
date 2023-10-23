@@ -183,11 +183,9 @@ class SearchOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling searchOnline');
         }
-
         if ($this->pattern === null) {
             throw new \InvalidArgumentException('Missing the required parameter $pattern when calling searchOnline');
         }
-
 
         $resourcePath = '/words/online/get/search';
         $formParams = [];

@@ -173,6 +173,11 @@ class TableLinkCollectionResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['tables'])) {
+            $this->getTables()->validate();
+        }
+
     }
 
     /*

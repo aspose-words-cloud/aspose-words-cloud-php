@@ -255,12 +255,12 @@ class InsertWatermarkTextOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertWatermarkTextOnline');
         }
-
         if ($this->watermark_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $watermark_text when calling insertWatermarkTextOnline');
         }
-
-        $this->watermark_text->validate();
+        if ($this->watermark_text !== null) {
+            $this->watermark_text->validate();
+        }
 
 
         $resourcePath = '/words/online/post/watermarks/texts';

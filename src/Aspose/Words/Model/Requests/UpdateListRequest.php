@@ -327,16 +327,15 @@ class UpdateListRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateList');
         }
-
         if ($this->list_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_id when calling updateList');
         }
-
         if ($this->list_update === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_update when calling updateList');
         }
-
-        $this->list_update->validate();
+        if ($this->list_update !== null) {
+            $this->list_update->validate();
+        }
 
 
         $resourcePath = '/words/{name}/lists/{listId}';

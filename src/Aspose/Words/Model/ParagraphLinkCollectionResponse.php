@@ -173,6 +173,11 @@ class ParagraphLinkCollectionResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['paragraphs'])) {
+            $this->getParagraphs()->validate();
+        }
+
     }
 
     /*

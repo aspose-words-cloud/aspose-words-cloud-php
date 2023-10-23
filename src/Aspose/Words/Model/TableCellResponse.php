@@ -173,6 +173,11 @@ class TableCellResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['cell'])) {
+            $this->getCell()->validate();
+        }
+
     }
 
     /*

@@ -184,6 +184,11 @@ class DocumentPosition implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['node'])) {
+            $this->getNode()->validate();
+        }
+
     }
 
     /*

@@ -255,11 +255,9 @@ class GetRangeTextRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getRangeText');
         }
-
         if ($this->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling getRangeText');
         }
-
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];

@@ -179,6 +179,22 @@ class TableRow extends NodeLink
     {
         parent::validate();
 
+
+        if (isset($this->container['table_cell_list'])) {
+            foreach ($this->getTableCellList() as &$elementTableCellList)
+            {
+                if ($elementTableCellList != null)
+                {
+                    $elementTableCellList->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['row_format'])) {
+            $this->getRowFormat()->validate();
+        }
+
     }
 
     /*

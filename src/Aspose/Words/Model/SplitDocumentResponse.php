@@ -173,6 +173,11 @@ class SplitDocumentResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['split_result'])) {
+            $this->getSplitResult()->validate();
+        }
+
     }
 
     /*

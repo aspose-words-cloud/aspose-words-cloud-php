@@ -232,7 +232,6 @@ class GetBordersRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getBorders');
         }
 
-
         $resourcePath = '/words/{name}/{nodePath}/borders';
         $formParams = [];
         $filesContent = [];

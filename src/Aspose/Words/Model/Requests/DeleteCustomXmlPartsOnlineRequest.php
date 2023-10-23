@@ -232,7 +232,6 @@ class DeleteCustomXmlPartsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteCustomXmlPartsOnline');
         }
 
-
         $resourcePath = '/words/online/delete/customXmlParts';
         $formParams = [];
         $filesContent = [];

@@ -232,7 +232,6 @@ class GetOfficeMathObjectsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getOfficeMathObjects');
         }
 
-
         $resourcePath = '/words/{name}/{nodePath}/OfficeMathObjects';
         $formParams = [];
         $filesContent = [];

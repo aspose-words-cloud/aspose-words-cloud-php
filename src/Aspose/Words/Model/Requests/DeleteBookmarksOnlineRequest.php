@@ -232,7 +232,6 @@ class DeleteBookmarksOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteBookmarksOnline');
         }
 
-
         $resourcePath = '/words/online/delete/bookmarks';
         $formParams = [];
         $filesContent = [];

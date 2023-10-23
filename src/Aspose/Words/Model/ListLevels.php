@@ -173,6 +173,17 @@ class ListLevels extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['list_level'])) {
+            foreach ($this->getListLevel() as &$elementListLevel)
+            {
+                if ($elementListLevel != null)
+                {
+                    $elementListLevel->validate();
+                }
+            }
+        }
+
     }
 
     /*

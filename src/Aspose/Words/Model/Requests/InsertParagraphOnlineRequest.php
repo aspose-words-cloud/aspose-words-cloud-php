@@ -303,12 +303,12 @@ class InsertParagraphOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertParagraphOnline');
         }
-
         if ($this->paragraph === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph when calling insertParagraphOnline');
         }
-
-        $this->paragraph->validate();
+        if ($this->paragraph !== null) {
+            $this->paragraph->validate();
+        }
 
 
         $resourcePath = '/words/online/post/{nodePath}/paragraphs';

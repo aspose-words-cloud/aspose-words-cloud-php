@@ -173,6 +173,11 @@ class TableRowFormatResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['row_format'])) {
+            $this->getRowFormat()->validate();
+        }
+
     }
 
     /*

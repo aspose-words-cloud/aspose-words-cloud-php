@@ -327,15 +327,12 @@ class RenderTableRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling renderTable');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderTable');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderTable');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}/render';
         $formParams = [];

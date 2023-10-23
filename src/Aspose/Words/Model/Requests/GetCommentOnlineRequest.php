@@ -183,11 +183,9 @@ class GetCommentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getCommentOnline');
         }
-
         if ($this->comment_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment_index when calling getCommentOnline');
         }
-
 
         $resourcePath = '/words/online/get/comments/{commentIndex}';
         $formParams = [];

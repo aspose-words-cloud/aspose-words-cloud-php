@@ -136,7 +136,6 @@ class DeleteFileRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $path when calling deleteFile');
         }
 
-
         $resourcePath = '/words/storage/file/{path}';
         $formParams = [];
         $filesContent = [];

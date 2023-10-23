@@ -231,11 +231,9 @@ class GetCustomXmlPartRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getCustomXmlPart');
         }
-
         if ($this->custom_xml_part_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part_index when calling getCustomXmlPart');
         }
-
 
         $resourcePath = '/words/{name}/customXmlParts/{customXmlPartIndex}';
         $formParams = [];

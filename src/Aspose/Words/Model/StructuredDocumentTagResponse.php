@@ -173,6 +173,11 @@ class StructuredDocumentTagResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['structured_document_tag'])) {
+            $this->getStructuredDocumentTag()->validate();
+        }
+
     }
 
     /*

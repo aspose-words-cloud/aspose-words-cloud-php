@@ -173,6 +173,17 @@ class Lists extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['list_info'])) {
+            foreach ($this->getListInfo() as &$elementListInfo)
+            {
+                if ($elementListInfo != null)
+                {
+                    $elementListInfo->validate();
+                }
+            }
+        }
+
     }
 
     /*

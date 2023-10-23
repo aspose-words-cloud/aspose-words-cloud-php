@@ -173,6 +173,17 @@ class TabStopsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['tab_stops'])) {
+            foreach ($this->getTabStops() as &$elementTabStops)
+            {
+                if ($elementTabStops != null)
+                {
+                    $elementTabStops->validate();
+                }
+            }
+        }
+
     }
 
     /*

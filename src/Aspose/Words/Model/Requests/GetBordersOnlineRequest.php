@@ -184,7 +184,6 @@ class GetBordersOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getBordersOnline');
         }
 
-
         $resourcePath = '/words/online/get/{nodePath}/borders';
         $formParams = [];
         $filesContent = [];

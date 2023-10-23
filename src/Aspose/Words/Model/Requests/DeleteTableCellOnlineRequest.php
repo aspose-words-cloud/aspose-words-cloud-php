@@ -279,15 +279,12 @@ class DeleteTableCellOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteTableCellOnline');
         }
-
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling deleteTableCellOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableCellOnline');
         }
-
 
         $resourcePath = '/words/online/delete/{tableRowPath}/cells/{index}';
         $formParams = [];

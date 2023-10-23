@@ -300,6 +300,11 @@ class Border extends LinkElement
             throw new \InvalidArgumentException('Property BorderType in Border has invalid format.');
         }
 
+
+        if (isset($this->container['color'])) {
+            $this->getColor()->validate();
+        }
+
         $allowedValuesLineStyle = $this->getLineStyleAllowableValues();
         if (!in_array($this->container['line_style'], $allowedValuesLineStyle)) {
             throw new \InvalidArgumentException('Property LineStyle in Border has invalid format.');

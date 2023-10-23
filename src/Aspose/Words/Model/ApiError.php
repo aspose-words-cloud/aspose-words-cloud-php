@@ -202,6 +202,11 @@ class ApiError implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['inner_error'])) {
+            $this->getInnerError()->validate();
+        }
+
     }
 
     /*

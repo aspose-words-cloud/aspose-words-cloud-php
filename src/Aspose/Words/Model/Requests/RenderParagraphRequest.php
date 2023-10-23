@@ -327,15 +327,12 @@ class RenderParagraphRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling renderParagraph');
         }
-
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling renderParagraph');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling renderParagraph');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/render';
         $formParams = [];

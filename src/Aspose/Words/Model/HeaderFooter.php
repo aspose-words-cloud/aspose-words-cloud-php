@@ -185,6 +185,27 @@ class HeaderFooter extends HeaderFooterLink
     {
         parent::validate();
 
+
+        if (isset($this->container['child_nodes'])) {
+            foreach ($this->getChildNodes() as &$elementChildNodes)
+            {
+                if ($elementChildNodes != null)
+                {
+                    $elementChildNodes->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['paragraphs'])) {
+            $this->getParagraphs()->validate();
+        }
+
+
+        if (isset($this->container['drawing_objects'])) {
+            $this->getDrawingObjects()->validate();
+        }
+
     }
 
     /*

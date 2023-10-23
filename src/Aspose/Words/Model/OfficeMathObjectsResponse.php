@@ -173,6 +173,11 @@ class OfficeMathObjectsResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['office_math_objects'])) {
+            $this->getOfficeMathObjects()->validate();
+        }
+
     }
 
     /*

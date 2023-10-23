@@ -202,6 +202,11 @@ class DocumentStatData implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['footnotes_stat_data'])) {
+            $this->getFootnotesStatData()->validate();
+        }
+
         if (!isset($this->container['page_count'])) {
             throw new \InvalidArgumentException('Property PageCount in DocumentStatData is required.');
         }
@@ -212,6 +217,17 @@ class DocumentStatData implements ArrayAccess
 
         if (!isset($this->container['word_count'])) {
             throw new \InvalidArgumentException('Property WordCount in DocumentStatData is required.');
+        }
+
+
+        if (isset($this->container['page_stat_data'])) {
+            foreach ($this->getPageStatData() as &$elementPageStatData)
+            {
+                if ($elementPageStatData != null)
+                {
+                    $elementPageStatData->validate();
+                }
+            }
         }
 
     }

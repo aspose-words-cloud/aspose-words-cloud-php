@@ -173,6 +173,11 @@ class HyperlinkResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['hyperlink'])) {
+            $this->getHyperlink()->validate();
+        }
+
     }
 
     /*

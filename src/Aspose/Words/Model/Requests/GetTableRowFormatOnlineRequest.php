@@ -207,15 +207,12 @@ class GetTableRowFormatOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getTableRowFormatOnline');
         }
-
         if ($this->table_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_path when calling getTableRowFormatOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableRowFormatOnline');
         }
-
 
         $resourcePath = '/words/online/get/{tablePath}/rows/{index}/rowformat';
         $formParams = [];

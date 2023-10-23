@@ -255,12 +255,12 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling compareDocumentOnline');
         }
-
         if ($this->compare_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $compare_data when calling compareDocumentOnline');
         }
-
-        $this->compare_data->validate();
+        if ($this->compare_data !== null) {
+            $this->compare_data->validate();
+        }
 
 
         $resourcePath = '/words/online/put/compareDocument';

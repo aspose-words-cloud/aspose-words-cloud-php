@@ -255,11 +255,9 @@ class GetDocumentDrawingObjectOleDataRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentDrawingObjectOleData');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getDocumentDrawingObjectOleData');
         }
-
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}/oleData';
         $formParams = [];

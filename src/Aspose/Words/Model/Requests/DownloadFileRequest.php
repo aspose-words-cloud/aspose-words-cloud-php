@@ -136,7 +136,6 @@ class DownloadFileRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $path when calling downloadFile');
         }
 
-
         $resourcePath = '/words/storage/file/{path}';
         $formParams = [];
         $filesContent = [];

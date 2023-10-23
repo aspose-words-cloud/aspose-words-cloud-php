@@ -190,6 +190,27 @@ class SplitDocumentResult implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['source_document'])) {
+            $this->getSourceDocument()->validate();
+        }
+
+
+        if (isset($this->container['zipped_pages'])) {
+            $this->getZippedPages()->validate();
+        }
+
+
+        if (isset($this->container['pages'])) {
+            foreach ($this->getPages() as &$elementPages)
+            {
+                if ($elementPages != null)
+                {
+                    $elementPages->validate();
+                }
+            }
+        }
+
     }
 
     /*

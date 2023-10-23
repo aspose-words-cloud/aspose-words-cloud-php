@@ -279,11 +279,9 @@ class RemoveRangeRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling removeRange');
         }
-
         if ($this->range_start_identifier === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_start_identifier when calling removeRange');
         }
-
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];

@@ -173,6 +173,17 @@ class TableLinkCollection extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['table_link_list'])) {
+            foreach ($this->getTableLinkList() as &$elementTableLinkList)
+            {
+                if ($elementTableLinkList != null)
+                {
+                    $elementTableLinkList->validate();
+                }
+            }
+        }
+
     }
 
     /*

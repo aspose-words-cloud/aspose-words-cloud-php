@@ -231,11 +231,9 @@ class GetRunsRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getRuns');
         }
-
         if ($this->paragraph_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling getRuns');
         }
-
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs';
         $formParams = [];

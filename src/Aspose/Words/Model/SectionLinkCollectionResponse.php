@@ -173,6 +173,11 @@ class SectionLinkCollectionResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['sections'])) {
+            $this->getSections()->validate();
+        }
+
     }
 
     /*

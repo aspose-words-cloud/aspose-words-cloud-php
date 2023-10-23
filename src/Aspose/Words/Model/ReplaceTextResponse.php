@@ -179,6 +179,11 @@ class ReplaceTextResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['document_link'])) {
+            $this->getDocumentLink()->validate();
+        }
+
         if (!isset($this->container['matches'])) {
             throw new \InvalidArgumentException('Property Matches in ReplaceTextResponse is required.');
         }

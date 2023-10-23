@@ -279,11 +279,9 @@ class DeleteTableOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteTableOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteTableOnline');
         }
-
 
         $resourcePath = '/words/online/delete/{nodePath}/tables/{index}';
         $formParams = [];

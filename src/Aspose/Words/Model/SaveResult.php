@@ -190,6 +190,27 @@ class SaveResult implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['dest_document'])) {
+            $this->getDestDocument()->validate();
+        }
+
+
+        if (isset($this->container['source_document'])) {
+            $this->getSourceDocument()->validate();
+        }
+
+
+        if (isset($this->container['additional_items'])) {
+            foreach ($this->getAdditionalItems() as &$elementAdditionalItems)
+            {
+                if ($elementAdditionalItems != null)
+                {
+                    $elementAdditionalItems->validate();
+                }
+            }
+        }
+
     }
 
     /*

@@ -184,7 +184,6 @@ class RejectAllRevisionsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling rejectAllRevisionsOnline');
         }
 
-
         $resourcePath = '/words/online/put/revisions/rejectAll';
         $formParams = [];
         $filesContent = [];

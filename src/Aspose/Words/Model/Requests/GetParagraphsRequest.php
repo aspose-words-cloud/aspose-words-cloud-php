@@ -232,7 +232,6 @@ class GetParagraphsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getParagraphs');
         }
 
-
         $resourcePath = '/words/{name}/{nodePath}/paragraphs';
         $formParams = [];
         $filesContent = [];

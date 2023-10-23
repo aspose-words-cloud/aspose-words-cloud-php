@@ -224,12 +224,27 @@ class ReportEngineSettings implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['csv_data_load_options'])) {
+            $this->getCsvDataLoadOptions()->validate();
+        }
+
         $allowedValuesDataSourceType = $this->getDataSourceTypeAllowableValues();
         if (!in_array($this->container['data_source_type'], $allowedValuesDataSourceType)) {
             throw new \InvalidArgumentException('Property DataSourceType in ReportEngineSettings has invalid format.');
         }
         if (!isset($this->container['data_source_type'])) {
             throw new \InvalidArgumentException('Property DataSourceType in ReportEngineSettings is required.');
+        }
+
+
+        if (isset($this->container['json_data_load_options'])) {
+            $this->getJsonDataLoadOptions()->validate();
+        }
+
+
+        if (isset($this->container['xml_data_load_options'])) {
+            $this->getXmlDataLoadOptions()->validate();
         }
 
     }

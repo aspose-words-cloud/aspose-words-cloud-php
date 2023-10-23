@@ -232,7 +232,6 @@ class GetDocumentDrawingObjectsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getDocumentDrawingObjects');
         }
 
-
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects';
         $formParams = [];
         $filesContent = [];

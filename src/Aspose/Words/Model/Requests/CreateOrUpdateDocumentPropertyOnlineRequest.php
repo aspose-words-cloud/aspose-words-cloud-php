@@ -279,16 +279,15 @@ class CreateOrUpdateDocumentPropertyOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling createOrUpdateDocumentPropertyOnline');
         }
-
         if ($this->property_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling createOrUpdateDocumentPropertyOnline');
         }
-
         if ($this->property === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property when calling createOrUpdateDocumentPropertyOnline');
         }
-
-        $this->property->validate();
+        if ($this->property !== null) {
+            $this->property->validate();
+        }
 
 
         $resourcePath = '/words/online/put/documentProperties/{propertyName}';

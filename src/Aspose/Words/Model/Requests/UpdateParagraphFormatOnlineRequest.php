@@ -303,15 +303,14 @@ class UpdateParagraphFormatOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateParagraphFormatOnline');
         }
-
         if ($this->paragraph_format_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph_format_dto when calling updateParagraphFormatOnline');
         }
-
-        $this->paragraph_format_dto->validate();
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateParagraphFormatOnline');
+        }
+        if ($this->paragraph_format_dto !== null) {
+            $this->paragraph_format_dto->validate();
         }
 
 

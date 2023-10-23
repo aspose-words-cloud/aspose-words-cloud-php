@@ -207,15 +207,12 @@ class GetTableCellOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling getTableCellOnline');
         }
-
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling getTableCellOnline');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCellOnline');
         }
-
 
         $resourcePath = '/words/online/get/{tableRowPath}/cells/{index}';
         $formParams = [];

@@ -232,7 +232,6 @@ class UpdateFieldsRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $name when calling updateFields');
         }
 
-
         $resourcePath = '/words/{name}/updateFields';
         $formParams = [];
         $filesContent = [];

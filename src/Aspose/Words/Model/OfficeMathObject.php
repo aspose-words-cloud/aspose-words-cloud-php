@@ -297,6 +297,11 @@ class OfficeMathObject extends OfficeMathLink
     {
         parent::validate();
 
+
+        if (isset($this->container['content'])) {
+            $this->getContent()->validate();
+        }
+
         $allowedValuesDisplayType = $this->getDisplayTypeAllowableValues();
         if (!in_array($this->container['display_type'], $allowedValuesDisplayType)) {
             throw new \InvalidArgumentException('Property DisplayType in OfficeMathObject has invalid format.');

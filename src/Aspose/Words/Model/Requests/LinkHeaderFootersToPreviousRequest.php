@@ -327,11 +327,9 @@ class LinkHeaderFootersToPreviousRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling linkHeaderFootersToPrevious');
         }
-
         if ($this->section_index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $section_index when calling linkHeaderFootersToPrevious');
         }
-
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}/link';
         $formParams = [];

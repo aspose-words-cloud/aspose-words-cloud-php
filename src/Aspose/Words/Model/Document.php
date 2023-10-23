@@ -260,6 +260,22 @@ class Document implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['links'])) {
+            foreach ($this->getLinks() as &$elementLinks)
+            {
+                if ($elementLinks != null)
+                {
+                    $elementLinks->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['document_properties'])) {
+            $this->getDocumentProperties()->validate();
+        }
+
         if (!isset($this->container['is_encrypted'])) {
             throw new \InvalidArgumentException('Property IsEncrypted in Document is required.');
         }

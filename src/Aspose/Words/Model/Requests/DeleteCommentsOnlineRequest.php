@@ -232,7 +232,6 @@ class DeleteCommentsOnlineRequest extends BaseApiRequest
             throw new \InvalidArgumentException('Missing the required parameter $document when calling deleteCommentsOnline');
         }
 
-
         $resourcePath = '/words/online/delete/comments';
         $formParams = [];
         $filesContent = [];

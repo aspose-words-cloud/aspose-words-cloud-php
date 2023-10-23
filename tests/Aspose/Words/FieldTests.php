@@ -402,6 +402,8 @@ class FieldTests extends BaseTestContext
         $requestPageNumber = new PageNumber(array(
             "alignment" => "center",
             "format" => "{PAGE} of {NUMPAGES}",
+            "is_top" => true,
+            "set_page_number_on_first_page" => true,
         ));
         $request = new InsertPageNumbersRequest(
             $remoteFileName,
@@ -433,6 +435,8 @@ class FieldTests extends BaseTestContext
         $requestPageNumber = new PageNumber(array(
             "alignment" => "center",
             "format" => "{PAGE} of {NUMPAGES}",
+            "is_top" => true,
+            "set_page_number_on_first_page" => true,
         ));
         $request = new InsertPageNumbersOnlineRequest(
             $requestDocument,

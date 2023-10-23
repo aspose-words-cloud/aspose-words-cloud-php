@@ -179,6 +179,22 @@ class Table extends NodeLink
     {
         parent::validate();
 
+
+        if (isset($this->container['table_row_list'])) {
+            foreach ($this->getTableRowList() as &$elementTableRowList)
+            {
+                if ($elementTableRowList != null)
+                {
+                    $elementTableRowList->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['table_properties'])) {
+            $this->getTableProperties()->validate();
+        }
+
     }
 
     /*

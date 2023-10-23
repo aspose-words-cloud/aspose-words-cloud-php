@@ -303,15 +303,14 @@ class UpdateBorderOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling updateBorderOnline');
         }
-
         if ($this->border_properties === null) {
             throw new \InvalidArgumentException('Missing the required parameter $border_properties when calling updateBorderOnline');
         }
-
-        $this->border_properties->validate();
-
         if ($this->border_type === null) {
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling updateBorderOnline');
+        }
+        if ($this->border_properties !== null) {
+            $this->border_properties->validate();
         }
 
 

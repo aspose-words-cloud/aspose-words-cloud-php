@@ -1206,6 +1206,11 @@ abstract class ParagraphFormatBase extends LinkElement
             throw new \InvalidArgumentException('Property StyleIdentifier in ParagraphFormatBase has invalid format.');
         }
 
+
+        if (isset($this->container['shading'])) {
+            $this->getShading()->validate();
+        }
+
     }
 
     /*

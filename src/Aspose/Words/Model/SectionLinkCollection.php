@@ -173,6 +173,17 @@ class SectionLinkCollection extends LinkElement
     {
         parent::validate();
 
+
+        if (isset($this->container['section_link_list'])) {
+            foreach ($this->getSectionLinkList() as &$elementSectionLinkList)
+            {
+                if ($elementSectionLinkList != null)
+                {
+                    $elementSectionLinkList->validate();
+                }
+            }
+        }
+
     }
 
     /*

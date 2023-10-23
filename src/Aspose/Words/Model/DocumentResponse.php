@@ -173,6 +173,11 @@ class DocumentResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['document'])) {
+            $this->getDocument()->validate();
+        }
+
     }
 
     /*

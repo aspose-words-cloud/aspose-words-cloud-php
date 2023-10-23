@@ -303,11 +303,9 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteDocumentProperty');
         }
-
         if ($this->property_name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property_name when calling deleteDocumentProperty');
         }
-
 
         $resourcePath = '/words/{name}/documentProperties/{propertyName}';
         $formParams = [];

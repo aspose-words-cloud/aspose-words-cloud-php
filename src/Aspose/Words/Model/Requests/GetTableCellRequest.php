@@ -255,15 +255,12 @@ class GetTableCellRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableCell');
         }
-
         if ($this->table_row_path === null) {
             throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling getTableCell');
         }
-
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling getTableCell');
         }
-
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}';
         $formParams = [];

@@ -173,6 +173,11 @@ class FieldResponse extends WordsResponse
     {
         parent::validate();
 
+
+        if (isset($this->container['field'])) {
+            $this->getField()->validate();
+        }
+
     }
 
     /*

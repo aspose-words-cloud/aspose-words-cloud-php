@@ -300,6 +300,11 @@ class DrawingObjectInsert implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['position'])) {
+            $this->getPosition()->validate();
+        }
+
         $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
         if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
             throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectInsert has invalid format.');

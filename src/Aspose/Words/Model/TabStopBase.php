@@ -236,17 +236,21 @@ abstract class TabStopBase implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesAlignment = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
-            throw new \InvalidArgumentException('Property Alignment in TabStopBase has invalid format.');
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in TabStopBase has invalid format.');
+            }
         }
         if (!isset($this->container['alignment'])) {
             throw new \InvalidArgumentException('Property Alignment in TabStopBase is required.');
         }
 
-        $allowedValuesLeader = $this->getLeaderAllowableValues();
-        if (!in_array($this->container['leader'], $allowedValuesLeader)) {
-            throw new \InvalidArgumentException('Property Leader in TabStopBase has invalid format.');
+        if (isset($this->container['leader'])) {
+            $allowedValuesLeader = $this->getLeaderAllowableValues();
+            if (!in_array($this->container['leader'], $allowedValuesLeader)) {
+                throw new \InvalidArgumentException('Property Leader in TabStopBase has invalid format.');
+            }
         }
         if (!isset($this->container['leader'])) {
             throw new \InvalidArgumentException('Property Leader in TabStopBase is required.');

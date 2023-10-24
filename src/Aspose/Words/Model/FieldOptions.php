@@ -293,14 +293,18 @@ class FieldOptions implements ArrayAccess
             $this->getCurrentUser()->validate();
         }
 
-        $allowedValuesFieldIndexFormat = $this->getFieldIndexFormatAllowableValues();
-        if (!in_array($this->container['field_index_format'], $allowedValuesFieldIndexFormat)) {
-            throw new \InvalidArgumentException('Property FieldIndexFormat in FieldOptions has invalid format.');
+        if (isset($this->container['field_index_format'])) {
+            $allowedValuesFieldIndexFormat = $this->getFieldIndexFormatAllowableValues();
+            if (!in_array($this->container['field_index_format'], $allowedValuesFieldIndexFormat)) {
+                throw new \InvalidArgumentException('Property FieldIndexFormat in FieldOptions has invalid format.');
+            }
         }
 
-        $allowedValuesFieldUpdateCultureSource = $this->getFieldUpdateCultureSourceAllowableValues();
-        if (!in_array($this->container['field_update_culture_source'], $allowedValuesFieldUpdateCultureSource)) {
-            throw new \InvalidArgumentException('Property FieldUpdateCultureSource in FieldOptions has invalid format.');
+        if (isset($this->container['field_update_culture_source'])) {
+            $allowedValuesFieldUpdateCultureSource = $this->getFieldUpdateCultureSourceAllowableValues();
+            if (!in_array($this->container['field_update_culture_source'], $allowedValuesFieldUpdateCultureSource)) {
+                throw new \InvalidArgumentException('Property FieldUpdateCultureSource in FieldOptions has invalid format.');
+            }
         }
 
     }

@@ -204,9 +204,11 @@ class OptimizationOptions implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesMsWordVersion = $this->getMsWordVersionAllowableValues();
-        if (!in_array($this->container['ms_word_version'], $allowedValuesMsWordVersion)) {
-            throw new \InvalidArgumentException('Property MsWordVersion in OptimizationOptions has invalid format.');
+        if (isset($this->container['ms_word_version'])) {
+            $allowedValuesMsWordVersion = $this->getMsWordVersionAllowableValues();
+            if (!in_array($this->container['ms_word_version'], $allowedValuesMsWordVersion)) {
+                throw new \InvalidArgumentException('Property MsWordVersion in OptimizationOptions has invalid format.');
+            }
         }
         if (!isset($this->container['ms_word_version'])) {
             throw new \InvalidArgumentException('Property MsWordVersion in OptimizationOptions is required.');

@@ -282,14 +282,18 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesFontFormat = $this->getFontFormatAllowableValues();
-        if (!in_array($this->container['font_format'], $allowedValuesFontFormat)) {
-            throw new \InvalidArgumentException('Property FontFormat in HtmlFixedSaveOptionsData has invalid format.');
+        if (isset($this->container['font_format'])) {
+            $allowedValuesFontFormat = $this->getFontFormatAllowableValues();
+            if (!in_array($this->container['font_format'], $allowedValuesFontFormat)) {
+                throw new \InvalidArgumentException('Property FontFormat in HtmlFixedSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesPageHorizontalAlignment = $this->getPageHorizontalAlignmentAllowableValues();
-        if (!in_array($this->container['page_horizontal_alignment'], $allowedValuesPageHorizontalAlignment)) {
-            throw new \InvalidArgumentException('Property PageHorizontalAlignment in HtmlFixedSaveOptionsData has invalid format.');
+        if (isset($this->container['page_horizontal_alignment'])) {
+            $allowedValuesPageHorizontalAlignment = $this->getPageHorizontalAlignmentAllowableValues();
+            if (!in_array($this->container['page_horizontal_alignment'], $allowedValuesPageHorizontalAlignment)) {
+                throw new \InvalidArgumentException('Property PageHorizontalAlignment in HtmlFixedSaveOptionsData has invalid format.');
+            }
         }
 
     }

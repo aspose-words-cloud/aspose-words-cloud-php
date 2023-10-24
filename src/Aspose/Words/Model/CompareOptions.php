@@ -246,9 +246,11 @@ class CompareOptions implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesTarget = $this->getTargetAllowableValues();
-        if (!in_array($this->container['target'], $allowedValuesTarget)) {
-            throw new \InvalidArgumentException('Property Target in CompareOptions has invalid format.');
+        if (isset($this->container['target'])) {
+            $allowedValuesTarget = $this->getTargetAllowableValues();
+            if (!in_array($this->container['target'], $allowedValuesTarget)) {
+                throw new \InvalidArgumentException('Property Target in CompareOptions has invalid format.');
+            }
         }
 
     }

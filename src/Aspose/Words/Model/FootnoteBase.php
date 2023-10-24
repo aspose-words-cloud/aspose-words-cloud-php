@@ -215,9 +215,11 @@ abstract class FootnoteBase implements ArrayAccess
             $this->getPosition()->validate();
         }
 
-        $allowedValuesFootnoteType = $this->getFootnoteTypeAllowableValues();
-        if (!in_array($this->container['footnote_type'], $allowedValuesFootnoteType)) {
-            throw new \InvalidArgumentException('Property FootnoteType in FootnoteBase has invalid format.');
+        if (isset($this->container['footnote_type'])) {
+            $allowedValuesFootnoteType = $this->getFootnoteTypeAllowableValues();
+            if (!in_array($this->container['footnote_type'], $allowedValuesFootnoteType)) {
+                throw new \InvalidArgumentException('Property FootnoteType in FootnoteBase has invalid format.');
+            }
         }
 
     }

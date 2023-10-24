@@ -206,9 +206,11 @@ class OdtSaveOptionsData extends SaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesMeasureUnit = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValuesMeasureUnit)) {
-            throw new \InvalidArgumentException('Property MeasureUnit in OdtSaveOptionsData has invalid format.');
+        if (isset($this->container['measure_unit'])) {
+            $allowedValuesMeasureUnit = $this->getMeasureUnitAllowableValues();
+            if (!in_array($this->container['measure_unit'], $allowedValuesMeasureUnit)) {
+                throw new \InvalidArgumentException('Property MeasureUnit in OdtSaveOptionsData has invalid format.');
+            }
         }
 
     }

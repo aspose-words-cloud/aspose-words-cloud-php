@@ -299,14 +299,18 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesImageColorMode = $this->getImageColorModeAllowableValues();
-        if (!in_array($this->container['image_color_mode'], $allowedValuesImageColorMode)) {
-            throw new \InvalidArgumentException('Property ImageColorMode in ImageSaveOptionsData has invalid format.');
+        if (isset($this->container['image_color_mode'])) {
+            $allowedValuesImageColorMode = $this->getImageColorModeAllowableValues();
+            if (!in_array($this->container['image_color_mode'], $allowedValuesImageColorMode)) {
+                throw new \InvalidArgumentException('Property ImageColorMode in ImageSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesPixelFormat = $this->getPixelFormatAllowableValues();
-        if (!in_array($this->container['pixel_format'], $allowedValuesPixelFormat)) {
-            throw new \InvalidArgumentException('Property PixelFormat in ImageSaveOptionsData has invalid format.');
+        if (isset($this->container['pixel_format'])) {
+            $allowedValuesPixelFormat = $this->getPixelFormatAllowableValues();
+            if (!in_array($this->container['pixel_format'], $allowedValuesPixelFormat)) {
+                throw new \InvalidArgumentException('Property PixelFormat in ImageSaveOptionsData has invalid format.');
+            }
         }
 
     }

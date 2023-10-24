@@ -229,9 +229,11 @@ class ReportEngineSettings implements ArrayAccess
             $this->getCsvDataLoadOptions()->validate();
         }
 
-        $allowedValuesDataSourceType = $this->getDataSourceTypeAllowableValues();
-        if (!in_array($this->container['data_source_type'], $allowedValuesDataSourceType)) {
-            throw new \InvalidArgumentException('Property DataSourceType in ReportEngineSettings has invalid format.');
+        if (isset($this->container['data_source_type'])) {
+            $allowedValuesDataSourceType = $this->getDataSourceTypeAllowableValues();
+            if (!in_array($this->container['data_source_type'], $allowedValuesDataSourceType)) {
+                throw new \InvalidArgumentException('Property DataSourceType in ReportEngineSettings has invalid format.');
+            }
         }
         if (!isset($this->container['data_source_type'])) {
             throw new \InvalidArgumentException('Property DataSourceType in ReportEngineSettings is required.');

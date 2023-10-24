@@ -302,19 +302,25 @@ class OfficeMathObject extends OfficeMathLink
             $this->getContent()->validate();
         }
 
-        $allowedValuesDisplayType = $this->getDisplayTypeAllowableValues();
-        if (!in_array($this->container['display_type'], $allowedValuesDisplayType)) {
-            throw new \InvalidArgumentException('Property DisplayType in OfficeMathObject has invalid format.');
+        if (isset($this->container['display_type'])) {
+            $allowedValuesDisplayType = $this->getDisplayTypeAllowableValues();
+            if (!in_array($this->container['display_type'], $allowedValuesDisplayType)) {
+                throw new \InvalidArgumentException('Property DisplayType in OfficeMathObject has invalid format.');
+            }
         }
 
-        $allowedValuesJustification = $this->getJustificationAllowableValues();
-        if (!in_array($this->container['justification'], $allowedValuesJustification)) {
-            throw new \InvalidArgumentException('Property Justification in OfficeMathObject has invalid format.');
+        if (isset($this->container['justification'])) {
+            $allowedValuesJustification = $this->getJustificationAllowableValues();
+            if (!in_array($this->container['justification'], $allowedValuesJustification)) {
+                throw new \InvalidArgumentException('Property Justification in OfficeMathObject has invalid format.');
+            }
         }
 
-        $allowedValuesMathObjectType = $this->getMathObjectTypeAllowableValues();
-        if (!in_array($this->container['math_object_type'], $allowedValuesMathObjectType)) {
-            throw new \InvalidArgumentException('Property MathObjectType in OfficeMathObject has invalid format.');
+        if (isset($this->container['math_object_type'])) {
+            $allowedValuesMathObjectType = $this->getMathObjectTypeAllowableValues();
+            if (!in_array($this->container['math_object_type'], $allowedValuesMathObjectType)) {
+                throw new \InvalidArgumentException('Property MathObjectType in OfficeMathObject has invalid format.');
+            }
         }
 
     }

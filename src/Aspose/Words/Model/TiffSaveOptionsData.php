@@ -220,14 +220,18 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesTiffBinarizationMethod = $this->getTiffBinarizationMethodAllowableValues();
-        if (!in_array($this->container['tiff_binarization_method'], $allowedValuesTiffBinarizationMethod)) {
-            throw new \InvalidArgumentException('Property TiffBinarizationMethod in TiffSaveOptionsData has invalid format.');
+        if (isset($this->container['tiff_binarization_method'])) {
+            $allowedValuesTiffBinarizationMethod = $this->getTiffBinarizationMethodAllowableValues();
+            if (!in_array($this->container['tiff_binarization_method'], $allowedValuesTiffBinarizationMethod)) {
+                throw new \InvalidArgumentException('Property TiffBinarizationMethod in TiffSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesTiffCompression = $this->getTiffCompressionAllowableValues();
-        if (!in_array($this->container['tiff_compression'], $allowedValuesTiffCompression)) {
-            throw new \InvalidArgumentException('Property TiffCompression in TiffSaveOptionsData has invalid format.');
+        if (isset($this->container['tiff_compression'])) {
+            $allowedValuesTiffCompression = $this->getTiffCompressionAllowableValues();
+            if (!in_array($this->container['tiff_compression'], $allowedValuesTiffCompression)) {
+                throw new \InvalidArgumentException('Property TiffCompression in TiffSaveOptionsData has invalid format.');
+            }
         }
 
     }

@@ -207,9 +207,11 @@ class TableRowFormat extends LinkElement
     {
         parent::validate();
 
-        $allowedValuesHeightRule = $this->getHeightRuleAllowableValues();
-        if (!in_array($this->container['height_rule'], $allowedValuesHeightRule)) {
-            throw new \InvalidArgumentException('Property HeightRule in TableRowFormat has invalid format.');
+        if (isset($this->container['height_rule'])) {
+            $allowedValuesHeightRule = $this->getHeightRuleAllowableValues();
+            if (!in_array($this->container['height_rule'], $allowedValuesHeightRule)) {
+                throw new \InvalidArgumentException('Property HeightRule in TableRowFormat has invalid format.');
+            }
         }
 
     }

@@ -195,9 +195,11 @@ class DocumentEntry extends BaseEntry
     {
         parent::validate();
 
-        $allowedValuesImportFormatMode = $this->getImportFormatModeAllowableValues();
-        if (!in_array($this->container['import_format_mode'], $allowedValuesImportFormatMode)) {
-            throw new \InvalidArgumentException('Property ImportFormatMode in DocumentEntry has invalid format.');
+        if (isset($this->container['import_format_mode'])) {
+            $allowedValuesImportFormatMode = $this->getImportFormatModeAllowableValues();
+            if (!in_array($this->container['import_format_mode'], $allowedValuesImportFormatMode)) {
+                throw new \InvalidArgumentException('Property ImportFormatMode in DocumentEntry has invalid format.');
+            }
         }
         if (!isset($this->container['import_format_mode'])) {
             throw new \InvalidArgumentException('Property ImportFormatMode in DocumentEntry is required.');

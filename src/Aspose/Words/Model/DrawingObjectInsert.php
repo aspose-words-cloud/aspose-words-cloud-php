@@ -305,9 +305,11 @@ class DrawingObjectInsert implements ArrayAccess
             $this->getPosition()->validate();
         }
 
-        $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
-        if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
-            throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectInsert has invalid format.');
+        if (isset($this->container['relative_horizontal_position'])) {
+            $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
+            if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectInsert has invalid format.');
+            }
         }
         if (!isset($this->container['relative_horizontal_position'])) {
             throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectInsert is required.');
@@ -317,9 +319,11 @@ class DrawingObjectInsert implements ArrayAccess
             throw new \InvalidArgumentException('Property Left in DrawingObjectInsert is required.');
         }
 
-        $allowedValuesRelativeVerticalPosition = $this->getRelativeVerticalPositionAllowableValues();
-        if (!in_array($this->container['relative_vertical_position'], $allowedValuesRelativeVerticalPosition)) {
-            throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObjectInsert has invalid format.');
+        if (isset($this->container['relative_vertical_position'])) {
+            $allowedValuesRelativeVerticalPosition = $this->getRelativeVerticalPositionAllowableValues();
+            if (!in_array($this->container['relative_vertical_position'], $allowedValuesRelativeVerticalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObjectInsert has invalid format.');
+            }
         }
         if (!isset($this->container['relative_vertical_position'])) {
             throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObjectInsert is required.');
@@ -337,9 +341,11 @@ class DrawingObjectInsert implements ArrayAccess
             throw new \InvalidArgumentException('Property Height in DrawingObjectInsert is required.');
         }
 
-        $allowedValuesWrapType = $this->getWrapTypeAllowableValues();
-        if (!in_array($this->container['wrap_type'], $allowedValuesWrapType)) {
-            throw new \InvalidArgumentException('Property WrapType in DrawingObjectInsert has invalid format.');
+        if (isset($this->container['wrap_type'])) {
+            $allowedValuesWrapType = $this->getWrapTypeAllowableValues();
+            if (!in_array($this->container['wrap_type'], $allowedValuesWrapType)) {
+                throw new \InvalidArgumentException('Property WrapType in DrawingObjectInsert has invalid format.');
+            }
         }
         if (!isset($this->container['wrap_type'])) {
             throw new \InvalidArgumentException('Property WrapType in DrawingObjectInsert is required.');

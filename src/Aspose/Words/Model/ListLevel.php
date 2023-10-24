@@ -409,17 +409,21 @@ class ListLevel extends LinkElement
             throw new \InvalidArgumentException('Property StartAt in ListLevel is required.');
         }
 
-        $allowedValuesNumberStyle = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValuesNumberStyle)) {
-            throw new \InvalidArgumentException('Property NumberStyle in ListLevel has invalid format.');
+        if (isset($this->container['number_style'])) {
+            $allowedValuesNumberStyle = $this->getNumberStyleAllowableValues();
+            if (!in_array($this->container['number_style'], $allowedValuesNumberStyle)) {
+                throw new \InvalidArgumentException('Property NumberStyle in ListLevel has invalid format.');
+            }
         }
         if (!isset($this->container['number_style'])) {
             throw new \InvalidArgumentException('Property NumberStyle in ListLevel is required.');
         }
 
-        $allowedValuesAlignment = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
-            throw new \InvalidArgumentException('Property Alignment in ListLevel has invalid format.');
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in ListLevel has invalid format.');
+            }
         }
         if (!isset($this->container['alignment'])) {
             throw new \InvalidArgumentException('Property Alignment in ListLevel is required.');
@@ -433,9 +437,11 @@ class ListLevel extends LinkElement
             throw new \InvalidArgumentException('Property RestartAfterLevel in ListLevel is required.');
         }
 
-        $allowedValuesTrailingCharacter = $this->getTrailingCharacterAllowableValues();
-        if (!in_array($this->container['trailing_character'], $allowedValuesTrailingCharacter)) {
-            throw new \InvalidArgumentException('Property TrailingCharacter in ListLevel has invalid format.');
+        if (isset($this->container['trailing_character'])) {
+            $allowedValuesTrailingCharacter = $this->getTrailingCharacterAllowableValues();
+            if (!in_array($this->container['trailing_character'], $allowedValuesTrailingCharacter)) {
+                throw new \InvalidArgumentException('Property TrailingCharacter in ListLevel has invalid format.');
+            }
         }
         if (!isset($this->container['trailing_character'])) {
             throw new \InvalidArgumentException('Property TrailingCharacter in ListLevel is required.');

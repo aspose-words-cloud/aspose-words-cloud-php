@@ -476,14 +476,18 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesCompliance = $this->getComplianceAllowableValues();
-        if (!in_array($this->container['compliance'], $allowedValuesCompliance)) {
-            throw new \InvalidArgumentException('Property Compliance in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['compliance'])) {
+            $allowedValuesCompliance = $this->getComplianceAllowableValues();
+            if (!in_array($this->container['compliance'], $allowedValuesCompliance)) {
+                throw new \InvalidArgumentException('Property Compliance in PdfSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesCustomPropertiesExport = $this->getCustomPropertiesExportAllowableValues();
-        if (!in_array($this->container['custom_properties_export'], $allowedValuesCustomPropertiesExport)) {
-            throw new \InvalidArgumentException('Property CustomPropertiesExport in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['custom_properties_export'])) {
+            $allowedValuesCustomPropertiesExport = $this->getCustomPropertiesExportAllowableValues();
+            if (!in_array($this->container['custom_properties_export'], $allowedValuesCustomPropertiesExport)) {
+                throw new \InvalidArgumentException('Property CustomPropertiesExport in PdfSaveOptionsData has invalid format.');
+            }
         }
 
 
@@ -501,19 +505,25 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             $this->getEncryptionDetails()->validate();
         }
 
-        $allowedValuesFontEmbeddingMode = $this->getFontEmbeddingModeAllowableValues();
-        if (!in_array($this->container['font_embedding_mode'], $allowedValuesFontEmbeddingMode)) {
-            throw new \InvalidArgumentException('Property FontEmbeddingMode in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['font_embedding_mode'])) {
+            $allowedValuesFontEmbeddingMode = $this->getFontEmbeddingModeAllowableValues();
+            if (!in_array($this->container['font_embedding_mode'], $allowedValuesFontEmbeddingMode)) {
+                throw new \InvalidArgumentException('Property FontEmbeddingMode in PdfSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesHeaderFooterBookmarksExportMode = $this->getHeaderFooterBookmarksExportModeAllowableValues();
-        if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValuesHeaderFooterBookmarksExportMode)) {
-            throw new \InvalidArgumentException('Property HeaderFooterBookmarksExportMode in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['header_footer_bookmarks_export_mode'])) {
+            $allowedValuesHeaderFooterBookmarksExportMode = $this->getHeaderFooterBookmarksExportModeAllowableValues();
+            if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValuesHeaderFooterBookmarksExportMode)) {
+                throw new \InvalidArgumentException('Property HeaderFooterBookmarksExportMode in PdfSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesImageColorSpaceExportMode = $this->getImageColorSpaceExportModeAllowableValues();
-        if (!in_array($this->container['image_color_space_export_mode'], $allowedValuesImageColorSpaceExportMode)) {
-            throw new \InvalidArgumentException('Property ImageColorSpaceExportMode in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['image_color_space_export_mode'])) {
+            $allowedValuesImageColorSpaceExportMode = $this->getImageColorSpaceExportModeAllowableValues();
+            if (!in_array($this->container['image_color_space_export_mode'], $allowedValuesImageColorSpaceExportMode)) {
+                throw new \InvalidArgumentException('Property ImageColorSpaceExportMode in PdfSaveOptionsData has invalid format.');
+            }
         }
 
 
@@ -521,19 +531,25 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             $this->getOutlineOptions()->validate();
         }
 
-        $allowedValuesPageMode = $this->getPageModeAllowableValues();
-        if (!in_array($this->container['page_mode'], $allowedValuesPageMode)) {
-            throw new \InvalidArgumentException('Property PageMode in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['page_mode'])) {
+            $allowedValuesPageMode = $this->getPageModeAllowableValues();
+            if (!in_array($this->container['page_mode'], $allowedValuesPageMode)) {
+                throw new \InvalidArgumentException('Property PageMode in PdfSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesTextCompression = $this->getTextCompressionAllowableValues();
-        if (!in_array($this->container['text_compression'], $allowedValuesTextCompression)) {
-            throw new \InvalidArgumentException('Property TextCompression in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['text_compression'])) {
+            $allowedValuesTextCompression = $this->getTextCompressionAllowableValues();
+            if (!in_array($this->container['text_compression'], $allowedValuesTextCompression)) {
+                throw new \InvalidArgumentException('Property TextCompression in PdfSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesZoomBehavior = $this->getZoomBehaviorAllowableValues();
-        if (!in_array($this->container['zoom_behavior'], $allowedValuesZoomBehavior)) {
-            throw new \InvalidArgumentException('Property ZoomBehavior in PdfSaveOptionsData has invalid format.');
+        if (isset($this->container['zoom_behavior'])) {
+            $allowedValuesZoomBehavior = $this->getZoomBehaviorAllowableValues();
+            if (!in_array($this->container['zoom_behavior'], $allowedValuesZoomBehavior)) {
+                throw new \InvalidArgumentException('Property ZoomBehavior in PdfSaveOptionsData has invalid format.');
+            }
         }
 
     }

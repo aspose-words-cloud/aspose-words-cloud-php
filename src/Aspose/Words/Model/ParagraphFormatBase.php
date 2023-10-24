@@ -1181,29 +1181,39 @@ abstract class ParagraphFormatBase extends LinkElement
     {
         parent::validate();
 
-        $allowedValuesAlignment = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
-            throw new \InvalidArgumentException('Property Alignment in ParagraphFormatBase has invalid format.');
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValuesDropCapPosition = $this->getDropCapPositionAllowableValues();
-        if (!in_array($this->container['drop_cap_position'], $allowedValuesDropCapPosition)) {
-            throw new \InvalidArgumentException('Property DropCapPosition in ParagraphFormatBase has invalid format.');
+        if (isset($this->container['drop_cap_position'])) {
+            $allowedValuesDropCapPosition = $this->getDropCapPositionAllowableValues();
+            if (!in_array($this->container['drop_cap_position'], $allowedValuesDropCapPosition)) {
+                throw new \InvalidArgumentException('Property DropCapPosition in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValuesLineSpacingRule = $this->getLineSpacingRuleAllowableValues();
-        if (!in_array($this->container['line_spacing_rule'], $allowedValuesLineSpacingRule)) {
-            throw new \InvalidArgumentException('Property LineSpacingRule in ParagraphFormatBase has invalid format.');
+        if (isset($this->container['line_spacing_rule'])) {
+            $allowedValuesLineSpacingRule = $this->getLineSpacingRuleAllowableValues();
+            if (!in_array($this->container['line_spacing_rule'], $allowedValuesLineSpacingRule)) {
+                throw new \InvalidArgumentException('Property LineSpacingRule in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValuesOutlineLevel = $this->getOutlineLevelAllowableValues();
-        if (!in_array($this->container['outline_level'], $allowedValuesOutlineLevel)) {
-            throw new \InvalidArgumentException('Property OutlineLevel in ParagraphFormatBase has invalid format.');
+        if (isset($this->container['outline_level'])) {
+            $allowedValuesOutlineLevel = $this->getOutlineLevelAllowableValues();
+            if (!in_array($this->container['outline_level'], $allowedValuesOutlineLevel)) {
+                throw new \InvalidArgumentException('Property OutlineLevel in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
-            throw new \InvalidArgumentException('Property StyleIdentifier in ParagraphFormatBase has invalid format.');
+        if (isset($this->container['style_identifier'])) {
+            $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
+            if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
+                throw new \InvalidArgumentException('Property StyleIdentifier in ParagraphFormatBase has invalid format.');
+            }
         }
 
 

@@ -309,14 +309,18 @@ class TableCellFormat extends LinkElement
     {
         parent::validate();
 
-        $allowedValuesHorizontalMerge = $this->getHorizontalMergeAllowableValues();
-        if (!in_array($this->container['horizontal_merge'], $allowedValuesHorizontalMerge)) {
-            throw new \InvalidArgumentException('Property HorizontalMerge in TableCellFormat has invalid format.');
+        if (isset($this->container['horizontal_merge'])) {
+            $allowedValuesHorizontalMerge = $this->getHorizontalMergeAllowableValues();
+            if (!in_array($this->container['horizontal_merge'], $allowedValuesHorizontalMerge)) {
+                throw new \InvalidArgumentException('Property HorizontalMerge in TableCellFormat has invalid format.');
+            }
         }
 
-        $allowedValuesOrientation = $this->getOrientationAllowableValues();
-        if (!in_array($this->container['orientation'], $allowedValuesOrientation)) {
-            throw new \InvalidArgumentException('Property Orientation in TableCellFormat has invalid format.');
+        if (isset($this->container['orientation'])) {
+            $allowedValuesOrientation = $this->getOrientationAllowableValues();
+            if (!in_array($this->container['orientation'], $allowedValuesOrientation)) {
+                throw new \InvalidArgumentException('Property Orientation in TableCellFormat has invalid format.');
+            }
         }
 
 
@@ -324,14 +328,18 @@ class TableCellFormat extends LinkElement
             $this->getPreferredWidth()->validate();
         }
 
-        $allowedValuesVerticalAlignment = $this->getVerticalAlignmentAllowableValues();
-        if (!in_array($this->container['vertical_alignment'], $allowedValuesVerticalAlignment)) {
-            throw new \InvalidArgumentException('Property VerticalAlignment in TableCellFormat has invalid format.');
+        if (isset($this->container['vertical_alignment'])) {
+            $allowedValuesVerticalAlignment = $this->getVerticalAlignmentAllowableValues();
+            if (!in_array($this->container['vertical_alignment'], $allowedValuesVerticalAlignment)) {
+                throw new \InvalidArgumentException('Property VerticalAlignment in TableCellFormat has invalid format.');
+            }
         }
 
-        $allowedValuesVerticalMerge = $this->getVerticalMergeAllowableValues();
-        if (!in_array($this->container['vertical_merge'], $allowedValuesVerticalMerge)) {
-            throw new \InvalidArgumentException('Property VerticalMerge in TableCellFormat has invalid format.');
+        if (isset($this->container['vertical_merge'])) {
+            $allowedValuesVerticalMerge = $this->getVerticalMergeAllowableValues();
+            if (!in_array($this->container['vertical_merge'], $allowedValuesVerticalMerge)) {
+                throw new \InvalidArgumentException('Property VerticalMerge in TableCellFormat has invalid format.');
+            }
         }
 
     }

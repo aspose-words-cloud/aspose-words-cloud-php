@@ -198,9 +198,11 @@ class ReplaceRange implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesTextType = $this->getTextTypeAllowableValues();
-        if (!in_array($this->container['text_type'], $allowedValuesTextType)) {
-            throw new \InvalidArgumentException('Property TextType in ReplaceRange has invalid format.');
+        if (isset($this->container['text_type'])) {
+            $allowedValuesTextType = $this->getTextTypeAllowableValues();
+            if (!in_array($this->container['text_type'], $allowedValuesTextType)) {
+                throw new \InvalidArgumentException('Property TextType in ReplaceRange has invalid format.');
+            }
         }
 
     }

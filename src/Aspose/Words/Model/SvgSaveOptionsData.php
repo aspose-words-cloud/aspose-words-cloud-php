@@ -220,9 +220,11 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesTextOutputMode = $this->getTextOutputModeAllowableValues();
-        if (!in_array($this->container['text_output_mode'], $allowedValuesTextOutputMode)) {
-            throw new \InvalidArgumentException('Property TextOutputMode in SvgSaveOptionsData has invalid format.');
+        if (isset($this->container['text_output_mode'])) {
+            $allowedValuesTextOutputMode = $this->getTextOutputModeAllowableValues();
+            if (!in_array($this->container['text_output_mode'], $allowedValuesTextOutputMode)) {
+                throw new \InvalidArgumentException('Property TextOutputMode in SvgSaveOptionsData has invalid format.');
+            }
         }
 
     }

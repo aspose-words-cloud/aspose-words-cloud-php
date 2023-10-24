@@ -318,9 +318,11 @@ class Shading implements ArrayAccess
             $this->getForegroundPatternColor()->validate();
         }
 
-        $allowedValuesTexture = $this->getTextureAllowableValues();
-        if (!in_array($this->container['texture'], $allowedValuesTexture)) {
-            throw new \InvalidArgumentException('Property Texture in Shading has invalid format.');
+        if (isset($this->container['texture'])) {
+            $allowedValuesTexture = $this->getTextureAllowableValues();
+            if (!in_array($this->container['texture'], $allowedValuesTexture)) {
+                throw new \InvalidArgumentException('Property Texture in Shading has invalid format.');
+            }
         }
 
     }

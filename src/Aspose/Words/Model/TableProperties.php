@@ -1077,9 +1077,11 @@ class TableProperties extends LinkElement
     {
         parent::validate();
 
-        $allowedValuesAlignment = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
-            throw new \InvalidArgumentException('Property Alignment in TableProperties has invalid format.');
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in TableProperties has invalid format.');
+            }
         }
 
 
@@ -1087,19 +1089,25 @@ class TableProperties extends LinkElement
             $this->getPreferredWidth()->validate();
         }
 
-        $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
-            throw new \InvalidArgumentException('Property StyleIdentifier in TableProperties has invalid format.');
+        if (isset($this->container['style_identifier'])) {
+            $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
+            if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
+                throw new \InvalidArgumentException('Property StyleIdentifier in TableProperties has invalid format.');
+            }
         }
 
-        $allowedValuesStyleOptions = $this->getStyleOptionsAllowableValues();
-        if (!in_array($this->container['style_options'], $allowedValuesStyleOptions)) {
-            throw new \InvalidArgumentException('Property StyleOptions in TableProperties has invalid format.');
+        if (isset($this->container['style_options'])) {
+            $allowedValuesStyleOptions = $this->getStyleOptionsAllowableValues();
+            if (!in_array($this->container['style_options'], $allowedValuesStyleOptions)) {
+                throw new \InvalidArgumentException('Property StyleOptions in TableProperties has invalid format.');
+            }
         }
 
-        $allowedValuesTextWrapping = $this->getTextWrappingAllowableValues();
-        if (!in_array($this->container['text_wrapping'], $allowedValuesTextWrapping)) {
-            throw new \InvalidArgumentException('Property TextWrapping in TableProperties has invalid format.');
+        if (isset($this->container['text_wrapping'])) {
+            $allowedValuesTextWrapping = $this->getTextWrappingAllowableValues();
+            if (!in_array($this->container['text_wrapping'], $allowedValuesTextWrapping)) {
+                throw new \InvalidArgumentException('Property TextWrapping in TableProperties has invalid format.');
+            }
         }
 
     }

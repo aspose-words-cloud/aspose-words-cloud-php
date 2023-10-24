@@ -217,9 +217,11 @@ class FormFieldTextInput extends FormField
             throw new \InvalidArgumentException('Property TextInputFormat in FormFieldTextInput is required.');
         }
 
-        $allowedValuesTextInputType = $this->getTextInputTypeAllowableValues();
-        if (!in_array($this->container['text_input_type'], $allowedValuesTextInputType)) {
-            throw new \InvalidArgumentException('Property TextInputType in FormFieldTextInput has invalid format.');
+        if (isset($this->container['text_input_type'])) {
+            $allowedValuesTextInputType = $this->getTextInputTypeAllowableValues();
+            if (!in_array($this->container['text_input_type'], $allowedValuesTextInputType)) {
+                throw new \InvalidArgumentException('Property TextInputType in FormFieldTextInput has invalid format.');
+            }
         }
 
         if (!isset($this->container['text_input_default'])) {

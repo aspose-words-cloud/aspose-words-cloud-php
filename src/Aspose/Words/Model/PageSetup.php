@@ -619,44 +619,60 @@ class PageSetup extends LinkElement
     {
         parent::validate();
 
-        $allowedValuesBorderAppliesTo = $this->getBorderAppliesToAllowableValues();
-        if (!in_array($this->container['border_applies_to'], $allowedValuesBorderAppliesTo)) {
-            throw new \InvalidArgumentException('Property BorderAppliesTo in PageSetup has invalid format.');
+        if (isset($this->container['border_applies_to'])) {
+            $allowedValuesBorderAppliesTo = $this->getBorderAppliesToAllowableValues();
+            if (!in_array($this->container['border_applies_to'], $allowedValuesBorderAppliesTo)) {
+                throw new \InvalidArgumentException('Property BorderAppliesTo in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValuesBorderDistanceFrom = $this->getBorderDistanceFromAllowableValues();
-        if (!in_array($this->container['border_distance_from'], $allowedValuesBorderDistanceFrom)) {
-            throw new \InvalidArgumentException('Property BorderDistanceFrom in PageSetup has invalid format.');
+        if (isset($this->container['border_distance_from'])) {
+            $allowedValuesBorderDistanceFrom = $this->getBorderDistanceFromAllowableValues();
+            if (!in_array($this->container['border_distance_from'], $allowedValuesBorderDistanceFrom)) {
+                throw new \InvalidArgumentException('Property BorderDistanceFrom in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValuesLineNumberRestartMode = $this->getLineNumberRestartModeAllowableValues();
-        if (!in_array($this->container['line_number_restart_mode'], $allowedValuesLineNumberRestartMode)) {
-            throw new \InvalidArgumentException('Property LineNumberRestartMode in PageSetup has invalid format.');
+        if (isset($this->container['line_number_restart_mode'])) {
+            $allowedValuesLineNumberRestartMode = $this->getLineNumberRestartModeAllowableValues();
+            if (!in_array($this->container['line_number_restart_mode'], $allowedValuesLineNumberRestartMode)) {
+                throw new \InvalidArgumentException('Property LineNumberRestartMode in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValuesOrientation = $this->getOrientationAllowableValues();
-        if (!in_array($this->container['orientation'], $allowedValuesOrientation)) {
-            throw new \InvalidArgumentException('Property Orientation in PageSetup has invalid format.');
+        if (isset($this->container['orientation'])) {
+            $allowedValuesOrientation = $this->getOrientationAllowableValues();
+            if (!in_array($this->container['orientation'], $allowedValuesOrientation)) {
+                throw new \InvalidArgumentException('Property Orientation in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValuesPageNumberStyle = $this->getPageNumberStyleAllowableValues();
-        if (!in_array($this->container['page_number_style'], $allowedValuesPageNumberStyle)) {
-            throw new \InvalidArgumentException('Property PageNumberStyle in PageSetup has invalid format.');
+        if (isset($this->container['page_number_style'])) {
+            $allowedValuesPageNumberStyle = $this->getPageNumberStyleAllowableValues();
+            if (!in_array($this->container['page_number_style'], $allowedValuesPageNumberStyle)) {
+                throw new \InvalidArgumentException('Property PageNumberStyle in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValuesPaperSize = $this->getPaperSizeAllowableValues();
-        if (!in_array($this->container['paper_size'], $allowedValuesPaperSize)) {
-            throw new \InvalidArgumentException('Property PaperSize in PageSetup has invalid format.');
+        if (isset($this->container['paper_size'])) {
+            $allowedValuesPaperSize = $this->getPaperSizeAllowableValues();
+            if (!in_array($this->container['paper_size'], $allowedValuesPaperSize)) {
+                throw new \InvalidArgumentException('Property PaperSize in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValuesSectionStart = $this->getSectionStartAllowableValues();
-        if (!in_array($this->container['section_start'], $allowedValuesSectionStart)) {
-            throw new \InvalidArgumentException('Property SectionStart in PageSetup has invalid format.');
+        if (isset($this->container['section_start'])) {
+            $allowedValuesSectionStart = $this->getSectionStartAllowableValues();
+            if (!in_array($this->container['section_start'], $allowedValuesSectionStart)) {
+                throw new \InvalidArgumentException('Property SectionStart in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValuesVerticalAlignment = $this->getVerticalAlignmentAllowableValues();
-        if (!in_array($this->container['vertical_alignment'], $allowedValuesVerticalAlignment)) {
-            throw new \InvalidArgumentException('Property VerticalAlignment in PageSetup has invalid format.');
+        if (isset($this->container['vertical_alignment'])) {
+            $allowedValuesVerticalAlignment = $this->getVerticalAlignmentAllowableValues();
+            if (!in_array($this->container['vertical_alignment'], $allowedValuesVerticalAlignment)) {
+                throw new \InvalidArgumentException('Property VerticalAlignment in PageSetup has invalid format.');
+            }
         }
 
     }

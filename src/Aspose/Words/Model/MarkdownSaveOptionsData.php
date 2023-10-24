@@ -192,9 +192,11 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
     {
         parent::validate();
 
-        $allowedValuesTableContentAlignment = $this->getTableContentAlignmentAllowableValues();
-        if (!in_array($this->container['table_content_alignment'], $allowedValuesTableContentAlignment)) {
-            throw new \InvalidArgumentException('Property TableContentAlignment in MarkdownSaveOptionsData has invalid format.');
+        if (isset($this->container['table_content_alignment'])) {
+            $allowedValuesTableContentAlignment = $this->getTableContentAlignmentAllowableValues();
+            if (!in_array($this->container['table_content_alignment'], $allowedValuesTableContentAlignment)) {
+                throw new \InvalidArgumentException('Property TableContentAlignment in MarkdownSaveOptionsData has invalid format.');
+            }
         }
 
     }

@@ -294,19 +294,25 @@ class DrawingObjectUpdate implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
-        if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
-            throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectUpdate has invalid format.');
+        if (isset($this->container['relative_horizontal_position'])) {
+            $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
+            if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectUpdate has invalid format.');
+            }
         }
 
-        $allowedValuesRelativeVerticalPosition = $this->getRelativeVerticalPositionAllowableValues();
-        if (!in_array($this->container['relative_vertical_position'], $allowedValuesRelativeVerticalPosition)) {
-            throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObjectUpdate has invalid format.');
+        if (isset($this->container['relative_vertical_position'])) {
+            $allowedValuesRelativeVerticalPosition = $this->getRelativeVerticalPositionAllowableValues();
+            if (!in_array($this->container['relative_vertical_position'], $allowedValuesRelativeVerticalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObjectUpdate has invalid format.');
+            }
         }
 
-        $allowedValuesWrapType = $this->getWrapTypeAllowableValues();
-        if (!in_array($this->container['wrap_type'], $allowedValuesWrapType)) {
-            throw new \InvalidArgumentException('Property WrapType in DrawingObjectUpdate has invalid format.');
+        if (isset($this->container['wrap_type'])) {
+            $allowedValuesWrapType = $this->getWrapTypeAllowableValues();
+            if (!in_array($this->container['wrap_type'], $allowedValuesWrapType)) {
+                throw new \InvalidArgumentException('Property WrapType in DrawingObjectUpdate has invalid format.');
+            }
         }
 
     }

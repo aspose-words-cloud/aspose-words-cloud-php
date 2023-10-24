@@ -462,29 +462,39 @@ class StructuredDocumentTag extends NodeLink
             }
         }
 
-        $allowedValuesAppearance = $this->getAppearanceAllowableValues();
-        if (!in_array($this->container['appearance'], $allowedValuesAppearance)) {
-            throw new \InvalidArgumentException('Property Appearance in StructuredDocumentTag has invalid format.');
+        if (isset($this->container['appearance'])) {
+            $allowedValuesAppearance = $this->getAppearanceAllowableValues();
+            if (!in_array($this->container['appearance'], $allowedValuesAppearance)) {
+                throw new \InvalidArgumentException('Property Appearance in StructuredDocumentTag has invalid format.');
+            }
         }
 
-        $allowedValuesDateStorageFormat = $this->getDateStorageFormatAllowableValues();
-        if (!in_array($this->container['date_storage_format'], $allowedValuesDateStorageFormat)) {
-            throw new \InvalidArgumentException('Property DateStorageFormat in StructuredDocumentTag has invalid format.');
+        if (isset($this->container['date_storage_format'])) {
+            $allowedValuesDateStorageFormat = $this->getDateStorageFormatAllowableValues();
+            if (!in_array($this->container['date_storage_format'], $allowedValuesDateStorageFormat)) {
+                throw new \InvalidArgumentException('Property DateStorageFormat in StructuredDocumentTag has invalid format.');
+            }
         }
 
-        $allowedValuesCalendarType = $this->getCalendarTypeAllowableValues();
-        if (!in_array($this->container['calendar_type'], $allowedValuesCalendarType)) {
-            throw new \InvalidArgumentException('Property CalendarType in StructuredDocumentTag has invalid format.');
+        if (isset($this->container['calendar_type'])) {
+            $allowedValuesCalendarType = $this->getCalendarTypeAllowableValues();
+            if (!in_array($this->container['calendar_type'], $allowedValuesCalendarType)) {
+                throw new \InvalidArgumentException('Property CalendarType in StructuredDocumentTag has invalid format.');
+            }
         }
 
-        $allowedValuesLevel = $this->getLevelAllowableValues();
-        if (!in_array($this->container['level'], $allowedValuesLevel)) {
-            throw new \InvalidArgumentException('Property Level in StructuredDocumentTag has invalid format.');
+        if (isset($this->container['level'])) {
+            $allowedValuesLevel = $this->getLevelAllowableValues();
+            if (!in_array($this->container['level'], $allowedValuesLevel)) {
+                throw new \InvalidArgumentException('Property Level in StructuredDocumentTag has invalid format.');
+            }
         }
 
-        $allowedValuesSdtType = $this->getSdtTypeAllowableValues();
-        if (!in_array($this->container['sdt_type'], $allowedValuesSdtType)) {
-            throw new \InvalidArgumentException('Property SdtType in StructuredDocumentTag has invalid format.');
+        if (isset($this->container['sdt_type'])) {
+            $allowedValuesSdtType = $this->getSdtTypeAllowableValues();
+            if (!in_array($this->container['sdt_type'], $allowedValuesSdtType)) {
+                throw new \InvalidArgumentException('Property SdtType in StructuredDocumentTag has invalid format.');
+            }
         }
 
     }

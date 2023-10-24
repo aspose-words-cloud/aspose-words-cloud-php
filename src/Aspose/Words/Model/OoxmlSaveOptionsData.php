@@ -225,14 +225,18 @@ abstract class OoxmlSaveOptionsData extends SaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesCompliance = $this->getComplianceAllowableValues();
-        if (!in_array($this->container['compliance'], $allowedValuesCompliance)) {
-            throw new \InvalidArgumentException('Property Compliance in OoxmlSaveOptionsData has invalid format.');
+        if (isset($this->container['compliance'])) {
+            $allowedValuesCompliance = $this->getComplianceAllowableValues();
+            if (!in_array($this->container['compliance'], $allowedValuesCompliance)) {
+                throw new \InvalidArgumentException('Property Compliance in OoxmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesCompressionLevel = $this->getCompressionLevelAllowableValues();
-        if (!in_array($this->container['compression_level'], $allowedValuesCompressionLevel)) {
-            throw new \InvalidArgumentException('Property CompressionLevel in OoxmlSaveOptionsData has invalid format.');
+        if (isset($this->container['compression_level'])) {
+            $allowedValuesCompressionLevel = $this->getCompressionLevelAllowableValues();
+            if (!in_array($this->container['compression_level'], $allowedValuesCompressionLevel)) {
+                throw new \InvalidArgumentException('Property CompressionLevel in OoxmlSaveOptionsData has invalid format.');
+            }
         }
 
     }

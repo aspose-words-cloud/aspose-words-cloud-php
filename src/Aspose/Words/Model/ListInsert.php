@@ -232,9 +232,11 @@ class ListInsert implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesTemplate = $this->getTemplateAllowableValues();
-        if (!in_array($this->container['template'], $allowedValuesTemplate)) {
-            throw new \InvalidArgumentException('Property Template in ListInsert has invalid format.');
+        if (isset($this->container['template'])) {
+            $allowedValuesTemplate = $this->getTemplateAllowableValues();
+            if (!in_array($this->container['template'], $allowedValuesTemplate)) {
+                throw new \InvalidArgumentException('Property Template in ListInsert has invalid format.');
+            }
         }
         if (!isset($this->container['template'])) {
             throw new \InvalidArgumentException('Property Template in ListInsert is required.');

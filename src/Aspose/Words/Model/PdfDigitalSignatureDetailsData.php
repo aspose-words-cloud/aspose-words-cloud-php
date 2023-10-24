@@ -220,9 +220,11 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesHashAlgorithm = $this->getHashAlgorithmAllowableValues();
-        if (!in_array($this->container['hash_algorithm'], $allowedValuesHashAlgorithm)) {
-            throw new \InvalidArgumentException('Property HashAlgorithm in PdfDigitalSignatureDetailsData has invalid format.');
+        if (isset($this->container['hash_algorithm'])) {
+            $allowedValuesHashAlgorithm = $this->getHashAlgorithmAllowableValues();
+            if (!in_array($this->container['hash_algorithm'], $allowedValuesHashAlgorithm)) {
+                throw new \InvalidArgumentException('Property HashAlgorithm in PdfDigitalSignatureDetailsData has invalid format.');
+            }
         }
 
     }

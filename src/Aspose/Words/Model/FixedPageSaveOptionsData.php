@@ -243,9 +243,11 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesColorMode = $this->getColorModeAllowableValues();
-        if (!in_array($this->container['color_mode'], $allowedValuesColorMode)) {
-            throw new \InvalidArgumentException('Property ColorMode in FixedPageSaveOptionsData has invalid format.');
+        if (isset($this->container['color_mode'])) {
+            $allowedValuesColorMode = $this->getColorModeAllowableValues();
+            if (!in_array($this->container['color_mode'], $allowedValuesColorMode)) {
+                throw new \InvalidArgumentException('Property ColorMode in FixedPageSaveOptionsData has invalid format.');
+            }
         }
 
 
@@ -253,9 +255,11 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
             $this->getMetafileRenderingOptions()->validate();
         }
 
-        $allowedValuesNumeralFormat = $this->getNumeralFormatAllowableValues();
-        if (!in_array($this->container['numeral_format'], $allowedValuesNumeralFormat)) {
-            throw new \InvalidArgumentException('Property NumeralFormat in FixedPageSaveOptionsData has invalid format.');
+        if (isset($this->container['numeral_format'])) {
+            $allowedValuesNumeralFormat = $this->getNumeralFormatAllowableValues();
+            if (!in_array($this->container['numeral_format'], $allowedValuesNumeralFormat)) {
+                throw new \InvalidArgumentException('Property NumeralFormat in FixedPageSaveOptionsData has invalid format.');
+            }
         }
 
     }

@@ -207,9 +207,11 @@ abstract class TxtSaveOptionsBaseData extends SaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesExportHeadersFootersMode = $this->getExportHeadersFootersModeAllowableValues();
-        if (!in_array($this->container['export_headers_footers_mode'], $allowedValuesExportHeadersFootersMode)) {
-            throw new \InvalidArgumentException('Property ExportHeadersFootersMode in TxtSaveOptionsBaseData has invalid format.');
+        if (isset($this->container['export_headers_footers_mode'])) {
+            $allowedValuesExportHeadersFootersMode = $this->getExportHeadersFootersModeAllowableValues();
+            if (!in_array($this->container['export_headers_footers_mode'], $allowedValuesExportHeadersFootersMode)) {
+                throw new \InvalidArgumentException('Property ExportHeadersFootersMode in TxtSaveOptionsBaseData has invalid format.');
+            }
         }
 
     }

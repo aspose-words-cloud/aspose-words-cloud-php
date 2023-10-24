@@ -195,9 +195,11 @@ class HeaderFooterLink extends LinkElement
     {
         parent::validate();
 
-        $allowedValuesType = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValuesType)) {
-            throw new \InvalidArgumentException('Property Type in HeaderFooterLink has invalid format.');
+        if (isset($this->container['type'])) {
+            $allowedValuesType = $this->getTypeAllowableValues();
+            if (!in_array($this->container['type'], $allowedValuesType)) {
+                throw new \InvalidArgumentException('Property Type in HeaderFooterLink has invalid format.');
+            }
         }
         if (!isset($this->container['type'])) {
             throw new \InvalidArgumentException('Property Type in HeaderFooterLink is required.');

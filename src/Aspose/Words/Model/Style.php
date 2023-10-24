@@ -1030,9 +1030,11 @@ class Style extends LinkElement
             throw new \InvalidArgumentException('Property IsQuickStyle in Style is required.');
         }
 
-        $allowedValuesType = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValuesType)) {
-            throw new \InvalidArgumentException('Property Type in Style has invalid format.');
+        if (isset($this->container['type'])) {
+            $allowedValuesType = $this->getTypeAllowableValues();
+            if (!in_array($this->container['type'], $allowedValuesType)) {
+                throw new \InvalidArgumentException('Property Type in Style has invalid format.');
+            }
         }
         if (!isset($this->container['type'])) {
             throw new \InvalidArgumentException('Property Type in Style is required.');
@@ -1042,9 +1044,11 @@ class Style extends LinkElement
             throw new \InvalidArgumentException('Property IsHeading in Style is required.');
         }
 
-        $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
-            throw new \InvalidArgumentException('Property StyleIdentifier in Style has invalid format.');
+        if (isset($this->container['style_identifier'])) {
+            $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
+            if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
+                throw new \InvalidArgumentException('Property StyleIdentifier in Style has invalid format.');
+            }
         }
         if (!isset($this->container['style_identifier'])) {
             throw new \InvalidArgumentException('Property StyleIdentifier in Style is required.');

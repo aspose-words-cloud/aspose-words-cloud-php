@@ -234,14 +234,18 @@ class MetafileRenderingOptionsData implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesEmfPlusDualRenderingMode = $this->getEmfPlusDualRenderingModeAllowableValues();
-        if (!in_array($this->container['emf_plus_dual_rendering_mode'], $allowedValuesEmfPlusDualRenderingMode)) {
-            throw new \InvalidArgumentException('Property EmfPlusDualRenderingMode in MetafileRenderingOptionsData has invalid format.');
+        if (isset($this->container['emf_plus_dual_rendering_mode'])) {
+            $allowedValuesEmfPlusDualRenderingMode = $this->getEmfPlusDualRenderingModeAllowableValues();
+            if (!in_array($this->container['emf_plus_dual_rendering_mode'], $allowedValuesEmfPlusDualRenderingMode)) {
+                throw new \InvalidArgumentException('Property EmfPlusDualRenderingMode in MetafileRenderingOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesRenderingMode = $this->getRenderingModeAllowableValues();
-        if (!in_array($this->container['rendering_mode'], $allowedValuesRenderingMode)) {
-            throw new \InvalidArgumentException('Property RenderingMode in MetafileRenderingOptionsData has invalid format.');
+        if (isset($this->container['rendering_mode'])) {
+            $allowedValuesRenderingMode = $this->getRenderingModeAllowableValues();
+            if (!in_array($this->container['rendering_mode'], $allowedValuesRenderingMode)) {
+                throw new \InvalidArgumentException('Property RenderingMode in MetafileRenderingOptionsData has invalid format.');
+            }
         }
 
     }

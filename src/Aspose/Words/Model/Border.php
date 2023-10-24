@@ -295,9 +295,11 @@ class Border extends LinkElement
     {
         parent::validate();
 
-        $allowedValuesBorderType = $this->getBorderTypeAllowableValues();
-        if (!in_array($this->container['border_type'], $allowedValuesBorderType)) {
-            throw new \InvalidArgumentException('Property BorderType in Border has invalid format.');
+        if (isset($this->container['border_type'])) {
+            $allowedValuesBorderType = $this->getBorderTypeAllowableValues();
+            if (!in_array($this->container['border_type'], $allowedValuesBorderType)) {
+                throw new \InvalidArgumentException('Property BorderType in Border has invalid format.');
+            }
         }
 
 
@@ -305,9 +307,11 @@ class Border extends LinkElement
             $this->getColor()->validate();
         }
 
-        $allowedValuesLineStyle = $this->getLineStyleAllowableValues();
-        if (!in_array($this->container['line_style'], $allowedValuesLineStyle)) {
-            throw new \InvalidArgumentException('Property LineStyle in Border has invalid format.');
+        if (isset($this->container['line_style'])) {
+            $allowedValuesLineStyle = $this->getLineStyleAllowableValues();
+            if (!in_array($this->container['line_style'], $allowedValuesLineStyle)) {
+                throw new \InvalidArgumentException('Property LineStyle in Border has invalid format.');
+            }
         }
 
     }

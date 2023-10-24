@@ -398,19 +398,25 @@ class ListLevelUpdate implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesNumberStyle = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValuesNumberStyle)) {
-            throw new \InvalidArgumentException('Property NumberStyle in ListLevelUpdate has invalid format.');
+        if (isset($this->container['number_style'])) {
+            $allowedValuesNumberStyle = $this->getNumberStyleAllowableValues();
+            if (!in_array($this->container['number_style'], $allowedValuesNumberStyle)) {
+                throw new \InvalidArgumentException('Property NumberStyle in ListLevelUpdate has invalid format.');
+            }
         }
 
-        $allowedValuesAlignment = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
-            throw new \InvalidArgumentException('Property Alignment in ListLevelUpdate has invalid format.');
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in ListLevelUpdate has invalid format.');
+            }
         }
 
-        $allowedValuesTrailingCharacter = $this->getTrailingCharacterAllowableValues();
-        if (!in_array($this->container['trailing_character'], $allowedValuesTrailingCharacter)) {
-            throw new \InvalidArgumentException('Property TrailingCharacter in ListLevelUpdate has invalid format.');
+        if (isset($this->container['trailing_character'])) {
+            $allowedValuesTrailingCharacter = $this->getTrailingCharacterAllowableValues();
+            if (!in_array($this->container['trailing_character'], $allowedValuesTrailingCharacter)) {
+                throw new \InvalidArgumentException('Property TrailingCharacter in ListLevelUpdate has invalid format.');
+            }
         }
 
     }

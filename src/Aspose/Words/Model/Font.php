@@ -1258,19 +1258,25 @@ class Font extends LinkElement
             $this->getHighlightColor()->validate();
         }
 
-        $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
-            throw new \InvalidArgumentException('Property StyleIdentifier in Font has invalid format.');
+        if (isset($this->container['style_identifier'])) {
+            $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
+            if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
+                throw new \InvalidArgumentException('Property StyleIdentifier in Font has invalid format.');
+            }
         }
 
-        $allowedValuesTextEffect = $this->getTextEffectAllowableValues();
-        if (!in_array($this->container['text_effect'], $allowedValuesTextEffect)) {
-            throw new \InvalidArgumentException('Property TextEffect in Font has invalid format.');
+        if (isset($this->container['text_effect'])) {
+            $allowedValuesTextEffect = $this->getTextEffectAllowableValues();
+            if (!in_array($this->container['text_effect'], $allowedValuesTextEffect)) {
+                throw new \InvalidArgumentException('Property TextEffect in Font has invalid format.');
+            }
         }
 
-        $allowedValuesUnderline = $this->getUnderlineAllowableValues();
-        if (!in_array($this->container['underline'], $allowedValuesUnderline)) {
-            throw new \InvalidArgumentException('Property Underline in Font has invalid format.');
+        if (isset($this->container['underline'])) {
+            $allowedValuesUnderline = $this->getUnderlineAllowableValues();
+            if (!in_array($this->container['underline'], $allowedValuesUnderline)) {
+                throw new \InvalidArgumentException('Property Underline in Font has invalid format.');
+            }
         }
 
 

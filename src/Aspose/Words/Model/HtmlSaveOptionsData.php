@@ -528,44 +528,60 @@ class HtmlSaveOptionsData extends SaveOptionsData
     {
         parent::validate();
 
-        $allowedValuesCssStyleSheetType = $this->getCssStyleSheetTypeAllowableValues();
-        if (!in_array($this->container['css_style_sheet_type'], $allowedValuesCssStyleSheetType)) {
-            throw new \InvalidArgumentException('Property CssStyleSheetType in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['css_style_sheet_type'])) {
+            $allowedValuesCssStyleSheetType = $this->getCssStyleSheetTypeAllowableValues();
+            if (!in_array($this->container['css_style_sheet_type'], $allowedValuesCssStyleSheetType)) {
+                throw new \InvalidArgumentException('Property CssStyleSheetType in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesDocumentSplitCriteria = $this->getDocumentSplitCriteriaAllowableValues();
-        if (!in_array($this->container['document_split_criteria'], $allowedValuesDocumentSplitCriteria)) {
-            throw new \InvalidArgumentException('Property DocumentSplitCriteria in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['document_split_criteria'])) {
+            $allowedValuesDocumentSplitCriteria = $this->getDocumentSplitCriteriaAllowableValues();
+            if (!in_array($this->container['document_split_criteria'], $allowedValuesDocumentSplitCriteria)) {
+                throw new \InvalidArgumentException('Property DocumentSplitCriteria in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesExportHeadersFootersMode = $this->getExportHeadersFootersModeAllowableValues();
-        if (!in_array($this->container['export_headers_footers_mode'], $allowedValuesExportHeadersFootersMode)) {
-            throw new \InvalidArgumentException('Property ExportHeadersFootersMode in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['export_headers_footers_mode'])) {
+            $allowedValuesExportHeadersFootersMode = $this->getExportHeadersFootersModeAllowableValues();
+            if (!in_array($this->container['export_headers_footers_mode'], $allowedValuesExportHeadersFootersMode)) {
+                throw new \InvalidArgumentException('Property ExportHeadersFootersMode in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesExportListLabels = $this->getExportListLabelsAllowableValues();
-        if (!in_array($this->container['export_list_labels'], $allowedValuesExportListLabels)) {
-            throw new \InvalidArgumentException('Property ExportListLabels in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['export_list_labels'])) {
+            $allowedValuesExportListLabels = $this->getExportListLabelsAllowableValues();
+            if (!in_array($this->container['export_list_labels'], $allowedValuesExportListLabels)) {
+                throw new \InvalidArgumentException('Property ExportListLabels in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesHtmlVersion = $this->getHtmlVersionAllowableValues();
-        if (!in_array($this->container['html_version'], $allowedValuesHtmlVersion)) {
-            throw new \InvalidArgumentException('Property HtmlVersion in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['html_version'])) {
+            $allowedValuesHtmlVersion = $this->getHtmlVersionAllowableValues();
+            if (!in_array($this->container['html_version'], $allowedValuesHtmlVersion)) {
+                throw new \InvalidArgumentException('Property HtmlVersion in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesMetafileFormat = $this->getMetafileFormatAllowableValues();
-        if (!in_array($this->container['metafile_format'], $allowedValuesMetafileFormat)) {
-            throw new \InvalidArgumentException('Property MetafileFormat in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['metafile_format'])) {
+            $allowedValuesMetafileFormat = $this->getMetafileFormatAllowableValues();
+            if (!in_array($this->container['metafile_format'], $allowedValuesMetafileFormat)) {
+                throw new \InvalidArgumentException('Property MetafileFormat in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesOfficeMathOutputMode = $this->getOfficeMathOutputModeAllowableValues();
-        if (!in_array($this->container['office_math_output_mode'], $allowedValuesOfficeMathOutputMode)) {
-            throw new \InvalidArgumentException('Property OfficeMathOutputMode in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['office_math_output_mode'])) {
+            $allowedValuesOfficeMathOutputMode = $this->getOfficeMathOutputModeAllowableValues();
+            if (!in_array($this->container['office_math_output_mode'], $allowedValuesOfficeMathOutputMode)) {
+                throw new \InvalidArgumentException('Property OfficeMathOutputMode in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValuesTableWidthOutputMode = $this->getTableWidthOutputModeAllowableValues();
-        if (!in_array($this->container['table_width_output_mode'], $allowedValuesTableWidthOutputMode)) {
-            throw new \InvalidArgumentException('Property TableWidthOutputMode in HtmlSaveOptionsData has invalid format.');
+        if (isset($this->container['table_width_output_mode'])) {
+            $allowedValuesTableWidthOutputMode = $this->getTableWidthOutputModeAllowableValues();
+            if (!in_array($this->container['table_width_output_mode'], $allowedValuesTableWidthOutputMode)) {
+                throw new \InvalidArgumentException('Property TableWidthOutputMode in HtmlSaveOptionsData has invalid format.');
+            }
         }
 
     }

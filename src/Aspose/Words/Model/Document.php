@@ -284,9 +284,11 @@ class Document implements ArrayAccess
             throw new \InvalidArgumentException('Property IsSigned in Document is required.');
         }
 
-        $allowedValuesSourceFormat = $this->getSourceFormatAllowableValues();
-        if (!in_array($this->container['source_format'], $allowedValuesSourceFormat)) {
-            throw new \InvalidArgumentException('Property SourceFormat in Document has invalid format.');
+        if (isset($this->container['source_format'])) {
+            $allowedValuesSourceFormat = $this->getSourceFormatAllowableValues();
+            if (!in_array($this->container['source_format'], $allowedValuesSourceFormat)) {
+                throw new \InvalidArgumentException('Property SourceFormat in Document has invalid format.');
+            }
         }
         if (!isset($this->container['source_format'])) {
             throw new \InvalidArgumentException('Property SourceFormat in Document is required.');

@@ -202,9 +202,11 @@ class StyleInsert implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesStyleType = $this->getStyleTypeAllowableValues();
-        if (!in_array($this->container['style_type'], $allowedValuesStyleType)) {
-            throw new \InvalidArgumentException('Property StyleType in StyleInsert has invalid format.');
+        if (isset($this->container['style_type'])) {
+            $allowedValuesStyleType = $this->getStyleTypeAllowableValues();
+            if (!in_array($this->container['style_type'], $allowedValuesStyleType)) {
+                throw new \InvalidArgumentException('Property StyleType in StyleInsert has invalid format.');
+            }
         }
         if (!isset($this->container['style_type'])) {
             throw new \InvalidArgumentException('Property StyleType in StyleInsert is required.');

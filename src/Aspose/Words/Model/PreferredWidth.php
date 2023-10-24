@@ -200,9 +200,11 @@ class PreferredWidth implements ArrayAccess
      */
     public function validate()
     {
-        $allowedValuesType = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValuesType)) {
-            throw new \InvalidArgumentException('Property Type in PreferredWidth has invalid format.');
+        if (isset($this->container['type'])) {
+            $allowedValuesType = $this->getTypeAllowableValues();
+            if (!in_array($this->container['type'], $allowedValuesType)) {
+                throw new \InvalidArgumentException('Property Type in PreferredWidth has invalid format.');
+            }
         }
         if (!isset($this->container['type'])) {
             throw new \InvalidArgumentException('Property Type in PreferredWidth is required.');

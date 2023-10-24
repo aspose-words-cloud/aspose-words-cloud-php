@@ -208,9 +208,11 @@ class JsonDataLoadOptions implements ArrayAccess
             throw new \InvalidArgumentException('Property AlwaysGenerateRootObject in JsonDataLoadOptions is required.');
         }
 
-        $allowedValuesSimpleValueParseMode = $this->getSimpleValueParseModeAllowableValues();
-        if (!in_array($this->container['simple_value_parse_mode'], $allowedValuesSimpleValueParseMode)) {
-            throw new \InvalidArgumentException('Property SimpleValueParseMode in JsonDataLoadOptions has invalid format.');
+        if (isset($this->container['simple_value_parse_mode'])) {
+            $allowedValuesSimpleValueParseMode = $this->getSimpleValueParseModeAllowableValues();
+            if (!in_array($this->container['simple_value_parse_mode'], $allowedValuesSimpleValueParseMode)) {
+                throw new \InvalidArgumentException('Property SimpleValueParseMode in JsonDataLoadOptions has invalid format.');
+            }
         }
         if (!isset($this->container['simple_value_parse_mode'])) {
             throw new \InvalidArgumentException('Property SimpleValueParseMode in JsonDataLoadOptions is required.');

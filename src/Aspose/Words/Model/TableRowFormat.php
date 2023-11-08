@@ -201,44 +201,19 @@ class TableRowFormat extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getHeightRuleAllowableValues();
-        if (!in_array($this->container['height_rule'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'height_rule', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['height_rule'])) {
+            $allowedValuesHeightRule = $this->getHeightRuleAllowableValues();
+            if (!in_array($this->container['height_rule'], $allowedValuesHeightRule)) {
+                throw new \InvalidArgumentException('Property HeightRule in TableRowFormat has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getHeightRuleAllowableValues();
-        if (!in_array($this->container['height_rule'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

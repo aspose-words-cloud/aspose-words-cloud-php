@@ -296,67 +296,61 @@ class DrawingObjectInsert implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
-        if (!in_array($this->container['relative_horizontal_position'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'relative_horizontal_position', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getRelativeVerticalPositionAllowableValues();
-        if (!in_array($this->container['relative_vertical_position'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'relative_vertical_position', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getWrapTypeAllowableValues();
-        if (!in_array($this->container['wrap_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'wrap_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
-        if (!in_array($this->container['relative_horizontal_position'], $allowedValues)) {
-            return false;
+
+        if (isset($this->container['position'])) {
+            $this->getPosition()->validate();
         }
 
-        $allowedValues = $this->getRelativeVerticalPositionAllowableValues();
-        if (!in_array($this->container['relative_vertical_position'], $allowedValues)) {
-            return false;
+        if (isset($this->container['relative_horizontal_position'])) {
+            $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
+            if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectInsert has invalid format.');
+            }
+        }
+        if (!isset($this->container['relative_horizontal_position'])) {
+            throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObjectInsert is required.');
         }
 
-        $allowedValues = $this->getWrapTypeAllowableValues();
-        if (!in_array($this->container['wrap_type'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['left'])) {
+            throw new \InvalidArgumentException('Property Left in DrawingObjectInsert is required.');
         }
 
+        if (isset($this->container['relative_vertical_position'])) {
+            $allowedValuesRelativeVerticalPosition = $this->getRelativeVerticalPositionAllowableValues();
+            if (!in_array($this->container['relative_vertical_position'], $allowedValuesRelativeVerticalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObjectInsert has invalid format.');
+            }
+        }
+        if (!isset($this->container['relative_vertical_position'])) {
+            throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObjectInsert is required.');
+        }
 
-        return true;
+        if (!isset($this->container['top'])) {
+            throw new \InvalidArgumentException('Property Top in DrawingObjectInsert is required.');
+        }
+
+        if (!isset($this->container['width'])) {
+            throw new \InvalidArgumentException('Property Width in DrawingObjectInsert is required.');
+        }
+
+        if (!isset($this->container['height'])) {
+            throw new \InvalidArgumentException('Property Height in DrawingObjectInsert is required.');
+        }
+
+        if (isset($this->container['wrap_type'])) {
+            $allowedValuesWrapType = $this->getWrapTypeAllowableValues();
+            if (!in_array($this->container['wrap_type'], $allowedValuesWrapType)) {
+                throw new \InvalidArgumentException('Property WrapType in DrawingObjectInsert has invalid format.');
+            }
+        }
+        if (!isset($this->container['wrap_type'])) {
+            throw new \InvalidArgumentException('Property WrapType in DrawingObjectInsert is required.');
+        }
+
     }
 
     /*

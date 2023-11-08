@@ -333,6 +333,10 @@ class CreateOrUpdateDocumentPropertyRequest extends BaseApiRequest
         if ($this->property === null) {
             throw new \InvalidArgumentException('Missing the required parameter $property when calling createOrUpdateDocumentProperty');
         }
+        if ($this->property !== null) {
+            $this->property->validate();
+        }
+
 
         $resourcePath = '/words/{name}/documentProperties/{propertyName}';
         $formParams = [];

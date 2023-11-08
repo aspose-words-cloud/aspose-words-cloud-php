@@ -198,41 +198,24 @@ class StyleInsert implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getStyleTypeAllowableValues();
-        if (!in_array($this->container['style_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'style_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getStyleTypeAllowableValues();
-        if (!in_array($this->container['style_type'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['style_name'])) {
+            throw new \InvalidArgumentException('Property StyleName in StyleInsert is required.');
         }
 
+        if (isset($this->container['style_type'])) {
+            $allowedValuesStyleType = $this->getStyleTypeAllowableValues();
+            if (!in_array($this->container['style_type'], $allowedValuesStyleType)) {
+                throw new \InvalidArgumentException('Property StyleType in StyleInsert has invalid format.');
+            }
+        }
+        if (!isset($this->container['style_type'])) {
+            throw new \InvalidArgumentException('Property StyleType in StyleInsert is required.');
+        }
 
-        return true;
     }
 
     /*

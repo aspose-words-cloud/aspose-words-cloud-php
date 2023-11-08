@@ -200,41 +200,24 @@ class JsonDataLoadOptions implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getSimpleValueParseModeAllowableValues();
-        if (!in_array($this->container['simple_value_parse_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'simple_value_parse_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getSimpleValueParseModeAllowableValues();
-        if (!in_array($this->container['simple_value_parse_mode'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['always_generate_root_object'])) {
+            throw new \InvalidArgumentException('Property AlwaysGenerateRootObject in JsonDataLoadOptions is required.');
         }
 
+        if (isset($this->container['simple_value_parse_mode'])) {
+            $allowedValuesSimpleValueParseMode = $this->getSimpleValueParseModeAllowableValues();
+            if (!in_array($this->container['simple_value_parse_mode'], $allowedValuesSimpleValueParseMode)) {
+                throw new \InvalidArgumentException('Property SimpleValueParseMode in JsonDataLoadOptions has invalid format.');
+            }
+        }
+        if (!isset($this->container['simple_value_parse_mode'])) {
+            throw new \InvalidArgumentException('Property SimpleValueParseMode in JsonDataLoadOptions is required.');
+        }
 
-        return true;
     }
 
     /*

@@ -214,44 +214,19 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getTextOutputModeAllowableValues();
-        if (!in_array($this->container['text_output_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'text_output_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['text_output_mode'])) {
+            $allowedValuesTextOutputMode = $this->getTextOutputModeAllowableValues();
+            if (!in_array($this->container['text_output_mode'], $allowedValuesTextOutputMode)) {
+                throw new \InvalidArgumentException('Property TextOutputMode in SvgSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getTextOutputModeAllowableValues();
-        if (!in_array($this->container['text_output_mode'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

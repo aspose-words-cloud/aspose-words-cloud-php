@@ -304,80 +304,47 @@ abstract class SaveOptionsData implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getDml3DEffectsRenderingModeAllowableValues();
-        if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'dml3_d_effects_rendering_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getDmlEffectsRenderingModeAllowableValues();
-        if (!in_array($this->container['dml_effects_rendering_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'dml_effects_rendering_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getDmlRenderingModeAllowableValues();
-        if (!in_array($this->container['dml_rendering_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'dml_rendering_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getImlRenderingModeAllowableValues();
-        if (!in_array($this->container['iml_rendering_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'iml_rendering_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getDml3DEffectsRenderingModeAllowableValues();
-        if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValues)) {
-            return false;
+
+        if (isset($this->container['custom_time_zone_info_data'])) {
+            $this->getCustomTimeZoneInfoData()->validate();
         }
 
-        $allowedValues = $this->getDmlEffectsRenderingModeAllowableValues();
-        if (!in_array($this->container['dml_effects_rendering_mode'], $allowedValues)) {
-            return false;
+        if (isset($this->container['dml3_d_effects_rendering_mode'])) {
+            $allowedValuesDml3DEffectsRenderingMode = $this->getDml3DEffectsRenderingModeAllowableValues();
+            if (!in_array($this->container['dml3_d_effects_rendering_mode'], $allowedValuesDml3DEffectsRenderingMode)) {
+                throw new \InvalidArgumentException('Property Dml3DEffectsRenderingMode in SaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getDmlRenderingModeAllowableValues();
-        if (!in_array($this->container['dml_rendering_mode'], $allowedValues)) {
-            return false;
+        if (isset($this->container['dml_effects_rendering_mode'])) {
+            $allowedValuesDmlEffectsRenderingMode = $this->getDmlEffectsRenderingModeAllowableValues();
+            if (!in_array($this->container['dml_effects_rendering_mode'], $allowedValuesDmlEffectsRenderingMode)) {
+                throw new \InvalidArgumentException('Property DmlEffectsRenderingMode in SaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getImlRenderingModeAllowableValues();
-        if (!in_array($this->container['iml_rendering_mode'], $allowedValues)) {
-            return false;
+        if (isset($this->container['dml_rendering_mode'])) {
+            $allowedValuesDmlRenderingMode = $this->getDmlRenderingModeAllowableValues();
+            if (!in_array($this->container['dml_rendering_mode'], $allowedValuesDmlRenderingMode)) {
+                throw new \InvalidArgumentException('Property DmlRenderingMode in SaveOptionsData has invalid format.');
+            }
         }
 
+        if (!isset($this->container['file_name'])) {
+            throw new \InvalidArgumentException('Property FileName in SaveOptionsData is required.');
+        }
 
-        return true;
+        if (isset($this->container['iml_rendering_mode'])) {
+            $allowedValuesImlRenderingMode = $this->getImlRenderingModeAllowableValues();
+            if (!in_array($this->container['iml_rendering_mode'], $allowedValuesImlRenderingMode)) {
+                throw new \InvalidArgumentException('Property ImlRenderingMode in SaveOptionsData has invalid format.');
+            }
+        }
+
     }
 
     /*

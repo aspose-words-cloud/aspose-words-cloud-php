@@ -470,135 +470,88 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getComplianceAllowableValues();
-        if (!in_array($this->container['compliance'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'compliance', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getCustomPropertiesExportAllowableValues();
-        if (!in_array($this->container['custom_properties_export'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'custom_properties_export', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getFontEmbeddingModeAllowableValues();
-        if (!in_array($this->container['font_embedding_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'font_embedding_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
-        if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'header_footer_bookmarks_export_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getImageColorSpaceExportModeAllowableValues();
-        if (!in_array($this->container['image_color_space_export_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'image_color_space_export_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getPageModeAllowableValues();
-        if (!in_array($this->container['page_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'page_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getTextCompressionAllowableValues();
-        if (!in_array($this->container['text_compression'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'text_compression', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getZoomBehaviorAllowableValues();
-        if (!in_array($this->container['zoom_behavior'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'zoom_behavior', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['compliance'])) {
+            $allowedValuesCompliance = $this->getComplianceAllowableValues();
+            if (!in_array($this->container['compliance'], $allowedValuesCompliance)) {
+                throw new \InvalidArgumentException('Property Compliance in PdfSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getComplianceAllowableValues();
-        if (!in_array($this->container['compliance'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getCustomPropertiesExportAllowableValues();
-        if (!in_array($this->container['custom_properties_export'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getFontEmbeddingModeAllowableValues();
-        if (!in_array($this->container['font_embedding_mode'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getHeaderFooterBookmarksExportModeAllowableValues();
-        if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getImageColorSpaceExportModeAllowableValues();
-        if (!in_array($this->container['image_color_space_export_mode'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getPageModeAllowableValues();
-        if (!in_array($this->container['page_mode'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getTextCompressionAllowableValues();
-        if (!in_array($this->container['text_compression'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getZoomBehaviorAllowableValues();
-        if (!in_array($this->container['zoom_behavior'], $allowedValues)) {
-            return false;
+        if (isset($this->container['custom_properties_export'])) {
+            $allowedValuesCustomPropertiesExport = $this->getCustomPropertiesExportAllowableValues();
+            if (!in_array($this->container['custom_properties_export'], $allowedValuesCustomPropertiesExport)) {
+                throw new \InvalidArgumentException('Property CustomPropertiesExport in PdfSaveOptionsData has invalid format.');
+            }
         }
 
 
-        return true;
+        if (isset($this->container['digital_signature_details'])) {
+            $this->getDigitalSignatureDetails()->validate();
+        }
+
+
+        if (isset($this->container['downsample_options'])) {
+            $this->getDownsampleOptions()->validate();
+        }
+
+
+        if (isset($this->container['encryption_details'])) {
+            $this->getEncryptionDetails()->validate();
+        }
+
+        if (isset($this->container['font_embedding_mode'])) {
+            $allowedValuesFontEmbeddingMode = $this->getFontEmbeddingModeAllowableValues();
+            if (!in_array($this->container['font_embedding_mode'], $allowedValuesFontEmbeddingMode)) {
+                throw new \InvalidArgumentException('Property FontEmbeddingMode in PdfSaveOptionsData has invalid format.');
+            }
+        }
+
+        if (isset($this->container['header_footer_bookmarks_export_mode'])) {
+            $allowedValuesHeaderFooterBookmarksExportMode = $this->getHeaderFooterBookmarksExportModeAllowableValues();
+            if (!in_array($this->container['header_footer_bookmarks_export_mode'], $allowedValuesHeaderFooterBookmarksExportMode)) {
+                throw new \InvalidArgumentException('Property HeaderFooterBookmarksExportMode in PdfSaveOptionsData has invalid format.');
+            }
+        }
+
+        if (isset($this->container['image_color_space_export_mode'])) {
+            $allowedValuesImageColorSpaceExportMode = $this->getImageColorSpaceExportModeAllowableValues();
+            if (!in_array($this->container['image_color_space_export_mode'], $allowedValuesImageColorSpaceExportMode)) {
+                throw new \InvalidArgumentException('Property ImageColorSpaceExportMode in PdfSaveOptionsData has invalid format.');
+            }
+        }
+
+
+        if (isset($this->container['outline_options'])) {
+            $this->getOutlineOptions()->validate();
+        }
+
+        if (isset($this->container['page_mode'])) {
+            $allowedValuesPageMode = $this->getPageModeAllowableValues();
+            if (!in_array($this->container['page_mode'], $allowedValuesPageMode)) {
+                throw new \InvalidArgumentException('Property PageMode in PdfSaveOptionsData has invalid format.');
+            }
+        }
+
+        if (isset($this->container['text_compression'])) {
+            $allowedValuesTextCompression = $this->getTextCompressionAllowableValues();
+            if (!in_array($this->container['text_compression'], $allowedValuesTextCompression)) {
+                throw new \InvalidArgumentException('Property TextCompression in PdfSaveOptionsData has invalid format.');
+            }
+        }
+
+        if (isset($this->container['zoom_behavior'])) {
+            $allowedValuesZoomBehavior = $this->getZoomBehaviorAllowableValues();
+            if (!in_array($this->container['zoom_behavior'], $allowedValuesZoomBehavior)) {
+                throw new \InvalidArgumentException('Property ZoomBehavior in PdfSaveOptionsData has invalid format.');
+            }
+        }
+
     }
 
     /*

@@ -201,44 +201,19 @@ abstract class TxtSaveOptionsBaseData extends SaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
-        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'export_headers_footers_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['export_headers_footers_mode'])) {
+            $allowedValuesExportHeadersFootersMode = $this->getExportHeadersFootersModeAllowableValues();
+            if (!in_array($this->container['export_headers_footers_mode'], $allowedValuesExportHeadersFootersMode)) {
+                throw new \InvalidArgumentException('Property ExportHeadersFootersMode in TxtSaveOptionsBaseData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getExportHeadersFootersModeAllowableValues();
-        if (!in_array($this->container['export_headers_footers_mode'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

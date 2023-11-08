@@ -282,6 +282,10 @@ class InsertFootnoteOnlineRequest extends BaseApiRequest
         if ($this->footnote_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $footnote_dto when calling insertFootnoteOnline');
         }
+        if ($this->footnote_dto !== null) {
+            $this->footnote_dto->validate();
+        }
+
 
         $resourcePath = '/words/online/post/{nodePath}/footnotes';
         $formParams = [];

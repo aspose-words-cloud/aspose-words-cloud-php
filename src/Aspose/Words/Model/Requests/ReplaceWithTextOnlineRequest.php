@@ -261,6 +261,10 @@ class ReplaceWithTextOnlineRequest extends BaseApiRequest
         if ($this->range_text === null) {
             throw new \InvalidArgumentException('Missing the required parameter $range_text when calling replaceWithTextOnline');
         }
+        if ($this->range_text !== null) {
+            $this->range_text->validate();
+        }
+
 
         $resourcePath = '/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}';
         $formParams = [];

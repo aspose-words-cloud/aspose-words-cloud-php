@@ -312,6 +312,10 @@ class UpdateRunOnlineRequest extends BaseApiRequest
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunOnline');
         }
+        if ($this->run !== null) {
+            $this->run->validate();
+        }
+
 
         $resourcePath = '/words/online/put/{paragraphPath}/runs/{index}';
         $formParams = [];

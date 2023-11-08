@@ -45,6 +45,7 @@ class ReportBuildOptions
     const INLINE_ERROR_MESSAGES = 'InlineErrorMessages';
     const USE_LEGACY_HEADER_FOOTER_VISITING = 'UseLegacyHeaderFooterVisiting';
     const RESPECT_JPEG_EXIF_ORIENTATION = 'RespectJpegExifOrientation';
+    const UPDATE_FIELDS_SYNTAX_AWARE = 'UpdateFieldsSyntaxAware';
 
     /*
      * Gets allowable values of the enum
@@ -58,7 +59,8 @@ class ReportBuildOptions
             self::REMOVE_EMPTY_PARAGRAPHS,
             self::INLINE_ERROR_MESSAGES,
             self::USE_LEGACY_HEADER_FOOTER_VISITING,
-            self::RESPECT_JPEG_EXIF_ORIENTATION
+            self::RESPECT_JPEG_EXIF_ORIENTATION,
+            self::UPDATE_FIELDS_SYNTAX_AWARE
         ];
     }
 }

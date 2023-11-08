@@ -285,6 +285,10 @@ class UpdateStyleOnlineRequest extends BaseApiRequest
         if ($this->style_update === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_update when calling updateStyleOnline');
         }
+        if ($this->style_update !== null) {
+            $this->style_update->validate();
+        }
+
 
         $resourcePath = '/words/online/put/styles/{styleName}/update';
         $formParams = [];

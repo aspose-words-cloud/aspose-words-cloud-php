@@ -210,6 +210,10 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
         if ($this->data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $data when calling executeMailMergeOnline');
         }
+        if ($this->options !== null) {
+            $this->options->validate();
+        }
+
 
         $resourcePath = '/words/MailMerge';
         $formParams = [];

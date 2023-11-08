@@ -333,6 +333,10 @@ class InsertTableRowRequest extends BaseApiRequest
         if ($this->row === null) {
             throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRow');
         }
+        if ($this->row !== null) {
+            $this->row->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{tablePath}/rows';
         $formParams = [];

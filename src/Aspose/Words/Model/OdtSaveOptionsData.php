@@ -200,44 +200,19 @@ class OdtSaveOptionsData extends SaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'measure_unit', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['measure_unit'])) {
+            $allowedValuesMeasureUnit = $this->getMeasureUnitAllowableValues();
+            if (!in_array($this->container['measure_unit'], $allowedValuesMeasureUnit)) {
+                throw new \InvalidArgumentException('Property MeasureUnit in OdtSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getMeasureUnitAllowableValues();
-        if (!in_array($this->container['measure_unit'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

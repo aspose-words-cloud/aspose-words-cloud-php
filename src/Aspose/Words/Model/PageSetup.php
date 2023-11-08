@@ -613,135 +613,68 @@ class PageSetup extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getBorderAppliesToAllowableValues();
-        if (!in_array($this->container['border_applies_to'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'border_applies_to', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getBorderDistanceFromAllowableValues();
-        if (!in_array($this->container['border_distance_from'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'border_distance_from', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
-        if (!in_array($this->container['line_number_restart_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'line_number_restart_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getOrientationAllowableValues();
-        if (!in_array($this->container['orientation'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'orientation', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getPageNumberStyleAllowableValues();
-        if (!in_array($this->container['page_number_style'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'page_number_style', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getPaperSizeAllowableValues();
-        if (!in_array($this->container['paper_size'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'paper_size', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getSectionStartAllowableValues();
-        if (!in_array($this->container['section_start'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'section_start', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getVerticalAlignmentAllowableValues();
-        if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'vertical_alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['border_applies_to'])) {
+            $allowedValuesBorderAppliesTo = $this->getBorderAppliesToAllowableValues();
+            if (!in_array($this->container['border_applies_to'], $allowedValuesBorderAppliesTo)) {
+                throw new \InvalidArgumentException('Property BorderAppliesTo in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getBorderAppliesToAllowableValues();
-        if (!in_array($this->container['border_applies_to'], $allowedValues)) {
-            return false;
+        if (isset($this->container['border_distance_from'])) {
+            $allowedValuesBorderDistanceFrom = $this->getBorderDistanceFromAllowableValues();
+            if (!in_array($this->container['border_distance_from'], $allowedValuesBorderDistanceFrom)) {
+                throw new \InvalidArgumentException('Property BorderDistanceFrom in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getBorderDistanceFromAllowableValues();
-        if (!in_array($this->container['border_distance_from'], $allowedValues)) {
-            return false;
+        if (isset($this->container['line_number_restart_mode'])) {
+            $allowedValuesLineNumberRestartMode = $this->getLineNumberRestartModeAllowableValues();
+            if (!in_array($this->container['line_number_restart_mode'], $allowedValuesLineNumberRestartMode)) {
+                throw new \InvalidArgumentException('Property LineNumberRestartMode in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getLineNumberRestartModeAllowableValues();
-        if (!in_array($this->container['line_number_restart_mode'], $allowedValues)) {
-            return false;
+        if (isset($this->container['orientation'])) {
+            $allowedValuesOrientation = $this->getOrientationAllowableValues();
+            if (!in_array($this->container['orientation'], $allowedValuesOrientation)) {
+                throw new \InvalidArgumentException('Property Orientation in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getOrientationAllowableValues();
-        if (!in_array($this->container['orientation'], $allowedValues)) {
-            return false;
+        if (isset($this->container['page_number_style'])) {
+            $allowedValuesPageNumberStyle = $this->getPageNumberStyleAllowableValues();
+            if (!in_array($this->container['page_number_style'], $allowedValuesPageNumberStyle)) {
+                throw new \InvalidArgumentException('Property PageNumberStyle in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getPageNumberStyleAllowableValues();
-        if (!in_array($this->container['page_number_style'], $allowedValues)) {
-            return false;
+        if (isset($this->container['paper_size'])) {
+            $allowedValuesPaperSize = $this->getPaperSizeAllowableValues();
+            if (!in_array($this->container['paper_size'], $allowedValuesPaperSize)) {
+                throw new \InvalidArgumentException('Property PaperSize in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getPaperSizeAllowableValues();
-        if (!in_array($this->container['paper_size'], $allowedValues)) {
-            return false;
+        if (isset($this->container['section_start'])) {
+            $allowedValuesSectionStart = $this->getSectionStartAllowableValues();
+            if (!in_array($this->container['section_start'], $allowedValuesSectionStart)) {
+                throw new \InvalidArgumentException('Property SectionStart in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getSectionStartAllowableValues();
-        if (!in_array($this->container['section_start'], $allowedValues)) {
-            return false;
+        if (isset($this->container['vertical_alignment'])) {
+            $allowedValuesVerticalAlignment = $this->getVerticalAlignmentAllowableValues();
+            if (!in_array($this->container['vertical_alignment'], $allowedValuesVerticalAlignment)) {
+                throw new \InvalidArgumentException('Property VerticalAlignment in PageSetup has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getVerticalAlignmentAllowableValues();
-        if (!in_array($this->container['vertical_alignment'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

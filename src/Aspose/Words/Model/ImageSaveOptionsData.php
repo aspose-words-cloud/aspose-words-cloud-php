@@ -293,57 +293,26 @@ abstract class ImageSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getImageColorModeAllowableValues();
-        if (!in_array($this->container['image_color_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'image_color_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getPixelFormatAllowableValues();
-        if (!in_array($this->container['pixel_format'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'pixel_format', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['image_color_mode'])) {
+            $allowedValuesImageColorMode = $this->getImageColorModeAllowableValues();
+            if (!in_array($this->container['image_color_mode'], $allowedValuesImageColorMode)) {
+                throw new \InvalidArgumentException('Property ImageColorMode in ImageSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getImageColorModeAllowableValues();
-        if (!in_array($this->container['image_color_mode'], $allowedValues)) {
-            return false;
+        if (isset($this->container['pixel_format'])) {
+            $allowedValuesPixelFormat = $this->getPixelFormatAllowableValues();
+            if (!in_array($this->container['pixel_format'], $allowedValuesPixelFormat)) {
+                throw new \InvalidArgumentException('Property PixelFormat in ImageSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getPixelFormatAllowableValues();
-        if (!in_array($this->container['pixel_format'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

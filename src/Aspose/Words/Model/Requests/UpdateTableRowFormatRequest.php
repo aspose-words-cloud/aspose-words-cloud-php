@@ -360,6 +360,10 @@ class UpdateTableRowFormatRequest extends BaseApiRequest
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableRowFormat');
         }
+        if ($this->format !== null) {
+            $this->format->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{tablePath}/rows/{index}/rowformat';
         $formParams = [];

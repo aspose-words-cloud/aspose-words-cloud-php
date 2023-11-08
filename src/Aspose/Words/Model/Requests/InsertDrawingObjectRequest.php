@@ -357,6 +357,10 @@ class InsertDrawingObjectRequest extends BaseApiRequest
         if ($this->image_file === null) {
             throw new \InvalidArgumentException('Missing the required parameter $image_file when calling insertDrawingObject');
         }
+        if ($this->drawing_object !== null) {
+            $this->drawing_object->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects';
         $formParams = [];

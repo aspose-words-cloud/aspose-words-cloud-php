@@ -258,6 +258,10 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
         if ($this->compare_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $compare_data when calling compareDocumentOnline');
         }
+        if ($this->compare_data !== null) {
+            $this->compare_data->validate();
+        }
+
 
         $resourcePath = '/words/online/put/compareDocument';
         $formParams = [];

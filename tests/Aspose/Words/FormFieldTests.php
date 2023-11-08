@@ -59,6 +59,7 @@ class FormFieldTests extends BaseTestContext
             "status_text" => "",
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
+            "text_input_format" => "",
         ));
         $request = new UpdateFormFieldRequest(
             $remoteFileName,
@@ -97,6 +98,7 @@ class FormFieldTests extends BaseTestContext
             "status_text" => "",
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
+            "text_input_format" => "",
         ));
         $request = new UpdateFormFieldOnlineRequest(
             $requestDocument,
@@ -136,6 +138,7 @@ class FormFieldTests extends BaseTestContext
             "status_text" => "",
             "text_input_type" => "Regular",
             "text_input_default" => "No name",
+            "text_input_format" => "",
         ));
         $request = new UpdateFormFieldRequest(
             $remoteFileName,

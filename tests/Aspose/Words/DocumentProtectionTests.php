@@ -82,7 +82,8 @@ class DocumentProtectionTests extends BaseTestContext
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $requestProtectionRequest = new ProtectionRequest(array(
-            "new_password" => "123",
+            "password" => "123",
+            "protection_type" => "ReadOnly",
         ));
         $request = new ProtectDocumentOnlineRequest(
             $requestDocument,

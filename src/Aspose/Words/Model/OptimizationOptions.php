@@ -200,41 +200,20 @@ class OptimizationOptions implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getMsWordVersionAllowableValues();
-        if (!in_array($this->container['ms_word_version'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'ms_word_version', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getMsWordVersionAllowableValues();
-        if (!in_array($this->container['ms_word_version'], $allowedValues)) {
-            return false;
+        if (isset($this->container['ms_word_version'])) {
+            $allowedValuesMsWordVersion = $this->getMsWordVersionAllowableValues();
+            if (!in_array($this->container['ms_word_version'], $allowedValuesMsWordVersion)) {
+                throw new \InvalidArgumentException('Property MsWordVersion in OptimizationOptions has invalid format.');
+            }
+        }
+        if (!isset($this->container['ms_word_version'])) {
+            throw new \InvalidArgumentException('Property MsWordVersion in OptimizationOptions is required.');
         }
 
-
-        return true;
     }
 
     /*

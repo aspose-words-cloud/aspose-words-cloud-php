@@ -276,57 +276,26 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getFontFormatAllowableValues();
-        if (!in_array($this->container['font_format'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'font_format', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getPageHorizontalAlignmentAllowableValues();
-        if (!in_array($this->container['page_horizontal_alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'page_horizontal_alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['font_format'])) {
+            $allowedValuesFontFormat = $this->getFontFormatAllowableValues();
+            if (!in_array($this->container['font_format'], $allowedValuesFontFormat)) {
+                throw new \InvalidArgumentException('Property FontFormat in HtmlFixedSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getFontFormatAllowableValues();
-        if (!in_array($this->container['font_format'], $allowedValues)) {
-            return false;
+        if (isset($this->container['page_horizontal_alignment'])) {
+            $allowedValuesPageHorizontalAlignment = $this->getPageHorizontalAlignmentAllowableValues();
+            if (!in_array($this->container['page_horizontal_alignment'], $allowedValuesPageHorizontalAlignment)) {
+                throw new \InvalidArgumentException('Property PageHorizontalAlignment in HtmlFixedSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getPageHorizontalAlignmentAllowableValues();
-        if (!in_array($this->container['page_horizontal_alignment'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

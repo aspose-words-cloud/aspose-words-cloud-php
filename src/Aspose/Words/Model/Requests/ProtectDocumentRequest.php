@@ -258,6 +258,10 @@ class ProtectDocumentRequest extends BaseApiRequest
         if ($this->protection_request === null) {
             throw new \InvalidArgumentException('Missing the required parameter $protection_request when calling protectDocument');
         }
+        if ($this->protection_request !== null) {
+            $this->protection_request->validate();
+        }
+
 
         $resourcePath = '/words/{name}/protection';
         $formParams = [];

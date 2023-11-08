@@ -309,6 +309,10 @@ class UpdateParagraphFormatOnlineRequest extends BaseApiRequest
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateParagraphFormatOnline');
         }
+        if ($this->paragraph_format_dto !== null) {
+            $this->paragraph_format_dto->validate();
+        }
+
 
         $resourcePath = '/words/online/put/{nodePath}/paragraphs/{index}/format';
         $formParams = [];

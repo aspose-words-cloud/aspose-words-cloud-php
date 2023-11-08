@@ -285,6 +285,10 @@ class UpdateCommentOnlineRequest extends BaseApiRequest
         if ($this->comment === null) {
             throw new \InvalidArgumentException('Missing the required parameter $comment when calling updateCommentOnline');
         }
+        if ($this->comment !== null) {
+            $this->comment->validate();
+        }
+
 
         $resourcePath = '/words/online/put/comments/{commentIndex}';
         $formParams = [];

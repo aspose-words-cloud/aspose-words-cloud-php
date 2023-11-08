@@ -186,44 +186,19 @@ class MarkdownSaveOptionsData extends TxtSaveOptionsBaseData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getTableContentAlignmentAllowableValues();
-        if (!in_array($this->container['table_content_alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'table_content_alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['table_content_alignment'])) {
+            $allowedValuesTableContentAlignment = $this->getTableContentAlignmentAllowableValues();
+            if (!in_array($this->container['table_content_alignment'], $allowedValuesTableContentAlignment)) {
+                throw new \InvalidArgumentException('Property TableContentAlignment in MarkdownSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getTableContentAlignmentAllowableValues();
-        if (!in_array($this->container['table_content_alignment'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

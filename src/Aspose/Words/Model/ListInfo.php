@@ -203,29 +203,42 @@ class ListInfo extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (!isset($this->container['list_id'])) {
+            throw new \InvalidArgumentException('Property ListId in ListInfo is required.');
         }
 
-        return true;
+        if (!isset($this->container['is_multi_level'])) {
+            throw new \InvalidArgumentException('Property IsMultiLevel in ListInfo is required.');
+        }
+
+        if (!isset($this->container['is_restart_at_each_section'])) {
+            throw new \InvalidArgumentException('Property IsRestartAtEachSection in ListInfo is required.');
+        }
+
+        if (!isset($this->container['is_list_style_definition'])) {
+            throw new \InvalidArgumentException('Property IsListStyleDefinition in ListInfo is required.');
+        }
+
+        if (!isset($this->container['is_list_style_reference'])) {
+            throw new \InvalidArgumentException('Property IsListStyleReference in ListInfo is required.');
+        }
+
+
+        if (isset($this->container['style'])) {
+            $this->getStyle()->validate();
+        }
+
+
+        if (isset($this->container['list_levels'])) {
+            $this->getListLevels()->validate();
+        }
+
     }
 
     /*

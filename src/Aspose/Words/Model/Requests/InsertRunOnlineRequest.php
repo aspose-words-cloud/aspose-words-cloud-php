@@ -309,6 +309,10 @@ class InsertRunOnlineRequest extends BaseApiRequest
         if ($this->run === null) {
             throw new \InvalidArgumentException('Missing the required parameter $run when calling insertRunOnline');
         }
+        if ($this->run !== null) {
+            $this->run->validate();
+        }
+
 
         $resourcePath = '/words/online/post/{paragraphPath}/runs';
         $formParams = [];

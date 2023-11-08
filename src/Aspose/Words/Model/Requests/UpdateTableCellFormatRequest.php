@@ -360,6 +360,10 @@ class UpdateTableCellFormatRequest extends BaseApiRequest
         if ($this->format === null) {
             throw new \InvalidArgumentException('Missing the required parameter $format when calling updateTableCellFormat');
         }
+        if ($this->format !== null) {
+            $this->format->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{tableRowPath}/cells/{index}/cellformat';
         $formParams = [];

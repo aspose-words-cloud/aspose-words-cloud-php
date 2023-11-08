@@ -219,57 +219,26 @@ abstract class OoxmlSaveOptionsData extends SaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getComplianceAllowableValues();
-        if (!in_array($this->container['compliance'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'compliance', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getCompressionLevelAllowableValues();
-        if (!in_array($this->container['compression_level'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'compression_level', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['compliance'])) {
+            $allowedValuesCompliance = $this->getComplianceAllowableValues();
+            if (!in_array($this->container['compliance'], $allowedValuesCompliance)) {
+                throw new \InvalidArgumentException('Property Compliance in OoxmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getComplianceAllowableValues();
-        if (!in_array($this->container['compliance'], $allowedValues)) {
-            return false;
+        if (isset($this->container['compression_level'])) {
+            $allowedValuesCompressionLevel = $this->getCompressionLevelAllowableValues();
+            if (!in_array($this->container['compression_level'], $allowedValuesCompressionLevel)) {
+                throw new \InvalidArgumentException('Property CompressionLevel in OoxmlSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getCompressionLevelAllowableValues();
-        if (!in_array($this->container['compression_level'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

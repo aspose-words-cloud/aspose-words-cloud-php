@@ -301,70 +301,54 @@ class DrawingObject extends DrawingObjectLink
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
-        if (!in_array($this->container['relative_horizontal_position'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'relative_horizontal_position', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getRelativeVerticalPositionAllowableValues();
-        if (!in_array($this->container['relative_vertical_position'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'relative_vertical_position', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getWrapTypeAllowableValues();
-        if (!in_array($this->container['wrap_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'wrap_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
-        }
+        parent::validate();
 
-        $allowedValues = $this->getRelativeHorizontalPositionAllowableValues();
-        if (!in_array($this->container['relative_horizontal_position'], $allowedValues)) {
-            return false;
-        }
 
-        $allowedValues = $this->getRelativeVerticalPositionAllowableValues();
-        if (!in_array($this->container['relative_vertical_position'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getWrapTypeAllowableValues();
-        if (!in_array($this->container['wrap_type'], $allowedValues)) {
-            return false;
+        if (isset($this->container['render_links'])) {
+            foreach ($this->getRenderLinks() as &$elementRenderLinks)
+            {
+                if ($elementRenderLinks != null)
+                {
+                    $elementRenderLinks->validate();
+                }
+            }
         }
 
 
-        return true;
+        if (isset($this->container['ole_data_link'])) {
+            $this->getOleDataLink()->validate();
+        }
+
+
+        if (isset($this->container['image_data_link'])) {
+            $this->getImageDataLink()->validate();
+        }
+
+        if (isset($this->container['relative_horizontal_position'])) {
+            $allowedValuesRelativeHorizontalPosition = $this->getRelativeHorizontalPositionAllowableValues();
+            if (!in_array($this->container['relative_horizontal_position'], $allowedValuesRelativeHorizontalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeHorizontalPosition in DrawingObject has invalid format.');
+            }
+        }
+
+        if (isset($this->container['relative_vertical_position'])) {
+            $allowedValuesRelativeVerticalPosition = $this->getRelativeVerticalPositionAllowableValues();
+            if (!in_array($this->container['relative_vertical_position'], $allowedValuesRelativeVerticalPosition)) {
+                throw new \InvalidArgumentException('Property RelativeVerticalPosition in DrawingObject has invalid format.');
+            }
+        }
+
+        if (isset($this->container['wrap_type'])) {
+            $allowedValuesWrapType = $this->getWrapTypeAllowableValues();
+            if (!in_array($this->container['wrap_type'], $allowedValuesWrapType)) {
+                throw new \InvalidArgumentException('Property WrapType in DrawingObject has invalid format.');
+            }
+        }
+
     }
 
     /*

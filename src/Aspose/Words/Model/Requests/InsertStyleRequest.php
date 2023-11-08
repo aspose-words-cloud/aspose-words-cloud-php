@@ -306,6 +306,10 @@ class InsertStyleRequest extends BaseApiRequest
         if ($this->style_insert === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_insert when calling insertStyle');
         }
+        if ($this->style_insert !== null) {
+            $this->style_insert->validate();
+        }
+
 
         $resourcePath = '/words/{name}/styles/insert';
         $formParams = [];

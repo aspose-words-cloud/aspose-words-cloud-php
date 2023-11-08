@@ -285,6 +285,10 @@ class UpdateSectionPageSetupOnlineRequest extends BaseApiRequest
         if ($this->page_setup === null) {
             throw new \InvalidArgumentException('Missing the required parameter $page_setup when calling updateSectionPageSetupOnline');
         }
+        if ($this->page_setup !== null) {
+            $this->page_setup->validate();
+        }
+
 
         $resourcePath = '/words/online/put/sections/{sectionIndex}/pageSetup';
         $formParams = [];

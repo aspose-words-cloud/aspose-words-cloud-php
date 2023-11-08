@@ -179,29 +179,45 @@ class AvailableFontsResponse extends WordsResponse
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+
+        if (isset($this->container['additional_fonts'])) {
+            foreach ($this->getAdditionalFonts() as &$elementAdditionalFonts)
+            {
+                if ($elementAdditionalFonts != null)
+                {
+                    $elementAdditionalFonts->validate();
+                }
+            }
         }
 
-        return true;
+
+        if (isset($this->container['custom_fonts'])) {
+            foreach ($this->getCustomFonts() as &$elementCustomFonts)
+            {
+                if ($elementCustomFonts != null)
+                {
+                    $elementCustomFonts->validate();
+                }
+            }
+        }
+
+
+        if (isset($this->container['system_fonts'])) {
+            foreach ($this->getSystemFonts() as &$elementSystemFonts)
+            {
+                if ($elementSystemFonts != null)
+                {
+                    $elementSystemFonts->validate();
+                }
+            }
+        }
+
     }
 
     /*

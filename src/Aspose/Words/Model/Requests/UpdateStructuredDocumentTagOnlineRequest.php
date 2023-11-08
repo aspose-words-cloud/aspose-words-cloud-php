@@ -309,6 +309,10 @@ class UpdateStructuredDocumentTagOnlineRequest extends BaseApiRequest
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateStructuredDocumentTagOnline');
         }
+        if ($this->structured_document_tag !== null) {
+            $this->structured_document_tag->validate();
+        }
+
 
         $resourcePath = '/words/online/put/{nodePath}/sdt/{index}';
         $formParams = [];

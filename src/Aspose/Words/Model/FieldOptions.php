@@ -284,54 +284,29 @@ class FieldOptions implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getFieldIndexFormatAllowableValues();
-        if (!in_array($this->container['field_index_format'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'field_index_format', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getFieldUpdateCultureSourceAllowableValues();
-        if (!in_array($this->container['field_update_culture_source'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'field_update_culture_source', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getFieldIndexFormatAllowableValues();
-        if (!in_array($this->container['field_index_format'], $allowedValues)) {
-            return false;
+
+        if (isset($this->container['current_user'])) {
+            $this->getCurrentUser()->validate();
         }
 
-        $allowedValues = $this->getFieldUpdateCultureSourceAllowableValues();
-        if (!in_array($this->container['field_update_culture_source'], $allowedValues)) {
-            return false;
+        if (isset($this->container['field_index_format'])) {
+            $allowedValuesFieldIndexFormat = $this->getFieldIndexFormatAllowableValues();
+            if (!in_array($this->container['field_index_format'], $allowedValuesFieldIndexFormat)) {
+                throw new \InvalidArgumentException('Property FieldIndexFormat in FieldOptions has invalid format.');
+            }
         }
 
+        if (isset($this->container['field_update_culture_source'])) {
+            $allowedValuesFieldUpdateCultureSource = $this->getFieldUpdateCultureSourceAllowableValues();
+            if (!in_array($this->container['field_update_culture_source'], $allowedValuesFieldUpdateCultureSource)) {
+                throw new \InvalidArgumentException('Property FieldUpdateCultureSource in FieldOptions has invalid format.');
+            }
+        }
 
-        return true;
     }
 
     /*

@@ -237,57 +237,31 @@ abstract class FixedPageSaveOptionsData extends SaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getColorModeAllowableValues();
-        if (!in_array($this->container['color_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'color_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getNumeralFormatAllowableValues();
-        if (!in_array($this->container['numeral_format'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'numeral_format', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
-        }
+        parent::validate();
 
-        $allowedValues = $this->getColorModeAllowableValues();
-        if (!in_array($this->container['color_mode'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getNumeralFormatAllowableValues();
-        if (!in_array($this->container['numeral_format'], $allowedValues)) {
-            return false;
+        if (isset($this->container['color_mode'])) {
+            $allowedValuesColorMode = $this->getColorModeAllowableValues();
+            if (!in_array($this->container['color_mode'], $allowedValuesColorMode)) {
+                throw new \InvalidArgumentException('Property ColorMode in FixedPageSaveOptionsData has invalid format.');
+            }
         }
 
 
-        return true;
+        if (isset($this->container['metafile_rendering_options'])) {
+            $this->getMetafileRenderingOptions()->validate();
+        }
+
+        if (isset($this->container['numeral_format'])) {
+            $allowedValuesNumeralFormat = $this->getNumeralFormatAllowableValues();
+            if (!in_array($this->container['numeral_format'], $allowedValuesNumeralFormat)) {
+                throw new \InvalidArgumentException('Property NumeralFormat in FixedPageSaveOptionsData has invalid format.');
+            }
+        }
+
     }
 
     /*

@@ -207,44 +207,27 @@ class FormFieldTextInput extends FormField
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getTextInputTypeAllowableValues();
-        if (!in_array($this->container['text_input_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'text_input_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (!isset($this->container['text_input_format'])) {
+            throw new \InvalidArgumentException('Property TextInputFormat in FormFieldTextInput is required.');
         }
 
-        $allowedValues = $this->getTextInputTypeAllowableValues();
-        if (!in_array($this->container['text_input_type'], $allowedValues)) {
-            return false;
+        if (isset($this->container['text_input_type'])) {
+            $allowedValuesTextInputType = $this->getTextInputTypeAllowableValues();
+            if (!in_array($this->container['text_input_type'], $allowedValuesTextInputType)) {
+                throw new \InvalidArgumentException('Property TextInputType in FormFieldTextInput has invalid format.');
+            }
         }
 
+        if (!isset($this->container['text_input_default'])) {
+            throw new \InvalidArgumentException('Property TextInputDefault in FormFieldTextInput is required.');
+        }
 
-        return true;
     }
 
     /*

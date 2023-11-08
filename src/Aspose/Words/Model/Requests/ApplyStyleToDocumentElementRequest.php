@@ -333,6 +333,10 @@ class ApplyStyleToDocumentElementRequest extends BaseApiRequest
         if ($this->style_apply === null) {
             throw new \InvalidArgumentException('Missing the required parameter $style_apply when calling applyStyleToDocumentElement');
         }
+        if ($this->style_apply !== null) {
+            $this->style_apply->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{styledNodePath}/style';
         $formParams = [];

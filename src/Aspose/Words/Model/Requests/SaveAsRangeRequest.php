@@ -285,6 +285,10 @@ class SaveAsRangeRequest extends BaseApiRequest
         if ($this->document_parameters === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document_parameters when calling saveAsRange');
         }
+        if ($this->document_parameters !== null) {
+            $this->document_parameters->validate();
+        }
+
 
         $resourcePath = '/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs';
         $formParams = [];

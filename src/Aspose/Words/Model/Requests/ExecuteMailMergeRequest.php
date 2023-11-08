@@ -375,6 +375,10 @@ class ExecuteMailMergeRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling executeMailMerge');
         }
+        if ($this->options !== null) {
+            $this->options->validate();
+        }
+
 
         $resourcePath = '/words/{name}/MailMerge';
         $formParams = [];

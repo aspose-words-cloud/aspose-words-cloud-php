@@ -357,6 +357,10 @@ class UpdateTablePropertiesRequest extends BaseApiRequest
         if ($this->properties === null) {
             throw new \InvalidArgumentException('Missing the required parameter $properties when calling updateTableProperties');
         }
+        if ($this->properties !== null) {
+            $this->properties->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{nodePath}/tables/{index}/properties';
         $formParams = [];

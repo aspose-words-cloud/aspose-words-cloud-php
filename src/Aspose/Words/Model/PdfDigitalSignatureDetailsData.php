@@ -216,41 +216,17 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getHashAlgorithmAllowableValues();
-        if (!in_array($this->container['hash_algorithm'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'hash_algorithm', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getHashAlgorithmAllowableValues();
-        if (!in_array($this->container['hash_algorithm'], $allowedValues)) {
-            return false;
+        if (isset($this->container['hash_algorithm'])) {
+            $allowedValuesHashAlgorithm = $this->getHashAlgorithmAllowableValues();
+            if (!in_array($this->container['hash_algorithm'], $allowedValuesHashAlgorithm)) {
+                throw new \InvalidArgumentException('Property HashAlgorithm in PdfDigitalSignatureDetailsData has invalid format.');
+            }
         }
 
-
-        return true;
     }
 
     /*

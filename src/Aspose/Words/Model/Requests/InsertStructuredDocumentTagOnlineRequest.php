@@ -282,6 +282,10 @@ class InsertStructuredDocumentTagOnlineRequest extends BaseApiRequest
         if ($this->structured_document_tag === null) {
             throw new \InvalidArgumentException('Missing the required parameter $structured_document_tag when calling insertStructuredDocumentTagOnline');
         }
+        if ($this->structured_document_tag !== null) {
+            $this->structured_document_tag->validate();
+        }
+
 
         $resourcePath = '/words/online/post/{nodePath}/sdt';
         $formParams = [];

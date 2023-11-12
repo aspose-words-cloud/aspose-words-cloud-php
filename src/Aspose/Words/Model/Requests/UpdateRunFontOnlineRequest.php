@@ -312,6 +312,10 @@ class UpdateRunFontOnlineRequest extends BaseApiRequest
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateRunFontOnline');
         }
+        if ($this->font_dto !== null) {
+            $this->font_dto->validate();
+        }
+
 
         $resourcePath = '/words/online/put/{paragraphPath}/runs/{index}/font';
         $formParams = [];

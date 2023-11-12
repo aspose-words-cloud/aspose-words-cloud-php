@@ -189,44 +189,22 @@ class HeaderFooterLink extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['type'])) {
+            $allowedValuesType = $this->getTypeAllowableValues();
+            if (!in_array($this->container['type'], $allowedValuesType)) {
+                throw new \InvalidArgumentException('Property Type in HeaderFooterLink has invalid format.');
+            }
+        }
+        if (!isset($this->container['type'])) {
+            throw new \InvalidArgumentException('Property Type in HeaderFooterLink is required.');
         }
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

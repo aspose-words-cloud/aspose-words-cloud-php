@@ -214,57 +214,26 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getTiffBinarizationMethodAllowableValues();
-        if (!in_array($this->container['tiff_binarization_method'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'tiff_binarization_method', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getTiffCompressionAllowableValues();
-        if (!in_array($this->container['tiff_compression'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'tiff_compression', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['tiff_binarization_method'])) {
+            $allowedValuesTiffBinarizationMethod = $this->getTiffBinarizationMethodAllowableValues();
+            if (!in_array($this->container['tiff_binarization_method'], $allowedValuesTiffBinarizationMethod)) {
+                throw new \InvalidArgumentException('Property TiffBinarizationMethod in TiffSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getTiffBinarizationMethodAllowableValues();
-        if (!in_array($this->container['tiff_binarization_method'], $allowedValues)) {
-            return false;
+        if (isset($this->container['tiff_compression'])) {
+            $allowedValuesTiffCompression = $this->getTiffCompressionAllowableValues();
+            if (!in_array($this->container['tiff_compression'], $allowedValuesTiffCompression)) {
+                throw new \InvalidArgumentException('Property TiffCompression in TiffSaveOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getTiffCompressionAllowableValues();
-        if (!in_array($this->container['tiff_compression'], $allowedValues)) {
-            return false;
-        }
-
-
-        return true;
     }
 
     /*

@@ -55,6 +55,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'string',
         'emulate_raster_operations' => 'bool',
         'emulate_rendering_to_size_on_page' => 'bool',
+        'emulate_rendering_to_size_on_page_resolution' => 'int',
         'rendering_mode' => 'string',
         'use_emf_embedded_to_wmf' => 'bool'
     ];
@@ -68,6 +69,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'null',
         'emulate_raster_operations' => 'null',
         'emulate_rendering_to_size_on_page' => 'null',
+        'emulate_rendering_to_size_on_page_resolution' => 'null',
         'rendering_mode' => 'null',
         'use_emf_embedded_to_wmf' => 'null'
     ];
@@ -102,6 +104,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'EmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'EmulateRasterOperations',
         'emulate_rendering_to_size_on_page' => 'EmulateRenderingToSizeOnPage',
+        'emulate_rendering_to_size_on_page_resolution' => 'EmulateRenderingToSizeOnPageResolution',
         'rendering_mode' => 'RenderingMode',
         'use_emf_embedded_to_wmf' => 'UseEmfEmbeddedToWmf'
     ];
@@ -115,6 +118,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'setEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'setEmulateRasterOperations',
         'emulate_rendering_to_size_on_page' => 'setEmulateRenderingToSizeOnPage',
+        'emulate_rendering_to_size_on_page_resolution' => 'setEmulateRenderingToSizeOnPageResolution',
         'rendering_mode' => 'setRenderingMode',
         'use_emf_embedded_to_wmf' => 'setUseEmfEmbeddedToWmf'
     ];
@@ -128,6 +132,7 @@ class MetafileRenderingOptionsData implements ArrayAccess
         'emf_plus_dual_rendering_mode' => 'getEmfPlusDualRenderingMode',
         'emulate_raster_operations' => 'getEmulateRasterOperations',
         'emulate_rendering_to_size_on_page' => 'getEmulateRenderingToSizeOnPage',
+        'emulate_rendering_to_size_on_page_resolution' => 'getEmulateRenderingToSizeOnPageResolution',
         'rendering_mode' => 'getRenderingMode',
         'use_emf_embedded_to_wmf' => 'getUseEmfEmbeddedToWmf'
     ];
@@ -225,59 +230,30 @@ class MetafileRenderingOptionsData implements ArrayAccess
         $this->container['emf_plus_dual_rendering_mode'] = isset($data['emf_plus_dual_rendering_mode']) ? $data['emf_plus_dual_rendering_mode'] : null;
         $this->container['emulate_raster_operations'] = isset($data['emulate_raster_operations']) ? $data['emulate_raster_operations'] : null;
         $this->container['emulate_rendering_to_size_on_page'] = isset($data['emulate_rendering_to_size_on_page']) ? $data['emulate_rendering_to_size_on_page'] : null;
+        $this->container['emulate_rendering_to_size_on_page_resolution'] = isset($data['emulate_rendering_to_size_on_page_resolution']) ? $data['emulate_rendering_to_size_on_page_resolution'] : null;
         $this->container['rendering_mode'] = isset($data['rendering_mode']) ? $data['rendering_mode'] : null;
         $this->container['use_emf_embedded_to_wmf'] = isset($data['use_emf_embedded_to_wmf']) ? $data['use_emf_embedded_to_wmf'] : null;
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getEmfPlusDualRenderingModeAllowableValues();
-        if (!in_array($this->container['emf_plus_dual_rendering_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'emf_plus_dual_rendering_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getRenderingModeAllowableValues();
-        if (!in_array($this->container['rendering_mode'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'rendering_mode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getEmfPlusDualRenderingModeAllowableValues();
-        if (!in_array($this->container['emf_plus_dual_rendering_mode'], $allowedValues)) {
-            return false;
+        if (isset($this->container['emf_plus_dual_rendering_mode'])) {
+            $allowedValuesEmfPlusDualRenderingMode = $this->getEmfPlusDualRenderingModeAllowableValues();
+            if (!in_array($this->container['emf_plus_dual_rendering_mode'], $allowedValuesEmfPlusDualRenderingMode)) {
+                throw new \InvalidArgumentException('Property EmfPlusDualRenderingMode in MetafileRenderingOptionsData has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getRenderingModeAllowableValues();
-        if (!in_array($this->container['rendering_mode'], $allowedValues)) {
-            return false;
+        if (isset($this->container['rendering_mode'])) {
+            $allowedValuesRenderingMode = $this->getRenderingModeAllowableValues();
+            if (!in_array($this->container['rendering_mode'], $allowedValuesRenderingMode)) {
+                throw new \InvalidArgumentException('Property RenderingMode in MetafileRenderingOptionsData has invalid format.');
+            }
         }
 
-
-        return true;
     }
 
     /*
@@ -352,6 +328,30 @@ class MetafileRenderingOptionsData implements ArrayAccess
     public function setEmulateRenderingToSizeOnPage($emulate_rendering_to_size_on_page)
     {
         $this->container['emulate_rendering_to_size_on_page'] = $emulate_rendering_to_size_on_page;
+        return $this;
+    }
+
+
+    /*
+     * Gets emulate_rendering_to_size_on_page_resolution
+     *
+     * @return int
+     */
+    public function getEmulateRenderingToSizeOnPageResolution()
+    {
+        return $this->container['emulate_rendering_to_size_on_page_resolution'];
+    }
+
+    /*
+     * Sets emulate_rendering_to_size_on_page_resolution
+     *
+     * @param int $emulate_rendering_to_size_on_page_resolution Gets or sets the resolution in pixels per inch for the emulation of metafile rendering to the size on page. This option is used only when EmulateRenderingToSizeOnPage is set to true.The default value is 96. This is a default display resolution. I.e. metafile rendering will emulate the display of the metafile in MS Word with a 100% zoom factor.
+     *
+     * @return $this
+     */
+    public function setEmulateRenderingToSizeOnPageResolution($emulate_rendering_to_size_on_page_resolution)
+    {
+        $this->container['emulate_rendering_to_size_on_page_resolution'] = $emulate_rendering_to_size_on_page_resolution;
         return $this;
     }
 

@@ -309,6 +309,10 @@ class UpdateBorderOnlineRequest extends BaseApiRequest
         if ($this->border_type === null) {
             throw new \InvalidArgumentException('Missing the required parameter $border_type when calling updateBorderOnline');
         }
+        if ($this->border_properties !== null) {
+            $this->border_properties->validate();
+        }
+
 
         $resourcePath = '/words/online/put/{nodePath}/borders/{borderType}';
         $formParams = [];

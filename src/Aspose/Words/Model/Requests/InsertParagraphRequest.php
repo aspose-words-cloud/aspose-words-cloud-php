@@ -354,6 +354,10 @@ class InsertParagraphRequest extends BaseApiRequest
         if ($this->paragraph === null) {
             throw new \InvalidArgumentException('Missing the required parameter $paragraph when calling insertParagraph');
         }
+        if ($this->paragraph !== null) {
+            $this->paragraph->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs';
         $formParams = [];

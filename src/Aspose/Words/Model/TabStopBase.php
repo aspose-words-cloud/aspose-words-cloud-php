@@ -232,54 +232,34 @@ abstract class TabStopBase implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getLeaderAllowableValues();
-        if (!in_array($this->container['leader'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'leader', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            return false;
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in TabStopBase has invalid format.');
+            }
+        }
+        if (!isset($this->container['alignment'])) {
+            throw new \InvalidArgumentException('Property Alignment in TabStopBase is required.');
         }
 
-        $allowedValues = $this->getLeaderAllowableValues();
-        if (!in_array($this->container['leader'], $allowedValues)) {
-            return false;
+        if (isset($this->container['leader'])) {
+            $allowedValuesLeader = $this->getLeaderAllowableValues();
+            if (!in_array($this->container['leader'], $allowedValuesLeader)) {
+                throw new \InvalidArgumentException('Property Leader in TabStopBase has invalid format.');
+            }
+        }
+        if (!isset($this->container['leader'])) {
+            throw new \InvalidArgumentException('Property Leader in TabStopBase is required.');
         }
 
+        if (!isset($this->container['position'])) {
+            throw new \InvalidArgumentException('Property Position in TabStopBase is required.');
+        }
 
-        return true;
     }
 
     /*

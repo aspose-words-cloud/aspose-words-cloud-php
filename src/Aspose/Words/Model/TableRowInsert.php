@@ -180,26 +180,14 @@ class TableRowInsert implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        return true;
+        if (!isset($this->container['columns_count'])) {
+            throw new \InvalidArgumentException('Property ColumnsCount in TableRowInsert is required.');
+        }
+
     }
 
     /*

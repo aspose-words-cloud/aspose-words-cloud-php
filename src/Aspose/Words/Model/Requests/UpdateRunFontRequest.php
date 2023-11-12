@@ -360,6 +360,10 @@ class UpdateRunFontRequest extends BaseApiRequest
         if ($this->font_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $font_dto when calling updateRunFont');
         }
+        if ($this->font_dto !== null) {
+            $this->font_dto->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs/{index}/font';
         $formParams = [];

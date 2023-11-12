@@ -111,6 +111,10 @@ class LoadWebDocumentRequest extends BaseApiRequest
         if ($this->data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $data when calling loadWebDocument');
         }
+        if ($this->data !== null) {
+            $this->data->validate();
+        }
+
 
         $resourcePath = '/words/loadWebDocument';
         $formParams = [];

@@ -333,6 +333,10 @@ class UpdateBookmarkRequest extends BaseApiRequest
         if ($this->bookmark_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark_data when calling updateBookmark');
         }
+        if ($this->bookmark_data !== null) {
+            $this->bookmark_data->validate();
+        }
+
 
         $resourcePath = '/words/{name}/bookmarks/{bookmarkName}';
         $formParams = [];

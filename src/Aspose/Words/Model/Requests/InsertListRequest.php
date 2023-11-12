@@ -306,6 +306,10 @@ class InsertListRequest extends BaseApiRequest
         if ($this->list_insert === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_insert when calling insertList');
         }
+        if ($this->list_insert !== null) {
+            $this->list_insert->validate();
+        }
+
 
         $resourcePath = '/words/{name}/lists';
         $formParams = [];

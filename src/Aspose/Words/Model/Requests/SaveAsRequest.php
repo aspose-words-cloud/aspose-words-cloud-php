@@ -258,6 +258,10 @@ class SaveAsRequest extends BaseApiRequest
         if ($this->save_options_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $save_options_data when calling saveAs');
         }
+        if ($this->save_options_data !== null) {
+            $this->save_options_data->validate();
+        }
+
 
         $resourcePath = '/words/{name}/saveAs';
         $formParams = [];

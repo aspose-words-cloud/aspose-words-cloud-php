@@ -312,6 +312,10 @@ class UpdateTableCellFormatOnlineRequest extends BaseApiRequest
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateTableCellFormatOnline');
         }
+        if ($this->format !== null) {
+            $this->format->validate();
+        }
+
 
         $resourcePath = '/words/online/put/{tableRowPath}/cells/{index}/cellformat';
         $formParams = [];

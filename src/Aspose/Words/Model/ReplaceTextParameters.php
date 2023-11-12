@@ -198,26 +198,30 @@ class ReplaceTextParameters implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        return true;
+        if (!isset($this->container['is_match_case'])) {
+            throw new \InvalidArgumentException('Property IsMatchCase in ReplaceTextParameters is required.');
+        }
+
+        if (!isset($this->container['is_match_whole_word'])) {
+            throw new \InvalidArgumentException('Property IsMatchWholeWord in ReplaceTextParameters is required.');
+        }
+
+        if (!isset($this->container['is_old_value_regex'])) {
+            throw new \InvalidArgumentException('Property IsOldValueRegex in ReplaceTextParameters is required.');
+        }
+
+        if (!isset($this->container['new_value'])) {
+            throw new \InvalidArgumentException('Property NewValue in ReplaceTextParameters is required.');
+        }
+
+        if (!isset($this->container['old_value'])) {
+            throw new \InvalidArgumentException('Property OldValue in ReplaceTextParameters is required.');
+        }
+
     }
 
     /*

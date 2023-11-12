@@ -357,6 +357,10 @@ class UpdateBorderRequest extends BaseApiRequest
         if ($this->border_properties === null) {
             throw new \InvalidArgumentException('Missing the required parameter $border_properties when calling updateBorder');
         }
+        if ($this->border_properties !== null) {
+            $this->border_properties->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{nodePath}/borders/{borderType}';
         $formParams = [];

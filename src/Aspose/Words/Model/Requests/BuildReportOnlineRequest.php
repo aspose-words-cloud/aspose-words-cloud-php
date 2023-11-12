@@ -165,6 +165,10 @@ class BuildReportOnlineRequest extends BaseApiRequest
         if ($this->report_engine_settings === null) {
             throw new \InvalidArgumentException('Missing the required parameter $report_engine_settings when calling buildReportOnline');
         }
+        if ($this->report_engine_settings !== null) {
+            $this->report_engine_settings->validate();
+        }
+
 
         $resourcePath = '/words/buildReport';
         $formParams = [];

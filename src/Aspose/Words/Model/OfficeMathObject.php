@@ -291,70 +291,38 @@ class OfficeMathObject extends OfficeMathLink
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getDisplayTypeAllowableValues();
-        if (!in_array($this->container['display_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'display_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getJustificationAllowableValues();
-        if (!in_array($this->container['justification'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'justification', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getMathObjectTypeAllowableValues();
-        if (!in_array($this->container['math_object_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'math_object_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+
+        if (isset($this->container['content'])) {
+            $this->getContent()->validate();
         }
 
-        $allowedValues = $this->getDisplayTypeAllowableValues();
-        if (!in_array($this->container['display_type'], $allowedValues)) {
-            return false;
+        if (isset($this->container['display_type'])) {
+            $allowedValuesDisplayType = $this->getDisplayTypeAllowableValues();
+            if (!in_array($this->container['display_type'], $allowedValuesDisplayType)) {
+                throw new \InvalidArgumentException('Property DisplayType in OfficeMathObject has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getJustificationAllowableValues();
-        if (!in_array($this->container['justification'], $allowedValues)) {
-            return false;
+        if (isset($this->container['justification'])) {
+            $allowedValuesJustification = $this->getJustificationAllowableValues();
+            if (!in_array($this->container['justification'], $allowedValuesJustification)) {
+                throw new \InvalidArgumentException('Property Justification in OfficeMathObject has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getMathObjectTypeAllowableValues();
-        if (!in_array($this->container['math_object_type'], $allowedValues)) {
-            return false;
+        if (isset($this->container['math_object_type'])) {
+            $allowedValuesMathObjectType = $this->getMathObjectTypeAllowableValues();
+            if (!in_array($this->container['math_object_type'], $allowedValuesMathObjectType)) {
+                throw new \InvalidArgumentException('Property MathObjectType in OfficeMathObject has invalid format.');
+            }
         }
 
-
-        return true;
     }
 
     /*

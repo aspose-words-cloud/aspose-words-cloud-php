@@ -34,7 +34,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description DTO container with a StructuredDocumentTag.
  */
-class StructuredDocumentTagInsert extends StructuredDocumentTag
+class StructuredDocumentTagInsert extends StructuredDocumentTagBase
 {
     const DISCRIMINATOR = null;
 
@@ -51,6 +51,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTag
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'level' => 'string',
+        'sdt_type' => 'string'
     ];
 
     /*
@@ -59,6 +61,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTag
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'level' => 'null',
+        'sdt_type' => 'null'
     ];
 
     /*
@@ -88,6 +92,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTag
      * @var string[]
      */
     protected static $attributeMap = [
+        'level' => 'Level',
+        'sdt_type' => 'SdtType'
     ];
 
     /*
@@ -96,6 +102,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTag
      * @var string[]
      */
     protected static $setters = [
+        'level' => 'setLevel',
+        'sdt_type' => 'setSdtType'
     ];
 
     /*
@@ -104,6 +112,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTag
      * @var string[]
      */
     protected static $getters = [
+        'level' => 'getLevel',
+        'sdt_type' => 'getSdtType'
     ];
 
     /*
@@ -147,7 +157,71 @@ class StructuredDocumentTagInsert extends StructuredDocumentTag
         return self::$swaggerModelName;
     }
 
+    const LEVEL_UNKNOWN = 'Unknown';
+    const LEVEL_INLINE = 'Inline';
+    const LEVEL_BLOCK = 'Block';
+    const LEVEL_ROW = 'Row';
+    const LEVEL_CELL = 'Cell';
+    const SDT_TYPE_NONE = 'None';
+    const SDT_TYPE_BIBLIOGRAPHY = 'Bibliography';
+    const SDT_TYPE_CITATION = 'Citation';
+    const SDT_TYPE_EQUATION = 'Equation';
+    const SDT_TYPE_DROP_DOWN_LIST = 'DropDownList';
+    const SDT_TYPE_COMBO_BOX = 'ComboBox';
+    const SDT_TYPE_DATE = 'Date';
+    const SDT_TYPE_BUILDING_BLOCK_GALLERY = 'BuildingBlockGallery';
+    const SDT_TYPE_DOC_PART_OBJ = 'DocPartObj';
+    const SDT_TYPE_GROUP = 'Group';
+    const SDT_TYPE_PICTURE = 'Picture';
+    const SDT_TYPE_RICH_TEXT = 'RichText';
+    const SDT_TYPE_PLAIN_TEXT = 'PlainText';
+    const SDT_TYPE_CHECKBOX = 'Checkbox';
+    const SDT_TYPE_REPEATING_SECTION = 'RepeatingSection';
+    const SDT_TYPE_REPEATING_SECTION_ITEM = 'RepeatingSectionItem';
+    const SDT_TYPE_ENTITY_PICKER = 'EntityPicker';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getLevelAllowableValues()
+    {
+        return [
+            self::LEVEL_UNKNOWN,
+            self::LEVEL_INLINE,
+            self::LEVEL_BLOCK,
+            self::LEVEL_ROW,
+            self::LEVEL_CELL
+        ];
+    }
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSdtTypeAllowableValues()
+    {
+        return [
+            self::SDT_TYPE_NONE,
+            self::SDT_TYPE_BIBLIOGRAPHY,
+            self::SDT_TYPE_CITATION,
+            self::SDT_TYPE_EQUATION,
+            self::SDT_TYPE_DROP_DOWN_LIST,
+            self::SDT_TYPE_COMBO_BOX,
+            self::SDT_TYPE_DATE,
+            self::SDT_TYPE_BUILDING_BLOCK_GALLERY,
+            self::SDT_TYPE_DOC_PART_OBJ,
+            self::SDT_TYPE_GROUP,
+            self::SDT_TYPE_PICTURE,
+            self::SDT_TYPE_RICH_TEXT,
+            self::SDT_TYPE_PLAIN_TEXT,
+            self::SDT_TYPE_CHECKBOX,
+            self::SDT_TYPE_REPEATING_SECTION,
+            self::SDT_TYPE_REPEATING_SECTION_ITEM,
+            self::SDT_TYPE_ENTITY_PICKER
+        ];
+    }
 
     /*
      * Constructor
@@ -158,32 +232,92 @@ class StructuredDocumentTagInsert extends StructuredDocumentTag
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-    }
-
-    /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        return $invalidProperties;
+        $this->container['level'] = isset($data['level']) ? $data['level'] : null;
+        $this->container['sdt_type'] = isset($data['sdt_type']) ? $data['sdt_type'] : null;
     }
 
     /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['level'])) {
+            $allowedValuesLevel = $this->getLevelAllowableValues();
+            if (!in_array($this->container['level'], $allowedValuesLevel)) {
+                throw new \InvalidArgumentException('Property Level in StructuredDocumentTagInsert has invalid format.');
+            }
+        }
+        if (!isset($this->container['level'])) {
+            throw new \InvalidArgumentException('Property Level in StructuredDocumentTagInsert is required.');
         }
 
-        return true;
+        if (isset($this->container['sdt_type'])) {
+            $allowedValuesSdtType = $this->getSdtTypeAllowableValues();
+            if (!in_array($this->container['sdt_type'], $allowedValuesSdtType)) {
+                throw new \InvalidArgumentException('Property SdtType in StructuredDocumentTagInsert has invalid format.');
+            }
+        }
+        if (!isset($this->container['sdt_type'])) {
+            throw new \InvalidArgumentException('Property SdtType in StructuredDocumentTagInsert is required.');
+        }
+
+    }
+
+    /*
+     * Gets level
+     *
+     * @return string
+     */
+    public function getLevel()
+    {
+        return $this->container['level'];
+    }
+
+    /*
+     * Sets level
+     *
+     * @param string $level Gets or sets the level at which this SDT occurs in the document tree.
+     *
+     * @return $this
+     */
+    public function setLevel($level)
+    {
+        $allowedValues = $this->getLevelAllowableValues();
+        if ((!is_numeric($level) && !in_array($level, $allowedValues)) || (is_numeric($level) && !in_array($allowedValues[$level], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'level', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['level'] = $level;
+        return $this;
+    }
+
+
+    /*
+     * Gets sdt_type
+     *
+     * @return string
+     */
+    public function getSdtType()
+    {
+        return $this->container['sdt_type'];
+    }
+
+    /*
+     * Sets sdt_type
+     *
+     * @param string $sdt_type Gets or sets type of this Structured document tag.
+     *
+     * @return $this
+     */
+    public function setSdtType($sdt_type)
+    {
+        $allowedValues = $this->getSdtTypeAllowableValues();
+        if ((!is_numeric($sdt_type) && !in_array($sdt_type, $allowedValues)) || (is_numeric($sdt_type) && !in_array($allowedValues[$sdt_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'sdt_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['sdt_type'] = $sdt_type;
+        return $this;
     }
 
 

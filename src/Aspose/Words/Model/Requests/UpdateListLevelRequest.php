@@ -360,6 +360,10 @@ class UpdateListLevelRequest extends BaseApiRequest
         if ($this->list_update === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_update when calling updateListLevel');
         }
+        if ($this->list_update !== null) {
+            $this->list_update->validate();
+        }
+
 
         $resourcePath = '/words/{name}/lists/{listId}/listLevels/{listLevel}';
         $formParams = [];

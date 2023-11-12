@@ -242,41 +242,17 @@ class CompareOptions implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getTargetAllowableValues();
-        if (!in_array($this->container['target'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'target', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getTargetAllowableValues();
-        if (!in_array($this->container['target'], $allowedValues)) {
-            return false;
+        if (isset($this->container['target'])) {
+            $allowedValuesTarget = $this->getTargetAllowableValues();
+            if (!in_array($this->container['target'], $allowedValuesTarget)) {
+                throw new \InvalidArgumentException('Property Target in CompareOptions has invalid format.');
+            }
         }
 
-
-        return true;
     }
 
     /*

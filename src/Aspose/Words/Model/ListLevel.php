@@ -399,70 +399,76 @@ class ListLevel extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'number_style', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getTrailingCharacterAllowableValues();
-        if (!in_array($this->container['trailing_character'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'trailing_character', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (!isset($this->container['start_at'])) {
+            throw new \InvalidArgumentException('Property StartAt in ListLevel is required.');
         }
 
-        $allowedValues = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValues)) {
-            return false;
+        if (isset($this->container['number_style'])) {
+            $allowedValuesNumberStyle = $this->getNumberStyleAllowableValues();
+            if (!in_array($this->container['number_style'], $allowedValuesNumberStyle)) {
+                throw new \InvalidArgumentException('Property NumberStyle in ListLevel has invalid format.');
+            }
+        }
+        if (!isset($this->container['number_style'])) {
+            throw new \InvalidArgumentException('Property NumberStyle in ListLevel is required.');
         }
 
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            return false;
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in ListLevel has invalid format.');
+            }
+        }
+        if (!isset($this->container['alignment'])) {
+            throw new \InvalidArgumentException('Property Alignment in ListLevel is required.');
         }
 
-        $allowedValues = $this->getTrailingCharacterAllowableValues();
-        if (!in_array($this->container['trailing_character'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['is_legal'])) {
+            throw new \InvalidArgumentException('Property IsLegal in ListLevel is required.');
+        }
+
+        if (!isset($this->container['restart_after_level'])) {
+            throw new \InvalidArgumentException('Property RestartAfterLevel in ListLevel is required.');
+        }
+
+        if (isset($this->container['trailing_character'])) {
+            $allowedValuesTrailingCharacter = $this->getTrailingCharacterAllowableValues();
+            if (!in_array($this->container['trailing_character'], $allowedValuesTrailingCharacter)) {
+                throw new \InvalidArgumentException('Property TrailingCharacter in ListLevel has invalid format.');
+            }
+        }
+        if (!isset($this->container['trailing_character'])) {
+            throw new \InvalidArgumentException('Property TrailingCharacter in ListLevel is required.');
         }
 
 
-        return true;
+        if (isset($this->container['font'])) {
+            $this->getFont()->validate();
+        }
+
+        if (!isset($this->container['tab_position'])) {
+            throw new \InvalidArgumentException('Property TabPosition in ListLevel is required.');
+        }
+
+        if (!isset($this->container['number_position'])) {
+            throw new \InvalidArgumentException('Property NumberPosition in ListLevel is required.');
+        }
+
+        if (!isset($this->container['text_position'])) {
+            throw new \InvalidArgumentException('Property TextPosition in ListLevel is required.');
+        }
+
+
+        if (isset($this->container['linked_style'])) {
+            $this->getLinkedStyle()->validate();
+        }
+
     }
 
     /*

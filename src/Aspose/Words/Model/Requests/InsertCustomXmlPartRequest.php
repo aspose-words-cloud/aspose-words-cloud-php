@@ -306,6 +306,10 @@ class InsertCustomXmlPartRequest extends BaseApiRequest
         if ($this->custom_xml_part === null) {
             throw new \InvalidArgumentException('Missing the required parameter $custom_xml_part when calling insertCustomXmlPart');
         }
+        if ($this->custom_xml_part !== null) {
+            $this->custom_xml_part->validate();
+        }
+
 
         $resourcePath = '/words/{name}/customXmlParts';
         $formParams = [];

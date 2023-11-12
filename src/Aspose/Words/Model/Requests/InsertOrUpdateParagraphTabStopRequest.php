@@ -309,6 +309,10 @@ class InsertOrUpdateParagraphTabStopRequest extends BaseApiRequest
         if ($this->tab_stop_insert_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tab_stop_insert_dto when calling insertOrUpdateParagraphTabStop');
         }
+        if ($this->tab_stop_insert_dto !== null) {
+            $this->tab_stop_insert_dto->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/tabstops';
         $formParams = [];

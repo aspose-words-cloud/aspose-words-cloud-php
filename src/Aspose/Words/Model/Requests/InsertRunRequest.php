@@ -357,6 +357,10 @@ class InsertRunRequest extends BaseApiRequest
         if ($this->run === null) {
             throw new \InvalidArgumentException('Missing the required parameter $run when calling insertRun');
         }
+        if ($this->run !== null) {
+            $this->run->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{paragraphPath}/runs';
         $formParams = [];

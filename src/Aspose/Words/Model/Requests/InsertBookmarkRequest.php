@@ -306,6 +306,10 @@ class InsertBookmarkRequest extends BaseApiRequest
         if ($this->bookmark === null) {
             throw new \InvalidArgumentException('Missing the required parameter $bookmark when calling insertBookmark');
         }
+        if ($this->bookmark !== null) {
+            $this->bookmark->validate();
+        }
+
 
         $resourcePath = '/words/{name}/bookmarks';
         $formParams = [];

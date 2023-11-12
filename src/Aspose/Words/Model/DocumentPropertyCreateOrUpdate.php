@@ -27,6 +27,7 @@
  */
 
 namespace Aspose\Words\Model;
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
@@ -34,7 +35,7 @@ use \Aspose\Words\ObjectSerializer;
  *
  * @description Words document property DTO for create or update.
  */
-class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
+class DocumentPropertyCreateOrUpdate implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,6 +52,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'value' => 'string'
     ];
 
     /*
@@ -59,6 +61,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'value' => 'null'
     ];
 
     /*
@@ -68,7 +71,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -78,7 +81,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -88,6 +91,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      * @var string[]
      */
     protected static $attributeMap = [
+        'value' => 'Value'
     ];
 
     /*
@@ -96,6 +100,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      * @var string[]
      */
     protected static $setters = [
+        'value' => 'setValue'
     ];
 
     /*
@@ -104,6 +109,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      * @var string[]
      */
     protected static $getters = [
+        'value' => 'getValue'
     ];
 
     /*
@@ -114,7 +120,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -124,7 +130,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -134,7 +140,7 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -150,6 +156,13 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
 
 
     /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -157,33 +170,41 @@ class DocumentPropertyCreateOrUpdate extends DocumentPropertyBase
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-    }
-
-    /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        return $invalidProperties;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        if (!isset($this->container['value'])) {
+            throw new \InvalidArgumentException('Property Value in DocumentPropertyCreateOrUpdate is required.');
         }
 
-        return true;
+    }
+
+    /*
+     * Gets value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /*
+     * Sets value
+     *
+     * @param string $value Gets or sets the value of the document property.
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+        return $this;
     }
 
 

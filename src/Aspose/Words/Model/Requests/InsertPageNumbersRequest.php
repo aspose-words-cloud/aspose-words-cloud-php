@@ -306,6 +306,10 @@ class InsertPageNumbersRequest extends BaseApiRequest
         if ($this->page_number === null) {
             throw new \InvalidArgumentException('Missing the required parameter $page_number when calling insertPageNumbers');
         }
+        if ($this->page_number !== null) {
+            $this->page_number->validate();
+        }
+
 
         $resourcePath = '/words/{name}/PageNumbers';
         $formParams = [];

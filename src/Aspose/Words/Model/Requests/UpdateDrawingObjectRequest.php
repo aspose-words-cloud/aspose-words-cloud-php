@@ -384,6 +384,10 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateDrawingObject');
         }
+        if ($this->drawing_object !== null) {
+            $this->drawing_object->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{nodePath}/drawingObjects/{index}';
         $formParams = [];

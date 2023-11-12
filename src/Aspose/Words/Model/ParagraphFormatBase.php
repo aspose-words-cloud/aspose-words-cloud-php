@@ -1175,96 +1175,52 @@ abstract class ParagraphFormatBase extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getDropCapPositionAllowableValues();
-        if (!in_array($this->container['drop_cap_position'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'drop_cap_position', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getLineSpacingRuleAllowableValues();
-        if (!in_array($this->container['line_spacing_rule'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'line_spacing_rule', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getOutlineLevelAllowableValues();
-        if (!in_array($this->container['outline_level'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'outline_level', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'style_identifier', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            return false;
+        if (isset($this->container['drop_cap_position'])) {
+            $allowedValuesDropCapPosition = $this->getDropCapPositionAllowableValues();
+            if (!in_array($this->container['drop_cap_position'], $allowedValuesDropCapPosition)) {
+                throw new \InvalidArgumentException('Property DropCapPosition in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getDropCapPositionAllowableValues();
-        if (!in_array($this->container['drop_cap_position'], $allowedValues)) {
-            return false;
+        if (isset($this->container['line_spacing_rule'])) {
+            $allowedValuesLineSpacingRule = $this->getLineSpacingRuleAllowableValues();
+            if (!in_array($this->container['line_spacing_rule'], $allowedValuesLineSpacingRule)) {
+                throw new \InvalidArgumentException('Property LineSpacingRule in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getLineSpacingRuleAllowableValues();
-        if (!in_array($this->container['line_spacing_rule'], $allowedValues)) {
-            return false;
+        if (isset($this->container['outline_level'])) {
+            $allowedValuesOutlineLevel = $this->getOutlineLevelAllowableValues();
+            if (!in_array($this->container['outline_level'], $allowedValuesOutlineLevel)) {
+                throw new \InvalidArgumentException('Property OutlineLevel in ParagraphFormatBase has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getOutlineLevelAllowableValues();
-        if (!in_array($this->container['outline_level'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
-            return false;
+        if (isset($this->container['style_identifier'])) {
+            $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
+            if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
+                throw new \InvalidArgumentException('Property StyleIdentifier in ParagraphFormatBase has invalid format.');
+            }
         }
 
 
-        return true;
+        if (isset($this->container['shading'])) {
+            $this->getShading()->validate();
+        }
+
     }
 
     /*

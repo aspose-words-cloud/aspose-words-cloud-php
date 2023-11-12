@@ -394,67 +394,31 @@ class ListLevelUpdate implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'number_style', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'alignment', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getTrailingCharacterAllowableValues();
-        if (!in_array($this->container['trailing_character'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'trailing_character', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getNumberStyleAllowableValues();
-        if (!in_array($this->container['number_style'], $allowedValues)) {
-            return false;
+        if (isset($this->container['number_style'])) {
+            $allowedValuesNumberStyle = $this->getNumberStyleAllowableValues();
+            if (!in_array($this->container['number_style'], $allowedValuesNumberStyle)) {
+                throw new \InvalidArgumentException('Property NumberStyle in ListLevelUpdate has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getAlignmentAllowableValues();
-        if (!in_array($this->container['alignment'], $allowedValues)) {
-            return false;
+        if (isset($this->container['alignment'])) {
+            $allowedValuesAlignment = $this->getAlignmentAllowableValues();
+            if (!in_array($this->container['alignment'], $allowedValuesAlignment)) {
+                throw new \InvalidArgumentException('Property Alignment in ListLevelUpdate has invalid format.');
+            }
         }
 
-        $allowedValues = $this->getTrailingCharacterAllowableValues();
-        if (!in_array($this->container['trailing_character'], $allowedValues)) {
-            return false;
+        if (isset($this->container['trailing_character'])) {
+            $allowedValuesTrailingCharacter = $this->getTrailingCharacterAllowableValues();
+            if (!in_array($this->container['trailing_character'], $allowedValuesTrailingCharacter)) {
+                throw new \InvalidArgumentException('Property TrailingCharacter in ListLevelUpdate has invalid format.');
+            }
         }
 
-
-        return true;
     }
 
     /*

@@ -309,6 +309,10 @@ class UpdateFootnoteOnlineRequest extends BaseApiRequest
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateFootnoteOnline');
         }
+        if ($this->footnote_dto !== null) {
+            $this->footnote_dto->validate();
+        }
+
 
         $resourcePath = '/words/online/put/{nodePath}/footnotes/{index}';
         $formParams = [];

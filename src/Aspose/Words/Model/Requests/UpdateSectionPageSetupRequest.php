@@ -333,6 +333,10 @@ class UpdateSectionPageSetupRequest extends BaseApiRequest
         if ($this->page_setup === null) {
             throw new \InvalidArgumentException('Missing the required parameter $page_setup when calling updateSectionPageSetup');
         }
+        if ($this->page_setup !== null) {
+            $this->page_setup->validate();
+        }
+
 
         $resourcePath = '/words/{name}/sections/{sectionIndex}/pageSetup';
         $formParams = [];

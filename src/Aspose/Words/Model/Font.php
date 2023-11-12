@@ -1237,70 +1237,53 @@ class Font extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'style_identifier', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getTextEffectAllowableValues();
-        if (!in_array($this->container['text_effect'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'text_effect', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getUnderlineAllowableValues();
-        if (!in_array($this->container['underline'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'underline', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
-        }
+        parent::validate();
 
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
-            return false;
-        }
 
-        $allowedValues = $this->getTextEffectAllowableValues();
-        if (!in_array($this->container['text_effect'], $allowedValues)) {
-            return false;
-        }
-
-        $allowedValues = $this->getUnderlineAllowableValues();
-        if (!in_array($this->container['underline'], $allowedValues)) {
-            return false;
+        if (isset($this->container['border'])) {
+            $this->getBorder()->validate();
         }
 
 
-        return true;
+        if (isset($this->container['color'])) {
+            $this->getColor()->validate();
+        }
+
+
+        if (isset($this->container['highlight_color'])) {
+            $this->getHighlightColor()->validate();
+        }
+
+        if (isset($this->container['style_identifier'])) {
+            $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
+            if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
+                throw new \InvalidArgumentException('Property StyleIdentifier in Font has invalid format.');
+            }
+        }
+
+        if (isset($this->container['text_effect'])) {
+            $allowedValuesTextEffect = $this->getTextEffectAllowableValues();
+            if (!in_array($this->container['text_effect'], $allowedValuesTextEffect)) {
+                throw new \InvalidArgumentException('Property TextEffect in Font has invalid format.');
+            }
+        }
+
+        if (isset($this->container['underline'])) {
+            $allowedValuesUnderline = $this->getUnderlineAllowableValues();
+            if (!in_array($this->container['underline'], $allowedValuesUnderline)) {
+                throw new \InvalidArgumentException('Property Underline in Font has invalid format.');
+            }
+        }
+
+
+        if (isset($this->container['underline_color'])) {
+            $this->getUnderlineColor()->validate();
+        }
+
     }
 
     /*

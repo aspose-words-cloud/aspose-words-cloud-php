@@ -191,29 +191,43 @@ class Section extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+
+        if (isset($this->container['child_nodes'])) {
+            foreach ($this->getChildNodes() as &$elementChildNodes)
+            {
+                if ($elementChildNodes != null)
+                {
+                    $elementChildNodes->validate();
+                }
+            }
         }
 
-        return true;
+
+        if (isset($this->container['paragraphs'])) {
+            $this->getParagraphs()->validate();
+        }
+
+
+        if (isset($this->container['page_setup'])) {
+            $this->getPageSetup()->validate();
+        }
+
+
+        if (isset($this->container['header_footers'])) {
+            $this->getHeaderFooters()->validate();
+        }
+
+
+        if (isset($this->container['tables'])) {
+            $this->getTables()->validate();
+        }
+
     }
 
     /*

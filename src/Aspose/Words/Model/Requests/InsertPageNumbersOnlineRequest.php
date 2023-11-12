@@ -258,6 +258,10 @@ class InsertPageNumbersOnlineRequest extends BaseApiRequest
         if ($this->page_number === null) {
             throw new \InvalidArgumentException('Missing the required parameter $page_number when calling insertPageNumbersOnline');
         }
+        if ($this->page_number !== null) {
+            $this->page_number->validate();
+        }
+
 
         $resourcePath = '/words/online/put/PageNumbers';
         $formParams = [];

@@ -357,6 +357,10 @@ class UpdateParagraphListFormatRequest extends BaseApiRequest
         if ($this->list_format_dto === null) {
             throw new \InvalidArgumentException('Missing the required parameter $list_format_dto when calling updateParagraphListFormat');
         }
+        if ($this->list_format_dto !== null) {
+            $this->list_format_dto->validate();
+        }
+
 
         $resourcePath = '/words/{name}/{nodePath}/paragraphs/{index}/listFormat';
         $formParams = [];

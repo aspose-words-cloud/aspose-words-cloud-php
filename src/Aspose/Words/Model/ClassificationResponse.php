@@ -179,29 +179,27 @@ class ClassificationResponse extends WordsResponse
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+        if (!isset($this->container['best_class_probability'])) {
+            throw new \InvalidArgumentException('Property BestClassProbability in ClassificationResponse is required.');
         }
 
-        return true;
+
+        if (isset($this->container['best_results'])) {
+            foreach ($this->getBestResults() as &$elementBestResults)
+            {
+                if ($elementBestResults != null)
+                {
+                    $elementBestResults->validate();
+                }
+            }
+        }
+
     }
 
     /*

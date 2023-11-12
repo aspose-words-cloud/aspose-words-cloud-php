@@ -194,41 +194,21 @@ class ReplaceRange implements ArrayAccess
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        $allowedValues = $this->getTextTypeAllowableValues();
-        if (!in_array($this->container['text_type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'text_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        $allowedValues = $this->getTextTypeAllowableValues();
-        if (!in_array($this->container['text_type'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['text'])) {
+            throw new \InvalidArgumentException('Property Text in ReplaceRange is required.');
         }
 
+        if (isset($this->container['text_type'])) {
+            $allowedValuesTextType = $this->getTextTypeAllowableValues();
+            if (!in_array($this->container['text_type'], $allowedValuesTextType)) {
+                throw new \InvalidArgumentException('Property TextType in ReplaceRange has invalid format.');
+            }
+        }
 
-        return true;
     }
 
     /*

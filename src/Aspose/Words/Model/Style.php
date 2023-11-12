@@ -1011,57 +1011,49 @@ class Style extends LinkElement
     }
 
     /*
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = parent::listInvalidProperties();
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'style_identifier', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-
-        return $invalidProperties;
-    }
-
-    /*
      * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validate()
     {
-        if (!parent::valid()) {
-            return false;
+        parent::validate();
+
+
+        if (isset($this->container['font'])) {
+            $this->getFont()->validate();
         }
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['built_in'])) {
+            throw new \InvalidArgumentException('Property BuiltIn in Style is required.');
         }
 
-        $allowedValues = $this->getStyleIdentifierAllowableValues();
-        if (!in_array($this->container['style_identifier'], $allowedValues)) {
-            return false;
+        if (!isset($this->container['is_quick_style'])) {
+            throw new \InvalidArgumentException('Property IsQuickStyle in Style is required.');
         }
 
+        if (isset($this->container['type'])) {
+            $allowedValuesType = $this->getTypeAllowableValues();
+            if (!in_array($this->container['type'], $allowedValuesType)) {
+                throw new \InvalidArgumentException('Property Type in Style has invalid format.');
+            }
+        }
+        if (!isset($this->container['type'])) {
+            throw new \InvalidArgumentException('Property Type in Style is required.');
+        }
 
-        return true;
+        if (!isset($this->container['is_heading'])) {
+            throw new \InvalidArgumentException('Property IsHeading in Style is required.');
+        }
+
+        if (isset($this->container['style_identifier'])) {
+            $allowedValuesStyleIdentifier = $this->getStyleIdentifierAllowableValues();
+            if (!in_array($this->container['style_identifier'], $allowedValuesStyleIdentifier)) {
+                throw new \InvalidArgumentException('Property StyleIdentifier in Style has invalid format.');
+            }
+        }
+        if (!isset($this->container['style_identifier'])) {
+            throw new \InvalidArgumentException('Property StyleIdentifier in Style is required.');
+        }
+
     }
 
     /*

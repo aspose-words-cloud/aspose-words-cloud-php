@@ -13,6 +13,11 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 23.12
+
+- Properties Name, Text, StartRange, EndRange marked as required for InsertBookmark operation.
+
+
 ## Enhancements in Version 23.11
 
 - Support of required properties in models.

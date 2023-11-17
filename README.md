@@ -16,6 +16,7 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 ## Enhancements in Version 23.12
 
 - Properties Name, Text, StartRange, EndRange marked as required for InsertBookmark operation.
+- Implemented DeleteOfficeMathObjects operation to delete all office math objects from document.
 
 
 ## Enhancements in Version 23.11

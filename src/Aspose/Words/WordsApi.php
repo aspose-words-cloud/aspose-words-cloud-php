@@ -41765,7 +41765,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocument
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -41793,7 +41793,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocumentWithHttpInfo
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -41860,7 +41860,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocumentAsync
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -41880,7 +41880,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocumentAsyncWithHttpInfo
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentRequest $request is a request object for operation
      *
@@ -41935,7 +41935,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocumentOnline
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentOnlineRequest $request is a request object for operation
      *
@@ -41963,7 +41963,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocumentOnlineWithHttpInfo
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentOnlineRequest $request is a request object for operation
      *
@@ -42017,7 +42017,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocumentOnlineAsync
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentOnlineRequest $request is a request object for operation
      *
@@ -42037,7 +42037,7 @@ class WordsApi implements Encryptor
     /*
      * Operation protectDocumentOnlineAsyncWithHttpInfo
      *
-     * Adds protection to the document.
+     * Changes the document protection. The previous protection will be overwritten if it exist.
      *
      * @param Requests\protectDocumentOnlineRequest $request is a request object for operation
      *

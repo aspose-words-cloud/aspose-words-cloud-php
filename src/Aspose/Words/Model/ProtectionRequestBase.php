@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ProtectionRequest.php">
+ * <copyright company="Aspose" file="ProtectionRequestBase.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,15 +27,15 @@
  */
 
 namespace Aspose\Words\Model;
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * ProtectionRequest
- * @deprecated ProtectionRequest is deprecated and remains for backwards compatibility only.
+ * ProtectionRequestBase
  *
  * @description Request on changing of protection.
  */
-class ProtectionRequest extends ProtectionRequestBase
+abstract class ProtectionRequestBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +44,7 @@ class ProtectionRequest extends ProtectionRequestBase
      *
      * @var string
      */
-    protected static $swaggerModelName = "ProtectionRequest";
+    protected static $swaggerModelName = "ProtectionRequestBase";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,9 +52,6 @@ class ProtectionRequest extends ProtectionRequestBase
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'new_password' => 'string',
-        'password' => 'string',
-        'protection_type' => 'string'
     ];
 
     /*
@@ -63,9 +60,6 @@ class ProtectionRequest extends ProtectionRequestBase
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'new_password' => 'null',
-        'password' => 'null',
-        'protection_type' => 'null'
     ];
 
     /*
@@ -75,7 +69,7 @@ class ProtectionRequest extends ProtectionRequestBase
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -85,7 +79,7 @@ class ProtectionRequest extends ProtectionRequestBase
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -95,9 +89,6 @@ class ProtectionRequest extends ProtectionRequestBase
      * @var string[]
      */
     protected static $attributeMap = [
-        'new_password' => 'NewPassword',
-        'password' => 'Password',
-        'protection_type' => 'ProtectionType'
     ];
 
     /*
@@ -106,9 +97,6 @@ class ProtectionRequest extends ProtectionRequestBase
      * @var string[]
      */
     protected static $setters = [
-        'new_password' => 'setNewPassword',
-        'password' => 'setPassword',
-        'protection_type' => 'setProtectionType'
     ];
 
     /*
@@ -117,9 +105,6 @@ class ProtectionRequest extends ProtectionRequestBase
      * @var string[]
      */
     protected static $getters = [
-        'new_password' => 'getNewPassword',
-        'password' => 'getPassword',
-        'protection_type' => 'getProtectionType'
     ];
 
     /*
@@ -130,7 +115,7 @@ class ProtectionRequest extends ProtectionRequestBase
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -140,7 +125,7 @@ class ProtectionRequest extends ProtectionRequestBase
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -150,7 +135,7 @@ class ProtectionRequest extends ProtectionRequestBase
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -166,6 +151,13 @@ class ProtectionRequest extends ProtectionRequestBase
 
 
     /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -173,10 +165,6 @@ class ProtectionRequest extends ProtectionRequestBase
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-        $this->container['new_password'] = isset($data['new_password']) ? $data['new_password'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['protection_type'] = isset($data['protection_type']) ? $data['protection_type'] : null;
     }
 
     /*
@@ -184,83 +172,6 @@ class ProtectionRequest extends ProtectionRequestBase
      */
     public function validate()
     {
-        parent::validate();
-
-        if (!isset($this->container['password'])) {
-            throw new \InvalidArgumentException('Property Password in ProtectionRequest is required.');
-        }
-
-    }
-
-    /*
-     * Gets new_password
-     *
-     * @return string
-     */
-    public function getNewPassword()
-    {
-        return $this->container['new_password'];
-    }
-
-    /*
-     * Sets new_password
-     *
-     * @param string $new_password Gets or sets the new password.
-     *
-     * @return $this
-     */
-    public function setNewPassword($new_password)
-    {
-        $this->container['new_password'] = $new_password;
-        return $this;
-    }
-
-
-    /*
-     * Gets password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /*
-     * Sets password
-     *
-     * @param string $password Gets or sets the current password.
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
-        return $this;
-    }
-
-
-    /*
-     * Gets protection_type
-     *
-     * @return string
-     */
-    public function getProtectionType()
-    {
-        return $this->container['protection_type'];
-    }
-
-    /*
-     * Sets protection_type
-     *
-     * @param string $protection_type Gets or sets the new type of protection.
-     *
-     * @return $this
-     */
-    public function setProtectionType($protection_type)
-    {
-        $this->container['protection_type'] = $protection_type;
-        return $this;
     }
 
 

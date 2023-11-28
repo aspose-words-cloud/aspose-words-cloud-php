@@ -50,11 +50,6 @@ class UnprotectDocumentRequest extends BaseApiRequest
     public $name;
 
     /*
-     * Protection request.
-     */
-    public $protection_request;
-
-    /*
      * Original document folder.
      */
     public $folder;
@@ -88,7 +83,6 @@ class UnprotectDocumentRequest extends BaseApiRequest
      * Initializes a new instance of the UnprotectDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request Protection request.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -96,10 +90,9 @@ class UnprotectDocumentRequest extends BaseApiRequest
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($name, $protection_request, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null)
+    public function __construct($name, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null)
     {
         $this->name = $name;
-        $this->protection_request = $protection_request;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -122,23 +115,6 @@ class UnprotectDocumentRequest extends BaseApiRequest
     public function set_name($value)
     {
         $this->name = $value;
-        return $this;
-    }
-
-    /*
-     * Protection request.
-     */
-    public function get_protection_request()
-    {
-        return $this->protection_request;
-    }
-
-    /*
-     * Protection request.
-     */
-    public function set_protection_request($value)
-    {
-        $this->protection_request = $value;
         return $this;
     }
 
@@ -255,13 +231,6 @@ class UnprotectDocumentRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling unprotectDocument');
         }
-        if ($this->protection_request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $protection_request when calling unprotectDocument');
-        }
-        if ($this->protection_request !== null) {
-            $this->protection_request->validate();
-        }
-
 
         $resourcePath = '/words/{name}/protection';
         $formParams = [];
@@ -349,10 +318,6 @@ class UnprotectDocumentRequest extends BaseApiRequest
         }
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
-        // form params
-        if ($this->protection_request !== null) {
-            array_push($formParams, ['name' => 'ProtectionRequest', 'content' => ObjectSerializer::toFormValue($this->protection_request), 'mime' => 'application/json']);
-        }
 
         foreach ($filesContent as $fileContent)
         {

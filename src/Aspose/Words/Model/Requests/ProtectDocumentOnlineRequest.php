@@ -50,7 +50,7 @@ class ProtectDocumentOnlineRequest extends BaseApiRequest
     public $document;
 
     /*
-     * Protection request.
+     * Use ProtectionRequestV2 model to provide protection options.
      */
     public $protection_request;
 
@@ -78,7 +78,7 @@ class ProtectDocumentOnlineRequest extends BaseApiRequest
      * Initializes a new instance of the ProtectDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request Protection request.
+     * @param \Aspose\Words\Model\ProtectionRequestBase $protection_request Use ProtectionRequestV2 model to provide protection options.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -112,7 +112,7 @@ class ProtectDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Protection request.
+     * Use ProtectionRequestV2 model to provide protection options.
      */
     public function get_protection_request()
     {
@@ -120,7 +120,7 @@ class ProtectDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Protection request.
+     * Use ProtectionRequestV2 model to provide protection options.
      */
     public function set_protection_request($value)
     {

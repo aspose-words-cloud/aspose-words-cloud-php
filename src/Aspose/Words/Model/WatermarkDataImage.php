@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WatermarkText.php">
+ * <copyright company="Aspose" file="WatermarkDataImage.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,16 +27,14 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * WatermarkText
- * @deprecated This model will be removed in the future.
+ * WatermarkDataImage
  *
- * @description Class for insert watermark text request building.
+ * @description Class for insert watermark image request building.
  */
-class WatermarkText implements ArrayAccess
+class WatermarkDataImage extends WatermarkDataBase
 {
     const DISCRIMINATOR = null;
 
@@ -45,7 +43,7 @@ class WatermarkText implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "WatermarkText";
+    protected static $swaggerModelName = "WatermarkDataImage";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -53,8 +51,9 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'rotation_angle' => 'double',
-        'text' => 'string'
+        'image' => '\Aspose\Words\Model\FileReference',
+        'is_washout' => 'bool',
+        'scale' => 'double'
     ];
 
     /*
@@ -63,8 +62,9 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'rotation_angle' => 'null',
-        'text' => 'null'
+        'image' => 'null',
+        'is_washout' => 'null',
+        'scale' => 'null'
     ];
 
     /*
@@ -74,7 +74,7 @@ class WatermarkText implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -84,7 +84,7 @@ class WatermarkText implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -94,8 +94,9 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'rotation_angle' => 'RotationAngle',
-        'text' => 'Text'
+        'image' => 'Image',
+        'is_washout' => 'IsWashout',
+        'scale' => 'Scale'
     ];
 
     /*
@@ -104,8 +105,9 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'rotation_angle' => 'setRotationAngle',
-        'text' => 'setText'
+        'image' => 'setImage',
+        'is_washout' => 'setIsWashout',
+        'scale' => 'setScale'
     ];
 
     /*
@@ -114,8 +116,9 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'rotation_angle' => 'getRotationAngle',
-        'text' => 'getText'
+        'image' => 'getImage',
+        'is_washout' => 'getIsWashout',
+        'scale' => 'getScale'
     ];
 
     /*
@@ -126,7 +129,7 @@ class WatermarkText implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -136,7 +139,7 @@ class WatermarkText implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -146,7 +149,7 @@ class WatermarkText implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -162,13 +165,6 @@ class WatermarkText implements ArrayAccess
 
 
     /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-
-    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -176,8 +172,10 @@ class WatermarkText implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        parent::__construct($data);
+        $this->container['image'] = isset($data['image']) ? $data['image'] : null;
+        $this->container['is_washout'] = isset($data['is_washout']) ? $data['is_washout'] : null;
+        $this->container['scale'] = isset($data['scale']) ? $data['scale'] : null;
     }
 
     /*
@@ -185,60 +183,86 @@ class WatermarkText implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['rotation_angle'])) {
-            throw new \InvalidArgumentException('Property RotationAngle in WatermarkText is required.');
+        parent::validate();
+
+        if (!isset($this->container['image'])) {
+            throw new \InvalidArgumentException('Property Image in WatermarkDataImage is required.');
         }
 
-        if (!isset($this->container['text'])) {
-            throw new \InvalidArgumentException('Property Text in WatermarkText is required.');
+        if (isset($this->container['image'])) {
+            $this->getImage()->validate();
         }
 
     }
 
     /*
-     * Gets rotation_angle
+     * Gets image
      *
-     * @return double
+     * @return \Aspose\Words\Model\FileReference
      */
-    public function getRotationAngle()
+    public function getImage()
     {
-        return $this->container['rotation_angle'];
+        return $this->container['image'];
     }
 
     /*
-     * Sets rotation_angle
+     * Sets image
      *
-     * @param double $rotation_angle Gets or sets the watermark rotation angle.
+     * @param \Aspose\Words\Model\FileReference $image Gets or sets the watermark image.
      *
      * @return $this
      */
-    public function setRotationAngle($rotation_angle)
+    public function setImage($image)
     {
-        $this->container['rotation_angle'] = $rotation_angle;
+        $this->container['image'] = $image;
         return $this;
     }
 
 
     /*
-     * Gets text
+     * Gets is_washout
      *
-     * @return string
+     * @return bool
      */
-    public function getText()
+    public function getIsWashout()
     {
-        return $this->container['text'];
+        return $this->container['is_washout'];
     }
 
     /*
-     * Sets text
+     * Sets is_washout
      *
-     * @param string $text Gets or sets the watermark text.
+     * @param bool $is_washout Gets or sets a boolean value which is responsible for washout effect of the watermark. The default value is true.
      *
      * @return $this
      */
-    public function setText($text)
+    public function setIsWashout($is_washout)
     {
-        $this->container['text'] = $text;
+        $this->container['is_washout'] = $is_washout;
+        return $this;
+    }
+
+
+    /*
+     * Gets scale
+     *
+     * @return double
+     */
+    public function getScale()
+    {
+        return $this->container['scale'];
+    }
+
+    /*
+     * Sets scale
+     *
+     * @param double $scale Gets or sets the scale factor expressed as a fraction of the image. The default value is 0 - auto. Valid values range from 0 to 65.5 inclusive. Auto scale means that the watermark will be scaled to its max width and max height relative to the page margins.
+     *
+     * @return $this
+     */
+    public function setScale($scale)
+    {
+        $this->container['scale'] = $scale;
         return $this;
     }
 
@@ -305,6 +329,12 @@ class WatermarkText implements ArrayAccess
      */
     public function collectFilesContent($resultFilesContent)
     {
+        $resultFilesContent = parent::collectFilesContent($resultFilesContent);
+        if ($this->getImage() != null)
+        {
+            $resultFilesContent = $this->getImage()->collectFilesContent($resultFilesContent);
+        }
+
         return $resultFilesContent;
     }
 

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WatermarkText.php">
+ * <copyright company="Aspose" file="WatermarkDataBase.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -31,12 +31,11 @@ use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * WatermarkText
- * @deprecated This model will be removed in the future.
+ * WatermarkDataBase
  *
  * @description Class for insert watermark text request building.
  */
-class WatermarkText implements ArrayAccess
+abstract class WatermarkDataBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -45,7 +44,7 @@ class WatermarkText implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "WatermarkText";
+    protected static $swaggerModelName = "WatermarkDataBase";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -53,8 +52,6 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'rotation_angle' => 'double',
-        'text' => 'string'
     ];
 
     /*
@@ -63,8 +60,6 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'rotation_angle' => 'null',
-        'text' => 'null'
     ];
 
     /*
@@ -94,8 +89,6 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'rotation_angle' => 'RotationAngle',
-        'text' => 'Text'
     ];
 
     /*
@@ -104,8 +97,6 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'rotation_angle' => 'setRotationAngle',
-        'text' => 'setText'
     ];
 
     /*
@@ -114,8 +105,6 @@ class WatermarkText implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'rotation_angle' => 'getRotationAngle',
-        'text' => 'getText'
     ];
 
     /*
@@ -176,8 +165,6 @@ class WatermarkText implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
 
     /*
@@ -185,61 +172,6 @@ class WatermarkText implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['rotation_angle'])) {
-            throw new \InvalidArgumentException('Property RotationAngle in WatermarkText is required.');
-        }
-
-        if (!isset($this->container['text'])) {
-            throw new \InvalidArgumentException('Property Text in WatermarkText is required.');
-        }
-
-    }
-
-    /*
-     * Gets rotation_angle
-     *
-     * @return double
-     */
-    public function getRotationAngle()
-    {
-        return $this->container['rotation_angle'];
-    }
-
-    /*
-     * Sets rotation_angle
-     *
-     * @param double $rotation_angle Gets or sets the watermark rotation angle.
-     *
-     * @return $this
-     */
-    public function setRotationAngle($rotation_angle)
-    {
-        $this->container['rotation_angle'] = $rotation_angle;
-        return $this;
-    }
-
-
-    /*
-     * Gets text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /*
-     * Sets text
-     *
-     * @param string $text Gets or sets the watermark text.
-     *
-     * @return $this
-     */
-    public function setText($text)
-    {
-        $this->container['text'] = $text;
-        return $this;
     }
 
 

@@ -19,6 +19,8 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 - Implemented DeleteOfficeMathObjects operation to delete all office math objects from document.
 - Parameter ProtectionRequest was removed from the UnprotectDocument operation. Now removing protection from a document does not require a password.
 - Model ProtectionRequest marked as deprecated, please use ProtectionRequestV2 instead for perform ProtectDocument operation. To change the password or protection type of protected document, the old password is no required.
+- Refactoring of CompareDocument operation. Implemented FileReference to pass second document.
+- Operations InserWatermarkText and InsertWatermarkImage marked as deprecated. Please use new operation InsertWatermark instead.
 
 
 ## Enhancements in Version 23.11

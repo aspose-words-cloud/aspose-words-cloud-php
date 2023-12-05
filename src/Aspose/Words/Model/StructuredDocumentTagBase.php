@@ -62,7 +62,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
         'building_block_gallery' => 'string',
         'building_block_category' => 'string',
         'multiline' => 'bool',
-        'color' => 'string',
+        'color' => '\Aspose\Words\Model\XmlColor',
         'style_name' => 'string',
         'calendar_type' => 'string',
         'is_temporary' => 'bool',
@@ -400,6 +400,11 @@ abstract class StructuredDocumentTagBase extends NodeLink
             }
         }
 
+
+        if (isset($this->container['color'])) {
+            $this->getColor()->validate();
+        }
+
         if (isset($this->container['calendar_type'])) {
             $allowedValuesCalendarType = $this->getCalendarTypeAllowableValues();
             if (!in_array($this->container['calendar_type'], $allowedValuesCalendarType)) {
@@ -684,7 +689,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Gets color
      *
-     * @return string
+     * @return \Aspose\Words\Model\XmlColor
      */
     public function getColor()
     {
@@ -694,7 +699,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets color
      *
-     * @param string $color Gets or sets the color of the structured document tag.
+     * @param \Aspose\Words\Model\XmlColor $color Gets or sets the color of the structured document tag.
      *
      * @return $this
      */

@@ -118,7 +118,7 @@ class WatermarkTests extends BaseTestContext
             $remoteImagePath
         );
 
-        $requestWatermarkDataImage = FileReference::fromRemoteFilePath($remoteDataFolder . "/" . $remoteFileName);
+        $requestWatermarkDataImage = FileReference::fromRemoteFilePath($remoteImagePath);
         $requestWatermarkData = new WatermarkDataImage(array(
             "image" => $requestWatermarkDataImage,
         ));
@@ -148,7 +148,7 @@ class WatermarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestWatermarkDataImageStream = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestWatermarkDataImageStream = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png";
         $requestWatermarkDataImage = FileReference::fromLocalFileContent($requestWatermarkDataImageStream);
         $requestWatermarkData = new WatermarkDataImage(array(
             "image" => $requestWatermarkDataImage,

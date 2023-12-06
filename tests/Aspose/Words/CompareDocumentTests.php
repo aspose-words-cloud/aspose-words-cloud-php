@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{CompareDocumentOnlineRequest, CompareDocumentRequest};
-use Aspose\Words\Model\{CompareData};
+use Aspose\Words\Model\{CompareData, FileReference};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -59,10 +59,11 @@ class CompareDocumentTests extends BaseTestContext
             $remoteFolder . "/" . $remoteName2
         );
 
+        $requestCompareDataFileReference = FileReference::fromRemoteFilePath($remoteFolder . "/" . $remoteName2);
         $requestCompareData = new CompareData(array(
             "author" => "author",
-            "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
+            "file_reference" => $requestCompareDataFileReference,
         ));
         $request = new CompareDocumentRequest(
             $remoteName1,
@@ -99,15 +100,15 @@ class CompareDocumentTests extends BaseTestContext
         );
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/" . $localName1;
+        $requestCompareDataFileReference = FileReference::fromRemoteFilePath($remoteFolder . "/" . $remoteName2);
         $requestCompareData = new CompareData(array(
             "author" => "author",
-            "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
+            "file_reference" => $requestCompareDataFileReference,
         ));
         $request = new CompareDocumentOnlineRequest(
             $requestDocument,
             $requestCompareData,
-            NULL,
             NULL,
             NULL,
             NULL,
@@ -136,16 +137,16 @@ class CompareDocumentTests extends BaseTestContext
         );
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/" . $localName1;
+        $requestCompareDataFileReferenceStream = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/" . $localName2;
+        $requestCompareDataFileReference = FileReference::fromLocalFileContent($requestCompareDataFileReferenceStream);
         $requestCompareData = new CompareData(array(
             "author" => "author",
-            "comparing_with_document" => $remoteFolder . "/" . $remoteName2,
             "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
+            "file_reference" => $requestCompareDataFileReference,
         ));
-        $requestComparingDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/" . $localName2;
         $request = new CompareDocumentOnlineRequest(
             $requestDocument,
             $requestCompareData,
-            $requestComparingDocument,
             NULL,
             NULL,
             NULL,

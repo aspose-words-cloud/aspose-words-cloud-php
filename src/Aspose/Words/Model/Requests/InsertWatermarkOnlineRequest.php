@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="CompareDocumentRequest.php">
+ * <copyright company="Aspose" file="InsertWatermarkOnlineRequest.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -36,33 +36,23 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
-use Aspose\Words\Model\Response\CompareDocumentResponse;
+use Aspose\Words\Model\Response\InsertWatermarkOnlineResponse;
 use Aspose\Words\Encryptor;
 
 /*
- * Request model for compareDocument operation.
+ * Request model for insertWatermarkOnline operation.
  */
-class CompareDocumentRequest extends BaseApiRequest
+class InsertWatermarkOnlineRequest extends BaseApiRequest
 {
     /*
-     * The filename of the input document.
+     * The document.
      */
-    public $name;
+    public $document;
 
     /*
-     * Compare data.
+     * The watermark data.
      */
-    public $compare_data;
-
-    /*
-     * Original document folder.
-     */
-    public $folder;
-
-    /*
-     * Original document storage.
-     */
-    public $storage;
+    public $watermark_data;
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -85,101 +75,70 @@ class CompareDocumentRequest extends BaseApiRequest
     public $dest_file_name;
 
     /*
-     * encrypted password for the second document.
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public $encrypted_password2;
+    public $revision_author;
 
     /*
-     * Initializes a new instance of the CompareDocumentRequest class.
+     * The date and time to use for revisions.
+     */
+    public $revision_date_time;
+
+    /*
+     * Initializes a new instance of the InsertWatermarkOnlineRequest class.
      *
-     * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\CompareData $compare_data Compare data.
-     * @param string $folder Original document folder.
-     * @param string $storage Original document storage.
+     * @param \SplFileObject $document The document.
+     * @param \Aspose\Words\Model\WatermarkDataBase $watermark_data The watermark data.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $encrypted_password2 encrypted password for the second document.
+     * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+     * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $compare_data, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $encrypted_password2 = null)
+    public function __construct($document, $watermark_data, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
-        $this->name = $name;
-        $this->compare_data = $compare_data;
-        $this->folder = $folder;
-        $this->storage = $storage;
+        $this->document = $document;
+        $this->watermark_data = $watermark_data;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
         $this->dest_file_name = $dest_file_name;
-        $this->encrypted_password2 = $encrypted_password2;
+        $this->revision_author = $revision_author;
+        $this->revision_date_time = $revision_date_time;
     }
 
     /*
-     * The filename of the input document.
+     * The document.
      */
-    public function get_name()
+    public function get_document()
     {
-        return $this->name;
+        return $this->document;
     }
 
     /*
-     * The filename of the input document.
+     * The document.
      */
-    public function set_name($value)
+    public function set_document($value)
     {
-        $this->name = $value;
+        $this->document = $value;
         return $this;
     }
 
     /*
-     * Compare data.
+     * The watermark data.
      */
-    public function get_compare_data()
+    public function get_watermark_data()
     {
-        return $this->compare_data;
+        return $this->watermark_data;
     }
 
     /*
-     * Compare data.
+     * The watermark data.
      */
-    public function set_compare_data($value)
+    public function set_watermark_data($value)
     {
-        $this->compare_data = $value;
-        return $this;
-    }
-
-    /*
-     * Original document folder.
-     */
-    public function get_folder()
-    {
-        return $this->folder;
-    }
-
-    /*
-     * Original document folder.
-     */
-    public function set_folder($value)
-    {
-        $this->folder = $value;
-        return $this;
-    }
-
-    /*
-     * Original document storage.
-     */
-    public function get_storage()
-    {
-        return $this->storage;
-    }
-
-    /*
-     * Original document storage.
-     */
-    public function set_storage($value)
-    {
-        $this->storage = $value;
+        $this->watermark_data = $value;
         return $this;
     }
 
@@ -252,80 +211,68 @@ class CompareDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * encrypted password for the second document.
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function get_encrypted_password2()
+    public function get_revision_author()
     {
-        return $this->encrypted_password2;
+        return $this->revision_author;
     }
 
     /*
-     * encrypted password for the second document.
+     * Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      */
-    public function set_encrypted_password2($value)
+    public function set_revision_author($value)
     {
-        $this->encrypted_password2 = $value;
+        $this->revision_author = $value;
         return $this;
     }
 
     /*
-     * Create request data for operation 'compareDocument'
+     * The date and time to use for revisions.
+     */
+    public function get_revision_date_time()
+    {
+        return $this->revision_date_time;
+    }
+
+    /*
+     * The date and time to use for revisions.
+     */
+    public function set_revision_date_time($value)
+    {
+        $this->revision_date_time = $value;
+        return $this;
+    }
+
+    /*
+     * Create request data for operation 'insertWatermarkOnline'
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createRequestData($config)
     {
-        if ($this->name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling compareDocument');
+        if ($this->document === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $document when calling insertWatermarkOnline');
         }
-        if ($this->compare_data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $compare_data when calling compareDocument');
+        if ($this->watermark_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $watermark_data when calling insertWatermarkOnline');
         }
-        if ($this->compare_data !== null) {
-            $this->compare_data->validate();
+        if ($this->watermark_data !== null) {
+            $this->watermark_data->validate();
         }
 
 
-        $resourcePath = '/words/{name}/compareDocument';
+        $resourcePath = '/words/online/post/watermarks/insert';
         $formParams = [];
         $filesContent = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
         $filename = null;
-        // path params
-        if ($this->name !== null) {
-            $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->name), $resourcePath);
-        }
-        else {
-            $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
-        }
 
         // remove empty path parameters
         $resourcePath = str_replace("//", "/", $resourcePath);
-        // query params
-        if ($this->folder !== null) {
-            $localName = lcfirst('Folder');
-            $localValue = is_bool($this->folder) ? ($this->folder ? 'true' : 'false') : $this->folder;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($this->storage !== null) {
-            $localName = lcfirst('Storage');
-            $localValue = is_bool($this->storage) ? ($this->storage ? 'true' : 'false') : $this->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
         // query params
         if ($this->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');
@@ -367,9 +314,19 @@ class CompareDocumentRequest extends BaseApiRequest
             }
         }
         // query params
-        if ($this->encrypted_password2 !== null) {
-            $localName = lcfirst('EncryptedPassword2');
-            $localValue = is_bool($this->encrypted_password2) ? ($this->encrypted_password2 ? 'true' : 'false') : $this->encrypted_password2;
+        if ($this->revision_author !== null) {
+            $localName = lcfirst('RevisionAuthor');
+            $localValue = is_bool($this->revision_author) ? ($this->revision_author ? 'true' : 'false') : $this->revision_author;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->revision_date_time !== null) {
+            $localName = lcfirst('RevisionDateTime');
+            $localValue = is_bool($this->revision_date_time) ? ($this->revision_date_time ? 'true' : 'false') : $this->revision_date_time;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {
@@ -384,9 +341,17 @@ class CompareDocumentRequest extends BaseApiRequest
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
         // form params
-        if ($this->compare_data !== null) {
-            array_push($formParams, ['name' => 'CompareData', 'content' => ObjectSerializer::toFormValue($this->compare_data), 'mime' => 'application/json']);
-            $filesContent = $this->compare_data->collectFilesContent($filesContent);
+        if ($this->document !== null) {
+            $filename = ObjectSerializer::toFormValue($this->document);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            array_push($formParams, ['name' => 'Document', 'content' => $contents, 'mime' => 'application/octet-stream']);
+        }
+        // form params
+        if ($this->watermark_data !== null) {
+            array_push($formParams, ['name' => 'WatermarkData', 'content' => ObjectSerializer::toFormValue($this->watermark_data), 'mime' => 'application/json']);
+            $filesContent = $this->watermark_data->collectFilesContent($filesContent);
         }
 
         foreach ($filesContent as $fileContent)
@@ -436,7 +401,7 @@ class CompareDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * Create request for operation 'compareDocument'
+     * Create request for operation 'insertWatermarkOnline'
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -476,11 +441,14 @@ class CompareDocumentRequest extends BaseApiRequest
      */
     public function getResponseType()
     {
-        return '\Aspose\Words\Model\DocumentResponse';
+        return 'InsertWatermarkOnlineResponse';
     }
 
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\DocumentResponse', $response->getHeaders());
+        $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());
+        return new InsertWatermarkOnlineResponse(
+          ObjectSerializer::deserialize(json_decode(ObjectSerializer::findPartByName($multipart, 'Model')['body']), '\Aspose\Words\Model\DocumentResponse', ObjectSerializer::findPartByName($multipart, 'Model')['headers']),
+          ObjectSerializer::deserialize(ObjectSerializer::findPartByName($multipart, 'Document')['body'], 'FILES_COLLECTION', ObjectSerializer::findPartByName($multipart, 'Document')['headers']));
     }
 }

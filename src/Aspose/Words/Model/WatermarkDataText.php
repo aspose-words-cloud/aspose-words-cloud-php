@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="CompareData.php">
+ * <copyright company="Aspose" file="WatermarkDataText.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,15 +27,14 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * CompareData
+ * WatermarkDataText
  *
- * @description Container class for compare documents.
+ * @description Class for insert watermark text request building.
  */
-class CompareData implements ArrayAccess
+class WatermarkDataText extends WatermarkDataBase
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +43,7 @@ class CompareData implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "CompareData";
+    protected static $swaggerModelName = "WatermarkDataText";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,12 +51,12 @@ class CompareData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'author' => 'string',
-        'compare_options' => '\Aspose\Words\Model\CompareOptions',
-        'comparing_with_document' => 'string',
-        'date_time' => '\DateTime',
-        'file_reference' => '\Aspose\Words\Model\FileReference',
-        'result_document_format' => 'string'
+        'color' => '\Aspose\Words\Model\XmlColor',
+        'font_family' => 'string',
+        'font_size' => 'double',
+        'is_semitrasparent' => 'bool',
+        'layout' => 'string',
+        'text' => 'string'
     ];
 
     /*
@@ -66,12 +65,12 @@ class CompareData implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'author' => 'null',
-        'compare_options' => 'null',
-        'comparing_with_document' => 'null',
-        'date_time' => 'null',
-        'file_reference' => 'null',
-        'result_document_format' => 'null'
+        'color' => 'null',
+        'font_family' => 'null',
+        'font_size' => 'null',
+        'is_semitrasparent' => 'null',
+        'layout' => 'null',
+        'text' => 'null'
     ];
 
     /*
@@ -81,7 +80,7 @@ class CompareData implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -91,7 +90,7 @@ class CompareData implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -101,12 +100,12 @@ class CompareData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'author' => 'Author',
-        'compare_options' => 'CompareOptions',
-        'comparing_with_document' => 'ComparingWithDocument',
-        'date_time' => 'DateTime',
-        'file_reference' => 'FileReference',
-        'result_document_format' => 'ResultDocumentFormat'
+        'color' => 'Color',
+        'font_family' => 'FontFamily',
+        'font_size' => 'FontSize',
+        'is_semitrasparent' => 'IsSemitrasparent',
+        'layout' => 'Layout',
+        'text' => 'Text'
     ];
 
     /*
@@ -115,12 +114,12 @@ class CompareData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'author' => 'setAuthor',
-        'compare_options' => 'setCompareOptions',
-        'comparing_with_document' => 'setComparingWithDocument',
-        'date_time' => 'setDateTime',
-        'file_reference' => 'setFileReference',
-        'result_document_format' => 'setResultDocumentFormat'
+        'color' => 'setColor',
+        'font_family' => 'setFontFamily',
+        'font_size' => 'setFontSize',
+        'is_semitrasparent' => 'setIsSemitrasparent',
+        'layout' => 'setLayout',
+        'text' => 'setText'
     ];
 
     /*
@@ -129,12 +128,12 @@ class CompareData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'author' => 'getAuthor',
-        'compare_options' => 'getCompareOptions',
-        'comparing_with_document' => 'getComparingWithDocument',
-        'date_time' => 'getDateTime',
-        'file_reference' => 'getFileReference',
-        'result_document_format' => 'getResultDocumentFormat'
+        'color' => 'getColor',
+        'font_family' => 'getFontFamily',
+        'font_size' => 'getFontSize',
+        'is_semitrasparent' => 'getIsSemitrasparent',
+        'layout' => 'getLayout',
+        'text' => 'getText'
     ];
 
     /*
@@ -145,7 +144,7 @@ class CompareData implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -155,7 +154,7 @@ class CompareData implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -165,7 +164,7 @@ class CompareData implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -178,14 +177,21 @@ class CompareData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-
+    const LAYOUT_HORIZONTAL = 'Horizontal';
+    const LAYOUT_DIAGONAL = 'Diagonal';
 
     /*
-     * Associative array for storing property values
+     * Gets allowable values of the enum
      *
-     * @var mixed[]
+     * @return string[]
      */
-    protected $container = [];
+    public function getLayoutAllowableValues()
+    {
+        return [
+            self::LAYOUT_HORIZONTAL,
+            self::LAYOUT_DIAGONAL
+        ];
+    }
 
     /*
      * Constructor
@@ -195,12 +201,13 @@ class CompareData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['author'] = isset($data['author']) ? $data['author'] : null;
-        $this->container['compare_options'] = isset($data['compare_options']) ? $data['compare_options'] : null;
-        $this->container['comparing_with_document'] = isset($data['comparing_with_document']) ? $data['comparing_with_document'] : null;
-        $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
-        $this->container['file_reference'] = isset($data['file_reference']) ? $data['file_reference'] : null;
-        $this->container['result_document_format'] = isset($data['result_document_format']) ? $data['result_document_format'] : null;
+        parent::__construct($data);
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['font_family'] = isset($data['font_family']) ? $data['font_family'] : null;
+        $this->container['font_size'] = isset($data['font_size']) ? $data['font_size'] : null;
+        $this->container['is_semitrasparent'] = isset($data['is_semitrasparent']) ? $data['is_semitrasparent'] : null;
+        $this->container['layout'] = isset($data['layout']) ? $data['layout'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
 
     /*
@@ -208,165 +215,170 @@ class CompareData implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['author'])) {
-            throw new \InvalidArgumentException('Property Author in CompareData is required.');
+        parent::validate();
+
+
+        if (isset($this->container['color'])) {
+            $this->getColor()->validate();
         }
 
-
-        if (isset($this->container['compare_options'])) {
-            $this->getCompareOptions()->validate();
+        if (isset($this->container['layout'])) {
+            $allowedValuesLayout = $this->getLayoutAllowableValues();
+            if (!in_array($this->container['layout'], $allowedValuesLayout)) {
+                throw new \InvalidArgumentException('Property Layout in WatermarkDataText has invalid format.');
+            }
         }
 
-        if (!isset($this->container['file_reference'])) {
-            throw new \InvalidArgumentException('Property FileReference in CompareData is required.');
-        }
-
-        if (isset($this->container['file_reference'])) {
-            $this->getFileReference()->validate();
+        if (!isset($this->container['text'])) {
+            throw new \InvalidArgumentException('Property Text in WatermarkDataText is required.');
         }
 
     }
 
     /*
-     * Gets author
+     * Gets color
+     *
+     * @return \Aspose\Words\Model\XmlColor
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /*
+     * Sets color
+     *
+     * @param \Aspose\Words\Model\XmlColor $color Gets or sets font color. The default value is System.Drawing.Color.Silver.
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
+        return $this;
+    }
+
+
+    /*
+     * Gets font_family
      *
      * @return string
      */
-    public function getAuthor()
+    public function getFontFamily()
     {
-        return $this->container['author'];
+        return $this->container['font_family'];
     }
 
     /*
-     * Sets author
+     * Sets font_family
      *
-     * @param string $author Gets or sets the initials of the author to use for revisions.
+     * @param string $font_family Gets or sets font family name. The default value is "Calibri".
      *
      * @return $this
      */
-    public function setAuthor($author)
+    public function setFontFamily($font_family)
     {
-        $this->container['author'] = $author;
+        $this->container['font_family'] = $font_family;
         return $this;
     }
 
 
     /*
-     * Gets compare_options
+     * Gets font_size
      *
-     * @return \Aspose\Words\Model\CompareOptions
+     * @return double
      */
-    public function getCompareOptions()
+    public function getFontSize()
     {
-        return $this->container['compare_options'];
+        return $this->container['font_size'];
     }
 
     /*
-     * Sets compare_options
+     * Sets font_size
      *
-     * @param \Aspose\Words\Model\CompareOptions $compare_options Gets or sets the compare options.
+     * @param double $font_size Gets or sets a font size. The default value is 0 - auto. Valid values range from 0 to 65.5 inclusive. Auto font size means that the watermark will be scaled to its max width and max height relative to the page margins.
      *
      * @return $this
      */
-    public function setCompareOptions($compare_options)
+    public function setFontSize($font_size)
     {
-        $this->container['compare_options'] = $compare_options;
+        $this->container['font_size'] = $font_size;
         return $this;
     }
 
 
     /*
-     * Gets comparing_with_document
+     * Gets is_semitrasparent
+     *
+     * @return bool
+     */
+    public function getIsSemitrasparent()
+    {
+        return $this->container['is_semitrasparent'];
+    }
+
+    /*
+     * Sets is_semitrasparent
+     *
+     * @param bool $is_semitrasparent Gets or sets a boolean value which is responsible for opacity of the watermark. The default value is true.
+     *
+     * @return $this
+     */
+    public function setIsSemitrasparent($is_semitrasparent)
+    {
+        $this->container['is_semitrasparent'] = $is_semitrasparent;
+        return $this;
+    }
+
+
+    /*
+     * Gets layout
      *
      * @return string
      */
-    public function getComparingWithDocument()
+    public function getLayout()
     {
-        return $this->container['comparing_with_document'];
+        return $this->container['layout'];
     }
 
     /*
-     * Sets comparing_with_document
+     * Sets layout
      *
-     * @param string $comparing_with_document Gets or sets the path to document to compare at the server.
+     * @param string $layout Gets or sets layout of the watermark. The default value is Aspose.Words.WatermarkLayout.Diagonal.
      *
      * @return $this
      */
-    public function setComparingWithDocument($comparing_with_document)
+    public function setLayout($layout)
     {
-        $this->container['comparing_with_document'] = $comparing_with_document;
+        $allowedValues = $this->getLayoutAllowableValues();
+        if ((!is_numeric($layout) && !in_array($layout, $allowedValues)) || (is_numeric($layout) && !in_array($allowedValues[$layout], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'layout', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['layout'] = $layout;
         return $this;
     }
 
 
     /*
-     * Gets date_time
-     *
-     * @return \DateTime
-     */
-    public function getDateTime()
-    {
-        return $this->container['date_time'];
-    }
-
-    /*
-     * Sets date_time
-     *
-     * @param \DateTime $date_time Gets or sets the date and time to use for revisions.
-     *
-     * @return $this
-     */
-    public function setDateTime($date_time)
-    {
-        $this->container['date_time'] = $date_time;
-        return $this;
-    }
-
-
-    /*
-     * Gets file_reference
-     *
-     * @return \Aspose\Words\Model\FileReference
-     */
-    public function getFileReference()
-    {
-        return $this->container['file_reference'];
-    }
-
-    /*
-     * Sets file_reference
-     *
-     * @param \Aspose\Words\Model\FileReference $file_reference Gets or sets the file reference.
-     *
-     * @return $this
-     */
-    public function setFileReference($file_reference)
-    {
-        $this->container['file_reference'] = $file_reference;
-        return $this;
-    }
-
-
-    /*
-     * Gets result_document_format
+     * Gets text
      *
      * @return string
      */
-    public function getResultDocumentFormat()
+    public function getText()
     {
-        return $this->container['result_document_format'];
+        return $this->container['text'];
     }
 
     /*
-     * Sets result_document_format
+     * Sets text
      *
-     * @param string $result_document_format Gets or sets the result document format.
+     * @param string $text Gets or sets the watermark text.
      *
      * @return $this
      */
-    public function setResultDocumentFormat($result_document_format)
+    public function setText($text)
     {
-        $this->container['result_document_format'] = $result_document_format;
+        $this->container['text'] = $text;
         return $this;
     }
 
@@ -433,11 +445,6 @@ class CompareData implements ArrayAccess
      */
     public function collectFilesContent($resultFilesContent)
     {
-        if ($this->getFileReference() != null)
-        {
-            $resultFilesContent = $this->getFileReference()->collectFilesContent($resultFilesContent);
-        }
-
         return $resultFilesContent;
     }
 

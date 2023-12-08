@@ -56,6 +56,7 @@ class CompareData implements ArrayAccess
         'compare_options' => '\Aspose\Words\Model\CompareOptions',
         'comparing_with_document' => 'string',
         'date_time' => '\DateTime',
+        'file_reference' => '\Aspose\Words\Model\FileReference',
         'result_document_format' => 'string'
     ];
 
@@ -69,6 +70,7 @@ class CompareData implements ArrayAccess
         'compare_options' => 'null',
         'comparing_with_document' => 'null',
         'date_time' => 'null',
+        'file_reference' => 'null',
         'result_document_format' => 'null'
     ];
 
@@ -103,6 +105,7 @@ class CompareData implements ArrayAccess
         'compare_options' => 'CompareOptions',
         'comparing_with_document' => 'ComparingWithDocument',
         'date_time' => 'DateTime',
+        'file_reference' => 'FileReference',
         'result_document_format' => 'ResultDocumentFormat'
     ];
 
@@ -116,6 +119,7 @@ class CompareData implements ArrayAccess
         'compare_options' => 'setCompareOptions',
         'comparing_with_document' => 'setComparingWithDocument',
         'date_time' => 'setDateTime',
+        'file_reference' => 'setFileReference',
         'result_document_format' => 'setResultDocumentFormat'
     ];
 
@@ -129,6 +133,7 @@ class CompareData implements ArrayAccess
         'compare_options' => 'getCompareOptions',
         'comparing_with_document' => 'getComparingWithDocument',
         'date_time' => 'getDateTime',
+        'file_reference' => 'getFileReference',
         'result_document_format' => 'getResultDocumentFormat'
     ];
 
@@ -194,6 +199,7 @@ class CompareData implements ArrayAccess
         $this->container['compare_options'] = isset($data['compare_options']) ? $data['compare_options'] : null;
         $this->container['comparing_with_document'] = isset($data['comparing_with_document']) ? $data['comparing_with_document'] : null;
         $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
+        $this->container['file_reference'] = isset($data['file_reference']) ? $data['file_reference'] : null;
         $this->container['result_document_format'] = isset($data['result_document_format']) ? $data['result_document_format'] : null;
     }
 
@@ -211,8 +217,12 @@ class CompareData implements ArrayAccess
             $this->getCompareOptions()->validate();
         }
 
-        if (!isset($this->container['comparing_with_document'])) {
-            throw new \InvalidArgumentException('Property ComparingWithDocument in CompareData is required.');
+        if (!isset($this->container['file_reference'])) {
+            throw new \InvalidArgumentException('Property FileReference in CompareData is required.');
+        }
+
+        if (isset($this->container['file_reference'])) {
+            $this->getFileReference()->validate();
         }
 
     }
@@ -314,6 +324,30 @@ class CompareData implements ArrayAccess
 
 
     /*
+     * Gets file_reference
+     *
+     * @return \Aspose\Words\Model\FileReference
+     */
+    public function getFileReference()
+    {
+        return $this->container['file_reference'];
+    }
+
+    /*
+     * Sets file_reference
+     *
+     * @param \Aspose\Words\Model\FileReference $file_reference Gets or sets the file reference.
+     *
+     * @return $this
+     */
+    public function setFileReference($file_reference)
+    {
+        $this->container['file_reference'] = $file_reference;
+        return $this;
+    }
+
+
+    /*
      * Gets result_document_format
      *
      * @return string
@@ -399,6 +433,11 @@ class CompareData implements ArrayAccess
      */
     public function collectFilesContent($resultFilesContent)
     {
+        if ($this->getFileReference() != null)
+        {
+            $resultFilesContent = $this->getFileReference()->collectFilesContent($resultFilesContent);
+        }
+
         return $resultFilesContent;
     }
 

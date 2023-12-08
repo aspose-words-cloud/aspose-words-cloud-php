@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{DeleteOfficeMathObjectOnlineRequest, DeleteOfficeMathObjectRequest, GetOfficeMathObjectOnlineRequest, GetOfficeMathObjectRequest, GetOfficeMathObjectsOnlineRequest, GetOfficeMathObjectsRequest, RenderMathObjectOnlineRequest, RenderMathObjectRequest};
+use Aspose\Words\Model\Requests\{DeleteOfficeMathObjectOnlineRequest, DeleteOfficeMathObjectRequest, DeleteOfficeMathObjectsOnlineRequest, DeleteOfficeMathObjectsRequest, GetOfficeMathObjectOnlineRequest, GetOfficeMathObjectRequest, GetOfficeMathObjectsOnlineRequest, GetOfficeMathObjectsRequest, RenderMathObjectOnlineRequest, RenderMathObjectRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -376,5 +376,56 @@ class MathObjectTests extends BaseTestContext
         );
 
         Assert::assertNull($this->words->deleteOfficeMathObject($request));
+    }
+
+    /*
+     * Test for deleting math objects.
+     */
+    public function testDeleteOfficeMathObjects()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/MathObjects";
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+        $remoteFileName = "TestDeleteOfficeMathObject.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new DeleteOfficeMathObjectsRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        Assert::assertNull($this->words->deleteOfficeMathObjects($request));
+    }
+
+    /*
+     * Test for deleting math objects online.
+     */
+    public function testDeleteOfficeMathObjectsOnline()
+    {
+        $localFile = "DocumentElements/MathObjects/MathObjects.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new DeleteOfficeMathObjectsOnlineRequest(
+            $requestDocument,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->deleteOfficeMathObjectsOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
     }
 }

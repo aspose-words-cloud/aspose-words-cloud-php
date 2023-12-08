@@ -153,7 +153,27 @@ class ProtectionData implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const PROTECTION_TYPE_ALLOW_ONLY_REVISIONS = 'AllowOnlyRevisions';
+    const PROTECTION_TYPE_ALLOW_ONLY_COMMENTS = 'AllowOnlyComments';
+    const PROTECTION_TYPE_ALLOW_ONLY_FORM_FIELDS = 'AllowOnlyFormFields';
+    const PROTECTION_TYPE_READ_ONLY = 'ReadOnly';
+    const PROTECTION_TYPE_NO_PROTECTION = 'NoProtection';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getProtectionTypeAllowableValues()
+    {
+        return [
+            self::PROTECTION_TYPE_ALLOW_ONLY_REVISIONS,
+            self::PROTECTION_TYPE_ALLOW_ONLY_COMMENTS,
+            self::PROTECTION_TYPE_ALLOW_ONLY_FORM_FIELDS,
+            self::PROTECTION_TYPE_READ_ONLY,
+            self::PROTECTION_TYPE_NO_PROTECTION
+        ];
+    }
 
     /*
      * Associative array for storing property values
@@ -178,6 +198,16 @@ class ProtectionData implements ArrayAccess
      */
     public function validate()
     {
+        if (isset($this->container['protection_type'])) {
+            $allowedValuesProtectionType = $this->getProtectionTypeAllowableValues();
+            if (!in_array($this->container['protection_type'], $allowedValuesProtectionType)) {
+                throw new \InvalidArgumentException('Property ProtectionType in ProtectionData has invalid format.');
+            }
+        }
+        if (!isset($this->container['protection_type'])) {
+            throw new \InvalidArgumentException('Property ProtectionType in ProtectionData is required.');
+        }
+
     }
 
     /*
@@ -199,6 +229,10 @@ class ProtectionData implements ArrayAccess
      */
     public function setProtectionType($protection_type)
     {
+        $allowedValues = $this->getProtectionTypeAllowableValues();
+        if ((!is_numeric($protection_type) && !in_array($protection_type, $allowedValues)) || (is_numeric($protection_type) && !in_array($allowedValues[$protection_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'protection_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
         $this->container['protection_type'] = $protection_type;
         return $this;
     }

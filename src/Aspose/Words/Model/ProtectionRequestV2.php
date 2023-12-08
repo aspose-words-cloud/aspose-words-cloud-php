@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BookmarkInsert.php">
+ * <copyright company="Aspose" file="ProtectionRequestV2.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,15 +27,14 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * BookmarkInsert
+ * ProtectionRequestV2
  *
- * @description Represents a bookmark to insert.
+ * @description Request on changing of protection.
  */
-class BookmarkInsert implements ArrayAccess
+class ProtectionRequestV2 extends ProtectionRequestBase
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +43,7 @@ class BookmarkInsert implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BookmarkInsert";
+    protected static $swaggerModelName = "ProtectionRequestV2";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,10 +51,8 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'text' => 'string',
-        'start_range' => '\Aspose\Words\Model\NewDocumentPosition',
-        'end_range' => '\Aspose\Words\Model\NewDocumentPosition'
+        'protection_password' => 'string',
+        'protection_type' => 'string'
     ];
 
     /*
@@ -64,10 +61,8 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => 'null',
-        'text' => 'null',
-        'start_range' => 'null',
-        'end_range' => 'null'
+        'protection_password' => 'null',
+        'protection_type' => 'null'
     ];
 
     /*
@@ -77,7 +72,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -87,7 +82,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -97,10 +92,8 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'text' => 'Text',
-        'start_range' => 'StartRange',
-        'end_range' => 'EndRange'
+        'protection_password' => 'ProtectionPassword',
+        'protection_type' => 'ProtectionType'
     ];
 
     /*
@@ -109,10 +102,8 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'text' => 'setText',
-        'start_range' => 'setStartRange',
-        'end_range' => 'setEndRange'
+        'protection_password' => 'setProtectionPassword',
+        'protection_type' => 'setProtectionType'
     ];
 
     /*
@@ -121,10 +112,8 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'text' => 'getText',
-        'start_range' => 'getStartRange',
-        'end_range' => 'getEndRange'
+        'protection_password' => 'getProtectionPassword',
+        'protection_type' => 'getProtectionType'
     ];
 
     /*
@@ -135,7 +124,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -145,7 +134,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -155,7 +144,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -168,14 +157,27 @@ class BookmarkInsert implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-
+    const PROTECTION_TYPE_ALLOW_ONLY_REVISIONS = 'AllowOnlyRevisions';
+    const PROTECTION_TYPE_ALLOW_ONLY_COMMENTS = 'AllowOnlyComments';
+    const PROTECTION_TYPE_ALLOW_ONLY_FORM_FIELDS = 'AllowOnlyFormFields';
+    const PROTECTION_TYPE_READ_ONLY = 'ReadOnly';
+    const PROTECTION_TYPE_NO_PROTECTION = 'NoProtection';
 
     /*
-     * Associative array for storing property values
+     * Gets allowable values of the enum
      *
-     * @var mixed[]
+     * @return string[]
      */
-    protected $container = [];
+    public function getProtectionTypeAllowableValues()
+    {
+        return [
+            self::PROTECTION_TYPE_ALLOW_ONLY_REVISIONS,
+            self::PROTECTION_TYPE_ALLOW_ONLY_COMMENTS,
+            self::PROTECTION_TYPE_ALLOW_ONLY_FORM_FIELDS,
+            self::PROTECTION_TYPE_READ_ONLY,
+            self::PROTECTION_TYPE_NO_PROTECTION
+        ];
+    }
 
     /*
      * Constructor
@@ -185,10 +187,9 @@ class BookmarkInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['start_range'] = isset($data['start_range']) ? $data['start_range'] : null;
-        $this->container['end_range'] = isset($data['end_range']) ? $data['end_range'] : null;
+        parent::__construct($data);
+        $this->container['protection_password'] = isset($data['protection_password']) ? $data['protection_password'] : null;
+        $this->container['protection_type'] = isset($data['protection_type']) ? $data['protection_type'] : null;
     }
 
     /*
@@ -196,124 +197,72 @@ class BookmarkInsert implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['name'])) {
-            throw new \InvalidArgumentException('Property Name in BookmarkInsert is required.');
+        parent::validate();
+
+        if (!isset($this->container['protection_password'])) {
+            throw new \InvalidArgumentException('Property ProtectionPassword in ProtectionRequestV2 is required.');
         }
 
-        if (!isset($this->container['text'])) {
-            throw new \InvalidArgumentException('Property Text in BookmarkInsert is required.');
+        if (isset($this->container['protection_type'])) {
+            $allowedValuesProtectionType = $this->getProtectionTypeAllowableValues();
+            if (!in_array($this->container['protection_type'], $allowedValuesProtectionType)) {
+                throw new \InvalidArgumentException('Property ProtectionType in ProtectionRequestV2 has invalid format.');
+            }
         }
-
-        if (!isset($this->container['start_range'])) {
-            throw new \InvalidArgumentException('Property StartRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['start_range'])) {
-            $this->getStartRange()->validate();
-        }
-
-        if (!isset($this->container['end_range'])) {
-            throw new \InvalidArgumentException('Property EndRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['end_range'])) {
-            $this->getEndRange()->validate();
+        if (!isset($this->container['protection_type'])) {
+            throw new \InvalidArgumentException('Property ProtectionType in ProtectionRequestV2 is required.');
         }
 
     }
 
     /*
-     * Gets name
+     * Gets protection_password
      *
      * @return string
      */
-    public function getName()
+    public function getProtectionPassword()
     {
-        return $this->container['name'];
+        return $this->container['protection_password'];
     }
 
     /*
-     * Sets name
+     * Sets protection_password
      *
-     * @param string $name Gets or sets the name of the bookmark.
+     * @param string $protection_password Gets or sets the new password for the document protection. This property is required, but empty value is allowed.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setProtectionPassword($protection_password)
     {
-        $this->container['name'] = $name;
+        $this->container['protection_password'] = $protection_password;
         return $this;
     }
 
 
     /*
-     * Gets text
+     * Gets protection_type
      *
      * @return string
      */
-    public function getText()
+    public function getProtectionType()
     {
-        return $this->container['text'];
+        return $this->container['protection_type'];
     }
 
     /*
-     * Sets text
+     * Sets protection_type
      *
-     * @param string $text Gets or sets text, enclosed in the bookmark.
+     * @param string $protection_type Gets or sets the new type of the document protection.
      *
      * @return $this
      */
-    public function setText($text)
+    public function setProtectionType($protection_type)
     {
-        $this->container['text'] = $text;
-        return $this;
-    }
-
-
-    /*
-     * Gets start_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getStartRange()
-    {
-        return $this->container['start_range'];
-    }
-
-    /*
-     * Sets start_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $start_range Gets or sets the link to start bookmark node.
-     *
-     * @return $this
-     */
-    public function setStartRange($start_range)
-    {
-        $this->container['start_range'] = $start_range;
-        return $this;
-    }
-
-
-    /*
-     * Gets end_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getEndRange()
-    {
-        return $this->container['end_range'];
-    }
-
-    /*
-     * Sets end_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
-     *
-     * @return $this
-     */
-    public function setEndRange($end_range)
-    {
-        $this->container['end_range'] = $end_range;
+        $allowedValues = $this->getProtectionTypeAllowableValues();
+        if ((!is_numeric($protection_type) && !in_array($protection_type, $allowedValues)) || (is_numeric($protection_type) && !in_array($allowedValues[$protection_type], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'protection_type', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['protection_type'] = $protection_type;
         return $this;
     }
 

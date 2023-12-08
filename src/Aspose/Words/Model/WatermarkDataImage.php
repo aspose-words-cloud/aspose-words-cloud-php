@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BookmarkInsert.php">
+ * <copyright company="Aspose" file="WatermarkDataImage.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,15 +27,14 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * BookmarkInsert
+ * WatermarkDataImage
  *
- * @description Represents a bookmark to insert.
+ * @description Class for insert watermark image request building.
  */
-class BookmarkInsert implements ArrayAccess
+class WatermarkDataImage extends WatermarkDataBase
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +43,7 @@ class BookmarkInsert implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BookmarkInsert";
+    protected static $swaggerModelName = "WatermarkDataImage";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,10 +51,9 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'text' => 'string',
-        'start_range' => '\Aspose\Words\Model\NewDocumentPosition',
-        'end_range' => '\Aspose\Words\Model\NewDocumentPosition'
+        'image' => '\Aspose\Words\Model\FileReference',
+        'is_washout' => 'bool',
+        'scale' => 'double'
     ];
 
     /*
@@ -64,10 +62,9 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => 'null',
-        'text' => 'null',
-        'start_range' => 'null',
-        'end_range' => 'null'
+        'image' => 'null',
+        'is_washout' => 'null',
+        'scale' => 'null'
     ];
 
     /*
@@ -77,7 +74,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -87,7 +84,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -97,10 +94,9 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'text' => 'Text',
-        'start_range' => 'StartRange',
-        'end_range' => 'EndRange'
+        'image' => 'Image',
+        'is_washout' => 'IsWashout',
+        'scale' => 'Scale'
     ];
 
     /*
@@ -109,10 +105,9 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'text' => 'setText',
-        'start_range' => 'setStartRange',
-        'end_range' => 'setEndRange'
+        'image' => 'setImage',
+        'is_washout' => 'setIsWashout',
+        'scale' => 'setScale'
     ];
 
     /*
@@ -121,10 +116,9 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'text' => 'getText',
-        'start_range' => 'getStartRange',
-        'end_range' => 'getEndRange'
+        'image' => 'getImage',
+        'is_washout' => 'getIsWashout',
+        'scale' => 'getScale'
     ];
 
     /*
@@ -135,7 +129,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -145,7 +139,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -155,7 +149,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -171,13 +165,6 @@ class BookmarkInsert implements ArrayAccess
 
 
     /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-
-    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -185,10 +172,10 @@ class BookmarkInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['start_range'] = isset($data['start_range']) ? $data['start_range'] : null;
-        $this->container['end_range'] = isset($data['end_range']) ? $data['end_range'] : null;
+        parent::__construct($data);
+        $this->container['image'] = isset($data['image']) ? $data['image'] : null;
+        $this->container['is_washout'] = isset($data['is_washout']) ? $data['is_washout'] : null;
+        $this->container['scale'] = isset($data['scale']) ? $data['scale'] : null;
     }
 
     /*
@@ -196,124 +183,86 @@ class BookmarkInsert implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['name'])) {
-            throw new \InvalidArgumentException('Property Name in BookmarkInsert is required.');
+        parent::validate();
+
+        if (!isset($this->container['image'])) {
+            throw new \InvalidArgumentException('Property Image in WatermarkDataImage is required.');
         }
 
-        if (!isset($this->container['text'])) {
-            throw new \InvalidArgumentException('Property Text in BookmarkInsert is required.');
-        }
-
-        if (!isset($this->container['start_range'])) {
-            throw new \InvalidArgumentException('Property StartRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['start_range'])) {
-            $this->getStartRange()->validate();
-        }
-
-        if (!isset($this->container['end_range'])) {
-            throw new \InvalidArgumentException('Property EndRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['end_range'])) {
-            $this->getEndRange()->validate();
+        if (isset($this->container['image'])) {
+            $this->getImage()->validate();
         }
 
     }
 
     /*
-     * Gets name
+     * Gets image
      *
-     * @return string
+     * @return \Aspose\Words\Model\FileReference
      */
-    public function getName()
+    public function getImage()
     {
-        return $this->container['name'];
+        return $this->container['image'];
     }
 
     /*
-     * Sets name
+     * Sets image
      *
-     * @param string $name Gets or sets the name of the bookmark.
+     * @param \Aspose\Words\Model\FileReference $image Gets or sets the watermark image.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setImage($image)
     {
-        $this->container['name'] = $name;
+        $this->container['image'] = $image;
         return $this;
     }
 
 
     /*
-     * Gets text
+     * Gets is_washout
      *
-     * @return string
+     * @return bool
      */
-    public function getText()
+    public function getIsWashout()
     {
-        return $this->container['text'];
+        return $this->container['is_washout'];
     }
 
     /*
-     * Sets text
+     * Sets is_washout
      *
-     * @param string $text Gets or sets text, enclosed in the bookmark.
+     * @param bool $is_washout Gets or sets a boolean value which is responsible for washout effect of the watermark. The default value is true.
      *
      * @return $this
      */
-    public function setText($text)
+    public function setIsWashout($is_washout)
     {
-        $this->container['text'] = $text;
+        $this->container['is_washout'] = $is_washout;
         return $this;
     }
 
 
     /*
-     * Gets start_range
+     * Gets scale
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return double
      */
-    public function getStartRange()
+    public function getScale()
     {
-        return $this->container['start_range'];
+        return $this->container['scale'];
     }
 
     /*
-     * Sets start_range
+     * Sets scale
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $start_range Gets or sets the link to start bookmark node.
+     * @param double $scale Gets or sets the scale factor expressed as a fraction of the image. The default value is 0 - auto. Valid values range from 0 to 65.5 inclusive. Auto scale means that the watermark will be scaled to its max width and max height relative to the page margins.
      *
      * @return $this
      */
-    public function setStartRange($start_range)
+    public function setScale($scale)
     {
-        $this->container['start_range'] = $start_range;
-        return $this;
-    }
-
-
-    /*
-     * Gets end_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getEndRange()
-    {
-        return $this->container['end_range'];
-    }
-
-    /*
-     * Sets end_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
-     *
-     * @return $this
-     */
-    public function setEndRange($end_range)
-    {
-        $this->container['end_range'] = $end_range;
+        $this->container['scale'] = $scale;
         return $this;
     }
 
@@ -380,6 +329,12 @@ class BookmarkInsert implements ArrayAccess
      */
     public function collectFilesContent($resultFilesContent)
     {
+        $resultFilesContent = parent::collectFilesContent($resultFilesContent);
+        if ($this->getImage() != null)
+        {
+            $resultFilesContent = $this->getImage()->collectFilesContent($resultFilesContent);
+        }
+
         return $resultFilesContent;
     }
 

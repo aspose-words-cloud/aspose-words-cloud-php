@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BookmarkInsert.php">
+ * <copyright company="Aspose" file="ProtectionRequestBase.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -31,11 +31,11 @@ use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * BookmarkInsert
+ * ProtectionRequestBase
  *
- * @description Represents a bookmark to insert.
+ * @description Request on changing of protection.
  */
-class BookmarkInsert implements ArrayAccess
+abstract class ProtectionRequestBase implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +44,7 @@ class BookmarkInsert implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BookmarkInsert";
+    protected static $swaggerModelName = "ProtectionRequestBase";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,10 +52,6 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'text' => 'string',
-        'start_range' => '\Aspose\Words\Model\NewDocumentPosition',
-        'end_range' => '\Aspose\Words\Model\NewDocumentPosition'
     ];
 
     /*
@@ -64,10 +60,6 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => 'null',
-        'text' => 'null',
-        'start_range' => 'null',
-        'end_range' => 'null'
     ];
 
     /*
@@ -97,10 +89,6 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'text' => 'Text',
-        'start_range' => 'StartRange',
-        'end_range' => 'EndRange'
     ];
 
     /*
@@ -109,10 +97,6 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'text' => 'setText',
-        'start_range' => 'setStartRange',
-        'end_range' => 'setEndRange'
     ];
 
     /*
@@ -121,10 +105,6 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'text' => 'getText',
-        'start_range' => 'getStartRange',
-        'end_range' => 'getEndRange'
     ];
 
     /*
@@ -185,10 +165,6 @@ class BookmarkInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['start_range'] = isset($data['start_range']) ? $data['start_range'] : null;
-        $this->container['end_range'] = isset($data['end_range']) ? $data['end_range'] : null;
     }
 
     /*
@@ -196,125 +172,6 @@ class BookmarkInsert implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['name'])) {
-            throw new \InvalidArgumentException('Property Name in BookmarkInsert is required.');
-        }
-
-        if (!isset($this->container['text'])) {
-            throw new \InvalidArgumentException('Property Text in BookmarkInsert is required.');
-        }
-
-        if (!isset($this->container['start_range'])) {
-            throw new \InvalidArgumentException('Property StartRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['start_range'])) {
-            $this->getStartRange()->validate();
-        }
-
-        if (!isset($this->container['end_range'])) {
-            throw new \InvalidArgumentException('Property EndRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['end_range'])) {
-            $this->getEndRange()->validate();
-        }
-
-    }
-
-    /*
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /*
-     * Sets name
-     *
-     * @param string $name Gets or sets the name of the bookmark.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-        return $this;
-    }
-
-
-    /*
-     * Gets text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /*
-     * Sets text
-     *
-     * @param string $text Gets or sets text, enclosed in the bookmark.
-     *
-     * @return $this
-     */
-    public function setText($text)
-    {
-        $this->container['text'] = $text;
-        return $this;
-    }
-
-
-    /*
-     * Gets start_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getStartRange()
-    {
-        return $this->container['start_range'];
-    }
-
-    /*
-     * Sets start_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $start_range Gets or sets the link to start bookmark node.
-     *
-     * @return $this
-     */
-    public function setStartRange($start_range)
-    {
-        $this->container['start_range'] = $start_range;
-        return $this;
-    }
-
-
-    /*
-     * Gets end_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getEndRange()
-    {
-        return $this->container['end_range'];
-    }
-
-    /*
-     * Sets end_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
-     *
-     * @return $this
-     */
-    public function setEndRange($end_range)
-    {
-        $this->container['end_range'] = $end_range;
-        return $this;
     }
 
 

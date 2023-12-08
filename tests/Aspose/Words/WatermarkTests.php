@@ -29,8 +29,8 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{DeleteWatermarkOnlineRequest, DeleteWatermarkRequest, InsertWatermarkImageOnlineRequest, InsertWatermarkImageRequest, InsertWatermarkTextOnlineRequest, InsertWatermarkTextRequest};
-use Aspose\Words\Model\{WatermarkText};
+use Aspose\Words\Model\Requests\{DeleteWatermarkOnlineRequest, DeleteWatermarkRequest, InsertWatermarkImageOnlineRequest, InsertWatermarkImageRequest, InsertWatermarkOnlineRequest, InsertWatermarkRequest, InsertWatermarkTextOnlineRequest, InsertWatermarkTextRequest};
+use Aspose\Words\Model\{FileReference, WatermarkDataImage, WatermarkDataText, WatermarkText};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -39,9 +39,139 @@ use PHPUnit\Framework\Assert;
 class WatermarkTests extends BaseTestContext
 {
     /*
-     * Test for adding watermark image.
+     * Test for adding watermark text.
+     */
+    public function testInsertWatermarkText()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestInsertWatermarkText.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $requestWatermarkData = new WatermarkDataText(array(
+            "text" => "watermark text",
+        ));
+        $request = new InsertWatermarkRequest(
+            $remoteFileName,
+            $requestWatermarkData,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/" . $remoteFileName,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertWatermark($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+    }
+
+    /*
+     * Test for adding watermark text online.
+     */
+    public function testInsertWatermarkTextOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestWatermarkData = new WatermarkDataText(array(
+            "text" => "watermark text",
+        ));
+        $request = new InsertWatermarkOnlineRequest(
+            $requestDocument,
+            $requestWatermarkData,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertWatermarkOnline($request);
+        Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for adding watermark text.
      */
     public function testInsertWatermarkImage()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestInsertWatermarkImage.docx";
+        $remoteImagePath = $remoteDataFolder . "/TestInsertWatermarkImage.png";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . "Common/aspose-cloud.png",
+            $remoteImagePath
+        );
+
+        $requestWatermarkDataImage = FileReference::fromRemoteFilePath($remoteImagePath);
+        $requestWatermarkData = new WatermarkDataImage(array(
+            "image" => $requestWatermarkDataImage,
+        ));
+        $request = new InsertWatermarkRequest(
+            $remoteFileName,
+            $requestWatermarkData,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/" . $remoteFileName,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertWatermark($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+    }
+
+    /*
+     * Test for adding watermark text online.
+     */
+    public function testInsertWatermarkImageOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestWatermarkDataImageStream = realpath(__DIR__ . '/../../..') . '/TestData/' . "Common/aspose-cloud.png";
+        $requestWatermarkDataImage = FileReference::fromLocalFileContent($requestWatermarkDataImageStream);
+        $requestWatermarkData = new WatermarkDataImage(array(
+            "image" => $requestWatermarkDataImage,
+        ));
+        $request = new InsertWatermarkOnlineRequest(
+            $requestDocument,
+            $requestWatermarkData,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertWatermarkOnline($request);
+        Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for adding watermark image.
+     */
+    public function testInsertWatermarkImageDeprecated()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
         $localFile = "Common/test_multi_pages.docx";
@@ -81,7 +211,7 @@ class WatermarkTests extends BaseTestContext
     /*
      * Test for adding watermark image online.
      */
-    public function testInsertWatermarkImageOnline()
+    public function testInsertWatermarkImageDeprecatedOnline()
     {
         $localFile = "Common/test_multi_pages.docx";
 
@@ -107,7 +237,7 @@ class WatermarkTests extends BaseTestContext
     /*
      * Test for adding watermark text.
      */
-    public function testInsertWatermarkText()
+    public function testInsertWatermarkTextDeprecated()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Watermark";
         $localFile = "Common/test_multi_pages.docx";
@@ -144,7 +274,7 @@ class WatermarkTests extends BaseTestContext
     /*
      * Test for adding watermark text online.
      */
-    public function testInsertWatermarkTextOnline()
+    public function testInsertWatermarkTextDeprecatedOnline()
     {
         $localFile = "Common/test_multi_pages.docx";
 

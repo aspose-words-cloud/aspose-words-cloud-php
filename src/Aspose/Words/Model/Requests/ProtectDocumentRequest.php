@@ -50,7 +50,7 @@ class ProtectDocumentRequest extends BaseApiRequest
     public $name;
 
     /*
-     * Protection request.
+     * Use ProtectionRequestV2 model to provide protection options.
      */
     public $protection_request;
 
@@ -88,7 +88,7 @@ class ProtectDocumentRequest extends BaseApiRequest
      * Initializes a new instance of the ProtectDocumentRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param \Aspose\Words\Model\ProtectionRequest $protection_request Protection request.
+     * @param \Aspose\Words\Model\ProtectionRequestBase $protection_request Use ProtectionRequestV2 model to provide protection options.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -126,7 +126,7 @@ class ProtectDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * Protection request.
+     * Use ProtectionRequestV2 model to provide protection options.
      */
     public function get_protection_request()
     {
@@ -134,7 +134,7 @@ class ProtectDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * Protection request.
+     * Use ProtectionRequestV2 model to provide protection options.
      */
     public function set_protection_request($value)
     {

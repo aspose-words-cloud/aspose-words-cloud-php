@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BookmarkInsert.php">
+ * <copyright company="Aspose" file="WatermarkDataText.php">
  *   Copyright (c) 2023 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,15 +27,14 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * BookmarkInsert
+ * WatermarkDataText
  *
- * @description Represents a bookmark to insert.
+ * @description Class for insert watermark text request building.
  */
-class BookmarkInsert implements ArrayAccess
+class WatermarkDataText extends WatermarkDataBase
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +43,7 @@ class BookmarkInsert implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BookmarkInsert";
+    protected static $swaggerModelName = "WatermarkDataText";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,10 +51,12 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'text' => 'string',
-        'start_range' => '\Aspose\Words\Model\NewDocumentPosition',
-        'end_range' => '\Aspose\Words\Model\NewDocumentPosition'
+        'color' => '\Aspose\Words\Model\XmlColor',
+        'font_family' => 'string',
+        'font_size' => 'double',
+        'is_semitrasparent' => 'bool',
+        'layout' => 'string',
+        'text' => 'string'
     ];
 
     /*
@@ -64,10 +65,12 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => 'null',
-        'text' => 'null',
-        'start_range' => 'null',
-        'end_range' => 'null'
+        'color' => 'null',
+        'font_family' => 'null',
+        'font_size' => 'null',
+        'is_semitrasparent' => 'null',
+        'layout' => 'null',
+        'text' => 'null'
     ];
 
     /*
@@ -77,7 +80,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -87,7 +90,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -97,10 +100,12 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'text' => 'Text',
-        'start_range' => 'StartRange',
-        'end_range' => 'EndRange'
+        'color' => 'Color',
+        'font_family' => 'FontFamily',
+        'font_size' => 'FontSize',
+        'is_semitrasparent' => 'IsSemitrasparent',
+        'layout' => 'Layout',
+        'text' => 'Text'
     ];
 
     /*
@@ -109,10 +114,12 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'text' => 'setText',
-        'start_range' => 'setStartRange',
-        'end_range' => 'setEndRange'
+        'color' => 'setColor',
+        'font_family' => 'setFontFamily',
+        'font_size' => 'setFontSize',
+        'is_semitrasparent' => 'setIsSemitrasparent',
+        'layout' => 'setLayout',
+        'text' => 'setText'
     ];
 
     /*
@@ -121,10 +128,12 @@ class BookmarkInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'text' => 'getText',
-        'start_range' => 'getStartRange',
-        'end_range' => 'getEndRange'
+        'color' => 'getColor',
+        'font_family' => 'getFontFamily',
+        'font_size' => 'getFontSize',
+        'is_semitrasparent' => 'getIsSemitrasparent',
+        'layout' => 'getLayout',
+        'text' => 'getText'
     ];
 
     /*
@@ -135,7 +144,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -145,7 +154,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -155,7 +164,7 @@ class BookmarkInsert implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -168,14 +177,21 @@ class BookmarkInsert implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-
+    const LAYOUT_HORIZONTAL = 'Horizontal';
+    const LAYOUT_DIAGONAL = 'Diagonal';
 
     /*
-     * Associative array for storing property values
+     * Gets allowable values of the enum
      *
-     * @var mixed[]
+     * @return string[]
      */
-    protected $container = [];
+    public function getLayoutAllowableValues()
+    {
+        return [
+            self::LAYOUT_HORIZONTAL,
+            self::LAYOUT_DIAGONAL
+        ];
+    }
 
     /*
      * Constructor
@@ -185,10 +201,13 @@ class BookmarkInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        parent::__construct($data);
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['font_family'] = isset($data['font_family']) ? $data['font_family'] : null;
+        $this->container['font_size'] = isset($data['font_size']) ? $data['font_size'] : null;
+        $this->container['is_semitrasparent'] = isset($data['is_semitrasparent']) ? $data['is_semitrasparent'] : null;
+        $this->container['layout'] = isset($data['layout']) ? $data['layout'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['start_range'] = isset($data['start_range']) ? $data['start_range'] : null;
-        $this->container['end_range'] = isset($data['end_range']) ? $data['end_range'] : null;
     }
 
     /*
@@ -196,52 +215,146 @@ class BookmarkInsert implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['name'])) {
-            throw new \InvalidArgumentException('Property Name in BookmarkInsert is required.');
+        parent::validate();
+
+
+        if (isset($this->container['color'])) {
+            $this->getColor()->validate();
+        }
+
+        if (isset($this->container['layout'])) {
+            $allowedValuesLayout = $this->getLayoutAllowableValues();
+            if (!in_array($this->container['layout'], $allowedValuesLayout)) {
+                throw new \InvalidArgumentException('Property Layout in WatermarkDataText has invalid format.');
+            }
         }
 
         if (!isset($this->container['text'])) {
-            throw new \InvalidArgumentException('Property Text in BookmarkInsert is required.');
-        }
-
-        if (!isset($this->container['start_range'])) {
-            throw new \InvalidArgumentException('Property StartRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['start_range'])) {
-            $this->getStartRange()->validate();
-        }
-
-        if (!isset($this->container['end_range'])) {
-            throw new \InvalidArgumentException('Property EndRange in BookmarkInsert is required.');
-        }
-
-        if (isset($this->container['end_range'])) {
-            $this->getEndRange()->validate();
+            throw new \InvalidArgumentException('Property Text in WatermarkDataText is required.');
         }
 
     }
 
     /*
-     * Gets name
+     * Gets color
      *
-     * @return string
+     * @return \Aspose\Words\Model\XmlColor
      */
-    public function getName()
+    public function getColor()
     {
-        return $this->container['name'];
+        return $this->container['color'];
     }
 
     /*
-     * Sets name
+     * Sets color
      *
-     * @param string $name Gets or sets the name of the bookmark.
+     * @param \Aspose\Words\Model\XmlColor $color Gets or sets font color. The default value is System.Drawing.Color.Silver.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setColor($color)
     {
-        $this->container['name'] = $name;
+        $this->container['color'] = $color;
+        return $this;
+    }
+
+
+    /*
+     * Gets font_family
+     *
+     * @return string
+     */
+    public function getFontFamily()
+    {
+        return $this->container['font_family'];
+    }
+
+    /*
+     * Sets font_family
+     *
+     * @param string $font_family Gets or sets font family name. The default value is "Calibri".
+     *
+     * @return $this
+     */
+    public function setFontFamily($font_family)
+    {
+        $this->container['font_family'] = $font_family;
+        return $this;
+    }
+
+
+    /*
+     * Gets font_size
+     *
+     * @return double
+     */
+    public function getFontSize()
+    {
+        return $this->container['font_size'];
+    }
+
+    /*
+     * Sets font_size
+     *
+     * @param double $font_size Gets or sets a font size. The default value is 0 - auto. Valid values range from 0 to 65.5 inclusive. Auto font size means that the watermark will be scaled to its max width and max height relative to the page margins.
+     *
+     * @return $this
+     */
+    public function setFontSize($font_size)
+    {
+        $this->container['font_size'] = $font_size;
+        return $this;
+    }
+
+
+    /*
+     * Gets is_semitrasparent
+     *
+     * @return bool
+     */
+    public function getIsSemitrasparent()
+    {
+        return $this->container['is_semitrasparent'];
+    }
+
+    /*
+     * Sets is_semitrasparent
+     *
+     * @param bool $is_semitrasparent Gets or sets a boolean value which is responsible for opacity of the watermark. The default value is true.
+     *
+     * @return $this
+     */
+    public function setIsSemitrasparent($is_semitrasparent)
+    {
+        $this->container['is_semitrasparent'] = $is_semitrasparent;
+        return $this;
+    }
+
+
+    /*
+     * Gets layout
+     *
+     * @return string
+     */
+    public function getLayout()
+    {
+        return $this->container['layout'];
+    }
+
+    /*
+     * Sets layout
+     *
+     * @param string $layout Gets or sets layout of the watermark. The default value is Aspose.Words.WatermarkLayout.Diagonal.
+     *
+     * @return $this
+     */
+    public function setLayout($layout)
+    {
+        $allowedValues = $this->getLayoutAllowableValues();
+        if ((!is_numeric($layout) && !in_array($layout, $allowedValues)) || (is_numeric($layout) && !in_array($allowedValues[$layout], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'layout', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['layout'] = $layout;
         return $this;
     }
 
@@ -259,61 +372,13 @@ class BookmarkInsert implements ArrayAccess
     /*
      * Sets text
      *
-     * @param string $text Gets or sets text, enclosed in the bookmark.
+     * @param string $text Gets or sets the watermark text.
      *
      * @return $this
      */
     public function setText($text)
     {
         $this->container['text'] = $text;
-        return $this;
-    }
-
-
-    /*
-     * Gets start_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getStartRange()
-    {
-        return $this->container['start_range'];
-    }
-
-    /*
-     * Sets start_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $start_range Gets or sets the link to start bookmark node.
-     *
-     * @return $this
-     */
-    public function setStartRange($start_range)
-    {
-        $this->container['start_range'] = $start_range;
-        return $this;
-    }
-
-
-    /*
-     * Gets end_range
-     *
-     * @return \Aspose\Words\Model\NewDocumentPosition
-     */
-    public function getEndRange()
-    {
-        return $this->container['end_range'];
-    }
-
-    /*
-     * Sets end_range
-     *
-     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
-     *
-     * @return $this
-     */
-    public function setEndRange($end_range)
-    {
-        $this->container['end_range'] = $end_range;
         return $this;
     }
 

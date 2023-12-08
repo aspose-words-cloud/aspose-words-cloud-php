@@ -32,6 +32,7 @@ use \Aspose\Words\ObjectSerializer;
 
 /*
  * WatermarkText
+ * @deprecated This model will be removed in the future.
  *
  * @description Class for insert watermark text request building.
  */

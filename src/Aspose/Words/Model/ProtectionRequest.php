@@ -27,15 +27,15 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
  * ProtectionRequest
+ * @deprecated ProtectionRequest is deprecated and remains for backwards compatibility only.
  *
  * @description Request on changing of protection.
  */
-class ProtectionRequest implements ArrayAccess
+class ProtectionRequest extends ProtectionRequestBase
 {
     const DISCRIMINATOR = null;
 
@@ -75,7 +75,7 @@ class ProtectionRequest implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -85,7 +85,7 @@ class ProtectionRequest implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -130,7 +130,7 @@ class ProtectionRequest implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -140,7 +140,7 @@ class ProtectionRequest implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -150,7 +150,7 @@ class ProtectionRequest implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -166,13 +166,6 @@ class ProtectionRequest implements ArrayAccess
 
 
     /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-
-    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -180,6 +173,7 @@ class ProtectionRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
         $this->container['new_password'] = isset($data['new_password']) ? $data['new_password'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['protection_type'] = isset($data['protection_type']) ? $data['protection_type'] : null;
@@ -190,6 +184,8 @@ class ProtectionRequest implements ArrayAccess
      */
     public function validate()
     {
+        parent::validate();
+
         if (!isset($this->container['password'])) {
             throw new \InvalidArgumentException('Property Password in ProtectionRequest is required.');
         }

@@ -73,8 +73,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
-            NULL
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocument($request);
@@ -112,8 +111,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
-            NULL
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocumentOnline($request);
@@ -150,8 +148,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
-            NULL
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocumentOnline($request);

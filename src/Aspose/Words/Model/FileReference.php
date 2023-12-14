@@ -205,7 +205,7 @@ class FileReference implements ArrayAccess
      */
     public function encryptPassword($encryptor)
     {
-        if (isset($this->getPassword()) && !empty($this->getPassword())) {
+        if (isset($this->container['password']) && !empty($this->getPassword())) {
             $this->container['encryptedPassword'] = $encryptor->encrypt($this->getPassword());
             $this->container['password'] = NULL;
         }

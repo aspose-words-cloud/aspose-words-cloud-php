@@ -181,6 +181,7 @@ class FileReference implements ArrayAccess
         $this->container['source'] = $source;
         $this->container['reference'] = $reference;
         $this->container['password'] = $password;
+        $this->container['encryptedPassword'] = NULL;
         $this->content = $content;
     }
 

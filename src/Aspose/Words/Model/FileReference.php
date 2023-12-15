@@ -50,7 +50,9 @@ class FileReference implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'source' => 'string',
-        'reference' => 'string'
+        'reference' => 'string',
+        'password' => 'string',
+        'encryptedPassword' => 'string'
     ];
 
     /*
@@ -60,7 +62,9 @@ class FileReference implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'source' => 'null',
-        'reference' => 'null'
+        'reference' => 'null',
+        'password' => 'null',
+        'encryptedPassword' => 'null'
     ];
 
     /*
@@ -91,7 +95,9 @@ class FileReference implements ArrayAccess
      */
     protected static $attributeMap = [
         'source' => 'Source',
-        'reference' => 'Reference'
+        'reference' => 'Reference',
+        'password' => 'Password',
+        'encryptedPassword' => 'EncryptedPassword'
     ];
 
     /*
@@ -109,7 +115,9 @@ class FileReference implements ArrayAccess
      */
     protected static $getters = [
         'source' => 'getSource',
-        'reference' => 'getReference'
+        'reference' => 'getReference',
+        'password' => 'getPassword',
+        'encryptedPassword' => 'getEncryptedPassword'
     ];
 
     /*
@@ -168,19 +176,21 @@ class FileReference implements ArrayAccess
     /*
      * Constructor
      */
-    private function __construct($source, $reference, $content)
+    private function __construct($source, $reference, $content, $password)
     {
         $this->container['source'] = $source;
         $this->container['reference'] = $reference;
+        $this->container['password'] = $password;
+        $this->container['encryptedPassword'] = NULL;
         $this->content = $content;
     }
 
-    public static function fromRemoteFilePath( $remoteFilePath ) {
-        return new self('Storage', $remoteFilePath, null);
+    public static function fromRemoteFilePath( $remoteFilePath, $password = NULL ) {
+        return new self('Storage', $remoteFilePath, null, $password);
     }
 
-    public static function fromLocalFileContent( $localFileContent ) {
-        return new self('Request', ObjectSerializer::guidv4(), $localFileContent);
+    public static function fromLocalFileContent( $localFileContent, $password = NULL ) {
+        return new self('Request', ObjectSerializer::guidv4(), $localFileContent, $password);
     }
 
     /*
@@ -189,6 +199,17 @@ class FileReference implements ArrayAccess
     public function validate()
     {
         // Do nothing
+    }
+
+    /*
+     * Encrypt password
+     */
+    public function encryptPassword($encryptor)
+    {
+        if (isset($this->container['password']) && !empty($this->getPassword())) {
+            $this->container['encryptedPassword'] = $encryptor->encrypt($this->getPassword());
+            $this->container['password'] = NULL;
+        }
     }
 
     /*
@@ -217,6 +238,26 @@ class FileReference implements ArrayAccess
     public function getContent()
     {
         return $this->content;
+    }
+
+    /*
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /*
+     * Gets encrypted password
+     *
+     * @return string
+     */
+    public function getEncryptedPassword()
+    {
+        return $this->container['encryptedPassword'];
     }
 
     /*
@@ -281,10 +322,7 @@ class FileReference implements ArrayAccess
      */
     public function collectFilesContent($resultFilesContent)
     {
-        if ($this->getSource() == 'Request') {
-            array_push($resultFilesContent, $this);
-        }
-
+        array_push($resultFilesContent, $this);
         return $resultFilesContent;
     }
 

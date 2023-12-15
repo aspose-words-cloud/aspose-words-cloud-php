@@ -73,8 +73,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
-            NULL
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocument($request);
@@ -112,8 +111,7 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
-            NULL
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocumentOnline($request);
@@ -150,11 +148,52 @@ class CompareDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            self::$baseTestOutPath . "/TestCompareDocumentOut.doc",
-            NULL
+            self::$baseTestOutPath . "/TestCompareDocumentOut.doc"
         );
 
         $result = $this->words->compareDocumentOnline($request);
         Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for document comparison with password protection.
+     */
+    public function testCompareDocumentWithPassword()
+    {
+        $remoteFolder = self::$baseRemoteFolderPath . "/DocumentActions/CompareDocument";
+        $localName = "DocWithPassword.docx";
+        $remoteName1 = "TestCompareDocument1.docx";
+        $remoteName2 = "TestCompareDocument2.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . "Common/" . $localName,
+            $remoteFolder . "/" . $remoteName1
+        );
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . "Common/" . $localName,
+            $remoteFolder . "/" . $remoteName2
+        );
+
+        $requestCompareDataFileReference = FileReference::fromRemoteFilePath($remoteFolder . "/" . $remoteName2, '12345');
+        $requestCompareData = new CompareData(array(
+            "author" => "author",
+            "date_time" => new \DateTime("2015-10-26T00:00:00.0000000Z"),
+            "file_reference" => $requestCompareDataFileReference,
+        ));
+        $request = new CompareDocumentRequest(
+            $remoteName1,
+            $requestCompareData,
+            $remoteFolder,
+            NULL,
+            NULL,
+            "12345",
+            NULL,
+            self::$baseTestOutPath . "/TestCompareDocumentOut.docx"
+        );
+
+        $result = $this->words->compareDocument($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestCompareDocumentOut.docx", $result->getDocument()->getFileName());
     }
 }

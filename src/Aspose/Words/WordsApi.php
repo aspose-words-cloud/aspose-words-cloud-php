@@ -54656,7 +54656,7 @@ class WordsApi implements Encryptor
             {
                 $response = $this->getPublicKey(new Requests\GetPublicKeyRequest());
                 $exponent = $response->getExponent();
-                $modulus = $response->getModulues();
+                $modulus = $response->getModulus();
             }
 
             $this->rsaKey = PublicKeyLoader::load([

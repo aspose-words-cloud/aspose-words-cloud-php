@@ -37,6 +37,7 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\Model\Requests;
 use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Math\BigInteger;
+use phpseclib3\Crypt\RSA;
 use Aspose\Words\Encryptor;
 
 /*

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RunInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,6 +51,7 @@ class RunInsert extends RunBase
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'position' => '\Aspose\Words\Model\Position'
     ];
 
     /*
@@ -59,6 +60,7 @@ class RunInsert extends RunBase
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'position' => 'null'
     ];
 
     /*
@@ -88,6 +90,7 @@ class RunInsert extends RunBase
      * @var string[]
      */
     protected static $attributeMap = [
+        'position' => 'Position'
     ];
 
     /*
@@ -96,6 +99,7 @@ class RunInsert extends RunBase
      * @var string[]
      */
     protected static $setters = [
+        'position' => 'setPosition'
     ];
 
     /*
@@ -104,6 +108,7 @@ class RunInsert extends RunBase
      * @var string[]
      */
     protected static $getters = [
+        'position' => 'getPosition'
     ];
 
     /*
@@ -158,6 +163,7 @@ class RunInsert extends RunBase
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
     }
 
     /*
@@ -167,6 +173,34 @@ class RunInsert extends RunBase
     {
         parent::validate();
 
+
+        if (isset($this->container['position'])) {
+            $this->getPosition()->validate();
+        }
+
+    }
+
+    /*
+     * Gets position
+     *
+     * @return \Aspose\Words\Model\Position
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param \Aspose\Words\Model\Position $position Gets or sets the position of the node that will be used to determine the placement of a new run.
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
+        return $this;
     }
 
 

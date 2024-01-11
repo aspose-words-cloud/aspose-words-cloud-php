@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RunTests.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -123,10 +123,9 @@ class RunTests extends BaseTestContext
         ));
         $request = new InsertRunRequest(
             $remoteFileName,
-            "paragraphs/1",
             $requestRun,
+            "paragraphs/1",
             $remoteDataFolder,
-            NULL,
             NULL,
             NULL,
             NULL,
@@ -156,9 +155,8 @@ class RunTests extends BaseTestContext
         ));
         $request = new InsertRunOnlineRequest(
             $requestDocument,
-            "paragraphs/1",
             $requestRun,
-            NULL,
+            "paragraphs/1",
             NULL,
             NULL,
             NULL,

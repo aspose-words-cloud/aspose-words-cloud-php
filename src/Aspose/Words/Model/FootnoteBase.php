@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FootnoteBase.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,7 +52,7 @@ abstract class FootnoteBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'position' => '\Aspose\Words\Model\NewDocumentPosition',
+        'position' => '\Aspose\Words\Model\Position',
         'footnote_type' => 'string',
         'reference_mark' => 'string',
         'text' => 'string'
@@ -227,7 +227,7 @@ abstract class FootnoteBase implements ArrayAccess
     /*
      * Gets position
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return \Aspose\Words\Model\Position
      */
     public function getPosition()
     {
@@ -237,7 +237,7 @@ abstract class FootnoteBase implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $position Gets or sets the link to comment range start node.
+     * @param \Aspose\Words\Model\Position $position Gets or sets the link to range start node.
      *
      * @return $this
      */

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableCellInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,6 +52,7 @@ class TableCellInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'existing_cell_position' => '\Aspose\Words\Model\Position',
         'insert_after' => 'int'
     ];
 
@@ -61,6 +62,7 @@ class TableCellInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'existing_cell_position' => 'null',
         'insert_after' => 'null'
     ];
 
@@ -91,6 +93,7 @@ class TableCellInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'existing_cell_position' => 'ExistingCellPosition',
         'insert_after' => 'InsertAfter'
     ];
 
@@ -100,6 +103,7 @@ class TableCellInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'existing_cell_position' => 'setExistingCellPosition',
         'insert_after' => 'setInsertAfter'
     ];
 
@@ -109,6 +113,7 @@ class TableCellInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'existing_cell_position' => 'getExistingCellPosition',
         'insert_after' => 'getInsertAfter'
     ];
 
@@ -170,6 +175,7 @@ class TableCellInsert implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['existing_cell_position'] = isset($data['existing_cell_position']) ? $data['existing_cell_position'] : null;
         $this->container['insert_after'] = isset($data['insert_after']) ? $data['insert_after'] : null;
     }
 
@@ -178,7 +184,36 @@ class TableCellInsert implements ArrayAccess
      */
     public function validate()
     {
+
+        if (isset($this->container['existing_cell_position'])) {
+            $this->getExistingCellPosition()->validate();
+        }
+
     }
+
+    /*
+     * Gets existing_cell_position
+     *
+     * @return \Aspose\Words\Model\Position
+     */
+    public function getExistingCellPosition()
+    {
+        return $this->container['existing_cell_position'];
+    }
+
+    /*
+     * Sets existing_cell_position
+     *
+     * @param \Aspose\Words\Model\Position $existing_cell_position Gets or sets the position of the table cell that will be used to determine the placement of a new cell.
+     *
+     * @return $this
+     */
+    public function setExistingCellPosition($existing_cell_position)
+    {
+        $this->container['existing_cell_position'] = $existing_cell_position;
+        return $this;
+    }
+
 
     /*
      * Gets insert_after

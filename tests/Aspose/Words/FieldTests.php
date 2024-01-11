@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FieldTests.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -238,7 +238,6 @@ class FieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            NULL,
             NULL
         );
 
@@ -264,7 +263,6 @@ class FieldTests extends BaseTestContext
             $requestDocument,
             $requestField,
             "sections/0/paragraphs/0",
-            NULL,
             NULL,
             NULL,
             NULL,
@@ -300,7 +298,6 @@ class FieldTests extends BaseTestContext
             $requestField,
             NULL,
             $remoteDataFolder,
-            NULL,
             NULL,
             NULL,
             NULL,

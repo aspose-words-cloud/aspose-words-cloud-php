@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CommentBase.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,8 +52,8 @@ abstract class CommentBase implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'range_start' => '\Aspose\Words\Model\NewDocumentPosition',
-        'range_end' => '\Aspose\Words\Model\NewDocumentPosition',
+        'range_start' => '\Aspose\Words\Model\PositionInsideNode',
+        'range_end' => '\Aspose\Words\Model\PositionInsideNode',
         'author' => 'string',
         'initial' => 'string',
         'date_time' => '\DateTime',
@@ -241,7 +241,7 @@ abstract class CommentBase implements ArrayAccess
     /*
      * Gets range_start
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return \Aspose\Words\Model\PositionInsideNode
      */
     public function getRangeStart()
     {
@@ -251,7 +251,7 @@ abstract class CommentBase implements ArrayAccess
     /*
      * Sets range_start
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $range_start Gets or sets the link to comment range start node.
+     * @param \Aspose\Words\Model\PositionInsideNode $range_start Gets or sets the link to comment range start node.
      *
      * @return $this
      */
@@ -265,7 +265,7 @@ abstract class CommentBase implements ArrayAccess
     /*
      * Gets range_end
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return \Aspose\Words\Model\PositionInsideNode
      */
     public function getRangeEnd()
     {
@@ -275,7 +275,7 @@ abstract class CommentBase implements ArrayAccess
     /*
      * Sets range_end
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $range_end Gets or sets the link to comment range end node.
+     * @param \Aspose\Words\Model\PositionInsideNode $range_end Gets or sets the link to comment range end node.
      *
      * @return $this
      */

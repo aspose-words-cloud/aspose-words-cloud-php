@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertParagraphRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -100,11 +100,6 @@ class InsertParagraphRequest extends BaseApiRequest
     public $revision_date_time;
 
     /*
-     * The index of the node. A new paragraph will be inserted before the node with the specified index.
-     */
-    public $insert_before_node;
-
-    /*
      * Initializes a new instance of the InsertParagraphRequest class.
      *
      * @param string $name The filename of the input document.
@@ -118,9 +113,8 @@ class InsertParagraphRequest extends BaseApiRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node The index of the node. A new paragraph will be inserted before the node with the specified index.
      */
-    public function __construct($name, $paragraph, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
+    public function __construct($name, $paragraph, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
         $this->paragraph = $paragraph;
@@ -133,7 +127,6 @@ class InsertParagraphRequest extends BaseApiRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->insert_before_node = $insert_before_node;
     }
 
     /*
@@ -324,23 +317,6 @@ class InsertParagraphRequest extends BaseApiRequest
     }
 
     /*
-     * The index of the node. A new paragraph will be inserted before the node with the specified index.
-     */
-    public function get_insert_before_node()
-    {
-        return $this->insert_before_node;
-    }
-
-    /*
-     * The index of the node. A new paragraph will be inserted before the node with the specified index.
-     */
-    public function set_insert_before_node($value)
-    {
-        $this->insert_before_node = $value;
-        return $this;
-    }
-
-    /*
      * Create request data for operation 'insertParagraph'
      *
      * @throws \InvalidArgumentException
@@ -461,16 +437,6 @@ class InsertParagraphRequest extends BaseApiRequest
         if ($this->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($this->revision_date_time) ? ($this->revision_date_time ? 'true' : 'false') : $this->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($this->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($this->insert_before_node) ? ($this->insert_before_node ? 'true' : 'false') : $this->insert_before_node;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

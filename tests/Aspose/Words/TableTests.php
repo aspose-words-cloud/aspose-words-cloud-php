@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableTests.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -742,8 +742,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new InsertTableRowRequest(
             $remoteFileName,
-            "sections/0/tables/2",
             $requestRow,
+            "sections/0/tables/2",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -774,8 +774,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new InsertTableRowOnlineRequest(
             $requestDocument,
-            "sections/0/tables/2",
             $requestRow,
+            "sections/0/tables/2",
             NULL,
             NULL,
             NULL,
@@ -1039,8 +1039,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new InsertTableCellRequest(
             $remoteFileName,
-            "sections/0/tables/2/rows/0",
             $requestCell,
+            "sections/0/tables/2/rows/0",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -1069,8 +1069,8 @@ class TableTests extends BaseTestContext
         ));
         $request = new InsertTableCellOnlineRequest(
             $requestDocument,
-            "sections/0/tables/2/rows/0",
             $requestCell,
+            "sections/0/tables/2/rows/0",
             NULL,
             NULL,
             NULL,

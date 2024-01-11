@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BookmarkTests.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{DeleteBookmarkOnlineRequest, DeleteBookmarkRequest, DeleteBookmarksOnlineRequest, DeleteBookmarksRequest, GetBookmarkByNameOnlineRequest, GetBookmarkByNameRequest, GetBookmarksOnlineRequest, GetBookmarksRequest, InsertBookmarkOnlineRequest, InsertBookmarkRequest, UpdateBookmarkOnlineRequest, UpdateBookmarkRequest};
-use Aspose\Words\Model\{BookmarkData, BookmarkInsert, NewDocumentPosition};
+use Aspose\Words\Model\{BookmarkData, BookmarkInsert, PositionInsideNode};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -322,11 +322,11 @@ class BookmarkTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestBookmarkStartRange = new NewDocumentPosition(array(
+        $requestBookmarkStartRange = new PositionInsideNode(array(
             "node_id" => "0.0.0.0",
             "offset" => 0,
         ));
-        $requestBookmarkEndRange = new NewDocumentPosition(array(
+        $requestBookmarkEndRange = new PositionInsideNode(array(
             "node_id" => "0.0.0.0",
             "offset" => 0,
         ));
@@ -361,11 +361,11 @@ class BookmarkTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestBookmarkStartRange = new NewDocumentPosition(array(
+        $requestBookmarkStartRange = new PositionInsideNode(array(
             "node_id" => "0.0.0.0",
             "offset" => 0,
         ));
-        $requestBookmarkEndRange = new NewDocumentPosition(array(
+        $requestBookmarkEndRange = new PositionInsideNode(array(
             "node_id" => "0.0.0.0",
             "offset" => 0,
         ));

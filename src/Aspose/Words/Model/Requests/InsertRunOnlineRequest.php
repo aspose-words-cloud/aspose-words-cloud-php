@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertRunOnlineRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,14 +50,14 @@ class InsertRunOnlineRequest extends BaseApiRequest
     public $document;
 
     /*
-     * The path to the paragraph in the document tree.
-     */
-    public $paragraph_path;
-
-    /*
      * Run data.
      */
     public $run;
+
+    /*
+     * The path to the paragraph in the document tree.
+     */
+    public $paragraph_path;
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -90,36 +90,29 @@ class InsertRunOnlineRequest extends BaseApiRequest
     public $revision_date_time;
 
     /*
-     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
-     */
-    public $insert_before_node;
-
-    /*
      * Initializes a new instance of the InsertRunOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param \Aspose\Words\Model\RunInsert $run Run data.
+     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
      */
-    public function __construct($document, $paragraph_path, $run, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
+    public function __construct($document, $run, $paragraph_path = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->document = $document;
-        $this->paragraph_path = $paragraph_path;
         $this->run = $run;
+        $this->paragraph_path = $paragraph_path;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->insert_before_node = $insert_before_node;
     }
 
     /*
@@ -140,23 +133,6 @@ class InsertRunOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The path to the paragraph in the document tree.
-     */
-    public function get_paragraph_path()
-    {
-        return $this->paragraph_path;
-    }
-
-    /*
-     * The path to the paragraph in the document tree.
-     */
-    public function set_paragraph_path($value)
-    {
-        $this->paragraph_path = $value;
-        return $this;
-    }
-
-    /*
      * Run data.
      */
     public function get_run()
@@ -170,6 +146,23 @@ class InsertRunOnlineRequest extends BaseApiRequest
     public function set_run($value)
     {
         $this->run = $value;
+        return $this;
+    }
+
+    /*
+     * The path to the paragraph in the document tree.
+     */
+    public function get_paragraph_path()
+    {
+        return $this->paragraph_path;
+    }
+
+    /*
+     * The path to the paragraph in the document tree.
+     */
+    public function set_paragraph_path($value)
+    {
+        $this->paragraph_path = $value;
         return $this;
     }
 
@@ -276,23 +269,6 @@ class InsertRunOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
-     */
-    public function get_insert_before_node()
-    {
-        return $this->insert_before_node;
-    }
-
-    /*
-     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
-     */
-    public function set_insert_before_node($value)
-    {
-        $this->insert_before_node = $value;
-        return $this;
-    }
-
-    /*
      * Create request data for operation 'insertRunOnline'
      *
      * @throws \InvalidArgumentException
@@ -302,9 +278,6 @@ class InsertRunOnlineRequest extends BaseApiRequest
     {
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertRunOnline');
-        }
-        if ($this->paragraph_path === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling insertRunOnline');
         }
         if ($this->run === null) {
             throw new \InvalidArgumentException('Missing the required parameter $run when calling insertRunOnline');
@@ -387,16 +360,6 @@ class InsertRunOnlineRequest extends BaseApiRequest
         if ($this->revision_date_time !== null) {
             $localName = lcfirst('RevisionDateTime');
             $localValue = is_bool($this->revision_date_time) ? ($this->revision_date_time ? 'true' : 'false') : $this->revision_date_time;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($this->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($this->insert_before_node) ? ($this->insert_before_node ? 'true' : 'false') : $this->insert_before_node;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

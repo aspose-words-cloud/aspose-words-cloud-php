@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CommentTests.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
 use Aspose\Words\Model\Requests\{DeleteCommentOnlineRequest, DeleteCommentRequest, DeleteCommentsOnlineRequest, DeleteCommentsRequest, GetCommentOnlineRequest, GetCommentRequest, GetCommentsOnlineRequest, GetCommentsRequest, InsertCommentOnlineRequest, InsertCommentRequest, UpdateCommentOnlineRequest, UpdateCommentRequest};
-use Aspose\Words\Model\{CommentInsert, CommentUpdate, NewDocumentPosition};
+use Aspose\Words\Model\{CommentInsert, CommentUpdate, PositionInsideNode};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -152,11 +152,11 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCommentRangeStart = new NewDocumentPosition(array(
+        $requestCommentRangeStart = new PositionInsideNode(array(
             "node_id" => "0.3.0.3",
             "offset" => 0,
         ));
-        $requestCommentRangeEnd = new NewDocumentPosition(array(
+        $requestCommentRangeEnd = new PositionInsideNode(array(
             "node_id" => "0.3.0.3",
             "offset" => 0,
         ));
@@ -197,11 +197,11 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCommentRangeStart = new NewDocumentPosition(array(
+        $requestCommentRangeStart = new PositionInsideNode(array(
             "node_id" => "0.3.0.3",
             "offset" => 0,
         ));
-        $requestCommentRangeEnd = new NewDocumentPosition(array(
+        $requestCommentRangeEnd = new PositionInsideNode(array(
             "node_id" => "0.3.0.3",
             "offset" => 0,
         ));
@@ -241,11 +241,11 @@ class CommentTests extends BaseTestContext
             $remoteDataFolder . "/" . $remoteFileName
         );
 
-        $requestCommentRangeStart = new NewDocumentPosition(array(
+        $requestCommentRangeStart = new PositionInsideNode(array(
             "node_id" => "0.3.0",
             "offset" => 0,
         ));
-        $requestCommentRangeEnd = new NewDocumentPosition(array(
+        $requestCommentRangeEnd = new PositionInsideNode(array(
             "node_id" => "0.3.0",
             "offset" => 0,
         ));
@@ -287,11 +287,11 @@ class CommentTests extends BaseTestContext
         $localFile = "Common/test_multi_pages.docx";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
-        $requestCommentRangeStart = new NewDocumentPosition(array(
+        $requestCommentRangeStart = new PositionInsideNode(array(
             "node_id" => "0.3.0",
             "offset" => 0,
         ));
-        $requestCommentRangeEnd = new NewDocumentPosition(array(
+        $requestCommentRangeEnd = new PositionInsideNode(array(
             "node_id" => "0.3.0",
             "offset" => 0,
         ));

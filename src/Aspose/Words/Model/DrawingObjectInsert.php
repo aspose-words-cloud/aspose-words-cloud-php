@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DrawingObjectInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,7 +52,7 @@ class DrawingObjectInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'position' => '\Aspose\Words\Model\NewDocumentPosition',
+        'position' => '\Aspose\Words\Model\Position',
         'relative_horizontal_position' => 'string',
         'left' => 'double',
         'relative_vertical_position' => 'string',
@@ -356,7 +356,7 @@ class DrawingObjectInsert implements ArrayAccess
     /*
      * Gets position
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return \Aspose\Words\Model\Position
      */
     public function getPosition()
     {
@@ -366,7 +366,7 @@ class DrawingObjectInsert implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $position Gets or sets the position, before which the DrawingObject will be inserted.
+     * @param \Aspose\Words\Model\Position $position Gets or sets the position, where the DrawingObject will be inserted.
      *
      * @return $this
      */

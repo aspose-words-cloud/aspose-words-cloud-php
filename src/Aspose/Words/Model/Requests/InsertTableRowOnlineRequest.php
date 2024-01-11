@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableRowOnlineRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,14 +50,14 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
     public $document;
 
     /*
-     * The path to the table in the document tree.
-     */
-    public $table_path;
-
-    /*
      * Table row parameters.
      */
     public $row;
+
+    /*
+     * The path to the table in the document tree.
+     */
+    public $node_path;
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,8 +93,8 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
      * Initializes a new instance of the InsertTableRowOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param string $table_path The path to the table in the document tree.
      * @param \Aspose\Words\Model\TableRowInsert $row Table row parameters.
+     * @param string $node_path The path to the table in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -102,11 +102,11 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($document, $table_path, $row, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($document, $row, $node_path = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->document = $document;
-        $this->table_path = $table_path;
         $this->row = $row;
+        $this->node_path = $node_path;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
@@ -133,23 +133,6 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The path to the table in the document tree.
-     */
-    public function get_table_path()
-    {
-        return $this->table_path;
-    }
-
-    /*
-     * The path to the table in the document tree.
-     */
-    public function set_table_path($value)
-    {
-        $this->table_path = $value;
-        return $this;
-    }
-
-    /*
      * Table row parameters.
      */
     public function get_row()
@@ -163,6 +146,23 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
     public function set_row($value)
     {
         $this->row = $value;
+        return $this;
+    }
+
+    /*
+     * The path to the table in the document tree.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * The path to the table in the document tree.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 
@@ -279,9 +279,6 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertTableRowOnline');
         }
-        if ($this->table_path === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $table_path when calling insertTableRowOnline');
-        }
         if ($this->row === null) {
             throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRowOnline');
         }
@@ -290,7 +287,7 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
         }
 
 
-        $resourcePath = '/words/online/post/{tablePath}/rows';
+        $resourcePath = '/words/online/post/{nodePath}/rows';
         $formParams = [];
         $filesContent = [];
         $queryParams = [];
@@ -298,12 +295,12 @@ class InsertTableRowOnlineRequest extends BaseApiRequest
         $httpBody = "";
         $filename = null;
         // path params
-        if ($this->table_path !== null) {
-            $localName = lcfirst('TablePath');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->table_path), $resourcePath);
+        if ($this->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->node_path), $resourcePath);
         }
         else {
-            $localName = lcfirst('TablePath');
+            $localName = lcfirst('NodePath');
             $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
         }
 

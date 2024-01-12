@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StructuredDocumentTagInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,7 +52,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
      */
     protected static $swaggerTypes = [
         'level' => 'string',
-        'sdt_type' => 'string'
+        'sdt_type' => 'string',
+        'position' => '\Aspose\Words\Model\Position'
     ];
 
     /*
@@ -62,7 +63,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
      */
     protected static $swaggerFormats = [
         'level' => 'null',
-        'sdt_type' => 'null'
+        'sdt_type' => 'null',
+        'position' => 'null'
     ];
 
     /*
@@ -93,7 +95,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
      */
     protected static $attributeMap = [
         'level' => 'Level',
-        'sdt_type' => 'SdtType'
+        'sdt_type' => 'SdtType',
+        'position' => 'Position'
     ];
 
     /*
@@ -103,7 +106,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
      */
     protected static $setters = [
         'level' => 'setLevel',
-        'sdt_type' => 'setSdtType'
+        'sdt_type' => 'setSdtType',
+        'position' => 'setPosition'
     ];
 
     /*
@@ -113,7 +117,8 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
      */
     protected static $getters = [
         'level' => 'getLevel',
-        'sdt_type' => 'getSdtType'
+        'sdt_type' => 'getSdtType',
+        'position' => 'getPosition'
     ];
 
     /*
@@ -234,6 +239,7 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
         parent::__construct($data);
         $this->container['level'] = isset($data['level']) ? $data['level'] : null;
         $this->container['sdt_type'] = isset($data['sdt_type']) ? $data['sdt_type'] : null;
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
     }
 
     /*
@@ -261,6 +267,11 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
         }
         if (!isset($this->container['sdt_type'])) {
             throw new \InvalidArgumentException('Property SdtType in StructuredDocumentTagInsert is required.');
+        }
+
+
+        if (isset($this->container['position'])) {
+            $this->getPosition()->validate();
         }
 
     }
@@ -317,6 +328,30 @@ class StructuredDocumentTagInsert extends StructuredDocumentTagBase
             throw new \InvalidArgumentException(sprintf("Invalid value for 'sdt_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['sdt_type'] = $sdt_type;
+        return $this;
+    }
+
+
+    /*
+     * Gets position
+     *
+     * @return \Aspose\Words\Model\Position
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param \Aspose\Words\Model\Position $position Gets or sets the position of the node that will be used to determine the placement of a new node.
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
         return $this;
     }
 

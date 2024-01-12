@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BookmarkInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,8 +54,8 @@ class BookmarkInsert implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'text' => 'string',
-        'start_range' => '\Aspose\Words\Model\NewDocumentPosition',
-        'end_range' => '\Aspose\Words\Model\NewDocumentPosition'
+        'start_range' => '\Aspose\Words\Model\Position',
+        'end_range' => '\Aspose\Words\Model\Position'
     ];
 
     /*
@@ -273,7 +273,7 @@ class BookmarkInsert implements ArrayAccess
     /*
      * Gets start_range
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return \Aspose\Words\Model\Position
      */
     public function getStartRange()
     {
@@ -283,7 +283,7 @@ class BookmarkInsert implements ArrayAccess
     /*
      * Sets start_range
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $start_range Gets or sets the link to start bookmark node.
+     * @param \Aspose\Words\Model\Position $start_range Gets or sets the link to start bookmark node.
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class BookmarkInsert implements ArrayAccess
     /*
      * Gets end_range
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return \Aspose\Words\Model\Position
      */
     public function getEndRange()
     {
@@ -307,7 +307,7 @@ class BookmarkInsert implements ArrayAccess
     /*
      * Sets end_range
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $end_range Gets or sets the link to end bookmark node.
+     * @param \Aspose\Words\Model\Position $end_range Gets or sets the link to end bookmark node.
      *
      * @return $this
      */

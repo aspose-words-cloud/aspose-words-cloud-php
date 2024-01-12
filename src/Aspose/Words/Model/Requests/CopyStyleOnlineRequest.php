@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CopyStyleOnlineRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -355,11 +355,14 @@ class CopyStyleOnlineRequest extends BaseApiRequest
 
         foreach ($filesContent as $fileContent)
         {
-            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
-            $filesContent_handle = fopen($filesContent_filename, "rb");
-            $filesContent_fsize = filesize($filesContent_filename);
-            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
-            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            $fileContent->encryptPassword($config->getEncryptor());
+            if ($fileContent->getSource() == 'Request') {
+                $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+                $filesContent_handle = fopen($filesContent_filename, "rb");
+                $filesContent_fsize = filesize($filesContent_filename);
+                $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+                array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            }
         }
 
         // body params

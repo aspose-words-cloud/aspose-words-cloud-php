@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableRowInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,6 +53,7 @@ class TableRowInsert implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'columns_count' => 'int',
+        'existing_row_position' => '\Aspose\Words\Model\Position',
         'insert_after' => 'int'
     ];
 
@@ -63,6 +64,7 @@ class TableRowInsert implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'columns_count' => 'null',
+        'existing_row_position' => 'null',
         'insert_after' => 'null'
     ];
 
@@ -94,6 +96,7 @@ class TableRowInsert implements ArrayAccess
      */
     protected static $attributeMap = [
         'columns_count' => 'ColumnsCount',
+        'existing_row_position' => 'ExistingRowPosition',
         'insert_after' => 'InsertAfter'
     ];
 
@@ -104,6 +107,7 @@ class TableRowInsert implements ArrayAccess
      */
     protected static $setters = [
         'columns_count' => 'setColumnsCount',
+        'existing_row_position' => 'setExistingRowPosition',
         'insert_after' => 'setInsertAfter'
     ];
 
@@ -114,6 +118,7 @@ class TableRowInsert implements ArrayAccess
      */
     protected static $getters = [
         'columns_count' => 'getColumnsCount',
+        'existing_row_position' => 'getExistingRowPosition',
         'insert_after' => 'getInsertAfter'
     ];
 
@@ -176,6 +181,7 @@ class TableRowInsert implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
+        $this->container['existing_row_position'] = isset($data['existing_row_position']) ? $data['existing_row_position'] : null;
         $this->container['insert_after'] = isset($data['insert_after']) ? $data['insert_after'] : null;
     }
 
@@ -186,6 +192,11 @@ class TableRowInsert implements ArrayAccess
     {
         if (!isset($this->container['columns_count'])) {
             throw new \InvalidArgumentException('Property ColumnsCount in TableRowInsert is required.');
+        }
+
+
+        if (isset($this->container['existing_row_position'])) {
+            $this->getExistingRowPosition()->validate();
         }
 
     }
@@ -210,6 +221,30 @@ class TableRowInsert implements ArrayAccess
     public function setColumnsCount($columns_count)
     {
         $this->container['columns_count'] = $columns_count;
+        return $this;
+    }
+
+
+    /*
+     * Gets existing_row_position
+     *
+     * @return \Aspose\Words\Model\Position
+     */
+    public function getExistingRowPosition()
+    {
+        return $this->container['existing_row_position'];
+    }
+
+    /*
+     * Sets existing_row_position
+     *
+     * @param \Aspose\Words\Model\Position $existing_row_position Gets or sets the position of the table row that will be used to determine the placement of a new row.
+     *
+     * @return $this
+     */
+    public function setExistingRowPosition($existing_row_position)
+    {
+        $this->container['existing_row_position'] = $existing_row_position;
         return $this;
     }
 

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TableInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,7 +53,7 @@ class TableInsert implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'columns_count' => 'int',
-        'position' => '\Aspose\Words\Model\NewDocumentPosition',
+        'position' => '\Aspose\Words\Model\Position',
         'rows_count' => 'int'
     ];
 
@@ -232,7 +232,7 @@ class TableInsert implements ArrayAccess
     /*
      * Gets position
      *
-     * @return \Aspose\Words\Model\NewDocumentPosition
+     * @return \Aspose\Words\Model\Position
      */
     public function getPosition()
     {
@@ -242,7 +242,7 @@ class TableInsert implements ArrayAccess
     /*
      * Sets position
      *
-     * @param \Aspose\Words\Model\NewDocumentPosition $position Gets or sets the position to insert the table. The table will be inserted before the specified position.
+     * @param \Aspose\Words\Model\Position $position Gets or sets the position to insert the table. The table will be inserted using the specified position.
      *
      * @return $this
      */

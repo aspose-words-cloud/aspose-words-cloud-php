@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertParagraphOnlineRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -90,11 +90,6 @@ class InsertParagraphOnlineRequest extends BaseApiRequest
     public $revision_date_time;
 
     /*
-     * The index of the node. A new paragraph will be inserted before the node with the specified index.
-     */
-    public $insert_before_node;
-
-    /*
      * Initializes a new instance of the InsertParagraphOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
@@ -106,9 +101,8 @@ class InsertParagraphOnlineRequest extends BaseApiRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node The index of the node. A new paragraph will be inserted before the node with the specified index.
      */
-    public function __construct($document, $paragraph, $node_path = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
+    public function __construct($document, $paragraph, $node_path = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->document = $document;
         $this->paragraph = $paragraph;
@@ -119,7 +113,6 @@ class InsertParagraphOnlineRequest extends BaseApiRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->insert_before_node = $insert_before_node;
     }
 
     /*
@@ -276,23 +269,6 @@ class InsertParagraphOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The index of the node. A new paragraph will be inserted before the node with the specified index.
-     */
-    public function get_insert_before_node()
-    {
-        return $this->insert_before_node;
-    }
-
-    /*
-     * The index of the node. A new paragraph will be inserted before the node with the specified index.
-     */
-    public function set_insert_before_node($value)
-    {
-        $this->insert_before_node = $value;
-        return $this;
-    }
-
-    /*
      * Create request data for operation 'insertParagraphOnline'
      *
      * @throws \InvalidArgumentException
@@ -390,16 +366,6 @@ class InsertParagraphOnlineRequest extends BaseApiRequest
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
-        // query params
-        if ($this->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($this->insert_before_node) ? ($this->insert_before_node ? 'true' : 'false') : $this->insert_before_node;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
         if (property_exists($this, 'password') && $this->password != null)
         {
             unset($queryParams['password']);
@@ -422,11 +388,14 @@ class InsertParagraphOnlineRequest extends BaseApiRequest
 
         foreach ($filesContent as $fileContent)
         {
-            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
-            $filesContent_handle = fopen($filesContent_filename, "rb");
-            $filesContent_fsize = filesize($filesContent_filename);
-            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
-            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            $fileContent->encryptPassword($config->getEncryptor());
+            if ($fileContent->getSource() == 'Request') {
+                $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+                $filesContent_handle = fopen($filesContent_filename, "rb");
+                $filesContent_fsize = filesize($filesContent_filename);
+                $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+                array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            }
         }
 
         // body params

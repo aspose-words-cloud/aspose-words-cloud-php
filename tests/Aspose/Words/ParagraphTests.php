@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphTests.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -455,7 +455,6 @@ class ParagraphTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            NULL,
             NULL
         );
 
@@ -480,7 +479,6 @@ class ParagraphTests extends BaseTestContext
             $requestDocument,
             $requestParagraph,
             "sections/0",
-            NULL,
             NULL,
             NULL,
             NULL,
@@ -515,7 +513,6 @@ class ParagraphTests extends BaseTestContext
             $requestParagraph,
             NULL,
             $remoteDataFolder,
-            NULL,
             NULL,
             NULL,
             NULL,

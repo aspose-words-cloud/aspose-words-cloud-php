@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableRowRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,14 +50,14 @@ class InsertTableRowRequest extends BaseApiRequest
     public $name;
 
     /*
-     * The path to the table in the document tree.
-     */
-    public $table_path;
-
-    /*
      * Table row parameters.
      */
     public $row;
+
+    /*
+     * The path to the table in the document tree.
+     */
+    public $node_path;
 
     /*
      * Original document folder.
@@ -103,8 +103,8 @@ class InsertTableRowRequest extends BaseApiRequest
      * Initializes a new instance of the InsertTableRowRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param string $table_path The path to the table in the document tree.
      * @param \Aspose\Words\Model\TableRowInsert $row Table row parameters.
+     * @param string $node_path The path to the table in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,11 +114,11 @@ class InsertTableRowRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $table_path, $row, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $row, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->table_path = $table_path;
         $this->row = $row;
+        $this->node_path = $node_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -147,23 +147,6 @@ class InsertTableRowRequest extends BaseApiRequest
     }
 
     /*
-     * The path to the table in the document tree.
-     */
-    public function get_table_path()
-    {
-        return $this->table_path;
-    }
-
-    /*
-     * The path to the table in the document tree.
-     */
-    public function set_table_path($value)
-    {
-        $this->table_path = $value;
-        return $this;
-    }
-
-    /*
      * Table row parameters.
      */
     public function get_row()
@@ -177,6 +160,23 @@ class InsertTableRowRequest extends BaseApiRequest
     public function set_row($value)
     {
         $this->row = $value;
+        return $this;
+    }
+
+    /*
+     * The path to the table in the document tree.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * The path to the table in the document tree.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
         return $this;
     }
 
@@ -327,9 +327,6 @@ class InsertTableRowRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableRow');
         }
-        if ($this->table_path === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $table_path when calling insertTableRow');
-        }
         if ($this->row === null) {
             throw new \InvalidArgumentException('Missing the required parameter $row when calling insertTableRow');
         }
@@ -338,7 +335,7 @@ class InsertTableRowRequest extends BaseApiRequest
         }
 
 
-        $resourcePath = '/words/{name}/{tablePath}/rows';
+        $resourcePath = '/words/{name}/{nodePath}/rows';
         $formParams = [];
         $filesContent = [];
         $queryParams = [];
@@ -355,12 +352,12 @@ class InsertTableRowRequest extends BaseApiRequest
             $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
         }
         // path params
-        if ($this->table_path !== null) {
-            $localName = lcfirst('TablePath');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->table_path), $resourcePath);
+        if ($this->node_path !== null) {
+            $localName = lcfirst('NodePath');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($this->node_path), $resourcePath);
         }
         else {
-            $localName = lcfirst('TablePath');
+            $localName = lcfirst('NodePath');
             $resourcePath = str_replace('{' . $localName . '}', '', $resourcePath);
         }
 
@@ -460,11 +457,14 @@ class InsertTableRowRequest extends BaseApiRequest
 
         foreach ($filesContent as $fileContent)
         {
-            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
-            $filesContent_handle = fopen($filesContent_filename, "rb");
-            $filesContent_fsize = filesize($filesContent_filename);
-            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
-            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            $fileContent->encryptPassword($config->getEncryptor());
+            if ($fileContent->getSource() == 'Request') {
+                $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+                $filesContent_handle = fopen($filesContent_filename, "rb");
+                $filesContent_fsize = filesize($filesContent_filename);
+                $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+                array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            }
         }
 
         // body params

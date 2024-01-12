@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertRunRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,14 +50,14 @@ class InsertRunRequest extends BaseApiRequest
     public $name;
 
     /*
-     * The path to the paragraph in the document tree.
-     */
-    public $paragraph_path;
-
-    /*
      * Run data.
      */
     public $run;
+
+    /*
+     * The path to the paragraph in the document tree.
+     */
+    public $paragraph_path;
 
     /*
      * Original document folder.
@@ -100,16 +100,11 @@ class InsertRunRequest extends BaseApiRequest
     public $revision_date_time;
 
     /*
-     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
-     */
-    public $insert_before_node;
-
-    /*
      * Initializes a new instance of the InsertRunRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param \Aspose\Words\Model\RunInsert $run Run data.
+     * @param string $paragraph_path The path to the paragraph in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -118,13 +113,12 @@ class InsertRunRequest extends BaseApiRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
-     * @param string $insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
      */
-    public function __construct($name, $paragraph_path, $run, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $insert_before_node = null)
+    public function __construct($name, $run, $paragraph_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->paragraph_path = $paragraph_path;
         $this->run = $run;
+        $this->paragraph_path = $paragraph_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -133,7 +127,6 @@ class InsertRunRequest extends BaseApiRequest
         $this->dest_file_name = $dest_file_name;
         $this->revision_author = $revision_author;
         $this->revision_date_time = $revision_date_time;
-        $this->insert_before_node = $insert_before_node;
     }
 
     /*
@@ -154,23 +147,6 @@ class InsertRunRequest extends BaseApiRequest
     }
 
     /*
-     * The path to the paragraph in the document tree.
-     */
-    public function get_paragraph_path()
-    {
-        return $this->paragraph_path;
-    }
-
-    /*
-     * The path to the paragraph in the document tree.
-     */
-    public function set_paragraph_path($value)
-    {
-        $this->paragraph_path = $value;
-        return $this;
-    }
-
-    /*
      * Run data.
      */
     public function get_run()
@@ -184,6 +160,23 @@ class InsertRunRequest extends BaseApiRequest
     public function set_run($value)
     {
         $this->run = $value;
+        return $this;
+    }
+
+    /*
+     * The path to the paragraph in the document tree.
+     */
+    public function get_paragraph_path()
+    {
+        return $this->paragraph_path;
+    }
+
+    /*
+     * The path to the paragraph in the document tree.
+     */
+    public function set_paragraph_path($value)
+    {
+        $this->paragraph_path = $value;
         return $this;
     }
 
@@ -324,23 +317,6 @@ class InsertRunRequest extends BaseApiRequest
     }
 
     /*
-     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
-     */
-    public function get_insert_before_node()
-    {
-        return $this->insert_before_node;
-    }
-
-    /*
-     * The index of the node. A new Run object will be inserted before the node with the specified node Id.
-     */
-    public function set_insert_before_node($value)
-    {
-        $this->insert_before_node = $value;
-        return $this;
-    }
-
-    /*
      * Create request data for operation 'insertRun'
      *
      * @throws \InvalidArgumentException
@@ -350,9 +326,6 @@ class InsertRunRequest extends BaseApiRequest
     {
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertRun');
-        }
-        if ($this->paragraph_path === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $paragraph_path when calling insertRun');
         }
         if ($this->run === null) {
             throw new \InvalidArgumentException('Missing the required parameter $run when calling insertRun');
@@ -470,16 +443,6 @@ class InsertRunRequest extends BaseApiRequest
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
-        // query params
-        if ($this->insert_before_node !== null) {
-            $localName = lcfirst('InsertBeforeNode');
-            $localValue = is_bool($this->insert_before_node) ? ($this->insert_before_node ? 'true' : 'false') : $this->insert_before_node;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
         if (property_exists($this, 'password') && $this->password != null)
         {
             unset($queryParams['password']);
@@ -494,11 +457,14 @@ class InsertRunRequest extends BaseApiRequest
 
         foreach ($filesContent as $fileContent)
         {
-            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
-            $filesContent_handle = fopen($filesContent_filename, "rb");
-            $filesContent_fsize = filesize($filesContent_filename);
-            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
-            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            $fileContent->encryptPassword($config->getEncryptor());
+            if ($fileContent->getSource() == 'Request') {
+                $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+                $filesContent_handle = fopen($filesContent_filename, "rb");
+                $filesContent_fsize = filesize($filesContent_filename);
+                $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+                array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            }
         }
 
         // body params

@@ -1,8 +1,8 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="NewDocumentPosition.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ * <copyright company="Aspose" file="PositionAfterNode.php">
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,15 +27,14 @@
  */
 
 namespace Aspose\Words\Model;
-use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * NewDocumentPosition
+ * PositionAfterNode
  *
- * @description DTO container with a new position in the document tree.
+ * @description Describes the location of the node after specified node.
  */
-class NewDocumentPosition implements ArrayAccess
+class PositionAfterNode extends Position
 {
     const DISCRIMINATOR = null;
 
@@ -44,7 +43,7 @@ class NewDocumentPosition implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "NewDocumentPosition";
+    protected static $swaggerModelName = "PositionAfterNode";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -52,8 +51,6 @@ class NewDocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'node_id' => 'string',
-        'offset' => 'int'
     ];
 
     /*
@@ -62,8 +59,6 @@ class NewDocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'node_id' => 'null',
-        'offset' => 'null'
     ];
 
     /*
@@ -73,7 +68,7 @@ class NewDocumentPosition implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -83,7 +78,7 @@ class NewDocumentPosition implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -93,8 +88,6 @@ class NewDocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'node_id' => 'NodeId',
-        'offset' => 'Offset'
     ];
 
     /*
@@ -103,8 +96,6 @@ class NewDocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'node_id' => 'setNodeId',
-        'offset' => 'setOffset'
     ];
 
     /*
@@ -113,8 +104,6 @@ class NewDocumentPosition implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'node_id' => 'getNodeId',
-        'offset' => 'getOffset'
     ];
 
     /*
@@ -125,7 +114,7 @@ class NewDocumentPosition implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -135,7 +124,7 @@ class NewDocumentPosition implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -145,7 +134,7 @@ class NewDocumentPosition implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -161,13 +150,6 @@ class NewDocumentPosition implements ArrayAccess
 
 
     /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-
-    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -175,8 +157,8 @@ class NewDocumentPosition implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['node_id'] = isset($data['node_id']) ? $data['node_id'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        parent::__construct($data);
+        $this->container['type'] = "After";
     }
 
     /*
@@ -184,57 +166,8 @@ class NewDocumentPosition implements ArrayAccess
      */
     public function validate()
     {
-        if (!isset($this->container['node_id'])) {
-            throw new \InvalidArgumentException('Property NodeId in NewDocumentPosition is required.');
-        }
+        parent::validate();
 
-    }
-
-    /*
-     * Gets node_id
-     *
-     * @return string
-     */
-    public function getNodeId()
-    {
-        return $this->container['node_id'];
-    }
-
-    /*
-     * Sets node_id
-     *
-     * @param string $node_id Gets or sets the node id.
-     *
-     * @return $this
-     */
-    public function setNodeId($node_id)
-    {
-        $this->container['node_id'] = $node_id;
-        return $this;
-    }
-
-
-    /*
-     * Gets offset
-     *
-     * @return int
-     */
-    public function getOffset()
-    {
-        return $this->container['offset'];
-    }
-
-    /*
-     * Sets offset
-     *
-     * @param int $offset Gets or sets the offset in the node.
-     *
-     * @return $this
-     */
-    public function setOffset($offset)
-    {
-        $this->container['offset'] = $offset;
-        return $this;
     }
 
 

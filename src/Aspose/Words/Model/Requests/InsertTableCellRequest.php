@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableCellRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,14 +50,14 @@ class InsertTableCellRequest extends BaseApiRequest
     public $name;
 
     /*
-     * The path to the table row in the document tree.
-     */
-    public $table_row_path;
-
-    /*
      * Table cell parameters.
      */
     public $cell;
+
+    /*
+     * The path to the table row in the document tree.
+     */
+    public $table_row_path;
 
     /*
      * Original document folder.
@@ -103,8 +103,8 @@ class InsertTableCellRequest extends BaseApiRequest
      * Initializes a new instance of the InsertTableCellRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param string $table_row_path The path to the table row in the document tree.
      * @param \Aspose\Words\Model\TableCellInsert $cell Table cell parameters.
+     * @param string $table_row_path The path to the table row in the document tree.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,11 +114,11 @@ class InsertTableCellRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $table_row_path, $cell, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $cell, $table_row_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
-        $this->table_row_path = $table_row_path;
         $this->cell = $cell;
+        $this->table_row_path = $table_row_path;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -147,23 +147,6 @@ class InsertTableCellRequest extends BaseApiRequest
     }
 
     /*
-     * The path to the table row in the document tree.
-     */
-    public function get_table_row_path()
-    {
-        return $this->table_row_path;
-    }
-
-    /*
-     * The path to the table row in the document tree.
-     */
-    public function set_table_row_path($value)
-    {
-        $this->table_row_path = $value;
-        return $this;
-    }
-
-    /*
      * Table cell parameters.
      */
     public function get_cell()
@@ -177,6 +160,23 @@ class InsertTableCellRequest extends BaseApiRequest
     public function set_cell($value)
     {
         $this->cell = $value;
+        return $this;
+    }
+
+    /*
+     * The path to the table row in the document tree.
+     */
+    public function get_table_row_path()
+    {
+        return $this->table_row_path;
+    }
+
+    /*
+     * The path to the table row in the document tree.
+     */
+    public function set_table_row_path($value)
+    {
+        $this->table_row_path = $value;
         return $this;
     }
 
@@ -327,9 +327,6 @@ class InsertTableCellRequest extends BaseApiRequest
         if ($this->name === null) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling insertTableCell');
         }
-        if ($this->table_row_path === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling insertTableCell');
-        }
         if ($this->cell === null) {
             throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCell');
         }
@@ -460,11 +457,14 @@ class InsertTableCellRequest extends BaseApiRequest
 
         foreach ($filesContent as $fileContent)
         {
-            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
-            $filesContent_handle = fopen($filesContent_filename, "rb");
-            $filesContent_fsize = filesize($filesContent_filename);
-            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
-            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            $fileContent->encryptPassword($config->getEncryptor());
+            if ($fileContent->getSource() == 'Request') {
+                $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+                $filesContent_handle = fopen($filesContent_filename, "rb");
+                $filesContent_fsize = filesize($filesContent_filename);
+                $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+                array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            }
         }
 
         // body params

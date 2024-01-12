@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CompareDocumentOnlineRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -75,11 +75,6 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
     public $dest_file_name;
 
     /*
-     * encrypted password for the second document.
-     */
-    public $encrypted_password2;
-
-    /*
      * Initializes a new instance of the CompareDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
@@ -88,9 +83,8 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-     * @param string $encrypted_password2 encrypted password for the second document.
      */
-    public function __construct($document, $compare_data, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $encrypted_password2 = null)
+    public function __construct($document, $compare_data, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null)
     {
         $this->document = $document;
         $this->compare_data = $compare_data;
@@ -98,7 +92,6 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
         $this->dest_file_name = $dest_file_name;
-        $this->encrypted_password2 = $encrypted_password2;
     }
 
     /*
@@ -204,23 +197,6 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * encrypted password for the second document.
-     */
-    public function get_encrypted_password2()
-    {
-        return $this->encrypted_password2;
-    }
-
-    /*
-     * encrypted password for the second document.
-     */
-    public function set_encrypted_password2($value)
-    {
-        $this->encrypted_password2 = $value;
-        return $this;
-    }
-
-    /*
      * Create request data for operation 'compareDocumentOnline'
      *
      * @throws \InvalidArgumentException
@@ -289,16 +265,6 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
-        // query params
-        if ($this->encrypted_password2 !== null) {
-            $localName = lcfirst('EncryptedPassword2');
-            $localValue = is_bool($this->encrypted_password2) ? ($this->encrypted_password2 ? 'true' : 'false') : $this->encrypted_password2;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
         if (property_exists($this, 'password') && $this->password != null)
         {
             unset($queryParams['password']);
@@ -322,11 +288,14 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
 
         foreach ($filesContent as $fileContent)
         {
-            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
-            $filesContent_handle = fopen($filesContent_filename, "rb");
-            $filesContent_fsize = filesize($filesContent_filename);
-            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
-            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            $fileContent->encryptPassword($config->getEncryptor());
+            if ($fileContent->getSource() == 'Request') {
+                $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+                $filesContent_handle = fopen($filesContent_filename, "rb");
+                $filesContent_fsize = filesize($filesContent_filename);
+                $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+                array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            }
         }
 
         // body params

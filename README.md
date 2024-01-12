@@ -13,12 +13,23 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 24.1
+
+- Added support for InsertAfterNode in the insert API without NodePath.
+- Added support for inserting nodes (runs/rows/cells/bookmarks) without NodePath.
+- Added support for transparency in the Watermark API.
+- Added support for password and encryptedPassword fields in FileReference.
+- Fixed missing href value in document responses.
+
+
 ## Enhancements in Version 23.12
 
 - Properties Name, Text, StartRange, EndRange marked as required for InsertBookmark operation.
 - Implemented DeleteOfficeMathObjects operation to delete all office math objects from document.
 - Parameter ProtectionRequest was removed from the UnprotectDocument operation. Now removing protection from a document does not require a password.
 - Model ProtectionRequest marked as deprecated, please use ProtectionRequestV2 instead for perform ProtectDocument operation. To change the password or protection type of protected document, the old password is no required.
+- Added fields Password and EncryptedPassword to FileReference for documents encrypted by password.
+- Removed parameter encryptedPassword2 from CompareDocument method. Please use FileReference password instead.
 
 
 ## Enhancements in Version 23.11

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="InsertTableCellOnlineRequest.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,14 +50,14 @@ class InsertTableCellOnlineRequest extends BaseApiRequest
     public $document;
 
     /*
-     * The path to the table row in the document tree.
-     */
-    public $table_row_path;
-
-    /*
      * Table cell parameters.
      */
     public $cell;
+
+    /*
+     * The path to the table row in the document tree.
+     */
+    public $table_row_path;
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -93,8 +93,8 @@ class InsertTableCellOnlineRequest extends BaseApiRequest
      * Initializes a new instance of the InsertTableCellOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param string $table_row_path The path to the table row in the document tree.
      * @param \Aspose\Words\Model\TableCellInsert $cell Table cell parameters.
+     * @param string $table_row_path The path to the table row in the document tree.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -102,11 +102,11 @@ class InsertTableCellOnlineRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($document, $table_row_path, $cell, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($document, $cell, $table_row_path = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->document = $document;
-        $this->table_row_path = $table_row_path;
         $this->cell = $cell;
+        $this->table_row_path = $table_row_path;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
@@ -133,23 +133,6 @@ class InsertTableCellOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The path to the table row in the document tree.
-     */
-    public function get_table_row_path()
-    {
-        return $this->table_row_path;
-    }
-
-    /*
-     * The path to the table row in the document tree.
-     */
-    public function set_table_row_path($value)
-    {
-        $this->table_row_path = $value;
-        return $this;
-    }
-
-    /*
      * Table cell parameters.
      */
     public function get_cell()
@@ -163,6 +146,23 @@ class InsertTableCellOnlineRequest extends BaseApiRequest
     public function set_cell($value)
     {
         $this->cell = $value;
+        return $this;
+    }
+
+    /*
+     * The path to the table row in the document tree.
+     */
+    public function get_table_row_path()
+    {
+        return $this->table_row_path;
+    }
+
+    /*
+     * The path to the table row in the document tree.
+     */
+    public function set_table_row_path($value)
+    {
+        $this->table_row_path = $value;
         return $this;
     }
 
@@ -279,9 +279,6 @@ class InsertTableCellOnlineRequest extends BaseApiRequest
         if ($this->document === null) {
             throw new \InvalidArgumentException('Missing the required parameter $document when calling insertTableCellOnline');
         }
-        if ($this->table_row_path === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $table_row_path when calling insertTableCellOnline');
-        }
         if ($this->cell === null) {
             throw new \InvalidArgumentException('Missing the required parameter $cell when calling insertTableCellOnline');
         }
@@ -391,11 +388,14 @@ class InsertTableCellOnlineRequest extends BaseApiRequest
 
         foreach ($filesContent as $fileContent)
         {
-            $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
-            $filesContent_handle = fopen($filesContent_filename, "rb");
-            $filesContent_fsize = filesize($filesContent_filename);
-            $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
-            array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            $fileContent->encryptPassword($config->getEncryptor());
+            if ($fileContent->getSource() == 'Request') {
+                $filesContent_filename = ObjectSerializer::toFormValue($fileContent->getContent());
+                $filesContent_handle = fopen($filesContent_filename, "rb");
+                $filesContent_fsize = filesize($filesContent_filename);
+                $filesContent_contents = fread($filesContent_handle, $filesContent_fsize);
+                array_push($formParams, ['name' => $fileContent->getReference(), 'content' => $filesContent_contents, 'mime' => 'application/octet-stream']);
+            }
         }
 
         // body params

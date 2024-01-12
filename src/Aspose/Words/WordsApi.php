@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WordsApi.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,6 +37,7 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Words\Model\Requests;
 use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Math\BigInteger;
+use phpseclib3\Crypt\RSA;
 use Aspose\Words\Encryptor;
 
 /*
@@ -54656,7 +54657,7 @@ class WordsApi implements Encryptor
             {
                 $response = $this->getPublicKey(new Requests\GetPublicKeyRequest());
                 $exponent = $response->getExponent();
-                $modulus = $response->getModulues();
+                $modulus = $response->getModulus();
             }
 
             $this->rsaKey = PublicKeyLoader::load([

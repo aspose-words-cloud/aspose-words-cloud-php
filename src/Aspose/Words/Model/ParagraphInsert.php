@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ParagraphInsert.php">
- *   Copyright (c) 2023 Aspose.Words for Cloud
+ *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,7 +52,8 @@ class ParagraphInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'text' => 'string'
+        'text' => 'string',
+        'position' => '\Aspose\Words\Model\Position'
     ];
 
     /*
@@ -61,7 +62,8 @@ class ParagraphInsert implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'text' => 'null'
+        'text' => 'null',
+        'position' => 'null'
     ];
 
     /*
@@ -91,7 +93,8 @@ class ParagraphInsert implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'Text'
+        'text' => 'Text',
+        'position' => 'Position'
     ];
 
     /*
@@ -100,7 +103,8 @@ class ParagraphInsert implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText'
+        'text' => 'setText',
+        'position' => 'setPosition'
     ];
 
     /*
@@ -109,7 +113,8 @@ class ParagraphInsert implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText'
+        'text' => 'getText',
+        'position' => 'getPosition'
     ];
 
     /*
@@ -171,6 +176,7 @@ class ParagraphInsert implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
     }
 
     /*
@@ -180,6 +186,11 @@ class ParagraphInsert implements ArrayAccess
     {
         if (!isset($this->container['text'])) {
             throw new \InvalidArgumentException('Property Text in ParagraphInsert is required.');
+        }
+
+
+        if (isset($this->container['position'])) {
+            $this->getPosition()->validate();
         }
 
     }
@@ -204,6 +215,30 @@ class ParagraphInsert implements ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
+        return $this;
+    }
+
+
+    /*
+     * Gets position
+     *
+     * @return \Aspose\Words\Model\Position
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /*
+     * Sets position
+     *
+     * @param \Aspose\Words\Model\Position $position Gets or sets the position of the node that will be used to determine the placement of a new paragraph.
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
         return $this;
     }
 

@@ -13,6 +13,11 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 24.3
+
+- Added support for 'RemoveEmptyCells' option for the 'Cleanup' parameter in the insert 'MailMerge' API method.
+
+
 ## Enhancements in Version 24.1
 
 - Added support for InsertAfterNode in the insert API without NodePath.

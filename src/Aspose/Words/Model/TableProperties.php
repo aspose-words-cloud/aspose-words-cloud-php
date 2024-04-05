@@ -607,8 +607,8 @@ class TableProperties extends LinkElement
     const STYLE_OPTIONS_DEFAULT = 'Default';
     const STYLE_OPTIONS_COLUMN_BANDS = 'ColumnBands';
     const STYLE_OPTIONS_DEFAULT2003 = 'Default2003';
-    const TEXT_WRAPPING_DEFAULT = 'Default';
     const TEXT_WRAPPING_NONE = 'None';
+    const TEXT_WRAPPING_DEFAULT = 'Default';
     const TEXT_WRAPPING_AROUND = 'Around';
 
     /*
@@ -1039,8 +1039,8 @@ class TableProperties extends LinkElement
     public function getTextWrappingAllowableValues()
     {
         return [
-            self::TEXT_WRAPPING_DEFAULT,
             self::TEXT_WRAPPING_NONE,
+            self::TEXT_WRAPPING_DEFAULT,
             self::TEXT_WRAPPING_AROUND
         ];
     }

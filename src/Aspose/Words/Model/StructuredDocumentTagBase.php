@@ -257,8 +257,8 @@ abstract class StructuredDocumentTagBase extends NodeLink
         return self::$swaggerModelName;
     }
 
-    const APPEARANCE_DEFAULT = 'Default';
     const APPEARANCE_BOUNDING_BOX = 'BoundingBox';
+    const APPEARANCE_DEFAULT = 'Default';
     const APPEARANCE_TAGS = 'Tags';
     const APPEARANCE_HIDDEN = 'Hidden';
     const DATE_STORAGE_FORMAT_DATE = 'Date';
@@ -289,8 +289,8 @@ abstract class StructuredDocumentTagBase extends NodeLink
     public function getAppearanceAllowableValues()
     {
         return [
-            self::APPEARANCE_DEFAULT,
             self::APPEARANCE_BOUNDING_BOX,
+            self::APPEARANCE_DEFAULT,
             self::APPEARANCE_TAGS,
             self::APPEARANCE_HIDDEN
         ];

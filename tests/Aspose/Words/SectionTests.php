@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest, InsertSectionOnlineRequest, InsertSectionRequest, LinkHeaderFootersToPreviousRequest};
+use Aspose\Words\Model\Requests\{DeleteSectionOnlineRequest, DeleteSectionRequest, GetSectionOnlineRequest, GetSectionRequest, GetSectionsOnlineRequest, GetSectionsRequest, InsertSectionOnlineRequest, InsertSectionRequest, LinkHeaderFootersToPreviousRequest, MergeWithNextOnlineRequest, MergeWithNextRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -189,6 +189,56 @@ class SectionTests extends BaseTestContext
         );
 
         $result = $this->words->deleteSectionOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for merge a section with the next one.
+     */
+    public function testMergeWithNext()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Section";
+        $remoteFileName = "TestMergeWithNext.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . "DocumentElements/Sections/Source.docx",
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new MergeWithNextRequest(
+            $remoteFileName,
+            0,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        Assert::assertNull($this->words->mergeWithNext($request));
+    }
+
+    /*
+     * Test for merge a section with the next one online.
+     */
+    public function testMergeWithNextOnline()
+    {
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . "DocumentElements/Sections/Source.docx";
+        $request = new MergeWithNextOnlineRequest(
+            $requestDocument,
+            0,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->mergeWithNextOnline($request);
         Assert::assertNotNull($result, "Error occurred");
     }
 

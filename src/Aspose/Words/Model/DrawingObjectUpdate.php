@@ -58,7 +58,8 @@ class DrawingObjectUpdate implements ArrayAccess
         'top' => 'double',
         'width' => 'double',
         'height' => 'double',
-        'wrap_type' => 'string'
+        'wrap_type' => 'string',
+        'aspect_ratio_locked' => 'bool'
     ];
 
     /*
@@ -73,7 +74,8 @@ class DrawingObjectUpdate implements ArrayAccess
         'top' => 'null',
         'width' => 'null',
         'height' => 'null',
-        'wrap_type' => 'null'
+        'wrap_type' => 'null',
+        'aspect_ratio_locked' => 'null'
     ];
 
     /*
@@ -109,7 +111,8 @@ class DrawingObjectUpdate implements ArrayAccess
         'top' => 'Top',
         'width' => 'Width',
         'height' => 'Height',
-        'wrap_type' => 'WrapType'
+        'wrap_type' => 'WrapType',
+        'aspect_ratio_locked' => 'AspectRatioLocked'
     ];
 
     /*
@@ -124,7 +127,8 @@ class DrawingObjectUpdate implements ArrayAccess
         'top' => 'setTop',
         'width' => 'setWidth',
         'height' => 'setHeight',
-        'wrap_type' => 'setWrapType'
+        'wrap_type' => 'setWrapType',
+        'aspect_ratio_locked' => 'setAspectRatioLocked'
     ];
 
     /*
@@ -139,7 +143,8 @@ class DrawingObjectUpdate implements ArrayAccess
         'top' => 'getTop',
         'width' => 'getWidth',
         'height' => 'getHeight',
-        'wrap_type' => 'getWrapType'
+        'wrap_type' => 'getWrapType',
+        'aspect_ratio_locked' => 'getAspectRatioLocked'
     ];
 
     /*
@@ -287,6 +292,7 @@ class DrawingObjectUpdate implements ArrayAccess
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['wrap_type'] = isset($data['wrap_type']) ? $data['wrap_type'] : null;
+        $this->container['aspect_ratio_locked'] = isset($data['aspect_ratio_locked']) ? $data['aspect_ratio_locked'] : null;
     }
 
     /*
@@ -493,6 +499,30 @@ class DrawingObjectUpdate implements ArrayAccess
             throw new \InvalidArgumentException(sprintf("Invalid value for 'wrap_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['wrap_type'] = $wrap_type;
+        return $this;
+    }
+
+
+    /*
+     * Gets aspect_ratio_locked
+     *
+     * @return bool
+     */
+    public function getAspectRatioLocked()
+    {
+        return $this->container['aspect_ratio_locked'];
+    }
+
+    /*
+     * Sets aspect_ratio_locked
+     *
+     * @param bool $aspect_ratio_locked Gets or sets a value indicating whether AspectRatioLocked option on or off.
+     *
+     * @return $this
+     */
+    public function setAspectRatioLocked($aspect_ratio_locked)
+    {
+        $this->container['aspect_ratio_locked'] = $aspect_ratio_locked;
         return $this;
     }
 

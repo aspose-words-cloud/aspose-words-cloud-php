@@ -55,14 +55,19 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
     public $drawing_object;
 
     /*
+     * The path to the node in the document tree.
+     */
+    public $node_path;
+
+    /*
      * File with image.
      */
     public $image_file;
 
     /*
-     * The path to the node in the document tree.
+     * The link to the image.
      */
-    public $node_path;
+    public $url;
 
     /*
      * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -99,8 +104,9 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
      *
      * @param \SplFileObject $document The document.
      * @param \Aspose\Words\Model\DrawingObjectInsert $drawing_object Drawing object parameters.
-     * @param \SplFileObject $image_file File with image.
      * @param string $node_path The path to the node in the document tree.
+     * @param \SplFileObject $image_file File with image.
+     * @param string $url The link to the image.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -108,12 +114,13 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($document, $drawing_object, $image_file, $node_path = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($document, $drawing_object, $node_path = null, $image_file = null, $url = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->document = $document;
         $this->drawing_object = $drawing_object;
-        $this->image_file = $image_file;
         $this->node_path = $node_path;
+        $this->image_file = $image_file;
+        $this->url = $url;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
@@ -157,6 +164,23 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
     }
 
     /*
+     * The path to the node in the document tree.
+     */
+    public function get_node_path()
+    {
+        return $this->node_path;
+    }
+
+    /*
+     * The path to the node in the document tree.
+     */
+    public function set_node_path($value)
+    {
+        $this->node_path = $value;
+        return $this;
+    }
+
+    /*
      * File with image.
      */
     public function get_image_file()
@@ -174,19 +198,19 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * The path to the node in the document tree.
+     * The link to the image.
      */
-    public function get_node_path()
+    public function get_url()
     {
-        return $this->node_path;
+        return $this->url;
     }
 
     /*
-     * The path to the node in the document tree.
+     * The link to the image.
      */
-    public function set_node_path($value)
+    public function set_url($value)
     {
-        $this->node_path = $value;
+        $this->url = $value;
         return $this;
     }
 
@@ -306,9 +330,6 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
         if ($this->drawing_object === null) {
             throw new \InvalidArgumentException('Missing the required parameter $drawing_object when calling insertDrawingObjectOnline');
         }
-        if ($this->image_file === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $image_file when calling insertDrawingObjectOnline');
-        }
         if ($this->drawing_object !== null) {
             $this->drawing_object->validate();
         }
@@ -333,6 +354,16 @@ class InsertDrawingObjectOnlineRequest extends BaseApiRequest
 
         // remove empty path parameters
         $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->url !== null) {
+            $localName = lcfirst('Url');
+            $localValue = is_bool($this->url) ? ($this->url ? 'true' : 'false') : $this->url;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
         // query params
         if ($this->load_encoding !== null) {
             $localName = lcfirst('LoadEncoding');

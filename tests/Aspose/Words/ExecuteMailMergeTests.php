@@ -52,7 +52,7 @@ class ExecuteMailMergeTests extends BaseTestContext
             $requestTemplate,
             $requestData,
             NULL,
-            NULL,
+            true,
             NULL,
             NULL
         );
@@ -86,7 +86,7 @@ class ExecuteMailMergeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
-            false,
+            true,
             NULL,
             NULL,
             NULL,

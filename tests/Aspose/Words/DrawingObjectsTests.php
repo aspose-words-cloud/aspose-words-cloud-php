@@ -466,8 +466,9 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new InsertDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            $requestImageFile,
             "",
+            $requestImageFile,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -503,8 +504,9 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new InsertDrawingObjectOnlineRequest(
             $requestDocument,
             $requestDrawingObject,
-            $requestImageFile,
             "",
+            $requestImageFile,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -544,8 +546,52 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new InsertDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
+            NULL,
             $requestImageFile,
             NULL,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->insertDrawingObject($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for adding a link to a drawing object.
+     */
+    public function testInsertDrawingObjectLink()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestInsetDrawingObject.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $requestDrawingObject = new DrawingObjectInsert(array(
+            "height" => 0,
+            "left" => 0,
+            "top" => 0,
+            "width" => 0,
+            "relative_horizontal_position" => "Margin",
+            "relative_vertical_position" => "Margin",
+            "wrap_type" => "Inline",
+        ));
+        $request = new InsertDrawingObjectRequest(
+            $remoteFileName,
+            $requestDrawingObject,
+            "",
+            NULL,
+            "https://products.aspose.com/words/static/img/aspose_words_cloud-for-net.png",
             $remoteDataFolder,
             NULL,
             NULL,
@@ -667,9 +713,10 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new UpdateDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            $requestImageFile,
             0,
             "",
+            $requestImageFile,
+            NULL,
             $remoteDataFolder,
             NULL,
             NULL,
@@ -699,9 +746,10 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new UpdateDrawingObjectOnlineRequest(
             $requestDocument,
             $requestDrawingObject,
-            $requestImageFile,
             0,
             "",
+            $requestImageFile,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -735,9 +783,48 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new UpdateDrawingObjectRequest(
             $remoteFileName,
             $requestDrawingObject,
-            $requestImageFile,
             0,
             NULL,
+            $requestImageFile,
+            NULL,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->updateDrawingObject($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+    }
+
+    /*
+     * Test for updating drawing object to a link to it.
+     */
+    public function testUpdateDrawingObjectLink()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/DrawingObjectss";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestUpdateDrawingObjectLink.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $requestDrawingObject = new DrawingObjectUpdate(array(
+            "left" => 0,
+        ));
+        $request = new UpdateDrawingObjectRequest(
+            $remoteFileName,
+            $requestDrawingObject,
+            0,
+            "",
+            NULL,
+            "https://products.aspose.com/words/static/img/aspose_words_cloud-for-net.png",
             $remoteDataFolder,
             NULL,
             NULL,

@@ -55,11 +55,6 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
     public $drawing_object;
 
     /*
-     * File with image.
-     */
-    public $image_file;
-
-    /*
      * Object index.
      */
     public $index;
@@ -68,6 +63,16 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
      * The path to the node in the document tree.
      */
     public $node_path;
+
+    /*
+     * File with image.
+     */
+    public $image_file;
+
+    /*
+     * The link to the image.
+     */
+    public $url;
 
     /*
      * Original document folder.
@@ -114,9 +119,10 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
      *
      * @param string $name The filename of the input document.
      * @param \Aspose\Words\Model\DrawingObjectUpdate $drawing_object Drawing object parameters.
-     * @param \SplFileObject $image_file File with image.
      * @param int $index Object index.
      * @param string $node_path The path to the node in the document tree.
+     * @param \SplFileObject $image_file File with image.
+     * @param string $url The link to the image.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -126,13 +132,14 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($name, $drawing_object, $image_file, $index, $node_path = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($name, $drawing_object, $index, $node_path = null, $image_file = null, $url = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
     {
         $this->name = $name;
         $this->drawing_object = $drawing_object;
-        $this->image_file = $image_file;
         $this->index = $index;
         $this->node_path = $node_path;
+        $this->image_file = $image_file;
+        $this->url = $url;
         $this->folder = $folder;
         $this->storage = $storage;
         $this->load_encoding = $load_encoding;
@@ -178,23 +185,6 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
     }
 
     /*
-     * File with image.
-     */
-    public function get_image_file()
-    {
-        return $this->image_file;
-    }
-
-    /*
-     * File with image.
-     */
-    public function set_image_file($value)
-    {
-        $this->image_file = $value;
-        return $this;
-    }
-
-    /*
      * Object index.
      */
     public function get_index()
@@ -225,6 +215,40 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
     public function set_node_path($value)
     {
         $this->node_path = $value;
+        return $this;
+    }
+
+    /*
+     * File with image.
+     */
+    public function get_image_file()
+    {
+        return $this->image_file;
+    }
+
+    /*
+     * File with image.
+     */
+    public function set_image_file($value)
+    {
+        $this->image_file = $value;
+        return $this;
+    }
+
+    /*
+     * The link to the image.
+     */
+    public function get_url()
+    {
+        return $this->url;
+    }
+
+    /*
+     * The link to the image.
+     */
+    public function set_url($value)
+    {
+        $this->url = $value;
         return $this;
     }
 
@@ -378,9 +402,6 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
         if ($this->drawing_object === null) {
             throw new \InvalidArgumentException('Missing the required parameter $drawing_object when calling updateDrawingObject');
         }
-        if ($this->image_file === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $image_file when calling updateDrawingObject');
-        }
         if ($this->index === null) {
             throw new \InvalidArgumentException('Missing the required parameter $index when calling updateDrawingObject');
         }
@@ -426,6 +447,16 @@ class UpdateDrawingObjectRequest extends BaseApiRequest
 
         // remove empty path parameters
         $resourcePath = str_replace("//", "/", $resourcePath);
+        // query params
+        if ($this->url !== null) {
+            $localName = lcfirst('Url');
+            $localValue = is_bool($this->url) ? ($this->url ? 'true' : 'false') : $this->url;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
         // query params
         if ($this->folder !== null) {
             $localName = lcfirst('Folder');

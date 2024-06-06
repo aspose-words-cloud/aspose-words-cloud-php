@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{GetRangeTextOnlineRequest, GetRangeTextRequest, RemoveRangeOnlineRequest, RemoveRangeRequest, ReplaceWithTextOnlineRequest, ReplaceWithTextRequest, SaveAsRangeOnlineRequest, SaveAsRangeRequest};
+use Aspose\Words\Model\Requests\{GetRangeTextOnlineRequest, GetRangeTextRequest, RemoveRangeOnlineRequest, RemoveRangeRequest, ReplaceWithTextOnlineRequest, ReplaceWithTextRequest, SaveAsRangeOnlineRequest, SaveAsRangeRequest, TranslateNodeIdOnlineRequest, TranslateNodeIdRequest};
 use Aspose\Words\Model\{RangeDocument, ReplaceRange};
 use PHPUnit\Framework\Assert;
 
@@ -262,5 +262,54 @@ class RangeTests extends BaseTestContext
 
         $result = $this->words->replaceWithTextOnline($request);
         Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test to translate node id to node path.
+     */
+    public function testTranslateNodeId()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentElements/Range";
+        $localFile = "DocumentElements/Range/RangeGet.doc";
+        $remoteFileName = "TestTranslateNodeId.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new TranslateNodeIdRequest(
+            $remoteFileName,
+            "id0.0.0",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->translateNodeId($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertEquals("sections/0/body/paragraphs/0", $result->getText());
+    }
+
+    /*
+     * Test to translate node id to node path online.
+     */
+    public function testTranslateNodeIdOnline()
+    {
+        $localFile = "DocumentElements/Range/RangeGet.doc";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new TranslateNodeIdOnlineRequest(
+            $requestDocument,
+            "id0.0.0",
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->translateNodeIdOnline($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
     }
 }

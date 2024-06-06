@@ -290,7 +290,7 @@ class RangeTests extends BaseTestContext
 
         $result = $this->words->translateNodeId($request);
         Assert::assertTrue(json_decode($result, true) !== NULL);
-        Assert::assertEquals("sections/0/body/paragraphs/0", $result->getText());
+        Assert::assertEquals("sections/0/body/paragraphs/0", $result->getPath());
     }
 
     /*

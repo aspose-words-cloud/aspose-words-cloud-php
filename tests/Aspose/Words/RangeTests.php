@@ -281,7 +281,7 @@ class RangeTests extends BaseTestContext
         $request = new TranslateNodeIdRequest(
             $remoteFileName,
             "id0.0.0",
-            NULL,
+            $remoteDataFolder,
             NULL,
             NULL,
             NULL,

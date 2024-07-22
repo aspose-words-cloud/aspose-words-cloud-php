@@ -199,6 +199,7 @@ class Document implements ArrayAccess
     const SOURCE_FORMAT_XPS = 'Xps';
     const SOURCE_FORMAT_TIFF = 'Tiff';
     const SOURCE_FORMAT_SVG = 'Svg';
+    const SOURCE_FORMAT_AZW3 = 'Azw3';
 
     /*
      * Gets allowable values of the enum
@@ -228,7 +229,8 @@ class Document implements ArrayAccess
             self::SOURCE_FORMAT_PDF,
             self::SOURCE_FORMAT_XPS,
             self::SOURCE_FORMAT_TIFF,
-            self::SOURCE_FORMAT_SVG
+            self::SOURCE_FORMAT_SVG,
+            self::SOURCE_FORMAT_AZW3
         ];
     }
 

@@ -289,7 +289,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     const COMPLIANCE_PDF_A2A = 'PdfA2a';
     const COMPLIANCE_PDF_A2U = 'PdfA2u';
     const COMPLIANCE_PDF_A4 = 'PdfA4';
+    const COMPLIANCE_PDF_A4_UA2 = 'PdfA4Ua2';
     const COMPLIANCE_PDF_UA1 = 'PdfUa1';
+    const COMPLIANCE_PDF_UA2 = 'PdfUa2';
     const CUSTOM_PROPERTIES_EXPORT_NONE = 'None';
     const CUSTOM_PROPERTIES_EXPORT_STANDARD = 'Standard';
     const CUSTOM_PROPERTIES_EXPORT_METADATA = 'Metadata';
@@ -331,7 +333,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             self::COMPLIANCE_PDF_A2A,
             self::COMPLIANCE_PDF_A2U,
             self::COMPLIANCE_PDF_A4,
-            self::COMPLIANCE_PDF_UA1
+            self::COMPLIANCE_PDF_A4_UA2,
+            self::COMPLIANCE_PDF_UA1,
+            self::COMPLIANCE_PDF_UA2
         ];
     }
     /*

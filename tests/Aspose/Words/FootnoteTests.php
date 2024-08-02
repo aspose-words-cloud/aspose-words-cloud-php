@@ -67,6 +67,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -93,6 +94,7 @@ class FootnoteTests extends BaseTestContext
             $requestDocument,
             $requestFootnoteDto,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -134,6 +136,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -169,6 +172,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -187,6 +191,7 @@ class FootnoteTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -224,6 +229,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -251,6 +257,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -273,6 +280,7 @@ class FootnoteTests extends BaseTestContext
         $request = new GetFootnotesOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -300,6 +308,7 @@ class FootnoteTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -336,6 +345,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -357,6 +367,7 @@ class FootnoteTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -385,6 +396,7 @@ class FootnoteTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -426,6 +438,7 @@ class FootnoteTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -451,6 +464,7 @@ class FootnoteTests extends BaseTestContext
             $requestFootnoteDto,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -486,6 +500,7 @@ class FootnoteTests extends BaseTestContext
             $requestFootnoteDto,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

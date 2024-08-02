@@ -59,6 +59,7 @@ class PageSetupTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class PageSetupTests extends BaseTestContext
         $request = new GetSectionPageSetupOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -119,6 +121,7 @@ class PageSetupTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -148,6 +151,7 @@ class PageSetupTests extends BaseTestContext
             $requestDocument,
             0,
             $requestPageSetup,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -183,6 +187,7 @@ class PageSetupTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -202,6 +207,7 @@ class PageSetupTests extends BaseTestContext
             $requestDocument,
             1,
             "jpg",
+            NULL,
             NULL,
             NULL,
             NULL,

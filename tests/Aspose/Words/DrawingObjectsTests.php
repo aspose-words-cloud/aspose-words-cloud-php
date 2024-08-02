@@ -59,6 +59,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -77,6 +78,7 @@ class DrawingObjectsTests extends BaseTestContext
         $request = new GetDocumentDrawingObjectsOnlineRequest(
             $requestDocument,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -104,6 +106,7 @@ class DrawingObjectsTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -136,6 +139,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -155,6 +159,7 @@ class DrawingObjectsTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -183,6 +188,7 @@ class DrawingObjectsTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -218,6 +224,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -238,6 +245,7 @@ class DrawingObjectsTests extends BaseTestContext
             "png",
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -274,6 +282,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -303,6 +312,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -322,6 +332,7 @@ class DrawingObjectsTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -350,6 +361,7 @@ class DrawingObjectsTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -382,6 +394,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -401,6 +414,7 @@ class DrawingObjectsTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -429,6 +443,7 @@ class DrawingObjectsTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -475,6 +490,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -505,6 +521,7 @@ class DrawingObjectsTests extends BaseTestContext
             $requestDrawingObject,
             $requestImageFile,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -553,6 +570,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -585,6 +603,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -603,6 +622,7 @@ class DrawingObjectsTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -634,6 +654,7 @@ class DrawingObjectsTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -677,6 +698,7 @@ class DrawingObjectsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -702,6 +724,7 @@ class DrawingObjectsTests extends BaseTestContext
             $requestImageFile,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -739,6 +762,7 @@ class DrawingObjectsTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

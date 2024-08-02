@@ -58,6 +58,7 @@ class StylesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -78,6 +79,7 @@ class StylesTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetStylesOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -108,6 +110,7 @@ class StylesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -128,6 +131,7 @@ class StylesTests extends BaseTestContext
         $request = new GetStyleOnlineRequest(
             $requestDocument,
             "Heading 1",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -165,6 +169,7 @@ class StylesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -189,6 +194,7 @@ class StylesTests extends BaseTestContext
             $requestDocument,
             "Heading 1",
             $requestStyleUpdate,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -229,6 +235,7 @@ class StylesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -253,6 +260,7 @@ class StylesTests extends BaseTestContext
         $request = new InsertStyleOnlineRequest(
             $requestDocument,
             $requestStyleInsert,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -292,6 +300,7 @@ class StylesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -315,6 +324,7 @@ class StylesTests extends BaseTestContext
         $request = new CopyStyleOnlineRequest(
             $requestDocument,
             $requestStyleCopy,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -348,6 +358,7 @@ class StylesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -368,6 +379,7 @@ class StylesTests extends BaseTestContext
         $request = new GetStyleFromDocumentElementOnlineRequest(
             $requestDocument,
             "paragraphs/1/paragraphFormat",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -405,6 +417,7 @@ class StylesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -427,6 +440,7 @@ class StylesTests extends BaseTestContext
             $requestDocument,
             "paragraphs/1/paragraphFormat",
             $requestStyleApply,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -463,6 +477,7 @@ class StylesTests extends BaseTestContext
             $remoteFileName,
             $templateName,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

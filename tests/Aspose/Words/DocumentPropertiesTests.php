@@ -58,6 +58,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -81,6 +82,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetDocumentPropertiesOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -111,6 +113,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -132,6 +135,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $request = new GetDocumentPropertyOnlineRequest(
             $requestDocument,
             "Author",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -163,6 +167,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -182,6 +187,7 @@ class DocumentPropertiesTests extends BaseTestContext
         $request = new DeleteDocumentPropertyOnlineRequest(
             $requestDocument,
             "testProp",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -220,6 +226,7 @@ class DocumentPropertiesTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -247,6 +254,7 @@ class DocumentPropertiesTests extends BaseTestContext
             $requestDocument,
             "AsposeAuthor",
             $requestProperty,
+            NULL,
             NULL,
             NULL,
             NULL,

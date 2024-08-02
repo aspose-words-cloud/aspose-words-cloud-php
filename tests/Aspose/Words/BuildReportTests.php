@@ -96,6 +96,7 @@ class BuildReportTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 

@@ -9,7 +9,7 @@ $fileName = "test_doc.docx";
  */
 $requestDocument = $fileName;
 $request = new AcceptAllRevisionsOnlineRequest(
-    $requestDocument, NULL, NULL, NULL, NULL
+    $requestDocument, NULL, NULL, NULL, NULL, NULL
 );
 $acceptAllRevisionsOnlineResult = $wordsApi->acceptAllRevisionsOnline($request);
 $doc = $acceptAllRevisionsOnlineResult->getDocument();

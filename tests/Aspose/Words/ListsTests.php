@@ -58,6 +58,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -79,6 +80,7 @@ class ListsTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetListsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -109,6 +111,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -129,6 +132,7 @@ class ListsTests extends BaseTestContext
         $request = new GetListOnlineRequest(
             $requestDocument,
             1,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -166,6 +170,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -188,6 +193,7 @@ class ListsTests extends BaseTestContext
             $requestDocument,
             1,
             $requestListUpdate,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -232,6 +238,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -255,6 +262,7 @@ class ListsTests extends BaseTestContext
             1,
             $requestListUpdate,
             1,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -299,6 +307,7 @@ class ListsTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -322,6 +331,7 @@ class ListsTests extends BaseTestContext
         $request = new InsertListOnlineRequest(
             $requestDocument,
             $requestListInsert,
+            NULL,
             NULL,
             NULL,
             NULL,

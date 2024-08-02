@@ -58,6 +58,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -80,6 +81,7 @@ class MathObjectTests extends BaseTestContext
         $request = new GetOfficeMathObjectsOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -107,6 +109,7 @@ class MathObjectTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -143,6 +146,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -164,6 +168,7 @@ class MathObjectTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -192,6 +197,7 @@ class MathObjectTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -229,6 +235,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -249,6 +256,7 @@ class MathObjectTests extends BaseTestContext
             "png",
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -280,6 +288,7 @@ class MathObjectTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -317,6 +326,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -335,6 +345,7 @@ class MathObjectTests extends BaseTestContext
             $requestDocument,
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -372,6 +383,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -401,6 +413,7 @@ class MathObjectTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -417,6 +430,7 @@ class MathObjectTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new DeleteOfficeMathObjectsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

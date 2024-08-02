@@ -63,6 +63,7 @@ class CompressDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -85,6 +86,7 @@ class CompressDocumentTests extends BaseTestContext
         $request = new CompressDocumentOnlineRequest(
             $requestDocument,
             $requestCompressOptions,
+            NULL,
             NULL,
             NULL,
             NULL,

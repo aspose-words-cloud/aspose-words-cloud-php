@@ -15,12 +15,12 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 
 ## Enhancements in Version 24.8
 
+- Added the support of OpenType standard. It is usefull for languages required advanced typography.
 
 
 ## Enhancements in Version 24.7
 
 - Added support for azw3 (Amazon Kindle Format) documents.
-- Added the support of OpenType standard. It is usefull for languages required advanced typography.
 - Added 'MaxImageResolution' property for SvgSaveOptionsData class.
 
 

@@ -75,6 +75,11 @@ class GetHeaderFooterOfSectionOnlineRequest extends BaseApiRequest
     public $encrypted_password;
 
     /*
+     * The value indicates whether OpenType support is on.
+     */
+    public $open_type_support;
+
+    /*
      * The list of HeaderFooter types.
      */
     public $filter_by_type;
@@ -88,9 +93,10 @@ class GetHeaderFooterOfSectionOnlineRequest extends BaseApiRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $filter_by_type The list of HeaderFooter types.
      */
-    public function __construct($document, $header_footer_index, $section_index, $load_encoding = null, $password = null, $encrypted_password = null, $filter_by_type = null)
+    public function __construct($document, $header_footer_index, $section_index, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $filter_by_type = null)
     {
         $this->document = $document;
         $this->header_footer_index = $header_footer_index;
@@ -98,6 +104,7 @@ class GetHeaderFooterOfSectionOnlineRequest extends BaseApiRequest
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
+        $this->open_type_support = $open_type_support;
         $this->filter_by_type = $filter_by_type;
     }
 
@@ -204,6 +211,23 @@ class GetHeaderFooterOfSectionOnlineRequest extends BaseApiRequest
     }
 
     /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function get_open_type_support()
+    {
+        return $this->open_type_support;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function set_open_type_support($value)
+    {
+        $this->open_type_support = $value;
+        return $this;
+    }
+
+    /*
      * The list of HeaderFooter types.
      */
     public function get_filter_by_type()
@@ -290,6 +314,16 @@ class GetHeaderFooterOfSectionOnlineRequest extends BaseApiRequest
         if ($this->encrypted_password !== null) {
             $localName = lcfirst('EncryptedPassword');
             $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->open_type_support !== null) {
+            $localName = lcfirst('OpenTypeSupport');
+            $localValue = is_bool($this->open_type_support) ? ($this->open_type_support ? 'true' : 'false') : $this->open_type_support;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

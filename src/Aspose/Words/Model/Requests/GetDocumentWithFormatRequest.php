@@ -80,6 +80,11 @@ class GetDocumentWithFormatRequest extends BaseApiRequest
     public $encrypted_password;
 
     /*
+     * The value indicates whether OpenType support is on.
+     */
+    public $open_type_support;
+
+    /*
      * The path to the output document.
      */
     public $out_path;
@@ -99,10 +104,11 @@ class GetDocumentWithFormatRequest extends BaseApiRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $out_path The path to the output document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $out_path = null, $fonts_location = null)
+    public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $out_path = null, $fonts_location = null)
     {
         $this->name = $name;
         $this->format = $format;
@@ -111,6 +117,7 @@ class GetDocumentWithFormatRequest extends BaseApiRequest
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
+        $this->open_type_support = $open_type_support;
         $this->out_path = $out_path;
         $this->fonts_location = $fonts_location;
     }
@@ -231,6 +238,23 @@ class GetDocumentWithFormatRequest extends BaseApiRequest
     public function set_encrypted_password($value)
     {
         $this->encrypted_password = $value;
+        return $this;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function get_open_type_support()
+    {
+        return $this->open_type_support;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function set_open_type_support($value)
+    {
+        $this->open_type_support = $value;
         return $this;
     }
 
@@ -356,6 +380,16 @@ class GetDocumentWithFormatRequest extends BaseApiRequest
         if ($this->encrypted_password !== null) {
             $localName = lcfirst('EncryptedPassword');
             $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->open_type_support !== null) {
+            $localName = lcfirst('OpenTypeSupport');
+            $localValue = is_bool($this->open_type_support) ? ($this->open_type_support ? 'true' : 'false') : $this->open_type_support;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

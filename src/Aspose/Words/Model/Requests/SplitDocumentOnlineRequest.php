@@ -70,6 +70,11 @@ class SplitDocumentOnlineRequest extends BaseApiRequest
     public $encrypted_password;
 
     /*
+     * The value indicates whether OpenType support is on.
+     */
+    public $open_type_support;
+
+    /*
      * Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
     public $dest_file_name;
@@ -102,19 +107,21 @@ class SplitDocumentOnlineRequest extends BaseApiRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param int $from The start page.
      * @param int $to The end page.
      * @param bool $zip_output The flag indicating whether to ZIP the output.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $load_encoding = null, $password = null, $encrypted_password = null, $dest_file_name = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)
+    public function __construct($document, $format, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)
     {
         $this->document = $document;
         $this->format = $format;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
+        $this->open_type_support = $open_type_support;
         $this->dest_file_name = $dest_file_name;
         $this->from = $from;
         $this->to = $to;
@@ -204,6 +211,23 @@ class SplitDocumentOnlineRequest extends BaseApiRequest
     public function set_encrypted_password($value)
     {
         $this->encrypted_password = $value;
+        return $this;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function get_open_type_support()
+    {
+        return $this->open_type_support;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function set_open_type_support($value)
+    {
+        $this->open_type_support = $value;
         return $this;
     }
 
@@ -351,6 +375,16 @@ class SplitDocumentOnlineRequest extends BaseApiRequest
         if ($this->encrypted_password !== null) {
             $localName = lcfirst('EncryptedPassword');
             $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->open_type_support !== null) {
+            $localName = lcfirst('OpenTypeSupport');
+            $localValue = is_bool($this->open_type_support) ? ($this->open_type_support ? 'true' : 'false') : $this->open_type_support;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

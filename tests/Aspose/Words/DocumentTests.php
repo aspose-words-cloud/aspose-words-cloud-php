@@ -57,6 +57,7 @@ class DocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 

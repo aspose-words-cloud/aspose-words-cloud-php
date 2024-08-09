@@ -67,6 +67,7 @@ class RunTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -92,6 +93,7 @@ class RunTests extends BaseTestContext
             "paragraphs/1",
             $requestRun,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -132,6 +134,7 @@ class RunTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -157,6 +160,7 @@ class RunTests extends BaseTestContext
             $requestDocument,
             $requestRun,
             "paragraphs/1",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -194,6 +198,7 @@ class RunTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -212,6 +217,7 @@ class RunTests extends BaseTestContext
             $requestDocument,
             "paragraphs/1",
             0,
+            NULL,
             NULL,
             NULL,
             NULL,

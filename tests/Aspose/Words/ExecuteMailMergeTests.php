@@ -86,6 +86,7 @@ class ExecuteMailMergeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             true,
             NULL,
             NULL,

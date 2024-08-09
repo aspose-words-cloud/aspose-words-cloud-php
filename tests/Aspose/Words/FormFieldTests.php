@@ -71,6 +71,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -105,6 +106,7 @@ class FormFieldTests extends BaseTestContext
             $requestFormField,
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -150,6 +152,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -184,6 +187,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -205,6 +209,7 @@ class FormFieldTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -233,6 +238,7 @@ class FormFieldTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -266,6 +272,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -288,6 +295,7 @@ class FormFieldTests extends BaseTestContext
         $request = new GetFormFieldsOnlineRequest(
             $requestDocument,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -315,6 +323,7 @@ class FormFieldTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -360,6 +369,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
@@ -394,6 +404,7 @@ class FormFieldTests extends BaseTestContext
             $requestDocument,
             $requestFormField,
             "sections/0/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -438,6 +449,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
@@ -474,6 +486,7 @@ class FormFieldTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -494,6 +507,7 @@ class FormFieldTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -525,6 +539,7 @@ class FormFieldTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

@@ -53,6 +53,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $swaggerTypes = [
         'export_embedded_images' => 'bool',
         'fit_to_view_port' => 'bool',
+        'max_image_resolution' => 'int',
         'resources_folder' => 'string',
         'resources_folder_alias' => 'string',
         'show_page_border' => 'bool',
@@ -67,6 +68,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $swaggerFormats = [
         'export_embedded_images' => 'null',
         'fit_to_view_port' => 'null',
+        'max_image_resolution' => 'null',
         'resources_folder' => 'null',
         'resources_folder_alias' => 'null',
         'show_page_border' => 'null',
@@ -102,6 +104,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $attributeMap = [
         'export_embedded_images' => 'ExportEmbeddedImages',
         'fit_to_view_port' => 'FitToViewPort',
+        'max_image_resolution' => 'MaxImageResolution',
         'resources_folder' => 'ResourcesFolder',
         'resources_folder_alias' => 'ResourcesFolderAlias',
         'show_page_border' => 'ShowPageBorder',
@@ -116,6 +119,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $setters = [
         'export_embedded_images' => 'setExportEmbeddedImages',
         'fit_to_view_port' => 'setFitToViewPort',
+        'max_image_resolution' => 'setMaxImageResolution',
         'resources_folder' => 'setResourcesFolder',
         'resources_folder_alias' => 'setResourcesFolderAlias',
         'show_page_border' => 'setShowPageBorder',
@@ -130,6 +134,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $getters = [
         'export_embedded_images' => 'getExportEmbeddedImages',
         'fit_to_view_port' => 'getFitToViewPort',
+        'max_image_resolution' => 'getMaxImageResolution',
         'resources_folder' => 'getResourcesFolder',
         'resources_folder_alias' => 'getResourcesFolderAlias',
         'show_page_border' => 'getShowPageBorder',
@@ -206,6 +211,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         parent::__construct($data);
         $this->container['export_embedded_images'] = isset($data['export_embedded_images']) ? $data['export_embedded_images'] : null;
         $this->container['fit_to_view_port'] = isset($data['fit_to_view_port']) ? $data['fit_to_view_port'] : null;
+        $this->container['max_image_resolution'] = isset($data['max_image_resolution']) ? $data['max_image_resolution'] : null;
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
         $this->container['show_page_border'] = isset($data['show_page_border']) ? $data['show_page_border'] : null;
@@ -273,6 +279,30 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setFitToViewPort($fit_to_view_port)
     {
         $this->container['fit_to_view_port'] = $fit_to_view_port;
+        return $this;
+    }
+
+
+    /*
+     * Gets max_image_resolution
+     *
+     * @return int
+     */
+    public function getMaxImageResolution()
+    {
+        return $this->container['max_image_resolution'];
+    }
+
+    /*
+     * Sets max_image_resolution
+     *
+     * @param int $max_image_resolution Gets or sets a value in pixels per inch that limits resolution of exported raster images. If the value of this property is non-zero, it limits resolution of exported raster images. That is, higher-resolution images are resampled down to the limit and lower-resolution images are exported as is.
+     *
+     * @return $this
+     */
+    public function setMaxImageResolution($max_image_resolution)
+    {
+        $this->container['max_image_resolution'] = $max_image_resolution;
         return $this;
     }
 

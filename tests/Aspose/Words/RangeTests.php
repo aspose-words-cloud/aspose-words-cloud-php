@@ -60,6 +60,7 @@ class RangeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -80,6 +81,7 @@ class RangeTests extends BaseTestContext
             $requestDocument,
             "id0.0.0",
             "id0.0.1",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -112,6 +114,7 @@ class RangeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -131,6 +134,7 @@ class RangeTests extends BaseTestContext
             $requestDocument,
             "id0.0.0",
             "id0.0.1",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -167,6 +171,7 @@ class RangeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -193,6 +198,7 @@ class RangeTests extends BaseTestContext
             "id0.0.0",
             $requestDocumentParameters,
             "id0.0.1",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -229,6 +235,7 @@ class RangeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -254,6 +261,7 @@ class RangeTests extends BaseTestContext
             "id0.0.0",
             $requestRangeText,
             "id0.0.1",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -285,6 +293,7 @@ class RangeTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -304,6 +313,7 @@ class RangeTests extends BaseTestContext
         $request = new TranslateNodeIdOnlineRequest(
             $requestDocument,
             "id0.0.0",
+            NULL,
             NULL,
             NULL,
             NULL

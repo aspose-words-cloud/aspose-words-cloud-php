@@ -59,6 +59,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -81,6 +82,7 @@ class TableTests extends BaseTestContext
         $request = new GetTablesOnlineRequest(
             $requestDocument,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -108,6 +110,7 @@ class TableTests extends BaseTestContext
             $remoteFileName,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -144,6 +147,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -168,6 +172,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             1,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -196,6 +201,7 @@ class TableTests extends BaseTestContext
             1,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -236,6 +242,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -254,6 +261,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             1,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -285,6 +293,7 @@ class TableTests extends BaseTestContext
             1,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -326,6 +335,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -354,6 +364,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             $requestTable,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -395,6 +406,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -429,6 +441,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -450,6 +463,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             1,
             "",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -478,6 +492,7 @@ class TableTests extends BaseTestContext
             1,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -524,6 +539,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -557,6 +573,7 @@ class TableTests extends BaseTestContext
             $requestProperties,
             1,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -603,6 +620,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -637,6 +655,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -659,6 +678,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             "tables/1",
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -693,6 +713,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -711,6 +732,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             "tables/1",
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -751,6 +773,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -776,6 +799,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             $requestRow,
             "sections/0/tables/2",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -810,6 +834,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -831,6 +856,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             "sections/0/tables/2",
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -872,6 +898,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -907,6 +934,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -936,6 +964,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -957,6 +986,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -991,6 +1021,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1009,6 +1040,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -1048,6 +1080,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1071,6 +1104,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             $requestCell,
             "sections/0/tables/2/rows/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -1105,6 +1139,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1126,6 +1161,7 @@ class TableTests extends BaseTestContext
             $requestDocument,
             "sections/0/tables/2/rows/0",
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -1167,6 +1203,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1197,6 +1234,7 @@ class TableTests extends BaseTestContext
             "sections/0/tables/2/rows/0",
             $requestFormat,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -1234,6 +1272,7 @@ class TableTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -1254,6 +1293,7 @@ class TableTests extends BaseTestContext
             "png",
             0,
             "",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -1285,6 +1325,7 @@ class TableTests extends BaseTestContext
             0,
             NULL,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

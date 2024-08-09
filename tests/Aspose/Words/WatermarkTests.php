@@ -63,6 +63,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -87,6 +88,7 @@ class WatermarkTests extends BaseTestContext
         $request = new InsertWatermarkOnlineRequest(
             $requestDocument,
             $requestWatermarkData,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -130,6 +132,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -156,6 +159,7 @@ class WatermarkTests extends BaseTestContext
         $request = new InsertWatermarkOnlineRequest(
             $requestDocument,
             $requestWatermarkData,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -195,6 +199,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL,
@@ -220,6 +225,7 @@ class WatermarkTests extends BaseTestContext
         $request = new InsertWatermarkImageOnlineRequest(
             $requestDocument,
             $requestImageFile,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -260,6 +266,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -286,6 +293,7 @@ class WatermarkTests extends BaseTestContext
         $request = new InsertWatermarkTextOnlineRequest(
             $requestDocument,
             $requestWatermarkText,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -319,6 +327,7 @@ class WatermarkTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -340,6 +349,7 @@ class WatermarkTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new DeleteWatermarkOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL,

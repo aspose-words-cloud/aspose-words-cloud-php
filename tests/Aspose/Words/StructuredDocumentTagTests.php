@@ -59,6 +59,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -77,6 +78,7 @@ class StructuredDocumentTagTests extends BaseTestContext
         $request = new GetStructuredDocumentTagsOnlineRequest(
             $requestDocument,
             "sections/0/body/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -108,6 +110,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -127,6 +130,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0/body/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL
@@ -165,6 +169,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -188,6 +193,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             $requestDocument,
             $requestStructuredDocumentTag,
             "sections/0/body/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -225,6 +231,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -243,6 +250,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             $requestDocument,
             0,
             "sections/0/body/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -296,6 +304,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -331,6 +340,7 @@ class StructuredDocumentTagTests extends BaseTestContext
             $requestStructuredDocumentTag,
             0,
             "sections/0/body/paragraphs/0",
+            NULL,
             NULL,
             NULL,
             NULL,

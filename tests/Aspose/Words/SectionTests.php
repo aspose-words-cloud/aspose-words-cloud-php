@@ -58,6 +58,7 @@ class SectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -80,6 +81,7 @@ class SectionTests extends BaseTestContext
         $request = new GetSectionOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -109,6 +111,7 @@ class SectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -130,6 +133,7 @@ class SectionTests extends BaseTestContext
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetSectionsOnlineRequest(
             $requestDocument,
+            NULL,
             NULL,
             NULL,
             NULL
@@ -163,6 +167,7 @@ class SectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -180,6 +185,7 @@ class SectionTests extends BaseTestContext
         $request = new DeleteSectionOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -215,6 +221,7 @@ class SectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -230,6 +237,7 @@ class SectionTests extends BaseTestContext
         $request = new MergeWithNextOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -266,6 +274,7 @@ class SectionTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             NULL
         );
 
@@ -283,6 +292,7 @@ class SectionTests extends BaseTestContext
         $request = new InsertSectionOnlineRequest(
             $requestDocument,
             0,
+            NULL,
             NULL,
             NULL,
             NULL,
@@ -312,6 +322,7 @@ class SectionTests extends BaseTestContext
             $remoteFileName,
             1,
             $remoteDataFolder,
+            NULL,
             NULL,
             NULL,
             NULL,

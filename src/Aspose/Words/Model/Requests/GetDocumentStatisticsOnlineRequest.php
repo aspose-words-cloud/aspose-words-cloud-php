@@ -65,6 +65,11 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
     public $encrypted_password;
 
     /*
+     * The value indicates whether OpenType support is on.
+     */
+    public $open_type_support;
+
+    /*
      * The flag indicating whether to include comments from the WordCount. The default value is "false".
      */
     public $include_comments;
@@ -86,16 +91,18 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param bool $include_comments The flag indicating whether to include comments from the WordCount. The default value is "false".
      * @param bool $include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
      * @param bool $include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
      */
-    public function __construct($document, $load_encoding = null, $password = null, $encrypted_password = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)
+    public function __construct($document, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)
     {
         $this->document = $document;
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
+        $this->open_type_support = $open_type_support;
         $this->include_comments = $include_comments;
         $this->include_footnotes = $include_footnotes;
         $this->include_text_in_shapes = $include_text_in_shapes;
@@ -166,6 +173,23 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
     public function set_encrypted_password($value)
     {
         $this->encrypted_password = $value;
+        return $this;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function get_open_type_support()
+    {
+        return $this->open_type_support;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function set_open_type_support($value)
+    {
+        $this->open_type_support = $value;
         return $this;
     }
 
@@ -266,6 +290,16 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
         if ($this->encrypted_password !== null) {
             $localName = lcfirst('EncryptedPassword');
             $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->open_type_support !== null) {
+            $localName = lcfirst('OpenTypeSupport');
+            $localValue = is_bool($this->open_type_support) ? ($this->open_type_support ? 'true' : 'false') : $this->open_type_support;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

@@ -22,6 +22,6 @@ $wordsApi->uploadFile($uploadFileRequest);
  */
 $myVar3 = $fileName;
 $request = new AcceptAllRevisionsRequest(
-    $myVar3, NULL, NULL, NULL, NULL, NULL, NULL
+    $myVar3, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 );
 $wordsApi->acceptAllRevisions($request);

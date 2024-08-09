@@ -80,6 +80,11 @@ class GetStyleRequest extends BaseApiRequest
     public $encrypted_password;
 
     /*
+     * The value indicates whether OpenType support is on.
+     */
+    public $open_type_support;
+
+    /*
      * Initializes a new instance of the GetStyleRequest class.
      *
      * @param string $name The filename of the input document.
@@ -89,8 +94,9 @@ class GetStyleRequest extends BaseApiRequest
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     * @param bool $open_type_support The value indicates whether OpenType support is on.
      */
-    public function __construct($name, $style_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null)
+    public function __construct($name, $style_name, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null)
     {
         $this->name = $name;
         $this->style_name = $style_name;
@@ -99,6 +105,7 @@ class GetStyleRequest extends BaseApiRequest
         $this->load_encoding = $load_encoding;
         $this->password = $password;
         $this->encrypted_password = $encrypted_password;
+        $this->open_type_support = $open_type_support;
     }
 
     /*
@@ -221,6 +228,23 @@ class GetStyleRequest extends BaseApiRequest
     }
 
     /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function get_open_type_support()
+    {
+        return $this->open_type_support;
+    }
+
+    /*
+     * The value indicates whether OpenType support is on.
+     */
+    public function set_open_type_support($value)
+    {
+        $this->open_type_support = $value;
+        return $this;
+    }
+
+    /*
      * Create request data for operation 'getStyle'
      *
      * @throws \InvalidArgumentException
@@ -307,6 +331,16 @@ class GetStyleRequest extends BaseApiRequest
         if ($this->encrypted_password !== null) {
             $localName = lcfirst('EncryptedPassword');
             $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->open_type_support !== null) {
+            $localName = lcfirst('OpenTypeSupport');
+            $localValue = is_bool($this->open_type_support) ? ($this->open_type_support ? 'true' : 'false') : $this->open_type_support;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

@@ -71,6 +71,7 @@ class AppendDocumentTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName,
             NULL,
             NULL
@@ -105,6 +106,7 @@ class AppendDocumentTests extends BaseTestContext
         $request = new AppendDocumentOnlineRequest(
             $requestDocument,
             $requestDocumentList,
+            NULL,
             NULL,
             NULL,
             NULL,

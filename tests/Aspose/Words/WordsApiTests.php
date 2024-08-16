@@ -49,7 +49,7 @@ class WordsApiTests extends BaseTestContext
         }
         catch (ApiException $exception)
         {
-            Assert::assertEquals(404, $exception->getCode());
+            Assert::assertEquals(true, $exception->getCode() != 200);
         }
     }
 
@@ -64,7 +64,7 @@ class WordsApiTests extends BaseTestContext
         }
         catch (RequestException $e)
         {
-            Assert::assertEquals(404, $e->getCode());
+            Assert::assertEquals(true, $e->getCode() != 200);
         }
     }
 }

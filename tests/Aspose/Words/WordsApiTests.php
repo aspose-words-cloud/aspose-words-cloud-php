@@ -64,7 +64,7 @@ class WordsApiTests extends BaseTestContext
         }
         catch (RequestException $e)
         {
-            Assert::assertEquals(400, $e->getCode());
+            Assert::assertEquals(404, $e->getCode());
         }
     }
 }

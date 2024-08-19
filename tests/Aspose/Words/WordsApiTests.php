@@ -49,7 +49,7 @@ class WordsApiTests extends BaseTestContext
         }
         catch (ApiException $exception)
         {
-            Assert::assertEquals(true, $exception->getCode() != 200);
+            Assert::assertEquals(404, $exception->getCode());
         }
     }
 
@@ -59,12 +59,12 @@ class WordsApiTests extends BaseTestContext
     public function testHandleBadClientId()
     {
         try{
-            $this->words = new WordsApi("tttt", "qqq", "https://api-qa.aspose.cloud");
+            $this->words = new WordsApi("tttt", "qqq", $this->$creds["BaseUrl"]);
             $this->words->getAvailableFonts(new Requests\GetAvailableFontsRequest());
         }
         catch (RequestException $e)
         {
-            Assert::assertEquals(true, $e->getCode() != 200);
+            Assert::assertEquals(400, $e->getCode());
         }
     }
 }

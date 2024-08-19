@@ -59,6 +59,7 @@ class WordsApiTests extends BaseTestContext
     public function testHandleBadClientId()
     {
         try{
+            $creds = self::getConfig();
             $this->words = new WordsApi("tttt", "qqq", $this->$creds["BaseUrl"]);
             $this->words->getAvailableFonts(new Requests\GetAvailableFontsRequest());
         }

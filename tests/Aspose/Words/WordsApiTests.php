@@ -60,7 +60,7 @@ class WordsApiTests extends BaseTestContext
     {
         try{
             $creds = self::getConfig();
-            $this->words = new WordsApi("tttt", "qqq", $this->$creds["BaseUrl"]);
+            $this->words = new WordsApi("tttt", "qqq", $creds["BaseUrl"]);
             $this->words->getAvailableFonts(new Requests\GetAvailableFontsRequest());
         }
         catch (RequestException $e)

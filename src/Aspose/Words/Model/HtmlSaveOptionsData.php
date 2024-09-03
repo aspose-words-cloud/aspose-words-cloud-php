@@ -84,6 +84,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'string',
         'office_math_output_mode' => 'string',
         'pretty_format' => 'bool',
+        'replace_backslash_with_yen_sign' => 'bool',
         'resolve_font_names' => 'bool',
         'resource_folder' => 'string',
         'resource_folder_alias' => 'string',
@@ -130,6 +131,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'null',
         'office_math_output_mode' => 'null',
         'pretty_format' => 'null',
+        'replace_backslash_with_yen_sign' => 'null',
         'resolve_font_names' => 'null',
         'resource_folder' => 'null',
         'resource_folder_alias' => 'null',
@@ -197,6 +199,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'MetafileFormat',
         'office_math_output_mode' => 'OfficeMathOutputMode',
         'pretty_format' => 'PrettyFormat',
+        'replace_backslash_with_yen_sign' => 'ReplaceBackslashWithYenSign',
         'resolve_font_names' => 'ResolveFontNames',
         'resource_folder' => 'ResourceFolder',
         'resource_folder_alias' => 'ResourceFolderAlias',
@@ -243,6 +246,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'setMetafileFormat',
         'office_math_output_mode' => 'setOfficeMathOutputMode',
         'pretty_format' => 'setPrettyFormat',
+        'replace_backslash_with_yen_sign' => 'setReplaceBackslashWithYenSign',
         'resolve_font_names' => 'setResolveFontNames',
         'resource_folder' => 'setResourceFolder',
         'resource_folder_alias' => 'setResourceFolderAlias',
@@ -289,6 +293,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'getMetafileFormat',
         'office_math_output_mode' => 'getOfficeMathOutputMode',
         'pretty_format' => 'getPrettyFormat',
+        'replace_backslash_with_yen_sign' => 'getReplaceBackslashWithYenSign',
         'resolve_font_names' => 'getResolveFontNames',
         'resource_folder' => 'getResourceFolder',
         'resource_folder_alias' => 'getResourceFolderAlias',
@@ -513,6 +518,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['metafile_format'] = isset($data['metafile_format']) ? $data['metafile_format'] : null;
         $this->container['office_math_output_mode'] = isset($data['office_math_output_mode']) ? $data['office_math_output_mode'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['replace_backslash_with_yen_sign'] = isset($data['replace_backslash_with_yen_sign']) ? $data['replace_backslash_with_yen_sign'] : null;
         $this->container['resolve_font_names'] = isset($data['resolve_font_names']) ? $data['resolve_font_names'] : null;
         $this->container['resource_folder'] = isset($data['resource_folder']) ? $data['resource_folder'] : null;
         $this->container['resource_folder_alias'] = isset($data['resource_folder_alias']) ? $data['resource_folder_alias'] : null;
@@ -1402,6 +1408,30 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
+        return $this;
+    }
+
+
+    /*
+     * Gets replace_backslash_with_yen_sign
+     *
+     * @return bool
+     */
+    public function getReplaceBackslashWithYenSign()
+    {
+        return $this->container['replace_backslash_with_yen_sign'];
+    }
+
+    /*
+     * Sets replace_backslash_with_yen_sign
+     *
+     * @param bool $replace_backslash_with_yen_sign Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
+     *
+     * @return $this
+     */
+    public function setReplaceBackslashWithYenSign($replace_backslash_with_yen_sign)
+    {
+        $this->container['replace_backslash_with_yen_sign'] = $replace_backslash_with_yen_sign;
         return $this;
     }
 

@@ -76,6 +76,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'text_compression' => 'string',
         'use_book_fold_printing_settings' => 'bool',
         'use_core_fonts' => 'bool',
+        'use_sdt_tag_as_form_field_name' => 'bool',
         'zoom_behavior' => 'string',
         'zoom_factor' => 'int'
     ];
@@ -111,6 +112,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'text_compression' => 'null',
         'use_book_fold_printing_settings' => 'null',
         'use_core_fonts' => 'null',
+        'use_sdt_tag_as_form_field_name' => 'null',
         'zoom_behavior' => 'null',
         'zoom_factor' => 'null'
     ];
@@ -167,6 +169,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'text_compression' => 'TextCompression',
         'use_book_fold_printing_settings' => 'UseBookFoldPrintingSettings',
         'use_core_fonts' => 'UseCoreFonts',
+        'use_sdt_tag_as_form_field_name' => 'UseSdtTagAsFormFieldName',
         'zoom_behavior' => 'ZoomBehavior',
         'zoom_factor' => 'ZoomFactor'
     ];
@@ -202,6 +205,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'text_compression' => 'setTextCompression',
         'use_book_fold_printing_settings' => 'setUseBookFoldPrintingSettings',
         'use_core_fonts' => 'setUseCoreFonts',
+        'use_sdt_tag_as_form_field_name' => 'setUseSdtTagAsFormFieldName',
         'zoom_behavior' => 'setZoomBehavior',
         'zoom_factor' => 'setZoomFactor'
     ];
@@ -237,6 +241,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'text_compression' => 'getTextCompression',
         'use_book_fold_printing_settings' => 'getUseBookFoldPrintingSettings',
         'use_core_fonts' => 'getUseCoreFonts',
+        'use_sdt_tag_as_form_field_name' => 'getUseSdtTagAsFormFieldName',
         'zoom_behavior' => 'getZoomBehavior',
         'zoom_factor' => 'getZoomFactor'
     ];
@@ -468,6 +473,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['text_compression'] = isset($data['text_compression']) ? $data['text_compression'] : null;
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
         $this->container['use_core_fonts'] = isset($data['use_core_fonts']) ? $data['use_core_fonts'] : null;
+        $this->container['use_sdt_tag_as_form_field_name'] = isset($data['use_sdt_tag_as_form_field_name']) ? $data['use_sdt_tag_as_form_field_name'] : null;
         $this->container['zoom_behavior'] = isset($data['zoom_behavior']) ? $data['zoom_behavior'] : null;
         $this->container['zoom_factor'] = isset($data['zoom_factor']) ? $data['zoom_factor'] : null;
         $this->container['save_format'] = "pdf";
@@ -1182,6 +1188,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setUseCoreFonts($use_core_fonts)
     {
         $this->container['use_core_fonts'] = $use_core_fonts;
+        return $this;
+    }
+
+
+    /*
+     * Gets use_sdt_tag_as_form_field_name
+     *
+     * @return bool
+     */
+    public function getUseSdtTagAsFormFieldName()
+    {
+        return $this->container['use_sdt_tag_as_form_field_name'];
+    }
+
+    /*
+     * Sets use_sdt_tag_as_form_field_name
+     *
+     * @param bool $use_sdt_tag_as_form_field_name Gets or sets a value indicating whether to use SDT control Tag or Id property as a name of form field in PDF. The default value is false.When set to false, SDT control Id property is used as a name of form field in PDF.When set to true, SDT control Tag property is used as a name of form field in PDF.If set to true and Tag is empty, Id property will be used as a form field name.If set to true and Tag values are not unique, duplicate Tag values will be altered to build unique PDF form field names.
+     *
+     * @return $this
+     */
+    public function setUseSdtTagAsFormFieldName($use_sdt_tag_as_form_field_name)
+    {
+        $this->container['use_sdt_tag_as_form_field_name'] = $use_sdt_tag_as_form_field_name;
         return $this;
     }
 

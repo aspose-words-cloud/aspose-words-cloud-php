@@ -13,6 +13,13 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 24.9
+
+- Added ReplaceBackslashWithYenSign property for XpsSaveOptions and HtmlSaveOptions.
+- Added DigitalSignature property for XpsSaveOptions.
+- Added UseSdtTagAsFormFieldName property for PdfSaveOptions.
+
+
 ## Enhancements in Version 24.8
 
 - Added the support of OpenType standard. It is usefull for languages required advanced typography.

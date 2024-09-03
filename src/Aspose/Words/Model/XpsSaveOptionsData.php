@@ -52,6 +52,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $swaggerTypes = [
         'bookmarks_outline_level' => 'int',
+        'digital_signature_details' => '\Aspose\Words\Model\DigitalSignatureDetails',
         'headings_outline_levels' => 'int',
         'outline_options' => '\Aspose\Words\Model\OutlineOptionsData',
         'use_book_fold_printing_settings' => 'bool'
@@ -64,6 +65,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $swaggerFormats = [
         'bookmarks_outline_level' => 'null',
+        'digital_signature_details' => 'null',
         'headings_outline_levels' => 'null',
         'outline_options' => 'null',
         'use_book_fold_printing_settings' => 'null'
@@ -97,6 +99,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $attributeMap = [
         'bookmarks_outline_level' => 'BookmarksOutlineLevel',
+        'digital_signature_details' => 'DigitalSignatureDetails',
         'headings_outline_levels' => 'HeadingsOutlineLevels',
         'outline_options' => 'OutlineOptions',
         'use_book_fold_printing_settings' => 'UseBookFoldPrintingSettings'
@@ -109,6 +112,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $setters = [
         'bookmarks_outline_level' => 'setBookmarksOutlineLevel',
+        'digital_signature_details' => 'setDigitalSignatureDetails',
         'headings_outline_levels' => 'setHeadingsOutlineLevels',
         'outline_options' => 'setOutlineOptions',
         'use_book_fold_printing_settings' => 'setUseBookFoldPrintingSettings'
@@ -121,6 +125,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
      */
     protected static $getters = [
         'bookmarks_outline_level' => 'getBookmarksOutlineLevel',
+        'digital_signature_details' => 'getDigitalSignatureDetails',
         'headings_outline_levels' => 'getHeadingsOutlineLevels',
         'outline_options' => 'getOutlineOptions',
         'use_book_fold_printing_settings' => 'getUseBookFoldPrintingSettings'
@@ -179,6 +184,7 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     {
         parent::__construct($data);
         $this->container['bookmarks_outline_level'] = isset($data['bookmarks_outline_level']) ? $data['bookmarks_outline_level'] : null;
+        $this->container['digital_signature_details'] = isset($data['digital_signature_details']) ? $data['digital_signature_details'] : null;
         $this->container['headings_outline_levels'] = isset($data['headings_outline_levels']) ? $data['headings_outline_levels'] : null;
         $this->container['outline_options'] = isset($data['outline_options']) ? $data['outline_options'] : null;
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
@@ -191,6 +197,11 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     public function validate()
     {
         parent::validate();
+
+
+        if (isset($this->container['digital_signature_details'])) {
+            $this->getDigitalSignatureDetails()->validate();
+        }
 
 
         if (isset($this->container['outline_options'])) {
@@ -219,6 +230,30 @@ class XpsSaveOptionsData extends FixedPageSaveOptionsData
     public function setBookmarksOutlineLevel($bookmarks_outline_level)
     {
         $this->container['bookmarks_outline_level'] = $bookmarks_outline_level;
+        return $this;
+    }
+
+
+    /*
+     * Gets digital_signature_details
+     *
+     * @return \Aspose\Words\Model\DigitalSignatureDetails
+     */
+    public function getDigitalSignatureDetails()
+    {
+        return $this->container['digital_signature_details'];
+    }
+
+    /*
+     * Sets digital_signature_details
+     *
+     * @param \Aspose\Words\Model\DigitalSignatureDetails $digital_signature_details Gets or sets the details for signing the output document.
+     *
+     * @return $this
+     */
+    public function setDigitalSignatureDetails($digital_signature_details)
+    {
+        $this->container['digital_signature_details'] = $digital_signature_details;
         return $this;
     }
 

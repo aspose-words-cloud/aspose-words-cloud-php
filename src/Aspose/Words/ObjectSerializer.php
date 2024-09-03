@@ -228,6 +228,10 @@ class ObjectSerializer
         if ($statusCode != 200) {
             $partResult = new ApiException(sprintf('[%d] Error connecting to the API', $statusCode), $statusCode, $headers, $bodyData);
         } else if ($responseType !== null) {
+			if($responseType !== 'string' && $responseType !== '\SplFileObject')
+            {
+                $bodyData = json_decode($bodyData);
+            }
             $partResult = ObjectSerializer::deserialize($bodyData, $responseType, $headers);
         }
 

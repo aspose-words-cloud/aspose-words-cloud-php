@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="XamlFlowSaveOptionsData.php">
+ * <copyright company="Aspose" file="DigitalSignatureDetails.php">
  *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,14 +27,15 @@
  */
 
 namespace Aspose\Words\Model;
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * XamlFlowSaveOptionsData
+ * DigitalSignatureDetails
  *
- * @description Container class for xaml flow save options.
+ * @description Container class for details of digital signature.
  */
-class XamlFlowSaveOptionsData extends SaveOptionsData
+class DigitalSignatureDetails implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +44,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      *
      * @var string
      */
-    protected static $swaggerModelName = "XamlFlowSaveOptionsData";
+    protected static $swaggerModelName = "DigitalSignatureDetails";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,9 +52,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'images_folder' => 'string',
-        'images_folder_alias' => 'string',
-        'replace_backslash_with_yen_sign' => 'bool'
+        'certificate_filename' => 'string',
+        'sign_options' => '\Aspose\Words\Model\SignOptions'
     ];
 
     /*
@@ -62,9 +62,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'images_folder' => 'null',
-        'images_folder_alias' => 'null',
-        'replace_backslash_with_yen_sign' => 'null'
+        'certificate_filename' => 'null',
+        'sign_options' => 'null'
     ];
 
     /*
@@ -74,7 +73,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -84,7 +83,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -94,9 +93,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'images_folder' => 'ImagesFolder',
-        'images_folder_alias' => 'ImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'ReplaceBackslashWithYenSign'
+        'certificate_filename' => 'CertificateFilename',
+        'sign_options' => 'SignOptions'
     ];
 
     /*
@@ -105,9 +103,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'images_folder' => 'setImagesFolder',
-        'images_folder_alias' => 'setImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'setReplaceBackslashWithYenSign'
+        'certificate_filename' => 'setCertificateFilename',
+        'sign_options' => 'setSignOptions'
     ];
 
     /*
@@ -116,9 +113,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'images_folder' => 'getImagesFolder',
-        'images_folder_alias' => 'getImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'getReplaceBackslashWithYenSign'
+        'certificate_filename' => 'getCertificateFilename',
+        'sign_options' => 'getSignOptions'
     ];
 
     /*
@@ -129,7 +125,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -139,7 +135,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -149,7 +145,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -165,6 +161,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
 
 
     /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -172,11 +175,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-        $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;
-        $this->container['images_folder_alias'] = isset($data['images_folder_alias']) ? $data['images_folder_alias'] : null;
-        $this->container['replace_backslash_with_yen_sign'] = isset($data['replace_backslash_with_yen_sign']) ? $data['replace_backslash_with_yen_sign'] : null;
-        $this->container['save_format'] = "xamlflow";
+        $this->container['certificate_filename'] = isset($data['certificate_filename']) ? $data['certificate_filename'] : null;
+        $this->container['sign_options'] = isset($data['sign_options']) ? $data['sign_options'] : null;
     }
 
     /*
@@ -184,78 +184,57 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public function validate()
     {
-        parent::validate();
+
+        if (isset($this->container['sign_options'])) {
+            $this->getSignOptions()->validate();
+        }
 
     }
 
     /*
-     * Gets images_folder
+     * Gets certificate_filename
      *
      * @return string
      */
-    public function getImagesFolder()
+    public function getCertificateFilename()
     {
-        return $this->container['images_folder'];
+        return $this->container['certificate_filename'];
     }
 
     /*
-     * Sets images_folder
+     * Sets certificate_filename
      *
-     * @param string $images_folder Gets or sets the physical folder where images are saved when exporting.
+     * @param string $certificate_filename Gets or sets the certificate's filename using for signing.
      *
      * @return $this
      */
-    public function setImagesFolder($images_folder)
+    public function setCertificateFilename($certificate_filename)
     {
-        $this->container['images_folder'] = $images_folder;
+        $this->container['certificate_filename'] = $certificate_filename;
         return $this;
     }
 
 
     /*
-     * Gets images_folder_alias
+     * Gets sign_options
      *
-     * @return string
+     * @return \Aspose\Words\Model\SignOptions
      */
-    public function getImagesFolderAlias()
+    public function getSignOptions()
     {
-        return $this->container['images_folder_alias'];
+        return $this->container['sign_options'];
     }
 
     /*
-     * Sets images_folder_alias
+     * Sets sign_options
      *
-     * @param string $images_folder_alias Gets or sets the name of the folder used to construct image URIs.
+     * @param \Aspose\Words\Model\SignOptions $sign_options Gets or sets signing options.
      *
      * @return $this
      */
-    public function setImagesFolderAlias($images_folder_alias)
+    public function setSignOptions($sign_options)
     {
-        $this->container['images_folder_alias'] = $images_folder_alias;
-        return $this;
-    }
-
-
-    /*
-     * Gets replace_backslash_with_yen_sign
-     *
-     * @return bool
-     */
-    public function getReplaceBackslashWithYenSign()
-    {
-        return $this->container['replace_backslash_with_yen_sign'];
-    }
-
-    /*
-     * Sets replace_backslash_with_yen_sign
-     *
-     * @param bool $replace_backslash_with_yen_sign Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
-     *
-     * @return $this
-     */
-    public function setReplaceBackslashWithYenSign($replace_backslash_with_yen_sign)
-    {
-        $this->container['replace_backslash_with_yen_sign'] = $replace_backslash_with_yen_sign;
+        $this->container['sign_options'] = $sign_options;
         return $this;
     }
 

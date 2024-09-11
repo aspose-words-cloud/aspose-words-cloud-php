@@ -56,7 +56,7 @@ class Signature implements ArrayAccess
         'issuer_name' => 'string',
         'is_valid' => 'bool',
         'signature_type' => 'string',
-        'signature_value' => '\SplFileObject',
+        'signature_value' => 'string',
         'sign_time' => '\DateTime',
         'subject_name' => 'string'
     ];
@@ -353,7 +353,7 @@ class Signature implements ArrayAccess
     /*
      * Gets signature_value
      *
-     * @return \SplFileObject
+     * @return string
      */
     public function getSignatureValue()
     {
@@ -363,7 +363,7 @@ class Signature implements ArrayAccess
     /*
      * Sets signature_value
      *
-     * @param \SplFileObject $signature_value Gets or sets an array of bytes representing a signature value.
+     * @param string $signature_value Gets or sets an array of bytes representing a signature value as base64 string.
      *
      * @return $this
      */

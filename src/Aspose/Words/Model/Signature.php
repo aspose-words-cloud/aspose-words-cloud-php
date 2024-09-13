@@ -183,23 +183,7 @@ class Signature implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SIGNATURE_TYPE_UNKNOWN = 'Unknown';
-    const SIGNATURE_TYPE_CRYPTO_API = 'CryptoApi';
-    const SIGNATURE_TYPE_XML_DSIG = 'XmlDsig';
 
-    /*
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getSignatureTypeAllowableValues()
-    {
-        return [
-            self::SIGNATURE_TYPE_UNKNOWN,
-            self::SIGNATURE_TYPE_CRYPTO_API,
-            self::SIGNATURE_TYPE_XML_DSIG
-        ];
-    }
 
     /*
      * Associative array for storing property values
@@ -232,16 +216,6 @@ class Signature implements ArrayAccess
     {
         if (!isset($this->container['is_valid'])) {
             throw new \InvalidArgumentException('Property IsValid in Signature is required.');
-        }
-
-        if (isset($this->container['signature_type'])) {
-            $allowedValuesSignatureType = $this->getSignatureTypeAllowableValues();
-            if (!in_array($this->container['signature_type'], $allowedValuesSignatureType)) {
-                throw new \InvalidArgumentException('Property SignatureType in Signature has invalid format.');
-            }
-        }
-        if (!isset($this->container['signature_type'])) {
-            throw new \InvalidArgumentException('Property SignatureType in Signature is required.');
         }
 
         if (!isset($this->container['sign_time'])) {
@@ -341,10 +315,6 @@ class Signature implements ArrayAccess
      */
     public function setSignatureType($signature_type)
     {
-        $allowedValues = $this->getSignatureTypeAllowableValues();
-        if ((!is_numeric($signature_type) && !in_array($signature_type, $allowedValues)) || (is_numeric($signature_type) && !in_array($allowedValues[$signature_type], $allowedValues))) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'signature_type', must be one of '%s'", implode("', '", $allowedValues)));
-        }
         $this->container['signature_type'] = $signature_type;
         return $this;
     }

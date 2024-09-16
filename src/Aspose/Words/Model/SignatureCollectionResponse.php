@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="XamlFlowSaveOptionsData.php">
+ * <copyright company="Aspose" file="SignatureCollectionResponse.php">
  *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -30,11 +30,11 @@ namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * XamlFlowSaveOptionsData
+ * SignatureCollectionResponse
  *
- * @description Container class for xaml flow save options.
+ * @description The REST response with a document signature collection. This response is returned by the Service when handling any "https://api.aspose.cloud/v4.0/words/Test.doc/signatures" REST API requests.
  */
-class XamlFlowSaveOptionsData extends SaveOptionsData
+class SignatureCollectionResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +43,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      *
      * @var string
      */
-    protected static $swaggerModelName = "XamlFlowSaveOptionsData";
+    protected static $swaggerModelName = "SignatureCollectionResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,9 +51,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'images_folder' => 'string',
-        'images_folder_alias' => 'string',
-        'replace_backslash_with_yen_sign' => 'bool'
+        'is_valid' => 'bool',
+        'signatures' => '\Aspose\Words\Model\Signature[]'
     ];
 
     /*
@@ -62,9 +61,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'images_folder' => 'null',
-        'images_folder_alias' => 'null',
-        'replace_backslash_with_yen_sign' => 'null'
+        'is_valid' => 'null',
+        'signatures' => 'null'
     ];
 
     /*
@@ -94,9 +92,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'images_folder' => 'ImagesFolder',
-        'images_folder_alias' => 'ImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'ReplaceBackslashWithYenSign'
+        'is_valid' => 'IsValid',
+        'signatures' => 'Signatures'
     ];
 
     /*
@@ -105,9 +102,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'images_folder' => 'setImagesFolder',
-        'images_folder_alias' => 'setImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'setReplaceBackslashWithYenSign'
+        'is_valid' => 'setIsValid',
+        'signatures' => 'setSignatures'
     ];
 
     /*
@@ -116,9 +112,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'images_folder' => 'getImagesFolder',
-        'images_folder_alias' => 'getImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'getReplaceBackslashWithYenSign'
+        'is_valid' => 'getIsValid',
+        'signatures' => 'getSignatures'
     ];
 
     /*
@@ -173,10 +168,8 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;
-        $this->container['images_folder_alias'] = isset($data['images_folder_alias']) ? $data['images_folder_alias'] : null;
-        $this->container['replace_backslash_with_yen_sign'] = isset($data['replace_backslash_with_yen_sign']) ? $data['replace_backslash_with_yen_sign'] : null;
-        $this->container['save_format'] = "xamlflow";
+        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
+        $this->container['signatures'] = isset($data['signatures']) ? $data['signatures'] : null;
     }
 
     /*
@@ -186,76 +179,67 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
     {
         parent::validate();
 
+        if (!isset($this->container['is_valid'])) {
+            throw new \InvalidArgumentException('Property IsValid in SignatureCollectionResponse is required.');
+        }
+
+
+        if (isset($this->container['signatures'])) {
+            foreach ($this->getSignatures() as &$elementSignatures)
+            {
+                if ($elementSignatures != null)
+                {
+                    $elementSignatures->validate();
+                }
+            }
+        }
+
     }
 
     /*
-     * Gets images_folder
-     *
-     * @return string
-     */
-    public function getImagesFolder()
-    {
-        return $this->container['images_folder'];
-    }
-
-    /*
-     * Sets images_folder
-     *
-     * @param string $images_folder Gets or sets the physical folder where images are saved when exporting.
-     *
-     * @return $this
-     */
-    public function setImagesFolder($images_folder)
-    {
-        $this->container['images_folder'] = $images_folder;
-        return $this;
-    }
-
-
-    /*
-     * Gets images_folder_alias
-     *
-     * @return string
-     */
-    public function getImagesFolderAlias()
-    {
-        return $this->container['images_folder_alias'];
-    }
-
-    /*
-     * Sets images_folder_alias
-     *
-     * @param string $images_folder_alias Gets or sets the name of the folder used to construct image URIs.
-     *
-     * @return $this
-     */
-    public function setImagesFolderAlias($images_folder_alias)
-    {
-        $this->container['images_folder_alias'] = $images_folder_alias;
-        return $this;
-    }
-
-
-    /*
-     * Gets replace_backslash_with_yen_sign
+     * Gets is_valid
      *
      * @return bool
      */
-    public function getReplaceBackslashWithYenSign()
+    public function getIsValid()
     {
-        return $this->container['replace_backslash_with_yen_sign'];
+        return $this->container['is_valid'];
     }
 
     /*
-     * Sets replace_backslash_with_yen_sign
+     * Sets is_valid
      *
-     * @param bool $replace_backslash_with_yen_sign Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
+     * @param bool $is_valid Gets or sets a value indicating whether all signatures are valid. Returns true if there is no signatures.
      *
      * @return $this
      */
-    public function setReplaceBackslashWithYenSign($replace_backslash_with_yen_sign)
+    public function setIsValid($is_valid)
     {
-        $this->container['replace_backslash_with_yen_sign'] = $replace_backslash_with_yen_sign;
+        $this->container['is_valid'] = $is_valid;
+        return $this;
+    }
+
+
+    /*
+     * Gets signatures
+     *
+     * @return \Aspose\Words\Model\Signature[]
+     */
+    public function getSignatures()
+    {
+        return $this->container['signatures'];
+    }
+
+    /*
+     * Sets signatures
+     *
+     * @param \Aspose\Words\Model\Signature[] $signatures Gets or sets signatures.
+     *
+     * @return $this
+     */
+    public function setSignatures($signatures)
+    {
+        $this->container['signatures'] = $signatures;
         return $this;
     }
 

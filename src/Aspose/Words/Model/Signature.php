@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="XamlFlowSaveOptionsData.php">
+ * <copyright company="Aspose" file="Signature.php">
  *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,14 +27,15 @@
  */
 
 namespace Aspose\Words\Model;
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * XamlFlowSaveOptionsData
+ * Signature
  *
- * @description Container class for xaml flow save options.
+ * @description The REST response with a document signature collection. This response is returned by the Service when handling any "https://api.aspose.cloud/v4.0/words/Test.doc/signatures" REST API requests.
  */
-class XamlFlowSaveOptionsData extends SaveOptionsData
+class Signature implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +44,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      *
      * @var string
      */
-    protected static $swaggerModelName = "XamlFlowSaveOptionsData";
+    protected static $swaggerModelName = "Signature";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,9 +52,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'images_folder' => 'string',
-        'images_folder_alias' => 'string',
-        'replace_backslash_with_yen_sign' => 'bool'
+        'comments' => 'string',
+        'issuer_name' => 'string',
+        'is_valid' => 'bool',
+        'signature_type' => 'string',
+        'signature_value' => 'string',
+        'sign_time' => '\DateTime',
+        'subject_name' => 'string'
     ];
 
     /*
@@ -62,9 +67,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'images_folder' => 'null',
-        'images_folder_alias' => 'null',
-        'replace_backslash_with_yen_sign' => 'null'
+        'comments' => 'null',
+        'issuer_name' => 'null',
+        'is_valid' => 'null',
+        'signature_type' => 'null',
+        'signature_value' => 'null',
+        'sign_time' => 'null',
+        'subject_name' => 'null'
     ];
 
     /*
@@ -74,7 +83,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -84,7 +93,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -94,9 +103,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
-        'images_folder' => 'ImagesFolder',
-        'images_folder_alias' => 'ImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'ReplaceBackslashWithYenSign'
+        'comments' => 'Comments',
+        'issuer_name' => 'IssuerName',
+        'is_valid' => 'IsValid',
+        'signature_type' => 'SignatureType',
+        'signature_value' => 'SignatureValue',
+        'sign_time' => 'SignTime',
+        'subject_name' => 'SubjectName'
     ];
 
     /*
@@ -105,9 +118,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $setters = [
-        'images_folder' => 'setImagesFolder',
-        'images_folder_alias' => 'setImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'setReplaceBackslashWithYenSign'
+        'comments' => 'setComments',
+        'issuer_name' => 'setIssuerName',
+        'is_valid' => 'setIsValid',
+        'signature_type' => 'setSignatureType',
+        'signature_value' => 'setSignatureValue',
+        'sign_time' => 'setSignTime',
+        'subject_name' => 'setSubjectName'
     ];
 
     /*
@@ -116,9 +133,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @var string[]
      */
     protected static $getters = [
-        'images_folder' => 'getImagesFolder',
-        'images_folder_alias' => 'getImagesFolderAlias',
-        'replace_backslash_with_yen_sign' => 'getReplaceBackslashWithYenSign'
+        'comments' => 'getComments',
+        'issuer_name' => 'getIssuerName',
+        'is_valid' => 'getIsValid',
+        'signature_type' => 'getSignatureType',
+        'signature_value' => 'getSignatureValue',
+        'sign_time' => 'getSignTime',
+        'subject_name' => 'getSubjectName'
     ];
 
     /*
@@ -129,7 +150,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -139,7 +160,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -149,7 +170,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -165,6 +186,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
 
 
     /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -172,11 +200,13 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-        $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;
-        $this->container['images_folder_alias'] = isset($data['images_folder_alias']) ? $data['images_folder_alias'] : null;
-        $this->container['replace_backslash_with_yen_sign'] = isset($data['replace_backslash_with_yen_sign']) ? $data['replace_backslash_with_yen_sign'] : null;
-        $this->container['save_format'] = "xamlflow";
+        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['issuer_name'] = isset($data['issuer_name']) ? $data['issuer_name'] : null;
+        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
+        $this->container['signature_type'] = isset($data['signature_type']) ? $data['signature_type'] : null;
+        $this->container['signature_value'] = isset($data['signature_value']) ? $data['signature_value'] : null;
+        $this->container['sign_time'] = isset($data['sign_time']) ? $data['sign_time'] : null;
+        $this->container['subject_name'] = isset($data['subject_name']) ? $data['subject_name'] : null;
     }
 
     /*
@@ -184,78 +214,180 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      */
     public function validate()
     {
-        parent::validate();
+        if (!isset($this->container['is_valid'])) {
+            throw new \InvalidArgumentException('Property IsValid in Signature is required.');
+        }
+
+        if (!isset($this->container['sign_time'])) {
+            throw new \InvalidArgumentException('Property SignTime in Signature is required.');
+        }
 
     }
 
     /*
-     * Gets images_folder
+     * Gets comments
      *
      * @return string
      */
-    public function getImagesFolder()
+    public function getComments()
     {
-        return $this->container['images_folder'];
+        return $this->container['comments'];
     }
 
     /*
-     * Sets images_folder
+     * Sets comments
      *
-     * @param string $images_folder Gets or sets the physical folder where images are saved when exporting.
+     * @param string $comments Gets or sets the signing purpose comment.
      *
      * @return $this
      */
-    public function setImagesFolder($images_folder)
+    public function setComments($comments)
     {
-        $this->container['images_folder'] = $images_folder;
+        $this->container['comments'] = $comments;
         return $this;
     }
 
 
     /*
-     * Gets images_folder_alias
+     * Gets issuer_name
      *
      * @return string
      */
-    public function getImagesFolderAlias()
+    public function getIssuerName()
     {
-        return $this->container['images_folder_alias'];
+        return $this->container['issuer_name'];
     }
 
     /*
-     * Sets images_folder_alias
+     * Sets issuer_name
      *
-     * @param string $images_folder_alias Gets or sets the name of the folder used to construct image URIs.
+     * @param string $issuer_name Gets or sets the subject distinguished name of the certificate isuuer.
      *
      * @return $this
      */
-    public function setImagesFolderAlias($images_folder_alias)
+    public function setIssuerName($issuer_name)
     {
-        $this->container['images_folder_alias'] = $images_folder_alias;
+        $this->container['issuer_name'] = $issuer_name;
         return $this;
     }
 
 
     /*
-     * Gets replace_backslash_with_yen_sign
+     * Gets is_valid
      *
      * @return bool
      */
-    public function getReplaceBackslashWithYenSign()
+    public function getIsValid()
     {
-        return $this->container['replace_backslash_with_yen_sign'];
+        return $this->container['is_valid'];
     }
 
     /*
-     * Sets replace_backslash_with_yen_sign
+     * Sets is_valid
      *
-     * @param bool $replace_backslash_with_yen_sign Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs. Default value is false. By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
+     * @param bool $is_valid Gets or sets a value indicating whether this digital signature is valid.
      *
      * @return $this
      */
-    public function setReplaceBackslashWithYenSign($replace_backslash_with_yen_sign)
+    public function setIsValid($is_valid)
     {
-        $this->container['replace_backslash_with_yen_sign'] = $replace_backslash_with_yen_sign;
+        $this->container['is_valid'] = $is_valid;
+        return $this;
+    }
+
+
+    /*
+     * Gets signature_type
+     *
+     * @return string
+     */
+    public function getSignatureType()
+    {
+        return $this->container['signature_type'];
+    }
+
+    /*
+     * Sets signature_type
+     *
+     * @param string $signature_type Gets or sets the type of the digital signature.
+     *
+     * @return $this
+     */
+    public function setSignatureType($signature_type)
+    {
+        $this->container['signature_type'] = $signature_type;
+        return $this;
+    }
+
+
+    /*
+     * Gets signature_value
+     *
+     * @return string
+     */
+    public function getSignatureValue()
+    {
+        return $this->container['signature_value'];
+    }
+
+    /*
+     * Sets signature_value
+     *
+     * @param string $signature_value Gets or sets an array of bytes representing a signature value as base64 string.
+     *
+     * @return $this
+     */
+    public function setSignatureValue($signature_value)
+    {
+        $this->container['signature_value'] = $signature_value;
+        return $this;
+    }
+
+
+    /*
+     * Gets sign_time
+     *
+     * @return \DateTime
+     */
+    public function getSignTime()
+    {
+        return $this->container['sign_time'];
+    }
+
+    /*
+     * Sets sign_time
+     *
+     * @param \DateTime $sign_time Gets or sets the time the document was signed.
+     *
+     * @return $this
+     */
+    public function setSignTime($sign_time)
+    {
+        $this->container['sign_time'] = $sign_time;
+        return $this;
+    }
+
+
+    /*
+     * Gets subject_name
+     *
+     * @return string
+     */
+    public function getSubjectName()
+    {
+        return $this->container['subject_name'];
+    }
+
+    /*
+     * Sets subject_name
+     *
+     * @param string $subject_name Gets or sets the subject distinguished name of the certificate that was used to sign the document.
+     *
+     * @return $this
+     */
+    public function setSubjectName($subject_name)
+    {
+        $this->container['subject_name'] = $subject_name;
         return $this;
     }
 

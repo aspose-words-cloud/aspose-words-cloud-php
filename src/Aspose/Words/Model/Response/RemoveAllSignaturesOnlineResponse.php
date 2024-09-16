@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WordsApiTests.php">
+ * <copyright company="Aspose" file="RemoveAllSignaturesOnlineResponse.php">
  *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -26,46 +26,57 @@
  * --------------------------------------------------------------------------------
  */
 
-namespace Aspose\Words\Tests;
-use Aspose\Words\ApiException;
-use Aspose\Words\Model\Requests;
-use Aspose\Words\WordsApi;
-use PHPUnit\Framework\Assert;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-
-class WordsApiTests extends BaseTestContext
+namespace Aspose\Words\Model\Response;
+/*
+ * Response model for removeAllSignaturesOnline operation.
+ */
+class RemoveAllSignaturesOnlineResponse
 {
-    /*
-     * Test case for checking correct handle of server errors
-     */
-    public function testHandleServerErrors()
-    {
-        $remoteName = "noFileWithThisName.docx";
-        $request = new Requests\GetSectionsRequest($remoteName);
-        try{
+    public $model;
+    public $document;
 
-            Assert::assertNull($this->words->GetSections($request));
-        }
-        catch (ApiException $exception)
-        {
-            Assert::assertEquals(404, $exception->getCode());
-        }
+    /*
+     * Initializes a new instance of the RemoveAllSignaturesOnlineResponse class.
+     *
+     */
+    public function __construct($model, $document)
+    {
+        $this->model = $model;
+        $this->document = $document;
     }
 
     /*
-     * Test case for checking bad clientId
+     * The REST response with a document signature collection.
+     * This response is returned by the Service when handling any "https://api.aspose.cloud/v4.0/words/Test.doc/signatures" REST API requests.
      */
-    public function testHandleBadClientId()
+    public function getmodel()
     {
-        try{
-            $creds = self::getConfig();
-            $this->words = new WordsApi("tttt", "qqq", $creds["BaseUrl"]);
-            $this->words->getAvailableFonts(new Requests\GetAvailableFontsRequest());
-        }
-        catch (RequestException $e)
-        {
-            Assert::assertEquals(400, $e->getCode());
-        }
+        return $this->model;
+    }
+
+    /*
+     * The REST response with a document signature collection.
+     * This response is returned by the Service when handling any "https://api.aspose.cloud/v4.0/words/Test.doc/signatures" REST API requests.
+     */
+    public function setmodel($value)
+    {
+        $this->model = $value;
+        return $this;
+    }
+    /*
+     * The document after modification.
+     */
+    public function getdocument()
+    {
+        return $this->document;
+    }
+
+    /*
+     * The document after modification.
+     */
+    public function setdocument($value)
+    {
+        $this->document = $value;
+        return $this;
     }
 }

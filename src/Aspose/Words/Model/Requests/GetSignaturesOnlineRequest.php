@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ExecuteMailMergeOnlineRequest.php">
+ * <copyright company="Aspose" file="GetSignaturesOnlineRequest.php">
  *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -36,210 +36,155 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Words\ObjectSerializer;
 use Aspose\Words\HeaderSelector;
-use Aspose\Words\Model\Response\ExecuteMailMergeOnlineResponse;
+use Aspose\Words\Model\Response\GetSignaturesOnlineResponse;
 use Aspose\Words\Encryptor;
 
 /*
- * Request model for executeMailMergeOnline operation.
+ * Request model for getSignaturesOnline operation.
  */
-class ExecuteMailMergeOnlineRequest extends BaseApiRequest
+class GetSignaturesOnlineRequest extends BaseApiRequest
 {
     /*
-     * File with template.
+     * The document.
      */
-    public $template;
+    public $document;
 
     /*
-     * File with mailmerge data.
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public $data;
+    public $load_encoding;
 
     /*
-     * Field options.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
-    public $options;
+    public $password;
 
     /*
-     * The flag indicating whether to execute Mail Merge operation with regions.
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      */
-    public $with_regions;
+    public $encrypted_password;
 
     /*
-     * The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.
+     * The value indicates whether OpenType support is on.
      */
-    public $merge_whole_document;
+    public $open_type_support;
 
     /*
-     * The cleanup options.
-     */
-    public $cleanup;
-
-    /*
-     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
-     */
-    public $document_file_name;
-
-    /*
-     * Initializes a new instance of the ExecuteMailMergeOnlineRequest class.
+     * Initializes a new instance of the GetSignaturesOnlineRequest class.
      *
-     * @param \SplFileObject $template File with template.
-     * @param \SplFileObject $data File with mailmerge data.
-     * @param \Aspose\Words\Model\FieldOptions $options Field options.
-     * @param bool $with_regions The flag indicating whether to execute Mail Merge operation with regions.
-     * @param bool $merge_whole_document The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.
-     * @param string $cleanup The cleanup options.
-     * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
+     * @param \SplFileObject $document The document.
+     * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+     * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+     * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+     * @param bool $open_type_support The value indicates whether OpenType support is on.
      */
-    public function __construct($template, $data, $options = null, $with_regions = null, $merge_whole_document = null, $cleanup = null, $document_file_name = null)
+    public function __construct($document, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null)
     {
-        $this->template = $template;
-        $this->data = $data;
-        $this->options = $options;
-        $this->with_regions = $with_regions;
-        $this->merge_whole_document = $merge_whole_document;
-        $this->cleanup = $cleanup;
-        $this->document_file_name = $document_file_name;
+        $this->document = $document;
+        $this->load_encoding = $load_encoding;
+        $this->password = $password;
+        $this->encrypted_password = $encrypted_password;
+        $this->open_type_support = $open_type_support;
     }
 
     /*
-     * File with template.
+     * The document.
      */
-    public function get_template()
+    public function get_document()
     {
-        return $this->template;
+        return $this->document;
     }
 
     /*
-     * File with template.
+     * The document.
      */
-    public function set_template($value)
+    public function set_document($value)
     {
-        $this->template = $value;
+        $this->document = $value;
         return $this;
     }
 
     /*
-     * File with mailmerge data.
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function get_data()
+    public function get_load_encoding()
     {
-        return $this->data;
+        return $this->load_encoding;
     }
 
     /*
-     * File with mailmerge data.
+     * Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      */
-    public function set_data($value)
+    public function set_load_encoding($value)
     {
-        $this->data = $value;
+        $this->load_encoding = $value;
         return $this;
     }
 
     /*
-     * Field options.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
-    public function get_options()
+    public function get_password()
     {
-        return $this->options;
+        return $this->password;
     }
 
     /*
-     * Field options.
+     * Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
      */
-    public function set_options($value)
+    public function set_password($value)
     {
-        $this->options = $value;
+        $this->password = $value;
         return $this;
     }
 
     /*
-     * The flag indicating whether to execute Mail Merge operation with regions.
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      */
-    public function get_with_regions()
+    public function get_encrypted_password()
     {
-        return $this->with_regions;
+        return $this->encrypted_password;
     }
 
     /*
-     * The flag indicating whether to execute Mail Merge operation with regions.
+     * Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      */
-    public function set_with_regions($value)
+    public function set_encrypted_password($value)
     {
-        $this->with_regions = $value;
+        $this->encrypted_password = $value;
         return $this;
     }
 
     /*
-     * The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.
+     * The value indicates whether OpenType support is on.
      */
-    public function get_merge_whole_document()
+    public function get_open_type_support()
     {
-        return $this->merge_whole_document;
+        return $this->open_type_support;
     }
 
     /*
-     * The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.
+     * The value indicates whether OpenType support is on.
      */
-    public function set_merge_whole_document($value)
+    public function set_open_type_support($value)
     {
-        $this->merge_whole_document = $value;
+        $this->open_type_support = $value;
         return $this;
     }
 
     /*
-     * The cleanup options.
-     */
-    public function get_cleanup()
-    {
-        return $this->cleanup;
-    }
-
-    /*
-     * The cleanup options.
-     */
-    public function set_cleanup($value)
-    {
-        $this->cleanup = $value;
-        return $this;
-    }
-
-    /*
-     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
-     */
-    public function get_document_file_name()
-    {
-        return $this->document_file_name;
-    }
-
-    /*
-     * The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
-     */
-    public function set_document_file_name($value)
-    {
-        $this->document_file_name = $value;
-        return $this;
-    }
-
-    /*
-     * Create request data for operation 'executeMailMergeOnline'
+     * Create request data for operation 'getSignaturesOnline'
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createRequestData($config)
     {
-        if ($this->template === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template when calling executeMailMergeOnline');
-        }
-        if ($this->data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $data when calling executeMailMergeOnline');
-        }
-        if ($this->options !== null) {
-            $this->options->validate();
+        if ($this->document === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $document when calling getSignaturesOnline');
         }
 
-
-        $resourcePath = '/words/MailMerge';
+        $resourcePath = '/words/online/get/signatures';
         $formParams = [];
         $filesContent = [];
         $queryParams = [];
@@ -250,9 +195,9 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
         // remove empty path parameters
         $resourcePath = str_replace("//", "/", $resourcePath);
         // query params
-        if ($this->with_regions !== null) {
-            $localName = lcfirst('WithRegions');
-            $localValue = is_bool($this->with_regions) ? ($this->with_regions ? 'true' : 'false') : $this->with_regions;
+        if ($this->load_encoding !== null) {
+            $localName = lcfirst('LoadEncoding');
+            $localValue = is_bool($this->load_encoding) ? ($this->load_encoding ? 'true' : 'false') : $this->load_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {
@@ -260,9 +205,9 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
             }
         }
         // query params
-        if ($this->merge_whole_document !== null) {
-            $localName = lcfirst('MergeWholeDocument');
-            $localValue = is_bool($this->merge_whole_document) ? ($this->merge_whole_document ? 'true' : 'false') : $this->merge_whole_document;
+        if ($this->password !== null) {
+            $localName = lcfirst('Password');
+            $localValue = is_bool($this->password) ? ($this->password ? 'true' : 'false') : $this->password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {
@@ -270,9 +215,9 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
             }
         }
         // query params
-        if ($this->cleanup !== null) {
-            $localName = lcfirst('Cleanup');
-            $localValue = is_bool($this->cleanup) ? ($this->cleanup ? 'true' : 'false') : $this->cleanup;
+        if ($this->encrypted_password !== null) {
+            $localName = lcfirst('EncryptedPassword');
+            $localValue = is_bool($this->encrypted_password) ? ($this->encrypted_password ? 'true' : 'false') : $this->encrypted_password;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {
@@ -280,9 +225,9 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
             }
         }
         // query params
-        if ($this->document_file_name !== null) {
-            $localName = lcfirst('DocumentFileName');
-            $localValue = is_bool($this->document_file_name) ? ($this->document_file_name ? 'true' : 'false') : $this->document_file_name;
+        if ($this->open_type_support !== null) {
+            $localName = lcfirst('OpenTypeSupport');
+            $localValue = is_bool($this->open_type_support) ? ($this->open_type_support ? 'true' : 'false') : $this->open_type_support;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {
@@ -297,24 +242,12 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
 
         $resourcePath = ObjectSerializer::parseURL($config, $resourcePath, $queryParams);
         // form params
-        if ($this->template !== null) {
-            $filename = ObjectSerializer::toFormValue($this->template);
+        if ($this->document !== null) {
+            $filename = ObjectSerializer::toFormValue($this->document);
             $handle = fopen($filename, "rb");
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
-            array_push($formParams, ['name' => 'Template', 'content' => $contents, 'mime' => 'application/octet-stream']);
-        }
-        // form params
-        if ($this->data !== null) {
-            $filename = ObjectSerializer::toFormValue($this->data);
-            $handle = fopen($filename, "rb");
-            $fsize = filesize($filename);
-            $contents = fread($handle, $fsize);
-            array_push($formParams, ['name' => 'Data', 'content' => $contents, 'mime' => 'application/octet-stream']);
-        }
-        // form params
-        if ($this->options !== null) {
-            array_push($formParams, ['name' => 'Options', 'content' => ObjectSerializer::toFormValue($this->options), 'mime' => 'application/json']);
+            array_push($formParams, ['name' => 'Document', 'content' => $contents, 'mime' => 'application/octet-stream']);
         }
 
         foreach ($filesContent as $fileContent)
@@ -367,7 +300,7 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * Create request for operation 'executeMailMergeOnline'
+     * Create request for operation 'getSignaturesOnline'
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -407,11 +340,11 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
      */
     public function getResponseType()
     {
-        return '\SplFileObject';
+        return '\Aspose\Words\Model\SignatureCollectionResponse';
     }
 
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\SplFileObject', $response->getHeaders());
+        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SignatureCollectionResponse', $response->getHeaders());
     }
 }

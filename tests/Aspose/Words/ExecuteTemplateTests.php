@@ -67,6 +67,7 @@ class ExecuteTemplateTests extends BaseTestContext
             NULL,
             NULL,
             NULL,
+            NULL,
             self::$baseTestOutPath . "/" . $remoteFileName
         );
 
@@ -90,6 +91,7 @@ class ExecuteTemplateTests extends BaseTestContext
         $request = new ExecuteMailMergeOnlineRequest(
             $requestTemplate,
             $requestData,
+            NULL,
             NULL,
             NULL,
             NULL,

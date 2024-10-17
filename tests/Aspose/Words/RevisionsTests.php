@@ -176,7 +176,7 @@ class RevisionsTests extends BaseTestContext
         $result = $this->words->getAllRevisions($request);
         Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getRevisions());
-        Assert::assertCount(6, $result->getRevisions());
+        Assert::assertCount(6, $result->getRevisions()->getRevisions());
     }
 
     /*
@@ -197,8 +197,7 @@ class RevisionsTests extends BaseTestContext
 
         $result = $this->words->getAllRevisionsOnline($request);
         Assert::assertTrue(json_decode($result, true) !== NULL);
-        Assert::assertNotNull($result->getDocument());
-        Assert::assertNotNull($result->getModel());
-        Assert::assertNotNull($result->getModel()->getRevisions());
+        Assert::assertNotNull($result->getRevisions());
+        Assert::assertCount(6, $result->getRevisions()->getRevisions());
     }
 }

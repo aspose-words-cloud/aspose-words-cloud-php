@@ -43,7 +43,7 @@ class RevisionsTests extends BaseTestContext
     public function testAcceptAllRevisions()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
         $remoteFileName = "TestAcceptAllRevisions.docx";
 
         $this->uploadFile(
@@ -73,7 +73,7 @@ class RevisionsTests extends BaseTestContext
      */
     public function testAcceptAllRevisionsOnline()
     {
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new AcceptAllRevisionsOnlineRequest(
@@ -99,7 +99,7 @@ class RevisionsTests extends BaseTestContext
     public function testRejectAllRevisions()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
         $remoteFileName = "TestRejectAllRevisions.docx";
 
         $this->uploadFile(
@@ -129,7 +129,7 @@ class RevisionsTests extends BaseTestContext
      */
     public function testRejectAllRevisionsOnline()
     {
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new RejectAllRevisionsOnlineRequest(
@@ -155,7 +155,7 @@ class RevisionsTests extends BaseTestContext
     public function testGetAllRevisions()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
         $remoteFileName = "TestAcceptAllRevisions.docx";
 
         $this->uploadFile(
@@ -184,7 +184,7 @@ class RevisionsTests extends BaseTestContext
      */
     public function testGetAllRevisionsOnline()
     {
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new GetAllRevisionsOnlineRequest(

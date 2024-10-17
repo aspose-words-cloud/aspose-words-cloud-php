@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest, AcceptAllRevisionsRequest, RejectAllRevisionsOnlineRequest, RejectAllRevisionsRequest};
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest, AcceptAllRevisionsRequest, GetAllRevisionsOnlineRequest, GetAllRevisionsRequest, RejectAllRevisionsOnlineRequest, RejectAllRevisionsRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -147,5 +147,58 @@ class RevisionsTests extends BaseTestContext
         Assert::assertNotNull($result->getModel());
         Assert::assertNotNull($result->getModel()->getResult());
         Assert::assertNotNull($result->getModel()->getResult()->getDest());
+    }
+
+    /*
+     * Test for getting revisions from document.
+     */
+    public function testGetAllRevisions()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestAcceptAllRevisions.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new GetAllRevisionsRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getAllRevisions($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRevisions());
+        Assert::assertCount(6, $result->getRevisions());
+    }
+
+    /*
+     * Test for getting revisions online from document.
+     */
+    public function testGetAllRevisionsOnline()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new GetAllRevisionsOnlineRequest(
+            $requestDocument,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getAllRevisionsOnline($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertNotNull($result->getModel());
+        Assert::assertNotNull($result->getModel()->getRevisions());
     }
 }

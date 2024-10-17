@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest, AcceptAllRevisionsRequest, RejectAllRevisionsOnlineRequest, RejectAllRevisionsRequest};
+use Aspose\Words\Model\Requests\{AcceptAllRevisionsOnlineRequest, AcceptAllRevisionsRequest, GetAllRevisionsOnlineRequest, GetAllRevisionsRequest, RejectAllRevisionsOnlineRequest, RejectAllRevisionsRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -43,7 +43,7 @@ class RevisionsTests extends BaseTestContext
     public function testAcceptAllRevisions()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
         $remoteFileName = "TestAcceptAllRevisions.docx";
 
         $this->uploadFile(
@@ -73,7 +73,7 @@ class RevisionsTests extends BaseTestContext
      */
     public function testAcceptAllRevisionsOnline()
     {
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new AcceptAllRevisionsOnlineRequest(
@@ -99,7 +99,7 @@ class RevisionsTests extends BaseTestContext
     public function testRejectAllRevisions()
     {
         $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
         $remoteFileName = "TestRejectAllRevisions.docx";
 
         $this->uploadFile(
@@ -129,7 +129,7 @@ class RevisionsTests extends BaseTestContext
      */
     public function testRejectAllRevisionsOnline()
     {
-        $localFile = "Common/test_multi_pages.docx";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
 
         $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
         $request = new RejectAllRevisionsOnlineRequest(
@@ -147,5 +147,57 @@ class RevisionsTests extends BaseTestContext
         Assert::assertNotNull($result->getModel());
         Assert::assertNotNull($result->getModel()->getResult());
         Assert::assertNotNull($result->getModel()->getResult()->getDest());
+    }
+
+    /*
+     * Test for getting revisions from document.
+     */
+    public function testGetAllRevisions()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/Revisions";
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
+        $remoteFileName = "TestAcceptAllRevisions.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new GetAllRevisionsRequest(
+            $remoteFileName,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getAllRevisions($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRevisions());
+        Assert::assertCount(6, $result->getRevisions()->getRevisions());
+    }
+
+    /*
+     * Test for getting revisions online from document.
+     */
+    public function testGetAllRevisionsOnline()
+    {
+        $localFile = "DocumentElements/Revisions/TestRevisions.doc";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new GetAllRevisionsOnlineRequest(
+            $requestDocument,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $result = $this->words->getAllRevisionsOnline($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getRevisions());
+        Assert::assertCount(6, $result->getRevisions()->getRevisions());
     }
 }

@@ -51,6 +51,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'append_all_entries_to_one_section' => 'bool',
         'apply_base_document_headers_and_footers_to_appending_documents' => 'bool',
         'document_entries' => '\Aspose\Words\Model\DocumentEntry[]'
     ];
@@ -61,6 +62,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'append_all_entries_to_one_section' => 'null',
         'apply_base_document_headers_and_footers_to_appending_documents' => 'null',
         'document_entries' => 'null'
     ];
@@ -92,6 +94,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $attributeMap = [
+        'append_all_entries_to_one_section' => 'AppendAllEntriesToOneSection',
         'apply_base_document_headers_and_footers_to_appending_documents' => 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
         'document_entries' => 'DocumentEntries'
     ];
@@ -102,6 +105,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $setters = [
+        'append_all_entries_to_one_section' => 'setAppendAllEntriesToOneSection',
         'apply_base_document_headers_and_footers_to_appending_documents' => 'setApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
         'document_entries' => 'setDocumentEntries'
     ];
@@ -112,6 +116,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $getters = [
+        'append_all_entries_to_one_section' => 'getAppendAllEntriesToOneSection',
         'apply_base_document_headers_and_footers_to_appending_documents' => 'getApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
         'document_entries' => 'getDocumentEntries'
     ];
@@ -168,6 +173,7 @@ class DocumentEntryList extends BaseEntryList
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['append_all_entries_to_one_section'] = isset($data['append_all_entries_to_one_section']) ? $data['append_all_entries_to_one_section'] : null;
         $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = isset($data['apply_base_document_headers_and_footers_to_appending_documents']) ? $data['apply_base_document_headers_and_footers_to_appending_documents'] : null;
         $this->container['document_entries'] = isset($data['document_entries']) ? $data['document_entries'] : null;
     }
@@ -194,6 +200,30 @@ class DocumentEntryList extends BaseEntryList
         }
 
     }
+
+    /*
+     * Gets append_all_entries_to_one_section
+     *
+     * @return bool
+     */
+    public function getAppendAllEntriesToOneSection()
+    {
+        return $this->container['append_all_entries_to_one_section'];
+    }
+
+    /*
+     * Sets append_all_entries_to_one_section
+     *
+     * @param bool $append_all_entries_to_one_section Gets or sets a value indicating whether to append all documents to the same section.
+     *
+     * @return $this
+     */
+    public function setAppendAllEntriesToOneSection($append_all_entries_to_one_section)
+    {
+        $this->container['append_all_entries_to_one_section'] = $append_all_entries_to_one_section;
+        return $this;
+    }
+
 
     /*
      * Gets apply_base_document_headers_and_footers_to_appending_documents

@@ -66,7 +66,7 @@ class DocumentPropertiesTests extends BaseTestContext
         Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocumentProperties());
         Assert::assertNotNull($result->getDocumentProperties()->getList());
-        Assert::assertCount(24, $result->getDocumentProperties()->getList());
+        Assert::assertCount(27, $result->getDocumentProperties()->getList());
         Assert::assertNotNull($result->getDocumentProperties()->getList()[0]);
         Assert::assertEquals("Author", $result->getDocumentProperties()->getList()[0]->getName());
         Assert::assertEquals("", $result->getDocumentProperties()->getList()[0]->getValue());

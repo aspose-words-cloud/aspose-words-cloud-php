@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DocumentEntryList.php">
+ * <copyright company="Aspose" file="RevisionsResponse.php">
  *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -30,11 +30,11 @@ namespace Aspose\Words\Model;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * DocumentEntryList
+ * RevisionsResponse
  *
- * @description Represents a list of documents which will be appended to the original resource document.
+ * @description The revision response.
  */
-class DocumentEntryList extends BaseEntryList
+class RevisionsResponse extends WordsResponse
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +43,7 @@ class DocumentEntryList extends BaseEntryList
      *
      * @var string
      */
-    protected static $swaggerModelName = "DocumentEntryList";
+    protected static $swaggerModelName = "RevisionsResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,9 +51,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'append_all_entries_to_one_section' => 'bool',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'bool',
-        'document_entries' => '\Aspose\Words\Model\DocumentEntry[]'
+        'revisions' => '\Aspose\Words\Model\RevisionCollection'
     ];
 
     /*
@@ -62,9 +60,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'append_all_entries_to_one_section' => 'null',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'null',
-        'document_entries' => 'null'
+        'revisions' => 'null'
     ];
 
     /*
@@ -94,9 +90,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $attributeMap = [
-        'append_all_entries_to_one_section' => 'AppendAllEntriesToOneSection',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'DocumentEntries'
+        'revisions' => 'Revisions'
     ];
 
     /*
@@ -105,9 +99,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $setters = [
-        'append_all_entries_to_one_section' => 'setAppendAllEntriesToOneSection',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'setApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'setDocumentEntries'
+        'revisions' => 'setRevisions'
     ];
 
     /*
@@ -116,9 +108,7 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $getters = [
-        'append_all_entries_to_one_section' => 'getAppendAllEntriesToOneSection',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'getApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'getDocumentEntries'
+        'revisions' => 'getRevisions'
     ];
 
     /*
@@ -173,9 +163,7 @@ class DocumentEntryList extends BaseEntryList
     public function __construct(array $data = null)
     {
         parent::__construct($data);
-        $this->container['append_all_entries_to_one_section'] = isset($data['append_all_entries_to_one_section']) ? $data['append_all_entries_to_one_section'] : null;
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = isset($data['apply_base_document_headers_and_footers_to_appending_documents']) ? $data['apply_base_document_headers_and_footers_to_appending_documents'] : null;
-        $this->container['document_entries'] = isset($data['document_entries']) ? $data['document_entries'] : null;
+        $this->container['revisions'] = isset($data['revisions']) ? $data['revisions'] : null;
     }
 
     /*
@@ -185,90 +173,33 @@ class DocumentEntryList extends BaseEntryList
     {
         parent::validate();
 
-        if (!isset($this->container['document_entries'])) {
-            throw new \InvalidArgumentException('Property DocumentEntries in DocumentEntryList is required.');
-        }
 
-        if (isset($this->container['document_entries'])) {
-            foreach ($this->getDocumentEntries() as &$elementDocumentEntries)
-            {
-                if ($elementDocumentEntries != null)
-                {
-                    $elementDocumentEntries->validate();
-                }
-            }
+        if (isset($this->container['revisions'])) {
+            $this->getRevisions()->validate();
         }
 
     }
 
     /*
-     * Gets append_all_entries_to_one_section
+     * Gets revisions
      *
-     * @return bool
+     * @return \Aspose\Words\Model\RevisionCollection
      */
-    public function getAppendAllEntriesToOneSection()
+    public function getRevisions()
     {
-        return $this->container['append_all_entries_to_one_section'];
+        return $this->container['revisions'];
     }
 
     /*
-     * Sets append_all_entries_to_one_section
+     * Sets revisions
      *
-     * @param bool $append_all_entries_to_one_section Gets or sets a value indicating whether to append all documents to the same section.
+     * @param \Aspose\Words\Model\RevisionCollection $revisions Gets or sets Revisions.
      *
      * @return $this
      */
-    public function setAppendAllEntriesToOneSection($append_all_entries_to_one_section)
+    public function setRevisions($revisions)
     {
-        $this->container['append_all_entries_to_one_section'] = $append_all_entries_to_one_section;
-        return $this;
-    }
-
-
-    /*
-     * Gets apply_base_document_headers_and_footers_to_appending_documents
-     *
-     * @return bool
-     */
-    public function getApplyBaseDocumentHeadersAndFootersToAppendingDocuments()
-    {
-        return $this->container['apply_base_document_headers_and_footers_to_appending_documents'];
-    }
-
-    /*
-     * Sets apply_base_document_headers_and_footers_to_appending_documents
-     *
-     * @param bool $apply_base_document_headers_and_footers_to_appending_documents Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
-     *
-     * @return $this
-     */
-    public function setApplyBaseDocumentHeadersAndFootersToAppendingDocuments($apply_base_document_headers_and_footers_to_appending_documents)
-    {
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = $apply_base_document_headers_and_footers_to_appending_documents;
-        return $this;
-    }
-
-
-    /*
-     * Gets document_entries
-     *
-     * @return \Aspose\Words\Model\DocumentEntry[]
-     */
-    public function getDocumentEntries()
-    {
-        return $this->container['document_entries'];
-    }
-
-    /*
-     * Sets document_entries
-     *
-     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets the list of documents.
-     *
-     * @return $this
-     */
-    public function setDocumentEntries($document_entries)
-    {
-        $this->container['document_entries'] = $document_entries;
+        $this->container['revisions'] = $revisions;
         return $this;
     }
 
@@ -335,15 +266,6 @@ class DocumentEntryList extends BaseEntryList
      */
     public function collectFilesContent($resultFilesContent)
     {
-        $resultFilesContent = parent::collectFilesContent($resultFilesContent);
-        if ($this->getDocumentEntries() != null)
-        {
-            foreach ($this->getDocumentEntries() as &$element)
-            {
-                $resultFilesContent = $element->collectFilesContent($resultFilesContent);
-            }
-        }
-
         return $resultFilesContent;
     }
 

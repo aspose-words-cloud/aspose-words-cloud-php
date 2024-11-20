@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DocumentEntryList.php">
+ * <copyright company="Aspose" file="Revision.php">
  *   Copyright (c) 2024 Aspose.Words for Cloud
  * </copyright>
  * <summary>
@@ -27,14 +27,15 @@
  */
 
 namespace Aspose\Words\Model;
+use \ArrayAccess;
 use \Aspose\Words\ObjectSerializer;
 
 /*
- * DocumentEntryList
+ * Revision
  *
- * @description Represents a list of documents which will be appended to the original resource document.
+ * @description Revision Dto.
  */
-class DocumentEntryList extends BaseEntryList
+class Revision implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -43,7 +44,7 @@ class DocumentEntryList extends BaseEntryList
      *
      * @var string
      */
-    protected static $swaggerModelName = "DocumentEntryList";
+    protected static $swaggerModelName = "Revision";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -51,9 +52,10 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'append_all_entries_to_one_section' => 'bool',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'bool',
-        'document_entries' => '\Aspose\Words\Model\DocumentEntry[]'
+        'revision_author' => 'string',
+        'revision_date_time' => '\DateTime',
+        'revision_text' => 'string',
+        'revision_type' => 'string'
     ];
 
     /*
@@ -62,9 +64,10 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'append_all_entries_to_one_section' => 'null',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'null',
-        'document_entries' => 'null'
+        'revision_author' => 'null',
+        'revision_date_time' => 'null',
+        'revision_text' => 'null',
+        'revision_type' => 'null'
     ];
 
     /*
@@ -74,7 +77,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -84,7 +87,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -94,9 +97,10 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $attributeMap = [
-        'append_all_entries_to_one_section' => 'AppendAllEntriesToOneSection',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'DocumentEntries'
+        'revision_author' => 'RevisionAuthor',
+        'revision_date_time' => 'RevisionDateTime',
+        'revision_text' => 'RevisionText',
+        'revision_type' => 'RevisionType'
     ];
 
     /*
@@ -105,9 +109,10 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $setters = [
-        'append_all_entries_to_one_section' => 'setAppendAllEntriesToOneSection',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'setApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'setDocumentEntries'
+        'revision_author' => 'setRevisionAuthor',
+        'revision_date_time' => 'setRevisionDateTime',
+        'revision_text' => 'setRevisionText',
+        'revision_type' => 'setRevisionType'
     ];
 
     /*
@@ -116,9 +121,10 @@ class DocumentEntryList extends BaseEntryList
      * @var string[]
      */
     protected static $getters = [
-        'append_all_entries_to_one_section' => 'getAppendAllEntriesToOneSection',
-        'apply_base_document_headers_and_footers_to_appending_documents' => 'getApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries' => 'getDocumentEntries'
+        'revision_author' => 'getRevisionAuthor',
+        'revision_date_time' => 'getRevisionDateTime',
+        'revision_text' => 'getRevisionText',
+        'revision_type' => 'getRevisionType'
     ];
 
     /*
@@ -129,7 +135,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -139,7 +145,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -149,7 +155,7 @@ class DocumentEntryList extends BaseEntryList
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -165,6 +171,13 @@ class DocumentEntryList extends BaseEntryList
 
 
     /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -172,10 +185,10 @@ class DocumentEntryList extends BaseEntryList
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-        $this->container['append_all_entries_to_one_section'] = isset($data['append_all_entries_to_one_section']) ? $data['append_all_entries_to_one_section'] : null;
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = isset($data['apply_base_document_headers_and_footers_to_appending_documents']) ? $data['apply_base_document_headers_and_footers_to_appending_documents'] : null;
-        $this->container['document_entries'] = isset($data['document_entries']) ? $data['document_entries'] : null;
+        $this->container['revision_author'] = isset($data['revision_author']) ? $data['revision_author'] : null;
+        $this->container['revision_date_time'] = isset($data['revision_date_time']) ? $data['revision_date_time'] : null;
+        $this->container['revision_text'] = isset($data['revision_text']) ? $data['revision_text'] : null;
+        $this->container['revision_type'] = isset($data['revision_type']) ? $data['revision_type'] : null;
     }
 
     /*
@@ -183,92 +196,104 @@ class DocumentEntryList extends BaseEntryList
      */
     public function validate()
     {
-        parent::validate();
-
-        if (!isset($this->container['document_entries'])) {
-            throw new \InvalidArgumentException('Property DocumentEntries in DocumentEntryList is required.');
-        }
-
-        if (isset($this->container['document_entries'])) {
-            foreach ($this->getDocumentEntries() as &$elementDocumentEntries)
-            {
-                if ($elementDocumentEntries != null)
-                {
-                    $elementDocumentEntries->validate();
-                }
-            }
+        if (!isset($this->container['revision_date_time'])) {
+            throw new \InvalidArgumentException('Property RevisionDateTime in Revision is required.');
         }
 
     }
 
     /*
-     * Gets append_all_entries_to_one_section
+     * Gets revision_author
      *
-     * @return bool
+     * @return string
      */
-    public function getAppendAllEntriesToOneSection()
+    public function getRevisionAuthor()
     {
-        return $this->container['append_all_entries_to_one_section'];
+        return $this->container['revision_author'];
     }
 
     /*
-     * Sets append_all_entries_to_one_section
+     * Sets revision_author
      *
-     * @param bool $append_all_entries_to_one_section Gets or sets a value indicating whether to append all documents to the same section.
+     * @param string $revision_author Gets or sets the revision author.
      *
      * @return $this
      */
-    public function setAppendAllEntriesToOneSection($append_all_entries_to_one_section)
+    public function setRevisionAuthor($revision_author)
     {
-        $this->container['append_all_entries_to_one_section'] = $append_all_entries_to_one_section;
+        $this->container['revision_author'] = $revision_author;
         return $this;
     }
 
 
     /*
-     * Gets apply_base_document_headers_and_footers_to_appending_documents
+     * Gets revision_date_time
      *
-     * @return bool
+     * @return \DateTime
      */
-    public function getApplyBaseDocumentHeadersAndFootersToAppendingDocuments()
+    public function getRevisionDateTime()
     {
-        return $this->container['apply_base_document_headers_and_footers_to_appending_documents'];
+        return $this->container['revision_date_time'];
     }
 
     /*
-     * Sets apply_base_document_headers_and_footers_to_appending_documents
+     * Sets revision_date_time
      *
-     * @param bool $apply_base_document_headers_and_footers_to_appending_documents Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
+     * @param \DateTime $revision_date_time Gets or sets the revision date time.
      *
      * @return $this
      */
-    public function setApplyBaseDocumentHeadersAndFootersToAppendingDocuments($apply_base_document_headers_and_footers_to_appending_documents)
+    public function setRevisionDateTime($revision_date_time)
     {
-        $this->container['apply_base_document_headers_and_footers_to_appending_documents'] = $apply_base_document_headers_and_footers_to_appending_documents;
+        $this->container['revision_date_time'] = $revision_date_time;
         return $this;
     }
 
 
     /*
-     * Gets document_entries
+     * Gets revision_text
      *
-     * @return \Aspose\Words\Model\DocumentEntry[]
+     * @return string
      */
-    public function getDocumentEntries()
+    public function getRevisionText()
     {
-        return $this->container['document_entries'];
+        return $this->container['revision_text'];
     }
 
     /*
-     * Sets document_entries
+     * Sets revision_text
      *
-     * @param \Aspose\Words\Model\DocumentEntry[] $document_entries Gets or sets the list of documents.
+     * @param string $revision_text Gets or sets the revision text.
      *
      * @return $this
      */
-    public function setDocumentEntries($document_entries)
+    public function setRevisionText($revision_text)
     {
-        $this->container['document_entries'] = $document_entries;
+        $this->container['revision_text'] = $revision_text;
+        return $this;
+    }
+
+
+    /*
+     * Gets revision_type
+     *
+     * @return string
+     */
+    public function getRevisionType()
+    {
+        return $this->container['revision_type'];
+    }
+
+    /*
+     * Sets revision_type
+     *
+     * @param string $revision_type Gets or sets the revision type.
+     *
+     * @return $this
+     */
+    public function setRevisionType($revision_type)
+    {
+        $this->container['revision_type'] = $revision_type;
         return $this;
     }
 
@@ -335,15 +360,6 @@ class DocumentEntryList extends BaseEntryList
      */
     public function collectFilesContent($resultFilesContent)
     {
-        $resultFilesContent = parent::collectFilesContent($resultFilesContent);
-        if ($this->getDocumentEntries() != null)
-        {
-            foreach ($this->getDocumentEntries() as &$element)
-            {
-                $resultFilesContent = $element->collectFilesContent($resultFilesContent);
-            }
-        }
-
         return $resultFilesContent;
     }
 

@@ -96,7 +96,7 @@ class GetBordersRequest extends BaseApiRequest
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      */
-    public function __construct($name, ?Parameter.DataType.ToPhpType$node_path = null, ?Parameter.DataType.ToPhpType$folder = null, ?Parameter.DataType.ToPhpType$storage = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null)
+    public function __construct($name, ?string$node_path = null, ?string$folder = null, ?string$storage = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null)
     {
         $this->name = $name;
         $this->node_path = $node_path;

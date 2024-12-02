@@ -68,7 +68,7 @@ class UploadFileRequest extends BaseApiRequest
      * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext If the content is multipart and path does not contains the file name it tries to get them from filename parameter from Content-Disposition header.
      * @param string $storage_name Storage name.
      */
-    public function __construct($file_content, $path, ?Parameter.DataType.ToPhpType$storage_name = null)
+    public function __construct($file_content, $path, ?string$storage_name = null)
     {
         $this->file_content = $file_content;
         $this->path = $path;

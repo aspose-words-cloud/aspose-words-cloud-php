@@ -90,7 +90,7 @@ class SaveAsOnlineRequest extends BaseApiRequest
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $save_options_data, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$fonts_location = null)
+    public function __construct($document, $save_options_data, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$fonts_location = null)
     {
         $this->document = $document;
         $this->save_options_data = $save_options_data;

@@ -60,7 +60,7 @@ class LoadWebDocumentRequest extends BaseApiRequest
      * @param \Aspose\Words\Model\LoadWebDocumentData $data The properties of data downloading.
      * @param string $storage Original document storage.
      */
-    public function __construct($data, ?Parameter.DataType.ToPhpType$storage = null)
+    public function __construct($data, ?string$storage = null)
     {
         $this->data = $data;
         $this->storage = $storage;

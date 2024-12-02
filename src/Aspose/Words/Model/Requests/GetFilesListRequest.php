@@ -60,7 +60,7 @@ class GetFilesListRequest extends BaseApiRequest
      * @param string $path Folder path e.g. '/folder'.
      * @param string $storage_name Storage name.
      */
-    public function __construct($path, ?Parameter.DataType.ToPhpType$storage_name = null)
+    public function __construct($path, ?string$storage_name = null)
     {
         $this->path = $path;
         $this->storage_name = $storage_name;

@@ -78,7 +78,7 @@ class CopyFileRequest extends BaseApiRequest
      * @param string $dest_storage_name Destination storage name.
      * @param string $version_id File version ID to copy.
      */
-    public function __construct($dest_path, $src_path, ?Parameter.DataType.ToPhpType$src_storage_name = null, ?Parameter.DataType.ToPhpType$dest_storage_name = null, ?Parameter.DataType.ToPhpType$version_id = null)
+    public function __construct($dest_path, $src_path, ?string$src_storage_name = null, ?string$dest_storage_name = null, ?string$version_id = null)
     {
         $this->dest_path = $dest_path;
         $this->src_path = $src_path;

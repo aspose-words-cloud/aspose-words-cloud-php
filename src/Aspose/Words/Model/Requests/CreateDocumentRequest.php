@@ -66,7 +66,7 @@ class CreateDocumentRequest extends BaseApiRequest
      * @param string $folder The path to the document folder.
      * @param string $storage Original document storage.
      */
-    public function __construct($file_name, ?Parameter.DataType.ToPhpType$folder = null, ?Parameter.DataType.ToPhpType$storage = null)
+    public function __construct($file_name, ?string$folder = null, ?string$storage = null)
     {
         $this->file_name = $file_name;
         $this->folder = $folder;

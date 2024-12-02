@@ -108,7 +108,7 @@ class ConvertDocumentRequest extends BaseApiRequest
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, ?Parameter.DataType.ToPhpType$out_path = null, ?Parameter.DataType.ToPhpType$file_name_field_value = null, ?Parameter.DataType.ToPhpType$storage = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$fonts_location = null)
+    public function __construct($document, $format, ?string$out_path = null, ?string$file_name_field_value = null, ?string$storage = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$fonts_location = null)
     {
         $this->document = $document;
         $this->format = $format;

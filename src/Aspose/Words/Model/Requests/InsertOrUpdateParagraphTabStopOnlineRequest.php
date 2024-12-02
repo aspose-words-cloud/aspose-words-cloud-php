@@ -102,7 +102,7 @@ class InsertOrUpdateParagraphTabStopOnlineRequest extends BaseApiRequest
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      */
-    public function __construct($document, $tab_stop_insert_dto, $index, ?Parameter.DataType.ToPhpType$node_path = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$dest_file_name = null)
+    public function __construct($document, $tab_stop_insert_dto, $index, ?string$node_path = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$dest_file_name = null)
     {
         $this->document = $document;
         $this->tab_stop_insert_dto = $tab_stop_insert_dto;

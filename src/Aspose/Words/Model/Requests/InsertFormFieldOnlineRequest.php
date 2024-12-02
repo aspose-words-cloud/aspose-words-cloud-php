@@ -114,7 +114,7 @@ class InsertFormFieldOnlineRequest extends BaseApiRequest
      * @param string $revision_date_time The date and time to use for revisions.
      * @param string $insert_before_node The index of the node. A new form field will be inserted before the node with the specified node Id.
      */
-    public function __construct($document, $form_field, ?Parameter.DataType.ToPhpType$node_path = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$dest_file_name = null, ?Parameter.DataType.ToPhpType$revision_author = null, ?Parameter.DataType.ToPhpType$revision_date_time = null, ?Parameter.DataType.ToPhpType$insert_before_node = null)
+    public function __construct($document, $form_field, ?string$node_path = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$dest_file_name = null, ?string$revision_author = null, ?string$revision_date_time = null, ?string$insert_before_node = null)
     {
         $this->document = $document;
         $this->form_field = $form_field;

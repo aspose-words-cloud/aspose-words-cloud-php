@@ -120,7 +120,7 @@ class DeleteHeadersFootersRequest extends BaseApiRequest
      * @param string $revision_date_time The date and time to use for revisions.
      * @param string $headers_footers_types The list of HeaderFooter types.
      */
-    public function __construct($name, $section_path, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $headers_footers_types = null)
+    public function __construct($name, $section_path, ?Parameter.DataType.ToPhpType$folder = null, ?Parameter.DataType.ToPhpType$storage = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$dest_file_name = null, ?Parameter.DataType.ToPhpType$revision_author = null, ?Parameter.DataType.ToPhpType$revision_date_time = null, ?Parameter.DataType.ToPhpType$headers_footers_types = null)
     {
         $this->name = $name;
         $this->section_path = $section_path;

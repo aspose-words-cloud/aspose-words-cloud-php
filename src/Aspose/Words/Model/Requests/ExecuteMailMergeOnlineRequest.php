@@ -90,7 +90,7 @@ class ExecuteMailMergeOnlineRequest extends BaseApiRequest
      * @param string $cleanup The cleanup options.
      * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
-    public function __construct($template, $data, $options = null, $with_regions = null, $merge_whole_document = null, $cleanup = null, $document_file_name = null)
+    public function __construct($template, $data, ?Parameter.DataType.ToPhpType$options = null, ?Parameter.DataType.ToPhpType$with_regions = null, ?Parameter.DataType.ToPhpType$merge_whole_document = null, ?Parameter.DataType.ToPhpType$cleanup = null, ?Parameter.DataType.ToPhpType$document_file_name = null)
     {
         $this->template = $template;
         $this->data = $data;

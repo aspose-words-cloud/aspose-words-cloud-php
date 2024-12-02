@@ -84,7 +84,7 @@ class GetDocumentFieldNamesOnlineRequest extends BaseApiRequest
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param bool $use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
      */
-    public function __construct($template, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $use_non_merge_fields = null)
+    public function __construct($template, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$use_non_merge_fields = null)
     {
         $this->template = $template;
         $this->load_encoding = $load_encoding;

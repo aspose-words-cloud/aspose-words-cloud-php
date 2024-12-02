@@ -90,7 +90,7 @@ class ClassifyDocumentOnlineRequest extends BaseApiRequest
      * @param string $best_classes_count The number of the best classes to return.
      * @param string $taxonomy The taxonomy to use.
      */
-    public function __construct($document, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $best_classes_count = null, $taxonomy = null)
+    public function __construct($document, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$best_classes_count = null, ?Parameter.DataType.ToPhpType$taxonomy = null)
     {
         $this->document = $document;
         $this->load_encoding = $load_encoding;

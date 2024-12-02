@@ -72,7 +72,7 @@ class BuildReportOnlineRequest extends BaseApiRequest
      * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
      * @param string $document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
      */
-    public function __construct($template, $data, $report_engine_settings, $document_file_name = null)
+    public function __construct($template, $data, $report_engine_settings, ?Parameter.DataType.ToPhpType$document_file_name = null)
     {
         $this->template = $template;
         $this->data = $data;

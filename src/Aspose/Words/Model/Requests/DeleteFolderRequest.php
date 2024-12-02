@@ -66,7 +66,7 @@ class DeleteFolderRequest extends BaseApiRequest
      * @param string $storage_name Storage name.
      * @param bool $recursive Enable to delete folders, subfolders and files.
      */
-    public function __construct($path, $storage_name = null, $recursive = null)
+    public function __construct($path, ?Parameter.DataType.ToPhpType$storage_name = null, ?Parameter.DataType.ToPhpType$recursive = null)
     {
         $this->path = $path;
         $this->storage_name = $storage_name;

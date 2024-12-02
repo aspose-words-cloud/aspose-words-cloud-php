@@ -96,7 +96,7 @@ class GetDocumentStatisticsOnlineRequest extends BaseApiRequest
      * @param bool $include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
      * @param bool $include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
      */
-    public function __construct($document, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $include_comments = null, $include_footnotes = null, $include_text_in_shapes = null)
+    public function __construct($document, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$include_comments = null, ?Parameter.DataType.ToPhpType$include_footnotes = null, ?Parameter.DataType.ToPhpType$include_text_in_shapes = null)
     {
         $this->document = $document;
         $this->load_encoding = $load_encoding;

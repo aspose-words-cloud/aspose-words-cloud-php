@@ -114,7 +114,7 @@ class InsertWatermarkImageOnlineRequest extends BaseApiRequest
      * @param double $rotation_angle The rotation angle of the watermark.
      * @param string $image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
      */
-    public function __construct($document, $image_file = null, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null, $rotation_angle = null, $image = null)
+    public function __construct($document, ?Parameter.DataType.ToPhpType$image_file = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$dest_file_name = null, ?Parameter.DataType.ToPhpType$revision_author = null, ?Parameter.DataType.ToPhpType$revision_date_time = null, ?Parameter.DataType.ToPhpType$rotation_angle = null, ?Parameter.DataType.ToPhpType$image = null)
     {
         $this->document = $document;
         $this->image_file = $image_file;

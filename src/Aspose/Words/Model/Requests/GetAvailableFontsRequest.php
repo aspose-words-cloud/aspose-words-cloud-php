@@ -54,7 +54,7 @@ class GetAvailableFontsRequest extends BaseApiRequest
      *
      * @param string $fonts_location The folder in cloud storage with custom fonts.
      */
-    public function __construct($fonts_location = null)
+    public function __construct(?Parameter.DataType.ToPhpType$fonts_location = null)
     {
         $this->fonts_location = $fonts_location;
     }

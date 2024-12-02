@@ -66,7 +66,7 @@ class DeleteFileRequest extends BaseApiRequest
      * @param string $storage_name Storage name.
      * @param string $version_id File version ID to delete.
      */
-    public function __construct($path, $storage_name = null, $version_id = null)
+    public function __construct($path, ?Parameter.DataType.ToPhpType$storage_name = null, ?Parameter.DataType.ToPhpType$version_id = null)
     {
         $this->path = $path;
         $this->storage_name = $storage_name;

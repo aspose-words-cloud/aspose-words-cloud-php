@@ -102,7 +102,7 @@ class DeleteBookmarkOnlineRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($document, $bookmark_name, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null, $revision_author = null, $revision_date_time = null)
+    public function __construct($document, $bookmark_name, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$dest_file_name = null, ?Parameter.DataType.ToPhpType$revision_author = null, ?Parameter.DataType.ToPhpType$revision_date_time = null)
     {
         $this->document = $document;
         $this->bookmark_name = $bookmark_name;

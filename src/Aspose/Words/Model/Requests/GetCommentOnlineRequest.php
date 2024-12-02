@@ -84,7 +84,7 @@ class GetCommentOnlineRequest extends BaseApiRequest
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      */
-    public function __construct($document, $comment_index, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null)
+    public function __construct($document, $comment_index, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null)
     {
         $this->document = $document;
         $this->comment_index = $comment_index;

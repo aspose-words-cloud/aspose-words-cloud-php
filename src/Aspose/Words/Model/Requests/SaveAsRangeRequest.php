@@ -108,7 +108,7 @@ class SaveAsRangeRequest extends BaseApiRequest
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      */
-    public function __construct($name, $range_start_identifier, $document_parameters, $range_end_identifier = null, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null)
+    public function __construct($name, $range_start_identifier, $document_parameters, ?Parameter.DataType.ToPhpType$range_end_identifier = null, ?Parameter.DataType.ToPhpType$folder = null, ?Parameter.DataType.ToPhpType$storage = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null)
     {
         $this->name = $name;
         $this->range_start_identifier = $range_start_identifier;

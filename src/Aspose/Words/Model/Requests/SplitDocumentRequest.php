@@ -126,7 +126,7 @@ class SplitDocumentRequest extends BaseApiRequest
      * @param bool $zip_output The flag indicating whether to ZIP the output.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, $folder = null, $storage = null, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null, $from = null, $to = null, $zip_output = null, $fonts_location = null)
+    public function __construct($name, $format, ?Parameter.DataType.ToPhpType$folder = null, ?Parameter.DataType.ToPhpType$storage = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$dest_file_name = null, ?Parameter.DataType.ToPhpType$from = null, ?Parameter.DataType.ToPhpType$to = null, ?Parameter.DataType.ToPhpType$zip_output = null, ?Parameter.DataType.ToPhpType$fonts_location = null)
     {
         $this->name = $name;
         $this->format = $format;

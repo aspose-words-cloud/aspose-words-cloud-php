@@ -108,7 +108,7 @@ class RenderDrawingObjectOnlineRequest extends BaseApiRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $index, $node_path = null, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null, $fonts_location = null)
+    public function __construct($document, $format, $index, ?Parameter.DataType.ToPhpType$node_path = null, ?Parameter.DataType.ToPhpType$load_encoding = null, ?Parameter.DataType.ToPhpType$password = null, ?Parameter.DataType.ToPhpType$encrypted_password = null, ?Parameter.DataType.ToPhpType$open_type_support = null, ?Parameter.DataType.ToPhpType$dest_file_name = null, ?Parameter.DataType.ToPhpType$fonts_location = null)
     {
         $this->document = $document;
         $this->format = $format;

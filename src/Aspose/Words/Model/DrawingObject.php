@@ -285,7 +285,7 @@ class DrawingObject extends DrawingObjectLink
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['render_links'] = isset($data['render_links']) ? $data['render_links'] : null;

@@ -160,7 +160,7 @@ class SectionLinkCollection extends LinkElement
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['section_link_list'] = isset($data['section_link_list']) ? $data['section_link_list'] : null;

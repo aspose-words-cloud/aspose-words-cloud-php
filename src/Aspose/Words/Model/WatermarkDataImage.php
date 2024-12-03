@@ -170,7 +170,7 @@ class WatermarkDataImage extends WatermarkDataBase
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['image'] = isset($data['image']) ? $data['image'] : null;

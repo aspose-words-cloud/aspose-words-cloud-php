@@ -108,7 +108,7 @@ class DeleteBorderOnlineRequest extends BaseApiRequest
      * @param string $revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
      * @param string $revision_date_time The date and time to use for revisions.
      */
-    public function __construct($document, $border_type, ?string$node_path = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$dest_file_name = null, ?string$revision_author = null, ?string$revision_date_time = null)
+    public function __construct( $document,  $border_type, ?string $node_path = null, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null, ?string $dest_file_name = null, ?string $revision_author = null, ?string $revision_date_time = null)
     {
         $this->document = $document;
         $this->border_type = $border_type;

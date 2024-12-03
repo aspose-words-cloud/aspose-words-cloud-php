@@ -183,7 +183,7 @@ class FontInfo implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['file_path'] = isset($data['file_path']) ? $data['file_path'] : null;
         $this->container['font_family_name'] = isset($data['font_family_name']) ? $data['font_family_name'] : null;

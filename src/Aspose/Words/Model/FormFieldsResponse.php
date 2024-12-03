@@ -160,7 +160,7 @@ class FormFieldsResponse extends WordsResponse
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['form_fields'] = isset($data['form_fields']) ? $data['form_fields'] : null;

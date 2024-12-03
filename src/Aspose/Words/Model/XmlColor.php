@@ -173,7 +173,7 @@ class XmlColor implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['alpha'] = isset($data['alpha']) ? $data['alpha'] : null;
         $this->container['web'] = isset($data['web']) ? $data['web'] : null;

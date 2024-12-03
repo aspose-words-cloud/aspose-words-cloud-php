@@ -96,7 +96,7 @@ class RenderPageOnlineRequest extends BaseApiRequest
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $page_index, $format, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$fonts_location = null)
+    public function __construct( $document,  $page_index,  $format, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null, ?string $fonts_location = null)
     {
         $this->document = $document;
         $this->page_index = $page_index;

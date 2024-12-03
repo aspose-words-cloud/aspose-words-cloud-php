@@ -165,7 +165,7 @@ class PclSaveOptionsData extends FixedPageSaveOptionsData
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['falllback_font_name'] = isset($data['falllback_font_name']) ? $data['falllback_font_name'] : null;

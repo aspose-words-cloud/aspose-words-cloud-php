@@ -108,7 +108,7 @@ class GetDocumentWithFormatRequest extends BaseApiRequest
      * @param string $out_path The path to the output document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($name, $format, ?string$folder = null, ?string$storage = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$out_path = null, ?string$fonts_location = null)
+    public function __construct( $name,  $format, ?string $folder = null, ?string $storage = null, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null, ?string $out_path = null, ?string $fonts_location = null)
     {
         $this->name = $name;
         $this->format = $format;

@@ -173,7 +173,7 @@ abstract class Position implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['node_id'] = isset($data['node_id']) ? $data['node_id'] : null;
         $this->container['type'] = null;

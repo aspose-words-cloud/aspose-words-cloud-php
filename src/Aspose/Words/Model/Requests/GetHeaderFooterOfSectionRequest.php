@@ -108,7 +108,7 @@ class GetHeaderFooterOfSectionRequest extends BaseApiRequest
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $filter_by_type The list of HeaderFooter types.
      */
-    public function __construct($name, $header_footer_index, $section_index, ?string$folder = null, ?string$storage = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$filter_by_type = null)
+    public function __construct( $name,  $header_footer_index,  $section_index, ?string $folder = null, ?string $storage = null, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null, ?string $filter_by_type = null)
     {
         $this->name = $name;
         $this->header_footer_index = $header_footer_index;

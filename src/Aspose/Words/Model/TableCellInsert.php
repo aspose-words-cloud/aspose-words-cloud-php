@@ -173,7 +173,7 @@ class TableCellInsert implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['existing_cell_position'] = isset($data['existing_cell_position']) ? $data['existing_cell_position'] : null;
         $this->container['insert_after'] = isset($data['insert_after']) ? $data['insert_after'] : null;

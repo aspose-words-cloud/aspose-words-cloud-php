@@ -206,7 +206,7 @@ class PdfDigitalSignatureDetailsData implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['certificate_filename'] = isset($data['certificate_filename']) ? $data['certificate_filename'] : null;
         $this->container['hash_algorithm'] = isset($data['hash_algorithm']) ? $data['hash_algorithm'] : null;

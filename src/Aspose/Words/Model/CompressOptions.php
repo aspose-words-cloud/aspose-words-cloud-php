@@ -173,7 +173,7 @@ class CompressOptions implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['images_quality'] = isset($data['images_quality']) ? $data['images_quality'] : null;
         $this->container['images_reduce_size_factor'] = isset($data['images_reduce_size_factor']) ? $data['images_reduce_size_factor'] : null;

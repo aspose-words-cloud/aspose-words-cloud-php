@@ -170,7 +170,7 @@ class DocumentEntryList extends BaseEntryList
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['append_all_entries_to_one_section'] = isset($data['append_all_entries_to_one_section']) ? $data['append_all_entries_to_one_section'] : null;

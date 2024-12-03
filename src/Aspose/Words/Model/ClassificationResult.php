@@ -173,7 +173,7 @@ class ClassificationResult implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['class_name'] = isset($data['class_name']) ? $data['class_name'] : null;
         $this->container['class_probability'] = isset($data['class_probability']) ? $data['class_probability'] : null;

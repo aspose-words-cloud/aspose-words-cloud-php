@@ -60,7 +60,7 @@ class ClassifyRequest extends BaseApiRequest
      * @param string $text The text to classify.
      * @param string $best_classes_count The number of the best classes to return.
      */
-    public function __construct($text, ?string$best_classes_count = null)
+    public function __construct( $text, ?string $best_classes_count = null)
     {
         $this->text = $text;
         $this->best_classes_count = $best_classes_count;

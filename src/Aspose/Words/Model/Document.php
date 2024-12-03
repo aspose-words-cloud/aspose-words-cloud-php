@@ -247,7 +247,7 @@ class Document implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['document_properties'] = isset($data['document_properties']) ? $data['document_properties'] : null;

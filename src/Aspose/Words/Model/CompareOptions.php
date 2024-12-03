@@ -227,7 +227,7 @@ class CompareOptions implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['accept_all_revisions_before_comparison'] = isset($data['accept_all_revisions_before_comparison']) ? $data['accept_all_revisions_before_comparison'] : null;
         $this->container['ignore_case_changes'] = isset($data['ignore_case_changes']) ? $data['ignore_case_changes'] : null;

@@ -160,7 +160,7 @@ class ParagraphLinkCollection extends LinkElement
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['paragraph_link_list'] = isset($data['paragraph_link_list']) ? $data['paragraph_link_list'] : null;

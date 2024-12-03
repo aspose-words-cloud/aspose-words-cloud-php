@@ -183,7 +183,7 @@ class PageStatData implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['footnotes_stat_data'] = isset($data['footnotes_stat_data']) ? $data['footnotes_stat_data'] : null;
         $this->container['paragraph_count'] = isset($data['paragraph_count']) ? $data['paragraph_count'] : null;

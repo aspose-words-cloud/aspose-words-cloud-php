@@ -165,7 +165,7 @@ class ImageEntryList extends BaseEntryList
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['append_each_image_on_new_page'] = isset($data['append_each_image_on_new_page']) ? $data['append_each_image_on_new_page'] : null;

@@ -173,7 +173,7 @@ class StructuredDocumentTagListItem implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['display_text'] = isset($data['display_text']) ? $data['display_text'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;

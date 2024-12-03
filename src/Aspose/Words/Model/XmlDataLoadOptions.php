@@ -168,7 +168,7 @@ class XmlDataLoadOptions implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['always_generate_root_object'] = isset($data['always_generate_root_object']) ? $data['always_generate_root_object'] : null;
     }

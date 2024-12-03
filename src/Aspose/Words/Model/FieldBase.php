@@ -173,7 +173,7 @@ abstract class FieldBase implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['locale_id'] = isset($data['locale_id']) ? $data['locale_id'] : null;
         $this->container['field_code'] = isset($data['field_code']) ? $data['field_code'] : null;

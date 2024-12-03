@@ -160,7 +160,7 @@ class DocumentPropertyResponse extends WordsResponse
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['document_property'] = isset($data['document_property']) ? $data['document_property'] : null;

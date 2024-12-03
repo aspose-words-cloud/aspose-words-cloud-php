@@ -286,7 +286,7 @@ abstract class SaveOptionsData implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['allow_embedding_post_script_fonts'] = isset($data['allow_embedding_post_script_fonts']) ? $data['allow_embedding_post_script_fonts'] : null;
         $this->container['custom_time_zone_info_data'] = isset($data['custom_time_zone_info_data']) ? $data['custom_time_zone_info_data'] : null;

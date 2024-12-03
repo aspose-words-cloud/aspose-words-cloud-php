@@ -222,7 +222,7 @@ class ListInsert implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['template'] = isset($data['template']) ? $data['template'] : null;
     }

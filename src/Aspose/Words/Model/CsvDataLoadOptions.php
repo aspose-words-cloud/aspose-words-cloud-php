@@ -183,7 +183,7 @@ class CsvDataLoadOptions implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['comment_char'] = isset($data['comment_char']) ? $data['comment_char'] : null;
         $this->container['delimiter'] = isset($data['delimiter']) ? $data['delimiter'] : null;

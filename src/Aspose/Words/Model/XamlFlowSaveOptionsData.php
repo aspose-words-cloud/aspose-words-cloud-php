@@ -170,7 +170,7 @@ class XamlFlowSaveOptionsData extends SaveOptionsData
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['images_folder'] = isset($data['images_folder']) ? $data['images_folder'] : null;

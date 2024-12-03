@@ -379,7 +379,7 @@ class ListLevelUpdate implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
         $this->container['number_style'] = isset($data['number_style']) ? $data['number_style'] : null;

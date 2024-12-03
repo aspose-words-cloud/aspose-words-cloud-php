@@ -160,7 +160,7 @@ class RunLink extends NodeLink
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;

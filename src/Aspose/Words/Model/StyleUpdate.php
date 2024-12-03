@@ -183,7 +183,7 @@ class StyleUpdate implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['next_paragraph_style_name'] = isset($data['next_paragraph_style_name']) ? $data['next_paragraph_style_name'] : null;
         $this->container['base_style_name'] = isset($data['base_style_name']) ? $data['base_style_name'] : null;

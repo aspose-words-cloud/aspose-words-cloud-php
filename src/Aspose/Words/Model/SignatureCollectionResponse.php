@@ -165,7 +165,7 @@ class SignatureCollectionResponse extends WordsResponse
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;

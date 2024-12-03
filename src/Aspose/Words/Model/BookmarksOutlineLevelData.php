@@ -173,7 +173,7 @@ class BookmarksOutlineLevelData implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['bookmarks_outline_level'] = isset($data['bookmarks_outline_level']) ? $data['bookmarks_outline_level'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;

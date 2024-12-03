@@ -165,7 +165,7 @@ class Hyperlink extends LinkElement
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['display_text'] = isset($data['display_text']) ? $data['display_text'] : null;

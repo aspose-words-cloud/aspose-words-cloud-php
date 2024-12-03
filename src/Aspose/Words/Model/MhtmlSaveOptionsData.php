@@ -160,7 +160,7 @@ class MhtmlSaveOptionsData extends HtmlSaveOptionsData
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['export_cid_urls_for_mhtml_resources'] = isset($data['export_cid_urls_for_mhtml_resources']) ? $data['export_cid_urls_for_mhtml_resources'] : null;

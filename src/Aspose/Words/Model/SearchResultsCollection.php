@@ -160,7 +160,7 @@ class SearchResultsCollection extends LinkElement
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['results_list'] = isset($data['results_list']) ? $data['results_list'] : null;

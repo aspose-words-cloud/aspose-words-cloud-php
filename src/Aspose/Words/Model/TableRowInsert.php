@@ -178,7 +178,7 @@ class TableRowInsert implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
         $this->container['existing_row_position'] = isset($data['existing_row_position']) ? $data['existing_row_position'] : null;

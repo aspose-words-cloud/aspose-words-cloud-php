@@ -185,7 +185,7 @@ class ProtectionRequestV2 extends ProtectionRequestBase
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['protection_password'] = isset($data['protection_password']) ? $data['protection_password'] : null;

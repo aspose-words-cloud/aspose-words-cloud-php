@@ -168,7 +168,7 @@ abstract class BaseEntry implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['file_reference'] = isset($data['file_reference']) ? $data['file_reference'] : null;
     }

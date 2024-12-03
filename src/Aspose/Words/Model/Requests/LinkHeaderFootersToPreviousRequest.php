@@ -120,7 +120,7 @@ class LinkHeaderFootersToPreviousRequest extends BaseApiRequest
      * @param string $revision_date_time The date and time to use for revisions.
      * @param bool $mode Linking mode.
      */
-    public function __construct($name, $section_index, ?string$folder = null, ?string$storage = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$dest_file_name = null, ?string$revision_author = null, ?string$revision_date_time = null, ?bool$mode = null)
+    public function __construct( $name,  $section_index, ?string $folder = null, ?string $storage = null, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null, ?string $dest_file_name = null, ?string $revision_author = null, ?string $revision_date_time = null, ?bool $mode = null)
     {
         $this->name = $name;
         $this->section_index = $section_index;

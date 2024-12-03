@@ -160,7 +160,7 @@ class StructuredDocumentTagResponse extends WordsResponse
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['structured_document_tag'] = isset($data['structured_document_tag']) ? $data['structured_document_tag'] : null;

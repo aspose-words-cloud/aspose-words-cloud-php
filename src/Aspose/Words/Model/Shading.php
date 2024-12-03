@@ -296,7 +296,7 @@ class Shading implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['background_pattern_color'] = isset($data['background_pattern_color']) ? $data['background_pattern_color'] : null;
         $this->container['foreground_pattern_color'] = isset($data['foreground_pattern_color']) ? $data['foreground_pattern_color'] : null;

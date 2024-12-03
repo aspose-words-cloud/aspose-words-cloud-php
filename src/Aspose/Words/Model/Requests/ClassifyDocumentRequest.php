@@ -102,7 +102,7 @@ class ClassifyDocumentRequest extends BaseApiRequest
      * @param string $best_classes_count The number of the best classes to return.
      * @param string $taxonomy The taxonomy to use.
      */
-    public function __construct($name, ?string$folder = null, ?string$storage = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$best_classes_count = null, ?string$taxonomy = null)
+    public function __construct( $name, ?string $folder = null, ?string $storage = null, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null, ?string $best_classes_count = null, ?string $taxonomy = null)
     {
         $this->name = $name;
         $this->folder = $folder;

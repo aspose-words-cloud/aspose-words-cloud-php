@@ -160,7 +160,7 @@ class TableCellFormatResponse extends WordsResponse
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['cell_format'] = isset($data['cell_format']) ? $data['cell_format'] : null;

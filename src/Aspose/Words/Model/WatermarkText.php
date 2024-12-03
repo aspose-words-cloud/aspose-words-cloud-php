@@ -174,7 +174,7 @@ class WatermarkText implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;

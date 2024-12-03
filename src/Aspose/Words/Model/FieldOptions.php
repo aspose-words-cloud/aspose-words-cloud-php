@@ -266,7 +266,7 @@ class FieldOptions implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['current_user'] = isset($data['current_user']) ? $data['current_user'] : null;
         $this->container['custom_toc_style_separator'] = isset($data['custom_toc_style_separator']) ? $data['custom_toc_style_separator'] : null;

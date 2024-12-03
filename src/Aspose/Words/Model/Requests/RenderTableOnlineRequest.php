@@ -108,7 +108,7 @@ class RenderTableOnlineRequest extends BaseApiRequest
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
      * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $format, $index, ?string$node_path = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null, ?string$dest_file_name = null, ?string$fonts_location = null)
+    public function __construct( $document,  $format,  $index, ?string $node_path = null, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null, ?string $dest_file_name = null, ?string $fonts_location = null)
     {
         $this->document = $document;
         $this->format = $format;

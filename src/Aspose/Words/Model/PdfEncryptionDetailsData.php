@@ -178,7 +178,7 @@ class PdfEncryptionDetailsData implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['owner_password'] = isset($data['owner_password']) ? $data['owner_password'] : null;
         $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;

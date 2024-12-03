@@ -173,7 +173,7 @@ class DocumentPosition implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['node'] = isset($data['node']) ? $data['node'] : null;
         $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;

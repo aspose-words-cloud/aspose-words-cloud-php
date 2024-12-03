@@ -188,7 +188,7 @@ class StorageFile implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['is_folder'] = isset($data['is_folder']) ? $data['is_folder'] : null;
         $this->container['modified_date'] = isset($data['modified_date']) ? $data['modified_date'] : null;

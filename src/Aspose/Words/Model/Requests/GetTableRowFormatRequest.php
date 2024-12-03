@@ -102,7 +102,7 @@ class GetTableRowFormatRequest extends BaseApiRequest
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      */
-    public function __construct($name, $table_path, $index, ?string$folder = null, ?string$storage = null, ?string$load_encoding = null, ?string$password = null, ?string$encrypted_password = null, ?bool$open_type_support = null)
+    public function __construct( $name,  $table_path,  $index, ?string $folder = null, ?string $storage = null, ?string $load_encoding = null, ?string $password = null, ?string $encrypted_password = null, ?bool $open_type_support = null)
     {
         $this->name = $name;
         $this->table_path = $table_path;

@@ -160,7 +160,7 @@ class CustomXmlPartsCollection extends LinkElement
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
         $this->container['custom_xml_parts_list'] = isset($data['custom_xml_parts_list']) ? $data['custom_xml_parts_list'] : null;

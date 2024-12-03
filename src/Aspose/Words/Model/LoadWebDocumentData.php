@@ -173,7 +173,7 @@ class LoadWebDocumentData implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
         $this->container['loading_document_url'] = isset($data['loading_document_url']) ? $data['loading_document_url'] : null;

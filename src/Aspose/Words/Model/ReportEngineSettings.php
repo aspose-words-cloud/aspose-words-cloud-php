@@ -209,7 +209,7 @@ class ReportEngineSettings implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['csv_data_load_options'] = isset($data['csv_data_load_options']) ? $data['csv_data_load_options'] : null;
         $this->container['data_source_name'] = isset($data['data_source_name']) ? $data['data_source_name'] : null;

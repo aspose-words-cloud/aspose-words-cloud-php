@@ -178,7 +178,7 @@ class SplitDocumentResult implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
         $this->container['zipped_pages'] = isset($data['zipped_pages']) ? $data['zipped_pages'] : null;

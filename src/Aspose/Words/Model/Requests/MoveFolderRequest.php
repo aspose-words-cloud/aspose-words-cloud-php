@@ -72,7 +72,7 @@ class MoveFolderRequest extends BaseApiRequest
      * @param string $src_storage_name Source storage name.
      * @param string $dest_storage_name Destination storage name.
      */
-    public function __construct($dest_path, $src_path, ?string$src_storage_name = null, ?string$dest_storage_name = null)
+    public function __construct( $dest_path,  $src_path, ?string $src_storage_name = null, ?string $dest_storage_name = null)
     {
         $this->dest_path = $dest_path;
         $this->src_path = $src_path;

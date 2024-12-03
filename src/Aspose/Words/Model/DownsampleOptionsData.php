@@ -178,7 +178,7 @@ class DownsampleOptionsData implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['downsample_images'] = isset($data['downsample_images']) ? $data['downsample_images'] : null;
         $this->container['resolution'] = isset($data['resolution']) ? $data['resolution'] : null;

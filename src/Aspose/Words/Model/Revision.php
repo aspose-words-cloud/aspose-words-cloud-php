@@ -183,7 +183,7 @@ class Revision implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['revision_author'] = isset($data['revision_author']) ? $data['revision_author'] : null;
         $this->container['revision_date_time'] = isset($data['revision_date_time']) ? $data['revision_date_time'] : null;

@@ -194,7 +194,7 @@ class OptimizationOptions implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['ms_word_version'] = isset($data['ms_word_version']) ? $data['ms_word_version'] : null;
     }

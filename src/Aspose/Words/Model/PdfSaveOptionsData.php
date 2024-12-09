@@ -73,6 +73,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'page_mode' => 'string',
         'preblend_images' => 'bool',
         'preserve_form_fields' => 'bool',
+        'render_choice_form_field_border' => 'bool',
         'text_compression' => 'string',
         'use_book_fold_printing_settings' => 'bool',
         'use_core_fonts' => 'bool',
@@ -109,6 +110,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'page_mode' => 'null',
         'preblend_images' => 'null',
         'preserve_form_fields' => 'null',
+        'render_choice_form_field_border' => 'null',
         'text_compression' => 'null',
         'use_book_fold_printing_settings' => 'null',
         'use_core_fonts' => 'null',
@@ -166,6 +168,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'page_mode' => 'PageMode',
         'preblend_images' => 'PreblendImages',
         'preserve_form_fields' => 'PreserveFormFields',
+        'render_choice_form_field_border' => 'RenderChoiceFormFieldBorder',
         'text_compression' => 'TextCompression',
         'use_book_fold_printing_settings' => 'UseBookFoldPrintingSettings',
         'use_core_fonts' => 'UseCoreFonts',
@@ -202,6 +205,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'page_mode' => 'setPageMode',
         'preblend_images' => 'setPreblendImages',
         'preserve_form_fields' => 'setPreserveFormFields',
+        'render_choice_form_field_border' => 'setRenderChoiceFormFieldBorder',
         'text_compression' => 'setTextCompression',
         'use_book_fold_printing_settings' => 'setUseBookFoldPrintingSettings',
         'use_core_fonts' => 'setUseCoreFonts',
@@ -238,6 +242,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'page_mode' => 'getPageMode',
         'preblend_images' => 'getPreblendImages',
         'preserve_form_fields' => 'getPreserveFormFields',
+        'render_choice_form_field_border' => 'getRenderChoiceFormFieldBorder',
         'text_compression' => 'getTextCompression',
         'use_book_fold_printing_settings' => 'getUseBookFoldPrintingSettings',
         'use_core_fonts' => 'getUseCoreFonts',
@@ -470,6 +475,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['page_mode'] = isset($data['page_mode']) ? $data['page_mode'] : null;
         $this->container['preblend_images'] = isset($data['preblend_images']) ? $data['preblend_images'] : null;
         $this->container['preserve_form_fields'] = isset($data['preserve_form_fields']) ? $data['preserve_form_fields'] : null;
+        $this->container['render_choice_form_field_border'] = isset($data['render_choice_form_field_border']) ? $data['render_choice_form_field_border'] : null;
         $this->container['text_compression'] = isset($data['text_compression']) ? $data['text_compression'] : null;
         $this->container['use_book_fold_printing_settings'] = isset($data['use_book_fold_printing_settings']) ? $data['use_book_fold_printing_settings'] : null;
         $this->container['use_core_fonts'] = isset($data['use_core_fonts']) ? $data['use_core_fonts'] : null;
@@ -1112,6 +1118,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setPreserveFormFields($preserve_form_fields)
     {
         $this->container['preserve_form_fields'] = $preserve_form_fields;
+        return $this;
+    }
+
+
+    /*
+     * Gets render_choice_form_field_border
+     *
+     * @return bool
+     */
+    public function getRenderChoiceFormFieldBorder()
+    {
+        return $this->container['render_choice_form_field_border'];
+    }
+
+    /*
+     * Sets render_choice_form_field_border
+     *
+     * @param bool $render_choice_form_field_border Gets or sets a value indicating whether to render PDF choice form field border. PDF choice form fields are used for export of SDT Combo Box Content Control, SDT Drop-Down List Content Control and legacy Drop-Down Form Field when PreserveFormFields option is enabled.The default value is true.
+     *
+     * @return $this
+     */
+    public function setRenderChoiceFormFieldBorder($render_choice_form_field_border)
+    {
+        $this->container['render_choice_form_field_border'] = $render_choice_form_field_border;
         return $this;
     }
 

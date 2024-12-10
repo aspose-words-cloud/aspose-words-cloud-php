@@ -52,6 +52,7 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'apply_superscript' => 'bool',
         'is_match_case' => 'bool',
         'is_match_whole_word' => 'bool',
         'is_old_value_regex' => 'bool',
@@ -65,6 +66,7 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'apply_superscript' => 'null',
         'is_match_case' => 'null',
         'is_match_whole_word' => 'null',
         'is_old_value_regex' => 'null',
@@ -99,6 +101,7 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'apply_superscript' => 'ApplySuperscript',
         'is_match_case' => 'IsMatchCase',
         'is_match_whole_word' => 'IsMatchWholeWord',
         'is_old_value_regex' => 'IsOldValueRegex',
@@ -112,6 +115,7 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'apply_superscript' => 'setApplySuperscript',
         'is_match_case' => 'setIsMatchCase',
         'is_match_whole_word' => 'setIsMatchWholeWord',
         'is_old_value_regex' => 'setIsOldValueRegex',
@@ -125,6 +129,7 @@ class ReplaceTextParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'apply_superscript' => 'getApplySuperscript',
         'is_match_case' => 'getIsMatchCase',
         'is_match_whole_word' => 'getIsMatchWholeWord',
         'is_old_value_regex' => 'getIsOldValueRegex',
@@ -190,6 +195,7 @@ class ReplaceTextParameters implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['apply_superscript'] = isset($data['apply_superscript']) ? $data['apply_superscript'] : null;
         $this->container['is_match_case'] = isset($data['is_match_case']) ? $data['is_match_case'] : null;
         $this->container['is_match_whole_word'] = isset($data['is_match_whole_word']) ? $data['is_match_whole_word'] : null;
         $this->container['is_old_value_regex'] = isset($data['is_old_value_regex']) ? $data['is_old_value_regex'] : null;
@@ -223,6 +229,30 @@ class ReplaceTextParameters implements ArrayAccess
         }
 
     }
+
+    /*
+     * Gets apply_superscript
+     *
+     * @return bool
+     */
+    public function getApplySuperscript()
+    {
+        return $this->container['apply_superscript'];
+    }
+
+    /*
+     * Sets apply_superscript
+     *
+     * @param bool $apply_superscript Gets or sets a value indicating whether apply superscript to font or not.
+     *
+     * @return $this
+     */
+    public function setApplySuperscript($apply_superscript)
+    {
+        $this->container['apply_superscript'] = $apply_superscript;
+        return $this;
+    }
+
 
     /*
      * Gets is_match_case

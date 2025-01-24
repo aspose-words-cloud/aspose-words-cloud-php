@@ -53,6 +53,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $swaggerTypes = [
         'export_embedded_images' => 'bool',
         'fit_to_view_port' => 'bool',
+        'id_prefix' => 'string',
         'max_image_resolution' => 'int',
         'resources_folder' => 'string',
         'resources_folder_alias' => 'string',
@@ -68,6 +69,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $swaggerFormats = [
         'export_embedded_images' => 'null',
         'fit_to_view_port' => 'null',
+        'id_prefix' => 'null',
         'max_image_resolution' => 'null',
         'resources_folder' => 'null',
         'resources_folder_alias' => 'null',
@@ -104,6 +106,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $attributeMap = [
         'export_embedded_images' => 'ExportEmbeddedImages',
         'fit_to_view_port' => 'FitToViewPort',
+        'id_prefix' => 'IdPrefix',
         'max_image_resolution' => 'MaxImageResolution',
         'resources_folder' => 'ResourcesFolder',
         'resources_folder_alias' => 'ResourcesFolderAlias',
@@ -119,6 +122,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $setters = [
         'export_embedded_images' => 'setExportEmbeddedImages',
         'fit_to_view_port' => 'setFitToViewPort',
+        'id_prefix' => 'setIdPrefix',
         'max_image_resolution' => 'setMaxImageResolution',
         'resources_folder' => 'setResourcesFolder',
         'resources_folder_alias' => 'setResourcesFolderAlias',
@@ -134,6 +138,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     protected static $getters = [
         'export_embedded_images' => 'getExportEmbeddedImages',
         'fit_to_view_port' => 'getFitToViewPort',
+        'id_prefix' => 'getIdPrefix',
         'max_image_resolution' => 'getMaxImageResolution',
         'resources_folder' => 'getResourcesFolder',
         'resources_folder_alias' => 'getResourcesFolderAlias',
@@ -211,6 +216,7 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
         parent::__construct($data);
         $this->container['export_embedded_images'] = isset($data['export_embedded_images']) ? $data['export_embedded_images'] : null;
         $this->container['fit_to_view_port'] = isset($data['fit_to_view_port']) ? $data['fit_to_view_port'] : null;
+        $this->container['id_prefix'] = isset($data['id_prefix']) ? $data['id_prefix'] : null;
         $this->container['max_image_resolution'] = isset($data['max_image_resolution']) ? $data['max_image_resolution'] : null;
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
         $this->container['resources_folder_alias'] = isset($data['resources_folder_alias']) ? $data['resources_folder_alias'] : null;
@@ -279,6 +285,30 @@ class SvgSaveOptionsData extends FixedPageSaveOptionsData
     public function setFitToViewPort($fit_to_view_port)
     {
         $this->container['fit_to_view_port'] = $fit_to_view_port;
+        return $this;
+    }
+
+
+    /*
+     * Gets id_prefix
+     *
+     * @return string
+     */
+    public function getIdPrefix()
+    {
+        return $this->container['id_prefix'];
+    }
+
+    /*
+     * Sets id_prefix
+     *
+     * @param string $id_prefix Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.
+     *
+     * @return $this
+     */
+    public function setIdPrefix($id_prefix)
+    {
+        $this->container['id_prefix'] = $id_prefix;
         return $this;
     }
 

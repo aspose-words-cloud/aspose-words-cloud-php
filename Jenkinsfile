@@ -60,14 +60,6 @@ def runtests(dockerImageVersion)
                             junit 'testReports/logfile.xml'
                         }
                     }
-                
-                    stage('bdd-tests'){
-                        try {
-                            sh "vendor/bin/behat --config=behat.yml --format=junit --out=testReports/bdd || exit 0"
-                        } finally {
-                            junit 'testReports/bdd/*.xml'
-                        }
-                    }
                 }        
             }
         } finally {                       

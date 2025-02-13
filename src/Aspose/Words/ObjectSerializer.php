@@ -83,7 +83,7 @@ class ObjectSerializer
     public static function findPartByName($multipart, $name)
     {
         foreach ($multipart as $id => $part) {
-            $disposition = $part['headers']['Content-Disposition'];
+            $disposition = $part['headers']['content-disposition'];
             if (is_array($disposition)) {
                 $disposition = $disposition[0];
             }
@@ -109,7 +109,7 @@ class ObjectSerializer
     public static function parseFilesCollection($data, $headers)
     {
         $result = [];
-        $contentType = array_key_exists('Content-Type', $headers) ? $headers['Content-Type'] : NULL;
+        $contentType = array_key_exists('content-type', $headers) ? $headers['content-type'] : NULL;
         if ($contentType !== NULL && is_array($contentType)) {
             $contentType = $contentType[0];
         }
@@ -118,7 +118,7 @@ class ObjectSerializer
             for ($i = 0; $i < count($parts); $i++) {
                 $part = $parts[$i];
                 $filename = '';
-                $disposition = $part['headers']['Content-Disposition'];
+                $disposition = $part['headers']['content-disposition'];
                 if (is_array($disposition)) {
                     $disposition = $disposition[0];
                 }
@@ -150,7 +150,7 @@ class ObjectSerializer
     public static function parseMultipart($body, $headers)
     {
         $separator = "\r\n\r\n";
-        $contentType = $headers['Content-Type'];
+        $contentType = $headers['content-type'];
         if (is_array($contentType)) {
             $contentType = $contentType[0];
         }
@@ -520,8 +520,8 @@ class ObjectSerializer
 
             // determine file name
             $disposition = NULL;
-            if (array_key_exists('Content-Disposition', $httpHeaders)) {
-                $disposition = $httpHeaders['Content-Disposition'];
+            if (array_key_exists('content-disposition', $httpHeaders)) {
+                $disposition = $httpHeaders['content-disposition'];
             }
             if ($disposition != NULL && is_array($disposition)) {
                 $disposition = $disposition[0];

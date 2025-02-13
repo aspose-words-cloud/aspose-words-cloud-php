@@ -83,7 +83,7 @@ class ObjectSerializer
     public static function findPartByName($multipart, $name)
     {
         foreach ($multipart as $id => $part) {
-            $disposition = $part['headers']['content-disposition'];
+            $disposition = $part['headers']['Content-Disposition'];
             if (is_array($disposition)) {
                 $disposition = $disposition[0];
             }

@@ -58,6 +58,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'export_embedded_images' => 'bool',
         'export_form_fields' => 'bool',
         'font_format' => 'string',
+        'id_prefix' => 'string',
         'page_horizontal_alignment' => 'string',
         'page_margins' => 'double',
         'resources_folder' => 'string',
@@ -80,6 +81,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'export_embedded_images' => 'null',
         'export_form_fields' => 'null',
         'font_format' => 'null',
+        'id_prefix' => 'null',
         'page_horizontal_alignment' => 'null',
         'page_margins' => 'null',
         'resources_folder' => 'null',
@@ -123,6 +125,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'export_embedded_images' => 'ExportEmbeddedImages',
         'export_form_fields' => 'ExportFormFields',
         'font_format' => 'FontFormat',
+        'id_prefix' => 'IdPrefix',
         'page_horizontal_alignment' => 'PageHorizontalAlignment',
         'page_margins' => 'PageMargins',
         'resources_folder' => 'ResourcesFolder',
@@ -145,6 +148,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'export_embedded_images' => 'setExportEmbeddedImages',
         'export_form_fields' => 'setExportFormFields',
         'font_format' => 'setFontFormat',
+        'id_prefix' => 'setIdPrefix',
         'page_horizontal_alignment' => 'setPageHorizontalAlignment',
         'page_margins' => 'setPageMargins',
         'resources_folder' => 'setResourcesFolder',
@@ -167,6 +171,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         'export_embedded_images' => 'getExportEmbeddedImages',
         'export_form_fields' => 'getExportFormFields',
         'font_format' => 'getFontFormat',
+        'id_prefix' => 'getIdPrefix',
         'page_horizontal_alignment' => 'getPageHorizontalAlignment',
         'page_margins' => 'getPageMargins',
         'resources_folder' => 'getResourcesFolder',
@@ -265,6 +270,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['export_embedded_images'] = isset($data['export_embedded_images']) ? $data['export_embedded_images'] : null;
         $this->container['export_form_fields'] = isset($data['export_form_fields']) ? $data['export_form_fields'] : null;
         $this->container['font_format'] = isset($data['font_format']) ? $data['font_format'] : null;
+        $this->container['id_prefix'] = isset($data['id_prefix']) ? $data['id_prefix'] : null;
         $this->container['page_horizontal_alignment'] = isset($data['page_horizontal_alignment']) ? $data['page_horizontal_alignment'] : null;
         $this->container['page_margins'] = isset($data['page_margins']) ? $data['page_margins'] : null;
         $this->container['resources_folder'] = isset($data['resources_folder']) ? $data['resources_folder'] : null;
@@ -466,6 +472,30 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
             throw new \InvalidArgumentException(sprintf("Invalid value for 'font_format', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['font_format'] = $font_format;
+        return $this;
+    }
+
+
+    /*
+     * Gets id_prefix
+     *
+     * @return string
+     */
+    public function getIdPrefix()
+    {
+        return $this->container['id_prefix'];
+    }
+
+    /*
+     * Sets id_prefix
+     *
+     * @param string $id_prefix Gets or sets a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.
+     *
+     * @return $this
+     */
+    public function setIdPrefix($id_prefix)
+    {
+        $this->container['id_prefix'] = $id_prefix;
         return $this;
     }
 

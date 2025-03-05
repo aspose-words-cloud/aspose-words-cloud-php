@@ -109,7 +109,13 @@ class ObjectSerializer
     public static function parseFilesCollection($data, $headers)
     {
         $result = [];
-        $contentType = array_key_exists('content-type', $headers) ? $headers['content-type'] : NULL;
+        $contentType = NULL;
+        if (array_key_exists('content-type', $headers)) {
+            $contentType = $headers['content-type'];
+        }
+        if (array_key_exists('Content-Type', $headers)) {
+            $contentType = $headers['Content-Type'];
+        }
         if ($contentType !== NULL && is_array($contentType)) {
             $contentType = $contentType[0];
         }
@@ -150,7 +156,13 @@ class ObjectSerializer
     public static function parseMultipart($body, $headers)
     {
         $separator = "\r\n\r\n";
-        $contentType = $headers['content-type'];
+        $contentType = "";
+        if (array_key_exists('content-type', $headers)) {
+            $contentType = $headers['content-type'];
+        }
+        if (array_key_exists('Content-Type', $headers)) {
+            $contentType = $headers['Content-Type'];
+        }
         if (is_array($contentType)) {
             $contentType = $contentType[0];
         }

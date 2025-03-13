@@ -124,7 +124,7 @@ class ObjectSerializer
             for ($i = 0; $i < count($parts); $i++) {
                 $part = $parts[$i];
                 $filename = '';
-                $disposition = $part['headers']['content-disposition'];
+                $disposition = $part['headers']['Content-Disposition'];
                 if (is_array($disposition)) {
                     $disposition = $disposition[0];
                 }
@@ -535,6 +535,10 @@ class ObjectSerializer
             if (array_key_exists('content-disposition', $httpHeaders)) {
                 $disposition = $httpHeaders['content-disposition'];
             }
+			if (array_key_exists('Content-Disposition', $httpHeaders)) {
+                $disposition = $httpHeaders['Content-Disposition'];
+            }
+
             if ($disposition != NULL && is_array($disposition)) {
                 $disposition = $disposition[0];
             }

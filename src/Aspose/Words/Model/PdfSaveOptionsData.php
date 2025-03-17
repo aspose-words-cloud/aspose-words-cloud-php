@@ -298,7 +298,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     const COMPLIANCE_PDF_A1B = 'PdfA1b';
     const COMPLIANCE_PDF_A2A = 'PdfA2a';
     const COMPLIANCE_PDF_A2U = 'PdfA2u';
+    const COMPLIANCE_PDF_A3A = 'PdfA3a';
+    const COMPLIANCE_PDF_A3U = 'PdfA3u';
     const COMPLIANCE_PDF_A4 = 'PdfA4';
+    const COMPLIANCE_PDF_A4F = 'PdfA4f';
     const COMPLIANCE_PDF_A4_UA2 = 'PdfA4Ua2';
     const COMPLIANCE_PDF_UA1 = 'PdfUa1';
     const COMPLIANCE_PDF_UA2 = 'PdfUa2';
@@ -342,7 +345,10 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
             self::COMPLIANCE_PDF_A1B,
             self::COMPLIANCE_PDF_A2A,
             self::COMPLIANCE_PDF_A2U,
+            self::COMPLIANCE_PDF_A3A,
+            self::COMPLIANCE_PDF_A3U,
             self::COMPLIANCE_PDF_A4,
+            self::COMPLIANCE_PDF_A4F,
             self::COMPLIANCE_PDF_A4_UA2,
             self::COMPLIANCE_PDF_UA1,
             self::COMPLIANCE_PDF_UA2

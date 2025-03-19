@@ -59,6 +59,7 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'string',
         'file_name' => 'string',
         'iml_rendering_mode' => 'string',
+        'update_ambiguous_text_font' => 'bool',
         'update_created_time_property' => 'bool',
         'update_fields' => 'bool',
         'update_last_printed_property' => 'bool',
@@ -80,6 +81,7 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'null',
         'file_name' => 'null',
         'iml_rendering_mode' => 'null',
+        'update_ambiguous_text_font' => 'null',
         'update_created_time_property' => 'null',
         'update_fields' => 'null',
         'update_last_printed_property' => 'null',
@@ -122,6 +124,7 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'DmlRenderingMode',
         'file_name' => 'FileName',
         'iml_rendering_mode' => 'ImlRenderingMode',
+        'update_ambiguous_text_font' => 'UpdateAmbiguousTextFont',
         'update_created_time_property' => 'UpdateCreatedTimeProperty',
         'update_fields' => 'UpdateFields',
         'update_last_printed_property' => 'UpdateLastPrintedProperty',
@@ -143,6 +146,7 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'setDmlRenderingMode',
         'file_name' => 'setFileName',
         'iml_rendering_mode' => 'setImlRenderingMode',
+        'update_ambiguous_text_font' => 'setUpdateAmbiguousTextFont',
         'update_created_time_property' => 'setUpdateCreatedTimeProperty',
         'update_fields' => 'setUpdateFields',
         'update_last_printed_property' => 'setUpdateLastPrintedProperty',
@@ -164,6 +168,7 @@ abstract class SaveOptionsData implements ArrayAccess
         'dml_rendering_mode' => 'getDmlRenderingMode',
         'file_name' => 'getFileName',
         'iml_rendering_mode' => 'getImlRenderingMode',
+        'update_ambiguous_text_font' => 'getUpdateAmbiguousTextFont',
         'update_created_time_property' => 'getUpdateCreatedTimeProperty',
         'update_fields' => 'getUpdateFields',
         'update_last_printed_property' => 'getUpdateLastPrintedProperty',
@@ -295,6 +300,7 @@ abstract class SaveOptionsData implements ArrayAccess
         $this->container['dml_rendering_mode'] = isset($data['dml_rendering_mode']) ? $data['dml_rendering_mode'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['iml_rendering_mode'] = isset($data['iml_rendering_mode']) ? $data['iml_rendering_mode'] : null;
+        $this->container['update_ambiguous_text_font'] = isset($data['update_ambiguous_text_font']) ? $data['update_ambiguous_text_font'] : null;
         $this->container['update_created_time_property'] = isset($data['update_created_time_property']) ? $data['update_created_time_property'] : null;
         $this->container['update_fields'] = isset($data['update_fields']) ? $data['update_fields'] : null;
         $this->container['update_last_printed_property'] = isset($data['update_last_printed_property']) ? $data['update_last_printed_property'] : null;
@@ -527,6 +533,30 @@ abstract class SaveOptionsData implements ArrayAccess
             throw new \InvalidArgumentException(sprintf("Invalid value for 'iml_rendering_mode', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['iml_rendering_mode'] = $iml_rendering_mode;
+        return $this;
+    }
+
+
+    /*
+     * Gets update_ambiguous_text_font
+     *
+     * @return bool
+     */
+    public function getUpdateAmbiguousTextFont()
+    {
+        return $this->container['update_ambiguous_text_font'];
+    }
+
+    /*
+     * Sets update_ambiguous_text_font
+     *
+     * @param bool $update_ambiguous_text_font Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
+     *
+     * @return $this
+     */
+    public function setUpdateAmbiguousTextFont($update_ambiguous_text_font)
+    {
+        $this->container['update_ambiguous_text_font'] = $update_ambiguous_text_font;
         return $this;
     }
 

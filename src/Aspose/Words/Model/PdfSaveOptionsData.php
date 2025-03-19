@@ -51,6 +51,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'attachments_embedding_mode' => 'string',
         'cache_background_graphics' => 'bool',
         'compliance' => 'string',
         'create_note_hyperlinks' => 'bool',
@@ -88,6 +89,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'attachments_embedding_mode' => 'null',
         'cache_background_graphics' => 'null',
         'compliance' => 'null',
         'create_note_hyperlinks' => 'null',
@@ -146,6 +148,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $attributeMap = [
+        'attachments_embedding_mode' => 'AttachmentsEmbeddingMode',
         'cache_background_graphics' => 'CacheBackgroundGraphics',
         'compliance' => 'Compliance',
         'create_note_hyperlinks' => 'CreateNoteHyperlinks',
@@ -183,6 +186,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $setters = [
+        'attachments_embedding_mode' => 'setAttachmentsEmbeddingMode',
         'cache_background_graphics' => 'setCacheBackgroundGraphics',
         'compliance' => 'setCompliance',
         'create_note_hyperlinks' => 'setCreateNoteHyperlinks',
@@ -220,6 +224,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
      * @var string[]
      */
     protected static $getters = [
+        'attachments_embedding_mode' => 'getAttachmentsEmbeddingMode',
         'cache_background_graphics' => 'getCacheBackgroundGraphics',
         'compliance' => 'getCompliance',
         'create_note_hyperlinks' => 'getCreateNoteHyperlinks',
@@ -292,6 +297,9 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         return self::$swaggerModelName;
     }
 
+    const ATTACHMENTS_EMBEDDING_MODE_NONE = 'None';
+    const ATTACHMENTS_EMBEDDING_MODE_ANNOTATIONS = 'Annotations';
+    const ATTACHMENTS_EMBEDDING_MODE_DOCUMENT_EMBEDDED_FILES = 'DocumentEmbeddedFiles';
     const COMPLIANCE_PDF17 = 'Pdf17';
     const COMPLIANCE_PDF20 = 'Pdf20';
     const COMPLIANCE_PDF_A1A = 'PdfA1a';
@@ -331,6 +339,19 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     const ZOOM_BEHAVIOR_FIT_HEIGHT = 'FitHeight';
     const ZOOM_BEHAVIOR_FIT_BOX = 'FitBox';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAttachmentsEmbeddingModeAllowableValues()
+    {
+        return [
+            self::ATTACHMENTS_EMBEDDING_MODE_NONE,
+            self::ATTACHMENTS_EMBEDDING_MODE_ANNOTATIONS,
+            self::ATTACHMENTS_EMBEDDING_MODE_DOCUMENT_EMBEDDED_FILES
+        ];
+    }
     /*
      * Gets allowable values of the enum
      *
@@ -459,6 +480,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function __construct(array $data = null)
     {
         parent::__construct($data);
+        $this->container['attachments_embedding_mode'] = isset($data['attachments_embedding_mode']) ? $data['attachments_embedding_mode'] : null;
         $this->container['cache_background_graphics'] = isset($data['cache_background_graphics']) ? $data['cache_background_graphics'] : null;
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
         $this->container['create_note_hyperlinks'] = isset($data['create_note_hyperlinks']) ? $data['create_note_hyperlinks'] : null;
@@ -497,6 +519,13 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function validate()
     {
         parent::validate();
+
+        if (isset($this->container['attachments_embedding_mode'])) {
+            $allowedValuesAttachmentsEmbeddingMode = $this->getAttachmentsEmbeddingModeAllowableValues();
+            if (!in_array($this->container['attachments_embedding_mode'], $allowedValuesAttachmentsEmbeddingMode)) {
+                throw new \InvalidArgumentException('Property AttachmentsEmbeddingMode in PdfSaveOptionsData has invalid format.');
+            }
+        }
 
         if (isset($this->container['compliance'])) {
             $allowedValuesCompliance = $this->getComplianceAllowableValues();
@@ -575,6 +604,34 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         }
 
     }
+
+    /*
+     * Gets attachments_embedding_mode
+     *
+     * @return string
+     */
+    public function getAttachmentsEmbeddingMode()
+    {
+        return $this->container['attachments_embedding_mode'];
+    }
+
+    /*
+     * Sets attachments_embedding_mode
+     *
+     * @param string $attachments_embedding_mode Gets or sets a value determining how attachments are embedded to the PDF document. Default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.
+     *
+     * @return $this
+     */
+    public function setAttachmentsEmbeddingMode($attachments_embedding_mode)
+    {
+        $allowedValues = $this->getAttachmentsEmbeddingModeAllowableValues();
+        if ((!is_numeric($attachments_embedding_mode) && !in_array($attachments_embedding_mode, $allowedValues)) || (is_numeric($attachments_embedding_mode) && !in_array($allowedValues[$attachments_embedding_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'attachments_embedding_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['attachments_embedding_mode'] = $attachments_embedding_mode;
+        return $this;
+    }
+
 
     /*
      * Gets cache_background_graphics

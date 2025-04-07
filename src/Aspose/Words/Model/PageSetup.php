@@ -381,6 +381,8 @@ class PageSetup extends LinkElement
     const PAPER_SIZE_PAPER10X14 = 'Paper10x14';
     const PAPER_SIZE_PAPER11X17 = 'Paper11x17';
     const PAPER_SIZE_NUMBER10_ENVELOPE = 'Number10Envelope';
+    const PAPER_SIZE_JIS_B4 = 'JisB4';
+    const PAPER_SIZE_JIS_B5 = 'JisB5';
     const PAPER_SIZE_CUSTOM = 'Custom';
     const SECTION_START_CONTINUOUS = 'Continuous';
     const SECTION_START_NEW_COLUMN = 'NewColumn';
@@ -539,6 +541,8 @@ class PageSetup extends LinkElement
             self::PAPER_SIZE_PAPER10X14,
             self::PAPER_SIZE_PAPER11X17,
             self::PAPER_SIZE_NUMBER10_ENVELOPE,
+            self::PAPER_SIZE_JIS_B4,
+            self::PAPER_SIZE_JIS_B5,
             self::PAPER_SIZE_CUSTOM
         ];
     }

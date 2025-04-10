@@ -53,6 +53,7 @@ class CompareOptions implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'accept_all_revisions_before_comparison' => 'bool',
+        'granularity' => 'string',
         'ignore_case_changes' => 'bool',
         'ignore_comments' => 'bool',
         'ignore_fields' => 'bool',
@@ -71,6 +72,7 @@ class CompareOptions implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'accept_all_revisions_before_comparison' => 'null',
+        'granularity' => 'null',
         'ignore_case_changes' => 'null',
         'ignore_comments' => 'null',
         'ignore_fields' => 'null',
@@ -110,6 +112,7 @@ class CompareOptions implements ArrayAccess
      */
     protected static $attributeMap = [
         'accept_all_revisions_before_comparison' => 'AcceptAllRevisionsBeforeComparison',
+        'granularity' => 'Granularity',
         'ignore_case_changes' => 'IgnoreCaseChanges',
         'ignore_comments' => 'IgnoreComments',
         'ignore_fields' => 'IgnoreFields',
@@ -128,6 +131,7 @@ class CompareOptions implements ArrayAccess
      */
     protected static $setters = [
         'accept_all_revisions_before_comparison' => 'setAcceptAllRevisionsBeforeComparison',
+        'granularity' => 'setGranularity',
         'ignore_case_changes' => 'setIgnoreCaseChanges',
         'ignore_comments' => 'setIgnoreComments',
         'ignore_fields' => 'setIgnoreFields',
@@ -146,6 +150,7 @@ class CompareOptions implements ArrayAccess
      */
     protected static $getters = [
         'accept_all_revisions_before_comparison' => 'getAcceptAllRevisionsBeforeComparison',
+        'granularity' => 'getGranularity',
         'ignore_case_changes' => 'getIgnoreCaseChanges',
         'ignore_comments' => 'getIgnoreComments',
         'ignore_fields' => 'getIgnoreFields',
@@ -198,9 +203,23 @@ class CompareOptions implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const GRANULARITY_CHAR_LEVEL = 'CharLevel';
+    const GRANULARITY_WORD_LEVEL = 'WordLevel';
     const TARGET_CURRENT = 'Current';
     const TARGET_NEW = 'New';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getGranularityAllowableValues()
+    {
+        return [
+            self::GRANULARITY_CHAR_LEVEL,
+            self::GRANULARITY_WORD_LEVEL
+        ];
+    }
     /*
      * Gets allowable values of the enum
      *
@@ -230,6 +249,7 @@ class CompareOptions implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['accept_all_revisions_before_comparison'] = isset($data['accept_all_revisions_before_comparison']) ? $data['accept_all_revisions_before_comparison'] : null;
+        $this->container['granularity'] = isset($data['granularity']) ? $data['granularity'] : null;
         $this->container['ignore_case_changes'] = isset($data['ignore_case_changes']) ? $data['ignore_case_changes'] : null;
         $this->container['ignore_comments'] = isset($data['ignore_comments']) ? $data['ignore_comments'] : null;
         $this->container['ignore_fields'] = isset($data['ignore_fields']) ? $data['ignore_fields'] : null;
@@ -246,6 +266,13 @@ class CompareOptions implements ArrayAccess
      */
     public function validate()
     {
+        if (isset($this->container['granularity'])) {
+            $allowedValuesGranularity = $this->getGranularityAllowableValues();
+            if (!in_array($this->container['granularity'], $allowedValuesGranularity)) {
+                throw new \InvalidArgumentException('Property Granularity in CompareOptions has invalid format.');
+            }
+        }
+
         if (isset($this->container['target'])) {
             $allowedValuesTarget = $this->getTargetAllowableValues();
             if (!in_array($this->container['target'], $allowedValuesTarget)) {
@@ -275,6 +302,34 @@ class CompareOptions implements ArrayAccess
     public function setAcceptAllRevisionsBeforeComparison($accept_all_revisions_before_comparison)
     {
         $this->container['accept_all_revisions_before_comparison'] = $accept_all_revisions_before_comparison;
+        return $this;
+    }
+
+
+    /*
+     * Gets granularity
+     *
+     * @return string
+     */
+    public function getGranularity()
+    {
+        return $this->container['granularity'];
+    }
+
+    /*
+     * Sets granularity
+     *
+     * @param string $granularity Gets or sets the option indicating whether changes are tracked by character or by word.
+     *
+     * @return $this
+     */
+    public function setGranularity($granularity)
+    {
+        $allowedValues = $this->getGranularityAllowableValues();
+        if ((!is_numeric($granularity) && !in_array($granularity, $allowedValues)) || (is_numeric($granularity) && !in_array($allowedValues[$granularity], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'granularity', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['granularity'] = $granularity;
         return $this;
     }
 

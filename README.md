@@ -16,6 +16,7 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 ## Enhancements in Version 25.6
 
 - Added support for SVG images format in Watermark API.
+- Added 'RemoveJavaScriptFromLinks' property for HtmlSaveOptionsData class.
 
 
 ## Enhancements in Version 25.5

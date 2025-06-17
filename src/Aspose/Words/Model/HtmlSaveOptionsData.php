@@ -84,6 +84,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'string',
         'office_math_output_mode' => 'string',
         'pretty_format' => 'bool',
+        'remove_java_script_from_links' => 'bool',
         'replace_backslash_with_yen_sign' => 'bool',
         'resolve_font_names' => 'bool',
         'resource_folder' => 'string',
@@ -131,6 +132,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'null',
         'office_math_output_mode' => 'null',
         'pretty_format' => 'null',
+        'remove_java_script_from_links' => 'null',
         'replace_backslash_with_yen_sign' => 'null',
         'resolve_font_names' => 'null',
         'resource_folder' => 'null',
@@ -199,6 +201,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'MetafileFormat',
         'office_math_output_mode' => 'OfficeMathOutputMode',
         'pretty_format' => 'PrettyFormat',
+        'remove_java_script_from_links' => 'RemoveJavaScriptFromLinks',
         'replace_backslash_with_yen_sign' => 'ReplaceBackslashWithYenSign',
         'resolve_font_names' => 'ResolveFontNames',
         'resource_folder' => 'ResourceFolder',
@@ -246,6 +249,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'setMetafileFormat',
         'office_math_output_mode' => 'setOfficeMathOutputMode',
         'pretty_format' => 'setPrettyFormat',
+        'remove_java_script_from_links' => 'setRemoveJavaScriptFromLinks',
         'replace_backslash_with_yen_sign' => 'setReplaceBackslashWithYenSign',
         'resolve_font_names' => 'setResolveFontNames',
         'resource_folder' => 'setResourceFolder',
@@ -293,6 +297,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         'metafile_format' => 'getMetafileFormat',
         'office_math_output_mode' => 'getOfficeMathOutputMode',
         'pretty_format' => 'getPrettyFormat',
+        'remove_java_script_from_links' => 'getRemoveJavaScriptFromLinks',
         'replace_backslash_with_yen_sign' => 'getReplaceBackslashWithYenSign',
         'resolve_font_names' => 'getResolveFontNames',
         'resource_folder' => 'getResourceFolder',
@@ -518,6 +523,7 @@ class HtmlSaveOptionsData extends SaveOptionsData
         $this->container['metafile_format'] = isset($data['metafile_format']) ? $data['metafile_format'] : null;
         $this->container['office_math_output_mode'] = isset($data['office_math_output_mode']) ? $data['office_math_output_mode'] : null;
         $this->container['pretty_format'] = isset($data['pretty_format']) ? $data['pretty_format'] : null;
+        $this->container['remove_java_script_from_links'] = isset($data['remove_java_script_from_links']) ? $data['remove_java_script_from_links'] : null;
         $this->container['replace_backslash_with_yen_sign'] = isset($data['replace_backslash_with_yen_sign']) ? $data['replace_backslash_with_yen_sign'] : null;
         $this->container['resolve_font_names'] = isset($data['resolve_font_names']) ? $data['resolve_font_names'] : null;
         $this->container['resource_folder'] = isset($data['resource_folder']) ? $data['resource_folder'] : null;
@@ -1408,6 +1414,30 @@ class HtmlSaveOptionsData extends SaveOptionsData
     public function setPrettyFormat($pretty_format)
     {
         $this->container['pretty_format'] = $pretty_format;
+        return $this;
+    }
+
+
+    /*
+     * Gets remove_java_script_from_links
+     *
+     * @return bool
+     */
+    public function getRemoveJavaScriptFromLinks()
+    {
+        return $this->container['remove_java_script_from_links'];
+    }
+
+    /*
+     * Sets remove_java_script_from_links
+     *
+     * @param bool $remove_java_script_from_links Gets or sets the flag that indicates whether JavaScript will be removed from links. Default is false. If this option is enabled, all links containing JavaScript (e.g., links with "javascript:" in the href attribute) will be replaced with "javascript:void(0)". This can help prevent potential security risks, such as XSS attacks.
+     *
+     * @return $this
+     */
+    public function setRemoveJavaScriptFromLinks($remove_java_script_from_links)
+    {
+        $this->container['remove_java_script_from_links'] = $remove_java_script_from_links;
         return $this;
     }
 

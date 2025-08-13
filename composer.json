@@ -9,13 +9,9 @@
     "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php",
     "authors": [
         {
-            "name": "YaroslawEkimov",
-			"homepage": "https://github.com/aspose-words-cloud"
-        },
-		{
-            "name": "IvanovJohnAspose",
-			"homepage": "https://github.com/aspose-words-cloud"
-		}
+            "name": "Aspose",
+			"homepage": "https://products.aspose.cloud/words/family/"
+        }
     ],
     "require": {
         "php": "^8.1",

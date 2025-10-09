@@ -42224,6 +42224,163 @@ class WordsApi implements Encryptor
     }
 
     /*
+     * Operation loadWebDocumentOnline
+     *
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
+     *
+     * @param Requests\loadWebDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return LoadWebDocumentOnlineResponse
+     */
+    public function loadWebDocumentOnline(Requests\loadWebDocumentOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->loadWebDocumentOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->loadWebDocumentOnlineWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation loadWebDocumentOnlineWithHttpInfo
+     *
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
+     *
+     * @param Requests\loadWebDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of LoadWebDocumentOnlineResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function loadWebDocumentOnlineWithHttpInfo(Requests\loadWebDocumentOnlineRequest $request)
+    {
+        $returnType = 'LoadWebDocumentOnlineResponse';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $resp = $request->deserializeResponse($response);
+            return [
+                    $resp,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), 'LoadWebDocumentOnlineResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation loadWebDocumentOnlineAsync
+     *
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
+     *
+     * @param Requests\loadWebDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function loadWebDocumentOnlineAsync(Requests\loadWebDocumentOnlineRequest $request) 
+    {
+        return $this->loadWebDocumentOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation loadWebDocumentOnlineAsyncWithHttpInfo
+     *
+     * Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
+     *
+     * @param Requests\loadWebDocumentOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function loadWebDocumentOnlineAsyncWithHttpInfo(Requests\loadWebDocumentOnlineRequest $request) 
+    {
+        $returnType = 'LoadWebDocumentOnlineResponse';
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
      * Operation mergeWithNext
      *
      * Merge the section with the next one.

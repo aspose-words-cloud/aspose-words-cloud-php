@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{LoadWebDocumentRequest};
+use Aspose\Words\Model\Requests\{LoadWebDocumentOnlineRequest, LoadWebDocumentRequest};
 use Aspose\Words\Model\{DocSaveOptionsData, LoadWebDocumentData};
 use PHPUnit\Framework\Assert;
 
@@ -63,5 +63,28 @@ class LoadWebDocumentTests extends BaseTestContext
         Assert::assertNotNull($result->getSaveResult());
         Assert::assertNotNull($result->getSaveResult()->getDestDocument());
         Assert::assertEquals("google.doc", $result->getSaveResult()->getDestDocument()->getHref());
+    }
+
+    /*
+     * Test for loading web document online.
+     */
+    public function testLoadWebDocumentOnline()
+    {
+        $requestDataSaveOptions = new DocSaveOptionsData(array(
+            "file_name" => "google.doc",
+            "dml_effects_rendering_mode" => "None",
+            "dml_rendering_mode" => "DrawingML",
+            "zip_output" => false,
+        ));
+        $requestData = new LoadWebDocumentData(array(
+            "loading_document_url" => "http://google.com",
+            "save_options" => $requestDataSaveOptions,
+        ));
+        $request = new LoadWebDocumentOnlineRequest(
+            $requestData
+        );
+
+        $result = $this->words->loadWebDocumentOnline($request);
+        Assert::assertTrue($result !== NULL);
     }
 }

@@ -53,6 +53,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     protected static $swaggerTypes = [
         'add_bidi_marks' => 'bool',
         'max_characters_per_line' => 'int',
+        'office_math_export_mode' => 'string',
         'preserve_table_layout' => 'bool',
         'simplify_list_labels' => 'bool'
     ];
@@ -65,6 +66,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     protected static $swaggerFormats = [
         'add_bidi_marks' => 'null',
         'max_characters_per_line' => 'null',
+        'office_math_export_mode' => 'null',
         'preserve_table_layout' => 'null',
         'simplify_list_labels' => 'null'
     ];
@@ -98,6 +100,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     protected static $attributeMap = [
         'add_bidi_marks' => 'AddBidiMarks',
         'max_characters_per_line' => 'MaxCharactersPerLine',
+        'office_math_export_mode' => 'OfficeMathExportMode',
         'preserve_table_layout' => 'PreserveTableLayout',
         'simplify_list_labels' => 'SimplifyListLabels'
     ];
@@ -110,6 +113,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     protected static $setters = [
         'add_bidi_marks' => 'setAddBidiMarks',
         'max_characters_per_line' => 'setMaxCharactersPerLine',
+        'office_math_export_mode' => 'setOfficeMathExportMode',
         'preserve_table_layout' => 'setPreserveTableLayout',
         'simplify_list_labels' => 'setSimplifyListLabels'
     ];
@@ -122,6 +126,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     protected static $getters = [
         'add_bidi_marks' => 'getAddBidiMarks',
         'max_characters_per_line' => 'getMaxCharactersPerLine',
+        'office_math_export_mode' => 'getOfficeMathExportMode',
         'preserve_table_layout' => 'getPreserveTableLayout',
         'simplify_list_labels' => 'getSimplifyListLabels'
     ];
@@ -167,7 +172,21 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         return self::$swaggerModelName;
     }
 
+    const OFFICE_MATH_EXPORT_MODE_TEXT = 'Text';
+    const OFFICE_MATH_EXPORT_MODE_LATEX = 'Latex';
 
+    /*
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOfficeMathExportModeAllowableValues()
+    {
+        return [
+            self::OFFICE_MATH_EXPORT_MODE_TEXT,
+            self::OFFICE_MATH_EXPORT_MODE_LATEX
+        ];
+    }
 
     /*
      * Constructor
@@ -180,6 +199,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
         parent::__construct($data);
         $this->container['add_bidi_marks'] = isset($data['add_bidi_marks']) ? $data['add_bidi_marks'] : null;
         $this->container['max_characters_per_line'] = isset($data['max_characters_per_line']) ? $data['max_characters_per_line'] : null;
+        $this->container['office_math_export_mode'] = isset($data['office_math_export_mode']) ? $data['office_math_export_mode'] : null;
         $this->container['preserve_table_layout'] = isset($data['preserve_table_layout']) ? $data['preserve_table_layout'] : null;
         $this->container['simplify_list_labels'] = isset($data['simplify_list_labels']) ? $data['simplify_list_labels'] : null;
         $this->container['save_format'] = "txt";
@@ -194,6 +214,13 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
 
         if (!isset($this->container['max_characters_per_line'])) {
             throw new \InvalidArgumentException('Property MaxCharactersPerLine in TextSaveOptionsData is required.');
+        }
+
+        if (isset($this->container['office_math_export_mode'])) {
+            $allowedValuesOfficeMathExportMode = $this->getOfficeMathExportModeAllowableValues();
+            if (!in_array($this->container['office_math_export_mode'], $allowedValuesOfficeMathExportMode)) {
+                throw new \InvalidArgumentException('Property OfficeMathExportMode in TextSaveOptionsData has invalid format.');
+            }
         }
 
     }
@@ -242,6 +269,34 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     public function setMaxCharactersPerLine($max_characters_per_line)
     {
         $this->container['max_characters_per_line'] = $max_characters_per_line;
+        return $this;
+    }
+
+
+    /*
+     * Gets office_math_export_mode
+     *
+     * @return string
+     */
+    public function getOfficeMathExportMode()
+    {
+        return $this->container['office_math_export_mode'];
+    }
+
+    /*
+     * Sets office_math_export_mode
+     *
+     * @param string $office_math_export_mode Gets or sets a value that specifies how OfficeMath will be written to the output file. Default value is Text.
+     *
+     * @return $this
+     */
+    public function setOfficeMathExportMode($office_math_export_mode)
+    {
+        $allowedValues = $this->getOfficeMathExportModeAllowableValues();
+        if ((!is_numeric($office_math_export_mode) && !in_array($office_math_export_mode, $allowedValues)) || (is_numeric($office_math_export_mode) && !in_array($allowedValues[$office_math_export_mode], $allowedValues))) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for 'office_math_export_mode', must be one of '%s'", implode("', '", $allowedValues)));
+        }
+        $this->container['office_math_export_mode'] = $office_math_export_mode;
         return $this;
     }
 

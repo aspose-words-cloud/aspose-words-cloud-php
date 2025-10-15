@@ -80,7 +80,8 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'use_core_fonts' => 'bool',
         'use_sdt_tag_as_form_field_name' => 'bool',
         'zoom_behavior' => 'string',
-        'zoom_factor' => 'int'
+        'zoom_factor' => 'int',
+        'export_floating_shapes_as_inline_tag' => 'bool'
     ];
 
     /*
@@ -118,7 +119,8 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'use_core_fonts' => 'null',
         'use_sdt_tag_as_form_field_name' => 'null',
         'zoom_behavior' => 'null',
-        'zoom_factor' => 'null'
+        'zoom_factor' => 'null',
+        'export_floating_shapes_as_inline_tag' => 'null'
     ];
 
     /*
@@ -177,7 +179,8 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'use_core_fonts' => 'UseCoreFonts',
         'use_sdt_tag_as_form_field_name' => 'UseSdtTagAsFormFieldName',
         'zoom_behavior' => 'ZoomBehavior',
-        'zoom_factor' => 'ZoomFactor'
+        'zoom_factor' => 'ZoomFactor',
+        'export_floating_shapes_as_inline_tag' => 'ExportFloatingShapesAsInlineTag'
     ];
 
     /*
@@ -215,7 +218,8 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'use_core_fonts' => 'setUseCoreFonts',
         'use_sdt_tag_as_form_field_name' => 'setUseSdtTagAsFormFieldName',
         'zoom_behavior' => 'setZoomBehavior',
-        'zoom_factor' => 'setZoomFactor'
+        'zoom_factor' => 'setZoomFactor',
+        'export_floating_shapes_as_inline_tag' => 'setExportFloatingShapesAsInlineTag'
     ];
 
     /*
@@ -253,7 +257,8 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         'use_core_fonts' => 'getUseCoreFonts',
         'use_sdt_tag_as_form_field_name' => 'getUseSdtTagAsFormFieldName',
         'zoom_behavior' => 'getZoomBehavior',
-        'zoom_factor' => 'getZoomFactor'
+        'zoom_factor' => 'getZoomFactor',
+        'export_floating_shapes_as_inline_tag' => 'getExportFloatingShapesAsInlineTag'
     ];
 
     /*
@@ -510,6 +515,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
         $this->container['use_sdt_tag_as_form_field_name'] = isset($data['use_sdt_tag_as_form_field_name']) ? $data['use_sdt_tag_as_form_field_name'] : null;
         $this->container['zoom_behavior'] = isset($data['zoom_behavior']) ? $data['zoom_behavior'] : null;
         $this->container['zoom_factor'] = isset($data['zoom_factor']) ? $data['zoom_factor'] : null;
+        $this->container['export_floating_shapes_as_inline_tag'] = isset($data['export_floating_shapes_as_inline_tag']) ? $data['export_floating_shapes_as_inline_tag'] : null;
         $this->container['save_format'] = "pdf";
     }
 
@@ -1357,6 +1363,30 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     public function setZoomFactor($zoom_factor)
     {
         $this->container['zoom_factor'] = $zoom_factor;
+        return $this;
+    }
+
+
+    /*
+     * Gets export_floating_shapes_as_inline_tag
+     *
+     * @return bool
+     */
+    public function getExportFloatingShapesAsInlineTag()
+    {
+        return $this->container['export_floating_shapes_as_inline_tag'];
+    }
+
+    /*
+     * Sets export_floating_shapes_as_inline_tag
+     *
+     * @param bool $export_floating_shapes_as_inline_tag Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure. Default value is false and floating shapes will be exported as block-level tags, placed after the paragraph in which they are anchored. When the value is true floating shapes will be exported as inline tags, placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.
+     *
+     * @return $this
+     */
+    public function setExportFloatingShapesAsInlineTag($export_floating_shapes_as_inline_tag)
+    {
+        $this->container['export_floating_shapes_as_inline_tag'] = $export_floating_shapes_as_inline_tag;
         return $this;
     }
 

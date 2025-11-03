@@ -484,7 +484,7 @@ class ListLevel extends LinkElement
     /*
      * Sets start_at
      *
-     * @param int $start_at Gets or sets the starting number for this list level. Default value is 1.
+     * @param int $start_at Gets or sets the starting number for this list level. The default value is 1.
      *
      * @return $this
      */

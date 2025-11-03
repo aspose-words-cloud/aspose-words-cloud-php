@@ -199,7 +199,7 @@ class CompressOptions implements ArrayAccess
     /*
      * Sets images_quality
      *
-     * @param int $images_quality Gets or sets the quality level of images from 0 to 100. Default value is 75.
+     * @param int $images_quality Gets or sets the quality level of images from 0 to 100. The default value is 75.
      *
      * @return $this
      */
@@ -223,7 +223,7 @@ class CompressOptions implements ArrayAccess
     /*
      * Sets images_reduce_size_factor
      *
-     * @param int $images_reduce_size_factor Gets or sets the resize factor of images. This value determines how many times the size of the images in the document will be reduced. The parameter value must be greater than 1 for resizing. Default value is 1 and has no effect on images size.
+     * @param int $images_reduce_size_factor Gets or sets the resize factor of images. This value determines how many times the size of the images in the document will be reduced. The parameter value must be greater than 1 for resizing. The default value is 1 and has no effect on images size.
      *
      * @return $this
      */

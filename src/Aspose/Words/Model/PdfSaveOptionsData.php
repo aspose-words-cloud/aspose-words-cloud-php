@@ -624,7 +624,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets attachments_embedding_mode
      *
-     * @param string $attachments_embedding_mode Gets or sets a value determining how attachments are embedded to the PDF document. Default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.
+     * @param string $attachments_embedding_mode Gets or sets a value determining how attachments are embedded to the PDF document. The default value is None and attachments are not embedded. PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files. None value will be used automatically.
      *
      * @return $this
      */
@@ -652,7 +652,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets cache_background_graphics
      *
-     * @param bool $cache_background_graphics Gets or sets a value determining whether or not to cache graphics placed in document's background. Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.
+     * @param bool $cache_background_graphics Gets or sets a value determining whether or not to cache graphics placed in document's background. The default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header, well as background and border of a page.
      *
      * @return $this
      */
@@ -828,7 +828,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets embed_attachments
      *
-     * @param bool $embed_attachments Gets or sets a value determining whether or not to embed attachments to the PDF document. Default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.
+     * @param bool $embed_attachments Gets or sets a value determining whether or not to embed attachments to the PDF document. The default value is false and attachments are not embedded. When the value is true attachments are embedded to the PDF document. Embedding attachments is not supported when saving to PDF/A and PDF/UA compliance. false value will be used automatically. Embedding attachments is not supported when encryption is enabled. false value will be used automatically.
      *
      * @return $this
      */
@@ -924,7 +924,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_language_to_span_tag
      *
-     * @param bool $export_language_to_span_tag Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. Default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.
+     * @param bool $export_language_to_span_tag Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language. The default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream. When the value is true "Span" tag is created for the text with non-default language and "Lang" attribute is attached to this tag. This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.
      *
      * @return $this
      */
@@ -1380,7 +1380,7 @@ class PdfSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets export_floating_shapes_as_inline_tag
      *
-     * @param bool $export_floating_shapes_as_inline_tag Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure. Default value is false and floating shapes will be exported as block-level tags, placed after the paragraph in which they are anchored. When the value is true floating shapes will be exported as inline tags, placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.
+     * @param bool $export_floating_shapes_as_inline_tag Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure. The default value is false and floating shapes will be exported as block-level tags, placed after the paragraph in which they are anchored. When the value is true floating shapes will be exported as inline tags, placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.
      *
      * @return $this
      */

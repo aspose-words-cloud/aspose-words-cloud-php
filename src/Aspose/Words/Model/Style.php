@@ -1317,7 +1317,7 @@ class Style extends LinkElement
     /*
      * Sets name
      *
-     * @param string $name Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.
+     * @param string $name Gets or sets the name of the style. Cannot be an empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.
      *
      * @return $this
      */

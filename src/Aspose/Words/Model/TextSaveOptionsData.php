@@ -286,7 +286,7 @@ class TextSaveOptionsData extends TxtSaveOptionsBaseData
     /*
      * Sets office_math_export_mode
      *
-     * @param string $office_math_export_mode Gets or sets a value that specifies how OfficeMath will be written to the output file. Default value is Text.
+     * @param string $office_math_export_mode Gets or sets a value that specifies how OfficeMath will be written to the output file. The default value is Text.
      *
      * @return $this
      */

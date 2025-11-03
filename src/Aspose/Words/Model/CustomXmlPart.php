@@ -222,7 +222,7 @@ class CustomXmlPart extends CustomXmlPartLink
     /*
      * Sets data
      *
-     * @param string $data Gets or sets the custom xml part data. Cannot be null.Default is empty string.
+     * @param string $data Gets or sets the custom xml part data. Cannot be null.Default is an empty string.
      *
      * @return $this
      */

@@ -322,7 +322,7 @@ class FieldOptions implements ArrayAccess
     /*
      * Sets current_user
      *
-     * @param \Aspose\Words\Model\UserInformation $current_user Gets or sets Curren tUser.
+     * @param \Aspose\Words\Model\UserInformation $current_user Gets or sets Current User.
      *
      * @return $this
      */

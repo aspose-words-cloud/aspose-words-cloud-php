@@ -427,7 +427,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets list_items
      *
-     * @param \Aspose\Words\Model\StructuredDocumentTagListItem[] $list_items Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.ComboBox or Aspose.Words.Markup.SdtType.DropDownList SDT types. For all other SDT types exception will occur.
+     * @param \Aspose\Words\Model\StructuredDocumentTagListItem[] $list_items Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.ComboBox or Aspose.Words.Markup.SdtType.DropDownList SDT types. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -451,7 +451,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets checked
      *
-     * @param bool $checked Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property. Accessing this property will only work for Aspose.Words.Markup.SdtType.Checkbox SDT types. For all other SDT types exception will occur.
+     * @param bool $checked Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property. Accessing this property will work only for Aspose.Words.Markup.SdtType.Checkbox SDT types. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -503,7 +503,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets date_display_locale
      *
-     * @param int $date_display_locale Gets or sets the language format for the date displayed in this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.
+     * @param int $date_display_locale Gets or sets the language format for the date displayed in this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -527,7 +527,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets date_display_format
      *
-     * @param string $date_display_format Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy". Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.
+     * @param string $date_display_format Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy". Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -551,7 +551,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets full_date
      *
-     * @param \DateTime $full_date Gets or sets the full date and time last entered into this SDT. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.
+     * @param \DateTime $full_date Gets or sets the full date and time last entered into this SDT. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -599,7 +599,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets date_storage_format
      *
-     * @param string $date_storage_format Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store. Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.
+     * @param string $date_storage_format Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store. The default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -627,7 +627,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets building_block_gallery
      *
-     * @param string $building_block_gallery Gets or sets type of building block for this SDT. Can not be null. Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types exception will occur.
+     * @param string $building_block_gallery Gets or sets type of building block for this SDT. Can not be null. Accessing this property will work only for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -651,7 +651,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets building_block_category
      *
-     * @param string $building_block_category Gets or sets category of building block for this SDT node. Can not be null. Accessing this property will only work for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types exception will occur.
+     * @param string $building_block_category Gets or sets category of building block for this SDT node. Can not be null. Accessing this property will work only for Aspose.Words.Markup.SdtType.BuildingBlockGallery and Aspose.Words.Markup.SdtType.DocPartObj SDT types. It is read-only for SDT of the document part type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -675,7 +675,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets multiline
      *
-     * @param bool $multiline Gets or sets a value indicating whether this SDT allows multiple lines of text. Accessing this property will only work for Aspose.Words.Markup.SdtType.RichText and Aspose.Words.Markup.SdtType.PlainText SDT type. For all other SDT types exception will occur.
+     * @param bool $multiline Gets or sets a value indicating whether this SDT allows multiple lines of text. Accessing this property will work only for Aspose.Words.Markup.SdtType.RichText and Aspose.Words.Markup.SdtType.PlainText SDT type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */
@@ -747,7 +747,7 @@ abstract class StructuredDocumentTagBase extends NodeLink
     /*
      * Sets calendar_type
      *
-     * @param string $calendar_type Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default. Accessing this property will only work for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types exception will occur.
+     * @param string $calendar_type Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default. Accessing this property will work only for Aspose.Words.Markup.SdtType.Date SDT type. For all other SDT types, an exception will occur.
      *
      * @return $this
      */

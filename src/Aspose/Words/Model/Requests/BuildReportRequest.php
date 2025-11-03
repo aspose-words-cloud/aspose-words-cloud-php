@@ -50,12 +50,12 @@ class BuildReportRequest extends BaseApiRequest
     public $name;
 
     /*
-     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public $data;
 
     /*
-     * An object providing a settings of report engine.
+     * An object providing settings of a report engine.
      */
     public $report_engine_settings;
 
@@ -98,8 +98,8 @@ class BuildReportRequest extends BaseApiRequest
      * Initializes a new instance of the BuildReportRequest class.
      *
      * @param string $name The filename of the input document.
-     * @param string $data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
-     * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing a settings of report engine.
+     * @param string $data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+     * @param \Aspose\Words\Model\ReportEngineSettings $report_engine_settings An object providing settings of a report engine.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -140,7 +140,7 @@ class BuildReportRequest extends BaseApiRequest
     }
 
     /*
-     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public function get_data()
     {
@@ -148,7 +148,7 @@ class BuildReportRequest extends BaseApiRequest
     }
 
     /*
-     * A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+     * A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
      */
     public function set_data($value)
     {
@@ -157,7 +157,7 @@ class BuildReportRequest extends BaseApiRequest
     }
 
     /*
-     * An object providing a settings of report engine.
+     * An object providing settings of a report engine.
      */
     public function get_report_engine_settings()
     {
@@ -165,7 +165,7 @@ class BuildReportRequest extends BaseApiRequest
     }
 
     /*
-     * An object providing a settings of report engine.
+     * An object providing settings of a report engine.
      */
     public function set_report_engine_settings($value)
     {

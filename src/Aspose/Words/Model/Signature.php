@@ -261,7 +261,7 @@ class Signature implements ArrayAccess
     /*
      * Sets issuer_name
      *
-     * @param string $issuer_name Gets or sets the subject distinguished name of the certificate isuuer.
+     * @param string $issuer_name Gets or sets the subject distinguished name of the certificate issuer.
      *
      * @return $this
      */

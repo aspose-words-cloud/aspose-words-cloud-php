@@ -50,7 +50,7 @@ class SignDocumentOnlineRequest extends BaseApiRequest
     public $document;
 
     /*
-     * certifate file path.
+     * certificate file path.
      */
     public $certificate_path;
 
@@ -88,7 +88,7 @@ class SignDocumentOnlineRequest extends BaseApiRequest
      * Initializes a new instance of the SignDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
-     * @param string $certificate_path certifate file path.
+     * @param string $certificate_path certificate file path.
      * @param string $certificate_password certificate password.
      * @param string $load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
      * @param string $password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
@@ -126,7 +126,7 @@ class SignDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * certifate file path.
+     * certificate file path.
      */
     public function get_certificate_path()
     {
@@ -134,7 +134,7 @@ class SignDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
-     * certifate file path.
+     * certificate file path.
      */
     public function set_certificate_path($value)
     {

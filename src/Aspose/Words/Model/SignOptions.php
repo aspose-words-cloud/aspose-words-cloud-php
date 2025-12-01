@@ -223,7 +223,7 @@ class SignOptions implements ArrayAccess
     /*
      * Sets comments
      *
-     * @param string $comments Gets or sets comments on the digital signature. Default value is empty string.
+     * @param string $comments Gets or sets comments on the digital signature. The default value is an empty string.
      *
      * @return $this
      */
@@ -247,7 +247,7 @@ class SignOptions implements ArrayAccess
     /*
      * Sets decryption_password
      *
-     * @param string $decryption_password Gets or sets the password to decrypt source document. Default value is empty string.
+     * @param string $decryption_password Gets or sets the password to decrypt source document. The default value is an empty string.
      *
      * @return $this
      */
@@ -271,7 +271,7 @@ class SignOptions implements ArrayAccess
     /*
      * Sets provider_id
      *
-     * @param string $provider_id Gets or sets the class Guid of the signature cryptography provider. Default value is Empty (all zeroes) Guid.
+     * @param string $provider_id Gets or sets the class Guid of the signature cryptography provider. The default value is Empty (all zeroes) Guid.
      *
      * @return $this
      */
@@ -295,7 +295,7 @@ class SignOptions implements ArrayAccess
     /*
      * Sets signature_line_id
      *
-     * @param string $signature_line_id Gets or sets user defined signature line Guid. Default value is Empty (all zeroes) Guid.
+     * @param string $signature_line_id Gets or sets user defined signature line Guid. The default value is Empty (all zeroes) Guid.
      *
      * @return $this
      */
@@ -319,7 +319,7 @@ class SignOptions implements ArrayAccess
     /*
      * Sets signature_line_image_filename
      *
-     * @param string $signature_line_image_filename Gets or sets the image that will be shown in associated SignatureLine. Default value is empty string.
+     * @param string $signature_line_image_filename Gets or sets the image that will be shown in associated SignatureLine. The default value is an empty string.
      *
      * @return $this
      */
@@ -343,7 +343,7 @@ class SignOptions implements ArrayAccess
     /*
      * Sets sign_time
      *
-     * @param \DateTime $sign_time Gets or sets the date of signing. Default value is current time (Now).
+     * @param \DateTime $sign_time Gets or sets the date of signing. The default value is current time (Now).
      *
      * @return $this
      */

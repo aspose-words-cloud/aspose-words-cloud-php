@@ -69,7 +69,7 @@ class FolderTests extends BaseTestContext
         $request = new DeleteFolderRequest(
             $testDeleteFolder,
             NULL,
-            NULL
+            true
         );
 
         Assert::assertNull($this->words->deleteFolder($request));

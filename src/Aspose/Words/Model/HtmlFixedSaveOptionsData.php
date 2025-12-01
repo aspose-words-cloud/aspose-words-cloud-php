@@ -317,7 +317,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets css_class_names_prefix
      *
-     * @param string $css_class_names_prefix Gets or sets the prefix which is added to all class names in style.css file. Default value is "aw".
+     * @param string $css_class_names_prefix Gets or sets the prefix which is added to all class names in style.css file. The default value is "aw".
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets id_prefix
      *
-     * @param string $id_prefix Gets or sets a prefix that is prepended to all generated element IDs in the output document. Default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.
+     * @param string $id_prefix Gets or sets a prefix that is prepended to all generated element IDs in the output document. The default value is null and no prefix is prepended. If the prefix is specified, it can contain only letters, digits, underscores, and hyphens, and must start with a letter.
      *
      * @return $this
      */
@@ -541,7 +541,7 @@ class HtmlFixedSaveOptionsData extends FixedPageSaveOptionsData
     /*
      * Sets page_margins
      *
-     * @param double $page_margins Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points. Depends on the value of PageHorizontalAlignment property: Defines top, bottom and left page margins if the value is Left. Defines top, bottom and right page margins if the value is Right. Defines top and bottom page margins if the value is Center.
+     * @param double $page_margins Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. The default value is 10 points. Depends on the value of PageHorizontalAlignment property: Defines top, bottom and left page margins if the value is Left. Defines top, bottom and right page margins if the value is Right. Defines top and bottom page margins if the value is Center.
      *
      * @return $this
      */

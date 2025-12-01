@@ -50,7 +50,7 @@ class SignDocumentRequest extends BaseApiRequest
     public $name;
 
     /*
-     * certifate file path.
+     * certificate file path.
      */
     public $certificate_path;
 
@@ -98,7 +98,7 @@ class SignDocumentRequest extends BaseApiRequest
      * Initializes a new instance of the SignDocumentRequest class.
      *
      * @param string $name Name of the document to sign.
-     * @param string $certificate_path certifate file path.
+     * @param string $certificate_path certificate file path.
      * @param string $certificate_password certificate password.
      * @param string $folder Original document folder.
      * @param string $storage Original document storage.
@@ -140,7 +140,7 @@ class SignDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * certifate file path.
+     * certificate file path.
      */
     public function get_certificate_path()
     {
@@ -148,7 +148,7 @@ class SignDocumentRequest extends BaseApiRequest
     }
 
     /*
-     * certifate file path.
+     * certificate file path.
      */
     public function set_certificate_path($value)
     {

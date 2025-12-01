@@ -287,7 +287,7 @@ class Comment extends CommentLink
     /*
      * Sets author
      *
-     * @param string $author Gets or sets the author name for a comment. Cannot be null.Default is empty string.
+     * @param string $author Gets or sets the author name for a comment. Cannot be null.Default is an empty string.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class Comment extends CommentLink
     /*
      * Sets initial
      *
-     * @param string $initial Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is empty string.
+     * @param string $initial Gets or sets the initials of the user associated with a specific comment. Cannot be null.Default is an empty string.
      *
      * @return $this
      */

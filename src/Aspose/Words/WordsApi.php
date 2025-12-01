@@ -101,7 +101,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisions
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -129,7 +129,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisionsWithHttpInfo
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -196,7 +196,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisionsAsync
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -216,7 +216,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisionsAsyncWithHttpInfo
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsRequest $request is a request object for operation
      *
@@ -271,7 +271,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisionsOnline
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsOnlineRequest $request is a request object for operation
      *
@@ -299,7 +299,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisionsOnlineWithHttpInfo
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsOnlineRequest $request is a request object for operation
      *
@@ -353,7 +353,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisionsOnlineAsync
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsOnlineRequest $request is a request object for operation
      *
@@ -373,7 +373,7 @@ class WordsApi implements Encryptor
     /*
      * Operation acceptAllRevisionsOnlineAsyncWithHttpInfo
      *
-     * Accepts all revisions in the document.
+     * Accepts all the revisions in the document.
      *
      * @param Requests\acceptAllRevisionsOnlineRequest $request is a request object for operation
      *
@@ -27791,7 +27791,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getPublicKey
      *
-     * Get assymetric public key.
+     * Get asymmetric public key.
      *
      * @param Requests\getPublicKeyRequest $request is a request object for operation
      *
@@ -27819,7 +27819,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getPublicKeyWithHttpInfo
      *
-     * Get assymetric public key.
+     * Get asymmetric public key.
      *
      * @param Requests\getPublicKeyRequest $request is a request object for operation
      *
@@ -27886,7 +27886,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getPublicKeyAsync
      *
-     * Get assymetric public key.
+     * Get asymmetric public key.
      *
      * @param Requests\getPublicKeyRequest $request is a request object for operation
      *
@@ -27906,7 +27906,7 @@ class WordsApi implements Encryptor
     /*
      * Operation getPublicKeyAsyncWithHttpInfo
      *
-     * Get assymetric public key.
+     * Get asymmetric public key.
      *
      * @param Requests\getPublicKeyRequest $request is a request object for operation
      *

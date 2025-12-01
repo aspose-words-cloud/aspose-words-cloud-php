@@ -249,7 +249,7 @@ class TiffSaveOptionsData extends ImageSaveOptionsData
     /*
      * Sets threshold_for_floyd_steinberg_dithering
      *
-     * @param int $threshold_for_floyd_steinberg_dithering Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.
+     * @param int $threshold_for_floyd_steinberg_dithering Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. The default value is 128.
      *
      * @return $this
      */

@@ -574,7 +574,7 @@ abstract class SaveOptionsData implements ArrayAccess
     /*
      * Sets update_created_time_property
      *
-     * @param bool $update_created_time_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.
+     * @param bool $update_created_time_property Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. The default value is false.
      *
      * @return $this
      */

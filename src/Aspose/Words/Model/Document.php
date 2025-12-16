@@ -55,6 +55,7 @@ class Document implements ArrayAccess
         'links' => '\Aspose\Words\Model\Link[]',
         'document_properties' => '\Aspose\Words\Model\DocumentProperties',
         'file_name' => 'string',
+        'file_size' => 'int',
         'is_encrypted' => 'bool',
         'is_signed' => 'bool',
         'source_format' => 'string'
@@ -69,6 +70,7 @@ class Document implements ArrayAccess
         'links' => 'null',
         'document_properties' => 'null',
         'file_name' => 'null',
+        'file_size' => 'null',
         'is_encrypted' => 'null',
         'is_signed' => 'null',
         'source_format' => 'null'
@@ -104,6 +106,7 @@ class Document implements ArrayAccess
         'links' => 'Links',
         'document_properties' => 'DocumentProperties',
         'file_name' => 'FileName',
+        'file_size' => 'FileSize',
         'is_encrypted' => 'IsEncrypted',
         'is_signed' => 'IsSigned',
         'source_format' => 'SourceFormat'
@@ -118,6 +121,7 @@ class Document implements ArrayAccess
         'links' => 'setLinks',
         'document_properties' => 'setDocumentProperties',
         'file_name' => 'setFileName',
+        'file_size' => 'setFileSize',
         'is_encrypted' => 'setIsEncrypted',
         'is_signed' => 'setIsSigned',
         'source_format' => 'setSourceFormat'
@@ -132,6 +136,7 @@ class Document implements ArrayAccess
         'links' => 'getLinks',
         'document_properties' => 'getDocumentProperties',
         'file_name' => 'getFileName',
+        'file_size' => 'getFileSize',
         'is_encrypted' => 'getIsEncrypted',
         'is_signed' => 'getIsSigned',
         'source_format' => 'getSourceFormat'
@@ -252,6 +257,7 @@ class Document implements ArrayAccess
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['document_properties'] = isset($data['document_properties']) ? $data['document_properties'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
         $this->container['is_encrypted'] = isset($data['is_encrypted']) ? $data['is_encrypted'] : null;
         $this->container['is_signed'] = isset($data['is_signed']) ? $data['is_signed'] : null;
         $this->container['source_format'] = isset($data['source_format']) ? $data['source_format'] : null;
@@ -366,6 +372,30 @@ class Document implements ArrayAccess
     public function setFileName($file_name)
     {
         $this->container['file_name'] = $file_name;
+        return $this;
+    }
+
+
+    /*
+     * Gets file_size
+     *
+     * @return int
+     */
+    public function getFileSize()
+    {
+        return $this->container['file_size'];
+    }
+
+    /*
+     * Sets file_size
+     *
+     * @param int $file_size Gets or sets the file size.
+     *
+     * @return $this
+     */
+    public function setFileSize($file_size)
+    {
+        $this->container['file_size'] = $file_size;
         return $this;
     }
 

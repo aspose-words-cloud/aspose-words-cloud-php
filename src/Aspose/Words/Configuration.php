@@ -134,7 +134,7 @@ class Configuration
      * Version of Aspose.Words Cloud API
      *
      */
-    protected $clientVersion = '25.12';
+    protected $clientVersion = '26.1';
 
     /*
      * Stores timeout in seconds
@@ -539,7 +539,7 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Words) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 25.12' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 26.1' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

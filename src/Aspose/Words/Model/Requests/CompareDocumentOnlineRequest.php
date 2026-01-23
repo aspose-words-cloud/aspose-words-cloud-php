@@ -80,6 +80,11 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
     public $dest_file_name;
 
     /*
+     * Folder in filestorage with custom fonts.
+     */
+    public $fonts_location;
+
+    /*
      * Initializes a new instance of the CompareDocumentOnlineRequest class.
      *
      * @param \SplFileObject $document The document.
@@ -89,8 +94,9 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
      * @param string $encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
      * @param bool $open_type_support The value indicates whether OpenType support is on.
      * @param string $dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+     * @param string $fonts_location Folder in filestorage with custom fonts.
      */
-    public function __construct($document, $compare_data, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null)
+    public function __construct($document, $compare_data, $load_encoding = null, $password = null, $encrypted_password = null, $open_type_support = null, $dest_file_name = null, $fonts_location = null)
     {
         $this->document = $document;
         $this->compare_data = $compare_data;
@@ -99,6 +105,7 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
         $this->encrypted_password = $encrypted_password;
         $this->open_type_support = $open_type_support;
         $this->dest_file_name = $dest_file_name;
+        $this->fonts_location = $fonts_location;
     }
 
     /*
@@ -221,6 +228,23 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
     }
 
     /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function get_fonts_location()
+    {
+        return $this->fonts_location;
+    }
+
+    /*
+     * Folder in filestorage with custom fonts.
+     */
+    public function set_fonts_location($value)
+    {
+        $this->fonts_location = $value;
+        return $this;
+    }
+
+    /*
      * Create request data for operation 'compareDocumentOnline'
      *
      * @throws \InvalidArgumentException
@@ -293,6 +317,16 @@ class CompareDocumentOnlineRequest extends BaseApiRequest
         if ($this->dest_file_name !== null) {
             $localName = lcfirst('DestFileName');
             $localValue = is_bool($this->dest_file_name) ? ($this->dest_file_name ? 'true' : 'false') : $this->dest_file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($this->fonts_location !== null) {
+            $localName = lcfirst('FontsLocation');
+            $localValue = is_bool($this->fonts_location) ? ($this->fonts_location ? 'true' : 'false') : $this->fonts_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toQueryValue($localValue), $resourcePath);
             } else {

@@ -204,7 +204,8 @@ class OfficeMathObject extends OfficeMathLink
     const MATH_OBJECT_TYPE_PRE_SUB_SUPERSCRIPT = 'PreSubSuperscript';
     const MATH_OBJECT_TYPE_SUBSCRIPT = 'Subscript';
     const MATH_OBJECT_TYPE_SUB_SUPERSCRIPT = 'SubSuperscript';
-    const MATH_OBJECT_TYPE_SUPERCRIPT = 'Supercript';
+    const MATH_OBJECT_TYPE_SUPERSCRIPT = 'Superscript';
+    const MATH_OBJECT_TYPE_NONE = 'None';
 
     /*
      * Gets allowable values of the enum
@@ -271,7 +272,8 @@ class OfficeMathObject extends OfficeMathLink
             self::MATH_OBJECT_TYPE_PRE_SUB_SUPERSCRIPT,
             self::MATH_OBJECT_TYPE_SUBSCRIPT,
             self::MATH_OBJECT_TYPE_SUB_SUPERSCRIPT,
-            self::MATH_OBJECT_TYPE_SUPERCRIPT
+            self::MATH_OBJECT_TYPE_SUPERSCRIPT,
+            self::MATH_OBJECT_TYPE_NONE
         ];
     }
 

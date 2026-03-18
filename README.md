@@ -13,6 +13,11 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 26.3
+
+- Various stability and performance improvements.
+
+
 ## Enhancements in Version 26.2
 
 - Implemented ability to save documents as Docling JSON format.
@@ -467,7 +472,7 @@ New SDK is not backwards compatible with previous generation because of the last
 
 ## Licensing
 
-All Aspose.Words Cloud SDKs, helper scripts and templates are licensed under [MIT License](https://github.com/aspose-words-cloud/aspose-words-cloud-php/blob/master/LICENSE). 
+All Aspose.Words Cloud SDKs, helper scripts and templates are licensed under [MIT License](https://github.com/aspose-words-cloud/Aspose.Words-Cloud-SDK-for-PHP/blob/master/LICENSE). 
 
 ## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/c/words).

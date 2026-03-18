@@ -6,7 +6,7 @@
     "pdf to word", "docx to pdf", "pdf to docx", "word to html", "html to word", "reporting", "mailmerge", "statistics",
     "watermark", "fields", "generate", "create", "report", "table", "paragraph", "images", "text", "generator", "creator", "maker"],
 	"license": 		"MIT",
-    "homepage": "https://github.com/aspose-words-cloud/aspose-words-cloud-php",
+    "homepage": "https://github.com/aspose-words-cloud/Aspose.Words-Cloud-SDK-for-PHP",
     "authors": [
         {
             "name": "Aspose",

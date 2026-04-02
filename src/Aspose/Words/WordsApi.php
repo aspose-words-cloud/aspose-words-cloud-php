@@ -39,6 +39,7 @@ use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Math\BigInteger;
 use phpseclib3\Crypt\RSA;
 use Aspose\Words\Encryptor;
+use Aspose\Words\JobHandler;
 
 /*
  * WordsApi Aspose.Words for Cloud API.
@@ -96,6 +97,80 @@ class WordsApi implements Encryptor
     public function getConfig() 
     {
         return $this->config;
+    }
+
+    /*
+     * Gets current job result parts.
+     *
+     * @param string $jobId job identifier
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array
+     */
+    public function callJobResult($jobId)
+    {
+        try {
+            return $this->callJobResultWithHttpInfo($jobId);
+        }
+        catch(RepeatRequestException $e) {
+            try {
+                return $this->callJobResultWithHttpInfo($jobId);
+            }
+            catch(RepeatRequestException $e) {
+                throw new ApiException('Authorization failed', $e->getCode(), null, null);
+            }
+        }
+    }
+
+    /*
+     * Gets current job result parts.
+     *
+     * @param string $jobId job identifier
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array
+     */
+    private function callJobResultWithHttpInfo($jobId)
+    {
+        $this->_checkAuthToken();
+        $headers = [];
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        if ($this->config->getUserAgent()) {
+            $headers['x-aspose-client'] = $this->config->getUserAgent();
+        }
+
+        $headers['x-aspose-client-version'] = $this->config->getClientVersion();
+        $url = ObjectSerializer::parseURL($this->config, '/words/job', ['id' => $jobId]);
+        $req = new Request('GET', $url, $headers);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());
+        } catch (ApiException $e) {
+            throw $e;
+        }
     }
 
     /*
@@ -226,12 +301,13 @@ class WordsApi implements Encryptor
     private function acceptAllRevisionsAsyncWithHttpInfo(Requests\acceptAllRevisionsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -383,12 +459,13 @@ class WordsApi implements Encryptor
     private function acceptAllRevisionsOnlineAsyncWithHttpInfo(Requests\acceptAllRevisionsOnlineRequest $request) 
     {
         $returnType = 'AcceptAllRevisionsOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -553,12 +630,13 @@ class WordsApi implements Encryptor
     private function appendDocumentAsyncWithHttpInfo(Requests\appendDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -575,6 +653,153 @@ class WordsApi implements Encryptor
 
                     return [
                         ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation appendDocumentJob
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\JobHandler
+     */
+    public function appendDocumentJob(Requests\appendDocumentJobRequest $request)
+    {
+        try {
+            list($response) = $this->appendDocumentJobWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->appendDocumentJobWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation appendDocumentJobWithHttpInfo
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\JobHandler, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function appendDocumentJobWithHttpInfo(Requests\appendDocumentJobRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody()->getContents();
+            $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+            return [
+                new JobHandler($this, $request->getOriginalRequest(), $jobInfo),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\JobInfo', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation appendDocumentJobAsync
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function appendDocumentJobAsync(Requests\appendDocumentJobRequest $request) 
+    {
+        return $this->appendDocumentJobAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation appendDocumentJobAsyncWithHttpInfo
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function appendDocumentJobAsyncWithHttpInfo(Requests\appendDocumentJobRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $requestModel = $request;
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType, $requestModel) {
+                    $responseBody = $response->getBody()->getContents();
+                    $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+                    return [
+                        new JobHandler($this, $requestModel->getOriginalRequest(), $jobInfo),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -710,12 +935,13 @@ class WordsApi implements Encryptor
     private function appendDocumentOnlineAsyncWithHttpInfo(Requests\appendDocumentOnlineRequest $request) 
     {
         $returnType = 'AppendDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -732,6 +958,153 @@ class WordsApi implements Encryptor
 
                     return [
                         ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation appendDocumentOnlineJob
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\JobHandler
+     */
+    public function appendDocumentOnlineJob(Requests\appendDocumentOnlineJobRequest $request)
+    {
+        try {
+            list($response) = $this->appendDocumentOnlineJobWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->appendDocumentOnlineJobWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation appendDocumentOnlineJobWithHttpInfo
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\JobHandler, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function appendDocumentOnlineJobWithHttpInfo(Requests\appendDocumentOnlineJobRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody()->getContents();
+            $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+            return [
+                new JobHandler($this, $request->getOriginalRequest(), $jobInfo),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\JobInfo', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation appendDocumentOnlineJobAsync
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function appendDocumentOnlineJobAsync(Requests\appendDocumentOnlineJobRequest $request) 
+    {
+        return $this->appendDocumentOnlineJobAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation appendDocumentOnlineJobAsyncWithHttpInfo
+     *
+     * Appends documents to the original document.
+     *
+     * @param Requests\appendDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function appendDocumentOnlineJobAsyncWithHttpInfo(Requests\appendDocumentOnlineJobRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $requestModel = $request;
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType, $requestModel) {
+                    $responseBody = $response->getBody()->getContents();
+                    $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+                    return [
+                        new JobHandler($this, $requestModel->getOriginalRequest(), $jobInfo),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,12 +1253,13 @@ class WordsApi implements Encryptor
     private function applyStyleToDocumentElementAsyncWithHttpInfo(Requests\applyStyleToDocumentElementRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\WordsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -1037,12 +1411,13 @@ class WordsApi implements Encryptor
     private function applyStyleToDocumentElementOnlineAsyncWithHttpInfo(Requests\applyStyleToDocumentElementOnlineRequest $request) 
     {
         $returnType = 'ApplyStyleToDocumentElementOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -1207,12 +1582,13 @@ class WordsApi implements Encryptor
     private function buildReportAsyncWithHttpInfo(Requests\buildReportRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -1377,12 +1753,13 @@ class WordsApi implements Encryptor
     private function buildReportOnlineAsyncWithHttpInfo(Requests\buildReportOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -1547,12 +1924,13 @@ class WordsApi implements Encryptor
     private function compareDocumentAsyncWithHttpInfo(Requests\compareDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -1704,12 +2082,13 @@ class WordsApi implements Encryptor
     private function compareDocumentOnlineAsyncWithHttpInfo(Requests\compareDocumentOnlineRequest $request) 
     {
         $returnType = 'CompareDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -1878,12 +2257,13 @@ class WordsApi implements Encryptor
     private function compressDocumentAsyncWithHttpInfo(Requests\compressDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CompressResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -2039,12 +2419,13 @@ class WordsApi implements Encryptor
     private function compressDocumentOnlineAsyncWithHttpInfo(Requests\compressDocumentOnlineRequest $request) 
     {
         $returnType = 'CompressDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -2209,12 +2590,13 @@ class WordsApi implements Encryptor
     private function convertDocumentAsyncWithHttpInfo(Requests\convertDocumentRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -2231,6 +2613,153 @@ class WordsApi implements Encryptor
 
                     return [
                         ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation convertDocumentJob
+     *
+     * Converts a document on a local drive to the specified format.
+     *
+     * @param Requests\convertDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\JobHandler
+     */
+    public function convertDocumentJob(Requests\convertDocumentJobRequest $request)
+    {
+        try {
+            list($response) = $this->convertDocumentJobWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->convertDocumentJobWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation convertDocumentJobWithHttpInfo
+     *
+     * Converts a document on a local drive to the specified format.
+     *
+     * @param Requests\convertDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\JobHandler, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function convertDocumentJobWithHttpInfo(Requests\convertDocumentJobRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody()->getContents();
+            $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+            return [
+                new JobHandler($this, $request->getOriginalRequest(), $jobInfo),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\JobInfo', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation convertDocumentJobAsync
+     *
+     * Converts a document on a local drive to the specified format.
+     *
+     * @param Requests\convertDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertDocumentJobAsync(Requests\convertDocumentJobRequest $request) 
+    {
+        return $this->convertDocumentJobAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation convertDocumentJobAsyncWithHttpInfo
+     *
+     * Converts a document on a local drive to the specified format.
+     *
+     * @param Requests\convertDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function convertDocumentJobAsyncWithHttpInfo(Requests\convertDocumentJobRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $requestModel = $request;
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType, $requestModel) {
+                    $responseBody = $response->getBody()->getContents();
+                    $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+                    return [
+                        new JobHandler($this, $requestModel->getOriginalRequest(), $jobInfo),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2354,12 +2883,13 @@ class WordsApi implements Encryptor
     private function copyFileAsyncWithHttpInfo(Requests\copyFileRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -2481,12 +3011,13 @@ class WordsApi implements Encryptor
     private function copyFolderAsyncWithHttpInfo(Requests\copyFolderRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -2633,12 +3164,13 @@ class WordsApi implements Encryptor
     private function copyStyleAsyncWithHttpInfo(Requests\copyStyleRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -2790,12 +3322,13 @@ class WordsApi implements Encryptor
     private function copyStyleOnlineAsyncWithHttpInfo(Requests\copyStyleOnlineRequest $request) 
     {
         $returnType = 'CopyStyleOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -2960,12 +3493,13 @@ class WordsApi implements Encryptor
     private function copyStylesFromTemplateAsyncWithHttpInfo(Requests\copyStylesFromTemplateRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\WordsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -3134,12 +3668,13 @@ class WordsApi implements Encryptor
     private function createDocumentAsyncWithHttpInfo(Requests\createDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -3279,12 +3814,13 @@ class WordsApi implements Encryptor
     private function createFolderAsyncWithHttpInfo(Requests\createFolderRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -3431,12 +3967,13 @@ class WordsApi implements Encryptor
     private function createOrUpdateDocumentPropertyAsyncWithHttpInfo(Requests\createOrUpdateDocumentPropertyRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -3588,12 +4125,13 @@ class WordsApi implements Encryptor
     private function createOrUpdateDocumentPropertyOnlineAsyncWithHttpInfo(Requests\createOrUpdateDocumentPropertyOnlineRequest $request) 
     {
         $returnType = 'CreateOrUpdateDocumentPropertyOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -3758,12 +4296,13 @@ class WordsApi implements Encryptor
     private function deleteAllParagraphTabStopsAsyncWithHttpInfo(Requests\deleteAllParagraphTabStopsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -3915,12 +4454,13 @@ class WordsApi implements Encryptor
     private function deleteAllParagraphTabStopsOnlineAsyncWithHttpInfo(Requests\deleteAllParagraphTabStopsOnlineRequest $request) 
     {
         $returnType = 'DeleteAllParagraphTabStopsOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -4060,12 +4600,13 @@ class WordsApi implements Encryptor
     private function deleteBookmarkAsyncWithHttpInfo(Requests\deleteBookmarkRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -4212,12 +4753,13 @@ class WordsApi implements Encryptor
     private function deleteBookmarkOnlineAsyncWithHttpInfo(Requests\deleteBookmarkOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -4357,12 +4899,13 @@ class WordsApi implements Encryptor
     private function deleteBookmarksAsyncWithHttpInfo(Requests\deleteBookmarksRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -4509,12 +5052,13 @@ class WordsApi implements Encryptor
     private function deleteBookmarksOnlineAsyncWithHttpInfo(Requests\deleteBookmarksOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -4683,12 +5227,13 @@ class WordsApi implements Encryptor
     private function deleteBorderAsyncWithHttpInfo(Requests\deleteBorderRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -4844,12 +5389,13 @@ class WordsApi implements Encryptor
     private function deleteBorderOnlineAsyncWithHttpInfo(Requests\deleteBorderOnlineRequest $request) 
     {
         $returnType = 'DeleteBorderOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -5018,12 +5564,13 @@ class WordsApi implements Encryptor
     private function deleteBordersAsyncWithHttpInfo(Requests\deleteBordersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -5179,12 +5726,13 @@ class WordsApi implements Encryptor
     private function deleteBordersOnlineAsyncWithHttpInfo(Requests\deleteBordersOnlineRequest $request) 
     {
         $returnType = 'DeleteBordersOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -5324,12 +5872,13 @@ class WordsApi implements Encryptor
     private function deleteCommentAsyncWithHttpInfo(Requests\deleteCommentRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -5476,12 +6025,13 @@ class WordsApi implements Encryptor
     private function deleteCommentOnlineAsyncWithHttpInfo(Requests\deleteCommentOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -5621,12 +6171,13 @@ class WordsApi implements Encryptor
     private function deleteCommentsAsyncWithHttpInfo(Requests\deleteCommentsRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -5773,12 +6324,13 @@ class WordsApi implements Encryptor
     private function deleteCommentsOnlineAsyncWithHttpInfo(Requests\deleteCommentsOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -5918,12 +6470,13 @@ class WordsApi implements Encryptor
     private function deleteCustomXmlPartAsyncWithHttpInfo(Requests\deleteCustomXmlPartRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -6070,12 +6623,13 @@ class WordsApi implements Encryptor
     private function deleteCustomXmlPartOnlineAsyncWithHttpInfo(Requests\deleteCustomXmlPartOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -6215,12 +6769,13 @@ class WordsApi implements Encryptor
     private function deleteCustomXmlPartsAsyncWithHttpInfo(Requests\deleteCustomXmlPartsRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -6367,12 +6922,13 @@ class WordsApi implements Encryptor
     private function deleteCustomXmlPartsOnlineAsyncWithHttpInfo(Requests\deleteCustomXmlPartsOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -6512,12 +7068,13 @@ class WordsApi implements Encryptor
     private function deleteDocumentPropertyAsyncWithHttpInfo(Requests\deleteDocumentPropertyRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -6664,12 +7221,13 @@ class WordsApi implements Encryptor
     private function deleteDocumentPropertyOnlineAsyncWithHttpInfo(Requests\deleteDocumentPropertyOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -6809,12 +7367,13 @@ class WordsApi implements Encryptor
     private function deleteDrawingObjectAsyncWithHttpInfo(Requests\deleteDrawingObjectRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -6961,12 +7520,13 @@ class WordsApi implements Encryptor
     private function deleteDrawingObjectOnlineAsyncWithHttpInfo(Requests\deleteDrawingObjectOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -7106,12 +7666,13 @@ class WordsApi implements Encryptor
     private function deleteFieldAsyncWithHttpInfo(Requests\deleteFieldRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -7258,12 +7819,13 @@ class WordsApi implements Encryptor
     private function deleteFieldOnlineAsyncWithHttpInfo(Requests\deleteFieldOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -7403,12 +7965,13 @@ class WordsApi implements Encryptor
     private function deleteFieldsAsyncWithHttpInfo(Requests\deleteFieldsRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -7555,12 +8118,13 @@ class WordsApi implements Encryptor
     private function deleteFieldsOnlineAsyncWithHttpInfo(Requests\deleteFieldsOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -7700,12 +8264,13 @@ class WordsApi implements Encryptor
     private function deleteFileAsyncWithHttpInfo(Requests\deleteFileRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -7827,12 +8392,13 @@ class WordsApi implements Encryptor
     private function deleteFolderAsyncWithHttpInfo(Requests\deleteFolderRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -7954,12 +8520,13 @@ class WordsApi implements Encryptor
     private function deleteFootnoteAsyncWithHttpInfo(Requests\deleteFootnoteRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -8106,12 +8673,13 @@ class WordsApi implements Encryptor
     private function deleteFootnoteOnlineAsyncWithHttpInfo(Requests\deleteFootnoteOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -8251,12 +8819,13 @@ class WordsApi implements Encryptor
     private function deleteFormFieldAsyncWithHttpInfo(Requests\deleteFormFieldRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -8403,12 +8972,13 @@ class WordsApi implements Encryptor
     private function deleteFormFieldOnlineAsyncWithHttpInfo(Requests\deleteFormFieldOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -8548,12 +9118,13 @@ class WordsApi implements Encryptor
     private function deleteHeaderFooterAsyncWithHttpInfo(Requests\deleteHeaderFooterRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -8700,12 +9271,13 @@ class WordsApi implements Encryptor
     private function deleteHeaderFooterOnlineAsyncWithHttpInfo(Requests\deleteHeaderFooterOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -8845,12 +9417,13 @@ class WordsApi implements Encryptor
     private function deleteHeadersFootersAsyncWithHttpInfo(Requests\deleteHeadersFootersRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -8997,12 +9570,13 @@ class WordsApi implements Encryptor
     private function deleteHeadersFootersOnlineAsyncWithHttpInfo(Requests\deleteHeadersFootersOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -9142,12 +9716,13 @@ class WordsApi implements Encryptor
     private function deleteMacrosAsyncWithHttpInfo(Requests\deleteMacrosRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -9294,12 +9869,13 @@ class WordsApi implements Encryptor
     private function deleteMacrosOnlineAsyncWithHttpInfo(Requests\deleteMacrosOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -9439,12 +10015,13 @@ class WordsApi implements Encryptor
     private function deleteOfficeMathObjectAsyncWithHttpInfo(Requests\deleteOfficeMathObjectRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -9591,12 +10168,13 @@ class WordsApi implements Encryptor
     private function deleteOfficeMathObjectOnlineAsyncWithHttpInfo(Requests\deleteOfficeMathObjectOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -9736,12 +10314,13 @@ class WordsApi implements Encryptor
     private function deleteOfficeMathObjectsAsyncWithHttpInfo(Requests\deleteOfficeMathObjectsRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -9888,12 +10467,13 @@ class WordsApi implements Encryptor
     private function deleteOfficeMathObjectsOnlineAsyncWithHttpInfo(Requests\deleteOfficeMathObjectsOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -10033,12 +10613,13 @@ class WordsApi implements Encryptor
     private function deleteParagraphAsyncWithHttpInfo(Requests\deleteParagraphRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -10185,12 +10766,13 @@ class WordsApi implements Encryptor
     private function deleteParagraphListFormatAsyncWithHttpInfo(Requests\deleteParagraphListFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -10342,12 +10924,13 @@ class WordsApi implements Encryptor
     private function deleteParagraphListFormatOnlineAsyncWithHttpInfo(Requests\deleteParagraphListFormatOnlineRequest $request) 
     {
         $returnType = 'DeleteParagraphListFormatOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -10512,12 +11095,13 @@ class WordsApi implements Encryptor
     private function deleteParagraphOnlineAsyncWithHttpInfo(Requests\deleteParagraphOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -10682,12 +11266,13 @@ class WordsApi implements Encryptor
     private function deleteParagraphTabStopAsyncWithHttpInfo(Requests\deleteParagraphTabStopRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -10839,12 +11424,13 @@ class WordsApi implements Encryptor
     private function deleteParagraphTabStopOnlineAsyncWithHttpInfo(Requests\deleteParagraphTabStopOnlineRequest $request) 
     {
         $returnType = 'DeleteParagraphTabStopOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -10984,12 +11570,13 @@ class WordsApi implements Encryptor
     private function deleteRunAsyncWithHttpInfo(Requests\deleteRunRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -11136,12 +11723,13 @@ class WordsApi implements Encryptor
     private function deleteRunOnlineAsyncWithHttpInfo(Requests\deleteRunOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -11281,12 +11869,13 @@ class WordsApi implements Encryptor
     private function deleteSectionAsyncWithHttpInfo(Requests\deleteSectionRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -11433,12 +12022,13 @@ class WordsApi implements Encryptor
     private function deleteSectionOnlineAsyncWithHttpInfo(Requests\deleteSectionOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -11578,12 +12168,13 @@ class WordsApi implements Encryptor
     private function deleteStructuredDocumentTagAsyncWithHttpInfo(Requests\deleteStructuredDocumentTagRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -11730,12 +12321,13 @@ class WordsApi implements Encryptor
     private function deleteStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\deleteStructuredDocumentTagOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -11875,12 +12467,13 @@ class WordsApi implements Encryptor
     private function deleteTableAsyncWithHttpInfo(Requests\deleteTableRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -12002,12 +12595,13 @@ class WordsApi implements Encryptor
     private function deleteTableCellAsyncWithHttpInfo(Requests\deleteTableCellRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -12154,12 +12748,13 @@ class WordsApi implements Encryptor
     private function deleteTableCellOnlineAsyncWithHttpInfo(Requests\deleteTableCellOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -12324,12 +12919,13 @@ class WordsApi implements Encryptor
     private function deleteTableOnlineAsyncWithHttpInfo(Requests\deleteTableOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -12469,12 +13065,13 @@ class WordsApi implements Encryptor
     private function deleteTableRowAsyncWithHttpInfo(Requests\deleteTableRowRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -12621,12 +13218,13 @@ class WordsApi implements Encryptor
     private function deleteTableRowOnlineAsyncWithHttpInfo(Requests\deleteTableRowOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -12791,12 +13389,13 @@ class WordsApi implements Encryptor
     private function deleteWatermarkAsyncWithHttpInfo(Requests\deleteWatermarkRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -12948,12 +13547,13 @@ class WordsApi implements Encryptor
     private function deleteWatermarkOnlineAsyncWithHttpInfo(Requests\deleteWatermarkOnlineRequest $request) 
     {
         $returnType = 'DeleteWatermarkOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -13118,12 +13718,13 @@ class WordsApi implements Encryptor
     private function downloadFileAsyncWithHttpInfo(Requests\downloadFileRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -13288,12 +13889,13 @@ class WordsApi implements Encryptor
     private function executeMailMergeAsyncWithHttpInfo(Requests\executeMailMergeRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -13310,6 +13912,153 @@ class WordsApi implements Encryptor
 
                     return [
                         ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation executeMailMergeJob
+     *
+     * Executes a Mail Merge operation.
+     *
+     * @param Requests\executeMailMergeJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\JobHandler
+     */
+    public function executeMailMergeJob(Requests\executeMailMergeJobRequest $request)
+    {
+        try {
+            list($response) = $this->executeMailMergeJobWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->executeMailMergeJobWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation executeMailMergeJobWithHttpInfo
+     *
+     * Executes a Mail Merge operation.
+     *
+     * @param Requests\executeMailMergeJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\JobHandler, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function executeMailMergeJobWithHttpInfo(Requests\executeMailMergeJobRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody()->getContents();
+            $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+            return [
+                new JobHandler($this, $request->getOriginalRequest(), $jobInfo),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\JobInfo', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation executeMailMergeJobAsync
+     *
+     * Executes a Mail Merge operation.
+     *
+     * @param Requests\executeMailMergeJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function executeMailMergeJobAsync(Requests\executeMailMergeJobRequest $request) 
+    {
+        return $this->executeMailMergeJobAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation executeMailMergeJobAsyncWithHttpInfo
+     *
+     * Executes a Mail Merge operation.
+     *
+     * @param Requests\executeMailMergeJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function executeMailMergeJobAsyncWithHttpInfo(Requests\executeMailMergeJobRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $requestModel = $request;
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType, $requestModel) {
+                    $responseBody = $response->getBody()->getContents();
+                    $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+                    return [
+                        new JobHandler($this, $requestModel->getOriginalRequest(), $jobInfo),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13458,12 +14207,13 @@ class WordsApi implements Encryptor
     private function executeMailMergeOnlineAsyncWithHttpInfo(Requests\executeMailMergeOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -13480,6 +14230,153 @@ class WordsApi implements Encryptor
 
                     return [
                         ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation executeMailMergeOnlineJob
+     *
+     * Executes a Mail Merge operation online.
+     *
+     * @param Requests\executeMailMergeOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\JobHandler
+     */
+    public function executeMailMergeOnlineJob(Requests\executeMailMergeOnlineJobRequest $request)
+    {
+        try {
+            list($response) = $this->executeMailMergeOnlineJobWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->executeMailMergeOnlineJobWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation executeMailMergeOnlineJobWithHttpInfo
+     *
+     * Executes a Mail Merge operation online.
+     *
+     * @param Requests\executeMailMergeOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\JobHandler, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function executeMailMergeOnlineJobWithHttpInfo(Requests\executeMailMergeOnlineJobRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody()->getContents();
+            $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+            return [
+                new JobHandler($this, $request->getOriginalRequest(), $jobInfo),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\JobInfo', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation executeMailMergeOnlineJobAsync
+     *
+     * Executes a Mail Merge operation online.
+     *
+     * @param Requests\executeMailMergeOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function executeMailMergeOnlineJobAsync(Requests\executeMailMergeOnlineJobRequest $request) 
+    {
+        return $this->executeMailMergeOnlineJobAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation executeMailMergeOnlineJobAsyncWithHttpInfo
+     *
+     * Executes a Mail Merge operation online.
+     *
+     * @param Requests\executeMailMergeOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function executeMailMergeOnlineJobAsyncWithHttpInfo(Requests\executeMailMergeOnlineJobRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $requestModel = $request;
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType, $requestModel) {
+                    $responseBody = $response->getBody()->getContents();
+                    $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+                    return [
+                        new JobHandler($this, $requestModel->getOriginalRequest(), $jobInfo),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13628,12 +14525,13 @@ class WordsApi implements Encryptor
     private function getAllRevisionsAsyncWithHttpInfo(Requests\getAllRevisionsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RevisionsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -13798,12 +14696,13 @@ class WordsApi implements Encryptor
     private function getAllRevisionsOnlineAsyncWithHttpInfo(Requests\getAllRevisionsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RevisionsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -13968,12 +14867,13 @@ class WordsApi implements Encryptor
     private function getAvailableFontsAsyncWithHttpInfo(Requests\getAvailableFontsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\AvailableFontsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -14138,12 +15038,13 @@ class WordsApi implements Encryptor
     private function getBookmarkByNameAsyncWithHttpInfo(Requests\getBookmarkByNameRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -14308,12 +15209,13 @@ class WordsApi implements Encryptor
     private function getBookmarkByNameOnlineAsyncWithHttpInfo(Requests\getBookmarkByNameOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -14478,12 +15380,13 @@ class WordsApi implements Encryptor
     private function getBookmarksAsyncWithHttpInfo(Requests\getBookmarksRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -14648,12 +15551,13 @@ class WordsApi implements Encryptor
     private function getBookmarksOnlineAsyncWithHttpInfo(Requests\getBookmarksOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarksResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -14822,12 +15726,13 @@ class WordsApi implements Encryptor
     private function getBorderAsyncWithHttpInfo(Requests\getBorderRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -14996,12 +15901,13 @@ class WordsApi implements Encryptor
     private function getBorderOnlineAsyncWithHttpInfo(Requests\getBorderOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -15166,12 +16072,13 @@ class WordsApi implements Encryptor
     private function getBordersAsyncWithHttpInfo(Requests\getBordersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -15336,12 +16243,13 @@ class WordsApi implements Encryptor
     private function getBordersOnlineAsyncWithHttpInfo(Requests\getBordersOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BordersResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -15506,12 +16414,13 @@ class WordsApi implements Encryptor
     private function getCommentAsyncWithHttpInfo(Requests\getCommentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -15676,12 +16585,13 @@ class WordsApi implements Encryptor
     private function getCommentOnlineAsyncWithHttpInfo(Requests\getCommentOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -15846,12 +16756,13 @@ class WordsApi implements Encryptor
     private function getCommentsAsyncWithHttpInfo(Requests\getCommentsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -16016,12 +16927,13 @@ class WordsApi implements Encryptor
     private function getCommentsOnlineAsyncWithHttpInfo(Requests\getCommentsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -16186,12 +17098,13 @@ class WordsApi implements Encryptor
     private function getCustomXmlPartAsyncWithHttpInfo(Requests\getCustomXmlPartRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -16356,12 +17269,13 @@ class WordsApi implements Encryptor
     private function getCustomXmlPartOnlineAsyncWithHttpInfo(Requests\getCustomXmlPartOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -16526,12 +17440,13 @@ class WordsApi implements Encryptor
     private function getCustomXmlPartsAsyncWithHttpInfo(Requests\getCustomXmlPartsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CustomXmlPartsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -16696,12 +17611,13 @@ class WordsApi implements Encryptor
     private function getCustomXmlPartsOnlineAsyncWithHttpInfo(Requests\getCustomXmlPartsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CustomXmlPartsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -16866,12 +17782,13 @@ class WordsApi implements Encryptor
     private function getDocumentAsyncWithHttpInfo(Requests\getDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -17036,12 +17953,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectByIndexAsyncWithHttpInfo(Requests\getDocumentDrawingObjectByIndexRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -17206,12 +18124,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectByIndexOnlineAsyncWithHttpInfo(Requests\getDocumentDrawingObjectByIndexOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -17376,12 +18295,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectImageDataAsyncWithHttpInfo(Requests\getDocumentDrawingObjectImageDataRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -17546,12 +18466,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectImageDataOnlineAsyncWithHttpInfo(Requests\getDocumentDrawingObjectImageDataOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -17716,12 +18637,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectOleDataAsyncWithHttpInfo(Requests\getDocumentDrawingObjectOleDataRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -17886,12 +18808,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectOleDataOnlineAsyncWithHttpInfo(Requests\getDocumentDrawingObjectOleDataOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -18056,12 +18979,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectsAsyncWithHttpInfo(Requests\getDocumentDrawingObjectsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -18226,12 +19150,13 @@ class WordsApi implements Encryptor
     private function getDocumentDrawingObjectsOnlineAsyncWithHttpInfo(Requests\getDocumentDrawingObjectsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -18396,12 +19321,13 @@ class WordsApi implements Encryptor
     private function getDocumentFieldNamesAsyncWithHttpInfo(Requests\getDocumentFieldNamesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -18566,12 +19492,13 @@ class WordsApi implements Encryptor
     private function getDocumentFieldNamesOnlineAsyncWithHttpInfo(Requests\getDocumentFieldNamesOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldNamesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -18736,12 +19663,13 @@ class WordsApi implements Encryptor
     private function getDocumentHyperlinkByIndexAsyncWithHttpInfo(Requests\getDocumentHyperlinkByIndexRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -18906,12 +19834,13 @@ class WordsApi implements Encryptor
     private function getDocumentHyperlinkByIndexOnlineAsyncWithHttpInfo(Requests\getDocumentHyperlinkByIndexOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HyperlinkResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -19076,12 +20005,13 @@ class WordsApi implements Encryptor
     private function getDocumentHyperlinksAsyncWithHttpInfo(Requests\getDocumentHyperlinksRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -19246,12 +20176,13 @@ class WordsApi implements Encryptor
     private function getDocumentHyperlinksOnlineAsyncWithHttpInfo(Requests\getDocumentHyperlinksOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HyperlinksResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -19416,12 +20347,13 @@ class WordsApi implements Encryptor
     private function getDocumentPropertiesAsyncWithHttpInfo(Requests\getDocumentPropertiesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -19586,12 +20518,13 @@ class WordsApi implements Encryptor
     private function getDocumentPropertiesOnlineAsyncWithHttpInfo(Requests\getDocumentPropertiesOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertiesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -19756,12 +20689,13 @@ class WordsApi implements Encryptor
     private function getDocumentPropertyAsyncWithHttpInfo(Requests\getDocumentPropertyRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -19926,12 +20860,13 @@ class WordsApi implements Encryptor
     private function getDocumentPropertyOnlineAsyncWithHttpInfo(Requests\getDocumentPropertyOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentPropertyResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -20096,12 +21031,13 @@ class WordsApi implements Encryptor
     private function getDocumentProtectionAsyncWithHttpInfo(Requests\getDocumentProtectionRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -20266,12 +21202,13 @@ class WordsApi implements Encryptor
     private function getDocumentProtectionOnlineAsyncWithHttpInfo(Requests\getDocumentProtectionOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -20436,12 +21373,13 @@ class WordsApi implements Encryptor
     private function getDocumentStatisticsAsyncWithHttpInfo(Requests\getDocumentStatisticsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -20606,12 +21544,13 @@ class WordsApi implements Encryptor
     private function getDocumentStatisticsOnlineAsyncWithHttpInfo(Requests\getDocumentStatisticsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StatDataResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -20776,12 +21715,13 @@ class WordsApi implements Encryptor
     private function getDocumentWithFormatAsyncWithHttpInfo(Requests\getDocumentWithFormatRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -20946,12 +21886,13 @@ class WordsApi implements Encryptor
     private function getFieldAsyncWithHttpInfo(Requests\getFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -21116,12 +22057,13 @@ class WordsApi implements Encryptor
     private function getFieldOnlineAsyncWithHttpInfo(Requests\getFieldOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -21286,12 +22228,13 @@ class WordsApi implements Encryptor
     private function getFieldsAsyncWithHttpInfo(Requests\getFieldsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -21456,12 +22399,13 @@ class WordsApi implements Encryptor
     private function getFieldsOnlineAsyncWithHttpInfo(Requests\getFieldsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -21626,12 +22570,13 @@ class WordsApi implements Encryptor
     private function getFilesListAsyncWithHttpInfo(Requests\getFilesListRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FilesList';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -21796,12 +22741,13 @@ class WordsApi implements Encryptor
     private function getFootnoteAsyncWithHttpInfo(Requests\getFootnoteRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -21966,12 +22912,13 @@ class WordsApi implements Encryptor
     private function getFootnoteOnlineAsyncWithHttpInfo(Requests\getFootnoteOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -22136,12 +23083,13 @@ class WordsApi implements Encryptor
     private function getFootnotesAsyncWithHttpInfo(Requests\getFootnotesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -22306,12 +23254,13 @@ class WordsApi implements Encryptor
     private function getFootnotesOnlineAsyncWithHttpInfo(Requests\getFootnotesOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnotesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -22476,12 +23425,13 @@ class WordsApi implements Encryptor
     private function getFormFieldAsyncWithHttpInfo(Requests\getFormFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -22646,12 +23596,13 @@ class WordsApi implements Encryptor
     private function getFormFieldOnlineAsyncWithHttpInfo(Requests\getFormFieldOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -22816,12 +23767,13 @@ class WordsApi implements Encryptor
     private function getFormFieldsAsyncWithHttpInfo(Requests\getFormFieldsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -22986,12 +23938,13 @@ class WordsApi implements Encryptor
     private function getFormFieldsOnlineAsyncWithHttpInfo(Requests\getFormFieldsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -23156,12 +24109,13 @@ class WordsApi implements Encryptor
     private function getHeaderFooterAsyncWithHttpInfo(Requests\getHeaderFooterRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -23326,12 +24280,13 @@ class WordsApi implements Encryptor
     private function getHeaderFooterOfSectionAsyncWithHttpInfo(Requests\getHeaderFooterOfSectionRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -23496,12 +24451,13 @@ class WordsApi implements Encryptor
     private function getHeaderFooterOfSectionOnlineAsyncWithHttpInfo(Requests\getHeaderFooterOfSectionOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -23666,12 +24622,13 @@ class WordsApi implements Encryptor
     private function getHeaderFooterOnlineAsyncWithHttpInfo(Requests\getHeaderFooterOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -23836,12 +24793,13 @@ class WordsApi implements Encryptor
     private function getHeaderFootersAsyncWithHttpInfo(Requests\getHeaderFootersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -24006,12 +24964,13 @@ class WordsApi implements Encryptor
     private function getHeaderFootersOnlineAsyncWithHttpInfo(Requests\getHeaderFootersOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFootersResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -24176,12 +25135,13 @@ class WordsApi implements Encryptor
     private function getInfoAsyncWithHttpInfo(Requests\getInfoRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\InfoResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -24346,12 +25306,13 @@ class WordsApi implements Encryptor
     private function getListAsyncWithHttpInfo(Requests\getListRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -24516,12 +25477,13 @@ class WordsApi implements Encryptor
     private function getListOnlineAsyncWithHttpInfo(Requests\getListOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -24686,12 +25648,13 @@ class WordsApi implements Encryptor
     private function getListsAsyncWithHttpInfo(Requests\getListsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ListsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -24856,12 +25819,13 @@ class WordsApi implements Encryptor
     private function getListsOnlineAsyncWithHttpInfo(Requests\getListsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ListsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -25026,12 +25990,13 @@ class WordsApi implements Encryptor
     private function getOfficeMathObjectAsyncWithHttpInfo(Requests\getOfficeMathObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -25196,12 +26161,13 @@ class WordsApi implements Encryptor
     private function getOfficeMathObjectOnlineAsyncWithHttpInfo(Requests\getOfficeMathObjectOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -25366,12 +26332,13 @@ class WordsApi implements Encryptor
     private function getOfficeMathObjectsAsyncWithHttpInfo(Requests\getOfficeMathObjectsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -25536,12 +26503,13 @@ class WordsApi implements Encryptor
     private function getOfficeMathObjectsOnlineAsyncWithHttpInfo(Requests\getOfficeMathObjectsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\OfficeMathObjectsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -25706,12 +26674,13 @@ class WordsApi implements Encryptor
     private function getParagraphAsyncWithHttpInfo(Requests\getParagraphRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -25876,12 +26845,13 @@ class WordsApi implements Encryptor
     private function getParagraphFormatAsyncWithHttpInfo(Requests\getParagraphFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -26046,12 +27016,13 @@ class WordsApi implements Encryptor
     private function getParagraphFormatOnlineAsyncWithHttpInfo(Requests\getParagraphFormatOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -26216,12 +27187,13 @@ class WordsApi implements Encryptor
     private function getParagraphListFormatAsyncWithHttpInfo(Requests\getParagraphListFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -26386,12 +27358,13 @@ class WordsApi implements Encryptor
     private function getParagraphListFormatOnlineAsyncWithHttpInfo(Requests\getParagraphListFormatOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -26556,12 +27529,13 @@ class WordsApi implements Encryptor
     private function getParagraphOnlineAsyncWithHttpInfo(Requests\getParagraphOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -26726,12 +27700,13 @@ class WordsApi implements Encryptor
     private function getParagraphsAsyncWithHttpInfo(Requests\getParagraphsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -26896,12 +27871,13 @@ class WordsApi implements Encryptor
     private function getParagraphsOnlineAsyncWithHttpInfo(Requests\getParagraphsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -27066,12 +28042,13 @@ class WordsApi implements Encryptor
     private function getParagraphTabStopsAsyncWithHttpInfo(Requests\getParagraphTabStopsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -27236,12 +28213,13 @@ class WordsApi implements Encryptor
     private function getParagraphTabStopsOnlineAsyncWithHttpInfo(Requests\getParagraphTabStopsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -27406,12 +28384,13 @@ class WordsApi implements Encryptor
     private function getPublicKeyAsyncWithHttpInfo(Requests\getPublicKeyRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\PublicKeyResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -27576,12 +28555,13 @@ class WordsApi implements Encryptor
     private function getRangeTextAsyncWithHttpInfo(Requests\getRangeTextRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RangeTextResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -27746,12 +28726,13 @@ class WordsApi implements Encryptor
     private function getRangeTextOnlineAsyncWithHttpInfo(Requests\getRangeTextOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RangeTextResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -27916,12 +28897,13 @@ class WordsApi implements Encryptor
     private function getRunAsyncWithHttpInfo(Requests\getRunRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -28086,12 +29068,13 @@ class WordsApi implements Encryptor
     private function getRunFontAsyncWithHttpInfo(Requests\getRunFontRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -28256,12 +29239,13 @@ class WordsApi implements Encryptor
     private function getRunFontOnlineAsyncWithHttpInfo(Requests\getRunFontOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -28426,12 +29410,13 @@ class WordsApi implements Encryptor
     private function getRunOnlineAsyncWithHttpInfo(Requests\getRunOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -28596,12 +29581,13 @@ class WordsApi implements Encryptor
     private function getRunsAsyncWithHttpInfo(Requests\getRunsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -28766,12 +29752,13 @@ class WordsApi implements Encryptor
     private function getRunsOnlineAsyncWithHttpInfo(Requests\getRunsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -28936,12 +29923,13 @@ class WordsApi implements Encryptor
     private function getSectionAsyncWithHttpInfo(Requests\getSectionRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -29106,12 +30094,13 @@ class WordsApi implements Encryptor
     private function getSectionOnlineAsyncWithHttpInfo(Requests\getSectionOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -29276,12 +30265,13 @@ class WordsApi implements Encryptor
     private function getSectionPageSetupAsyncWithHttpInfo(Requests\getSectionPageSetupRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -29446,12 +30436,13 @@ class WordsApi implements Encryptor
     private function getSectionPageSetupOnlineAsyncWithHttpInfo(Requests\getSectionPageSetupOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -29616,12 +30607,13 @@ class WordsApi implements Encryptor
     private function getSectionsAsyncWithHttpInfo(Requests\getSectionsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -29786,12 +30778,13 @@ class WordsApi implements Encryptor
     private function getSectionsOnlineAsyncWithHttpInfo(Requests\getSectionsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionLinkCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -29956,12 +30949,13 @@ class WordsApi implements Encryptor
     private function getSignaturesAsyncWithHttpInfo(Requests\getSignaturesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SignatureCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -30126,12 +31120,13 @@ class WordsApi implements Encryptor
     private function getSignaturesOnlineAsyncWithHttpInfo(Requests\getSignaturesOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SignatureCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -30296,12 +31291,13 @@ class WordsApi implements Encryptor
     private function getStructuredDocumentTagAsyncWithHttpInfo(Requests\getStructuredDocumentTagRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -30466,12 +31462,13 @@ class WordsApi implements Encryptor
     private function getStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\getStructuredDocumentTagOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -30636,12 +31633,13 @@ class WordsApi implements Encryptor
     private function getStructuredDocumentTagsAsyncWithHttpInfo(Requests\getStructuredDocumentTagsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StructuredDocumentTagsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -30806,12 +31804,13 @@ class WordsApi implements Encryptor
     private function getStructuredDocumentTagsOnlineAsyncWithHttpInfo(Requests\getStructuredDocumentTagsOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StructuredDocumentTagsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -30976,12 +31975,13 @@ class WordsApi implements Encryptor
     private function getStyleAsyncWithHttpInfo(Requests\getStyleRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -31146,12 +32146,13 @@ class WordsApi implements Encryptor
     private function getStyleFromDocumentElementAsyncWithHttpInfo(Requests\getStyleFromDocumentElementRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -31316,12 +32317,13 @@ class WordsApi implements Encryptor
     private function getStyleFromDocumentElementOnlineAsyncWithHttpInfo(Requests\getStyleFromDocumentElementOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -31486,12 +32488,13 @@ class WordsApi implements Encryptor
     private function getStyleOnlineAsyncWithHttpInfo(Requests\getStyleOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -31656,12 +32659,13 @@ class WordsApi implements Encryptor
     private function getStylesAsyncWithHttpInfo(Requests\getStylesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StylesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -31826,12 +32830,13 @@ class WordsApi implements Encryptor
     private function getStylesOnlineAsyncWithHttpInfo(Requests\getStylesOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StylesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -31996,12 +33001,13 @@ class WordsApi implements Encryptor
     private function getTableAsyncWithHttpInfo(Requests\getTableRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -32166,12 +33172,13 @@ class WordsApi implements Encryptor
     private function getTableCellAsyncWithHttpInfo(Requests\getTableCellRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -32336,12 +33343,13 @@ class WordsApi implements Encryptor
     private function getTableCellFormatAsyncWithHttpInfo(Requests\getTableCellFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -32506,12 +33514,13 @@ class WordsApi implements Encryptor
     private function getTableCellFormatOnlineAsyncWithHttpInfo(Requests\getTableCellFormatOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -32676,12 +33685,13 @@ class WordsApi implements Encryptor
     private function getTableCellOnlineAsyncWithHttpInfo(Requests\getTableCellOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -32846,12 +33856,13 @@ class WordsApi implements Encryptor
     private function getTableOnlineAsyncWithHttpInfo(Requests\getTableOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -33016,12 +34027,13 @@ class WordsApi implements Encryptor
     private function getTablePropertiesAsyncWithHttpInfo(Requests\getTablePropertiesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -33186,12 +34198,13 @@ class WordsApi implements Encryptor
     private function getTablePropertiesOnlineAsyncWithHttpInfo(Requests\getTablePropertiesOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -33356,12 +34369,13 @@ class WordsApi implements Encryptor
     private function getTableRowAsyncWithHttpInfo(Requests\getTableRowRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -33526,12 +34540,13 @@ class WordsApi implements Encryptor
     private function getTableRowFormatAsyncWithHttpInfo(Requests\getTableRowFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -33696,12 +34711,13 @@ class WordsApi implements Encryptor
     private function getTableRowFormatOnlineAsyncWithHttpInfo(Requests\getTableRowFormatOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -33866,12 +34882,13 @@ class WordsApi implements Encryptor
     private function getTableRowOnlineAsyncWithHttpInfo(Requests\getTableRowOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -34036,12 +35053,13 @@ class WordsApi implements Encryptor
     private function getTablesAsyncWithHttpInfo(Requests\getTablesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -34206,12 +35224,13 @@ class WordsApi implements Encryptor
     private function getTablesOnlineAsyncWithHttpInfo(Requests\getTablesOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableLinkCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -34376,12 +35395,13 @@ class WordsApi implements Encryptor
     private function insertBookmarkAsyncWithHttpInfo(Requests\insertBookmarkRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -34533,12 +35553,13 @@ class WordsApi implements Encryptor
     private function insertBookmarkOnlineAsyncWithHttpInfo(Requests\insertBookmarkOnlineRequest $request) 
     {
         $returnType = 'InsertBookmarkOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -34703,12 +35724,13 @@ class WordsApi implements Encryptor
     private function insertCommentAsyncWithHttpInfo(Requests\insertCommentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -34860,12 +35882,13 @@ class WordsApi implements Encryptor
     private function insertCommentOnlineAsyncWithHttpInfo(Requests\insertCommentOnlineRequest $request) 
     {
         $returnType = 'InsertCommentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -35030,12 +36053,13 @@ class WordsApi implements Encryptor
     private function insertCustomXmlPartAsyncWithHttpInfo(Requests\insertCustomXmlPartRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -35187,12 +36211,13 @@ class WordsApi implements Encryptor
     private function insertCustomXmlPartOnlineAsyncWithHttpInfo(Requests\insertCustomXmlPartOnlineRequest $request) 
     {
         $returnType = 'InsertCustomXmlPartOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -35357,12 +36382,13 @@ class WordsApi implements Encryptor
     private function insertDrawingObjectAsyncWithHttpInfo(Requests\insertDrawingObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -35514,12 +36540,13 @@ class WordsApi implements Encryptor
     private function insertDrawingObjectOnlineAsyncWithHttpInfo(Requests\insertDrawingObjectOnlineRequest $request) 
     {
         $returnType = 'InsertDrawingObjectOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -35684,12 +36711,13 @@ class WordsApi implements Encryptor
     private function insertFieldAsyncWithHttpInfo(Requests\insertFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -35841,12 +36869,13 @@ class WordsApi implements Encryptor
     private function insertFieldOnlineAsyncWithHttpInfo(Requests\insertFieldOnlineRequest $request) 
     {
         $returnType = 'InsertFieldOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -36011,12 +37040,13 @@ class WordsApi implements Encryptor
     private function insertFootnoteAsyncWithHttpInfo(Requests\insertFootnoteRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -36168,12 +37198,13 @@ class WordsApi implements Encryptor
     private function insertFootnoteOnlineAsyncWithHttpInfo(Requests\insertFootnoteOnlineRequest $request) 
     {
         $returnType = 'InsertFootnoteOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -36338,12 +37369,13 @@ class WordsApi implements Encryptor
     private function insertFormFieldAsyncWithHttpInfo(Requests\insertFormFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -36495,12 +37527,13 @@ class WordsApi implements Encryptor
     private function insertFormFieldOnlineAsyncWithHttpInfo(Requests\insertFormFieldOnlineRequest $request) 
     {
         $returnType = 'InsertFormFieldOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -36665,12 +37698,13 @@ class WordsApi implements Encryptor
     private function insertHeaderFooterAsyncWithHttpInfo(Requests\insertHeaderFooterRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\HeaderFooterResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -36822,12 +37856,13 @@ class WordsApi implements Encryptor
     private function insertHeaderFooterOnlineAsyncWithHttpInfo(Requests\insertHeaderFooterOnlineRequest $request) 
     {
         $returnType = 'InsertHeaderFooterOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -36992,12 +38027,13 @@ class WordsApi implements Encryptor
     private function insertListAsyncWithHttpInfo(Requests\insertListRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -37149,12 +38185,13 @@ class WordsApi implements Encryptor
     private function insertListOnlineAsyncWithHttpInfo(Requests\insertListOnlineRequest $request) 
     {
         $returnType = 'InsertListOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -37319,12 +38356,13 @@ class WordsApi implements Encryptor
     private function insertOrUpdateParagraphTabStopAsyncWithHttpInfo(Requests\insertOrUpdateParagraphTabStopRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TabStopsResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -37476,12 +38514,13 @@ class WordsApi implements Encryptor
     private function insertOrUpdateParagraphTabStopOnlineAsyncWithHttpInfo(Requests\insertOrUpdateParagraphTabStopOnlineRequest $request) 
     {
         $returnType = 'InsertOrUpdateParagraphTabStopOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -37646,12 +38685,13 @@ class WordsApi implements Encryptor
     private function insertPageNumbersAsyncWithHttpInfo(Requests\insertPageNumbersRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -37803,12 +38843,13 @@ class WordsApi implements Encryptor
     private function insertPageNumbersOnlineAsyncWithHttpInfo(Requests\insertPageNumbersOnlineRequest $request) 
     {
         $returnType = 'InsertPageNumbersOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -37973,12 +39014,13 @@ class WordsApi implements Encryptor
     private function insertParagraphAsyncWithHttpInfo(Requests\insertParagraphRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -38130,12 +39172,13 @@ class WordsApi implements Encryptor
     private function insertParagraphOnlineAsyncWithHttpInfo(Requests\insertParagraphOnlineRequest $request) 
     {
         $returnType = 'InsertParagraphOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -38300,12 +39343,13 @@ class WordsApi implements Encryptor
     private function insertRunAsyncWithHttpInfo(Requests\insertRunRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -38457,12 +39501,13 @@ class WordsApi implements Encryptor
     private function insertRunOnlineAsyncWithHttpInfo(Requests\insertRunOnlineRequest $request) 
     {
         $returnType = 'InsertRunOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -38602,12 +39647,13 @@ class WordsApi implements Encryptor
     private function insertSectionAsyncWithHttpInfo(Requests\insertSectionRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -38754,12 +39800,13 @@ class WordsApi implements Encryptor
     private function insertSectionOnlineAsyncWithHttpInfo(Requests\insertSectionOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -38924,12 +39971,13 @@ class WordsApi implements Encryptor
     private function insertStructuredDocumentTagAsyncWithHttpInfo(Requests\insertStructuredDocumentTagRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -39081,12 +40129,13 @@ class WordsApi implements Encryptor
     private function insertStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\insertStructuredDocumentTagOnlineRequest $request) 
     {
         $returnType = 'InsertStructuredDocumentTagOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -39251,12 +40300,13 @@ class WordsApi implements Encryptor
     private function insertStyleAsyncWithHttpInfo(Requests\insertStyleRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -39408,12 +40458,13 @@ class WordsApi implements Encryptor
     private function insertStyleOnlineAsyncWithHttpInfo(Requests\insertStyleOnlineRequest $request) 
     {
         $returnType = 'InsertStyleOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -39578,12 +40629,13 @@ class WordsApi implements Encryptor
     private function insertTableAsyncWithHttpInfo(Requests\insertTableRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -39748,12 +40800,13 @@ class WordsApi implements Encryptor
     private function insertTableCellAsyncWithHttpInfo(Requests\insertTableCellRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -39905,12 +40958,13 @@ class WordsApi implements Encryptor
     private function insertTableCellOnlineAsyncWithHttpInfo(Requests\insertTableCellOnlineRequest $request) 
     {
         $returnType = 'InsertTableCellOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -40062,12 +41116,13 @@ class WordsApi implements Encryptor
     private function insertTableOnlineAsyncWithHttpInfo(Requests\insertTableOnlineRequest $request) 
     {
         $returnType = 'InsertTableOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -40232,12 +41287,13 @@ class WordsApi implements Encryptor
     private function insertTableRowAsyncWithHttpInfo(Requests\insertTableRowRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -40389,12 +41445,13 @@ class WordsApi implements Encryptor
     private function insertTableRowOnlineAsyncWithHttpInfo(Requests\insertTableRowOnlineRequest $request) 
     {
         $returnType = 'InsertTableRowOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -40559,12 +41616,13 @@ class WordsApi implements Encryptor
     private function insertWatermarkAsyncWithHttpInfo(Requests\insertWatermarkRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -40730,12 +41788,13 @@ class WordsApi implements Encryptor
     private function insertWatermarkImageAsyncWithHttpInfo(Requests\insertWatermarkImageRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -40888,12 +41947,13 @@ class WordsApi implements Encryptor
     private function insertWatermarkImageOnlineAsyncWithHttpInfo(Requests\insertWatermarkImageOnlineRequest $request) 
     {
         $returnType = 'InsertWatermarkImageOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -41045,12 +42105,13 @@ class WordsApi implements Encryptor
     private function insertWatermarkOnlineAsyncWithHttpInfo(Requests\insertWatermarkOnlineRequest $request) 
     {
         $returnType = 'InsertWatermarkOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -41216,12 +42277,13 @@ class WordsApi implements Encryptor
     private function insertWatermarkTextAsyncWithHttpInfo(Requests\insertWatermarkTextRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -41374,12 +42436,13 @@ class WordsApi implements Encryptor
     private function insertWatermarkTextOnlineAsyncWithHttpInfo(Requests\insertWatermarkTextOnlineRequest $request) 
     {
         $returnType = 'InsertWatermarkTextOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -41519,12 +42582,13 @@ class WordsApi implements Encryptor
     private function linkHeaderFootersToPreviousAsyncWithHttpInfo(Requests\linkHeaderFootersToPreviousRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -41671,12 +42735,13 @@ class WordsApi implements Encryptor
     private function loadWebDocumentAsyncWithHttpInfo(Requests\loadWebDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -41828,12 +42893,13 @@ class WordsApi implements Encryptor
     private function loadWebDocumentOnlineAsyncWithHttpInfo(Requests\loadWebDocumentOnlineRequest $request) 
     {
         $returnType = 'LoadWebDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -41973,12 +43039,13 @@ class WordsApi implements Encryptor
     private function mergeWithNextAsyncWithHttpInfo(Requests\mergeWithNextRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -42125,12 +43192,13 @@ class WordsApi implements Encryptor
     private function mergeWithNextOnlineAsyncWithHttpInfo(Requests\mergeWithNextOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -42270,12 +43338,13 @@ class WordsApi implements Encryptor
     private function moveFileAsyncWithHttpInfo(Requests\moveFileRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -42397,12 +43466,13 @@ class WordsApi implements Encryptor
     private function moveFolderAsyncWithHttpInfo(Requests\moveFolderRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -42524,12 +43594,13 @@ class WordsApi implements Encryptor
     private function optimizeDocumentAsyncWithHttpInfo(Requests\optimizeDocumentRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -42676,12 +43747,13 @@ class WordsApi implements Encryptor
     private function optimizeDocumentOnlineAsyncWithHttpInfo(Requests\optimizeDocumentOnlineRequest $request) 
     {
         $returnType = 'FILES_COLLECTION';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -42846,12 +43918,13 @@ class WordsApi implements Encryptor
     private function protectDocumentAsyncWithHttpInfo(Requests\protectDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -43003,12 +44076,13 @@ class WordsApi implements Encryptor
     private function protectDocumentOnlineAsyncWithHttpInfo(Requests\protectDocumentOnlineRequest $request) 
     {
         $returnType = 'ProtectDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -43173,12 +44247,13 @@ class WordsApi implements Encryptor
     private function rejectAllRevisionsAsyncWithHttpInfo(Requests\rejectAllRevisionsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RevisionsModificationResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -43330,12 +44405,13 @@ class WordsApi implements Encryptor
     private function rejectAllRevisionsOnlineAsyncWithHttpInfo(Requests\rejectAllRevisionsOnlineRequest $request) 
     {
         $returnType = 'RejectAllRevisionsOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -43500,12 +44576,13 @@ class WordsApi implements Encryptor
     private function removeAllSignaturesAsyncWithHttpInfo(Requests\removeAllSignaturesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SignatureCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -43657,12 +44734,13 @@ class WordsApi implements Encryptor
     private function removeAllSignaturesOnlineAsyncWithHttpInfo(Requests\removeAllSignaturesOnlineRequest $request) 
     {
         $returnType = 'RemoveAllSignaturesOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -43827,12 +44905,13 @@ class WordsApi implements Encryptor
     private function removeRangeAsyncWithHttpInfo(Requests\removeRangeRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -43984,12 +45063,13 @@ class WordsApi implements Encryptor
     private function removeRangeOnlineAsyncWithHttpInfo(Requests\removeRangeOnlineRequest $request) 
     {
         $returnType = 'RemoveRangeOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -44154,12 +45234,13 @@ class WordsApi implements Encryptor
     private function renderDrawingObjectAsyncWithHttpInfo(Requests\renderDrawingObjectRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -44324,12 +45405,13 @@ class WordsApi implements Encryptor
     private function renderDrawingObjectOnlineAsyncWithHttpInfo(Requests\renderDrawingObjectOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -44494,12 +45576,13 @@ class WordsApi implements Encryptor
     private function renderMathObjectAsyncWithHttpInfo(Requests\renderMathObjectRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -44664,12 +45747,13 @@ class WordsApi implements Encryptor
     private function renderMathObjectOnlineAsyncWithHttpInfo(Requests\renderMathObjectOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -44834,12 +45918,13 @@ class WordsApi implements Encryptor
     private function renderPageAsyncWithHttpInfo(Requests\renderPageRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -45004,12 +46089,13 @@ class WordsApi implements Encryptor
     private function renderPageOnlineAsyncWithHttpInfo(Requests\renderPageOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -45174,12 +46260,13 @@ class WordsApi implements Encryptor
     private function renderParagraphAsyncWithHttpInfo(Requests\renderParagraphRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -45344,12 +46431,13 @@ class WordsApi implements Encryptor
     private function renderParagraphOnlineAsyncWithHttpInfo(Requests\renderParagraphOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -45514,12 +46602,13 @@ class WordsApi implements Encryptor
     private function renderTableAsyncWithHttpInfo(Requests\renderTableRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -45684,12 +46773,13 @@ class WordsApi implements Encryptor
     private function renderTableOnlineAsyncWithHttpInfo(Requests\renderTableOnlineRequest $request) 
     {
         $returnType = '\SplFileObject';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -45854,12 +46944,13 @@ class WordsApi implements Encryptor
     private function replaceTextAsyncWithHttpInfo(Requests\replaceTextRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ReplaceTextResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -46011,12 +47102,13 @@ class WordsApi implements Encryptor
     private function replaceTextOnlineAsyncWithHttpInfo(Requests\replaceTextOnlineRequest $request) 
     {
         $returnType = 'ReplaceTextOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -46181,12 +47273,13 @@ class WordsApi implements Encryptor
     private function replaceWithTextAsyncWithHttpInfo(Requests\replaceWithTextRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -46338,12 +47431,13 @@ class WordsApi implements Encryptor
     private function replaceWithTextOnlineAsyncWithHttpInfo(Requests\replaceWithTextOnlineRequest $request) 
     {
         $returnType = 'ReplaceWithTextOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -46483,12 +47577,13 @@ class WordsApi implements Encryptor
     private function resetCacheAsyncWithHttpInfo(Requests\resetCacheRequest $request) 
     {
         $returnType = 'void';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
@@ -46635,12 +47730,13 @@ class WordsApi implements Encryptor
     private function saveAsAsyncWithHttpInfo(Requests\saveAsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -46792,12 +47888,13 @@ class WordsApi implements Encryptor
     private function saveAsOnlineAsyncWithHttpInfo(Requests\saveAsOnlineRequest $request) 
     {
         $returnType = 'SaveAsOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -46962,12 +48059,13 @@ class WordsApi implements Encryptor
     private function saveAsRangeAsyncWithHttpInfo(Requests\saveAsRangeRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -47119,12 +48217,13 @@ class WordsApi implements Encryptor
     private function saveAsRangeOnlineAsyncWithHttpInfo(Requests\saveAsRangeOnlineRequest $request) 
     {
         $returnType = 'SaveAsRangeOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -47290,12 +48389,13 @@ class WordsApi implements Encryptor
     private function saveAsTiffAsyncWithHttpInfo(Requests\saveAsTiffRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SaveResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -47448,12 +48548,13 @@ class WordsApi implements Encryptor
     private function saveAsTiffOnlineAsyncWithHttpInfo(Requests\saveAsTiffOnlineRequest $request) 
     {
         $returnType = 'SaveAsTiffOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -47618,12 +48719,13 @@ class WordsApi implements Encryptor
     private function searchAsyncWithHttpInfo(Requests\searchRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -47788,12 +48890,13 @@ class WordsApi implements Encryptor
     private function searchOnlineAsyncWithHttpInfo(Requests\searchOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SearchResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -47958,12 +49061,13 @@ class WordsApi implements Encryptor
     private function signDocumentAsyncWithHttpInfo(Requests\signDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SignatureCollectionResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -48115,12 +49219,13 @@ class WordsApi implements Encryptor
     private function signDocumentOnlineAsyncWithHttpInfo(Requests\signDocumentOnlineRequest $request) 
     {
         $returnType = 'SignDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -48285,12 +49390,13 @@ class WordsApi implements Encryptor
     private function splitDocumentAsyncWithHttpInfo(Requests\splitDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SplitDocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -48307,6 +49413,153 @@ class WordsApi implements Encryptor
 
                     return [
                         ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation splitDocumentJob
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\JobHandler
+     */
+    public function splitDocumentJob(Requests\splitDocumentJobRequest $request)
+    {
+        try {
+            list($response) = $this->splitDocumentJobWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->splitDocumentJobWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation splitDocumentJobWithHttpInfo
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\JobHandler, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function splitDocumentJobWithHttpInfo(Requests\splitDocumentJobRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody()->getContents();
+            $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+            return [
+                new JobHandler($this, $request->getOriginalRequest(), $jobInfo),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\JobInfo', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation splitDocumentJobAsync
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function splitDocumentJobAsync(Requests\splitDocumentJobRequest $request) 
+    {
+        return $this->splitDocumentJobAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation splitDocumentJobAsyncWithHttpInfo
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function splitDocumentJobAsyncWithHttpInfo(Requests\splitDocumentJobRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $requestModel = $request;
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType, $requestModel) {
+                    $responseBody = $response->getBody()->getContents();
+                    $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+                    return [
+                        new JobHandler($this, $requestModel->getOriginalRequest(), $jobInfo),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48442,12 +49695,13 @@ class WordsApi implements Encryptor
     private function splitDocumentOnlineAsyncWithHttpInfo(Requests\splitDocumentOnlineRequest $request) 
     {
         $returnType = 'SplitDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -48464,6 +49718,153 @@ class WordsApi implements Encryptor
 
                     return [
                         ObjectSerializer::deserialize($content, $returnType, $response->getHeaders()),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", 401, null, null);
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation splitDocumentOnlineJob
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Words\JobHandler
+     */
+    public function splitDocumentOnlineJob(Requests\splitDocumentOnlineJobRequest $request)
+    {
+        try {
+            list($response) = $this->splitDocumentOnlineJobWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+     		try {
+            	list($response) = $this->splitDocumentOnlineJobWithHttpInfo($request);
+            	return $response;
+        	}
+        	catch(RepeatRequestException $e) {
+            	throw new ApiException('Authorization failed', $e->getCode(), null, null);
+        	} 
+        } 
+    }
+
+    /*
+     * Operation splitDocumentOnlineJobWithHttpInfo
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Words\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Words\JobHandler, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function splitDocumentOnlineJobWithHttpInfo(Requests\splitDocumentOnlineJobRequest $request)
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $this->_checkAuthToken();
+        $req = $request->createRequest($this->config);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($req, $options);
+            } catch (RequestException $e) {
+                if ($e->getCode() == 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", 401, null, null);
+                }
+                else if ($e->getCode() < 200 || $e->getCode() > 299) {
+                    throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $e->getCode(), $req->getUri()), $e->getCode(), null, null);
+                }
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $req->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody()->getContents();
+            $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+            return [
+                new JobHandler($this, $request->getOriginalRequest(), $jobInfo),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Words\Model\JobInfo', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation splitDocumentOnlineJobAsync
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function splitDocumentOnlineJobAsync(Requests\splitDocumentOnlineJobRequest $request) 
+    {
+        return $this->splitDocumentOnlineJobAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation splitDocumentOnlineJobAsyncWithHttpInfo
+     *
+     * Splits a document into parts and saves them in the specified format.
+     *
+     * @param Requests\splitDocumentOnlineJobRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    private function splitDocumentOnlineJobAsyncWithHttpInfo(Requests\splitDocumentOnlineJobRequest $request) 
+    {
+        $returnType = '\Aspose\Words\Model\JobInfo';
+        $requestModel = $request;
+        $request = $request->createRequest($this->config);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType, $requestModel) {
+                    $responseBody = $response->getBody()->getContents();
+                    $jobInfo = ObjectSerializer::deserialize(json_decode($responseBody), $returnType, $response->getHeaders());
+                    return [
+                        new JobHandler($this, $requestModel->getOriginalRequest(), $jobInfo),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -48612,12 +50013,13 @@ class WordsApi implements Encryptor
     private function translateNodeIdAsyncWithHttpInfo(Requests\translateNodeIdRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TranslateNodeIdResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -48782,12 +50184,13 @@ class WordsApi implements Encryptor
     private function translateNodeIdOnlineAsyncWithHttpInfo(Requests\translateNodeIdOnlineRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TranslateNodeIdResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -48952,12 +50355,13 @@ class WordsApi implements Encryptor
     private function unprotectDocumentAsyncWithHttpInfo(Requests\unprotectDocumentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ProtectionDataResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -49109,12 +50513,13 @@ class WordsApi implements Encryptor
     private function unprotectDocumentOnlineAsyncWithHttpInfo(Requests\unprotectDocumentOnlineRequest $request) 
     {
         $returnType = 'UnprotectDocumentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -49279,12 +50684,13 @@ class WordsApi implements Encryptor
     private function updateBookmarkAsyncWithHttpInfo(Requests\updateBookmarkRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BookmarkResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -49436,12 +50842,13 @@ class WordsApi implements Encryptor
     private function updateBookmarkOnlineAsyncWithHttpInfo(Requests\updateBookmarkOnlineRequest $request) 
     {
         $returnType = 'UpdateBookmarkOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -49610,12 +51017,13 @@ class WordsApi implements Encryptor
     private function updateBorderAsyncWithHttpInfo(Requests\updateBorderRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\BorderResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -49771,12 +51179,13 @@ class WordsApi implements Encryptor
     private function updateBorderOnlineAsyncWithHttpInfo(Requests\updateBorderOnlineRequest $request) 
     {
         $returnType = 'UpdateBorderOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -49941,12 +51350,13 @@ class WordsApi implements Encryptor
     private function updateCommentAsyncWithHttpInfo(Requests\updateCommentRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CommentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -50098,12 +51508,13 @@ class WordsApi implements Encryptor
     private function updateCommentOnlineAsyncWithHttpInfo(Requests\updateCommentOnlineRequest $request) 
     {
         $returnType = 'UpdateCommentOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -50268,12 +51679,13 @@ class WordsApi implements Encryptor
     private function updateCustomXmlPartAsyncWithHttpInfo(Requests\updateCustomXmlPartRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\CustomXmlPartResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -50425,12 +51837,13 @@ class WordsApi implements Encryptor
     private function updateCustomXmlPartOnlineAsyncWithHttpInfo(Requests\updateCustomXmlPartOnlineRequest $request) 
     {
         $returnType = 'UpdateCustomXmlPartOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -50595,12 +52008,13 @@ class WordsApi implements Encryptor
     private function updateDrawingObjectAsyncWithHttpInfo(Requests\updateDrawingObjectRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DrawingObjectResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -50752,12 +52166,13 @@ class WordsApi implements Encryptor
     private function updateDrawingObjectOnlineAsyncWithHttpInfo(Requests\updateDrawingObjectOnlineRequest $request) 
     {
         $returnType = 'UpdateDrawingObjectOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -50922,12 +52337,13 @@ class WordsApi implements Encryptor
     private function updateFieldAsyncWithHttpInfo(Requests\updateFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -51079,12 +52495,13 @@ class WordsApi implements Encryptor
     private function updateFieldOnlineAsyncWithHttpInfo(Requests\updateFieldOnlineRequest $request) 
     {
         $returnType = 'UpdateFieldOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -51249,12 +52666,13 @@ class WordsApi implements Encryptor
     private function updateFieldsAsyncWithHttpInfo(Requests\updateFieldsRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\DocumentResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -51406,12 +52824,13 @@ class WordsApi implements Encryptor
     private function updateFieldsOnlineAsyncWithHttpInfo(Requests\updateFieldsOnlineRequest $request) 
     {
         $returnType = 'UpdateFieldsOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -51576,12 +52995,13 @@ class WordsApi implements Encryptor
     private function updateFootnoteAsyncWithHttpInfo(Requests\updateFootnoteRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FootnoteResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -51733,12 +53153,13 @@ class WordsApi implements Encryptor
     private function updateFootnoteOnlineAsyncWithHttpInfo(Requests\updateFootnoteOnlineRequest $request) 
     {
         $returnType = 'UpdateFootnoteOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -51903,12 +53324,13 @@ class WordsApi implements Encryptor
     private function updateFormFieldAsyncWithHttpInfo(Requests\updateFormFieldRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FormFieldResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -52060,12 +53482,13 @@ class WordsApi implements Encryptor
     private function updateFormFieldOnlineAsyncWithHttpInfo(Requests\updateFormFieldOnlineRequest $request) 
     {
         $returnType = 'UpdateFormFieldOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -52230,12 +53653,13 @@ class WordsApi implements Encryptor
     private function updateListAsyncWithHttpInfo(Requests\updateListRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -52400,12 +53824,13 @@ class WordsApi implements Encryptor
     private function updateListLevelAsyncWithHttpInfo(Requests\updateListLevelRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ListResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -52557,12 +53982,13 @@ class WordsApi implements Encryptor
     private function updateListLevelOnlineAsyncWithHttpInfo(Requests\updateListLevelOnlineRequest $request) 
     {
         $returnType = 'UpdateListLevelOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -52714,12 +54140,13 @@ class WordsApi implements Encryptor
     private function updateListOnlineAsyncWithHttpInfo(Requests\updateListOnlineRequest $request) 
     {
         $returnType = 'UpdateListOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -52884,12 +54311,13 @@ class WordsApi implements Encryptor
     private function updateParagraphFormatAsyncWithHttpInfo(Requests\updateParagraphFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -53041,12 +54469,13 @@ class WordsApi implements Encryptor
     private function updateParagraphFormatOnlineAsyncWithHttpInfo(Requests\updateParagraphFormatOnlineRequest $request) 
     {
         $returnType = 'UpdateParagraphFormatOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -53211,12 +54640,13 @@ class WordsApi implements Encryptor
     private function updateParagraphListFormatAsyncWithHttpInfo(Requests\updateParagraphListFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\ParagraphListFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -53368,12 +54798,13 @@ class WordsApi implements Encryptor
     private function updateParagraphListFormatOnlineAsyncWithHttpInfo(Requests\updateParagraphListFormatOnlineRequest $request) 
     {
         $returnType = 'UpdateParagraphListFormatOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -53538,12 +54969,13 @@ class WordsApi implements Encryptor
     private function updateRunAsyncWithHttpInfo(Requests\updateRunRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\RunResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -53708,12 +55140,13 @@ class WordsApi implements Encryptor
     private function updateRunFontAsyncWithHttpInfo(Requests\updateRunFontRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FontResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -53865,12 +55298,13 @@ class WordsApi implements Encryptor
     private function updateRunFontOnlineAsyncWithHttpInfo(Requests\updateRunFontOnlineRequest $request) 
     {
         $returnType = 'UpdateRunFontOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -54022,12 +55456,13 @@ class WordsApi implements Encryptor
     private function updateRunOnlineAsyncWithHttpInfo(Requests\updateRunOnlineRequest $request) 
     {
         $returnType = 'UpdateRunOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -54192,12 +55627,13 @@ class WordsApi implements Encryptor
     private function updateSectionPageSetupAsyncWithHttpInfo(Requests\updateSectionPageSetupRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\SectionPageSetupResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -54349,12 +55785,13 @@ class WordsApi implements Encryptor
     private function updateSectionPageSetupOnlineAsyncWithHttpInfo(Requests\updateSectionPageSetupOnlineRequest $request) 
     {
         $returnType = 'UpdateSectionPageSetupOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -54519,12 +55956,13 @@ class WordsApi implements Encryptor
     private function updateStructuredDocumentTagAsyncWithHttpInfo(Requests\updateStructuredDocumentTagRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StructuredDocumentTagResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -54676,12 +56114,13 @@ class WordsApi implements Encryptor
     private function updateStructuredDocumentTagOnlineAsyncWithHttpInfo(Requests\updateStructuredDocumentTagOnlineRequest $request) 
     {
         $returnType = 'UpdateStructuredDocumentTagOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -54846,12 +56285,13 @@ class WordsApi implements Encryptor
     private function updateStyleAsyncWithHttpInfo(Requests\updateStyleRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\StyleResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -55003,12 +56443,13 @@ class WordsApi implements Encryptor
     private function updateStyleOnlineAsyncWithHttpInfo(Requests\updateStyleOnlineRequest $request) 
     {
         $returnType = 'UpdateStyleOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -55173,12 +56614,13 @@ class WordsApi implements Encryptor
     private function updateTableCellFormatAsyncWithHttpInfo(Requests\updateTableCellFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableCellFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -55330,12 +56772,13 @@ class WordsApi implements Encryptor
     private function updateTableCellFormatOnlineAsyncWithHttpInfo(Requests\updateTableCellFormatOnlineRequest $request) 
     {
         $returnType = 'UpdateTableCellFormatOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -55500,12 +56943,13 @@ class WordsApi implements Encryptor
     private function updateTablePropertiesAsyncWithHttpInfo(Requests\updateTablePropertiesRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TablePropertiesResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -55657,12 +57101,13 @@ class WordsApi implements Encryptor
     private function updateTablePropertiesOnlineAsyncWithHttpInfo(Requests\updateTablePropertiesOnlineRequest $request) 
     {
         $returnType = 'UpdateTablePropertiesOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -55827,12 +57272,13 @@ class WordsApi implements Encryptor
     private function updateTableRowFormatAsyncWithHttpInfo(Requests\updateTableRowFormatRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\TableRowFormatResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -55984,12 +57430,13 @@ class WordsApi implements Encryptor
     private function updateTableRowFormatOnlineAsyncWithHttpInfo(Requests\updateTableRowFormatOnlineRequest $request) 
     {
         $returnType = 'UpdateTableRowFormatOnlineResponse';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer
@@ -56154,12 +57601,13 @@ class WordsApi implements Encryptor
     private function uploadFileAsyncWithHttpInfo(Requests\uploadFileRequest $request) 
     {
         $returnType = '\Aspose\Words\Model\FilesUploadResult';
+        $requestModel = $request;
         $request = $request->createRequest($this->config);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($returnType, $requestModel) {
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject' || $returnType === 'FILES_COLLECTION') {
                         $content = $responseBody; //stream goes to serializer

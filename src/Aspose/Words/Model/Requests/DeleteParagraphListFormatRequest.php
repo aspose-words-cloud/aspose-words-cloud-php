@@ -583,8 +583,13 @@ class DeleteParagraphListFormatRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ParagraphListFormatResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ParagraphListFormatResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\ParagraphListFormatResponse' === '\SplFileObject' || '\Aspose\Words\Model\ParagraphListFormatResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\ParagraphListFormatResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\ParagraphListFormatResponse', $response->getHeaders());
     }
 }

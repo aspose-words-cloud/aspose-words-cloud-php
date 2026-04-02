@@ -582,8 +582,13 @@ class InsertStructuredDocumentTagRequest extends BaseApiRequest
         return '\Aspose\Words\Model\StructuredDocumentTagResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\StructuredDocumentTagResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\StructuredDocumentTagResponse' === '\SplFileObject' || '\Aspose\Words\Model\StructuredDocumentTagResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\StructuredDocumentTagResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\StructuredDocumentTagResponse', $response->getHeaders());
     }
 }

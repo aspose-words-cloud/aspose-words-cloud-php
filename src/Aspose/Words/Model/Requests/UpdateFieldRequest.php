@@ -618,8 +618,13 @@ class UpdateFieldRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FieldResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FieldResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\FieldResponse' === '\SplFileObject' || '\Aspose\Words\Model\FieldResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\FieldResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\FieldResponse', $response->getHeaders());
     }
 }

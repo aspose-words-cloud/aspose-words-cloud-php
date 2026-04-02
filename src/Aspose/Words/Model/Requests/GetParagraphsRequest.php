@@ -445,8 +445,13 @@ class GetParagraphsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ParagraphLinkCollectionResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ParagraphLinkCollectionResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\ParagraphLinkCollectionResponse' === '\SplFileObject' || '\Aspose\Words\Model\ParagraphLinkCollectionResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\ParagraphLinkCollectionResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\ParagraphLinkCollectionResponse', $response->getHeaders());
     }
 }

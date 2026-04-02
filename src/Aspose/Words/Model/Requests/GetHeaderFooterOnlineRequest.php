@@ -413,8 +413,13 @@ class GetHeaderFooterOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\HeaderFooterResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\HeaderFooterResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\HeaderFooterResponse' === '\SplFileObject' || '\Aspose\Words\Model\HeaderFooterResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\HeaderFooterResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\HeaderFooterResponse', $response->getHeaders());
     }
 }

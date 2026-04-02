@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{ExecuteMailMergeOnlineRequest, ExecuteMailMergeRequest};
+use Aspose\Words\Model\Requests\{ExecuteMailMergeJobRequest, ExecuteMailMergeOnlineJobRequest, ExecuteMailMergeOnlineRequest, ExecuteMailMergeRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -59,6 +59,33 @@ class ExecuteMailMergeTests extends BaseTestContext
         );
 
         $result = $this->words->executeMailMergeOnline($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * Test for executing mail merge online job.
+     */
+    public function testExecuteMailMergeOnlineJob()
+    {
+        $mailMergeFolder = "DocumentActions/MailMerge";
+        $localDocumentFile = "SampleExecuteTemplate.docx";
+        $localDataFile = "SampleExecuteTemplateData.txt";
+
+        $requestTemplate = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDocumentFile;
+        $requestData = realpath(__DIR__ . '/../../..') . '/TestData/' . $mailMergeFolder . "/" . $localDataFile;
+        $request = new ExecuteMailMergeOnlineJobRequest(
+            $requestTemplate,
+            $requestData,
+            NULL,
+            true,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $jobHandler = $this->words->executeMailMergeOnlineJob($request);
+        Assert::assertNotNull($jobHandler);
+        $result = $jobHandler->waitResult();
         Assert::assertNotNull($result, "Error occurred");
     }
 
@@ -97,6 +124,48 @@ class ExecuteMailMergeTests extends BaseTestContext
         );
 
         $result = $this->words->executeMailMerge($request);
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestExecuteMailMerge.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
+     * Test for executing mail merge job.
+     */
+    public function testExecuteMailMergeJob()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/MailMerge";
+        $mailMergeFolder = "DocumentActions/MailMerge";
+        $localDocumentFile = "SampleExecuteTemplate.docx";
+        $remoteFileName = "TestExecuteMailMerge.docx";
+        $localDataFile = file_get_contents(realpath(__DIR__ . '/../../..') . "/TestData/" . $mailMergeFolder . "/SampleMailMergeTemplateData.txt");
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $mailMergeFolder . "/" . $localDocumentFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new ExecuteMailMergeJobRequest(
+            $remoteFileName,
+            $localDataFile,
+            NULL,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            true,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/" . $remoteFileName
+        );
+
+        $jobHandler = $this->words->executeMailMergeJob($request);
+        Assert::assertNotNull($jobHandler);
+        $result = $jobHandler->waitResult();
         Assert::assertTrue(json_decode($result, true) !== NULL);
         Assert::assertNotNull($result->getDocument());
         Assert::assertEquals("TestExecuteMailMerge.docx", $result->getDocument()->getFileName());

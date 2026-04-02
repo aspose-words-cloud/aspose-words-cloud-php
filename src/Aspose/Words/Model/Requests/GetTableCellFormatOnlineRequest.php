@@ -415,8 +415,13 @@ class GetTableCellFormatOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableCellFormatResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableCellFormatResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\TableCellFormatResponse' === '\SplFileObject' || '\Aspose\Words\Model\TableCellFormatResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\TableCellFormatResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\TableCellFormatResponse', $response->getHeaders());
     }
 }

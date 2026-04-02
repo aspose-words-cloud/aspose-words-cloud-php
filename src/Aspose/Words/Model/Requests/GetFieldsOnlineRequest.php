@@ -376,8 +376,13 @@ class GetFieldsOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FieldsResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FieldsResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\FieldsResponse' === '\SplFileObject' || '\Aspose\Words\Model\FieldsResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\FieldsResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\FieldsResponse', $response->getHeaders());
     }
 }

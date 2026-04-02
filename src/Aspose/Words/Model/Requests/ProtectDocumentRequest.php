@@ -481,8 +481,13 @@ class ProtectDocumentRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ProtectionDataResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ProtectionDataResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\ProtectionDataResponse' === '\SplFileObject' || '\Aspose\Words\Model\ProtectionDataResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\ProtectionDataResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\ProtectionDataResponse', $response->getHeaders());
     }
 }

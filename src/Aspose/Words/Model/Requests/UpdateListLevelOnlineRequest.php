@@ -552,6 +552,11 @@ class UpdateListLevelOnlineRequest extends BaseApiRequest
         return 'UpdateListLevelOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

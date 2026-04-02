@@ -513,6 +513,11 @@ class InsertTableOnlineRequest extends BaseApiRequest
         return 'InsertTableOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

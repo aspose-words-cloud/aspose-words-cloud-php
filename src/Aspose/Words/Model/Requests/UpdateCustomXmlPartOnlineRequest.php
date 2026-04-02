@@ -516,6 +516,11 @@ class UpdateCustomXmlPartOnlineRequest extends BaseApiRequest
         return 'UpdateCustomXmlPartOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

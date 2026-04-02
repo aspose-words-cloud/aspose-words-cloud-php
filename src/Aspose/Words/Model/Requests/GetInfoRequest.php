@@ -174,8 +174,13 @@ class GetInfoRequest extends BaseApiRequest
         return '\Aspose\Words\Model\InfoResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\InfoResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\InfoResponse' === '\SplFileObject' || '\Aspose\Words\Model\InfoResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\InfoResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\InfoResponse', $response->getHeaders());
     }
 }

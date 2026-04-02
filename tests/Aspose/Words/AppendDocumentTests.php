@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{AppendDocumentOnlineRequest, AppendDocumentRequest};
+use Aspose\Words\Model\Requests\{AppendDocumentJobRequest, AppendDocumentOnlineJobRequest, AppendDocumentOnlineRequest, AppendDocumentRequest};
 use Aspose\Words\Model\{DocumentEntry, DocumentEntryList, FileReference};
 use PHPUnit\Framework\Assert;
 
@@ -84,6 +84,53 @@ class AppendDocumentTests extends BaseTestContext
     }
 
     /*
+     * Test for appending document job.
+     */
+    public function testAppendDocumentJob()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/AppendDocument";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestAppendDocument.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $requestDocumentListDocumentEntries0FileReference = FileReference::fromRemoteFilePath($remoteDataFolder . "/" . $remoteFileName);
+        $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
+            "file_reference" => $requestDocumentListDocumentEntries0FileReference,
+            "import_format_mode" => "KeepSourceFormatting",
+        ));
+        $requestDocumentListDocumentEntries = [
+            $requestDocumentListDocumentEntries0,
+        ];
+        $requestDocumentList = new DocumentEntryList(array(
+            "document_entries" => $requestDocumentListDocumentEntries,
+        ));
+        $request = new AppendDocumentJobRequest(
+            $remoteFileName,
+            $requestDocumentList,
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/" . $remoteFileName,
+            NULL,
+            NULL
+        );
+
+        $jobHandler = $this->words->appendDocumentJob($request);
+        Assert::assertNotNull($jobHandler);
+        $result = $jobHandler->waitResult();
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getDocument());
+        Assert::assertEquals("TestAppendDocument.docx", $result->getDocument()->getFileName());
+    }
+
+    /*
      * Test for appending document online.
      */
     public function testAppendDocumentOnline()
@@ -116,6 +163,44 @@ class AppendDocumentTests extends BaseTestContext
         );
 
         $result = $this->words->appendDocumentOnline($request);
+        Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for appending document online job.
+     */
+    public function testAppendDocumentOnlineJob()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestDocumentListDocumentEntries0FileReferenceStream = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $requestDocumentListDocumentEntries0FileReference = FileReference::fromLocalFileContent($requestDocumentListDocumentEntries0FileReferenceStream);
+        $requestDocumentListDocumentEntries0 = new DocumentEntry(array(
+            "file_reference" => $requestDocumentListDocumentEntries0FileReference,
+            "import_format_mode" => "KeepSourceFormatting",
+        ));
+        $requestDocumentListDocumentEntries = [
+            $requestDocumentListDocumentEntries0,
+        ];
+        $requestDocumentList = new DocumentEntryList(array(
+            "document_entries" => $requestDocumentListDocumentEntries,
+        ));
+        $request = new AppendDocumentOnlineJobRequest(
+            $requestDocument,
+            $requestDocumentList,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $jobHandler = $this->words->appendDocumentOnlineJob($request);
+        Assert::assertNotNull($jobHandler);
+        $result = $jobHandler->waitResult();
         Assert::assertTrue($result !== NULL);
     }
 }

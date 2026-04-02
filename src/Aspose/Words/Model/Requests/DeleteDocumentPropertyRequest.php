@@ -550,6 +550,11 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
         return NULL;
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         return NULL;

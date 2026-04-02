@@ -33,6 +33,14 @@ namespace Aspose\Words\Model\Requests;
 class BaseApiRequest
 {
     /*
+     * Gets original request for job methods.
+     */
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
+    /*
      * Executes response logging
      */
     protected function _writeResponseLog($statusCode, $headers, $body)

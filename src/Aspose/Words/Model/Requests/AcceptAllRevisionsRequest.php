@@ -446,8 +446,13 @@ class AcceptAllRevisionsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\RevisionsModificationResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\RevisionsModificationResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\RevisionsModificationResponse' === '\SplFileObject' || '\Aspose\Words\Model\RevisionsModificationResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\RevisionsModificationResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\RevisionsModificationResponse', $response->getHeaders());
     }
 }

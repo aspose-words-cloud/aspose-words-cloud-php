@@ -412,8 +412,13 @@ class GetFootnoteOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FootnoteResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FootnoteResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\FootnoteResponse' === '\SplFileObject' || '\Aspose\Words\Model\FootnoteResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\FootnoteResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\FootnoteResponse', $response->getHeaders());
     }
 }

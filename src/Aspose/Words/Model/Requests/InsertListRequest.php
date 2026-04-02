@@ -549,8 +549,13 @@ class InsertListRequest extends BaseApiRequest
         return '\Aspose\Words\Model\ListResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\ListResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\ListResponse' === '\SplFileObject' || '\Aspose\Words\Model\ListResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\ListResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\ListResponse', $response->getHeaders());
     }
 }

@@ -448,8 +448,13 @@ class TranslateNodeIdRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TranslateNodeIdResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TranslateNodeIdResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\TranslateNodeIdResponse' === '\SplFileObject' || '\Aspose\Words\Model\TranslateNodeIdResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\TranslateNodeIdResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\TranslateNodeIdResponse', $response->getHeaders());
     }
 }

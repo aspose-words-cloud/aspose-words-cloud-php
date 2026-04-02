@@ -513,6 +513,11 @@ class InsertFieldOnlineRequest extends BaseApiRequest
         return 'InsertFieldOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

@@ -549,6 +549,11 @@ class UpdateFormFieldOnlineRequest extends BaseApiRequest
         return 'UpdateFormFieldOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

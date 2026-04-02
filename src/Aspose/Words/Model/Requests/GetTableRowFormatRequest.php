@@ -484,8 +484,13 @@ class GetTableRowFormatRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableRowFormatResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableRowFormatResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\TableRowFormatResponse' === '\SplFileObject' || '\Aspose\Words\Model\TableRowFormatResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\TableRowFormatResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\TableRowFormatResponse', $response->getHeaders());
     }
 }

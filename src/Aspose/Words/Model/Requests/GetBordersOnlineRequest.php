@@ -376,8 +376,13 @@ class GetBordersOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\BordersResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\BordersResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\BordersResponse' === '\SplFileObject' || '\Aspose\Words\Model\BordersResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\BordersResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\BordersResponse', $response->getHeaders());
     }
 }

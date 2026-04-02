@@ -283,8 +283,13 @@ class UploadFileRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FilesUploadResult';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FilesUploadResult', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\FilesUploadResult' === '\SplFileObject' || '\Aspose\Words\Model\FilesUploadResult' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\FilesUploadResult' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\FilesUploadResult', $response->getHeaders());
     }
 }

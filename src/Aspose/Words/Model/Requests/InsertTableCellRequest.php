@@ -582,8 +582,13 @@ class InsertTableCellRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableCellResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableCellResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\TableCellResponse' === '\SplFileObject' || '\Aspose\Words\Model\TableCellResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\TableCellResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\TableCellResponse', $response->getHeaders());
     }
 }

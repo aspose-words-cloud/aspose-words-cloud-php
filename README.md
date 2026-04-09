@@ -13,6 +13,12 @@ This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK al
 * Watermarks and protection
 * Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
 
+## Enhancements in Version 26.4
+
+- Implemented jobs system to perform operations without an active connection to the server.
+- Added job operations: 'AppendDocumentJob', 'AppendDocumentOnlineJob', 'ConvertDocumentJob', 'ExecuteMailMergeJob', 'ExecuteMailMergeOnlineJob', 'SplitDocumentJob', 'SplitDocumentOnlineJob'.
+
+
 ## Enhancements in Version 26.3
 
 - Various stability and performance improvements.

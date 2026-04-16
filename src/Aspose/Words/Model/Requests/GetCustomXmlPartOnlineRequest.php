@@ -379,8 +379,13 @@ class GetCustomXmlPartOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\CustomXmlPartResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\CustomXmlPartResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\CustomXmlPartResponse' === '\SplFileObject' || '\Aspose\Words\Model\CustomXmlPartResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\CustomXmlPartResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\CustomXmlPartResponse', $response->getHeaders());
     }
 }

@@ -412,8 +412,13 @@ class GetDocumentDrawingObjectImageDataOnlineRequest extends BaseApiRequest
         return '\SplFileObject';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\SplFileObject', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\SplFileObject' === '\SplFileObject' || '\SplFileObject' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\SplFileObject' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\SplFileObject', $response->getHeaders());
     }
 }

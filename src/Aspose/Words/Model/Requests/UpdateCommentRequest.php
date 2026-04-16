@@ -585,8 +585,13 @@ class UpdateCommentRequest extends BaseApiRequest
         return '\Aspose\Words\Model\CommentResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\CommentResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\CommentResponse' === '\SplFileObject' || '\Aspose\Words\Model\CommentResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\CommentResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\CommentResponse', $response->getHeaders());
     }
 }

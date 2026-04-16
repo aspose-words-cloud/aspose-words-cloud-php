@@ -445,8 +445,13 @@ class GetFootnotesRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FootnotesResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FootnotesResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\FootnotesResponse' === '\SplFileObject' || '\Aspose\Words\Model\FootnotesResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\FootnotesResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\FootnotesResponse', $response->getHeaders());
     }
 }

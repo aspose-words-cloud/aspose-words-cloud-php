@@ -379,8 +379,13 @@ class GetSectionPageSetupOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SectionPageSetupResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SectionPageSetupResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\SectionPageSetupResponse' === '\SplFileObject' || '\Aspose\Words\Model\SectionPageSetupResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\SectionPageSetupResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\SectionPageSetupResponse', $response->getHeaders());
     }
 }

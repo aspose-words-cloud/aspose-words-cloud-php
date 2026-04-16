@@ -445,8 +445,13 @@ class GetOfficeMathObjectsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\OfficeMathObjectsResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\OfficeMathObjectsResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\OfficeMathObjectsResponse' === '\SplFileObject' || '\Aspose\Words\Model\OfficeMathObjectsResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\OfficeMathObjectsResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\OfficeMathObjectsResponse', $response->getHeaders());
     }
 }

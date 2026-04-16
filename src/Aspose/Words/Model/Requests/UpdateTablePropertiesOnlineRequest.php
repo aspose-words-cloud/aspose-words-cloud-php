@@ -549,6 +549,11 @@ class UpdateTablePropertiesOnlineRequest extends BaseApiRequest
         return 'UpdateTablePropertiesOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

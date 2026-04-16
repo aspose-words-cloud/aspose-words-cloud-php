@@ -412,8 +412,13 @@ class GetTableOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\TableResponse' === '\SplFileObject' || '\Aspose\Words\Model\TableResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\TableResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\TableResponse', $response->getHeaders());
     }
 }

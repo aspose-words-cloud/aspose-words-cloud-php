@@ -582,8 +582,13 @@ class InsertTableRowRequest extends BaseApiRequest
         return '\Aspose\Words\Model\TableRowResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\TableRowResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\TableRowResponse' === '\SplFileObject' || '\Aspose\Words\Model\TableRowResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\TableRowResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\TableRowResponse', $response->getHeaders());
     }
 }

@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{ConvertDocumentRequest, SaveAsOnlineRequest, SaveAsRequest, SaveAsTiffOnlineRequest, SaveAsTiffRequest};
+use Aspose\Words\Model\Requests\{ConvertDocumentJobRequest, ConvertDocumentRequest, SaveAsOnlineRequest, SaveAsRequest, SaveAsTiffOnlineRequest, SaveAsTiffRequest};
 use Aspose\Words\Model\{DocxSaveOptionsData, HtmlSaveOptionsData, PdfSaveOptionsData, TiffSaveOptionsData};
 use PHPUnit\Framework\Assert;
 
@@ -277,6 +277,33 @@ class ConvertDocumentTests extends BaseTestContext
         );
 
         $result = $this->words->convertDocument($request);
+        Assert::assertNotNull($result, "Error occurred");
+    }
+
+    /*
+     * A test for ConvertDocument as a job.
+     */
+    public function testConvertDocumentJob()
+    {
+        $localFolder = "DocumentActions/ConvertDocument";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFolder . "/test_uploadfile.docx";
+        $request = new ConvertDocumentJobRequest(
+            $requestDocument,
+            "pdf",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL
+        );
+
+        $jobHandler = $this->words->convertDocumentJob($request);
+        Assert::assertNotNull($jobHandler);
+        $result = $jobHandler->waitResult();
         Assert::assertNotNull($result, "Error occurred");
     }
 }

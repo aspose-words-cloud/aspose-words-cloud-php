@@ -481,8 +481,13 @@ class GetRangeTextRequest extends BaseApiRequest
         return '\Aspose\Words\Model\RangeTextResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\RangeTextResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\RangeTextResponse' === '\SplFileObject' || '\Aspose\Words\Model\RangeTextResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\RangeTextResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\RangeTextResponse', $response->getHeaders());
     }
 }

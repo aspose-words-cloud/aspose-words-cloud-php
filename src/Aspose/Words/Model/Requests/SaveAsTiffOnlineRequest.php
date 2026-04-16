@@ -990,6 +990,11 @@ class SaveAsTiffOnlineRequest extends BaseApiRequest
         return 'SaveAsTiffOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

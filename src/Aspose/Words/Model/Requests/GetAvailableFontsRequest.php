@@ -206,8 +206,13 @@ class GetAvailableFontsRequest extends BaseApiRequest
         return '\Aspose\Words\Model\AvailableFontsResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\AvailableFontsResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\AvailableFontsResponse' === '\SplFileObject' || '\Aspose\Words\Model\AvailableFontsResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\AvailableFontsResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\AvailableFontsResponse', $response->getHeaders());
     }
 }

@@ -551,8 +551,13 @@ class CopyStylesFromTemplateRequest extends BaseApiRequest
         return '\Aspose\Words\Model\WordsResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\WordsResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\WordsResponse' === '\SplFileObject' || '\Aspose\Words\Model\WordsResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\WordsResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\WordsResponse', $response->getHeaders());
     }
 }

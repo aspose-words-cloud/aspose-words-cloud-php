@@ -343,8 +343,13 @@ class GetCommentsOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\CommentsResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\CommentsResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\CommentsResponse' === '\SplFileObject' || '\Aspose\Words\Model\CommentsResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\CommentsResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\CommentsResponse', $response->getHeaders());
     }
 }

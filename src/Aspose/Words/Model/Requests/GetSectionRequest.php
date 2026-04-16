@@ -448,8 +448,13 @@ class GetSectionRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SectionResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SectionResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\SectionResponse' === '\SplFileObject' || '\Aspose\Words\Model\SectionResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\SectionResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\SectionResponse', $response->getHeaders());
     }
 }

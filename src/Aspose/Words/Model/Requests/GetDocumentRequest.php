@@ -412,8 +412,13 @@ class GetDocumentRequest extends BaseApiRequest
         return '\Aspose\Words\Model\DocumentResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\DocumentResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\DocumentResponse' === '\SplFileObject' || '\Aspose\Words\Model\DocumentResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\DocumentResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\DocumentResponse', $response->getHeaders());
     }
 }

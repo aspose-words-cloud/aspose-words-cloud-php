@@ -513,6 +513,11 @@ class InsertStructuredDocumentTagOnlineRequest extends BaseApiRequest
         return 'InsertStructuredDocumentTagOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

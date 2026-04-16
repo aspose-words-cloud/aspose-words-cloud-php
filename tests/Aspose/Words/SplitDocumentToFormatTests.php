@@ -29,7 +29,7 @@
 namespace Aspose\Words\Tests;
 
 use Aspose\Words\WordsApi;
-use Aspose\Words\Model\Requests\{SplitDocumentOnlineRequest, SplitDocumentRequest};
+use Aspose\Words\Model\Requests\{SplitDocumentJobRequest, SplitDocumentOnlineJobRequest, SplitDocumentOnlineRequest, SplitDocumentRequest};
 use PHPUnit\Framework\Assert;
 
 /*
@@ -75,6 +75,45 @@ class SplitDocumentToFormatTests extends BaseTestContext
     }
 
     /*
+     * Test for document splitting job.
+     */
+    public function testSplitDocumentJob()
+    {
+        $remoteDataFolder = self::$baseRemoteFolderPath . "/DocumentActions/SplitDocument";
+        $localFile = "Common/test_multi_pages.docx";
+        $remoteFileName = "TestSplitDocument.docx";
+
+        $this->uploadFile(
+            realpath(__DIR__ . '/../../..') . "/TestData/" . $localFile,
+            $remoteDataFolder . "/" . $remoteFileName
+        );
+
+        $request = new SplitDocumentJobRequest(
+            $remoteFileName,
+            "text",
+            $remoteDataFolder,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/TestSplitDocument.text",
+            1,
+            2,
+            NULL,
+            NULL
+        );
+
+        $jobHandler = $this->words->splitDocumentJob($request);
+        Assert::assertNotNull($jobHandler);
+        $result = $jobHandler->waitResult();
+        Assert::assertTrue(json_decode($result, true) !== NULL);
+        Assert::assertNotNull($result->getSplitResult());
+        Assert::assertNotNull($result->getSplitResult()->getPages());
+        Assert::assertCount(2, $result->getSplitResult()->getPages());
+    }
+
+    /*
      * Test for document splitting online.
      */
     public function testSplitDocumentOnline()
@@ -97,6 +136,34 @@ class SplitDocumentToFormatTests extends BaseTestContext
         );
 
         $result = $this->words->splitDocumentOnline($request);
+        Assert::assertTrue($result !== NULL);
+    }
+
+    /*
+     * Test for document splitting online job.
+     */
+    public function testSplitDocumentOnlineJob()
+    {
+        $localFile = "Common/test_multi_pages.docx";
+
+        $requestDocument = realpath(__DIR__ . '/../../..') . '/TestData/' . $localFile;
+        $request = new SplitDocumentOnlineJobRequest(
+            $requestDocument,
+            "text",
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            self::$baseTestOutPath . "/TestSplitDocument.text",
+            1,
+            2,
+            NULL,
+            NULL
+        );
+
+        $jobHandler = $this->words->splitDocumentOnlineJob($request);
+        Assert::assertNotNull($jobHandler);
+        $result = $jobHandler->waitResult();
         Assert::assertTrue($result !== NULL);
     }
 }

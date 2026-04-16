@@ -481,6 +481,11 @@ class ReplaceWithTextOnlineRequest extends BaseApiRequest
         return 'ReplaceWithTextOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

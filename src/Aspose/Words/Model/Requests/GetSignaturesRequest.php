@@ -412,8 +412,13 @@ class GetSignaturesRequest extends BaseApiRequest
         return '\Aspose\Words\Model\SignatureCollectionResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\SignatureCollectionResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\SignatureCollectionResponse' === '\SplFileObject' || '\Aspose\Words\Model\SignatureCollectionResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\SignatureCollectionResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\SignatureCollectionResponse', $response->getHeaders());
     }
 }

@@ -481,8 +481,13 @@ class DeleteCommentOnlineRequest extends BaseApiRequest
         return 'FILES_COLLECTION';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, 'FILES_COLLECTION', $response->getHeaders());
+        $responseBody = $response->getBody();if ('FILES_COLLECTION' === '\SplFileObject' || 'FILES_COLLECTION' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('FILES_COLLECTION' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, 'FILES_COLLECTION', $response->getHeaders());
     }
 }

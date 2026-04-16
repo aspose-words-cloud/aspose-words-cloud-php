@@ -379,8 +379,13 @@ class GetRunsOnlineRequest extends BaseApiRequest
         return '\Aspose\Words\Model\RunsResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\RunsResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\RunsResponse' === '\SplFileObject' || '\Aspose\Words\Model\RunsResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\RunsResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\RunsResponse', $response->getHeaders());
     }
 }

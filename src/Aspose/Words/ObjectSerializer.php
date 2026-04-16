@@ -28,6 +28,8 @@
 
 namespace Aspose\Words;
 
+use \GuzzleHttp\Psr7\Response;
+
 /*
  * ObjectSerializer
  */
@@ -304,6 +306,57 @@ class ObjectSerializer
         }
 
         return $result;
+    }
+
+    /*
+     * Deserialize job info from multipart part.
+     */
+    public static function deserializeJobInfoPart($part)
+    {
+        return ObjectSerializer::deserialize(json_decode($part['body']), '\Aspose\Words\Model\JobInfo', $part['headers']);
+    }
+
+    /*
+     * Deserialize embedded HTTP response part.
+     */
+    public static function deserializeHttpResponsePart($request, $part)
+    {
+        $separator = "\r\n\r\n";
+        $block = $part['body'];
+        $dataIndex = strpos($block, $separator);
+        if ($dataIndex === false) {
+            throw new ApiException("Failed to parse HTTP response part.", 400, null, null);
+        }
+
+        $headersData = substr($block, 0, $dataIndex);
+        $bodyData = substr($block, $dataIndex + strlen($separator));
+        $headerLines = preg_split('/\r\n/', $headersData);
+        if (count($headerLines) == 0) {
+            throw new ApiException("Failed to parse HTTP response part.", 400, null, null);
+        }
+
+        $statusLine = $headerLines[0];
+        $statusParts = preg_split('/ /', $statusLine);
+        if (count($statusParts) < 3 || strpos($statusParts[0], 'HTTP/') !== 0) {
+            throw new ApiException("Failed to parse HTTP response part.", 400, null, null);
+        }
+
+        $statusCode = intval($statusParts[1]);
+        $headers = [];
+        for ($q = 1; $q < count($headerLines); $q++) {
+            $headerLine = $headerLines[$q];
+            $headerParts = explode(':', $headerLine, 2);
+            if (count($headerParts) == 2) {
+                $headers[trim($headerParts[0])] = trim($headerParts[1]);
+            }
+        }
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            return null;
+        }
+
+        $response = new Response($statusCode, $headers, $bodyData);
+        return $request->deserializeResponse($response);
     }
 
     /*

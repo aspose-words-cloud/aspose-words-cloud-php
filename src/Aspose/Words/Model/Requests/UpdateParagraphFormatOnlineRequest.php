@@ -549,6 +549,11 @@ class UpdateParagraphFormatOnlineRequest extends BaseApiRequest
         return 'UpdateParagraphFormatOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

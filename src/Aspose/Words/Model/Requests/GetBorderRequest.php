@@ -481,8 +481,13 @@ class GetBorderRequest extends BaseApiRequest
         return '\Aspose\Words\Model\BorderResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\BorderResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\BorderResponse' === '\SplFileObject' || '\Aspose\Words\Model\BorderResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\BorderResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\BorderResponse', $response->getHeaders());
     }
 }

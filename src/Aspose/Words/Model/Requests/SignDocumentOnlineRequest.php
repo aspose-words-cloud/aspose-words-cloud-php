@@ -451,6 +451,11 @@ class SignDocumentOnlineRequest extends BaseApiRequest
         return 'SignDocumentOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

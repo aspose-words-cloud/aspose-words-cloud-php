@@ -412,6 +412,11 @@ class CompressDocumentOnlineRequest extends BaseApiRequest
         return 'CompressDocumentOnlineResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
         $multipart = ObjectSerializer::parseMultipart($response->getBody(), $response->getHeaders());

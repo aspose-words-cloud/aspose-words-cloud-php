@@ -446,8 +446,13 @@ class GetDocumentFieldNamesRequest extends BaseApiRequest
         return '\Aspose\Words\Model\FieldNamesResponse';
     }
 
+    public function getOriginalRequest()
+    {
+        return $this;
+    }
+
     public function deserializeResponse($response)
     {
-        return ObjectSerializer::deserialize($response, '\Aspose\Words\Model\FieldNamesResponse', $response->getHeaders());
+        $responseBody = $response->getBody();if ('\Aspose\Words\Model\FieldNamesResponse' === '\SplFileObject' || '\Aspose\Words\Model\FieldNamesResponse' === 'FILES_COLLECTION') {$content = $responseBody;} else {$content = $responseBody->getContents();if ('\Aspose\Words\Model\FieldNamesResponse' !== 'string') {$content = json_decode($content);}}return ObjectSerializer::deserialize($content, '\Aspose\Words\Model\FieldNamesResponse', $response->getHeaders());
     }
 }

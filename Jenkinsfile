@@ -64,6 +64,7 @@ def runtests(dockerImageVersion)
             }
         } finally {                       
             deleteDir()
+			cleanWs()
         }
     }
 }
